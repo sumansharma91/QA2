@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ContainerPackContainerListExtn"
+        extnPackage="extn.components.shipment.container.pack"
+        originalScreen="wsc.components.shipment.container.pack.ContainerPackContainerList"
+        originalScreenPackage="wsc.components.shipment.container.pack" type="diffrential">
+        <Items>
+            <ContentPane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="weightDetails" renderHidden="false"/>
+            <Button _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="saveButton" renderHidden="false"/>
+            <Label _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lbl_containerWeightUOM"
+                label="$(_scSimpleBundle:extn_Sequence)"
+                renderHidden="true" spanLabel="false"/>
+            <Label _sc_extensibility_moveOrder="4"
+                _sc_extensibility_operation="remove"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="_extensibilityHiddenWidgetsHolder" uId="lbl_containerWeightUOM"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="lbl_NoOfProducts"
+                class="groupHeader hashNumberAlign autoLabelZeroWidth blockComponent comappsWrapWord"
+                label="$(_scSimpleBundle:extn_Container_Options)" uId="extn_parcel">
+                <BindingData>
+                    <RadioBinding>
+                        <Option label="$(_scSimpleBundle:extn_Envelope)"
+                            scExtensibilityArrayItemId="extn_RadioBinding_0" value="Envelope"/>
+                        <Option label="$(_scSimpleBundle:extn_Carton)"
+                            scExtensibilityArrayItemId="extn_RadioBinding_1" value="Carton"/>
+                    </RadioBinding>
+                    <SourceBinding namespace="container_Src" path="Container.Extn.ExtnParcelType"/>
+                    <TargetBindings>
+                        <TargetBinding namespace="changeShipment_input"
+                            path="Shipment.Containers.Container.Extn.ExtnParcelType" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </RadioButtonSet>
+            <DataLabel _sc_extensibility_moveOrder="3"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="saveButton"
+                class="idxLabel weightUnit zeroWidthLabelKey"
+                label="$(_scSimpleBundle:extn_Sequence_No)" uId="extn_seq"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

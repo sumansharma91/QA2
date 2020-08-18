@@ -1,0 +1,10 @@
+<OrderLineList>
+	<OrderLine MinLineStatus="" PrimeLineNo="" SubLineNo="" OrderLineKey="" OrderHeaderKey="" OrderedQty="" >
+		<Order OrderNo=""/>
+		<LineOverallTotals Charges="" Discount="" LineTotal="" PricingQty="" UnitPrice=""/>
+		<Item ItemID=""/>
+		<OrderStatuses>
+			<OrderStatus OrderReleaseKey="" Status="" StatusDescription="" StatusQty=""/>
+		</OrderStatuses>
+	</OrderLine>
+</OrderLineList>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.common.address.capture.AddressCaptureExtnBundle" screenId="extn.common.address.capture.AddressCaptureExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="extn_addressLine1_FilteringSelect_label"
+            bundleKey="AddressLine1" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_addressLine1"/>
+        <BundleEntry
+            bundleEntryId="extn_screenbase_checkbox_CheckBox_label"
+            bundleKey="Make_Default_Ship_To"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_screenbase_checkbox"/>
+    </BundleEntries>
+</ScreenBundle>

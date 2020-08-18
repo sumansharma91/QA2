@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.common.alternateStore.StoreSelectionExtnBundle" screenId="extn.common.alternateStore.StoreSelectionExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="extn_filteringselect_Store_Distance_FilteringSelect_label"
+            bundleKey="extn_Store_Distance" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="extn_filteringselect_Store_Distance"/>
+        <BundleEntry
+            bundleEntryId="extn_listStore_view_Quantity_View_name"
+            bundleKey="Quantity" bundleValueFn="_scSimpleBundle"
+            property="name" type="WIDGET" uId="extn_listStore_view_Quantity"/>
+    </BundleEntries>
+</ScreenBundle>

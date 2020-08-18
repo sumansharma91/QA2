@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ReturnsPortletExtn"
+        extnPackage="extn.home.portlets"
+        originalScreen="isccs.home.portlets.ReturnsPortlet"
+        originalScreenPackage="isccs.home.portlets" type="diffrential">
+        <Items>
+            <TextField _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txtReturnPhoneNo"
+                label="$(_scSimpleBundle:extn_Order_)" uId="extn_textfield_OrderNo">
+                <BindingData>
+                    <TargetBindings>
+                        <TargetBinding namespace="getReturnOrderList"
+                            path="Order.OrderLine.DerivedFrom.OrderNo" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                    <SourceBinding namespace="screenInput" path="Order.OrderLine.DerivedFrom.OrderNo"/>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtReturnPhoneNo" renderHidden="true"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

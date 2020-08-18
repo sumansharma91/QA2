@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OrderList TotalOrderList="1">
+<Order DraftOrderFlag="" OrderHeaderKey="">
+<OrderLines>
+<OrderLine OrderLineKey="" OrderedQty="">
+<OrderStatuses>
+<OrderStatus Status="" OrderLineKey=""   StatusQty="" TotalQuantity="" />
+</OrderStatuses>
+</OrderLine>
+</OrderLines>
+</Order>
+</OrderList>

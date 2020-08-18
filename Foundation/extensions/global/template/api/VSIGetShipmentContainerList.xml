@@ -1,0 +1,8 @@
+<Containers>
+<Container ContainerNo="" ActualWeight="" ShipmentKey="" ShipmentContainerKey="" IsManifested="" HasOtherContainers="">
+<Extn ExtnParcelType=""/>
+<ContainerDetails>
+<ContainerDetail ShipmentKey="" ShipmentContainerKey="" UnitOfMeasure="" Quantity="" ProductClass="" ItemID="" ContainerDetailsKey=""/>
+</ContainerDetails>
+</Container>
+</Containers>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="MobileHomeExtn"
+        extnPackage="extn.mobile.home"
+        originalScreen="wsc.mobile.home.MobileHome"
+        originalScreenPackage="wsc.mobile.home" type="diffrential">
+        <Items>
+            <Label _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblPickup" value="$(_scSimpleBundle:extn_Orders_for_Pickup)"/>
+            <Label _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblShip" value="$(_scSimpleBundle:extn_Orders_for_Shipping)"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

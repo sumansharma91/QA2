@@ -1,0 +1,17 @@
+<Organization AccountWithHub="" ActivateFlag=""
+	AssignedColonyId="" AuthorityType="" BillingAddressKey=""
+	CapacityOrganizationCode="" CatalogOrganizationCode=""
+	ContactAddressKey="" CorporateAddressKey="" CreatorOrganizationKey=""
+	CustomerMaintainedExternally="" CustomerMasterOrganizationCode=""
+	DunsNumber="" InheritOrgConfig="" InventoryKeptExternally=""
+	InventoryOrganizationCode="" InventoryPublished="" IsHubOrganization=""
+	IsLegalEntity="" IsSourcingKept="" IsTemplate="" IssuingAuthority=""
+	ItemXrefRule="" LocaleCode="" OrganizationCode="" OrganizationKey=""
+	OrganizationName="" OrganizationSuffix="" ParentOrganizationCode=""
+	PasswordPolicyKey="" PaymentProcessingReqd="" PricingOrganizationCode=""
+	PrimaryEnterpriseKey="" PrimarySicCode="" PrimaryUrl=""
+	ResourceIdentifier="" StoreConfigOrganizationCode=""
+	SupplyDemandKeptExternally="" SupplyKeptExternally="" TaxExemptFlag=""
+	TaxExemptionCertificate="" TaxJurisdiction="" TaxpayerId=""
+	XrefAliasType="" XrefOrganizationCode="">
+</Organization>

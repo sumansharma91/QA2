@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="CustomerEditorRTExtn"
+        extnPackage="extn.editors"
+        originalScreen="isccs.editors.CustomerEditorRT"
+        originalScreenPackage="isccs.editors" type="diffrential">
+        <Items>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lnk_RT_CreateBusiness" renderHidden="false"/>
+            <Link _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="lnk_RT_ManageConsumer"
+                class="relatedTaskLink" label="$(_scSimpleBundle:blank)"
+                uId="extn_linkManageConsumer" value="$(_scSimpleBundle:Action_TITLE_ManageConsumer)"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber
+                    description="Initialize function to hide widgets"
+                    eventId="afterScreenInit" isExtn="true" sequence="51">
+                    <Handler methodName="extn_init"/>
+                </Subscriber>
+                <Subscriber eventId="extn_linkManageConsumer_onClick"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="lnk_RT_ManageConsumer_OnClickHandler"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+    </ScreenExtension>
+</ExtensionMetaData>

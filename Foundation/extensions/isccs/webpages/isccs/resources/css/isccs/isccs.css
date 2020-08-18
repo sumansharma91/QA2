@@ -1,0 +1,43 @@
+.isccs .primaryInformationCouponLookup {
+  font-weight: bold;
+  font-family: Arial, Tahoma, Verdana, sans-serif;
+  font-size: 1.7em;
+  color: #ffffff;
+  display: inline-block;
+  padding: 5px;
+  width: 99%;
+  background-color: #005475;
+}
+.isccs .buttonCloseCouponLookup{
+	font-weight: bold;
+	position: absolute;
+	right: 5%;
+}
+.isccs .giftCardFulfillmentGrid {
+	height: 15%;
+}
+
+.relative {
+	float:right;
+}
+.isccs .buttonCouponLookup{
+	font-weight: bold;
+}
+
+.isccsScreen .cancellationLabelMessage{
+  font-family: Arial, Tahoma, Verdana, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1em;
+  display: block;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  border: 2px solid #0075a3;
+  overflow: hidden;
+  position: relative;
+  width: auto;
+  background: #ffffec;
+  border: 2px solid #dd731c;
+  padding: 2px;
+}

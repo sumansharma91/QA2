@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="PaymentCapture_CreditCardExtn"
+        extnPackage="extn.common.paymentCapture"
+        originalScreen="isccs.common.paymentCapture.PaymentCapture_CreditCard"
+        originalScreenPackage="isccs.common.paymentCapture" type="diffrential">
+        <Items>
+            <ContentPane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="padssHolder" renderHidden="true"/>
+            <FilteringSelect _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="cmbCardType"
+                renderHidden="true" required="false"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtDisplayCreditCardNo" renderHidden="true"/>
+            <TextField _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="txtDisplayCreditCardNo"
+                label="$(_scSimpleBundle:CardNumber)"
+                renderHidden="false" required="true" uId="extn_cardNumber">
+                <BindingData>
+                    <SourceBinding namespace="paymentCapture_Output" path="Order.PaymentMethod.CreditCardNo"/>
+                    <TargetBindings>
+                        <TargetBinding namespace="PaymentCapture_input"
+                            path="PaymentMethod.CreditCardNo" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtCVV" renderHidden="false"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

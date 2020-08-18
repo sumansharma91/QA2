@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle screenBundleId="extn.order.details.OrderSummaryExtnBundle" screenId="extn.order.details.OrderSummaryExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="extn_datalabel_OrderDateDisplay_DataLabel_label"
+            bundleKey="OrderDate" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_datalabel_OrderDateDisplay"/>
+        <BundleEntry
+            bundleEntryId="extn_datalabel_Order_Date_DataLabel_label"
+            bundleKey="OrderDate" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="extn_datalabel_Order_Date"/>
+        <BundleEntry
+            bundleEntryId="extn_datalabel_Order_Date_DataLabel_title"
+            bundleKey="OrderDate" bundleValueFn="_scBundle"
+            property="title" type="WIDGET" uId="extn_datalabel_Order_Date"/>
+        <BundleEntry
+            bundleEntryId="extn_datalabel_Healthy_Awards_DataLabel_label"
+            bundleKey="extn_Healthy_Awards_"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_datalabel_Healthy_Awards"/>
+        <BundleEntry bundleEntryId="extn_datalabel_Name_DataLabel_label"
+            bundleKey="Name" bundleValueFn="_scBundle" property="label"
+            type="WIDGET" uId="extn_datalabel_Name"/>
+        <BundleEntry bundleEntryId="extn_datalabel_Name_DataLabel_title"
+            bundleKey="blank" bundleValueFn="_scSimpleBundle"
+            property="title" type="WIDGET" uId="extn_datalabel_Name"/>
+        <BundleEntry bundleEntryId="extn_datalabel_Name_DataLabel_value"
+            bundleKey="blank" bundleValueFn="_scSimpleBundle"
+            property="value" type="WIDGET" uId="extn_datalabel_Name"/>
+        <BundleEntry bundleEntryId="lblOrderNo_Label_label"
+            bundleKey="blank" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="lblOrderNo"/>
+    </BundleEntries>
+</ScreenBundle>

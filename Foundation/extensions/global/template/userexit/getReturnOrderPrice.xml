@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 
+Licensed Materials - Property of IBM
+IBM Sterling Selling And Fulfillment Suite
+(C) Copyright IBM Corp. 2005, 2013 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ -->
+<Order DocumentType="" EnterpriseCode="" OrderHeaderKey="" OrderNo="" OrderType="" EntryType="">
+	<OrderLines>
+		<OrderLine OrderLineKey="" PrimeLineNo="" SubLineNo="" DerivedFromOrderHeaderKey=""
+			DerivedFromOrderLineKey="" DerivedFromOrderReleaseKey="" OrderedQty="" IsBlindLine="" ReturnReason="">
+			<LinePriceInfo UnitPrice="" ListPrice="" />
+			<Item ItemID="" ProductClass="" UnitOfMeasure=""/>
+			<LineCharges>
+				<LineCharge ChargeAmount="" ChargeCategory="" ChargeName="" ChargePerLine=""
+					ChargePerUnit="" IsBillable="" IsDiscount="" IsManual="" IsRefundable=""
+					IsShippingCharge="" Reference=""/>
+			</LineCharges>
+			<Promotions>
+				<Promotion DenialReason="" Description="" PromotionApplied="" PromotionId=""
+					PromotionKey="" PromotionType=""/>
+			</Promotions>
+			<Awards>
+				<Award AwardAmount="" AwardApplied="" AwardId="" AwardKey="" AwardType=""
+					ChargeCategory="" ChargeName="" DenialReason="" Description=""
+					IsPromotionOnOrder="" IsPromotionOnOrderLine="" PosReasonCode=""
+					PromotionId="" PromotionKey=""/>
+			</Awards>
+			<LineTaxes/>
+		</OrderLine>
+	</OrderLines>
+	<HeaderCharges>
+		<HeaderCharge ChargeAmount="" ChargeCategory="" ChargeName="" IsBillable=""
+			IsDiscount="" IsManual="" IsRefundable="" IsShippingCharge="" Reference=""/>
+	</HeaderCharges>
+	<HeaderTaxes>
+		<HeaderTax ChargeCategory="" ChargeName="" Reference1="" Reference2="" Reference3="" Tax="" TaxName="" TaxPercentage="" TaxableFlag=""/>
+	</HeaderTaxes>
+	<Promotions>
+		<Promotion DenialReason="" Description="" ExclusivityId="" ExclusivityType=""
+			IsExternal="" Priority="" PromotionApplied="" PromotionCategory=""
+			PromotionGroup="" PromotionId="" PromotionKey="" PromotionType=""/>
+	</Promotions>
+	<Awards>
+		<Award AwardAmount="" AwardApplied="" AwardId="" AwardKey="" AwardType=""
+			ChargeCategory="" ChargeName="" DenialReason="" Description=""
+			IsPromotionOnOrder="Y" PosReasonCode="" PromotionId="" PromotionKey=""/>
+	</Awards>
+</Order>

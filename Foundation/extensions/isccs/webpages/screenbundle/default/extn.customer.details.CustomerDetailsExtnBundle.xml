@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.customer.details.CustomerDetailsExtnBundle" screenId="extn.customer.details.CustomerDetailsExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="extn_pnlLoyaltyDetails_ContentPane_title"
+            bundleKey="extn_Loyalty_Details"
+            bundleValueFn="_scSimpleBundle" property="title"
+            type="WIDGET" uId="extn_pnlLoyaltyDetails"/>
+        <BundleEntry bundleEntryId="extn_datalabel_VIP_DataLabel_label"
+            bundleKey="extn_VIP" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_datalabel_VIP"/>
+        <BundleEntry bundleEntryId="lblDayPhone_DataLabel_label"
+            bundleKey="extn_Primary_Phone" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="lblDayPhone"/>
+        <BundleEntry
+            bundleEntryId="extn_datalabel_LoyaltyCustomer_DataLabel_label"
+            bundleKey="extn_Loyalty_Customer"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_datalabel_LoyaltyCustomer"/>
+        <BundleEntry
+            bundleEntryId="extn_datalabel_HealthyAwards_DataLabel_label"
+            bundleKey="extn_Healthy_Awards_" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="extn_datalabel_HealthyAwards"/>
+        <BundleEntry
+            bundleEntryId="extn_datalabel_Gender_DataLabel_label"
+            bundleKey="extn_Gender" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="extn_datalabel_Gender"/>
+        <BundleEntry
+            bundleEntryId="extn_datalabel_Ship_Preference_DataLabel_label"
+            bundleKey="extn_Ship_Preference"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_datalabel_Ship_Preference"/>
+        <BundleEntry
+            bundleEntryId="extn_datalabel_Tax_Exempt_DataLabel_label"
+            bundleKey="extn_Tax_Exempt" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_datalabel_Tax_Exempt"/>
+        <BundleEntry
+            bundleEntryId="extn_HealthyRewardPoints_DataLabel_label"
+            bundleKey="extn_HealthyRewardPoints"
+            bundleValueFn="_scBundle" property="label" type="WIDGET" uId="extn_HealthyRewardPoints"/>
+		<BundleEntry
+            bundleEntryId="extn_datalabel_Customer_Type_DataLabel_label"
+            bundleKey="CustomerType" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="extn_datalabel_Customer_Type"/>
+        <BundleEntry
+            bundleEntryId="extn_datalabel_LoyaltyTier_DataLabel_label"
+            bundleKey="extn_Loyalty_Tier"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_datalabel_LoyaltyTier"/>
+    </BundleEntries>
+</ScreenBundle>

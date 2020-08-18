@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="PaymentMethodExtn"
+        extnPackage="extn.payment.confirmation"
+        originalScreen="isccs.payment.confirmation.PaymentMethod"
+        originalScreenPackage="isccs.payment.confirmation" type="diffrential">
+        <Items>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lnkEdit"
+                disabled="false" renderHidden="false"/>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lnkHideAuths" renderHidden="false"/>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lnkShowAuths" renderHidden="true"/>
+            <GridX _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="listAuths"
+                class="paymentTransactions" renderHidden="false">
+                <Structure>
+                    <Layout>
+                        <View _sc_extensibility_moveOrder="1"
+                            _sc_extensibility_operation="insert"
+                            _sc_extensibility_position="before"
+                            _sc_extensibility_referenceUId="clmAuthCollected"
+                            field="extn_Response_Code"
+                            name="$(_scSimpleBundle:extn_Response_Code)"
+                            uId="extn_listAuths_view_Response_Code" width="15%"/>
+                        <View _sc_extensibility_operation="change"
+                            _sc_extensibility_referenceUId="clmAuthDate"
+                            uId="clmAuthDate" width="20%"/>
+                    </Layout>
+                </Structure>
+            </GridX>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtCvv" disabled="true" renderHidden="true"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="afterScreenInit" isExtn="true" sequence="51">
+                    <Handler
+                        description="Checks whether this is a migrated order. If yes, disables actionable items" methodName="checkMigratedOrderFlag"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+    </ScreenExtension>
+</ExtensionMetaData>

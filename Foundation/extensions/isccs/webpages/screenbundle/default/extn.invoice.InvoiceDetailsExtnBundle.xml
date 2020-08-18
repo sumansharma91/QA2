@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle screenBundleId="extn.invoice.InvoiceDetailsExtnBundle" screenId="extn.invoice.InvoiceDetailsExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="extn_datalabel_Order_Date_DataLabel_label"
+            bundleKey="OrderDate" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_datalabel_Order_Date"/>
+        <BundleEntry
+            bundleEntryId="extn_datalabel_OrderNo_DataLabel_label"
+            bundleKey="extn_Order_" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_datalabel_OrderNo"/>
+        <BundleEntry
+            bundleEntryId="extn_datalabel_E_GiftCard_DataLabel_label"
+            bundleKey="extn_eGift_Card_number"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_datalabel_E_GiftCard"/>
+        <BundleEntry bundleEntryId="lblAdditionalData_DataLabel_label"
+            bundleKey="Shipment_No" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="lblAdditionalData"/>
+        <BundleEntry bundleEntryId="extn_datalabel_PIN_DataLabel_label"
+            bundleKey="extn_eGift_card_PIN"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_datalabel_PIN"/>
+    </BundleEntries>
+</ScreenBundle>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wizards>
+	
+	<!-- Below is the code for Acknowledge return -->
+	
+	<wizard id="extn.return.wizards.acknowledge.VSIAcknowledgeReturnWizard"
+		flowController="com.sterlingcommerce.ui.web.platform.wizard.SCUIDefaultWizardController"
+		independentPages="false">
+		<wizardEntities>
+			<wizardEntity category="Cat1" id="Page1"
+                impl="/platform/jsps/dojo/xapiajaxsuccesshandler.jsp"
+                last="true" screenId="extn.return.acknowledge.VSIAcknowledgeReturnHeader"
+                start="true" type="PAGE"/>
+		</wizardEntities>
+	</wizard>
+	
+	<!--  Gift Card Fulfillment Wizard -->
+	<wizard id="extn.order.wizards.giftCard.GiftCardFulfillmentWizard" flowController="com.sterlingcommerce.ui.web.platform.wizard.SCUIDefaultWizardController" independentPages="false" extensible="true">
+		<wizardEntities>
+			<wizardEntity id="Page1" screenId="extn.order.giftCard.GiftCardFulfillmentScreen" impl="/platform/jsps/dojo/xapiajaxsuccesshandler.jsp" start="true" last="true" type="PAGE" category="Cat1"/>
+		</wizardEntities>
+		<wizardTransitions />
+	</wizard>
+</wizards>

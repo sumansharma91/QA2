@@ -1,0 +1,12 @@
+<OrderList>
+<Order OrderDate="" OrderHeaderKey="" OrderNo="" OrderType="" >
+ <OrderLines>
+  <OrderLine OrderHeaderKey="" OrderLineKey="" LineType="" OrderedQty="" ShipNode="" PrimeLineNo="" SubLineNo="" MinLineStatus="" MaxLineStatus="" CustomerPONo="">
+  </OrderLine>
+ </OrderLines>
+ <OrderHoldTypes>
+<OrderHoldType HoldType="" OrderHeaderKey="" OrderLineKey="" Status="" StatusDescription="" TransactionId="" TransactionName="">
+  </OrderHoldType>
+  </OrderHoldTypes>
+</Order>
+</OrderList>

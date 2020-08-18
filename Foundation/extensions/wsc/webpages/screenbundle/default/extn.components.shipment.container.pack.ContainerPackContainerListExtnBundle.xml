@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.components.shipment.container.pack.ContainerPackContainerListExtnBundle" screenId="extn.components.shipment.container.pack.ContainerPackContainerListExtn">
+    <BundleEntries>
+        <BundleEntry bundleEntryId="lbl_containerWeightUOM_Label_label"
+            bundleKey="extn_Sequence" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="lbl_containerWeightUOM"/>
+        <BundleEntry bundleEntryId="extn_parcel_RadioButtonSet_label"
+            bundleKey="extn_Container_Options"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_parcel"/>
+        <BundleEntry
+            bundleEntryId="extn_parcel_RadioButtonSet_BindingData_RadioBinding_Envelope_Option_label"
+            bundleKey="extn_Envelope" bundleValueFn="_scSimpleBundle"
+            childPath="RadioButtonSet_BindingData_RadioBinding_Envelope_Option"
+            property="label" type="WIDGET" uId="extn_parcel"/>
+        <BundleEntry
+            bundleEntryId="extn_parcel_RadioButtonSet_BindingData_RadioBinding_Carton_Option_label"
+            bundleKey="extn_Carton" bundleValueFn="_scSimpleBundle"
+            childPath="RadioButtonSet_BindingData_RadioBinding_Carton_Option"
+            property="label" type="WIDGET" uId="extn_parcel"/>
+        <BundleEntry bundleEntryId="extn_seq_DataLabel_label"
+            bundleKey="extn_Sequence_No" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_seq"/>
+    </BundleEntries>
+</ScreenBundle>

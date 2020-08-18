@@ -1,0 +1,8 @@
+<PricingRuleList>
+<PricingRule Currency="USD" Description="901 - 5% off Flora" DistributeAdjustment="Y" EndDateActive="2015-12-31T17:18:04-05:00" IgnoreRuleOnPriceLock="Y" IsCouponRule="Y" IsCustomRule="N" IsItemAttributeValueRule="N" IsItemRule="Y" ItemOperatorCode="ALL_ITEMS" OrganizationCode="VSI-Cat" PricingRuleKey="20150922172300144269971" PricingRuleName="901" PricingStatus="ACTIVE" RuleCategory="PRICING" RuleType="COMBINATION" StartDateActive="2015-09-22T17:17:56-04:00">
+<Coupon CouponID="901" CouponKey="20150922172300144270014" OrganizationCode="VSI-Cat"/>
+<PricingRuleActionList>
+<PricingRuleAction Adjustment="-5.00" AdjustmentType="PERCENT" ApplyAdjustmentToRemainder="N" ChargeCategory="Discount" ChargeName="PROMO-901-5 PERCENT off Floral Items" Createprogid="Business_Center" Createts="2015-09-22T17:23:00-04:00" Createuserid="admin" Lockid="1" Modifyprogid="Business_Center" Modifyts="2015-09-23T13:19:24-04:00" Modifyuserid="admin" PricingRuleActionKey="20150922172300144270016" PricingRuleKey="20150922172300144269971" WhenToApply="ALL"/>
+</PricingRuleActionList>
+</PricingRule>
+</PricingRuleList>

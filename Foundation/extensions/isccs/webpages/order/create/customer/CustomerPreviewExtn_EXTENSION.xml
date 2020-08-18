@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="CustomerPreviewExtn"
+        extnPackage="extn.order.create.customer"
+        originalScreen="isccs.order.create.customer.CustomerPreview"
+        originalScreenPackage="isccs.order.create.customer" type="diffrential">
+        <Namespaces>
+            <TargetNamespaces>
+                <Target description="Extended model to capture input"
+                    isExtn="true"
+                    scExtensibilityArrayItemId="extn_TargetNamespaces_1" value="extn_selectedRow_input"/>
+            </TargetNamespaces>
+            <SourceNamespaces>
+                <Source isExtn="true"
+                    scExtensibilityArrayItemId="extn_SourceNamespaces_7" value="extn_getOrgList_Output"/>
+                <Source
+                    description="customer details additional adresses"
+                    isExtn="true"
+                    scExtensibilityArrayItemId="extn_SourceNamespaces_8" value="extn_getCompleteCustomerDetails_output"/>
+            </SourceNamespaces>
+        </Namespaces>
+        <Items>
+            <Link _sc_extensibility_moveOrder="27"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_textfield_Tax_Exempt"
+                uId="extn_link_loyaltyDetails" value="$(_scSimpleBundle:extn_Loyalty_Details)"/>
+            <FilteringSelect _sc_extensibility_moveOrder="24"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_datalabel_CustomerType"
+                label="$(_scSimpleBundle:extn_Ship_Preference)"
+                renderHidden="true" uId="extn_filteringselect_ShipPreference">
+                <BindingData>
+                    <SourceBinding namespace="Customer" path="Customer.Extn.ExtnPreferredCarrier"/>
+                    <TargetBindings>
+                        <TargetBinding namespace="selectedRow_input"
+                            path="Order.SCAC" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                        <TargetBinding
+                            namespace="extn_selectedRow_input"
+                            path="Order.SCAC" scExtensibilityArrayItemId="extn_TargetBindings_1"/>
+                    </TargetBindings>
+                    <OptionsBinding addEmptyOption="true"
+                        descriptionField="OrganizationCode"
+                        namespace="extn_getOrgList_Output"
+                        path="OrganizationList.Organization" valueField="OrganizationName"/>
+                </BindingData>
+            </FilteringSelect>
+            <TextField _sc_extensibility_moveOrder="25"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_filteringselect_ShipPreference"
+                label="$(_scSimpleBundle:extn_Tax_exempt_ID)" uId="extn_textfield_Tax_Exempt">
+                <BindingData>
+                    <SourceBinding namespace="Customer" path="Customer.Extn.ExtnTaxExemptionCode"/>
+                    <TargetBindings>
+                        <TargetBinding namespace="selectedRow_input"
+                            path="Order.TaxExemptionCertificate" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                        <TargetBinding
+                            namespace="extn_selectedRow_input"
+                            path="Order.TaxExemptionCertificate" scExtensibilityArrayItemId="extn_TargetBindings_1"/>
+                    </TargetBindings>
+                </BindingData>
+            </TextField>
+            <DataLabel _sc_extensibility_moveOrder="3"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lblOrganizationCode"
+                label="$(_scBundle:extn_Healthy_Awards_)"
+                uId="extn_datalabelHealthyAwardsNo" value="$(_scSimpleBundle:blank)">
+                <BindingData>
+                    <SourceBinding namespace="Customer" path="Customer.CustomerID"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_moveOrder="23"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_datalabel_CustomerType"
+                label="$(_scBundle:extn_Gender)" uId="extn_datalabel_Gender">
+                <BindingData>
+                    <SourceBinding namespace="customerContactModel" path="ExtnGender"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_moveOrder="22"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="email"
+                class="customerSearchResults"
+                label="$(_scSimpleBundle:CustomerType)"
+                renderHidden="true" uId="extn_datalabel_CustomerType">
+                <BindingData>
+                    <SourceBinding namespace="Customer" path="Customer.CustomerType"/>
+                </BindingData>
+            </DataLabel>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber description="updateShipPreference"
+                    eventId="extn_filteringselect_ShipPreference_onBlur"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="updateShipPreference"/>
+                </Subscriber>
+                <Subscriber eventId="extn_textfield_Tax_Exempt_onChange"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="updateTaxExamptID"/>
+                </Subscriber>
+                <Subscriber eventId="extn_link_loyaltyDetails_onClick"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="showLoyaltyDetails"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Init>
+                <MashupRef extnType="ADD" mashupId="getCarrierList"
+                    mashupRefId="extn_getCarrierListRefID" sourceNamespace="extn_getOrgList_Output"/>
+                <MashupRef callSequence="2" extnType="ADD"
+                    mashupId="customerIdentification_getCompleteCustomerDetails"
+                    mashupRefId="getCompleteCustomerDetails"
+                    sequence="2" sourceNamespace="Customer"/>
+                <MashupRef extnType="ADD"
+                    mashupId="customerIdentification_getCompleteCustomerDetails"
+                    mashupRefId="extn_getCompleteCustomerDetails" sourceNamespace="extn_getCompleteCustomerDetails_output"/>
+            </Init>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

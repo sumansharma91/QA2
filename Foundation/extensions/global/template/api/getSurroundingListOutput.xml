@@ -1,0 +1,8 @@
+<GetSurroundingList>
+<ShipToAddress ZipCode="" Country="" State="" City="" />
+<NodeList>
+<Node ShipnodeKey="" ShipNode="" OwnerKey="" NodeType="" Localecode="" IdentifiedByParentAs="" DistanceFromShipToAddress="" Description="">
+<ShipNodePersonInfo />
+</Node>
+</NodeList>
+</GetSurroundingList>

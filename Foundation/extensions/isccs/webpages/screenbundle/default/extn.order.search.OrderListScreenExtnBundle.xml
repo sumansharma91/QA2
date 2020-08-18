@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.order.search.OrderListScreenExtnBundle" screenId="extn.order.search.OrderListScreenExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="extn_listGrid_view_Order_Channel_View_name"
+            bundleKey="extn_Order_Channel"
+            bundleValueFn="_scSimpleBundle" property="name"
+            type="WIDGET" uId="extn_listGrid_view_Order_Channel"/>
+        <BundleEntry
+            bundleEntryId="extn_listGrid_view_Fulfillment_Method_View_name"
+            bundleKey="extn_Fulfillment_Method"
+            bundleValueFn="_scSimpleBundle" property="name"
+            type="WIDGET" uId="extn_listGrid_view_Fulfillment_Method"/>
+    </BundleEntries>
+</ScreenBundle>

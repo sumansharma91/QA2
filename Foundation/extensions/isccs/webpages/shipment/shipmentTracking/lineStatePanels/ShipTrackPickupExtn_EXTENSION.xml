@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ShipTrackPickupExtn"
+        extnPackage="extn.shipment.shipmentTracking.lineStatePanels"
+        originalScreen="isccs.shipment.shipmentTracking.lineStatePanels.ShipTrackPickup"
+        originalScreenPackage="isccs.shipment.shipmentTracking.lineStatePanels" type="diffrential">
+        <Items>
+            <ContentPane _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="lblNodeValue" uId="extn_pnlTrackingNo"/>
+            <DataLabel _sc_extensibility_moveOrder="3"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_pnlTrackingNo"
+                label="$(_scBundle:extn_Transferred_From)" uId="extn_TransferredFrom">
+                <BindingData>
+                    <SourceBinding namespace="TrackingData" path="ShipNode.FromNodeDescription"/>
+                </BindingData>
+            </DataLabel>
+            <Link ImageAlt="$(_scSimpleBundle:Label_TrackingNo)"
+                _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="extn_pnlTrackingNo"
+                aria_label="Click on the link to track the shipment"
+                class="linkFormAlign"
+                label="$(_scSimpleBundle:Label_TrackingNo)"
+                scuiDataType="Text-40"
+                title="$(_scSimpleBundle:Label_TrackingNo)" uId="extn_lnkTrackingNo">
+                <BindingData>
+                    <SourceBinding namespace="TrackingData" path="ContainerDetail.Container.TrackingNo"/>
+                </BindingData>
+            </Link>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="afterScreenInit" isExtn="true" sequence="51">
+                    <Handler methodName="setTrackingInfo"/>
+                </Subscriber>
+                <Subscriber eventId="extn_lnkTrackingNo_onClick"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="openTrackingUrl"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Behavior>
+                <MashupRef extnType="ADD"
+                    mashupId="lineTrack_getOrderLineList" mashupRefId="extn_getOrderLineList"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

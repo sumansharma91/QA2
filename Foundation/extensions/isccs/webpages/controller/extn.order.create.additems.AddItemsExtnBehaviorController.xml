@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.order.create.additems.AddItemsExtnBehaviorController"
+    requestMethodSupported="POST" screenId="extn.order.create.additems.AddItemsExtn">
+    <MashupRefs>
+        <MashupRef extnType="MODIFY"
+            mashupId="additems_modifyFulfillmentOptions"
+            mashupRefId="modifyFulfillmentOptions" permissionId=""/>
+        <MashupRef extnType="ADD"
+            mashupId="additems_getCompleteItemList"
+            mashupRefId="getCompleteItemList" permissionId=""/>
+        <MashupRef extnType="ADD"
+            mashupId="additems_relatedItems_getCompleteItemList"
+            mashupRefId="getCompleteItemList_relatedItem" permissionId=""/>
+    </MashupRefs>
+</Controller>

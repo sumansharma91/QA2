@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="FSPickupScreenExtn"
+        extnPackage="extn.order.fulfillmentSummary"
+        originalScreen="isccs.order.fulfillmentSummary.FSPickupScreen"
+        originalScreenPackage="isccs.order.fulfillmentSummary" type="diffrential">
+        <Items>
+            <Button _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="changeToShipping"
+                disabled="true" renderHidden="false" showLabel="true"/>
+            <Button _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="changeToDelivery"
+                disabled="true" renderHidden="true"/>
+            <Button _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="changePickupOptions" resourceId="VSIPICKFSOPT"/>
+            <Button _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="pickupDate" resourceId="VSIPICKFSOPT"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="OLST_listGrid_ScRowSelect"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="extn_InitScreen"/>
+                </Subscriber>
+                <Subscriber eventId="OLST_listGrid_ScRowDeselect"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="extn_InitScreen"/>
+                </Subscriber>
+                <Subscriber eventId="OLST_listGrid_ScHeaderSelect"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="extn_InitScreen"/>
+                </Subscriber>
+                <Subscriber description="selectAllRows"
+                    eventId="OLST_listGrid_afterPagingload"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="selectAllRows"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+    </ScreenExtension>
+</ExtensionMetaData>

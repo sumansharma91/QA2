@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.order.cancel.CancelOrderListScreenExtnBundle" screenId="extn.order.cancel.CancelOrderListScreenExtn">
+    <BundleEntries>
+        <BundleEntry bundleEntryId="tblColProductAddItems_View_name"
+            bundleKey="extn_Item" bundleValueFn="_scSimpleBundle"
+            property="name" type="WIDGET" uId="tblColProductAddItems"/>
+    </BundleEntries>
+</ScreenBundle>

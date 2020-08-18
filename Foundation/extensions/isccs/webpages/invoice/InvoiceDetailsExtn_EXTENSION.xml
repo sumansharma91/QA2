@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="InvoiceDetailsExtn"
+        extnPackage="extn.invoice"
+        originalScreen="isccs.invoice.InvoiceDetails"
+        originalScreenPackage="isccs.invoice" type="diffrential">
+        <Items>
+            <DataLabel _sc_extensibility_moveOrder="3"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_datalabel_OrderNo"
+                label="$(_scSimpleBundle:OrderDate)" uId="extn_datalabel_Order_Date">
+                <BindingData>
+                    <SourceBinding
+                        namespace="getOrderInvoiceDetails_output" path="InvoiceDetail.InvoiceHeader.Order.OrderDate"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_moveOrder="5"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="lblInvoiceCreated" uId="extn_datalabel_Order_Date"/>
+            <DataLabel _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="lblInvoiceCreated"
+                label="$(_scSimpleBundle:extn_Order_)" uId="extn_datalabel_OrderNo">
+                <BindingData>
+                    <SourceBinding
+                        namespace="getOrderInvoiceDetails_output" path="InvoiceDetail.InvoiceHeader.Order.OrderNo"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_moveOrder="4"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_datalabel_Order_Date"
+                label="$(_scSimpleBundle:extn_eGift_Card_number)" uId="extn_datalabel_E_GiftCard">
+                <BindingData>
+                    <SourceBinding
+                        dynamicBindingFunc="getGiftCardNumber"
+                        namespace="getOrderInvoiceDetails_output" path="InvoiceDetail.InvoiceHeader.CollectionDetails.CollectionDetail.PaymentMethod.SvcNo"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblAdditionalData" label="$(_scSimpleBundle:Shipment_No)"/>
+            <DataLabel _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_datalabel_OrderNo" uId="lblAdditionalData"/>
+            <DataLabel _sc_extensibility_moveOrder="6"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="lblAdditionalData"
+                label="$(_scSimpleBundle:extn_eGift_card_PIN)"
+                resourceId="VSIGCPIN" uId="extn_datalabel_PIN">
+                <BindingData>
+                    <SourceBinding dynamicBindingFunc="getGiftCardPin"
+                        namespace="getOrderInvoiceDetails_output" path="InvoiceDetail.InvoiceHeader.CollectionDetails.CollectionDetail.PaymentMethod.PaymentReference2"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblInvoiceNo" renderHidden="true"/>
+            <DataLabel _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblInvoiceDate" renderHidden="true"/>
+        </Items>
+        <MashupRefs>
+            <Init>
+                <MashupRef callSequence="1"
+                    mashupId="invoiceDetails_getOrderInvoiceDetails"
+                    mashupRefId="getOrderInvoiceDetails" sequence="5" sourceNamespace="getOrderInvoiceDetails_output"/>
+                <MashupRef callSequence="1" extnType="ADD"
+                    mashupId="invoiceDetails_getOrderInvoiceDetails"
+                    mashupRefId="getOrderInvoiceDetails" sequence="5" sourceNamespace="getOrderInvoiceDetails_output"/>
+            </Init>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

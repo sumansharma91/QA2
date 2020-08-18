@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed Materials - Property of IBM
+  IBM Call Center for Commerce (5725-P82)
+  (C) Copyright IBM Corp. 2013 , 2015 All Rights Reserved.
+  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<MetaData version="1.0" xmlns="http://ibm.com/sterling/afc/cuf/tns"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ibm.com/sterling/afc/cuf/tns http://ibm.com/sterling/afc/cuf/CUFScreens ">
+    <Mashups>
+        <Mashup cached="PAGE"
+            description="Used to load carrier drop down for search criteria"
+            endpoint="EP_CONFIG" id="confirmShipment_getScacList"
+            mashupClassName="com.ibm.wsc.common.mashups.WSCBaseMashup"
+            mashuptype="XAPI" transactional="true">
+            <API Name="getScacList"/>
+            <APINamespace inputNS="getScacList_input" outputNS="getScacList_output"/>
+            <Input>
+                <Scac
+                    CallingOrganizationCode="xml:CurrentStore:/Store/@EnterpriseCode"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    IgnoreOrdering="N" MaximumRecords="">
+                    <OrderBy>
+                        <Attribute Name="ScacDesc"/>
+                    </OrderBy>
+                </Scac>
+            </Input>
+            <Template>
+                <ScacList>
+                    <Scac Scac="" ScacDesc="" ScacKey=""/>
+                </ScacList>
+            </Template>
+            <AlternateResourceIds>
+                <AlternateResourceId altResourceId="WSC000020"/>
+            </AlternateResourceIds>
+        </Mashup>
+        <Mashup cached="PAGE"
+            description="Used to read a property to determine if manifestation is at Container level or shipment level."
+            endpoint="EP_CONFIG" id="confirmShipment_getProperty"
+            mashupClassName="com.ibm.wsc.common.mashups.WSCBaseMashup"
+            mashuptype="XAPI" transactional="true">
+            <API Name="getProperty"/>
+            <APINamespace inputNS="getProperty_input" outputNS="getProperty_output"/>
+            <Input>
+                <GetProperty
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode" PropertyName="yfs.manifest.manifestAtContainerLevelForDomesticParcelShipment"/>
+            </Input>
+            <Template>
+                <GetProperty PropertyValue=""/>
+            </Template>
+            <AlternateResourceIds>
+                <AlternateResourceId altResourceId="WSC000020"/>
+            </AlternateResourceIds>
+        </Mashup>
+        <Mashup description="Get Shipment Container list based on SCAC"
+            endpoint="EP_CONFIG"
+            id="confirmShipment_getShipmentContainerListCount"
+            mashupClassName="com.ibm.wsc.common.mashups.WSCBaseMashup"
+            mashuptype="XAPI" transactional="true">
+            <API Name="getShipmentContainerList"/>
+            <APINamespace inputNS="getShipmentContainerList_input" outputNS="getShipmentContainerList_output"/>
+            <Input>
+                <Container
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode" MaximumRecords="">
+                    <Shipment
+                        EnterpriseCode="xml:CurrentStore:/Store/@EnterpriseCode"
+                        IsPackProcessComplete="Y"
+                        SCAC="xml:scControllerInput:/Scac/@value"
+                        ShipNode="xml:CurrentStore:/Store/@ShipNode" ShipmentConfirmUpdatesDone="N"/>
+                </Container>
+            </Input>
+            <Template>
+                <Containers TotalNumberOfRecords=""/>
+            </Template>
+            <AlternateResourceIds>
+                <AlternateResourceId altResourceId="WSC000020"/>
+            </AlternateResourceIds>
+        </Mashup>
+        <Mashup
+            description="Get Shipment Container list Count based on SCAC"
+            endpoint="EP_CONFIG"
+            id="confirmShipment_getShipmentContainerListCountByScac"
+            mashupClassName="com.ibm.wsc.shipment.confirm.ShipmentContainerListCountByScacMashup"
+            mashuptype="XAPI" transactional="true">
+            <API Name="getShipmentList"/>
+            <APINamespace inputNS="getShipmentList_input" outputNS="getShipmentList_output"/>
+            <Input>
+                <Shipment
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    EnterpriseCode="xml:CurrentStore:/Store/@EnterpriseCode"
+                    MaximumRecords="1"
+                    SCAC="xml:scControllerInput:/Scac/@value" ShipNode="xml:CurrentStore:/Store/@ShipNode"/>
+            </Input>
+            <Template>
+                <Shipments TotalNumberOfRecords="">
+                    <Shipment IsShipmentLevelIntegration=""
+                        ScacIntegrationRequired="" ShipmentKey=""/>
+                </Shipments>
+            </Template>
+            <AlternateResourceIds>
+                <AlternateResourceId altResourceId="WSC000020"/>
+            </AlternateResourceIds>
+        </Mashup>
+        <Mashup description="Get Shipment list based on SCAC"
+            endpoint="EP_CONFIG"
+            id="confirmShipment_CheckIsScacIntegratedByScac"
+            mashupClassName="com.ibm.wsc.common.mashups.WSCBaseMashup"
+            mashuptype="XAPI" transactional="true">
+            <API Name="getShipmentList"/>
+            <APINamespace inputNS="getShipmentList_input" outputNS="getShipmentList_output"/>
+            <Input>
+                <Shipment
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    EnterpriseCode="xml:CurrentStore:/Store/@EnterpriseCode"
+                    MaximumRecords="1"
+                    SCAC="xml:scControllerInput:/Scac/@value" ShipNode="xml:CurrentStore:/Store/@ShipNode"/>
+            </Input>
+            <Template>
+                <Shipments TotalNumberOfRecords="">
+                    <Shipment IsShipmentLevelIntegration=""
+                        ScacIntegrationRequired="" ShipmentKey=""/>
+                </Shipments>
+            </Template>
+            <AlternateResourceIds>
+                <AlternateResourceId altResourceId="WSC000020"/>
+            </AlternateResourceIds>
+        </Mashup>
+        <Mashup description="Get Shipment Container list based on SCAC"
+            endpoint="EP_CONFIG"
+            id="confirmShipment_getShipmentContainerDetailsByScac"
+            mashupClassName="com.ibm.wsc.shipment.confirm.ShipmentContainerDetailsByScacMashup"
+            mashuptype="XAPI" transactional="true">
+            <API Name="getShipmentContainerList"/>
+            <APINamespace inputNS="getShipmentContainerList_input" outputNS="getShipmentContainerList_output"/>
+            <Input>
+                <Container
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode" MaximumRecords="">
+                    <Shipment
+                        EnterpriseCode="xml:CurrentStore:/Store/@EnterpriseCode"
+                        IsPackProcessComplete="Y"
+                        SCAC="xml:scControllerInput:/Scac/@value"
+                        ShipNode="xml:CurrentStore:/Store/@ShipNode" ShipmentConfirmUpdatesDone="N"/>
+                </Container>
+            </Input>
+            <Template>
+                <Containers TotalNumberOfRecords="">
+                    <Container ContainerNo="" ShipmentContainerKey=""
+                        ShipmentKey="" TrackingNo="" TrackingURL="">
+                        <Shipment CarrierServiceCode=""
+                            DisplayOrderNo="" SCAC="" ScacAndService="" ShipmentNo=""/>
+                    </Container>
+                </Containers>
+            </Template>
+            <AlternateResourceIds>
+                <AlternateResourceId altResourceId="WSC000020"/>
+            </AlternateResourceIds>
+        </Mashup>
+        <Mashup description="Get Shipment Container list based on SCAC"
+            endpoint="EP_CONFIG"
+            id="confirmShipment_getShipmentListByScac"
+            mashupClassName="com.ibm.wsc.shipment.confirm.ShipmentListByScacMashup"
+            mashuptype="XAPI" transactional="true">
+            <API Name="getShipmentList"/>
+            <APINamespace inputNS="getShipmentList_input" outputNS="getShipmentList_output"/>
+            <Input>
+                <Shipment
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    EnterpriseCode="xml:CurrentStore:/Store/@EnterpriseCode"
+                    MaximumRecords="1"
+                    SCAC="xml:scControllerInput:/Scac/@value" ShipNode="xml:CurrentStore:/Store/@ShipNode"/>
+            </Input>
+            <Template>
+                <Shipments TotalNumberOfRecords="">
+                    <Shipment IsShipmentLevelIntegration=""
+                        ScacIntegrationRequired="" ShipmentKey=""/>
+                </Shipments>
+            </Template>
+            <AlternateResourceIds>
+                <AlternateResourceId altResourceId="WSC000020"/>
+            </AlternateResourceIds>
+        </Mashup>
+        <Mashup description="Get Shipment list based on SCAC"
+            endpoint="EP_CONFIG"
+            id="confirmShipment_getShipmentListForPackedStatusOnly"
+            mashupClassName="com.ibm.wsc.common.mashups.WSCBaseMashup"
+            mashuptype="XAPI" transactional="true">
+            <API Name="getShipmentList"/>
+            <APINamespace inputNS="getShipmentList_input" outputNS="getShipmentList_output"/>
+            <Input>
+                <Shipment
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    EnterpriseCode="xml:CurrentStore:/Store/@EnterpriseCode"
+                    MaximumRecords="" SCAC=""
+                    ShipNode="xml:CurrentStore:/Store/@ShipNode" ShipmentClosedFlag="N">
+                    <ComplexQuery>
+                        <Or>
+                            <Exp Name="Status" Value="1300"/>
+                        </Or>
+                    </ComplexQuery>
+                    <Containers>
+                        <Container IsPackProcessComplete="Y"/>
+                    </Containers>
+                </Shipment>
+            </Input>
+            <Template>
+                <Shipments>
+                    <Shipment EnterpriseCode="" ShipNode="" ShipmentKey=""/>
+                </Shipments>
+            </Template>
+            <AlternateResourceIds>
+                <AlternateResourceId altResourceId="WSC000020"/>
+            </AlternateResourceIds>
+        </Mashup>
+        <Mashup description="Get Shipment list based on SCAC"
+            endpoint="EP_CONFIG"
+            id="confirmShipment_getShipmentListForPackAndInPackingStatusOnly"
+            mashupClassName="com.ibm.wsc.common.mashups.WSCBaseMashup"
+            mashuptype="XAPI" transactional="true">
+            <API Name="getShipmentList"/>
+            <APINamespace inputNS="getShipmentList_input" outputNS="getShipmentList_output"/>
+            <Input>
+                <Shipment
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    EnterpriseCode="xml:CurrentStore:/Store/@EnterpriseCode"
+                    MaximumRecords="" SCAC=""
+                    ShipNode="xml:CurrentStore:/Store/@ShipNode" ShipmentClosedFlag="N">
+                    <ComplexQuery>
+                        <Or>
+                            <Exp Name="Status" Value="1300"/>
+                            <Exp Name="Status" Value="1100.70.06.70"/>
+                        </Or>
+                    </ComplexQuery>
+                    <Containers>
+                        <Container IsPackProcessComplete="Y"/>
+                    </Containers>
+                </Shipment>
+            </Input>
+            <Template>
+                <Shipments TotalNumberOfRecords="">
+                    <Shipment ShipmentKey=""/>
+                </Shipments>
+            </Template>
+            <AlternateResourceIds>
+                <AlternateResourceId altResourceId="WSC000020"/>
+            </AlternateResourceIds>
+        </Mashup>
+        <Mashup
+            description="Used to add containers to manifest and close the manifest"
+            endpoint="EP_CONFIG"
+            id="confirmShipment_addContainersToManifestAndConfirm"
+            mashupClassName="com.ibm.wsc.shipment.confirm.AddContainersToManifestAndConfirm"
+            mashuptype="XAPI" transactional="true">
+            <API Name="addAllContainersToManifest"/>
+            <APINamespace
+                inputNS="addContainersToManifestAndConfirm_input" outputNS="addContainersToManifestAndConfirm_output"/>
+            <Input>
+                <Container DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode">
+                    <Shipment
+                        EnterpriseCode="xml:CurrentStore:/Store/@EnterpriseCode"
+                        SCAC="" ShipNode="xml:CurrentStore:/Store/@ShipNode"/>
+                </Container>
+            </Input>
+            <Template>
+                <FailedContainers TotalFailures="">
+                    <Container ContainerNo="" ShipmentContainerKey=""
+                        ShipmentKey="" TrackingNo="">
+                        <Shipment OrderNo="" ShipmentNo=""/>
+                    </Container>
+                </FailedContainers>
+            </Template>
+            <AlternateResourceIds>
+                <AlternateResourceId altResourceId="WSC000020"/>
+            </AlternateResourceIds>
+        </Mashup>
+        <Mashup
+            description="Used to confirm a shipment by closing the manifest and marking the shipment as shipped."
+            endpoint="EP_CONFIG" id="confirmShipment_confirmShipment"
+            mashupClassName="com.ibm.wsc.common.mashups.WSCBaseMashup"
+            mashuptype="XAPI" transactional="true">
+            <API FlowName="VSISFSConfirmShipment"/>
+            <APINamespace inputNS="confirmShipment_input" outputNS="confirmShipment_output"/>
+            <Input>
+                <Shipment Action=""
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    EnterpriseCode="xml:CurrentStore:/Store/@EnterpriseCode"
+                    SCAC="" ShipNode="xml:CurrentStore:/Store/@ShipNode" ShipmentKey="">
+				<Containers>
+                <Container ShipmentKey=""  ShipmentContainerKey="" ContainerNo=""/>
+                </Containers>
+                </Shipment>
+            </Input>
+            <Template>
+                <Shipment EnterpriseCode="" SCAC="" ShipNode="" ShipmentKey=""/>
+            </Template>
+            <AlternateResourceIds>
+                <AlternateResourceId altResourceId="WSC000020"/>
+            </AlternateResourceIds>
+        </Mashup>
+        <!-- -->
+        <Mashup description="Get Shipment list based on SCAC"
+            endpoint="EP_CONFIG" id="confirmShipment_getShipmentList"
+            mashupClassName="com.ibm.wsc.common.mashups.WSCBaseMashup"
+            mashuptype="XAPI" transactional="true">
+            <API Name="getShipmentList"/>
+            <APINamespace inputNS="getShipmentList_input" outputNS="getShipmentList_output"/>
+            <Input>
+                <Shipment
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    EnterpriseCode="xml:CurrentStore:/Store/@EnterpriseCode"
+                    IsPackProcessComplete="Y" MaximumRecords="" SCAC=""
+                    ShipNode="xml:CurrentStore:/Store/@ShipNode" ShipmentClosedFlag="N">
+                    <ComplexQuery>
+                        <Or>
+                            <Exp Name="Status" QryType="FLIKE" Value="1300"/>
+                        </Or>
+                    </ComplexQuery>
+                </Shipment>
+            </Input>
+            <Template>
+                <Shipments>
+                    <Shipment EnterpriseCode="" ManifestKey=""
+                        ManifestNo="" ShipNode="" ShipmentKey="" ShipmentNo=""/>
+                </Shipments>
+            </Template>
+            <AlternateResourceIds>
+                <AlternateResourceId altResourceId="WSC000020"/>
+            </AlternateResourceIds>
+        </Mashup>
+        <!-- -->
+        <Mashup description="Get manifest list based on SCAC"
+            endpoint="EP_CONFIG" id="confirmShipment_getManifestList"
+            mashupClassName="com.ibm.wsc.common.mashups.WSCBaseMashup"
+            mashuptype="XAPI" transactional="true">
+            <API Name="getManifestList"/>
+            <APINamespace inputNS="getManifestList_input" outputNS="getManifestList_output"/>
+            <Input>
+                <Manifest
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    ManifestClosedFlag="N" MaximumRecords="" ShipNode="">
+                    <ComplexQuery>
+                        <Or>
+                            <Exp Name="" Value=""/>
+                        </Or>
+                    </ComplexQuery>
+                </Manifest>
+            </Input>
+            <Template>
+                <Manifests>
+                    <Manifest ManifestClosedFlag="N" ManifestDate=""
+                        ManifestKey="" ManifestNo="" ManifestStatus=""
+                        PickupSummaryNo="" PrintCount=""/>
+                </Manifests>
+            </Template>
+            <AlternateResourceIds>
+                <AlternateResourceId altResourceId="WSC000020"/>
+            </AlternateResourceIds>
+        </Mashup>
+        <!-- -->
+        <Mashup
+            description="Call closeManifest Api to close open manifest"
+            endpoint="EP_CONFIG" id="confirmShipment_closeManifest"
+            mashupClassName="com.ibm.wsc.common.mashups.WSCBaseMashup"
+            mashuptype="XAPI" transactional="true">
+            <API Name="closeManifest"/>
+            <APINamespace inputNS="closeManifest_input" outputNS="closeManifest_output"/>
+            <Input>
+                <Manifest
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode" ManifestKey=""/>
+            </Input>
+            <Template>
+                <Manifest/>
+            </Template>
+            <AlternateResourceIds>
+                <AlternateResourceId altResourceId="WSC000020"/>
+            </AlternateResourceIds>
+        </Mashup>
+    </Mashups>
+</MetaData>

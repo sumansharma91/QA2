@@ -1,0 +1,28 @@
+<OrderList>
+    <Order DocumentType="" EnteredBy="" EntryType="" OrderHeaderKey="" OrderType="" BillToKey="" ShipToKey="">
+        <OrderLines>
+            <OrderLine LineType="" DeliveryMethod="" OrderLineKey="" OrderedQty=""
+                OriginalOrderedQty="" ReturnReason="" ReturnableQty="" ShippedQuantity="">
+				<Schedules>
+					<Schedule ShipNode="" />
+				</Schedules>
+                <Item ItemID="" ProductClass="" UnitOfMeasure=""/>
+                <ItemDetails ItemID="">
+                    <PrimaryInformation IsReturnable=""/>
+                </ItemDetails>
+                <LineCharges>
+                    <LineCharge/>
+                </LineCharges>
+                <LineTaxes>
+                    <LineTax/>
+                </LineTaxes>
+            </OrderLine>
+        </OrderLines>
+        <HeaderCharges>
+            <HeaderCharge/>
+            <HeaderTax/>
+        </HeaderCharges>
+        <HeaderTaxes/>
+		<OverallTotals GrandTotal=""/>
+    </Order>
+</OrderList>

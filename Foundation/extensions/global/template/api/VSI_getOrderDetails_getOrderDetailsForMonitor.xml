@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OrderList TotalNumberOfRecords="" >
+	<Order CustomerFirstName="" CustomerPONo="" BillToID="" CustomerEMailID="" ExternalCustomerID="" OrderDate="" DocumentType="" EnterpriseCode=""  IsNewOrder=""  OrderHeaderKey="" OrderNo="" 
+			EntryType="" ReturnOrderHeaderKeyForExchange="" OrderPurpose="" MaxOrderStatus="" MinOrderStatus="" Status="" OrderType="" SellerOrganizationCode="">
+		<Extn ExtnPointsEarned="" />
+		<PriceInfo Currency="" EnterpriseCurrency="" ReportingConversionDate="" ReportingConversionRate=""/> 
+		<OrderLines>
+			<OrderLine OrderedQty=""  SCAC="" SubLineNo="" CustomerPONo="" CarrierServiceCode=""  OrderLineKey="" PrimeLineNo="" MinLineStatus="" MaxLineStatus=""  
+			   IsGWPInsert="" ShipNode="" ShipToID="" ShippingGroupID=""  Status="" DerivedFromOrderHeaderKey="" DerivedFromOrderLineKey="" ReshipParentLineKey="" ReturnReason="" DeliveryMethod="" FulfillmentType="" LineType="" >
+				<LinePriceInfo IsPriceLocked="" ListPrice="" TaxableFlag="" UnitPrice="" OrderedPricingQty=""  RepricingQty="" LineTotal="" />
+				<LineOverallTotals Charges="" Discount="" ExtendedPrice="" LineTotal="" OptionPrice="" PricingQty="" Tax="" UnitPrice=""/>
+				<Item ItemID=""  ItemDesc="" ItemSize="" UnitOfMeasure=""/>
+				<Schedules>
+				<Schedule ProductAvailabilityDate=""/>
+				</Schedules>
+				<ItemDetails>
+					<Extn ExtnItemSize="" ExtnActSkuID="" ExtnBrandTitle="" ExtnItemUOM="" ExtnItemType="" />
+				</ItemDetails>
+				<PersonInfoShipTo AddressLine1="" AddressLine2=""					
+					AddressLine3="" City="" Company="" Country=""					
+					DayPhone="" EMailID="" FirstName="" LastName="" MiddleName=""					
+					MobilePhone="" State="" Suffix="" Title="" ZipCode="" IsAddressesVerified="" PersonInfoKey="" />
+				<LineCharges>
+					  <LineCharge ChargeAmount="" ChargeCategory="" ChargeName="" 
+							ChargeNameKey="" ChargePerLine="" ChargePerUnit="" 
+							InvoicedChargeAmount="" InvoicedChargePerLine="" 
+							InvoicedChargePerUnit="" IsBillable="" IsDiscount="" IsManual="" 
+							Reference="" RemainingChargeAmount="" RemainingChargePerLine=""
+							RemainingChargePerUnit="" /> 
+				</LineCharges>
+				<LineTaxes>
+				   <LineTax ChargeCategory="" ChargeName="" ChargeNameKey="" InvoicedTax="" 
+					   Reference_1="" Reference_2="" Reference_3="" RemainingTax="" Tax="" 
+					   TaxName="" TaxPercentage="" /> 
+				</LineTaxes>
+				<AdditionalAddresses>
+					<AdditionalAddress AddressType="" >
+						<PersonInfo AddressLine1=""	AddressLine2="" AddressLine3=""
+							City=""	Company="" Country="" DayPhone="" EMailID=""
+							FirstName="" LastName="" MiddleName="" MobilePhone=""
+							PersonID="" Title="" State="" ZipCode=""/>
+					</AdditionalAddress>
+				</AdditionalAddresses>
+				<OrderDates>
+				<OrderDate/>
+				</OrderDates>
+			</OrderLine>
+		</OrderLines>
+	   <PersonInfoBillTo AddressLine1="" AddressLine2=""
+			AddressLine3="" City="" Company="" Country="" DayFaxNo=""
+			DayPhone="" Department="" EMailID="" FirstName="" JobTitle=""
+			LastName="" MiddleName="" MobilePhone="" State="" Suffix=""
+			Title="" ZipCode="" IsAddressesVerified="" PersonInfoKey="" />
+		<PersonInfoShipTo AddressLine1="" AddressLine2=""					
+			AddressLine3="" City="" Company="" Country=""					
+			DayPhone="" EMailID="" FirstName="" LastName="" MiddleName=""					
+			MobilePhone="" State="" Suffix="" Title="" ZipCode="" IsAddressesVerified="" PersonInfoKey="" />
+		<HeaderCharges>
+			<HeaderCharge ChargeAmount="" ChargeCategory="" ChargeName=""/>
+		</HeaderCharges>
+		<HeaderTaxes>
+			<HeaderTax Tax="" TaxName=""/>
+		</HeaderTaxes>
+		<Promotions>
+			<Promotion DenialReason="" Description="" PromotionApplied="" PromotionId="" PromotionKey="" PromotionType="">
+				<PricingRule  IsCouponRule="" IsCustomRule=""  IsItemRule="" IsManualRule=""  PricingRuleKey="" PricingRuleName="" PricingStatus="" Priority="" RuleCategory="" RuleType="" SellerOrganizationCode="" StartDateActive="" StartTime="">
+					<Coupon CouponID="" CouponKey="" IsExclusive="" OrganizationCode="" PricingRuleKey="" >
+						<Extn />
+					</Coupon>
+				</PricingRule>
+				<Extn />
+			</Promotion>
+		</Promotions>
+		<OrverallTotals LineSubTotal="" GrandShippingCharges="" GrandTax="" GrandTotal="" GrandDiscount="" />
+		<PaymentMethods>
+			<PaymentMethod PaymentType="" CreditCardType="" DisplayCreditCardNo="" PPaymentReference1="" PaymentReference3="" MaxChargeLimit="" DisplaySvcNo="" />
+		</PaymentMethods>
+	</Order>
+</OrderList>

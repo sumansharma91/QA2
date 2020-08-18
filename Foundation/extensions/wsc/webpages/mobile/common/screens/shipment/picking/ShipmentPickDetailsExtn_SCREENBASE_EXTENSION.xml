@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ShipmentPickDetailsExtn"
+        extnPackage="extn.mobile.common.screens.shipment.picking"
+        originalScreen="wsc.mobile.common.screens.shipment.picking.ShipmentPickDetails"
+        originalScreenPackage="wsc.mobile.common.screens.shipment.picking" type="diffrential">
+        <Items>
+            <DataLabel _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lbl_Products"
+                label="$(_scSimpleBundle:extn_Store_Order_No)" uId="extn_po_no">
+                <BindingData>
+                    <SourceBinding namespace="Shipment" path="Shipment.CustomerPoNo"/>
+                </BindingData>
+            </DataLabel>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

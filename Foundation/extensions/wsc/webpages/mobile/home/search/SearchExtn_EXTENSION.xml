@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="SearchExtn"
+        extnPackage="extn.mobile.home.search"
+        originalScreen="wsc.mobile.home.search.Search"
+        originalScreenPackage="wsc.mobile.home.search" type="diffrential">
+        <Items>
+            <TextField _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="txt_SearchOrderNo"
+                class="autoLabelZeroWidth longTextbox"
+                label="$(_scSimpleBundle:extn_Store_Order_number)" uId="extn_store_order_num">
+                <BindingData>
+                    <SourceBinding namespace="SavedSearchCriteria" path="Shipment.CustomerPoNo"/>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="getShipmentSearch_input"
+                            path="Shipment.CustomerPoNo" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </TextField>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="extn_store_order_num_onKeyUp"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="searchOrdersOnEnter"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+    </ScreenExtension>
+</ExtensionMetaData>

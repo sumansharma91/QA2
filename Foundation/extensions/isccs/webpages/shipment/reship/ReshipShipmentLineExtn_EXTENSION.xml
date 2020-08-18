@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ReshipShipmentLineExtn"
+        extnPackage="extn.shipment.reship"
+        originalScreen="isccs.shipment.reship.ReshipShipmentLine"
+        originalScreenPackage="isccs.shipment.reship" type="diffrential">
+        <Items>
+            <FilteringSelect _sc_extensibility_operation="change" _sc_extensibility_referenceUId="cmb_reshipReason"/>
+            <FilteringSelect _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="txt_qtyToReship"
+                label="$(_scSimpleBundle:Level_of_Service)" required="true" uId="extn_LevelOfService">
+                <BindingData>
+                    <SourceBinding
+                        namespace="extn_levelOfService_output" path="CarrierService"/>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="extn_changeOrderLineCarrier_input"
+                            path="Order.OrderLines.OrderLine.CarrierServiceCode" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                        <TargetBinding
+                            namespace="reshipOrderLines_input"
+                            path="Order.OrderLines.OrderLine.Reship_CarrierServiceCode" scExtensibilityArrayItemId="extn_TargetBindings_1"/>
+                    </TargetBindings>
+                    <OptionsBinding
+                        descriptionField="CarrierServiceDesc"
+                        namespace="extn_getCarrierServiceOptionsForOrdering_output"
+                        path="CarrierServiceList.CarrierService" valueField="CarrierServiceCode"/>
+                </BindingData>
+            </FilteringSelect>
+            <TextField _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="txt_qtyToReship"
+                label="$(_scSimpleBundle:extn_Tracking_Number)"
+                renderHidden="true" uId="extn_textfield_TrackingNumber">
+                <BindingData>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="reshipOrderLines_input"
+                            path="Order.OrderLines.OrderLine.Extn.ExtnOriginalTrackingNo" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                        <TargetBinding namespace="validateReship_input"
+                            path="Order.OrderLines.OrderLine.Extn.ExtnOriginalTrackingNo" scExtensibilityArrayItemId="extn_TargetBindings_1"/>
+                    </TargetBindings>
+                    <SourceBinding namespace="screenInput" path="Order.OrderLine.Extn.ExtnOriginalTrackingNo"/>
+                </BindingData>
+            </TextField>
+        </Items>
+        <Namespaces>
+            <SourceNamespaces>
+                <Source
+                    description="This is to hold Carrier Service data for Ordering"
+                    isExtn="true"
+                    scExtensibilityArrayItemId="extn_SourceNamespaces_6" value="extn_getCarrierServiceOptionsForOrdering_output"/>
+                <Source
+                    description="This is used to show the default Level of Service on Screen"
+                    isExtn="true"
+                    scExtensibilityArrayItemId="extn_SourceNamespaces_7" value="extn_levelOfService_output"/>
+                <Source isExtn="true"
+                    scExtensibilityArrayItemId="extn_SourceNamespaces_8" value="extn_getTrackingNo_CommonCode"/>
+            </SourceNamespaces>
+            <TargetNamespaces>
+                <Target
+                    description="This holds the carrierServiceCode of reship line"
+                    isExtn="true"
+                    scExtensibilityArrayItemId="extn_TargetNamespaces_4" value="extn_changeOrderLineCarrier_input"/>
+            </TargetNamespaces>
+        </Namespaces>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="cmb_reshipReason_onChange"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="showReshipReasonCode"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Init>
+                <MashupRef extnType="ADD"
+                    mashupId="extn_TrackingNo_CommonCode"
+                    mashupRefId="extn_trackingNoCommonCode_RefID" sourceNamespace="extn_getTrackingNo_CommonCode"/>
+            </Init>
+            <Behavior>
+                <MashupRef extnType="MODIFY"
+                    mashupId="reshipProduct_reshipOrderLines" mashupRefId="reshipOrderLines"/>
+                <MashupRef extnType="ADD"
+                    mashupId="extn_changeOrderLineCarrier" mashupRefId="extn_changeCarrieronReshipOrderLines"/>
+                <MashupRef extnType="ADD"
+                    mashupId="extn_reshipShipmentLine_getCarrierServiceOptionsForOrdering" mashupRefId="extn_getCarrierServiceOptionsForOrdering"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.customer.search.CustomerListScreenExtnBundle" screenId="extn.customer.search.CustomerListScreenExtn">
+    <BundleEntries>
+        <BundleEntry bundleEntryId="tabColCustomerID_View_name"
+            bundleKey="CustomerId" bundleValueFn="_scSimpleBundle"
+            property="name" type="WIDGET" uId="tabColCustomerID"/>
+        <BundleEntry
+            bundleEntryId="extn_listGrid_view_testHealthyAwards_View_name"
+            bundleKey="extn_Healthy_Awards_"
+            bundleValueFn="_scSimpleBundle" property="name"
+            type="WIDGET" uId="extn_listGrid_view_testHealthyAwards"/>
+        <BundleEntry
+            bundleEntryId="extn_listGrid_view_tabHealthyAwards_View_name"
+            bundleKey="extn_Healthy_Awards_"
+            bundleValueFn="_scSimpleBundle" property="name"
+            type="WIDGET" uId="extn_listGrid_view_tabHealthyAwards"/>
+    </BundleEntries>
+</ScreenBundle>

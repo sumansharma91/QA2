@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ReturnFSShippingGroupExtn"
+        extnPackage="extn.return.create.fulfillmentSummary"
+        originalScreen="isccs.return.create.fulfillmentSummary.ReturnFSShippingGroup"
+        originalScreenPackage="isccs.return.create.fulfillmentSummary" type="diffrential">
+        <Items>
+            <Button _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="changeToPickup" renderHidden="true"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

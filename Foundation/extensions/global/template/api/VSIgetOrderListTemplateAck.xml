@@ -1,0 +1,7 @@
+<OrderList TotalOrderList="">
+	<Order BillToID="" DocumentType="" EnterpriseCode="" OrderHeaderKey="" OrderNo="" OrderType="" SCAC="" ScacAndService="" SellerOrganizationCode="" EnteredBy="">
+	<PersonInfoBillTo IsAddressVerified="" AddressID="" AddressLine1="" AddressLine2="" AddressLine3="" AddressLine4="" AddressLine5="" AddressLine6="" AlternateEmailID="" Beeper="" City="" Company="" Country="US" DayFaxNo="" DayPhone="" Department="" EMailID="" EveningFaxNo="" EveningPhone="" FirstName="" HttpUrl="" JobTitle="" LastName="" MiddleName="" MobilePhone="" OtherPhone="" PersonID="" PreferredShipAddress="" ShortZipCode="" State="" Suffix="" Title="" UseCount="" VerificationStatus="" ZipCode="" />
+	<PersonInfoShipTo IsAddressVerified="" AddressID="" AddressLine1="" AddressLine2="" AddressLine3="" AddressLine4="" AddressLine5="" AddressLine6="" AlternateEmailID="" Beeper="" City="" Company="" Country="US" DayFaxNo="" DayPhone="" Department="" EMailID="" EveningFaxNo="" EveningPhone="" FirstName="" HttpUrl="" JobTitle="" LastName="" MiddleName="" MobilePhone="" OtherPhone="" PersonID="" PreferredShipAddress="" ShortZipCode="" State="" Suffix="" Title="" UseCount="" VerificationStatus="" ZipCode="" />
+	<PriceInfo Currency=""/>
+	</Order>
+</OrderList>

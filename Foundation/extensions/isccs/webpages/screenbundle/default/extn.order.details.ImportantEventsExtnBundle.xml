@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.order.details.ImportantEventsExtnBundle" screenId="extn.order.details.ImportantEventsExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="extn_datalabel_Quantity_DataLabel_label"
+            bundleKey="Quantity" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="extn_datalabel_Quantity"/>
+        <BundleEntry
+            bundleEntryId="extn_label_Release_Acknowledge_Label_value"
+            bundleKey="extn_Release_Acknowledge"
+            bundleValueFn="_scSimpleBundle" property="value"
+            type="WIDGET" uId="extn_label_Release_Acknowledge"/>
+    </BundleEntries>
+</ScreenBundle>

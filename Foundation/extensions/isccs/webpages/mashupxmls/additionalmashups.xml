@@ -1,0 +1,1758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mashups>
+    <mashup description="getItemListForOrdering" endpoint="EP_CONFIG"
+        id="extnGetItemListForOrdering" mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getItemListForOrdering">
+            <Input>
+                <Item CallingOrganizationCode="Required" ItemID="">
+                    <PrimaryInformation Description="" ManufacturerName=""/>
+                </Item>
+            </Input>
+            <Template/>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace inputNS="extnGetItemListForOrdering_input" outputNS="extnGetItemListForOrdering_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup description="getItemListForOrdering" endpoint="EP_CONFIG"
+        id="extn_getItemListForOrdering" mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getItemListForOrdering">
+            <Input>
+                <Item ItemID="">
+                    <PrimaryInformation Description="" ManufacturerName=""/>
+                </Item>
+            </Input>
+            <Template/>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace inputNS="extn_getItemListForOrdering_input" outputNS="extn_getItemListForOrdering_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup description="getCompleteItemList" endpoint="EP_CONFIG"
+        id="extn_getCompleteItemList_AdvancedSearch" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API Name="getCompleteItemList">
+            <Input>
+                <Item ItemID="">
+                    <PrimaryInformation Description="" ManufacturerName=""/>
+                    <Extn ExtnActSkuID=""/>
+                </Item>
+            </Input>
+            <Template/>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace
+            inputNS="extn_getCompleteItemList_AdvancedSearch_input" outputNS="extn_getCompleteItemList_AdvancedSearch_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup
+        description="Service call for tracking number input in Order portlet"
+        endpoint="EP_CONFIG" id="extn_getShipmentContainerList"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSIGetShipmentContainerList">
+            <Input>
+                <Container TrackingNo=""/>
+            </Input>
+            <Template/>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_getShipmentContainerList_input" outputNS="extn_getShipmentContainerList_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup
+        description="Service calls for payment tech order number input in Order portlet"
+        endpoint="EP_CONFIG" id="extn_getAJBSettlementList"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSIGetAJBSettlementList">
+            <Input/>
+            <Template/>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_getAJBSettlementList_input" outputNS="extn_getAJBSettlementList_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <!-- mashup description="" endpoint="EP_CONFIG"
+        id="extn_customerAppeasement_getCompleteOrderDetails"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getCompleteOrderDetails">
+            <Input>
+                <Order OrderHeaderKey=""/>
+            </Input>
+            <Template>
+                <Order CustomerEMailID="" OrderNo="">
+                    <HeaderCharges>
+                        <HeaderCharge ChargeAmount="" ChargeCategory=""
+                            ChargeName="" InvoicedChargeAmount="" IsShippingCharge=""/>
+                    </HeaderCharges>
+                    <HeaderTaxes>
+                        <HeaderTax ChargeCategory="" ChargeName=""
+                            InvoicedTax="" RemainingTax="" Tax=""
+                            TaxName="" TaxPercentage=""/>
+                    </HeaderTaxes>
+                    <ReturnOrders OrderNo="">
+                        <ReturnOrder>
+                            <OrderLines>
+                                <OrderLine DerivedFromOrderLineKey="" OrderLineKey="">
+                                    <LinePriceInfo InvoicedLineTotal=""/>
+                                </OrderLine>
+                            </OrderLines>
+                        </ReturnOrder>
+                    </ReturnOrders>
+                </Order>
+            </Template>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace
+            inputNS="extn_customerAppeasement_getCompleteOrderDetails_input" outputNS="extn_customerAppeasement_getCompleteOrderDetails_output"/>
+        <AlternateResourceIds/>
+    </mashup -->
+    <mashup
+        description="Service call for voucher input on the PaymentCapture screen"
+        endpoint="EP_CONFIG" id="extn_checkVoucher" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API FlowName="VSICheckVoucher">
+            <Input/>
+            <Template/>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_checkVoucher_input" outputNS="extn_checkVoucher_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+	<mashup
+        description="Service call for gift card input on the PaymentCapture screen"  
+        endpoint="EP_CONFIG" id="extn_giftCard" mashuptype="XAPI"
+        resourceId="" transactional="true">
+		<API FlowName="VSICheckGCBalance">
+			<Input/>
+			<Template/>
+		</API>
+		<classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+		<APINamespace inputNS="extn_giftCard_input" outputNS="extn_giftCard_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup description="" endpoint="EP_CONFIG" id="extn_getToken"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSIGetCreditCardToken">
+            <Input>
+                <GetToken SessionId="" Type=""/>
+            </Input>
+            <Template>
+                <Token TokenId=""/>
+            </Template>
+        </API>
+        <classInformation name="com.ibm.isccs.order.mashups.SCCSCapturePaymentMashup"/>
+        <APINamespace inputNS="extn_getToken_input" outputNS="extn_getToken_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+<!--
+    <mashup
+        description="This mashup is used to get the TNS URL data from properties."
+        endpoint="EP_CONFIG" id="extn_getProperty" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API Name="getProperty">
+            <Input>
+                <GetProperty PropertyName="TNS_SESSION_URL"/>
+            </Input>
+            <Template/>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_getProperty_input" outputNS="extn_getProperty_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+-->
+
+     <mashup description="Calling getOrderList" endpoint="EP_CONFIG"
+        id="extn_paymentconfirmgetOrderList" mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getOrderList">
+            <Input>
+                <Order OrderHeaderKey=""/>
+            </Input>
+            <Template>
+                <OrderList>
+                   <Order BillToID="" BuyerOrganizationCode=""
+                    BuyerUserId="" CustomerContactID=""
+                    CustomerFirstName="" CustomerLastName=""
+                    DocumentType="" DraftOrderFlag="" EnterpriseCode=""
+                    ExchangeType="" OrderDate="" OrderHeaderKey=""
+                    OrderName="" OrderNo="" OrderPurpose=""
+                    PaymentStatus="" PendingTransferIn="" SellerOrganizationCode="">
+                    <Extn ExtnAurusToken=""/>
+                    <Promotions>
+                        <Promotion DenialReason="" Description=""
+                            PromotionAmount="" PromotionApplied="" PromotionId="">
+                            <PricingRule Description=""/>
+                            <Extn ExtnCouponID=""/>
+                        </Promotion>
+                    </Promotions>
+                    <OverallTotals AdjustedSubtotalWithoutTaxes=""
+                        EnterpriseCode=""
+                        GrandAdjustmentsWithoutTotalShipping=""
+                        GrandCharges="" GrandDeliveryCharges=""
+                        GrandDiscount="" GrandRefundTotal=""
+                        GrandShippingTotal="" GrandTax="" GrandTotal=""
+                        HdrShippingCharges=""
+                        HeaderAdjustmentWithoutShipping=""
+                        LineSubTotal="" OrderHeaderKey="" SubtotalWithoutTaxes=""/>
+                    <PaymentMethods>
+                        <PaymentMethod AwaitingAuthInterfaceAmount=""
+                            AwaitingChargeInterfaceAmount=""
+                            BillToKey="" ChargeSequence="" CheckNo=""
+                            CheckReference="" CreditCardExpDate=""
+                            CreditCardName="" CreditCardNo=""
+                            CreditCardType="" CustomerAccountNo=""
+                            CustomerPONo="" DisplayCreditCardNo=""
+                            DisplayCustomerAccountNo=""
+                            DisplayPaymentReference1=""
+                            DisplayPrimaryAccountNo="" DisplaySvcNo=""
+                            FirstName="" FundsAvailable=""
+                            GetFundsAvailableUserExitInvoked=""
+                            IncompletePaymentType="" IsCustomer=""
+                            IsDefaultMethod="" LastName=""
+                            MaxChargeLimit="" MiddleName=""
+                            PaymentKey="" PaymentReference1=""
+                            PaymentReference2="" PaymentReference3=""
+                            PaymentType="" PaymentTypeGroup=""
+                            PlannedRefundAmount=""
+                            RequestedAuthAmount=""
+                            RequestedChargeAmount=""
+                            SuspendAnyMoreCharges="" SvcNo=""
+                            TotalAuthorized="" TotalCharged=""
+                            TotalRefundedAmount="" UnlimitedCharges="">                            
+                            <ChargeTransactionDetails
+                                RemainingAmountToAuth=""
+                                TotalTransferredIn="" TotalTransferredOut="">
+                                <ChargeTransactionDetail
+                                    AuthorizationExpirationDate=""
+                                    BookAmount="" ChargeType=""
+                                    CreditAmount="" DebitAmount=""
+                                    Modifyts="" OpenAuthorizedAmount=""
+                                    PaymentKey="" Status=""/>
+                            </ChargeTransactionDetails>
+                            <PersonInfoBillTo AddressLine1=""
+                                AddressLine2="" AddressLine3=""
+                                AddressLine4="" AddressLine5=""
+                                AddressLine6="" AlternateEmailID=""
+                                Beeper="" City="" Company="" Country=""
+                                DayFaxNo="" DayPhone="" Department=""
+                                EMailID="" EveningFaxNo=""
+                                EveningPhone="" FirstName=""
+                                IsCommercialAddress="" JobTitle=""
+                                LastName="" MiddleName="" MobilePhone=""
+                                OtherPhone="" PersonID=""
+                                PersonInfoKey="" State="" Suffix=""
+                                TaxGeoCode="" Title="" ZipCode=""/>
+                              <Extn ExtnAurusCI="" ExtnAurusOOT=""/>
+                        </PaymentMethod>
+                    </PaymentMethods>
+                    <ChargeTransactionDetails RemainingAmountToAuth=""
+                        TotalTransferredIn="" TotalTransferredOut="">
+                        <ChargeTransactionDetail
+                            AuthorizationExpirationDate=""
+                            CreditAmount="" DebitAmount=""
+                            OpenAuthorizedAmount="" PaymentKey=""/>
+                    </ChargeTransactionDetails>
+                    <PriceInfo Currency=""/>
+                    <Modifications>
+                        <Modification ModificationAllowed="" ModificationType=""/>
+                    </Modifications>
+                    <PersonInfoBillTo AddressLine1="" AddressLine2=""
+                        AddressLine3="" AddressLine4="" AddressLine5=""
+                        AddressLine6="" AlternateEmailID="" Beeper=""
+                        City="" Company="" Country="" DayFaxNo=""
+                        DayPhone="" Department="" EMailID=""
+                        EveningFaxNo="" EveningPhone="" FirstName=""
+                        IsCommercialAddress="" JobTitle="" LastName=""
+                        MiddleName="" MobilePhone="" OtherPhone=""
+                        PersonID="" PersonInfoKey="" State="" Suffix=""
+                        TaxGeoCode="" Title="" ZipCode=""/>
+                    <OrderLines HasLocalShipment="" LastOrderLineKey=""
+                        LastRecordSet="" ModificationAllowed=""
+                        ModificationQty="" ModificationReleaseKey=""
+                        NoShipmentModificationQty=""
+                        PostReleaseModificationQty=""
+                        PreReleaseModificationQty="" TotalLineList="" TotalNumberOfRecords="">
+                        <OrderLine ConditionVariable1="" OrderLineKey="" DeliveryMethod="">
+                            <LineCharges>
+                                <LineCharge AmountFromAddnlLinePrices=""
+                                    ChargeAmount="" ChargeCategory=""
+                                    ChargeName="" ChargeNameKey=""
+                                    ChargePerLine="" ChargePerUnit=""
+                                    InvoicedChargeAmount=""
+                                    InvoicedChargePerLine=""
+                                    InvoicedChargePerUnit=""
+                                    IsBillable="" IsDiscount=""
+                                    IsManual="Y" IsRefundable=""
+                                    IsShippingCharge="" Reference=""
+                                    RemainingChargeAmount=""
+                                    RemainingChargePerLine="" RemainingChargePerUnit="">
+                                    <ChargeCategoryDetails
+                                    ChargeCategoryKey=""
+                                    ConsiderForProfitMargin=""
+                                    Description="" IsBillable=""
+                                    IsDiscount="" IsRefundable=""/>
+                                    <Extn/>
+                                    <ChargeNameDetails Description=""/>
+                                    <ChargeBreakups>
+                                    <ChargeBreakup AwardId=""
+                                    AwardType="" ChargeAmount=""
+                                    ChargeBreakupKey=""
+                                    DerivedFromOrderHeaderKey=""
+                                    DerivedFromOrderLineKey="" OrderHeaderKey=""/>
+                                    </ChargeBreakups>
+                                </LineCharge>
+                            </LineCharges>
+                        </OrderLine>
+                    </OrderLines>
+                    <Extn ExtnIsMigrated="" ExtnPricingDate=""/>
+                    <ReturnOrdersForExchange>
+                        <ReturnOrderForExchange OrderHeaderKey=""/>
+                    </ReturnOrdersForExchange>
+                    <ExchangeOrders>
+                        <ExchangeOrder ExchangeType="" OrderHeaderKey=""/>
+                    </ExchangeOrders>
+                    <HeaderTaxes>
+                        <HeaderTax ChargeCategory="" ChargeName=""
+                            ChargeNameKey="" InvoicedTax=""
+                            Reference1="" Reference2="" Reference3=""
+                            RemainingTax="" Tax="" TaxName=""
+                            TaxPercentage="" TaxableFlag=""/>
+                    </HeaderTaxes>
+                </Order>
+                </OrderList>
+            </Template>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_paymentconfirmgetOrderList_input" outputNS="extn_paymentconfirmgetOrderList_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+     
+     <mashup
+        description="This mashup is used to get the TNS URL data from properties."
+        endpoint="EP_CONFIG" id="extn_getProperty" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API FlowName="VSIAurusSessionAESDKAPI">
+            <Input>
+                <SessionRequest CardNumber="" CardType="" CardIdentifier="" CardExpiryDate=""/>
+            </Input>
+           <Template/>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_getProperty_input" outputNS="extn_getProperty_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+
+    <mashup
+        description="This mashup will be used to fetch the list of PaymentType which are not be displayed."
+        endpoint="EP_CONFIG" id="extn_getCommonCode" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API Name="getCommonCodeList">
+            <Input>
+                <CommonCode CodeType="DONTDISPPAY"/>
+            </Input>
+            <Template/>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_getCommonCode_input" outputNS="extn_getCommonCode_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup
+        description="This mashup is used to get the fulfillment details of the lines."
+        endpoint="EP_CONFIG" id="extn_getOrderFulfillmentDetails"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getOrderFulfillmentDetails">
+            <Input>
+                <Order OrderHeaderKey=""/>
+            </Input>
+            <Template>
+                <Order Action="" EnterpriseCode="" OrderDate=""
+                    OrderHeaderKey="" OrderNo="">
+                    <OrderLines>
+                        <OrderLine DeliveryMethod="" EarliestProductShipDate=""
+                            HasAnyUnavailableQty="" OrderHeaderKey="" OrderLineKey=""
+                            OrderedQty="" OrigOrderLineKey=""
+                            OriginalOrderedQty="" PrimeLineNo=""
+                            ReceivingNode="" RemainingQty=""
+                            ReqCancelDate="" ReqDeliveryDate=""
+                            ReqShipDate="">
+							<OrderLineTranQuantity FillQuantity="" InvoicedQuantity="" 
+							OpenQty="" OrderedQty="" OriginalOrderedQty="" ReceivedQty="" 
+							RemainingQty="" SettledQuantity="" ShippedQuantity="" SplitQty="" 
+							StatusQuantity="" TranDiscrepancyQty="" TransactionalUOM=""/>
+                            <PromiseLine
+                                AutoReplacedByPreferredSubstitute=""
+                                BundleFulfillmentMode=""
+                                BundleParentOrderLineKey=""
+                                CannotSchedule=""
+                                CannotScheduleAfterDate=""
+                                CannotScheduleBeforeDate=""
+                                CarrierServiceCode=""
+                                DeliveryEndSearchDate=""
+                                DeliveryMethod=""
+                                DeliveryStartSearchDate=""
+                                DistributionRuleId="" IsBundleParent=""
+                                ItemGroupCode="" ItemID=""
+                                LevelOfService="" NewItemID=""
+                                OrderLineKey="" PrimeLineNo=""
+                                ProductClass="" RequiredQty=""
+                                ScheduleLineKey="" ScheduleNo=""
+                                ShipEndSearchDate=""
+                                ShipStartSearchDate="" SubLineNo=""
+                                TagNumber="" UnitOfMeasure="" WaitingForSeqLine="">
+                                <Assignments TotalNumberOfRecords="">
+                                    <Assignment
+                                    AvailableFromUnplannedInventory=""
+                                    DeliveryDate="" Distance=""
+                                    EarliestShipDate=""
+                                    EmptyAssignmentReason=""
+                                    ExternalNode="" InteractionNo=""
+                                    MergeNode="" NodePriority=""
+                                    ProcuredQty=""
+                                    ProductAvailDate="" Quantity=""
+                                    QuantityFromUnplannedInventory=""
+                                    ReservedQty="" SCAC=""
+                                    SegmentChangeQty="" ShipDate=""
+                                    ShipNode="" SubstitutedQty="" TransferNo="">
+                                    </Assignment>
+                                </Assignments>
+                            </PromiseLine>
+                        </OrderLine>
+                    </OrderLines>
+                </Order>
+            </Template>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_getOrderFulfillmentDetails_input" outputNS="extn_getOrderFulfillmentDetails_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup
+        description="This mashup is used to get the promise date for the given orderLine input"
+        endpoint="EP_CONFIG" id="extn_vsiPromiseDate" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API FlowName="VSIPromisedDates">
+            <Input>
+                <Organization CurrentDate="" OrderLineKey="" OrganizationCode="9001"/>
+            </Input>
+            <Template/>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_vsiPromiseDate_input" outputNS="extn_vsiPromiseDate_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup description="This is to make a changeOrder call"
+        endpoint="EP_CONFIG" id="extn_changeOrder" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API Name="changeOrder">
+            <Input/>
+            <Template/>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_changeOrder_input" outputNS="extn_changeOrder_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+	<mashup description="" endpoint="EP_CONFIG" id="extn_applyCoupon"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSIValidateCouponUE">
+            <Input/>
+            <Template/>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_applyCoupon_input" outputNS="extn_applyCoupon_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup description="" endpoint="EP_CONFIG"
+        id="extn_getCompleteOrderDetails" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API Name="getCompleteOrderDetails">
+            <Input/>
+            <Template>
+				<Order BillToID="" BuyerOrganizationCode=""
+                    BuyerUserId="" CustomerContactID=""
+                    CustomerFirstName="" CustomerLastName=""
+                    DocumentType="" DraftOrderFlag="" EnterpriseCode=""
+                    ExchangeType="" MashupTemplateRef="OrderInfo"
+                    OrderDate="" OrderHeaderKey="" OrderName=""
+                    OrderNo="" OrderPurpose="" PendingTransferIn="" SellerOrganizationCode="">
+                    <PersonInfoBillTo AddressLine1="" AddressLine2=""
+                        AddressLine3="" AddressLine4="" AddressLine5=""
+                        AddressLine6="" AlternateEmailID="" Beeper=""
+                        City="" Company="" Country="" DayFaxNo=""
+                        DayPhone="" Department="" EMailID=""
+                        EveningFaxNo="" EveningPhone="" FirstName=""
+                        IsCommercialAddress="" JobTitle="" LastName=""
+                        MiddleName="" MobilePhone="" OtherPhone=""
+                        PersonID="" PersonInfoKey="" State="" Suffix=""
+                        TaxGeoCode="" Title="" ZipCode=""/>
+                    <PaymentMethods>
+                        <PaymentMethod AwaitingAuthInterfaceAmount=""
+                            AwaitingChargeInterfaceAmount=""
+                            BillToKey="" ChargeSequence="" CheckNo=""
+                            CheckReference="" CreditCardExpDate=""
+                            CreditCardName="" CreditCardNo=""
+                            CreditCardType="" CustomerAccountNo=""
+                            CustomerPONo="" DisplayCreditCardNo=""
+                            DisplayCustomerAccountNo=""
+                            DisplayPaymentReference1=""
+                            DisplayPrimaryAccountNo="" DisplaySvcNo=""
+                            FirstName="" FundsAvailable=""
+                            GetFundsAvailableUserExitInvoked=""
+                            IncompletePaymentType="" IsCustomer=""
+                            IsDefaultMethod="" LastName=""
+                            MaxChargeLimit="" MiddleName=""
+                            PaymentKey="" PaymentReference1=""
+                            PaymentReference2="" PaymentReference3=""
+                            PaymentType="" PaymentTypeGroup=""
+                            PlannedRefundAmount=""
+                            RequestedAuthAmount=""
+                            RequestedChargeAmount=""
+                            SuspendAnyMoreCharges="" SvcNo=""
+                            TotalAuthorized="" TotalCharged=""
+                            TotalRefundedAmount="" UnlimitedCharges="">
+                            <PersonInfoBillTo AddressLine1=""
+                                AddressLine2="" AddressLine3=""
+                                AddressLine4="" AddressLine5=""
+                                AddressLine6="" AlternateEmailID=""
+                                Beeper="" City="" Company="" Country=""
+                                DayFaxNo="" DayPhone="" Department=""
+                                EMailID="" EveningFaxNo=""
+                                EveningPhone="" FirstName=""
+                                IsCommercialAddress="" JobTitle=""
+                                LastName="" MiddleName="" MobilePhone=""
+                                OtherPhone="" PersonID=""
+                                PersonInfoKey="" State="" Suffix=""
+                                TaxGeoCode="" Title="" ZipCode=""/>
+                            <ChargeTransactionDetails
+                                RemainingAmountToAuth=""
+                                TotalTransferredIn="" TotalTransferredOut="">
+                                <ChargeTransactionDetail
+                                    AuthorizationExpirationDate=""
+                                    BookAmount="" ChargeType=""
+                                    CreditAmount="" DebitAmount=""
+                                    Modifyts="" OpenAuthorizedAmount=""
+                                    PaymentKey="" Status=""/>
+                            </ChargeTransactionDetails>
+                        </PaymentMethod>
+                    </PaymentMethods>
+                    <ChargeTransactionDetails RemainingAmountToAuth=""
+                        TotalTransferredIn="" TotalTransferredOut="">
+                        <ChargeTransactionDetail
+                            AuthorizationExpirationDate=""
+                            CreditAmount="" DebitAmount=""
+                            OpenAuthorizedAmount="" PaymentKey=""/>
+                    </ChargeTransactionDetails>
+                    <Promotions>
+                        <Promotion DenialReason="" Description=""
+                            PromotionAmount="" PromotionApplied="" PromotionId="">
+                            <PricingRule Description=""/>
+                        </Promotion>
+                    </Promotions>
+                    <PriceInfo Currency=""/>
+                    <OverallTotals AdjustedSubtotalWithoutTaxes=""
+                        EnterpriseCode=""
+                        GrandAdjustmentsWithoutTotalShipping=""
+                        GrandDeliveryCharges="" GrandRefundTotal=""
+                        GrandShippingTotal="" GrandTax="" GrandTotal=""
+                        HdrShippingCharges=""
+                        HeaderAdjustmentWithoutShipping=""
+                        LineSubTotal="" OrderHeaderKey="" SubtotalWithoutTaxes=""/>
+                    <ExchangeOrders>
+                        <ExchangeOrder ExchangeType="" OrderHeaderKey=""/>
+                    </ExchangeOrders>
+                    <ReturnOrdersForExchange>
+                        <ReturnOrderForExchange OrderHeaderKey=""/>
+                    </ReturnOrdersForExchange>
+                    <Modifications>
+                        <Modification ModificationAllowed="" ModificationType=""/>
+                    </Modifications>
+                </Order>
+			</Template>	
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_getCompleteOrderDetails_input" outputNS="extn_getCompleteOrderDetails_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup
+        description="This mashup with apply BOGO discount on the eligible lines."
+        endpoint="EP_CONFIG" id="extn_applyBOGO" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API FlowName="VSIApplyBOGO">
+            <Input/>
+            <Template/>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_applyBOGO_input" outputNS="extn_applyBOGO_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+	<mashup
+        description="Service to trigger email on voucher credit refund"
+        endpoint="EP_CONFIG" id="extn_triggerEmailOnVGCRefund"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSITriggerEmailOnVGCRefund ">
+            <Input>
+				<Order 	Amount="" DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode" EmailID="" EntryType="" FirstName="" 
+						GiftCardNumber="" LastName="" Pin=""/>
+			</Input>
+            <Template>
+				<Order 	Amount="" DisplayLocalizedFieldInLocale="" EmailID="" EntryType=""	FirstName="" 
+						GiftCardNumber="" LastName=""	MessageType="" Pin=""/>
+            </Template>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_triggerEmailOnVGCRefund_input" outputNS="extn_triggerEmailOnVGCRefund_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup
+        description="Prorates the line charges based on the given header charges and saves the values to the lines"
+        endpoint="EP_CONFIG" id="extn_prorateLineCharges"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSIProrateLineChargesSyncService">
+            <Input/>
+            <Template/>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_prorateLineCharges_input" outputNS="extn_prorateLineCharges_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup
+        description="Service calls for Get Item Onhand Inventory and Availability details for custom pop up"
+        endpoint="EP_CONFIG" id="extn_getAvailabilityDetails"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSIGetItemAvailabilityDetails">
+            <Input/>
+            <Template/>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_getAvailabilityDetails_input" outputNS="extn_getAvailabilityDetails_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup description="" endpoint="EP_CONFIG"
+        id="extn_getFulfillmentOptionForLines" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API Name="getFulfillmentOptionsForLines">
+            <Input>
+				<Promise IgnoreUnpromised="" IsPartialSubstitutionAllowed="" IsSubstitutionAllowed="" OrganizationCode="" FulfillmentType="">
+					<EvaluateOrder EnterpriseCode="" OrderHeaderKey=""/>
+					<EvaluateOptions>
+						<EvaluateOption DeliveryMethod="" FulfillmentType="" Node="" OptionNo=""/>
+					</EvaluateOptions>
+					<PromiseLines>
+						<PromiseLine ItemID="" ProductClass="" UnitOfMeasure="" RequiredQty="" >
+							<OrderLine OrderLineKey="" RequiredQty=""/>
+						</PromiseLine>
+					</PromiseLines>
+				</Promise>
+			</Input>
+            <Template>
+				<Promise OrganizationCode="">
+				   <EvaluateOrder OrderHeaderKey="" />
+				   <PromiseLines>
+					  <PromiseLine ItemID="" LineId="" RequiredQty="">
+						 <OrderLine OrderLineKey=""/>
+						 <Options TotalNumberOfRecords="">
+							<Option OptionNo="" ProductAvailableDate="">
+							   <Assignments TotalNumberOfRecords="">
+								  <Assignment ProcuredQty="" Quantity="" ShipNode="" DeliveryDate=""/>
+							   </Assignments>
+							</Option>
+						 </Options>
+					  </PromiseLine>
+				   </PromiseLines>
+				</Promise> 
+			</Template>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_getFulfillmentOptionForLines_input" outputNS="extn_getFulfillmentOptionForLines_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup
+        description="This custom mashup modifies the api input by setting the status attribute of customer contact element for a consumer customer."
+        endpoint="EP_CUSTOMER" id="modifyCustomer_manageCustomer"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSIModifyCustomer">
+            <Input/>
+            <Template/>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="manageContact_manageCustomer_input" outputNS="manageContact_manageCustomer_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup
+        description="Service call for voucher input on the PaymentCapture screen"
+        endpoint="EP_CONFIG" id="extn_getCouponDetails" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API FlowName="VSIGetCouponDetails">
+            <Input/>
+            <Template/>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_getCouponDetails_input" outputNS="extn_getCouponDetails_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup description="This is to make a changeOrder call"
+        endpoint="EP_CONFIG" id="extn_changeOrder" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API Name="changeOrder">
+            <Input>
+		<Order>
+		<Extn ExtnPricingDate=""/>
+		                </Order>
+            </Input>
+
+            <Template>
+                <Order OrderHeaderKey="" OrderNo="">
+                    <OrderLines>
+                        <OrderLine OrderLineKey="">
+                            <LineCharges>
+                                <LineCharge AmountFromAddnlLinePrices=""
+                                    ChargeAmount="" ChargeCategory=""
+                                    ChargeName="" ChargeNameKey=""
+                                    ChargePerLine="" ChargePerUnit=""
+                                    InvoicedChargeAmount=""
+                                    InvoicedChargePerLine=""
+                                    InvoicedChargePerUnit=""
+                                    IsBillable="" IsDiscount=""
+                                    IsManual="Y" IsRefundable=""
+                                    IsShippingCharge="" Reference=""
+                                    RemainingChargeAmount=""
+                                    RemainingChargePerLine="" RemainingChargePerUnit="">
+                                    <ChargeBreakups>
+                                    <ChargeBreakup AwardId=""
+                                    AwardType="" ChargeAmount=""
+                                    ChargeBreakupKey=""
+                                    DerivedFromOrderHeaderKey=""
+                                    DerivedFromOrderLineKey="" OrderHeaderKey=""/>
+                                    </ChargeBreakups>
+                                    <ChargeCategoryDetails
+                                    ChargeCategoryKey=""
+                                    ConsiderForProfitMargin=""
+                                    Description="" IsBillable=""
+                                    IsDiscount="" IsRefundable=""/>
+                                    <ChargeNameDetails Description=""/>
+                                    <Extn/>
+                                </LineCharge>
+                            </LineCharges>
+                        </OrderLine>
+                    </OrderLines>
+                </Order>
+            </Template>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_changeOrder_input" outputNS="extn_changeOrder_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+	
+	
+	
+		<!-- Below mashups are added for Acknowledge Returns -->
+	
+	
+	<mashup description="" endpoint="EP_CONFIG"
+		id="acknowledgeReturn_getReturnDispositionList" mashuptype="XAPI"
+		resourceId="" transactional="true">
+		<API Name="getReturnDispositionList">
+			<Input>
+				<ReturnDisposition CallingOrganizationCode="VSI.com" />
+			</Input>
+			<Template>
+				<ReturnDispositionList>
+					<ReturnDisposition Description=""
+						DispositionCode="" />
+				</ReturnDispositionList>
+			</Template>
+		</API>
+		<classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup" />
+		<APINamespace inputNS="getReturnDispositionList_input"
+			outputNS="getReturnDispositionList_output" />
+		<AlternateResourceIds />
+	</mashup>
+	
+	<mashup cached="PAGE"
+        description="This mashup is used for fetching the return reasons common codes.The input of the mashup is modified to pass the return order document type to the getCommonCodeList API."
+        endpoint="EP_CONFIG"
+        id="acknowledgeReturn_getReturnReasonCodes" mashuptype="XAPI"
+        skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.isccs.returns.mashups.SCCSAddReturnOrderDocumentTypeMashup"/>
+        <API Name="getCommonCodeList">
+            <Input>
+                <CommonCode
+                    CallingOrganizationCode="VSI.com"
+                    CodeType="RETURN_REASON"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    DocumentType="" MaximumRecords="">
+                    <OrderBy>
+                        <Attribute Desc="N" Name="CodeShortDescription"/>
+                    </OrderBy>
+                </CommonCode>
+            </Input>
+            <Template>
+                <CommonCodeList>
+                    <CommonCode CodeName="" CodeShortDescription="" CodeValue=""/>
+                </CommonCodeList>
+            </Template>
+        </API>
+        <APINamespace inputNS="getReturnReasonCodes_input" outputNS="getReturnReasonCodes_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCRET0002"/>
+            <AlternateResourceId altResourceId="ISCCSSYS002"/>
+        </AlternateResourceIds>
+    </mashup>
+	
+	<mashup
+        description="This mashup will be used to fetch the DC's for Receiving Returns."
+        endpoint="EP_CONFIG" id="acknowledgeReturn_getReturnDCList" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API Name="getCommonCodeList">
+            <Input>
+                <CommonCode CodeType="VSI_WAREHOUSE_DC" CallingOrganizationCode="VSI.com"/>
+            </Input>
+            <Template>
+				<CommonCodeList>
+                    <CommonCode CodeShortDescription="" CodeValue="" />
+                </CommonCodeList>
+			</Template>	
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace inputNS="acknowledgeReturn_getReturnDCList_input" outputNS="acknowledgeReturn_getReturnDCList_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+	
+	
+	<mashup description="" endpoint="EP_ORDER" id="ReturnOrderLines_getLinesToReceive"
+		mashuptype="XAPI" resourceId="" transactional="true">
+		<API FlowName="VSIGetOrderLinesForAckSyncService">
+			<Input >
+				<Order ApplyQueryTimeout="Y"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    DocumentType="" DraftOrderFlag="N" EnterpriseCode=""
+                    IgnoreOrdering="N" OrderNameQryType="" OrderNo=""
+                    OrganizationCode="" QueryTimeout="" />
+			</Input>	
+			<Template />
+		</API>
+		<classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup" />
+		<APINamespace inputNS="getCompleteOrderLineList_input"
+			outputNS="getCompleteOrderLineList_output" />
+		<AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCCUST0001"/>
+            <AlternateResourceId altResourceId="ISCRET0001"/>
+        </AlternateResourceIds>
+	</mashup>
+	
+	
+	<mashup description="" endpoint="EP_ORDER" id="acknowledgeReturn_receivereturnorder"
+		mashuptype="XAPI" resourceId="" transactional="true">
+		<API FlowName="VSIReceiveReturnsForAckSyncService">
+			<Input >
+				<Receipt  DocumentType="" ReceivingNode="" >
+					<Shipment OrderHeaderKey="" />
+					<ReceiptLines>
+						<ReceiptLine DispositionCode=""  Quantity="" ItemID="" OrderHeaderKey="" OrderLineKey=""  PrimeLineNo="" SubLineNo="" >
+						</ReceiptLine>
+					</ReceiptLines>
+				</Receipt>
+			</Input>	
+			<Template />
+		</API>
+		<classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup" />
+		<APINamespace inputNS="returnLine"
+			outputNS="acknowledgeReturn_receivereturnorder_output" />
+		<AlternateResourceIds />
+	</mashup>
+	
+	
+	<mashup description="" endpoint="EP_ORDER" id="acknowledgeReturn_createAndreceivereturnorder"
+		mashuptype="XAPI" resourceId="" transactional="true">
+		<API FlowName="VSICreateAndReceiveReturnsForAckSyncService">
+			<Input >
+				<Receipt ReturnOrderHeaderKey="" DocumentType="" ReceivingNode="" SalesOrderHeaderKey="">
+					<Order DocumentType="" DraftOrderFlag="" EnterpriseCode="" EntryType="" SellerOrganizationCode="" >
+						<OrderLines>
+							<OrderLine ReturnReason="" OrderedQty="" ShipNode="" >
+								<Item ItemID="" />
+								<DerivedFrom OrderLineKey=""/>
+							</OrderLine>
+						</OrderLines>
+					</Order>
+					<Shipment OrderHeaderKey="" />
+					<ReceiptLines>
+						<ReceiptLine DispositionCode=""  Quantity="" ItemID="" OrderHeaderKey="" OrderLineKey=""  PrimeLineNo="" SubLineNo="" >
+							<Extn ExtnWHRtnRsnCode="" />
+						</ReceiptLine>
+					</ReceiptLines>
+				</Receipt>
+			</Input>	
+			<Template />
+		</API>
+		<classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup" />
+		<APINamespace inputNS="acknowledgeReturn_createAndreceivereturnorder_input"
+			outputNS="acknowledgeReturn_createAndreceivereturnorder_output" />
+		<AlternateResourceIds />
+	</mashup>
+	
+	
+	<mashup description="" endpoint="EP_ORDER" id="acknowledgeReturn_checkAndreceivereturnorder"
+		mashuptype="XAPI" resourceId="" transactional="true">
+		<API FlowName="VSICheckAndReceiveReturnsForAckSyncService">
+			<Input >
+				<Receipt ReturnOrderHeaderKey="" DocumentType="" ReceivingNode="" SalesOrderHeaderKey="">
+					<Shipment OrderHeaderKey="" />
+					<ReceiptLines>
+						<ReceiptLine DispositionCode=""  Quantity="" ItemID="" OrderHeaderKey="" OrderLineKey=""  PrimeLineNo="" SubLineNo="" ReasonCode="" >
+							<ReturnOrderLines>
+								<OrderLine MinLineStatus="" OrderHeaderKey="" OrderLineKey="" OrderedQty="" PrimeLineNo="" ReceivedQty="" Status="" SubLineNo=""/>
+							</ReturnOrderLines>
+						</ReceiptLine>
+					</ReceiptLines>
+				</Receipt>
+			</Input>		
+			<Template />
+		</API>
+		<classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup" />
+		<APINamespace inputNS="acknowledgeReturn_checkAndreceivereturnorder_input"
+			outputNS="acknowledgeReturn_checkAndreceivereturnorder_output" />
+		<AlternateResourceIds />
+	</mashup>
+	
+	
+	
+	<mashup description="" endpoint="EP_ORDER"
+		id="AcknowledgeReturnOrderLines_getCompleteOrderLineList" mashuptype="XAPI"
+		resourceId="" transactional="true">
+		<API Name="getCompleteOrderLineList">
+			<Input>
+				<OrderLine OrderLineKey="">
+					<Order EnterpriseCode="xml:scControllerInput:/Order/@EnterpriseCode"
+						OrderNo="xml:scControllerInput:/Order/@OrderNo"
+						SellerOrganizationCode="xml:scControllerInput:/Order/@SellerOrganizationCode" />
+				</OrderLine>
+			</Input>
+			<Template>
+				<OrderLineList>
+					<OrderLine OrderHeaderKey="" OrderLineKey="" PrimeLineNo=""
+						ReturnReason="">
+						<ItemDetails ItemGroupCode="" ItemID="" UnitOfMeasure="">
+							<PrimaryInformation Description=""
+								ExtendedDisplayDescription="" ImageID="" ImageLabel=""
+								ImageLocation="" ShortDescription="" />
+							<AdditionalAttributeList>
+								<AdditionalAttribute Name="" Value="" />
+							</AdditionalAttributeList>
+							<Extn ExtnPackageWeight="" />
+						</ItemDetails>
+						<Order EnterpriseCode="" OrderHeaderKey=""
+							SellerOrganizationCode="">
+							<PriceInfo Currency="" />
+						</Order>
+						<LineOverallTotals DisplayUnitPrice="" />
+						<LinePriceInfo IsLinePriceForInformationOnly=""
+							IsPriceLocked="" />
+						<Extn ExtnTrackingNo="" ExtnNumOfLabels="" ExtnReturnShipmentType="" ExtnShipChargeValue="" />
+					</OrderLine>
+					<Order EnterpriseCode="" OrderHeaderKey=""
+						SellerOrganizationCode="">
+						<PriceInfo Currency="" />
+					</Order>
+				</OrderLineList>
+			</Template>
+		</API>
+		<classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup" />
+		<APINamespace
+			inputNS="AcknowledgeReturnOrderLines_getCompleteOrderLineList_input"
+			outputNS="AcknowledgeReturnOrderLines_getCompleteOrderLineList_output" />
+		<AlternateResourceIds />
+	</mashup>
+
+	<mashup
+        description="changeOrder API to set Advance Returns on OrderLine"
+        endpoint="EP_CONFIG" id="extn_changeOrderLineToAdvanceReturns"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="changeOrder">
+            <Input>
+                <Order OrderHeaderKey="">
+                    <OrderLines>
+                        <OrderLine ConditionVariable1="" OrderLineKey=""/>
+                    </OrderLines>
+                </Order>
+            </Input>
+            <Template>
+                <Order OrderHeaderKey=""/>
+            </Template>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace
+            inputNS="extn_changeOrderLineToAdvanceReturns_input" outputNS="extn_changeOrderLineToAdvanceReturns_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup
+        description="changeOrder API to set Generate Call Tag on OrderHeader"
+        endpoint="EP_CONFIG" id="extn_changeOrderHeaderToGenerateTag"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="changeOrder">
+            <Input>
+                <Order OrderHeaderKey="">
+                    <Extn ExtnGenerateCallTagalert=""/>
+                </Order>
+            </Input>
+            <Template>
+                <Order OrderHeaderKey=""/>
+            </Template>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace
+            inputNS="extn_changeOrderHeaderToGenerateTag_input" outputNS="extn_changeOrderHeaderToGenerateTag_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup
+        description="A change Order API is invoked to suspend Credit card payment method"
+        endpoint="EP_ORDER"
+        id="extn_ReturnOrderLines_SuspendAndAddeGiftCard"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="changeOrder">
+            <Input>
+				<Order OrderHeaderKey="">
+					<PaymentMethods>
+						<PaymentMethod PaymentKey="" SuspendAnyMoreCharges="" Action="" PaymentType="" PlannedRefundAmount=""/>
+					</PaymentMethods>
+				</Order>
+			</Input>	
+            <Template>
+                <Order OrderHeaderKey=""/>
+            </Template>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace
+            inputNS="extn_ReturnOrderLines_SuspendAndAddeGiftCard_input" outputNS="extn_ReturnOrderLines_SuspendAndAddeGiftCard_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+	
+	<!-- Below is added for Reship -->
+	
+	<mashup
+        description="changeOrder API to set CarrierServiceCode on reship line"
+        endpoint="EP_CONFIG" id="extn_changeOrderLineCarrier"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="changeOrder">
+            <Input>
+				<Order OrderHeaderKey="">
+                    <OrderLines>
+                        <OrderLine PrimeLineNo="" SubLineNo="" CarrierServiceCode="" />
+					</OrderLines>	
+				</Order>
+			</Input>
+            <Template>
+                <Order OrderHeaderKey=""/>
+            </Template>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace
+            inputNS="extn_changeOrderLineCarrier_input" outputNS="extn_changeOrderLineCarrier_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+	
+	<!--OMS-1005 : Added personinfoshipto in the input template of getCarrierServiceOptionsForOrdering-->
+	<mashup
+        description="gets the list of Carriers so the CSR can select during reship"
+        endpoint="EP_CONFIG" id="extn_reshipShipmentLine_getCarrierServiceOptionsForOrdering"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getCarrierServiceOptionsForOrdering">
+            <Input>
+                <Order OrderHeaderKey="">
+					<OrderLines>
+						<OrderLine OrderLineKey="" >
+						<PersonInfoShipTo AddressID="" AddressLine1=""
+                        AddressLine2="" AddressLine3="" AddressLine4=""
+                        AddressLine5="" AddressLine6=""
+                        AlternateEmailID="" Beeper="" City="" Company=""
+                        Country="" DayFaxNo="" DayPhone="" Department=""
+                        EMailID="" EveningFaxNo="" EveningPhone=""
+                        FirstName="" IsCommercialAddress="" JobTitle=""
+                        LastName="" MiddleName="" MobilePhone=""
+                        OtherPhone="" PersonID="" State="" Suffix=""
+                        TaxGeoCode="" Title="" ZipCode=""/>
+						</OrderLine>
+					</OrderLines>
+				</Order>
+            </Input>
+            <Template>
+                <Order OrderHeaderKey="" >
+					<OrderLines>
+						<OrderLine  CarrierServiceCode="" OrderLineKey="" >
+						<PersonInfoShipTo AddressID=""
+                                AddressLine1="" AddressLine2=""
+                                AddressLine3="" AddressLine4=""
+                                AddressLine5="" AddressLine6=""
+                                AlternateEmailID="" Beeper="" City=""
+                                Company="" Country="" DayFaxNo=""
+                                DayPhone="" Department="" EMailID=""
+                                EveningFaxNo="" EveningPhone=""
+                                FirstName="" IsCommercialAddress=""
+                                JobTitle="" LastName="" MiddleName=""
+                                MobilePhone="" OtherPhone="" PersonID=""
+                                State="" Suffix="" TaxGeoCode=""
+                                Title="" ZipCode=""/>
+							<CarrierServiceList>
+								<CarrierService CarrierServiceCode="" CarrierServiceDesc="" />
+							</CarrierServiceList>
+						</OrderLine>
+					</OrderLines>
+				</Order>
+            </Template>
+        </API>
+		<!--OMS-1005 : Start-->
+        <classInformation name="com.vsi.isccs.mashups.VSIGetCarrierServiceOptionsForOrdering"/>
+		<!--OMS-1005 : End-->
+        <APINamespace
+            inputNS="extn_getCarrierServiceOptionsForOrdering_input" outputNS="extn_getCarrierServiceOptionsForOrdering_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    
+    <!-- Added for Gift Card Fulfillment - BEGIN -->
+	<mashup description="Used to search for gift card order releases for the given order" endpoint="EP_CONFIG"
+        id="giftCardFulfillment_getOrderReleaseList" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API Name="getOrderReleaseList">
+            <Input />
+            <Template >
+				<OrderReleaseList >
+					<OrderRelease OrderReleaseKey="" >
+						<Order OrderNo="" />
+						<OrderLines>
+							<OrderLine OrderLineKey="" OrderedQty="" PrimeLineNo="" OrderHeaderKey="" ShipNode="">
+								<Item ItemID="" ItemDesc=""/>
+								<LinePriceInfo UnitPrice=""/>
+								<OrderStatuses>
+									<OrderStatus StatusQty="" Status="" />
+								</OrderStatuses>
+							</OrderLine>
+						</OrderLines>
+					</OrderRelease>
+				</OrderReleaseList>
+			</Template>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="giftCardFulfillment_getOrderReleaseList_input" outputNS="giftCardFulfillment_getOrderReleaseList_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+	<mashup description="Used to search for gift card shipment lines for the given order" endpoint="EP_CONFIG"
+        id="giftCardFulfillment_getShipmentLineList" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API Name="getShipmentLineList">
+            <Input />
+            <Template >
+				<ShipmentLines>
+					<ShipmentLine ShipmentKey="" ShipmentLineKey="" OrderHeaderKey="" Quantity="" ItemID="" ItemDesc="" OrderReleaseKey="">
+						<Extn ExtnGiftCardNo="" />
+						<ContainerDetails TotalNumberOfRecords="" />
+					</ShipmentLine>
+				</ShipmentLines>
+			</Template>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="giftCardFulfillment_getShipmentLineList_input" outputNS="giftCardFulfillment_getShipmentLineList_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+	<mashup description="Used to search for gift card shipment containers for the given order" endpoint="EP_CONFIG"
+        id="giftCardFulfillment_getShipmentContainerList" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API Name="getShipmentContainerList">
+            <Input />
+            <Template >
+				<Containers>
+					<Container>
+						<Shipment Status="" />
+						<ContainerDetails>
+							<ContainerDetail>
+								<ShipmentLine >
+									<Extn />
+								</ShipmentLine>
+							</ContainerDetail>
+						</ContainerDetails>
+					</Container>
+				</Containers>
+			</Template>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="giftCardFulfillment_getShipmentContainerList_input" outputNS="giftCardFulfillment_getShipmentContainerList_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+	<mashup description="Used to activate and ship gift card order lines" endpoint="EP_CONFIG"
+        id="extn_activateGiftCard" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API FlowName="VSIActivateGiftCardSyncService">
+            <Input />
+            <Template />
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_activateGiftCard_input" outputNS="extn_activateGiftCard_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+	<mashup description="Used to add gift card order lines to a container in the shipment" endpoint="EP_CONFIG"
+        id="extn_containerizeGiftCard" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API FlowName="VSIContainerizeGiftCardSyncService">
+            <Input />
+            <Template />
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_containerizeGiftCard_input" outputNS="extn_containerizeGiftCard_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <!-- Added for Gift Card Fulfillment - END -->
+	
+	<!-- Added for Modify Charges -->
+	<mashup
+        description="This mashup will be used to fetch the validation limit for Alpine Users."
+        endpoint="EP_CONFIG" id="extn_Alpine_Validation" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API Name="getCommonCodeList">
+            <Input>
+                <CommonCode CodeType="VSI_ALPINE_APSMENT" CallingOrganizationCode="xml:scControllerInput:/Order/@EnterpriseCode"/>
+            </Input>
+            <Template>
+				<CommonCodeList>
+                    <CommonCode CodeShortDescription="" CodeValue="" CodeLongDescription="" />
+                </CommonCodeList>
+			</Template>	
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace inputNS="extn_Alpine_Validation_input" outputNS="extn_Alpine_Validation_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+	
+	
+	<mashup description="VSICreateAppeasementApprovalAlert"
+        endpoint="EP_CONFIG" id="extn_VSICreateAppeasementApprovalAlert"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSICreateAppeasementApprovalAlert">
+            <Input/>
+            <Template/>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace
+            inputNS="extn_VSICreateAppeasementApprovalAlert_input" outputNS="extn_VSICreateAppeasementApprovalAlert_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup description="" endpoint="EP_CONFIG"
+        id="extn_VSIIssueEGiftCardForAppeasementsSyncService"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSIIssueEGiftCardForAppeasementsSyncService">
+            <Input/>
+            <Template/>
+        </API>
+        <classInformation name="com.vsi.isccs.mashups.VSICustomerAppeasementRecordInvoiceMashup"/>
+        <APINamespace
+            inputNS="extn_VSIIssueEGiftCardForAppeasementsSyncService_input" outputNS="extn_VSIIssueEGiftCardForAppeasementsSyncService_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+	<mashup cached="PAGE"
+        description="Retrieves the list of countries defined in the system to be used to populate a country drop down."
+        endpoint="EP_CONFIG" id="extn_getGenderList"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <API Name="getCommonCodeList">
+            <Input>
+                <CommonCode CodeType="GENDER"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode" MaximumRecords="">
+                    <OrderBy>
+                        <Attribute Desc="N" Name="CodeLongDescription"/>
+                    </OrderBy>
+                </CommonCode>
+            </Input>
+            <Template>
+                <CommonCodeList>
+                    <CommonCode CodeLongDescription="" CodeName=""
+                        CodeShortDescription="" CodeValue=""/>
+                </CommonCodeList>
+            </Template>
+        </API>
+        <APINamespace inputNS="extn_getGenderList_input" outputNS="extn_getGenderList_output"/>
+    </mashup>
+		<mashup cached="PAGE"
+        description="Retrieves the list of countries defined in the system to be used to populate a country drop down."
+        endpoint="EP_CONFIG" id="extn_getCarrierPreferenceList"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <API Name="getCommonCodeList">
+            <Input>
+                <CommonCode CodeType="CARRIER_PREFERENCE"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode" MaximumRecords="">
+                    <OrderBy>
+                        <Attribute Desc="N" Name="CodeLongDescription"/>
+                    </OrderBy>
+                </CommonCode>
+            </Input>
+            <Template>
+                <CommonCodeList>
+                    <CommonCode CodeLongDescription="" CodeName=""
+                        CodeShortDescription="" CodeValue=""/>
+                </CommonCodeList>
+            </Template>
+        </API>
+        <APINamespace inputNS="extn_getCarrierPreferenceList_input" outputNS="extn_getCarrierPreferenceList_output"/>
+    </mashup>
+    <mashup description="" endpoint="EP_CONFIG"
+        id="getOrganizationList_ID" mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getOrganizationList">
+            <Input>
+                <Organization IsCarrier="Y"/>
+            </Input>
+            <Template>
+                <OrganizationList>
+                    <Organization OrganizationCode=""/>
+                </OrganizationList>
+            </Template>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace inputNS="getOrganizationList_ID_input" outputNS="getOrganizationList_ID_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <!--OMS-1767 -->
+    <mashup description="Get Carrier Organizations"
+        endpoint="EP_CUSTOMER" id="getCarrierList" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API Name="getOrganizationList">
+            <Input>
+                <Organization IsCarrier="Y" OrganizationCode="UPSN"/>
+            </Input>
+            <Template>
+                <OrganizationList>
+                    <Organization OrganizationCode="" OrganizationName=""/>
+                </OrganizationList>
+            </Template>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace inputNS="getCarrierList_input" outputNS="getCarrierList_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+	<!--OMS-1767 -->
+    <mashup
+        description="This mash up used to do Address Verification at UI."
+        endpoint="EP_CONFIG"
+        id="extn_Address_Capture_Verification_Mashup_Id"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSIQASSyncWebService">
+            <Input/>
+            <Template/>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace
+            inputNS="extn_Address_Capture_Verification_Mashup_Id_input" outputNS="extn_Address_Capture_Verification_Mashup_Id_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup description="Custom Process Return Order"
+        endpoint="EP_ORDER" id="extn_createReturn_processReturnOrder"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="processReturnOrder">
+            <Input>
+                <Order BuyerUserId="" DetermineOrdersForReturn="N"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    ExecuteReturnPolicy="N" OrderHeaderKey="">
+                    <AppContextInfo Channel="Call Center"/>
+                </Order>
+            </Input>
+            <Template>
+                <Order BillToID="" BillToKey="" BuyerUserId=""
+                    CustomerContactID="" DocumentType=""
+                    EnterpriseCode=""
+                    MashupTemplateRef="OrderEditorInput" OrderHeaderKey="">
+                    <PriceInfo Currency=""/>
+                    <OverallTotals GrandTotal=""/>
+                    <OrderLines>
+                        <OrderLine GiftFlag=""/>
+                    </OrderLines>
+                </Order>
+            </Template>
+        </API>
+        <classInformation name="com.vsi.isccs.mashups.returns.VSIProcessReturnOrderMashup"/>
+        <APINamespace
+            inputNS="extn_createReturn_processReturnOrder_input" outputNS="extn_createReturn_processReturnOrder_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+	<mashup description="UpdatePaymentOnReturnOrder" endpoint="EP_ORDER"
+		id="createReturn_ChangePaymentMethods" mashuptype="XAPI" resourceId=""
+		transactional="true">
+		<API Name="changeOrder">
+			<Input>
+				<Order OrderHeaderKey="">
+					<PaymentMethods>
+						<PaymentMethod Action=""
+							AwaitingAuthInterfaceAmount="" AwaitingChargeInterfaceAmount=""
+							AllowPaymentMethodInfoOverride="" BillToKey="" CashBackAmount=""
+							ChargeSequence="" CheckNo="" CheckReference="" CreditCardExpDate=""
+							CreditCardName="" CreditCardTypeDesc="" CreditCardNo="" CreditCardType=""
+							CustomerAccountNo="" CustomerPONo="" DebitCardNo=""
+							DisplayCreditCardNo="" DisplayCustomerAccountNo=""
+							DisplayDebitCardNo="" DisplayPrimaryAccountNo=" "
+							DisplayPaymentReference1="" DisplaySvcNo="" EntryType=""
+							FundsAvailable="" FirstName="" LastName="" MaxChargeLimit=""
+							MiddleName="" GetFundsAvailableUserExitInvoked=""
+							IncompletePaymentType="" PaymentKey="" PaymentReference1=""
+							PaymentReference2="" PaymentReference3="" PaymentReference4=""
+							PaymentReference5="" PaymentReference6="" PaymentReference7=""
+							PaymentReference8="" PaymentReference9="" PaymentType=""
+							PaymentTypeDesc="" PlannedRefundAmount="" PaymentTypeGroup=""
+							ReducePendingAsyncronousAmounts="" PrimaryAccountNo=""
+							SuspendAnyMoreCharges="" SvcNo="" UnlimitedCharges=""
+							RequestedAuthAmount="" RequestedChargeAmount=""
+							RequestedRefundAmount="" TotalAltRefundedAmount=""
+							TotalAuthorized="" TotalCharged="" TotalRefundedAmount="">
+							<PersonInfoBillTo AddressID="" AddressLine1=""
+								AddressLine2="" AddressLine3="" AddressLine4="" AddressLine5=""
+								AddressLine6="" AlternateEmailID="" Beeper="" City="" Company=""
+								Country="" DayFaxNo="" DayPhone="" Department="" EMailID=""
+								EveningFaxNo="" EveningPhone="" FirstName="" IsAddressVerified=""
+								IsCommercialAddress="" JobTitle="" LastName="" Latitude=""
+								Longitude="" MiddleName="" MobilePhone="" OtherPhone=""
+								PersonID="" PersonInfoKey="" State="" Suffix="" TaxGeoCode=""
+								Title="" ZipCode="" />
+							<PaymentDetailsList>
+								<PaymentDetails AuditTransactionId="" AuthAvs=""
+									AuthCode="" AuthReturnCode="" AuthReturnFlag=""
+									AuthReturnMessage="" AuthTime="" AuthorizationExpirationDate=""
+									AuthorizationID="" CVVAuthCode="" CallForAuthorizationStatus=""
+									CashBackAmount="" ChargeType="" CollectionDate=""
+									HoldAgainstBook="" InPerson="" InternalReturnCode=""
+									InternalReturnFlag="" InternalReturnMessage="" OfflineStatus=""
+									PaymentEntryType="" ProcessedAmount="" Reference1=""
+									Reference2="" RequestAmount="" RequestId="" RequestProcessed=""
+									TranRequestTime="" TranReturnCode="" TranReturnFlag=""
+									TranReturnMessage="" TranType="" VoidTransaction="" />
+							</PaymentDetailsList>
+							<PaymentDetails AuditTransactionId="" AuthAvs=""
+								AuthCode="" AuthReturnCode="" AuthReturnFlag=""
+								AuthReturnMessage="" AuthTime="" AuthorizationExpirationDate=""
+								AuthorizationID="" CVVAuthCode="" CallForAuthorizationStatus=""
+								CashBackAmount="" ChargeType="" CollectionDate=""
+								HoldAgainstBook="" InPerson="" InternalReturnCode=""
+								InternalReturnFlag="" InternalReturnMessage="" OfflineStatus=""
+								PaymentEntryType="" ProcessedAmount="" Reference1="" Reference2=""
+								RequestAmount="" RequestId="" RequestProcessed=""
+								TranRequestTime="" TranReturnCode="" TranReturnFlag=""
+								TranReturnMessage="" TranType="" VoidTransaction="" />
+						</PaymentMethod>
+					</PaymentMethods>
+				</Order>
+			</Input>
+			<Template>
+				<Order DocumentType="" EnterpriseCode="" OrderHeaderKey=""
+					OrderNo="" />
+			</Template>
+		</API>
+		<classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup" />
+		<APINamespace inputNS="createReturn_ChangePaymentMethods_input"
+			outputNS="createReturn_ChangePaymentMethods_output" />
+		<AlternateResourceIds />
+	</mashup>
+    <mashup description="" endpoint="EP_CONFIG"
+        id="extn_paymentConfirmation_capturePayment" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API FlowName="VSICapturePayment">
+            <Input/>
+            <Template/>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace
+            inputNS="extn_paymentConfirmation_capturePayment_input" outputNS="extn_paymentConfirmation_capturePayment_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+	<mashup cached="PAGE"
+        description="Retrieves the list of countries defined in the system to be used to populate a country drop down."
+        endpoint="EP_CONFIG" id="extn_TrackingNo_CommonCode"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <API Name="getCommonCodeList">
+            <Input>
+                <CommonCode CodeType="VSI_SHIP_TRACK_RSN"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode" MaximumRecords="">
+                    <OrderBy>
+                        <Attribute Desc="N" Name="CodeLongDescription"/>
+                    </OrderBy>
+                </CommonCode>
+            </Input>
+            <Template>
+                <CommonCodeList>
+                    <CommonCode CodeLongDescription="" CodeName=""
+                        CodeShortDescription="" CodeValue=""/>
+                </CommonCodeList>
+            </Template>
+        </API>
+        <APINamespace inputNS="extn_TrackingNo_CommonCode_input" outputNS="extn_TrackingNo_CommonCode_output"/>
+    </mashup>
+    <mashup description="Calling getOrderList" endpoint="EP_CONFIG"
+        id="extn_getOrderList" mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getOrderList">
+            <Input>
+                <Order OrderHeaderKey=""/>
+            </Input>
+            <Template>
+                <OrderList>
+                    <Order OrderHeaderKey="">
+                        <OrderLines>
+                            <OrderLine OrderLineKey="" OrderedQty="">
+                                <Schedules>
+                                    <Schedule OrderLineKey=""
+                                    ProductAvailabilityDate="" Quantity=""/>
+                                </Schedules>
+                                <Item ItemDesc="" ItemID=""/>
+                                <ItemDetails>
+                                    <PrimaryInformation ExtendedDisplayDescription=""/>
+                                </ItemDetails>
+                            </OrderLine>
+                        </OrderLines>
+                    </Order>
+                </OrderList>
+            </Template>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_getOrderList_input" outputNS="extn_getOrderList_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup description="" endpoint="EP_ORDER"
+        id="processReturnOrder_massageOutput" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API FlowName="VSIMassageOutputForProcessReturnOrderSyncService">
+            <Input>
+            </Input>
+            <Template/>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace inputNS="processReturnOrder_massageOutput_input" outputNS="processReturnOrder_massageOutput_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup description="" endpoint="EP_CONFIG"
+        id="extn_VSIGetAvailableInventoryforUI" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API FlowName="VSIGetAvailableInventoryforUI">
+            <Input/>
+            <Template/>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_VSIGetAvailableInventoryforUI_input" outputNS="extn_VSIGetAvailableInventoryforUI_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup
+        description="This mashup will be used to fetch the list of PaymentType which are not be displayed."
+        endpoint="EP_CONFIG" id="getCommonCodeList_VSICancelReason" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API Name="getCommonCodeList">
+            <Input>
+                <CommonCode CodeType="" CodeValue="" />
+            </Input>
+            <Template>
+				<CommonCodeList>
+					<CommonCode CodeLongDescription="" CodeName="" CodeShortDescription="" CodeType="" CodeValue="" />
+				</CommonCodeList>
+			</Template>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_getCommonCode_input" outputNS="extn_getCommonCode_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup description="" endpoint="EP_CONFIG"
+        id="lineTrack_getOrderLineList" mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getCompleteOrderLineList">
+            <Input/>
+            <Template>
+                <OrderLineList>
+                    <OrderLine ChainedFromOrderLineKey=""
+                        DeliveryMethod="" ExpectedEndDate=""
+                        ExpectedStartDate="" GiftFlag="" GiftWrap=""
+                        GroupSequenceNumber="" HasNotes=""
+                        HasReturnLines="" HoldFlag="" IsBundleParent=""
+                        IsDeliveryAllowed="" IsOpenBox=""
+                        IsPickupAllowed="" IsPriceMatched=""
+                        IsShippingAllowed="" ItemGroupCode=""
+                        LineType="" MarkForKey="" MaxLineStatusDesc=""
+                        MaxOrderStatusDesc="" MultipleStatusesExist=""
+                        OrderHeaderKey="" OrderLineKey="" OrderedQty=""
+                        OverallStatus="" PrimeLineNo=""
+                        PromisedApptEndDate="" PromisedApptStartDate=""
+                        ReshippedQty="" ShipNode=""
+                        ShipnodeDescription="" ShippedQuantity=""
+                        Status="" Timezone="">
+						<ShipmentLines>
+							<ShipmentLine Quantity="" >
+								<Shipment TrackingNo="" />
+							</ShipmentLine>
+						</ShipmentLines>
+                        <TrackingInfoList>
+                            <TrackingInfo TrackingNo="" TrackingUrl=""/>
+                        </TrackingInfoList>
+                    </OrderLine>
+                </OrderLineList>
+            </Template>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="lineTrack_getOrderLineList_input" outputNS="lineTrack_getOrderLineList_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup
+        description="Gets the tracking numbers and URLs for STS orders"
+        endpoint="EP_CONFIG" id="extn_getSTSTrackingNo"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSIGetSTSTrackingInfo">
+            <Input/>
+            <Template/>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_getSTSTrackingNo_input" outputNS="extn_getSTSTrackingNo_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+	<!-- OMS-940   Start-->
+	 <mashup
+        description="This mashup will be used to fetch the list of Exception types used in the Create alert screen."
+        endpoint="EP_CONFIG" id="getCommonCodeList_exceptionType" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API Name="getCommonCodeList">
+            <Input>
+                <CommonCode CodeType="VSI_EXCEPTION_TYPE" />
+            </Input>
+            <Template>
+				<CommonCodeList>
+					<CommonCode CodeLongDescription=""  CodeShortDescription="" CodeType="" CodeValue="" />
+				</CommonCodeList>
+			</Template>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_exceptionType" outputNS="extn_exceptionType"/>
+        <AlternateResourceIds/>
+    </mashup>
+	<!-- OMS-940   End-->
+		<!-- OMS-935 :Start -->
+	 <mashup
+        description="This mashup will be used to fetch the list of return lines for a Sales order line"
+        endpoint="EP_CONFIG" id="getOrderLineList_derivedLines" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API Name="getOrderLineList">
+            <Input>
+                <OrderLine  DerivedFromOrderLineKey="" >
+					<Order DocumentType="0003" />
+				</OrderLine>
+            </Input>
+            <Template>
+				<OrderLineList>
+					<OrderLine  OrderLineKey="" >
+						<ComputedPrice Charges="" Discount="" ExtendedPrice="" LineTotal="" Tax="" UnitPrice="" LineTotalWithoutTax="" />
+					</OrderLine>
+				</OrderLineList>
+			</Template>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="getOrderLineList_derivedLines_input" outputNS="getOrderLineList_derivedLines_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+	<!-- OMS-935 :End -->
+	<!-- START - Loyalty 2.1 -->
+	<mashup
+		description="This mashup will be used to fetch the list rewards available for the customer."
+		endpoint="EP_CONFIG" id="extn_getRewardsList" mashuptype="XAPI"
+		resourceId="" transactional="true">
+		<API FlowName="VSIGetRewardsList">
+			<Input>
+				<Customer CustomerNumber=""/>
+			</Input>
+			<Template>
+				<Customer CustomerNumber="9991152359">
+				    <RewardsList>
+				        <Reward RewardId="" RewardAmount="" ExpirationDate="" IsActive=""/>
+				    </RewardsList>
+				</Customer>
+			</Template>
+		</API>
+		<classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+		<APINamespace inputNS="extn_getRewardsList_input" outputNS="extn_getRewardsList_output"/>
+		<AlternateResourceIds/>
+	</mashup>
+	<!-- END - Loyalty 2.1 -->
+	<!-- OMS-1005   Start-->
+	 <mashup
+        description="This mashup will be used to fetch the list of APO_FPO zipcodes used for blocking Shipping Options other than Standard."
+        endpoint="EP_CONFIG" id="extn_getCommonCodeList_ApoFpoZipCode" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API Name="getCommonCodeList">
+            <Input>
+                <CommonCode CodeType="VSI_APO_FPO_ZIP" />
+            </Input>
+            <Template>
+				<CommonCodeList>
+					<CommonCode CodeLongDescription=""  CodeShortDescription="" CodeType="" CodeValue="" />
+				</CommonCodeList>
+			</Template>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_ApoFpoZipCode_ip" outputNS="extn_ApoFpoZipCode_op"/>
+        <AlternateResourceIds/>
+    </mashup>
+	<mashup
+        description="This mashup will be used to fetch the list of US Territories states used for blocking Shipping Options other than Standard."
+        endpoint="EP_CONFIG" id="extn_getCommonCodeList_US_Territories" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API Name="getCommonCodeList">
+            <Input>
+                <CommonCode CodeType="VSI_US_TERRITORIES" />
+            </Input>
+            <Template>
+				<CommonCodeList>
+					<CommonCode CodeLongDescription=""  CodeShortDescription="" CodeType="" CodeValue="" />
+				</CommonCodeList>
+			</Template>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_US_Territories_ip" outputNS="extn_US_Territories_op"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <!-- OMS-1005   End-->
+	
+	<mashup cached="PAGE"
+        description="This mashup is used for fetching the return reasons common codes for wholesale.The input of the mashup is modified to pass the return order document type to the getCommonCodeList API."
+        endpoint="EP_CONFIG"
+        id="acknowledgeReturn_getReturnReasonCodesForWholesale" mashuptype="XAPI"
+        skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.isccs.returns.mashups.SCCSAddReturnOrderDocumentTypeMashup"/>
+        <API FlowName="VSIGetReturnReasonListForUI">
+            <Input>
+                <CommonCode
+                    CallingOrganizationCode=""
+                    CodeType="RETURN_REASON"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+					OrderHeaderKey=""
+                    DocumentType="" MaximumRecords="">
+                    <OrderBy>
+                        <Attribute Desc="N" Name="CodeShortDescription"/>
+                    </OrderBy>
+                </CommonCode>
+            </Input>
+            <Template>
+                <CommonCodeList>
+                    <CommonCode CodeName="" CodeShortDescription="" CodeValue=""/>
+                </CommonCodeList>
+            </Template>
+        </API>
+        <APINamespace inputNS="getReturnReasonList_input" outputNS="getReturnReasonList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCRET0002"/>
+            <AlternateResourceId altResourceId="ISCCSSYS002"/>
+        </AlternateResourceIds>
+    </mashup>
+	<!--OMS-1689 -->
+	<mashup
+        description="This mashup will be used to fetch the list of MarketPlace enterprise"
+        endpoint="EP_CONFIG" id="extn_getCommonCodeList_For_MarketPlace" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API Name="getCommonCodeList">
+            <Input>
+                <CommonCode CodeType="VSI_MARKET_PLACE_ENT" />
+            </Input>
+            <Template>
+				<CommonCodeList>
+					<CommonCode CodeLongDescription=""  CodeShortDescription="" CodeType="" CodeValue="" />
+				</CommonCodeList>
+			</Template>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="extn_MarketPlace_ip" outputNS="extn_MarketPlace_op"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <!-- OMS-1689   End-->
+	
+	
+</mashups>

@@ -1,0 +1,6 @@
+<Order DefaultTemplate="" HasDerivedChild="" HasDerivedParent="" HasChainedLines="" DriverDate="" AllocationRuleID="" BillToID="" BuyerOrganizationCode="" CarrierAccountNo="" CarrierServiceCode="" ScacAndServiceKey="" ScacAndService="" ChargeActualFreightFlag="" CustomerEMailID="" DeliveryCode="" Division="" DraftOrderFlag="" EnteredBy="" EnterpriseCode="" EntryType="" FreightTerms="" HoldFlag="" HoldReasonCode="" NotificationReference="" NotificationType="" NotifyAfterShipmentFlag="" OrderDate="" OrderHeaderKey="" OrderName="" OrderNo="" OrderType="" OriginalTotalAmount="" PaymentStatus="" PersonalizeCode="" PriorityCode="" PriorityNumber="" Purpose="" isHistory="" ReceivingNode="" ReqCancelDate="" ReqDeliveryDate="" ReqShipDate="" SCAC="" SearchCriteria1="" SearchCriteria2="" SellerOrganizationCode="" ShipCompleteFlag="" ShipToID="" TaxExemptFlag="" TaxExemptionCertificate="" TaxJurisdiction="" TaxPayerId="" TermsCode="" Status="" MaxOrderStatus="" MaxOrderStatusDesc="" MinOrderStatus="" MinOrderStatusDesc="" CustomerPONo="" OriginalTax="" AuthorizationExpirationDate="" TotalAdjustmentAmount="" OtherCharges="" PriceProgramKey="" DocumentType="" CreatedAtNode="" ShipNode="" PaymentRuleId="">
+<OrderHoldTypes>
+<OrderHoldType HoldType="" Status="">
+</OrderHoldType>
+</OrderHoldTypes>
+</Order>

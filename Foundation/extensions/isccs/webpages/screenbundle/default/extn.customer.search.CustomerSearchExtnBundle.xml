@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.customer.search.CustomerSearchExtnBundle" screenId="extn.customer.search.CustomerSearchExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="cb_customerEnterprise_FilteringSelect_label"
+            bundleKey="Organization" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="cb_customerEnterprise"/>
+        <BundleEntry bundleEntryId="SST_SearchResult_TitlePane_title"
+            bundleKey="extn_Customer_Search_Results"
+            bundleValueFn="_scSimpleBundle" property="title"
+            type="WIDGET" uId="SST_SearchResult"/>
+        <BundleEntry
+            bundleEntryId="txt_userIdStartsWithAdvanced_TextField_label"
+            bundleKey="CustomerId" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="txt_userIdStartsWithAdvanced"/>
+        <BundleEntry
+            bundleEntryId="txt_customerEmailAdvanced_TextField_label"
+            bundleKey="extn_E_mail_ID" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txt_customerEmailAdvanced"/>
+        <BundleEntry
+            bundleEntryId="txt_customerPhoneNumberAdvanced_TextField_label"
+            bundleKey="extn_Primary_Phone" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txt_customerPhoneNumberAdvanced"/>
+        <BundleEntry
+            bundleEntryId="extn_textfield_HealthyAwardsAdvanced_TextField_label"
+            bundleKey="extn_Healthy_Awards_" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="extn_textfield_HealthyAwardsAdvanced"/>
+        <BundleEntry
+            bundleEntryId="txt_customerLastNameAdvanced_TextField_label"
+            bundleKey="extn_Last_Name" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txt_customerLastNameAdvanced"/>
+        <BundleEntry
+            bundleEntryId="txt_customerFirstNameAdvanced_TextField_label"
+            bundleKey="extn_First_Name" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txt_customerFirstNameAdvanced"/>
+        <BundleEntry
+            bundleEntryId="txt_customerPostalCodeAdvanced_TextField_label"
+            bundleKey="ZipCodeCol" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txt_customerPostalCodeAdvanced"/>
+    </BundleEntries>
+</ScreenBundle>

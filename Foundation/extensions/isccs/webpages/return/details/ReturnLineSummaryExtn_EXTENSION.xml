@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ReturnLineSummaryExtn"
+        extnPackage="extn.return.details"
+        originalScreen="isccs.return.details.ReturnLineSummary"
+        originalScreenPackage="isccs.return.details" type="diffrential">
+        <Items>
+            <ContentPane _sc_extensibility_operation="change" _sc_extensibility_referenceUId="DST_DetailScreenPanel"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="afterScreenLoad" isExtn="true" sequence="51">
+                    <Handler methodName="checkMigratedOrderFlag"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+    </ScreenExtension>
+</ExtensionMetaData>

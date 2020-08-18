@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OrderList>
+<Order BillToID="" CustomerEMailID="" ExternalCustomerID="" OrderDate="" DocumentType="" EnterpriseCode=""  IsNewOrder=""  OrderHeaderKey="" OrderNo="" 
+        EntryType="" ReturnOrderHeaderKeyForExchange="" OrderPurpose="" MaxOrderStatus="" MinOrderStatus="" Status="" OrderType="" SellerOrganizationCode="">
+<ExchangeOrders>
+	<ExchangeOrder EnterpriseCode="" EntryType="" ExchangeType="" FreightTerms="" HasDeliveryLines="" HasProductLines="" HasServiceLines="" HoldFlag="" HoldReasonCode="" MaxOrderStatus="" MaxOrderStatusDesc="" MinOrderStatus="" MinOrderStatusDesc="" NotifyAfterShipmentFlag="" OrderDate="" OrderHeaderKey="" OrderName="" OrderNo="" OrderPurpose="" OrderType="" /> 
+</ExchangeOrders>
+    
+</Order>
+</OrderList>
+
+

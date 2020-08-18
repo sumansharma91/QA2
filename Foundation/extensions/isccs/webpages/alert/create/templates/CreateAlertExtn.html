@@ -1,0 +1,115 @@
+		<div>
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'cmbEnterprise' , 
+		renderHidden : true  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '3' , 
+		_sc_extensibility_referenceUId : 'pnlAlertInformation' , 
+		uId : 'extn_alertType' , 
+		required : true , 
+		_sc_extensibility_position : 'last'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getSimpleBundleString('ExceptionType')
+,	
+			 	bindingData : 	{
+		 optionsBinding : 	{
+		 valueField : 			'CodeValue'
+,
+		 path : 			'CommonCodeList.CommonCode'
+,
+		 descriptionField : 			'CodeShortDescription'
+,
+		 namespace : 			'extn_exceptionType'
+	}
+,
+		 targetBinding : 	[
+	 		{
+		 path : 			'Inbox.ExceptionType'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+,
+		 namespace : 			'createAlert_Input'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 path : 			'Inbox.ExceptionType'
+,
+		 namespace : 			'screenInput'
+	}
+	}
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '4' , 
+		_sc_extensibility_referenceUId : 'cmbAlertType' , 
+		uId : 'extn_alertType' , 
+		_sc_extensibility_position : 'before'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'cmbAlertType' , 
+		renderHidden : true , 
+		required : false , 
+		disabled : true  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'cmbQueue' , 
+		renderHidden : true , 
+		required : false  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'insert' , 
+		readOnly : true , 
+		_sc_extensibility_moveOrder : '1' , 
+		_sc_extensibility_referenceUId : 'pnlAlertInformation' , 
+		scuiDataType : 'QueueName' , 
+		uId : 'extn_Queue_txt' , 
+		required : true , 
+		disabled : false , 
+		_sc_extensibility_position : 'after'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getSimpleBundleString('QueueName')
+,	
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 path : 			'Inbox.QueueName'
+,
+		 namespace : 			'screenInput'
+	}
+	}
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '2' , 
+		_sc_extensibility_referenceUId : 'txtPriority' , 
+		uId : 'extn_Queue_txt' , 
+		_sc_extensibility_position : 'after'  
+	 					}">
+		 	</div>  
+		</div>

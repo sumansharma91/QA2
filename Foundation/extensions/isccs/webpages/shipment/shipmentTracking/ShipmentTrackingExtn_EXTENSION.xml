@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ShipmentTrackingExtn"
+        extnPackage="extn.shipment.shipmentTracking"
+        originalScreen="isccs.shipment.shipmentTracking.ShipmentTracking"
+        originalScreenPackage="isccs.shipment.shipmentTracking" type="diffrential">
+        <MashupRefs>
+            <Behavior>
+                <MashupRef extnType="MODIFY"
+                    mashupId="ShipmentTracking_getCompleteOrderLineList" mashupRefId="getCompleteOrderLineList"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

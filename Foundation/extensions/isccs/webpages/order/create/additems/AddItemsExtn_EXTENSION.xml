@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="AddItemsExtn"
+        extnPackage="extn.order.create.additems"
+        originalScreen="isccs.order.create.additems.AddItems"
+        originalScreenPackage="isccs.order.create.additems" type="diffrential">
+        <Items>
+            <Button _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="copyOrder" renderHidden="true"/>
+            <DateTextBox _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="updateButtonContainer"
+                class="productAddPanel relative"
+                label="$(_scSimpleBundle:extn_Promotion_code_date_override)"
+                resourceId="VSIPROMOOVRDE" uId="extn_datetextbox_PromotionCodeDateOverride">
+                <BindingData>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="getCompleteOrderLineList_input"
+                            path="Order.Extn.ExtnPricingDate" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                    <SourceBinding
+                        namespace="getCompleteOrderDetails_output" path="Order.Extn.ExtnPricingDate"/>
+                </BindingData>
+            </DateTextBox>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber
+                    eventId="extn_datetextbox_PromotionCodeDateOverride_onChange"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="onPromoOverrideDateChange"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Init>
+                <MashupRef extnType="MODIFY"
+                    mashupId="additems_getCompleteOrderDetails" mashupRefId="getCompleteOrderDetails"/>
+            </Init>
+            <Behavior>
+                <MashupRef extnType="MODIFY"
+                    mashupId="additems_getCompleteItemList" mashupRefId="getCompleteItemList"/>
+                <MashupRef extnType="MODIFY"
+                    mashupId="additems_modifyFulfillmentOptions" mashupRefId="modifyFulfillmentOptions"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

@@ -1,0 +1,126 @@
+		<div>
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Label" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'lblOrderNo'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getSimpleBundleString('blank')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : false , 
+		_sc_extensibility_operation : 'change' , 
+		scuiDataType : 'TimeStamp' , 
+		_sc_extensibility_referenceUId : 'lblOrderDateDisplay'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'lblOrderDateDisplay' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '11' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'pnlPrimaryInfo'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'lblOrderDateDisplay' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '12' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_datalabel_Healthy_Awards'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_datalabel_Healthy_Awards' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '4' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'lnkTotalAmountDisplay'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'getCompleteOrderDetails_output'
+,
+		 path : 			'Order.BillToID'
+	}
+	}
+,	
+			 	label : 			this.getBundleString('extn_Healthy_Awards_')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_datalabel_Healthy_Awards' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '7' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'lblOrderDateDisplay'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_datalabel_Name' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '2' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'lblChannelDisplay'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getBundleString('Name')
+,	
+			 	title : 			this.getSimpleBundleString('blank')
+,	
+			 	value : 			this.getSimpleBundleString('blank')
+,	
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'getCompleteOrderDetails_output'
+,
+		 path : 			'Order.CustomerLastName'
+,
+		 dynamicBindingFunc : 			'getFirstLastName'
+	}
+	}
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_datalabel_Name' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '8' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'lblOrderDateDisplay'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'lblChannelDisplay' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '10' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'lblOrderDateDisplay'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'lblEnterpriseCodeDisplay'  
+	 					}">
+		 	</div>  
+		</div>

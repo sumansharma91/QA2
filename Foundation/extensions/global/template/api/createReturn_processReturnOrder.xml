@@ -1,0 +1,55 @@
+<Order BillToID="" BillToKey="" BuyerOrganizationCode=""
+	BuyerUserId="" CustomerContactID="" CustomerEMailID=""
+	CustomerFirstName="" CustomerLastName="" CustomerPONo=""
+	CustomerPhoneNo="" CustomerZipCode="" DocumentType="" DraftOrderFlag=""
+	EnterpriseCode="" EntryType="" MaxOrderStatusDesc="" OrderHeaderKey=""
+	OrderName="" OrderNo="" SellerOrganizationCode="" TaxExemptFlag=""
+	TaxExemptionCertificate="" isHistory="">
+	<OverallTotals GrandTotal="" />
+	<PriceInfo Currency="" />
+	<PersonInfoBillTo AddressID="" AddressLine1=""
+		AddressLine2="" City="" Company="" Country="" CountryDesc="" DayPhone=""
+		Department="" EMailID="" EveningPhone="" FirstName=""
+		IsAddressVerified="" IsCommercialAddress="" LastName="" MiddleName=""
+		MobilePhone="" PersonID="" PersonInfoKey="" State="" Suffix="" Title=""
+		TitleDesc="" ZipCode="" isHistory="" />
+	<OrderLines>
+		<OrderLine GiftFlag="" />
+	</OrderLines>
+	<PersonInfoShipTo AddressID="" AddressLine1=""
+		AddressLine2="" City="" Company="" Country="" CountryDesc="" DayPhone=""
+		Department="" EMailID="" EveningPhone="" FirstName=""
+		IsAddressVerified="" IsCommercialAddress="" LastName="" MiddleName=""
+		MobilePhone="" PersonID="" PersonInfoKey="" State="" Suffix="" Title=""
+		TitleDesc="" ZipCode="" isHistory="" />
+	<PaymentMethods>
+		<PaymentMethod AwaitingAuthInterfaceAmount=""
+			AwaitingChargeInterfaceAmount="" BillToKey="" CashBackAmount=""
+			ChargeSequence="" CheckNo="" CheckReference="" CreditCardExpDate=""
+			CreditCardName="" CreditCardNo="" CreditCardType=""
+			CustomerAccountNo="" CustomerPONo="" DebitCardNo=""
+			DisplayCreditCardNo="" DisplayCustomerAccountNo=""
+			DisplayDebitCardNo="" DisplayPaymentReference1=""
+			DisplayPrimaryAccountNo="" DisplaySvcNo="" FirstName=""
+			FundsAvailable="" GetFundsAvailableUserExitInvoked=""
+			IncompletePaymentType="" LastName="" MaxChargeLimit="" MiddleName=""
+			PaymentKey="" PaymentReference1="" PaymentReference2=""
+			PaymentReference3="" PaymentReference4="" PaymentReference5=""
+			PaymentReference6="" PaymentReference7="" PaymentReference8=""
+			PaymentReference9="" PaymentTemplateType="" PaymentType=""
+			PaymentTypeGroup="" PlannedRefundAmount="" PrimaryAccountNo=""
+			RequestedAuthAmount="" RequestedChargeAmount=""
+			RequestedRefundAmount="" SuspendAnyMoreCharges="" SvcNo=""
+			TotalAltRefundedAmount="" TotalAuthorized="" TotalCharged=""
+			TotalRefundedAmount="" UnlimitedCharges="">
+			<PersonInfoBillTo AddressID="" AddressLine1=""
+				AddressLine2="" AddressLine3="" AddressLine4="" AddressLine5=""
+				AddressLine6="" AlternateEmailID="" Beeper="" City="" Company=""
+				Country="" DayFaxNo="" DayPhone="" Department="" EMailID=""
+				EveningFaxNo="" EveningPhone="" FirstName="" IsAddressVerified=""
+				IsCommercialAddress="" JobTitle="" LastName="" Latitude=""
+				Longitude="" MiddleName="" MobilePhone="" OtherPhone="" PersonID=""
+				PersonInfoKey="" State="" Suffix="" TaxGeoCode="" Title="" ZipCode="" />
+		</PaymentMethod>
+	</PaymentMethods>
+</Order>

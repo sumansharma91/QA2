@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.components.shipment.common.screens.ShipmentLineDetailsExtnBundle" screenId="extn.components.shipment.common.screens.ShipmentLineDetailsExtn">
+    <BundleEntries>
+        <BundleEntry bundleEntryId="extn_upc_DataLabel_label"
+            bundleKey="extn_UPC_Code" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_upc"/>
+    </BundleEntries>
+</ScreenBundle>

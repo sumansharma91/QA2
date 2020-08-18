@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.order.create.additems.AddItemsLinesFulfillmentDetailsExtnBundle" screenId="extn.order.create.additems.AddItemsLinesFulfillmentDetailsExtn">
+    <BundleEntries>
+        <BundleEntry bundleEntryId="lnkViewStores_Link_value"
+            bundleKey="ViewStore" bundleValueFn="_scSimpleBundle"
+            property="value" type="WIDGET" uId="lnkViewStores"/>
+    </BundleEntries>
+</ScreenBundle>

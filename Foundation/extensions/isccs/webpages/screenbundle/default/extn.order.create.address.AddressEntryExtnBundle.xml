@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.order.create.address.AddressEntryExtnBundle" screenId="extn.order.create.address.AddressEntryExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="extn_Generate_Call_Tag_Alert_CheckBox_label"
+            bundleKey="extn_Schedule_Pick_Up_Call_Tag"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_Generate_Call_Tag_Alert"/>
+    </BundleEntries>
+</ScreenBundle>

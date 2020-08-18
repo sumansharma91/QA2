@@ -1,0 +1,9 @@
+<OrderList LastOrderHeaderKey="">
+<Order EnterpriseCode=""  DocumentType="" OrderNo="">
+<Promotions>
+<Promotion PromotionId="">
+<Extn ExtnCouponID=""/>
+</Promotion>
+</Promotions>
+</Order>
+</OrderList>

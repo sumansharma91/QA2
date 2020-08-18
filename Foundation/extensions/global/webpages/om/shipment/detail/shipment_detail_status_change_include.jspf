@@ -1,0 +1,36 @@
+<%/*******************************************************************************
+Licensed Materials - Property of IBM
+IBM Sterling Selling And Fulfillment Suite
+(C) Copyright IBM Corp. 2005, 2013 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ ********************************************************************************/%>
+<%@ page import="com.yantra.yfc.dom.*" %>
+<%
+	boolean bFound = false;
+	String sCurrentTranID = request.getParameter("xml:/Transaction/@TransactionId");
+	YFCElement oAllowedTransaction = null;
+	YFCElement oAllowedTransactions = null;
+	YFCElement oDropStatusList = null;
+	YFCElement oDropStatus = null;
+    YFCElement rootElement = (YFCElement)request.getAttribute("Shipment");
+    if(rootElement != null)
+	{
+        oAllowedTransactions = rootElement.getChildElement("AllowedTransactions"); 
+        if(oAllowedTransactions != null)
+		{
+			for (Iterator i = oAllowedTransactions.getChildren(); i.hasNext() && !bFound;) 
+			{
+                oAllowedTransaction = (YFCElement)i.next();
+				if( equals(oAllowedTransaction.getAttribute("Tranid"),sCurrentTranID) )
+				{
+					bFound = true;
+					break;
+				}
+			}
+			if(oAllowedTransaction != null)
+				oAllowedTransaction.setAttribute("ShowTransaction","Y");
+
+		}
+	}
+	
+%>

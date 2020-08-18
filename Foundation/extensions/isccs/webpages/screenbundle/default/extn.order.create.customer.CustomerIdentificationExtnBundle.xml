@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.order.create.customer.CustomerIdentificationExtnBundle" screenId="extn.order.create.customer.CustomerIdentificationExtn">
+    <BundleEntries>
+        <BundleEntry bundleEntryId="lnkCreateConsumer_Link_value"
+            bundleKey="extn_Create_New_Customer"
+            bundleValueFn="_scSimpleBundle" property="value"
+            type="WIDGET" uId="lnkCreateConsumer"/>
+        <BundleEntry
+            bundleEntryId="txt_customerEmailAdvanced_TextField_label"
+            bundleKey="extn_E_mail_ID" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txt_customerEmailAdvanced"/>
+        <BundleEntry
+            bundleEntryId="extn_textfieldHealthAwardNoCustomerIdentification_TextField_label"
+            bundleKey="extn_Healthy_Awards_"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_textfieldHealthAwardNoCustomerIdentification"/>
+        <BundleEntry
+            bundleEntryId="txt_userIdStartsWithAdvanced_TextField_label"
+            bundleKey="UserIdStartsWith" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txt_userIdStartsWithAdvanced"/>
+        <BundleEntry
+            bundleEntryId="txt_customerPhoneNumberAdvanced_TextField_label"
+            bundleKey="extn_Primary_Phone" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txt_customerPhoneNumberAdvanced"/>
+    </BundleEntries>
+</ScreenBundle>

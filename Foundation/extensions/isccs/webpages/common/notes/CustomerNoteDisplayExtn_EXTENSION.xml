@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="CustomerNoteDisplayExtn"
+        extnPackage="extn.common.notes"
+        originalScreen="isccs.common.notes.CustomerNoteDisplay"
+        originalScreenPackage="isccs.common.notes" type="diffrential">
+        <Items>
+            <ContentPane _sc_extensibility_operation="change" _sc_extensibility_referenceUId="pnlSaveButtonBar"/>
+        </Items>
+        <MashupRefs>
+            <Behavior>
+                <MashupRef extnType="MODIFY"
+                    mashupId="customerNoteCapture_getNoteList" mashupRefId="getNoteList"/>
+                <MashupRef extnType="MODIFY"
+                    mashupId="customerIdentification_manageCustomer" mashupRefId="saveNote"/>
+                <MashupRef extnType="MODIFY"
+                    mashupId="customerIdentification_manageCustomer" mashupRefId="deleteNote"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

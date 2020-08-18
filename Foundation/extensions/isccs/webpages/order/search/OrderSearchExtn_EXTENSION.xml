@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="OrderSearchExtn"
+        extnPackage="extn.order.search"
+        originalScreen="isccs.order.search.OrderSearch"
+        originalScreenPackage="isccs.order.search" type="diffrential">
+        <Items>
+            <ContentPane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="SST_GenericContentContainer" renderHidden="true"/>
+            <FilteringSelect _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="cmbHoldType" label="$(_scBundle:extn_Hold_Types)"/>
+            <DateTextBox _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txt_orderDateFrom" label="$(_scBundle:extn_Order_Date_From)"/>
+            <DateTextBox _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txt_orderDateTo" label="$(_scBundle:extn_Order_Date_To)"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txt_orderNo2" label="$(_scBundle:extn_Order_)"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txt_custPoNo" label="$(_scBundle:extn_Customer_PO_)"/>
+            <TextField _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txt_orderDateFrom"
+                label="$(_scSimpleBundle:extn_PaymentTech_Order_)" uId="extn_textfield_PaymentTechOrder">
+                <BindingData>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="getAdvancedOrderList_input"
+                            path="Order.PaymentTechOrderId" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                    <SourceBinding namespace="screenInput" path="Order.PaymentTechOrderId"/>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_moveOrder="3"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txt_orderDateFrom"
+                label="$(_scSimpleBundle:extn_Tracking_Number)" uId="extn_textfield_TrackingNo">
+                <BindingData>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="getAdvancedOrderList_input"
+                            path="Order.TrackingNo" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                    <SourceBinding namespace="screenInput" path="Order.TrackingNo"/>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txt_custEmailId" label="$(_scBundle:extn_Customer_Email)"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txt_custPhone" label="$(_scBundle:extn_Customer_Phone_)"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txt_fName" label="$(_scBundle:extn_First_Name)"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txt_lName" label="$(_scBundle:extn_Last_Name)"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txt_postalCode" label="$(_scBundle:ZipCodeCol)"/>
+            <TextField _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="txt_postalCode"
+                label="$(_scSimpleBundle:extn_Healthy_Awards_)" uId="extn_textfieldHAN">
+                <BindingData>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="getAdvancedOrderList_input"
+                            path="Order.BillToID" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                    <SourceBinding namespace="screenInput" path="Order.BillToID"/>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_moveOrder="4"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txt_orderDateFrom"
+                label="$(_scBundle:extn_Marketplace_Order_Number)" uId="extn_textfield_Marketplace">
+                <BindingData>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="getAdvancedOrderList_input"
+                            path="Order.CustomerPONo" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                    <SourceBinding namespace="screenInput" path="Order.CustomerPONo"/>
+                </BindingData>
+            </TextField>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="extn_textfieldHAN_onKeyUp"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="SST_invokeApiOnEnter"/>
+                </Subscriber>
+                <Subscriber
+                    eventId="extn_textfield_PaymentTechOrder_onKeyUp"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="SST_invokeApiOnEnter"/>
+                </Subscriber>
+                <Subscriber eventId="extn_textfield_TrackingNo_onKeyUp"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="SST_invokeApiOnEnter"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Behavior>
+                <MashupRef extnType="ADD"
+                    mashupId="extn_getShipmentContainerList" mashupRefId="extn_getShipmentContainerList_RefID"/>
+                <MashupRef extnType="ADD"
+                    mashupId="extn_getAJBSettlementList" mashupRefId="extn_getAJBSettlementList_RefID"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

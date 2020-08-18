@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.order.details.OrderSummaryLinesExtnBundle" screenId="extn.order.details.OrderSummaryLinesExtn">
+    <BundleEntries>
+        <BundleEntry bundleEntryId="tblColProductAddItems_View_name"
+            bundleKey="extn_Item" bundleValueFn="_scSimpleBundle"
+            property="name" type="WIDGET" uId="tblColProductAddItems"/>
+        <BundleEntry
+            bundleEntryId="extn_OLST_listGrid_view_Customer_PO_No_View_name"
+            bundleKey="extn_Customer_PO_No"
+            bundleValueFn="_scSimpleBundle" property="name"
+            type="WIDGET" uId="extn_OLST_listGrid_view_Customer_PO_No"/>
+        <BundleEntry
+            bundleEntryId="extn_OLST_listGrid_view_Fulfillment_Details_View_name"
+            bundleKey="extn_Fulfillment_Details"
+            bundleValueFn="_scSimpleBundle" property="name"
+            type="WIDGET" uId="extn_OLST_listGrid_view_Fulfillment_Details"/>
+        <BundleEntry
+            bundleEntryId="extn_OLST_listGrid_view_Ship_Node_View_name"
+            bundleKey="ShipNode" bundleValueFn="_scSimpleBundle"
+            property="name" type="WIDGET" uId="extn_OLST_listGrid_view_Ship_Node"/>
+    </BundleEntries>
+</ScreenBundle>

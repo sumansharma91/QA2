@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="CustomerAppeasementOptionsExtn"
+        extnPackage="extn.order.customerAppeasement"
+        originalScreen="isccs.order.customerAppeasement.CustomerAppeasementOptions"
+        originalScreenPackage="isccs.order.customerAppeasement" type="diffrential">
+        <Items>
+            <RadioButtonSet _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="appeasementOptionRadio" renderHidden="false"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber description="onExtnMashupCompletion"
+                    eventId="onExtnMashupCompletion" isExtn="true" sequence="51">
+                    <Handler methodName="onExtnMashupCompletion"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Behavior>
+                <MashupRef extnType="MODIFY"
+                    mashupId="customerAppeasement_recordInvoiceCreation" mashupRefId="recordInvoiceCreation"/>
+                <MashupRef extnType="ADD"
+                    mashupId="customerAppeasement_recordInvoiceCreation" mashupRefId="recordInvoiceCreation"/>
+                <MashupRef extnType="ADD"
+                    mashupId="extn_VSICreateAppeasementApprovalAlert" mashupRefId="extn_VSICreateAppeasementApprovalAlert"/>
+                <MashupRef extnType="ADD"
+                    mashupId="extn_VSIIssueEGiftCardForAppeasementsSyncService" mashupRefId="extn_VSIIssueEGiftCardForAppeasementsSyncService"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

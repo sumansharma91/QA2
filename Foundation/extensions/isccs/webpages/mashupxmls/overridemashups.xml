@@ -1,0 +1,2685 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mashups>
+    <mashup
+        description="Returns the list of Cancellation Reason Codes defined for the provided enterprise"
+        endpoint="EP_CONFIG" id="cancelOrder_getReturnReasonCodes"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getCommonCodeList">
+            <Input>
+                <CommonCode
+                    CallingOrganizationCode="xml:scControllerInput:/Order/@EnterpriseCode"
+                    CodeType="YCD_CANCEL_REASON" OrganizationCode=""
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    MaximumRecords="">
+                    <OrderBy>
+                        <Attribute Desc="N" Name="CodeShortDescription"/>
+                    </OrderBy>
+                </CommonCode>
+            </Input>
+            <Template>
+                <CommonCodeList>
+                    <CommonCode CodeName="" CodeShortDescription="" CodeValue=""/>
+                </CommonCodeList>
+            </Template>
+        </API>
+        <classInformation name="com.vsi.isccs.mashups.cancelOrder.VSIGetCancelReasonCodes"/>
+        <APINamespace inputNS="cancelOrder_getReturnReasonCodes_input" outputNS="cancelOrder_getReturnReasonCodes_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCCSOC001"/>
+            <AlternateResourceId altResourceId="ISCCSSYS002"/>
+        </AlternateResourceIds>
+    </mashup>
+	<mashup
+        description="Get required attributes for the Customer editor if they are not provided"
+        endpoint="EP_CUSTOMER" id="businessCard_getCustomerDetails"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <API FlowName="VSIPassthroughService">
+            <Input>
+                <Customer CustomerID=""
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode" OrganizationCode=""/>
+            </Input>
+            <Template>
+                <Customer CustomerID="" CustomerKey="" CustomerType="" OrganizationCode="">
+                    <BuyerOrganization OrganizationName=""/>
+                    <CustomerContactList>
+                        <CustomerContact/>
+                    </CustomerContactList>
+                </Customer>
+            </Template>
+        </API>
+        <APINamespace inputNS="getCustomerDetails_input" outputNS="getCustomerDetails_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCCSSYS002"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup
+        description="This custom mashup modifies the api input by setting the status attribute of customer contact element for a consumer customer."
+        endpoint="EP_CUSTOMER" id="manageContact_manageCustomer"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSISaveNewCustomer">
+            <Input/>
+            <Template>
+                <Customer CustomerID="" CustomerKey="" CustomerType=""
+                    OrganizationCode="" Status="">
+                    <CustomerCurrencyList>
+                        <CustomerCurrency Currency=""
+                            CustomerCurrencyKey="" IsDefaultCurrency=""/>
+                    </CustomerCurrencyList>
+                    <BuyerOrganization OrganizationCode=""
+                        OrganizationName="" TaxExemptFlag="" TaxExemptionCertificate=""/>
+                    <CustomerContactList>
+                        <CustomerContact CustomerContactID=""
+                            FirstName="" LastName=""/>
+                    </CustomerContactList>
+                </Customer>
+            </Template>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="manageContact_manageCustomer_input" outputNS="manageContact_manageCustomer_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup
+        description="This custom mashup modifies the api input by setting the status for consumer customer. This mashup also modifies the api output by fetching the customer details obtained by calling   getCompleteCustomerDetails api for the customer."
+        endpoint="EP_CUSTOMER"
+        id="orderEntryCreateContact_manageCustomer" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API FlowName="VSISaveNewCustomer">
+            <Input/>
+            <Template>
+                <Customer CustomerID="" CustomerKey="" CustomerType=""
+                    OrganizationCode="" Status="" HealthyRewardPoints="">
+                    <DefaultSoldToAddress AddressType="">
+                        <PersonInfo/>
+                    </DefaultSoldToAddress>
+                    <BuyerOrganization OrganizationCode=""
+                        OrganizationName="" PrimaryUrl=""
+                        TaxExemptFlag="" TaxExemptionCertificate=""/>
+                    <DefaultShipToAddress AddressType="">
+                        <PersonInfo/>
+                    </DefaultShipToAddress>
+                    <DefaultBillToAddress AddressType="">
+                        <PersonInfo/>
+                    </DefaultBillToAddress>
+                    <CustomerContactList>
+                        <CustomerContact AggregateStatus="" Company=""
+                            CustomerContactID="" DateOfBirth=""
+                            DayFaxNo="" DayPhone="" EmailID=""
+                            EveningFaxNo="" EveningPhone="" FirstName=""
+                            LastName="" MiddleName="" MobilePhone=""
+                            SpouseDateOfBirth="" Title="" UserID=""
+                            WeddingAniversaryDate="" WeddingAnniversaryDate="">
+                            <DefaultShipToAddress AddressType="">
+                                <PersonInfo/>
+                            </DefaultShipToAddress>
+                            <DefaultSoldToAddress AddressType="">
+                                <PersonInfo/>
+                            </DefaultSoldToAddress>
+                            <DefaultBillToAddress AddressType="">
+                                <PersonInfo/>
+                            </DefaultBillToAddress>
+                        </CustomerContact>
+                    </CustomerContactList>
+                    <CustomerCurrencyList>
+                        <CustomerCurrency Currency=""
+                            CustomerCurrencyKey="" IsDefaultCurrency=""/>
+                    </CustomerCurrencyList>
+                </Customer>
+            </Template>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace
+            inputNS="orderEntryCreateContact_manageCustomer_input" outputNS="orderEntryCreateContact_manageCustomer_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup description="Used to populate the reasons of override popup"
+        endpoint="EP_CONFIG" id="AddItems_getCommonCodeList"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getCommonCodeList">
+            <Input>
+                <CommonCode
+                    CallingOrganizationCode="xml:scControllerInput:/Order/@EnterpriseCode"
+                    CodeType="YCD_PRICEOVERRIDE"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    DocumentType="xml:scControllerInput:/Order/@DocumentType" MaximumRecords=""/>
+            </Input>
+            <Template>
+                <CommonCodeList>
+                    <CommonCode CodeLongDescription=""
+                        CodeShortDescription="" CodeType="" CodeValue=""/>
+                </CommonCodeList>
+            </Template>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace inputNS="AddItems_getCommonCodeList_input" outputNS="AddItems_getCommonCodeList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCCSOVP002"/>
+            <AlternateResourceId altResourceId="ISCCSSYS002"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup
+        description="This custom mashup invokes storeSelection_getSurroundingNodeList to get node list for which it will calculate availability. If node list is already specified in the input then it will not call storeSelection_getSurroundingNodeList and will fetch availability for the specified node list."
+        endpoint="EP_INVENTORY"
+        id="storeSelection_getAlternateStoreAvailability"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getAlternateStoreAvailability">
+            <Input>
+                <AlternateStore
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    GetSurroundingNodes="" Mode="03" NoOfNodesToShow="" OrganizationCode="">
+                    <Order DocumentType="" EnterpriseCode=""
+                        OrderHeaderKey="" OrderNo=""/>
+                    <OrderLines>
+                        <OrderLine GiftWrap="" LevelOfService=""
+                            OrderLineKey="" OrderedQty="" PrimeLineNo=""
+                            RequiredQty="" SubLineNo="">
+                            <Item ItemGroupCode="" ItemID=""
+                                ProductClass="" UnitOfMeasure="">
+                                <Tag BatchNo="" LotAttribute1=""
+                                    LotAttribute2="" LotAttribute3=""
+                                    LotKeyReference="" LotNumber=""
+                                    ManufacturingDate="" RevisionNo=""/>
+                            </Item>
+                        </OrderLine>
+                    </OrderLines>
+                    <NodeList>
+                        <Node ActivateFlag="" Description=""
+                            DistanceFromShipToAddress="" DistanceUOM="" ShipNode="">
+                            <ShipNodePersonInfo AddressID=""
+                                AddressLine1="" AddressLine2=""
+                                AddressLine3="" AddressLine4=""
+                                AddressLine5="" AddressLine6=""
+                                AlternateEmailID="" Beeper="" City=""
+                                Company="" Country="" DayFaxNo=""
+                                DayPhone="" Department="" EMailID=""
+                                ErrorTxt="" EveningFaxNo=""
+                                EveningPhone="" FirstName="" HttpUrl=""
+                                IsCommercialAddress="" JobTitle=""
+                                LastName="" Latitude="" Longitude=""
+                                MiddleName="" MobilePhone=""
+                                OtherPhone="" PersonID=""
+                                PersonInfoKey="" PreferredShipAddress=""
+                                State="" Suffix="" TaxGeoCode=""
+                                Title="" UseCount=""
+                                VerificationStatus="" ZipCode=""/>
+                            <Organization PrimaryUrl=""/>
+                        </Node>
+                    </NodeList>
+                    <NodeSearch DistanceToConsider="" FulfillmentType="CUTOVERSTORES" NodeType="Store">
+                        <ShipToAddress City="" Country="" State="" ZipCode=""/>
+                    </NodeSearch>
+                </AlternateStore>
+            </Input>
+            <Template>
+                <AlternateStores OrganizationCode="">
+                    <NodeList>
+                        <Node ActivateFlag="" Description=""
+                            DistanceFromShipToAddress="" DistanceUOM="" ShipNode="">
+                            <ShipNodePersonInfo/>
+                            <Availability AvailableDate=""
+                                AvailableQty="" IsAvailable=""
+                                IsFutureAvailability="" ShipNode="" UnitOfMeasure=""/>
+                            <Organization PrimaryUrl=""/>
+                        </Node>
+                    </NodeList>
+					<OrderLines>
+                        <OrderLine OrderLineKey="">
+							<Item ItemID=""/>
+                            <AvailabilityList>
+                                <Availability AvailableDate=""
+                                    AvailableQty="" IsAvailable=""
+                                    IsFutureAvailability="" ProcuredQty="" FutureAvailableDate="" OnHandQuantity="" OnStoreAvailableDate="" IsAvailableOnStore="" ShipNode=""/>
+                            </AvailabilityList>
+                        </OrderLine>
+                    </OrderLines>
+                </AlternateStores>
+            </Template>
+        </API>
+        <classInformation name="com.vsi.isccs.mashups.VSIGetAlternateStoreAvailabilityMashup"/>
+        <APINamespace
+            inputNS="storeSelection_getAlternateStoreAvailability_input" outputNS="storeSelection_getAlternateStoreAvailability_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCRET0002"/>
+            <AlternateResourceId altResourceId="ISCPROD00001"/>
+            <AlternateResourceId altResourceId="ISCORD0004"/>
+            <AlternateResourceId altResourceId="ISCCRTORD0001"/>
+            <AlternateResourceId altResourceId="ISCCSCFO01"/>
+            <AlternateResourceId altResourceId="ISCORD0010"/>
+            <AlternateResourceId altResourceId="ISCORD0013"/>
+        </AlternateResourceIds>
+    </mashup>
+    // JIRA SU-76 : modified getCompleteOrderDetails mashup call to set IgnorePendingChange="N"
+	<mashup
+        description="This mashup is called while loading the order pricing summary pop up to massage the output of getCompleteOrderDetails. The getChargeCategoryList API is called internally to fetch the charges names of the charges associated with the order and based on the results the UI is populated."
+        endpoint="EP_ORDER" id="pricingSummary_getCompleteOrderDetails"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getCompleteOrderDetails">
+            <Input>
+                <Order
+                    ApplicationCode="xml:ApplicationInfo:/ApplicationInfo@ApplicationCode"
+                    ApplicationVersion="xml:ApplicationInfo:/ApplicationInfo@ApplicationVersion"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    DocumentType="" EnterpriseCode=""
+                    IgnorePendingChange="N"
+                    OrderHeaderKey="xml:scControllerInput:/Order/@OrderHeaderKey" OrderNo="">
+                    <Modifications>
+                        <Modification ModificationType="PRICE"/>
+                    </Modifications>
+                </Order>
+            </Input>
+            <Template>
+                <Order BillToID="" BuyerUserID="" CarrierServiceCode=""
+                    CreatorOrganizationCode="" CustomerContactID=""
+                    CustomerFirstName="" CustomerLastName=""
+                    DisplayStatusDescription="" DocumentType=""
+                    EnterpriseCode="" EntryType="" ExchangeType=""
+                    HasPendingChanges="" HoldFlag="" DraftOrderFlag=""
+                    MaxOrderStatusDesc="" MultipleStatusesExist=""
+                    OrderDate="" OrderHeaderKey="" OrderNo=""
+                    OverallStatus="" ReturnOrderHeaderKeyForExchange=""
+                    SellerOrganizationCode="" ShipToKey="" Status="" SupportLevel="" OrderType="">
+					<Extn ExtnIsMigrated="" />
+                    <ReturnOrders>
+                        <ReturnOrder BillToID=""
+                            BuyerOrganizationCode="" BuyerUserId=""
+                            CustomerContactID="" CustomerEMailID=""
+                            CustomerFirstName="" CustomerLastName=""
+                            CustomerPONo="" CustomerPhoneNo=""
+                            CustomerZipCode=""
+                            DisplayStatusDescription="" DocumentType=""
+                            DraftOrderFlag="" EnterpriseCode=""
+                            EntryType="" HoldFlag=""
+                            MaxOrderStatusDesc=""
+                            MultipleStatusesExist="" OrderDate=""
+                            OrderHeaderKey="" OrderName="" OrderNo=""
+                            OverallStatus="" SellerOrganizationCode=""
+                            Status="" TaxExemptFlag=""
+                            TaxExemptionCertificate="" isHistory="">
+                            <PriceInfo Currency="" TotalAmount=""/>
+                            <OverallTotals GrandExchangeTotal=""
+                                GrandRefundTotal="" GrandTotal=""
+                                PendingRefundAmount="" RefundedAmount=""/>
+                            <PersonInfoBillTo AddressLine1=""/>
+                            <ExchangeOrders>
+                                <ExchangeOrder BillToID=""
+                                    BuyerOrganizationCode=""
+                                    BuyerUserId="" CustomerContactID=""
+                                    CustomerEMailID=""
+                                    CustomerFirstName=""
+                                    CustomerLastName="" CustomerPONo=""
+                                    CustomerPhoneNo=""
+                                    CustomerZipCode="" DocumentType=""
+                                    DraftOrderFlag="" EnterpriseCode=""
+                                    EntryType="" ExchangeType=""
+                                    MaxOrderStatusDesc=""
+                                    MultipleStatusesExist=""
+                                    OrderHeaderKey="" OrderName=""
+                                    OrderNo="" OverallStatus=""
+                                    SellerOrganizationCode="" Status=""
+                                    TaxExemptFlag=""
+                                    TaxExemptionCertificate="" isHistory="">
+                                    <PersonInfoShipTo AddressID=""
+                                    AddressLine1="" AddressLine2=""
+                                    City="" Company="" Country=""
+                                    CountryDesc="" DayPhone=""
+                                    Department="" EMailID=""
+                                    EveningPhone="" FirstName=""
+                                    IsAddressVerified=""
+                                    IsCommercialAddress=""
+                                    LastName="" MiddleName=""
+                                    MobilePhone="" PersonID=""
+                                    PersonInfoKey="" State=""
+                                    Suffix="" Title="" TitleDesc=""
+                                    ZipCode="" isHistory=""/>
+                                    <PriceInfo Currency="" TotalAmount=""/>
+                                    <PersonInfoBillTo AddressID=""
+                                    AddressLine1="" AddressLine2=""
+                                    City="" Company="" Country=""
+                                    CountryDesc="" DayPhone=""
+                                    Department="" EMailID=""
+                                    EveningPhone="" FirstName=""
+                                    IsAddressVerified=""
+                                    IsCommercialAddress=""
+                                    LastName="" MiddleName=""
+                                    MobilePhone="" PersonID=""
+                                    PersonInfoKey="" State=""
+                                    Suffix="" Title="" TitleDesc=""
+                                    ZipCode="" isHistory=""/>
+                                </ExchangeOrder>
+                            </ExchangeOrders>
+                            <PersonInfoShipTo AddressID=""
+                                AddressLine1="" AddressLine2="" City=""
+                                Company="" Country="" CountryDesc=""
+                                DayPhone="" Department="" EMailID=""
+                                EveningPhone="" FirstName=""
+                                IsAddressVerified=""
+                                IsCommercialAddress="" LastName=""
+                                MiddleName="" MobilePhone="" PersonID=""
+                                PersonInfoKey="" State="" Suffix=""
+                                Title="" TitleDesc="" ZipCode="" isHistory=""/>
+                        </ReturnOrder>
+                    </ReturnOrders>
+                    <HeaderTaxes>
+                        <HeaderTax Tax="" TaxName=""/>
+                    </HeaderTaxes>
+                    <PriceInfo Currency="" TotalAmount=""/>
+                    <OverallTotals AdjustedSubtotalWithoutTaxes=""
+                        EnterpriseCode=""
+                        GrandAdjustmentsWithoutTotalShipping=""
+                        GrandDeliveryCharges="" GrandShippingTotal=""
+                        GrandTax="" GrandTotal="" HdrShippingCharges=""
+                        HdrTotal="" HeaderAdjustmentWithoutShipping=""
+                        LineSubTotal="" SubtotalWithoutTaxes=""/>
+                    <PersonInfoBillTo AddressID="" AddressLine1=""
+                        AddressLine2="" City="" Company="" Country=""
+                        CountryDesc="" DayPhone="" Department=""
+                        EMailID="" EveningPhone="" FirstName=""
+                        IsAddressVerified="" IsCommercialAddress=""
+                        LastName="" MiddleName="" MobilePhone=""
+                        PersonID="" PersonInfoKey="" State="" Suffix=""
+                        Title="" TitleDesc="" ZipCode="" isHistory=""/>
+                    <Modifications>
+                        <Modification/>
+                    </Modifications>
+                    <PersonInfoShipTo AddressID="" AddressLine1=""
+                        AddressLine2="" City="" Company="" Country=""
+                        CountryDesc="" DayPhone="" Department=""
+                        EMailID="" EveningPhone="" FirstName=""
+                        IsAddressVerified="" IsCommercialAddress=""
+                        LastName="" MiddleName="" MobilePhone=""
+                        PersonID="" PersonInfoKey="" State="" Suffix=""
+                        Title="" TitleDesc="" ZipCode="" isHistory=""/>
+                    <HeaderCharges>
+                        <HeaderCharge ChargeAmount="" ChargeCategory=""
+                            ChargeName="" IsManual=""/>
+                    </HeaderCharges>
+					<PaymentMethods>
+						<PaymentMethod PaymentType=""/>
+					</PaymentMethods>
+                </Order>
+            </Template>
+        </API>
+        <classInformation name="com.ibm.isccs.order.mashups.SCCSGetOrderDetailsForPricingSummaryMashup"/>
+        <APINamespace
+            inputNS="pricingSummary_getCompleteOrderDetails_input" outputNS="pricingSummary_getCompleteOrderDetails_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCORD0001"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup
+        description="Gets the additional addresses of the customer/ contact"
+        endpoint="EP_CUSTOMER"
+        id="getAllAddressesMashup_getCustomerDetails" mashuptype="XAPI"
+        skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <API FlowName="VSIGetCustomerDetailsSyncService">
+            <Input>
+                <Customer CustomerID="xml:scControllerInput:/Customer/@CustomerID"
+                    CustomerKey="xml:scControllerInput:/Customer/@CustomerKey"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode" OrganizationCode="VSI.com">
+                    <CustomerContact CustomerContactID=""/>
+                </Customer>
+            </Input>
+            <Template>
+                <Customer CustomerID="" HealthyRewardPoints="">
+                    <CustomerAdditionalAddressList TotalNumberOfRecords="">
+                        <CustomerAdditionalAddress IsDefaultShipTo="" IsShipTo="">
+                            <PersonInfo AddressID="" AddressLine1=""
+                                AddressLine2="" AddressLine3=""
+                                AddressLine4="" AddressLine5=""
+                                AddressLine6="" AlternateEmailID=""
+                                Beeper="" City="" Company="" Country=""
+                                DayFaxNo="" DayPhone="" Department=""
+                                EMailID="" ErrorTxt="" EveningFaxNo=""
+                                EveningPhone="" FirstName="" HttpUrl=""
+                                IsCommercialAddress="" JobTitle=""
+                                LastName="" Latitude="" Longitude=""
+                                MiddleName="" MobilePhone=""
+                                OtherPhone="" PersonID=""
+                                PersonInfoKey="" PreferredShipAddress=""
+                                State="" Suffix="" Title="" UseCount=""
+                                VerificationStatus="" ZipCode=""/>
+                        </CustomerAdditionalAddress>
+                    </CustomerAdditionalAddressList>
+                    <CustomerContactList TotalNumberOfRecords="">
+                        <CustomerContact CustomerContactID="">
+                            <CustomerAdditionalAddressList TotalNumberOfRecords="">
+                                <CustomerAdditionalAddress
+                                    IsDefaultShipTo="" IsShipTo="">
+                                    <PersonInfo AddressID=""
+                                    AddressLine1="" AddressLine2=""
+                                    AddressLine3="" AddressLine4=""
+                                    AddressLine5="" AddressLine6=""
+                                    AlternateEmailID="" Beeper=""
+                                    City="" Company="" Country=""
+                                    DayFaxNo="" DayPhone=""
+                                    Department="" EMailID=""
+                                    ErrorTxt="" EveningFaxNo=""
+                                    EveningPhone="" FirstName=""
+                                    HttpUrl=""
+                                    IsCommercialAddress=""
+                                    JobTitle="" LastName=""
+                                    Latitude="" Longitude=""
+                                    MiddleName="" MobilePhone=""
+                                    OtherPhone="" PersonID=""
+                                    PersonInfoKey=""
+                                    PreferredShipAddress="" State=""
+                                    Suffix="" Title="" UseCount=""
+                                    VerificationStatus="" ZipCode=""/>
+                                </CustomerAdditionalAddress>
+                            </CustomerAdditionalAddressList>
+                        </CustomerContact>
+                    </CustomerContactList>
+                </Customer>
+            </Template>
+        </API>
+        <APINamespace inputNS="getCustomerDetails_input" outputNS="getCustomerDetails_output"/>
+    </mashup>
+	<mashup description="Retrieves CustomerType" endpoint="EP_CUSTOMER"
+        id="common_getCustomerDetails" mashuptype="XAPI"
+        skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <API Name="getCustomerDetails">
+            <Input>
+                <Customer CustomerID="xml:scControllerInput:/Customer/@CustomerID"
+                    CustomerKey="xml:scControllerInput:/Customer/@CustomerKey"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    MaximumRecords="" OrganizationCode="VSI.com"/>
+            </Input>
+            <Template>
+                <Customer CustomerKey="" CustomerType="" OrganizationCode=""/>
+            </Template>
+        </API>
+        <APINamespace inputNS="common_getCustomerDetails_input" outputNS="common_getCustomerDetails_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCCSSYS002"/>
+        </AlternateResourceIds>
+    </mashup>
+	<mashup
+        description="Gets customer data needed for loading customer preferences screen"
+        endpoint="EP_CUSTOMER" id="customerOptions_getCustomerDetails"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <API Name="getCustomerDetails">
+            <Input>
+                <Customer
+                    CustomerID="xml:scControllerInput:/Customer/@CustomerID"
+                    CustomerKey="xml:scControllerInput:/Customer/@CustomerKey"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode" OrganizationCode="VSI.com"/>
+            </Input>
+            <Template>
+                <Customer CustomerID="" CustomerKey="" CustomerType=""/>
+            </Template>
+        </API>
+        <APINamespace inputNS="getCustomerDetails_input" outputNS="getCustomerDetails_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCCSCO001"/>
+        </AlternateResourceIds>
+    </mashup>
+	<mashup
+        description="This mashup is used in capturing payment info and is used to call getPaymentTypeList API"
+        endpoint="EP_CONFIG" id="paymentCapturePanel_getPaymentTypeList"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getPaymentTypeList">
+            <Input>
+                <PaymentType
+                    CallingEnterpriseCode="xml:scControllerInput:/Order/@EnterpriseCode"
+                    CallingSellerOrganizationCode="xml:scControllerInput:/Order/@SellerOrganizationCode"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode" MaximumRecords=""/>
+            </Input>
+            <Template>
+                <PaymentTypeList>
+                    <PaymentType ChargeSequence=""
+                        ChargeUpToAvailable="" OrganizationCode=""
+                        PaymentType="" PaymentTypeDescription=""
+                        PaymentTypeGroup="" PaymentTypeKey=""/>
+                </PaymentTypeList>
+            </Template>
+        </API>
+        <classInformation name="com.vsi.isccs.mashups.VSIGetPaymentTypeListMashup"/>
+        <APINamespace
+            inputNS="paymentCapturePanel_getPaymentTypeList_input" outputNS="paymentCapturePanel_getPaymentTypeList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCRET0002"/>
+            <AlternateResourceId altResourceId="ISCORD0005"/>
+            <AlternateResourceId altResourceId="ISCORD0002"/>
+            <AlternateResourceId altResourceId="ISCCSOC001"/>
+            <AlternateResourceId altResourceId="ISCPRMTCH002"/>
+            <AlternateResourceId altResourceId="ISCORD0004"/>
+            <AlternateResourceId altResourceId="ISCCRTORD0001"/>
+            <AlternateResourceId altResourceId="ISCCSCFO01"/>
+            <AlternateResourceId altResourceId="ISCORD0010"/>
+            <AlternateResourceId altResourceId="ISCCSGO001"/>
+            <AlternateResourceId altResourceId="ISCORD0013"/>
+            <AlternateResourceId altResourceId="ISCCSSYS002"/>
+        </AlternateResourceIds>
+    </mashup>
+    <!-- Added for Returns Module -->
+    <mashup
+        description="This mashup is used to massage the input for getAppeasementOffersUE. To do this it internally invokes customerAppeasement_getCompleteOrderDetails mashup and gets the order details and merges the output of this mashup call with original mashup input. This mashup also filters the output of UE call to return only valid types of appeasement offers."
+        endpoint="EP_ORDER"
+        id="customerAppeasement_getAppeasementOffersUE"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.vsi.isccs.mashups.order.customerappeasement.VSICustomerAppeasementOffersUEMashup"/>
+        <API Name="invokeUE">
+            <Input>
+                <InvokeUE
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    EnterpriseCode="xml:scControllerInput:/Order/@EnterpriseCode"
+                    TransactionId="COM_PCA_USER_EXIT" UserExit="com.yantra.pca.ycd.japi.ue.YCDGetAppeasementOffersUE">
+                    <XMLData>
+                        <AppeasementOffers IsAlpineUser="">
+                            <Order AppeasementType="" DisplayStatus=""
+                                DocumentType="" EnterpriseCode=""
+                                EnterpriseName="" OrderDate=""
+                                OrderHeaderKey="" OrderNo="" SellerOrganizationCode="">
+                                <AppeasementReason ReasonCode="" ExtnCouponCode="" />
+                                <PriceInfo Currency="" TotalAmount=""/>
+                                <OverallTotals GrandCharges=""
+                                    GrandDiscount="" GrandTax=""
+                                    GrandTotal="" HdrCharges=""
+                                    HdrDiscount="" HdrTax="" HdrTotal="" LineSubTotal=""/>
+                                <HeaderCharges>
+                                    <HeaderCharge ChargeAmount=""
+                                    ChargeCategory=""
+                                    ChargeCategoryDescription=""
+                                    ChargeName=""
+                                    ChargeNameDescription=""
+                                    ChargeNameKey="" ChargeType=""
+                                    InvoicedChargeAmount=""
+                                    IsManual="" Reference="" RemainingChargeAmount=""/>
+                                </HeaderCharges>
+                                <HeaderTaxes>
+                                    <HeaderTax ChargeCategory=""
+                                    ChargeName="" ChargeNameKey=""
+                                    InvoicedTax="" Reference_1=""
+                                    Reference_2="" Reference_3=""
+                                    RemainingTax="" Tax="" ChargeCategoryDescription=""
+                                    TaxName="" TaxNameDescription="" ChargeNameDescription=""
+                                    TaxPercentage="" TaxableFlag=""/>
+                                </HeaderTaxes>
+                                <OrderLines>
+                                    <OrderLine DisplayStatus=""
+                                    ItemGroupCode="" OpenQty=""
+                                    OrderLineKey="" OrderedQty=""
+                                    OtherCharges="" RemainingQty=""
+                                    Status="" StatusQuantity="">
+                                    <Item DisplayUnitOfMeasure=""
+                                    ItemDesc="" ItemID=""
+                                    ItemShortDesc=""
+                                    ItemShortDescription=""
+                                    ItemWeight=""
+                                    UOMDisplayFormat=""
+                                    UnitCost="" UnitOfMeasure=""/>
+                                    <LinePriceInfo
+                                    ActualPricingQty=""
+                                    IsPriceLocked=""
+                                    LineTotal=""
+                                    OrderedPricingQty="" UnitPrice=""/>
+                                    <LineOverallTotals Charges=""
+                                    Discount=""
+                                    DisplayUnitPrice=""
+                                    ExtendedPrice=""
+                                    LineAdjustments=""
+                                    LineTotal=""
+                                    LineTotalWithoutTaxes=""
+                                    OptionPrice="" PricingQty=""
+                                    Tax="" UnitPrice=""/>
+                                    <LineCharges>
+                                    <LineCharge ChargeAmount=""
+                                    ChargeCategory=""
+                                    ChargeCategoryDescription=""
+                                    ChargeName=""
+                                    ChargeNameDescription=""
+                                    ChargeNameKey=""
+                                    ChargePerLine=""
+                                    ChargePerUnit=""
+                                    ChargeType=""
+                                    InvoicedChargeAmount=""
+                                    InvoicedChargePerLine=""
+                                    InvoicedChargePerUnit=""
+                                    IsManual="" Reference=""
+                                    RemainingChargeAmount=""
+                                    RemainingChargePerLine="" RemainingChargePerUnit=""/>
+                                    </LineCharges>
+                                    <LineTaxes>
+                                    <LineTax ChargeCategory=""
+                                    ChargeName=""
+                                    ChargeNameKey=""
+                                    InvoicedTax=""
+                                    Reference_1=""
+                                    Reference_2=""
+                                    Reference_3=""
+                                    RemainingTax="" Tax=""
+                                    TaxName="" TaxPercentage=""/>
+                                    </LineTaxes>
+                                    </OrderLine>
+                                </OrderLines>
+                            </Order>
+                        </AppeasementOffers>
+                    </XMLData>
+                </InvokeUE>
+            </Input>
+            <Template>
+                <InvokeUE TransactionId="" UserExit="">
+                    <XMLData/>
+                </InvokeUE>
+            </Template>
+        </API>
+        <APINamespace inputNS="getAppeasementOffersUE_input" outputNS="getAppeasementOffersUE_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCCSCA001"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup
+        description="This mashup is used to massage the input for recordInvoiceCreation api. When the offer is for some percentage value then it calculates the value discount based on the percentage value and stamps it in the input. It also makes all the discount amount as negative before sending the input."
+        endpoint="EP_ORDER"
+        id="customerAppeasement_recordInvoiceCreation" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API FlowName="VSIIssueEGiftCardForAppeasementsSyncService">
+            <Input>
+                <OrderInvoice
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    InvoiceCreationReason="" InvoiceType="INFO"
+                    OrderHeaderKey="" UseOrderLineCharges="N" OrderNo="" OfferAmount="">
+                    <HeaderChargeList>
+                        <HeaderCharge ChargeAmount="" ChargeCategory="" ChargeName=""/>
+                    </HeaderChargeList>
+                    <LineDetails>
+                        <LineDetail OrderLineKey="" Quantity="">
+                            <LineChargeList>
+                                <LineCharge ChargeCategory=""
+                                    ChargeName="" ChargePerLine=""/>
+                            </LineChargeList>
+							<LineTaxList>
+								<LineTax ChargeCategory=""
+									ChargeName="" Tax="" TaxName=""/>
+							</LineTaxList>
+                        </LineDetail>
+                    </LineDetails>
+                    <Extn ExtnCouponCode=""/>
+                </OrderInvoice>
+            </Input>
+            <Template>
+                <OrderInvoice AmountCollected="" InvoiceNo=""
+                    InvoiceType="" MasterInvoiceNo="" OrderHeaderKey=""
+                    OrderInvoiceKey="" OrderNo="" Status=""
+                    TotalAmount="" TotalTax=""/>
+            </Template>
+        </API>
+        <classInformation name="com.vsi.isccs.mashups.VSICustomerAppeasementRecordInvoiceMashup"/>
+        <APINamespace
+            inputNS="customerAppeasement_recordInvoiceCreation_input" outputNS="customerAppeasement_recordInvoiceCreation_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCCSCA001"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup
+        description="This mashup is used for massaging the input and output of the getCompleteOrderLineList API call while creating a return. The API internally calls getRuleDetails API to determine the rule value of the rule YCD_SHOW_RESHIP_ON_RETURN_ENTRY and based on the results forms the input. Once the API goes through, we parse through the output to find any lines which violates the return policy and shown them as error panels."
+        endpoint="EP_ORDER"
+        id="ReturnOrderLines_getCompleteOrderLineList" mashuptype="XAPI"
+        skipDataProvider="false" transactional="Y">
+        <classInformation name="com.vsi.isccs.mashups.returns.VSIGetReturnOrderLinesMashup"/>
+        <API Name="getCompleteOrderLineList">
+            <Input>
+                <OrderLine BundleParentOrderLineKey=""
+                    BundleParentOrderLineKeyQryType=""
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    DisplayTransactionPrice="Y" EnterpriseCode=""
+                    ItemGroupCode="DS" ItemGroupCodeQryType="NE"
+                    MaximumRecords=""
+                    OrderHeaderKey="xml:scControllerInput:/Order/@OrderHeaderKey"
+                    ReshipParentLineKey="" ReshipParentLineKeyQryType="" SellerOrganizationCode="">
+                    <AppContextInfo Channel="Call Center"/>
+                    <OrderBy>
+                        <Attribute Desc="N" Name="PrimeLineNo"/>
+                        <Attribute Desc="N" Name="GroupSequenceNumber"/>
+                    </OrderBy>
+                    <Order
+                        EnterpriseCode="xml:scControllerInput:/Order/@EnterpriseCode"
+                        OrderNo="xml:scControllerInput:/Order/@OrderNo" SellerOrganizationCode="xml:scControllerInput:/Order/@SellerOrganizationCode"/>
+                </OrderLine>
+            </Input>
+            <Template>
+                <OrderLineList>
+                    <OrderLine Action="" Dummy="" GiftFlag=""
+                        GroupSequenceNumber="" HasNotes=""
+                        HasReturnLines="" IsBundleParent="" IsOpenBox=""
+                        IsPriceMatched="" ItemGroupCode=""
+                        MaxLineStatusDesc="" OrderHeaderKey=""
+                        OrderLineKey="" OrderedQty="" ReshippedQty=""
+                        ReturnReason="" ReturnableQty=""
+                        ShippedQuantity="" TransactionalUOM="">
+                        <Order OrderDate="" DocumentType="" DraftOrderFlag="" EnterpriseCode="">
+                            <PriceInfo Currency="" TotalAmount=""/>
+                        </Order>
+                        <Item ItemID="" ProductClass="" UnitOfMeasure=""/>
+                        <DerivedFromOrderLine OrderHeaderKey=""
+                            OrderLineKey="" OrderedQty="" ReturnableQty=""/>
+                        <ReturnOrderLines>
+                            <OrderLine GiftFlag="" OrderHeaderKey=""
+                                OrderLineKey="" OrderedQty=""
+                                ReturnReason="" ReturnReasonDesc=""/>
+                        </ReturnOrderLines>
+                        <ReturnPolicyViolations HasViolations="" ReturnPolicyViolation="">
+                            <NonApprovalTransactionViolationList>
+                                <TransactionViolation ApprovalRuleID=""
+                                    MessageCode="" Status=""
+                                    TransactionInfoID="" ValidationID=""/>
+                            </NonApprovalTransactionViolationList>
+                            <TransactionApproverList>
+                                <TransactionApprover TransactionApproverKey="">
+                                    <TransactionApprovalStatusList>
+                                    <TransactionApprovalStatus
+                                    IsMandatory="" Status="" TransactionApprovalStatusKey="">
+                                    <TransactionViolation
+                                    ApprovalRuleID=""
+                                    MessageCode="" Status=""
+                                    TransactionInfoID="" ValidationID=""/>
+                                    </TransactionApprovalStatus>
+                                    </TransactionApprovalStatusList>
+                                </TransactionApprover>
+                            </TransactionApproverList>
+                        </ReturnPolicyViolations>
+                        <ItemDetails>
+                            <PrimaryInformation
+                                ReturnWindow="" ExtendedDisplayDescription="" ImageID="" ImageLocation=""/>
+                        </ItemDetails>
+                        <LineOverallTotals DisplayUnitPrice=""/>
+                        <Notes Note=""/>
+                        <ParentOrderLineRelationships>
+                            <OrderLineRelationship ParentOrderLineKey=""/>
+                        </ParentOrderLineRelationships>
+                        <StopDeliveryRequestDetails TotalNumberOfRecords=""/>
+                        <LinePriceInfo IsLinePriceForInformationOnly="" IsPriceLocked=""/>
+                        <BundleParentLine OrderLineKey=""/>
+                    </OrderLine>
+                    <Order EnterpriseCode="" OrderHeaderKey="" SellerOrganizationCode="">
+                        <PriceInfo Currency=""/>
+                    </Order>
+                </OrderLineList>
+            </Template>
+        </API>
+        <APINamespace inputNS="getCompleteOrderLineList_input" outputNS="getCompleteOrderLineList_output"/>
+        <Config>
+            <Rule HideBundleComponents="Y"/>
+        </Config>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCRET0002"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup description="This mashup is used process a return order"
+        endpoint="EP_ORDER" id="createReturn_processReturnOrder"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="processReturnOrder">
+            <Input>
+                <Order BuyerUserId="" DetermineOrdersForReturn="N"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    ExecuteReturnPolicy="N" OrderHeaderKey="">
+                    <AppContextInfo Channel="Call Center"/>
+                </Order>
+            </Input>
+            <Template>
+                <Order BillToID="" BillToKey="" BuyerOrganizationCode=""
+                    BuyerUserId="" CustomerContactID=""
+                    CustomerEMailID="" CustomerFirstName=""
+                    CustomerLastName="" CustomerPONo=""
+                    CustomerPhoneNo="" CustomerZipCode=""
+                    DocumentType="" DraftOrderFlag="" EnterpriseCode=""
+                    EntryType="" MaxOrderStatusDesc="" OrderHeaderKey=""
+                    OrderName="" OrderNo="" SellerOrganizationCode=""
+                    TaxExemptFlag="" TaxExemptionCertificate="" isHistory="">
+                    <OverallTotals GrandTotal=""/>
+                    <PriceInfo Currency=""/>
+                    <PersonInfoBillTo AddressID="" AddressLine1=""
+                        AddressLine2="" City="" Company="" Country=""
+                        CountryDesc="" DayPhone="" Department=""
+                        EMailID="" EveningPhone="" FirstName=""
+                        IsAddressVerified="" IsCommercialAddress=""
+                        LastName="" MiddleName="" MobilePhone=""
+                        PersonID="" PersonInfoKey="" State="" Suffix=""
+                        Title="" TitleDesc="" ZipCode="" isHistory=""/>
+                    <OrderLines>
+                        <OrderLine GiftFlag=""/>
+                    </OrderLines>
+                    <PersonInfoShipTo AddressID="" AddressLine1=""
+                        AddressLine2="" City="" Company="" Country=""
+                        CountryDesc="" DayPhone="" Department=""
+                        EMailID="" EveningPhone="" FirstName=""
+                        IsAddressVerified="" IsCommercialAddress=""
+                        LastName="" MiddleName="" MobilePhone=""
+                        PersonID="" PersonInfoKey="" State="" Suffix=""
+                        Title="" TitleDesc="" ZipCode="" isHistory=""/>
+                    <PaymentMethods>
+                        <PaymentMethod AwaitingAuthInterfaceAmount=""
+                            AwaitingChargeInterfaceAmount=""
+                            BillToKey="" CashBackAmount=""
+                            ChargeSequence="" CheckNo=""
+                            CheckReference="" CreditCardExpDate=""
+                            CreditCardName="" CreditCardNo=""
+                            CreditCardType="" CustomerAccountNo=""
+                            CustomerPONo="" DebitCardNo=""
+                            DisplayCreditCardNo=""
+                            DisplayCustomerAccountNo=""
+                            DisplayDebitCardNo=""
+                            DisplayPaymentReference1=""
+                            DisplayPrimaryAccountNo="" DisplaySvcNo=""
+                            FirstName="" FundsAvailable=""
+                            GetFundsAvailableUserExitInvoked=""
+                            IncompletePaymentType="" LastName=""
+                            MaxChargeLimit="" MiddleName=""
+                            PaymentKey="" PaymentReference1=""
+                            PaymentReference2="" PaymentReference3=""
+                            PaymentReference4="" PaymentReference5=""
+                            PaymentReference6="" PaymentReference7=""
+                            PaymentReference8="" PaymentReference9=""
+                            PaymentTemplateType="" PaymentType=""
+                            PaymentTypeGroup="" PlannedRefundAmount=""
+                            PrimaryAccountNo="" RequestedAuthAmount=""
+                            RequestedChargeAmount=""
+                            RequestedRefundAmount=""
+                            SuspendAnyMoreCharges="" SvcNo=""
+                            TotalAltRefundedAmount="" TotalAuthorized=""
+                            TotalCharged="" TotalRefundedAmount="" UnlimitedCharges="">
+                            <PersonInfoBillTo AddressID=""
+                                AddressLine1="" AddressLine2=""
+                                AddressLine3="" AddressLine4=""
+                                AddressLine5="" AddressLine6=""
+                                AlternateEmailID="" Beeper="" City=""
+                                Company="" Country="" DayFaxNo=""
+                                DayPhone="" Department="" EMailID=""
+                                EveningFaxNo="" EveningPhone=""
+                                FirstName="" IsAddressVerified=""
+                                IsCommercialAddress="" JobTitle=""
+                                LastName="" Latitude="" Longitude=""
+                                MiddleName="" MobilePhone=""
+                                OtherPhone="" PersonID=""
+                                PersonInfoKey="" State="" Suffix=""
+                                TaxGeoCode="" Title="" ZipCode=""/>
+                        </PaymentMethod>
+                    </PaymentMethods>
+                </Order>
+            </Template>
+        </API>
+        <classInformation name="com.vsi.isccs.mashups.returns.VSIProcessReturnOrderMashup"/>
+        <APINamespace inputNS="createReturn_processReturnOrder_input" outputNS="createReturn_processReturnOrder_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCRET0002"/>
+            <AlternateResourceId altResourceId="ISCRET0005"/>
+            <AlternateResourceId altResourceId="ISCRET0006"/>
+            <AlternateResourceId altResourceId="ISCCSCR001"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup description="This mashup is used process a return order"
+        endpoint="EP_ORDER" id="returnFSDetails_processReturnOrder"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.vsi.isccs.mashups.returns.VSIProcessReturnOrderMashup"/>
+        <API Name="processReturnOrder">
+            <Input>
+                <Order BuyerUserId="" DetermineOrdersForReturn="N"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    ExecuteReturnPolicy="N" OrderHeaderKey="">
+                    <AppContextInfo Channel="Call Center"/>
+                </Order>
+            </Input>
+            <Template>
+                <Order BillToID="" BillToKey="" BuyerOrganizationCode=""
+                    BuyerUserId="" CustomerContactID=""
+                    CustomerEMailID="" CustomerFirstName=""
+                    CustomerLastName="" CustomerPONo=""
+                    CustomerPhoneNo="" CustomerZipCode=""
+                    DocumentType="" DraftOrderFlag="" EnterpriseCode=""
+                    EntryType="" MaxOrderStatusDesc="" OrderHeaderKey=""
+                    OrderName="" OrderNo="" SellerOrganizationCode=""
+                    TaxExemptFlag="" TaxExemptionCertificate="" isHistory="">
+                    <OverallTotals GrandTotal=""/>
+                    <PriceInfo Currency=""/>
+                    <PersonInfoBillTo AddressID="" AddressLine1=""
+                        AddressLine2="" City="" Company="" Country=""
+                        CountryDesc="" DayPhone="" Department=""
+                        EMailID="" EveningPhone="" FirstName=""
+                        IsAddressVerified="" IsCommercialAddress=""
+                        LastName="" MiddleName="" MobilePhone=""
+                        PersonID="" PersonInfoKey="" State="" Suffix=""
+                        Title="" TitleDesc="" ZipCode="" isHistory=""/>
+                    <OrderLines>
+                        <OrderLine GiftFlag=""/>
+                    </OrderLines>
+                    <PersonInfoShipTo AddressID="" AddressLine1=""
+                        AddressLine2="" City="" Company="" Country=""
+                        CountryDesc="" DayPhone="" Department=""
+                        EMailID="" EveningPhone="" FirstName=""
+                        IsAddressVerified="" IsCommercialAddress=""
+                        LastName="" MiddleName="" MobilePhone=""
+                        PersonID="" PersonInfoKey="" State="" Suffix=""
+                        Title="" TitleDesc="" ZipCode="" isHistory=""/>
+                    <PaymentMethods>
+                        <PaymentMethod AwaitingAuthInterfaceAmount=""
+                            AwaitingChargeInterfaceAmount=""
+                            BillToKey="" CashBackAmount=""
+                            ChargeSequence="" CheckNo=""
+                            CheckReference="" CreditCardExpDate=""
+                            CreditCardName="" CreditCardNo=""
+                            CreditCardType="" CustomerAccountNo=""
+                            CustomerPONo="" DebitCardNo=""
+                            DisplayCreditCardNo=""
+                            DisplayCustomerAccountNo=""
+                            DisplayDebitCardNo=""
+                            DisplayPaymentReference1=""
+                            DisplayPrimaryAccountNo="" DisplaySvcNo=""
+                            FirstName="" FundsAvailable=""
+                            GetFundsAvailableUserExitInvoked=""
+                            IncompletePaymentType="" LastName=""
+                            MaxChargeLimit="" MiddleName=""
+                            PaymentKey="" PaymentReference1=""
+                            PaymentReference2="" PaymentReference3=""
+                            PaymentReference4="" PaymentReference5=""
+                            PaymentReference6="" PaymentReference7=""
+                            PaymentReference8="" PaymentReference9=""
+                            PaymentTemplateType="" PaymentType=""
+                            PaymentTypeGroup="" PlannedRefundAmount=""
+                            PrimaryAccountNo="" RequestedAuthAmount=""
+                            RequestedChargeAmount=""
+                            RequestedRefundAmount=""
+                            SuspendAnyMoreCharges="" SvcNo=""
+                            TotalAltRefundedAmount="" TotalAuthorized=""
+                            TotalCharged="" TotalRefundedAmount="" UnlimitedCharges="">
+                            <PersonInfoBillTo AddressID=""
+                                AddressLine1="" AddressLine2=""
+                                AddressLine3="" AddressLine4=""
+                                AddressLine5="" AddressLine6=""
+                                AlternateEmailID="" Beeper="" City=""
+                                Company="" Country="" DayFaxNo=""
+                                DayPhone="" Department="" EMailID=""
+                                EveningFaxNo="" EveningPhone=""
+                                FirstName="" IsAddressVerified=""
+                                IsCommercialAddress="" JobTitle=""
+                                LastName="" Latitude="" Longitude=""
+                                MiddleName="" MobilePhone=""
+                                OtherPhone="" PersonID=""
+                                PersonInfoKey="" State="" Suffix=""
+                                TaxGeoCode="" Title="" ZipCode=""/>
+                        </PaymentMethod>
+                    </PaymentMethods>
+                </Order>
+            </Template>
+        </API>
+        <APINamespace inputNS="processReturnOrder_input" outputNS="processReturnOrder_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCRET0002"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup
+        description="gets the definition of the State Region rule to use in address capture"
+        endpoint="EP_CONFIG" id="addressCapture_getRegionStateList"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getStateRegionList">
+            <Input>
+                <Region
+                    Country="xml:scControllerInput:/PersonInfo/@Country"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    MaximumRecords="" OrganizationCode="VSI.com"/>
+            </Input>
+            <Template>
+                <Regions>
+                    <RegionSchema RegionSchemaKey="">
+                        <Region RegionDescription="" RegionLevelName="" RegionName=""/>
+                    </RegionSchema>
+                </Regions>
+            </Template>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace inputNS="addressCapture_getRegionStateList_input" outputNS="addressCapture_getRegionStateList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCCSSYS002"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup
+        description="This custom mashup modifies the api output by inserting default addresses of customer as first in customer additional address list"
+        endpoint="EP_CUSTOMER"
+        id="manageCustomerAddresses_getCustomerDetails"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getCustomerDetails">
+            <Input>
+                <Customer CustomerID="" CustomerKey=""
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    InheritFromParents="" OrganizationCode="VSI.com">
+                    <CustomerContact CustomerContactID="" UserID=""/>
+                </Customer>
+            </Input>
+            <Template>
+                <Customer CustomerID="" CustomerKey="" CustomerType="" OrganizationCode="" HealthyRewardPoints="">
+                    <CustomerAdditionalAddressList>
+                        <CustomerAdditionalAddress AddressType=""
+                            CustomerAdditionalAddressID=""
+                            InInherited="" IsBillTo=""
+                            IsDefaultBillTo="" IsDefaultShipTo=""
+                            IsDefaultSoldTo="" IsShipTo="" IsSoldTo="">
+                            <PersonInfo AddressID="" AddressLine1=""
+                                AddressLine2="" AddressLine3=""
+                                AddressLine4="" AddressLine5=""
+                                AddressLine6="" AlternateEmailID=""
+                                Beeper="" City="" Company="" Country=""
+                                CountryDesc="" Createprogid=""
+                                Createts="" Createuserid="" DayFaxNo=""
+                                DayPhone="" Department="" EMailID=""
+                                EveningFaxNo="" EveningPhone=""
+                                FirstName="" IsAddressVerified=""
+                                IsCommercialAddress="" JobTitle=""
+                                LastName="" Lockid="" MiddleName=""
+                                MobilePhone="" Modifyprogid=""
+                                Modifyts="" Modifyuserid=""
+                                OtherPhone="" PersonID=""
+                                PersonInfoKey="" ShortZipCode=""
+                                State="" Suffix="" TaxGeoCode=""
+                                Title="" UseCount="" ZipCode="" isHistory=""/>
+                        </CustomerAdditionalAddress>
+                    </CustomerAdditionalAddressList>
+                    <CustomerContactList>
+                        <CustomerContact CustomerContactID="" UserID="">
+                            <CustomerAdditionalAddressList>
+                                <CustomerAdditionalAddress
+                                    AddressType=""
+                                    CustomerAdditionalAddressID=""
+                                    InInherited="" IsBillTo=""
+                                    IsDefaultBillTo=""
+                                    IsDefaultShipTo=""
+                                    IsDefaultSoldTo="" IsShipTo="" IsSoldTo="">
+                                    <PersonInfo AddressID=""
+                                    AddressLine1="" AddressLine2=""
+                                    AddressLine3="" AddressLine4=""
+                                    AddressLine5="" AddressLine6=""
+                                    AlternateEmailID="" Beeper=""
+                                    City="" Company="" Country=""
+                                    CountryDesc="" Createprogid=""
+                                    Createts="" Createuserid=""
+                                    DayFaxNo="" DayPhone=""
+                                    Department="" EMailID=""
+                                    EveningFaxNo="" EveningPhone=""
+                                    FirstName=""
+                                    IsAddressVerified=""
+                                    IsCommercialAddress=""
+                                    JobTitle="" LastName=""
+                                    Lockid="" MiddleName=""
+                                    MobilePhone="" Modifyprogid=""
+                                    Modifyts="" Modifyuserid=""
+                                    OtherPhone="" PersonID=""
+                                    PersonInfoKey="" ShortZipCode=""
+                                    State="" Suffix="" TaxGeoCode=""
+                                    Title="" UseCount="" ZipCode="" isHistory=""/>
+                                </CustomerAdditionalAddress>
+                            </CustomerAdditionalAddressList>
+                        </CustomerContact>
+                    </CustomerContactList>
+                </Customer>
+            </Template>
+        </API>
+        <classInformation name="com.ibm.isccs.customer.mashups.SCCSGetDefaultAddressesFirst"/>
+        <APINamespace
+            inputNS="manageCustomerAddresses_getCustomerDetails_input" outputNS="manageCustomerAddresses_getCustomerDetails_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCCUST0002"/>
+            <AlternateResourceId altResourceId="ISCCUST0003"/>
+            <AlternateResourceId altResourceId="ISCCRTORD0001"/>
+            <AlternateResourceId altResourceId="ISCRET0002"/>
+            <AlternateResourceId altResourceId="ISCCUST0001"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup
+        description="This custom mashup modifies the api input by setting the DefaultBillTo, DefaultShipTo and DefaultSoldTo attributes. It looks at CustomerAdditionalAddressList defined at both Customer level and Customer contact level, gets the default address and then manipulates input to stamp DefaultBillTo, DefaultShipTo and DefaultSoldTo attributes"
+        endpoint="EP_CUSTOMER"
+        id="manageCustomerAddresses_manageCustomer" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API FlowName="VSIModifyCustomer">
+            <Input/>
+            <Template/>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace
+            inputNS="manageCustomerAddresses_manageCustomer_input" outputNS="manageCustomerAddresses_manageCustomer_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup description="Get customer details from the customer list"
+        endpoint="EP_ORDER"
+        id="paymentCapture_getCustomerPaymentMethodList"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getCustomerDetails">
+            <Input>
+                <Customer
+                    CustomerID="xml:scControllerInput:/Order/@BillToID"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    InheritFromParents="Y" MaximumRecords="" OrganizationCode="xml:scControllerInput:/Order/@CustomerOrganizationCode">
+                    <CustomerContact CustomerContactID="xml:scControllerInput:/Order/@CustomerContactID"/>
+                </Customer>
+            </Input>
+            <Template/>
+        </API>
+        <classInformation name="com.ibm.isccs.order.mashups.SCCSGetCustomerPaymentMethodListForOrderMashup"/>
+        <APINamespace
+            inputNS="paymentCapture_getCustomerPaymentMethodList_input" outputNS="paymentCapture_getCustomerPaymentMethodList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCRET0002"/>
+            <AlternateResourceId altResourceId="ISCORD0005"/>
+            <AlternateResourceId altResourceId="ISCORD0002"/>
+            <AlternateResourceId altResourceId="ISCCSOC001"/>
+            <AlternateResourceId altResourceId="ISCPRMTCH002"/>
+            <AlternateResourceId altResourceId="ISCORD0004"/>
+            <AlternateResourceId altResourceId="ISCCRTORD0001"/>
+            <AlternateResourceId altResourceId="ISCCSCFO01"/>
+            <AlternateResourceId altResourceId="ISCORD0010"/>
+            <AlternateResourceId altResourceId="ISCCSGO001"/>
+            <AlternateResourceId altResourceId="ISCORD0013"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup
+        description="Gets the default value to determine if the question based basic search is displayed"
+        endpoint="EP_CUSTOMER"
+        id="customerIdentification_manageCustomer" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API FlowName="VSIModifyCustomer">
+            <Input/>
+            <Template/>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace
+            inputNS="customerIdentification_manageCustomer_input" outputNS="customerIdentification_manageCustomer_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCRET0002"/>
+            <AlternateResourceId altResourceId="ISCCRTORD0001"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup
+        description="This mashup calls getCompleteCustomerDetails and gets the customer details and massages the output such that if the customer doesn't have the default currency then the enterprise default currency is used for the customer."
+        endpoint="EP_CUSTOMER"
+        id="customerIdentification_getCompleteCustomerDetails"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSIGetCompleteCustomerDetails">
+            <Input>
+                <Customer
+                    CustomerID="xml:scControllerInput:/Customer/@CustomerID"
+                    CustomerKey="" OrderHeaderKey=""
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    DocumentType="xml:scControllerInput:/Customer/@DocumentType"
+                    EnterpriseCode="" OrganizationCode="xml:scControllerInput:/PersonInfo/@EnterpriseCode">
+                    <CustomerContact CustomerContactID="" UserID=""/>
+                </Customer>
+            </Input>
+            <Template>
+                <Customer AggregateStatus="" CustomerID=""
+                    CustomerKey="" CustomerType="" OrganizationCode="" Status="" HealthyRewardPoints="">
+                    <DefaultShipToAddress AddressType="">
+                        <PersonInfo/>
+                    </DefaultShipToAddress>
+                    <CustomerAdditionalAddressList TotalNumberOfRecords=""/>
+                    <DefaultSoldToAddress AddressType="">
+                        <PersonInfo/>
+                    </DefaultSoldToAddress>
+                    <BuyerOrganization OrganizationCode=""
+                        OrganizationName="" PrimaryUrl=""
+                        TaxExemptFlag="" TaxExemptionCertificate=""/>
+                    <DefaultBillToAddress AddressType="">
+                        <PersonInfo/>
+                    </DefaultBillToAddress>
+                    <CustomerContactList>
+                        <CustomerContact AggregateStatus="" Company=""
+                            CustomerContactID="" DateOfBirth=""
+                            DayFaxNo="" DayPhone="" EmailID=""
+                            EveningFaxNo="" EveningPhone=""
+                            ExtnGender="" FirstName="" LastName=""
+                            MiddleName="" MobilePhone=""
+                            SpouseDateOfBirth="" Title="" UserID=""
+                            WeddingAniversaryDate="" WeddingAnniversaryDate="">
+                            <DefaultShipToAddress AddressType="">
+                                <PersonInfo/>
+                            </DefaultShipToAddress>
+                            <CustomerAdditionalAddressList TotalNumberOfRecords="">
+                                <CustomerAdditionalAddress
+                                    AddressType=""
+                                    CustomerAdditionalAddressID=""
+                                    IsBillTo="" IsDefaultBillTo=""
+                                    IsDefaultShipTo=""
+                                    IsDefaultSoldTo="" IsShipTo="" IsSoldTo="">
+                                    <PersonInfo AddressID=""
+                                    AddressLine1="" AddressLine2=""
+                                    AddressLine3="" AddressLine4=""
+                                    AddressLine5="" AddressLine6=""
+                                    AlternateEmailID="" Beeper=""
+                                    City="" Company="" Country=""
+                                    DayFaxNo="" DayPhone=""
+                                    Department="" EMailID=""
+                                    ErrorTxt="" EveningFaxNo=""
+                                    EveningPhone="" FirstName=""
+                                    HttpUrl=""
+                                    IsCommercialAddress=""
+                                    JobTitle="" LastName=""
+                                    Latitude="" Longitude=""
+                                    MiddleName="" MobilePhone=""
+                                    OtherPhone="" PersonID=""
+                                    PersonInfoKey=""
+                                    PreferredShipAddress="" State=""
+                                    Suffix="" Title="" UseCount=""
+                                    VerificationStatus="" ZipCode=""/>
+                                </CustomerAdditionalAddress>
+                            </CustomerAdditionalAddressList>
+                            <DefaultSoldToAddress AddressType="">
+                                <PersonInfo/>
+                            </DefaultSoldToAddress>
+                            <DefaultBillToAddress AddressType="">
+                                <PersonInfo/>
+                            </DefaultBillToAddress>
+                        </CustomerContact>
+                    </CustomerContactList>
+                    <CustomerCurrencyList>
+                        <CustomerCurrency Currency=""
+                            CustomerCurrencyKey="" IsDefaultCurrency=""/>
+                    </CustomerCurrencyList>
+                    <Extn ExtnPreferredCarrier="" ExtnTaxExemptFlag="" ExtnTaxExemptionCode="" ExtnPreferredCarrierDescription="" ExtnVIPFlag="" ExtnCustomerCreatets=""/>
+                </Customer>
+            </Template>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace
+            inputNS="customerIdentification_getCompleteCustomerDetails_input" outputNS="customerIdentification_getCompleteCustomerDetails_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCRET0002"/>
+            <AlternateResourceId altResourceId="ISCCRTORD0001"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup
+        description="This mashup is invoked to fetch the notes list in the notes filer panel. The input is massaged to add the appropriate api xml attribute for the Exclude options selected on UI. This mashup is used in customer note and order note filter scenarios. If it is a customer note filter scenario, TableName - YFS_CUSTOMER is added to the input element. If its order scenario, OrderLineKey and OrderHeaderKey attributes are added. Once the notelist is fetched, in case of a customer scenario, HighPriority attribute is set on the note element as Y or N based on the priority attribute value"
+        endpoint="EP_CUSTOMER" id="customerNoteCapture_getNoteList"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getCustomerDetails">
+            <Input/>
+            <Template/>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace inputNS="customerNoteCapture_getNoteList_input" outputNS="customerNoteCapture_getNoteList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCCUST0001"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup
+        description="Retrieves details of an existing customer record"
+        endpoint="EP_CUSTOMER" id="manageContact_getCustomerDetails"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getCustomerDetails">
+            <Input/>
+            <Template>
+                <Customer CustomerID="" CustomerKey="" CustomerType=""
+                    OrganizationCode="" Status="" HealthyRewardPoints="">
+                    <BuyerOrganization OrganizationCode=""
+                        TaxExemptFlag="" TaxExemptionCertificate=""/>
+                    <CustomerContactList>
+                        <CustomerContact Company="" CustomerContactID=""
+                            DateOfBirth="" DayFaxNo="" DayPhone=""
+                            Department="" EmailID="" EveningFaxNo=""
+                            EveningPhone="" ExtnGender="" FirstName=""
+                            JobTitle="" LastName="" MiddleName=""
+                            MobilePhone="" SpendingLimit=""
+                            SpendingLimitCurrency=""
+                            SpouseDateOfBirth="" Status="" Title="" WeddingAnniversaryDate="">
+                            <User Activateflag="" DisplayUserID=""
+                                Localecode="" Username="" Usertype="">
+                                <ContactPersonInfo AddressID=""
+                                    AddressLine1="" AddressLine2=""
+                                    AddressLine3="" AddressLine4=""
+                                    AddressLine5="" AddressLine6=""
+                                    AlternateEmailID="" Beeper=""
+                                    City="" Company="" Country=""
+                                    CountryDesc="" Createprogid=""
+                                    Createts="" Createuserid=""
+                                    DayFaxNo="" DayPhone=""
+                                    Department="" EMailID=""
+                                    EveningFaxNo="" EveningPhone=""
+                                    FirstName="" IsAddressVerified=""
+                                    IsCommercialAddress="" JobTitle=""
+                                    LastName="" Lockid="" MiddleName=""
+                                    MobilePhone="" Modifyprogid=""
+                                    Modifyts="" Modifyuserid=""
+                                    OtherPhone="" PersonID=""
+                                    PersonInfoKey="" ShortZipCode=""
+                                    State="" Suffix="" TaxGeoCode=""
+                                    Title="" UseCount="" ZipCode="" isHistory=""/>
+                            </User>
+                        </CustomerContact>
+                    </CustomerContactList>
+                    <Extn ExtnPreferredCarrier="" ExtnTaxExemptFlag="" ExtnTaxExemptionCode="" ExtnVIPFlag="" />
+                </Customer>
+            </Template>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace inputNS="manageContact_getCustomerDetails_input" outputNS="manageContact_getCustomerDetails_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCCUST0002"/>
+            <AlternateResourceId altResourceId="ISCCRTORD0001"/>
+            <AlternateResourceId altResourceId="ISCRET0002"/>
+            <AlternateResourceId altResourceId="ISCCUST0003"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup
+        description="This mashup is called in payment confirmation page while loading the screen. The input is massaged to pass the information of any exchange/return order associated with the order while fetching the results."
+        endpoint="EP_ORDER"
+        id="paymentConfirmation_getCompleteOrderDetails"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getCompleteOrderDetails">
+            <Input>
+                <Order
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    OrderHeaderKey="xml:scControllerInput:/Order/@OrderHeaderKey" RetrieveDefaultCustomerPaymentMethod="Y">
+                    <Modifications>
+                        <Modification ModificationType="PRICE"/>
+                        <Modification ModificationType="PAYMENT_METHOD"/>
+                        <Modification ModificationType="CHANGE_PROMOTION"/>
+                        <Modification ModificationType="REMOVE_PROMOTION"/>
+                        <Modification ModificationType="BILLTO"/>
+                    </Modifications>
+                </Order>
+            </Input>
+            <Template>
+                <Order BillToID="" BuyerOrganizationCode=""
+                    BuyerUserId="" CustomerContactID=""
+                    CustomerFirstName="" CustomerLastName=""
+                    DocumentType="" DraftOrderFlag="" EnterpriseCode=""
+                    ExchangeType="" OrderDate="" OrderHeaderKey=""
+                    OrderName="" OrderNo="" OrderPurpose=""
+                    PaymentStatus="" PendingTransferIn="" SellerOrganizationCode="" OrderType="">
+					<Extn ExtnAurusToken=""/>
+                    <Promotions>
+                        <Promotion DenialReason="" Description=""
+                            PromotionAmount="" PromotionApplied="" PromotionId="">
+                            <PricingRule Description=""/>
+                            <Extn ExtnCouponID=""/>
+                        </Promotion>
+                    </Promotions>
+                    <OverallTotals AdjustedSubtotalWithoutTaxes=""
+                        EnterpriseCode=""
+                        GrandAdjustmentsWithoutTotalShipping=""
+                        GrandCharges="" GrandDeliveryCharges=""
+                        GrandDiscount="" GrandRefundTotal=""
+                        GrandShippingTotal="" GrandTax="" GrandTotal=""
+                        HdrShippingCharges=""
+                        HeaderAdjustmentWithoutShipping=""
+                        LineSubTotal="" OrderHeaderKey="" SubtotalWithoutTaxes=""/>
+                    <PaymentMethods>
+                        <PaymentMethod AwaitingAuthInterfaceAmount=""
+                            AwaitingChargeInterfaceAmount=""
+                            BillToKey="" ChargeSequence="" CheckNo=""
+                            CheckReference="" CreditCardExpDate=""
+                            CreditCardName="" CreditCardNo=""
+                            CreditCardType="" CustomerAccountNo=""
+                            CustomerPONo="" DisplayCreditCardNo=""
+                            DisplayCustomerAccountNo=""
+                            DisplayPaymentReference1=""
+                            DisplayPrimaryAccountNo="" DisplaySvcNo=""
+                            FirstName="" FundsAvailable=""
+                            GetFundsAvailableUserExitInvoked=""
+                            IncompletePaymentType="" IsCustomer=""
+                            IsDefaultMethod="" LastName=""
+                            MaxChargeLimit="" MiddleName=""
+                            PaymentKey="" PaymentReference1=""
+                            PaymentReference2="" PaymentReference3=""
+                            PaymentType="" PaymentTypeGroup=""
+                            PlannedRefundAmount=""
+                            RequestedAuthAmount=""
+                            RequestedChargeAmount=""
+                            SuspendAnyMoreCharges="" SvcNo=""
+                            TotalAuthorized="" TotalCharged=""
+                            TotalRefundedAmount="" UnlimitedCharges="">
+                            <ChargeTransactionDetails
+                                RemainingAmountToAuth=""
+                                TotalTransferredIn="" TotalTransferredOut="">
+                                <ChargeTransactionDetail
+                                    AuthorizationExpirationDate=""
+                                    BookAmount="" ChargeType=""
+                                    CreditAmount="" DebitAmount=""
+                                    Modifyts="" OpenAuthorizedAmount=""
+                                    PaymentKey="" Status=""/>
+                            </ChargeTransactionDetails>
+                            <PersonInfoBillTo AddressLine1=""
+                                AddressLine2="" AddressLine3=""
+                                AddressLine4="" AddressLine5=""
+                                AddressLine6="" AlternateEmailID=""
+                                Beeper="" City="" Company="" Country=""
+                                DayFaxNo="" DayPhone="" Department=""
+                                EMailID="" EveningFaxNo=""
+                                EveningPhone="" FirstName=""
+                                IsCommercialAddress="" JobTitle=""
+                                LastName="" MiddleName="" MobilePhone=""
+                                OtherPhone="" PersonID=""
+                                PersonInfoKey="" State="" Suffix=""
+                                TaxGeoCode="" Title="" ZipCode=""/>
+							<Extn ExtnAurusCI="" ExtnAurusOOT=""/>
+                        </PaymentMethod>
+                    </PaymentMethods>
+                    <ChargeTransactionDetails RemainingAmountToAuth=""
+                        TotalTransferredIn="" TotalTransferredOut="">
+                        <ChargeTransactionDetail
+                            AuthorizationExpirationDate=""
+                            CreditAmount="" DebitAmount=""
+                            OpenAuthorizedAmount="" PaymentKey=""/>
+                    </ChargeTransactionDetails>
+                    <PriceInfo Currency=""/>
+                    <Modifications>
+                        <Modification ModificationAllowed="" ModificationType=""/>
+                    </Modifications>
+                    <PersonInfoBillTo AddressLine1="" AddressLine2=""
+                        AddressLine3="" AddressLine4="" AddressLine5=""
+                        AddressLine6="" AlternateEmailID="" Beeper=""
+                        City="" Company="" Country="" DayFaxNo=""
+                        DayPhone="" Department="" EMailID=""
+                        EveningFaxNo="" EveningPhone="" FirstName=""
+                        IsCommercialAddress="" JobTitle="" LastName=""
+                        MiddleName="" MobilePhone="" OtherPhone=""
+                        PersonID="" PersonInfoKey="" State="" Suffix=""
+                        TaxGeoCode="" Title="" ZipCode=""/>
+                    <OrderLines HasLocalShipment="" LastOrderLineKey=""
+                        LastRecordSet="" ModificationAllowed=""
+                        ModificationQty="" ModificationReleaseKey=""
+                        NoShipmentModificationQty=""
+                        PostReleaseModificationQty=""
+                        PreReleaseModificationQty="" TotalLineList="" TotalNumberOfRecords="">
+                        <OrderLine ConditionVariable1="" OrderLineKey="" DeliveryMethod="">
+                            <LineCharges>
+                                <LineCharge AmountFromAddnlLinePrices=""
+                                    ChargeAmount="" ChargeCategory=""
+                                    ChargeName="" ChargeNameKey=""
+                                    ChargePerLine="" ChargePerUnit=""
+                                    InvoicedChargeAmount=""
+                                    InvoicedChargePerLine=""
+                                    InvoicedChargePerUnit=""
+                                    IsBillable="" IsDiscount=""
+                                    IsManual="Y" IsRefundable=""
+                                    IsShippingCharge="" Reference=""
+                                    RemainingChargeAmount=""
+                                    RemainingChargePerLine="" RemainingChargePerUnit="">
+                                    <ChargeCategoryDetails
+                                    ChargeCategoryKey=""
+                                    ConsiderForProfitMargin=""
+                                    Description="" IsBillable=""
+                                    IsDiscount="" IsRefundable=""/>
+                                    <Extn/>
+                                    <ChargeNameDetails Description=""/>
+                                    <ChargeBreakups>
+                                    <ChargeBreakup AwardId=""
+                                    AwardType="" ChargeAmount=""
+                                    ChargeBreakupKey=""
+                                    DerivedFromOrderHeaderKey=""
+                                    DerivedFromOrderLineKey="" OrderHeaderKey=""/>
+                                    </ChargeBreakups>
+                                </LineCharge>
+                            </LineCharges>
+                        </OrderLine>
+                    </OrderLines>
+                    <Extn ExtnIsMigrated="" ExtnPricingDate=""/>
+                    <ReturnOrdersForExchange>
+                        <ReturnOrderForExchange OrderHeaderKey=""/>
+                    </ReturnOrdersForExchange>
+                    <ExchangeOrders>
+                        <ExchangeOrder ExchangeType="" OrderHeaderKey=""/>
+                    </ExchangeOrders>
+                    <HeaderTaxes>
+                        <HeaderTax ChargeCategory="" ChargeName=""
+                            ChargeNameKey="" InvoicedTax=""
+                            Reference1="" Reference2="" Reference3=""
+                            RemainingTax="" Tax="" TaxName=""
+                            TaxPercentage="" TaxableFlag=""/>
+                    </HeaderTaxes>
+                </Order>
+            </Template>
+        </API>
+        <classInformation name="com.ibm.isccs.order.mashups.SCCSGetOrderReturnExhangeDetails"/>
+        <APINamespace
+            inputNS="paymentConfirmation_getCompleteOrderDetails_input" outputNS="paymentConfirmation_getCompleteOrderDetails_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCRET0002"/>
+            <AlternateResourceId altResourceId="ISCORD0005"/>
+            <AlternateResourceId altResourceId="ISCORD0002"/>
+            <AlternateResourceId altResourceId="ISCCSOC001"/>
+            <AlternateResourceId altResourceId="ISCPRMTCH002"/>
+            <AlternateResourceId altResourceId="ISCORD0004"/>
+            <AlternateResourceId altResourceId="ISCCRTORD0001"/>
+            <AlternateResourceId altResourceId="ISCCSCFO01"/>
+            <AlternateResourceId altResourceId="ISCORD0010"/>
+            <AlternateResourceId altResourceId="ISCCSGO001"/>
+            <AlternateResourceId altResourceId="ISCORD0013"/>
+        </AlternateResourceIds>
+    </mashup>
+                <mashup
+        description="Retrieves the details of item in the item details screen"
+        endpoint="EP_PRODUCT" id="itemSpec_getCompleteItemList"
+        mashuptype="XAPI" skipDataProvider="false" transactional="Y">
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <API Name="getCompleteItemList">
+            <Input>
+                <Item
+                    CallingOrganizationCode="VSI"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    IgnoreInvalidItems="N"
+                    ItemID="xml:scControllerInput:/Item/@ItemID"
+                    MaximumRecords="" UnitOfMeasure="xml:scControllerInput:/Item/@UnitOfMeasure">
+                    <ItemAttributeGroupTypeList>
+                        <ItemAttributeGroupType ItemAttributeGroupType="SPEC"/>
+                    </ItemAttributeGroupTypeList>
+                </Item>
+            </Input>
+            <Template>
+                <ItemList>
+                    <Item>
+                        <ItemAttributeGroupTypeList>
+                            <ItemAttributeGroupType
+                                ClassificationPurposeCode=""
+                                Description=""
+                                IsAdditionalAttributeAllowed=""
+                                IsSingleGroup=""
+                                ItemAttributeGroupType="" ItemAttributeGroupTypeKey="">
+                                <ItemAttributeGroupList>
+                                    <ItemAttributeGroup CategoryKey=""
+                                    IsInherited=""
+                                    ItemAttributeGroupDescription=""
+                                    ItemAttributeGroupID=""
+                                    ItemAttributeGroupKey="" SequenceNo="">
+                                    <ItemAttributeList>
+                                    <ItemAttribute
+                                    IsKeyAttribute=""
+                                    ItemAttributeDescription=""
+                                    ItemAttributeGroupKey=""
+                                    ItemAttributeKey=""
+                                    ItemAttributeName=""
+                                    SequenceNo="" Value="">
+                                    <Attribute
+                                    AttributeID=""
+                                    AttributePostFix="" ShortDescription=""/>
+                                    <AssignedValueList>
+                                    <AssignedValue
+                                    ShortDescription="" Value=""/>
+                                    </AssignedValueList>
+                                    </ItemAttribute>
+                                    </ItemAttributeList>
+                                    </ItemAttributeGroup>
+                                </ItemAttributeGroupList>
+                            </ItemAttributeGroupType>
+                        </ItemAttributeGroupTypeList>
+                    </Item>
+                </ItemList>
+            </Template>
+        </API>
+        <APINamespace inputNS="getCompleteItemDetails_input" outputNS="getCompleteItemDetails_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCPROD00001"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup cached="PAGE"
+        description="Get List of Organizations applicable for current user"
+        endpoint="EP_CONFIG" id="addItems_getOrganizationList"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <API Name="getOrganizationList">
+            <Input>
+                <Organization OrganizationCode="VSI.com"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode" MaximumRecords="">
+                    <OrgRoleList>
+                        <OrgRole RoleKey="ENTERPRISE"/>
+                        <OrgRole RoleKey="SELLER"/>
+                    </OrgRoleList>
+                    <DataAccessFilter UserId="xml:CurrentUser:/User/@Loginid"/>
+                    <OrderBy>
+                        <Attribute Desc="N" Name="OrganizationName"/>
+                    </OrderBy>
+                </Organization>
+            </Input>
+            <Template>
+                <OrganizationList>
+                    <Organization CustomerMasterOrganizationCode=""
+                        LocaleCode="" OrganizationCode="" OrganizationName="">
+                        <BillingPersonInfo City="" Country="" ZipCode=""/>
+                    </Organization>
+                </OrganizationList>
+            </Template>
+        </API>
+        <APINamespace inputNS="getOrganizationList_input" outputNS="getOrganizationList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCORD0001"/>
+            <AlternateResourceId altResourceId="ISCCSSYS002"/>
+        </AlternateResourceIds>
+    </mashup>
+        <mashup cached="PAGE"
+        description="Get List of Organizations applicable for current user"
+        endpoint="EP_CONFIG" id="getOrganizationList_Container"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <API Name="getOrganizationList">
+            <Input>
+                <Organization OrganizationCode="VSI.com"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode" MaximumRecords="">
+                    <OrgRoleList>
+                        <OrgRole RoleKey="ENTERPRISE"/>
+                        <OrgRole RoleKey="SELLER"/>
+                    </OrgRoleList>
+                    <DataAccessFilter UserId="xml:CurrentUser:/User/@Loginid"/>
+                    <OrderBy>
+                        <Attribute Desc="N" Name="OrganizationName"/>
+                    </OrderBy>
+                </Organization>
+            </Input>
+            <Template>
+                <OrganizationList>
+                    <Organization CatalogOrganizationCode=""
+                        LocaleCode="" OrganizationCode="">
+                        <BillingPersonInfo City="" Country="" ZipCode=""/>
+                    </Organization>
+                </OrganizationList>
+            </Template>
+        </API>
+        <APINamespace inputNS="getOrganizationList_input" outputNS="getOrganizationList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCORD0001"/>
+            <AlternateResourceId altResourceId="ISCCSSYS002"/>
+        </AlternateResourceIds>
+    </mashup>
+        <mashup cached="PAGE"
+        description="Get List of Organizations applicable for current user"
+        endpoint="EP_CONFIG" id="createOrder_getOrganizationList"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <API Name="getOrganizationList">
+            <Input>
+                <Organization CatalogOrganizationCode=""
+                    CustomerMasterOrganizationCode="" OrganizationCode="VSI.com"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    MaximumRecords="">
+                    <OrgRoleList>
+                        <OrgRole RoleKey="ENTERPRISE"/>
+                        <OrgRole RoleKey="SELLER"/>
+                    </OrgRoleList>
+                    <DataAccessFilter UserId="xml:CurrentUser:/User/@Loginid"/>
+                    <OrderBy>
+                        <Attribute Desc="N" Name="OrganizationName"/>
+                    </OrderBy>
+                </Organization>
+            </Input>
+            <Template>
+                <OrganizationList>
+                    <Organization CustomerMasterOrganizationCode=""
+                        LocaleCode="" OrganizationCode="" OrganizationName="">
+                        <BillingPersonInfo City="" Country="" ZipCode=""/>
+                    </Organization>
+                </OrganizationList>
+            </Template>
+        </API>
+        <APINamespace inputNS="getOrganizationList_input" outputNS="getOrganizationList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCCRTORD0001"/>
+        </AlternateResourceIds>
+    </mashup>
+        <mashup cached="PAGE"
+        description="Get List of Organizations applicable for current user"
+        endpoint="EP_CONFIG" id="productBrowsing_getOrganizationList"
+        mashuptype="XAPI" resourceId="ISCCSSYS002"
+        skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <API Name="getOrganizationList">
+            <Input>
+                <Organization OrganizationCode="VSI"
+                    CustomerMasterOrganizationCode="xml:scControllerInput:/CatalogSearch/@OrganizationCode"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode" MaximumRecords="">
+                    <OrgRoleList>
+                        <OrgRole RoleKey="ENTERPRISE"/>
+                        <OrgRole RoleKey="SELLER"/>
+                    </OrgRoleList>
+                    <DataAccessFilter UserId="xml:CurrentUser:/User/@Loginid"/>
+                    <OrderBy>
+                        <Attribute Desc="N" Name="OrganizationName"/>
+                    </OrderBy>
+                </Organization>
+            </Input>
+            <Template>
+                <OrganizationList>
+                    <Organization CatalogOrganizationCode=""
+                        CustomerMasterOrganizationCode="" LocaleCode=""
+                        OrganizationCode="" OrganizationName="">
+                        <BillingPersonInfo City="" Country="" ZipCode=""/>
+                    </Organization>
+                </OrganizationList>
+            </Template>
+        </API>
+        <APINamespace inputNS="getOrganizationList_input" outputNS="getOrganizationList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCPROD00001"/>
+        </AlternateResourceIds>
+    </mashup>
+        <mashup cached="PAGE"
+        description="Get List of Organizations applicable for current user"
+        endpoint="EP_CONFIG" id="orderPortlet_getOrganizationList"
+        mashuptype="XAPI" resourceId="ISCCSSYS002"
+        skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <API Name="getOrganizationList">
+            <Input>
+                <Organization
+                    OrganizationCode="VSI.com" DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode" MaximumRecords="">
+                    <OrgRoleList>
+                        <OrgRole RoleKey="ENTERPRISE"/>
+                    </OrgRoleList>
+                    <DataAccessFilter UserId="xml:CurrentUser:/User/@Loginid"/>
+                    <OrderBy>
+                        <Attribute Desc="N" Name="OrganizationName"/>
+                    </OrderBy>
+                </Organization>
+            </Input>
+            <Template>
+                <OrganizationList>
+                    <Organization CustomerMasterOrganizationCode=""
+                        LocaleCode="" OrganizationCode="" OrganizationName="">
+                        <BillingPersonInfo City="" Country="" ZipCode=""/>
+                    </Organization>
+                </OrganizationList>
+            </Template>
+        </API>
+        <APINamespace inputNS="getOrganizationList_input" outputNS="getOrganizationList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCCSSYS002"/>
+            <AlternateResourceId altResourceId="ISCPROD00001"/>
+            <AlternateResourceId altResourceId="ISCRET0001"/>
+            <AlternateResourceId altResourceId="ISCORD0001"/>
+        </AlternateResourceIds>
+    </mashup>
+        <mashup
+        description="This mashup is used in product browsing to list the categories when the page is launched"
+        endpoint="EP_PRODUCT" id="itemBrowsing_searchCatalogindex"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <API Name="searchCatalogIndex">
+            <Input>
+                <CatalogSearch
+                    CallingOrganizationCode="xml:scControllerInput:/CatalogSearch/@CallingOrganizationCode"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    PageNumber="1" PageSize="">
+                    <Item CallingOrganizationCode="" Currency=""
+                        ExcludeChildItemsOfModelItems="N"
+                        GetAvailabilityFromCache="Y" IgnoreInvalidItems="N">
+                        <CustomerInformation BuyerUserId=""
+                            CustomerContactID="xml:scControllerInput:/CatalogSearch/CustomerInformation/@CustomerContactID" CustomerID="xml:scControllerInput:/CatalogSearch/CustomerInformation/@CustomerID"/>
+                    </Item>
+                </CatalogSearch>
+            </Input>
+            <Template>
+                <CatalogSearch PageNumber="" PageSize="" TotalHits="" TotalPages="">
+                    <ItemAttribute ItemAttributeDescription="" ItemAttributeName="">
+                        <AssignedValueList>
+                            <AssignedValue Count="" Value=""/>
+                        </AssignedValueList>
+                    </ItemAttribute>
+                </CatalogSearch>
+            </Template>
+        </API>
+        <APINamespace inputNS="searchCatalogIndex_input" outputNS="searchCatalogIndex_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCPROD00001"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup
+        description="This custom mashup modifies the api input by setting the DefaultBillTo, DefaultShipTo and DefaultSoldTo attributes. It looks at CustomerAdditionalAddressList defined at both Customer level and Customer contact level, gets the default address and then manipulates input to stamp DefaultBillTo, DefaultShipTo and DefaultSoldTo attributes"
+        endpoint="EP_ORDER" id="reshipProduct_reshipOrderLines"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSIReshipOrderLines">
+            <Input>
+                <Order
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    ModificationReasonCode="" OrderHeaderKey="">
+                    <OrderLines>
+                        <OrderLine OrderLineKey="" QuantityToReship="" Reship_CarrierServiceCode="">
+                            <Extn ExtnOriginalTrackingNo=""/>
+                        </OrderLine>
+                    </OrderLines>
+                </Order>
+            </Input>
+            <Template/>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="reshipProduct_reshipOrderLines_input" outputNS="reshipProduct_reshipOrderLines_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+<!-- OMS-935 : updating the mashup template and mashup class :Start -->
+    <mashup cached=""
+		description="This mashup is called while opening the modify charges pop-up. The output of the API is modified to identify the type of charge - ChargePerLine or ChargePerUnit and based on the value returned the corresponding value is populated."
+		endpoint="EP_ORDER" id="lineCharges_getCompleteOrderLineDetails"
+		mashuptype="XAPI" skipDataProvider="false" transactional="true">
+		<classInformation name="com.vsi.isccs.mashups.order.VSILineChargesLineDetailsMashup"/>
+		<APINamespace inputNS="getCompleteOrderLineDetails_input" outputNS="getCompleteOrderLineDetails_output"/>
+		<API Name="getCompleteOrderLineDetails">
+			<Input>
+				<OrderLineDetail
+					DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode" OrderLineKey=""/>
+			</Input>
+			<Template>
+				<OrderLine CarrierServiceCode="" DeliveryMethod=""
+					DisplayStatusDescription="" GiftFlag="" GiftWrap=""
+					HasRelatedLines="" HoldFlag="" IsBundleComponent=""
+					IsBundleParent="" IsOpenBox="" IsPriceMatched=""
+					IsRelatedLine="" ItemGroupCode="" KitCode=""
+					LevelOfService="" MaxLineStatus="" MaxLineStatusDesc=""
+					MinLineStatus="" OpenQty="" OrderLineKey=""
+					OrderedQty="" OverallStatus="" PrimeLineNo=""
+					ShipNode="" Status="" HasDerivedChild="" >
+					<LineCharges>
+						<LineCharge ChargeAmount="" ChargeCategory=""
+							ChargeCategoryDescription="" ChargeName=""
+							ChargeNameDescription="" ChargePerLine=""
+							ChargePerUnit="" IsManual="" Reference=""/>
+					</LineCharges>
+					<PriceInfo Currency=""/>
+					<LineTaxes>
+						<LineTax Tax="" TaxName=""/>
+					</LineTaxes>
+					<Order DocumentType="" EnterpriseCode="" OrderHeaderKey="" OrderType="" EntryType="">
+						<PriceInfo Currency=""/>
+					</Order>
+					<LinePriceInfo IsLinePriceForInformationOnly="" IsPriceLocked=""/>
+					<ComputedPrice Charges="" Discount="" ExtendedPrice=""
+						LineTotal="" Tax="" UnitPrice="" ReturnLineTotal="" />
+					<PersonInfoShipTo AddressID="" AddressLine1=""
+						AddressLine2="" City="" Company="" Country=""
+						CountryDesc="" DayPhone="" Department="" EMailID=""
+						EveningPhone="" FirstName="" IsAddressVerified=""
+						IsCommercialAddress="" LastName="" MiddleName=""
+						MobilePhone="" PersonID="" PersonInfoKey="" State=""
+						Suffix="" Title="" TitleDesc="" ZipCode="" isHistory=""/>
+					<OrderDates>
+						<OrderDate ActualDate="" DateTypeId=""/>
+					</OrderDates>
+				</OrderLine>
+			</Template>
+		</API>
+		<AlternateResourceIds>
+			<AlternateResourceId altResourceId="ISCORD0001"/>
+			<AlternateResourceId altResourceId="ISCCSCFO01"/>
+			<AlternateResourceId altResourceId="ISCORD0010"/>
+			<AlternateResourceId altResourceId="ISCCSGO001"/>
+			<AlternateResourceId altResourceId="ISCORD0005"/>
+			<AlternateResourceId altResourceId="ISCORD0002"/>
+			<AlternateResourceId altResourceId="ISCCSOC001"/>
+			<AlternateResourceId altResourceId="ISCORD0004"/>
+			<AlternateResourceId altResourceId="ISCRET0001"/>
+			<AlternateResourceId altResourceId="ISCCRTORD0001"/>
+			<AlternateResourceId altResourceId="ISCRET0002"/>
+			<AlternateResourceId altResourceId="ISCORD0013"/>
+			<AlternateResourceId altResourceId="ISCCSCO001"/>
+			<AlternateResourceId altResourceId="ISCPRMTCH002"/>
+			<AlternateResourceId altResourceId="ISCINV0002"/>
+		</AlternateResourceIds>
+	</mashup>
+	<!-- OMS-935 : updating the mashup template and mashup class :End -->
+	<mashup cached=""
+        description="Invoke user exit for sending order email"
+        endpoint="EP_ORDER" id="orderDetails_invokeUE" mashuptype="XAPI"
+        skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <API Name="invokeUE">
+            <Input>
+                <InvokeUE
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    DocumentType="0001" IsUserExitImplemented="Y" UserExit="YCDEmailOrderUE">
+                    <XMLData>
+                        <Order DeliveryMethod="" DocumentType="0001" EnterpriseCode=""
+                            OrderHeaderKey="" OrderNo="" To=""/>
+                    </XMLData>
+                </InvokeUE>
+            </Input>
+            <Template>
+                <InvokeUE IsUserExitImplemented="" TransactionId="" UserExit="">
+                    <XMLData>
+                        <Order DeliveryMethod="" DocumentType="" EnterpriseCode=""
+                            OrderHeaderKey="" OrderNo=""/>
+                    </XMLData>
+					&gt;
+				</InvokeUE>
+            </Template>
+        </API>
+        <Config/>
+        <AlternateResourceIds>
+            <!-- <AlternateResourceId altResourceId="ISCORD0011"/> -->
+        </AlternateResourceIds>
+    </mashup>
+    <mashup
+        description="This mashup is used in product browsing to list the items and the corresponding categories"
+        endpoint="EP_PRODUCT" id="itemBrowsing_searchCatalog"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSISearchCatalogIndexForProductBrowsing">
+            <Input>
+                <CatalogSearch CallingOrganizationCode=""
+                    CategoryPath=""
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    PageNumber="1" PageSize="" SortDescending="" SortField="">
+                    <Filters>
+                        <Filter IndexFieldName="" Value=""/>
+                    </Filters>
+                    <Item CallingOrganizationCode="" Currency=""
+                        ExcludeChildItemsOfModelItems="N"
+                        GetAvailabilityFromCache="Y" IgnoreInvalidItems="N">
+                        <CustomerInformation BuyerUserId=""
+                            CustomerContactID="" CustomerID=""/>
+                    </Item>
+                    <Terms>
+                        <Term Condition="" Value=""/>
+                    </Terms>
+                </CatalogSearch>
+            </Input>
+            <Template>
+                <CatalogSearch CallingOrganizationCode="" PageNumber=""
+                    PageSize="" SortDescending="" SortField=""
+                    TotalHits="" TotalPages="">
+                    <ItemList CallingOrganizationCode="" Currency="">
+                        <Item ItemGroupCode="" ItemID=""
+                            OrganizationCode="" UnitOfMeasure="">
+                            <Availability CurrentAvailableQty=""
+                                FirstFutureAvailableDate=""
+                                FutureAvailableDate=""
+                                FutureAvailableQuantity=""
+                                OnhandAvailableDate="" OnhandAvailableQuantity=""/>
+                            <ComputedPrice BundleTotal="" ListPrice="" UnitPrice=""/>
+                            <PrimaryInformation BundleFulfillmentMode=""
+                                DefaultProductClass="" Description=""
+                                ExtendedDisplayDescription="" ImageID=""
+                                ImageLocation="" IsConfigurable=""
+                                IsDeliveryAllowed="" IsModelItem=""
+                                IsPickupAllowed="" IsPreConfigured=""
+                                IsShippingAllowed=""
+                                IsStandaloneService="" KitCode=""/>
+                        </Item>
+                    </ItemList>
+                    <ItemAttribute ItemAttributeDescription="" ItemAttributeName="">
+                        <AssignedValueList>
+                            <AssignedValue Count="" Value=""/>
+                        </AssignedValueList>
+                    </ItemAttribute>
+                </CatalogSearch>
+            </Template>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace inputNS="itemBrowsing_searchCatalog_input" outputNS="itemBrowsing_searchCatalog_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCPROD00001"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup
+        description="Retrieves the details of item in the item details screen"
+        endpoint="EP_PRODUCT" id="itemDetails_getCompleteItemDetails"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSIGetCompleteItemListForItemDetails">
+            <Input>
+                <Item CallingOrganizationCode="VSI"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    GetAvailabilityFromCache="Y" IgnoreInvalidItems="N"
+                    ItemID="xml:scControllerInput:/Item/@ItemID"
+                    MaximumRecords="" UnitOfMeasure="xml:scControllerInput:/Item/@UnitOfMeasure">
+                    <CustomerInformation
+                        BuyerUserId="xml:scControllerInput:/Item/CustomerInformation/@BuyerUserId"
+                        CustomerContactID="xml:scControllerInput:/Item/CustomerInformation/@CustomerContactID" CustomerID="xml:scControllerInput:/Item/CustomerInformation/@CustomerID"/>
+                    <ItemAttributeGroupTypeList>
+                        <ItemAttributeGroupType ItemAttributeGroupType="SPEC"/>
+                    </ItemAttributeGroupTypeList>
+                </Item>
+            </Input>
+            <Template>
+                <ItemList CallingOrganizationCode="" Currency=""
+                    LastItemKey="" TotalItemList="">
+                    <Item HasVisibleAssociations="" ItemGroupCode=""
+                        ItemID="" ItemKey="" OrganizationCode="" UnitOfMeasure="">
+                        <ItemAttributeGroupTypeList>
+                            <ItemAttributeGroupType
+                                ClassificationPurposeCode=""
+                                Description=""
+                                IsAdditionalAttributeAllowed=""
+                                IsSingleGroup=""
+                                ItemAttributeGroupType="" ItemAttributeGroupTypeKey="">
+                                <ItemAttributeGroupList>
+                                    <ItemAttributeGroup CategoryKey=""
+                                    IsInherited=""
+                                    ItemAttributeGroupDescription=""
+                                    ItemAttributeGroupID=""
+                                    ItemAttributeGroupKey="" SequenceNo="">
+                                    <ItemAttributeList>
+                                    <ItemAttribute
+                                    IsKeyAttribute=""
+                                    ItemAttributeDescription=""
+                                    ItemAttributeGroupKey=""
+                                    ItemAttributeKey=""
+                                    ItemAttributeName=""
+                                    SequenceNo="" Value="">
+                                    <Attribute
+                                    AttributeID=""
+                                    AttributePostFix="" ShortDescription=""/>
+                                    <AssignedValueList>
+                                    <AssignedValue
+                                    ShortDescription="" Value=""/>
+                                    </AssignedValueList>
+                                    </ItemAttribute>
+                                    </ItemAttributeList>
+                                    </ItemAttributeGroup>
+                                </ItemAttributeGroupList>
+                            </ItemAttributeGroupType>
+                        </ItemAttributeGroupTypeList>
+                        <Components>
+                            <Component ComponentDescription=""
+                                ComponentItemGroupCode=""
+                                ComponentItemID="" ComponentItemKey=""
+                                ComponentOrganizationCode=""
+                                ComponentUnitOfMeasure="" ItemKey="" KitQuantity="">
+                                <Item>
+                                    <PrimaryInformation
+                                    DefaultProductClass=""
+                                    Description=""
+                                    EffectiveStartDate=""
+                                    ExtendedDescription=""
+                                    ExtendedDisplayDescription=""
+                                    ImageID="" ImageLabel=""
+                                    ImageLocation=""
+                                    IsConfigurable=""
+                                    IsDeliveryAllowed=""
+                                    IsModelItem=""
+                                    IsPickupAllowed=""
+                                    IsPreConfigured=""
+                                    IsShippingAllowed="" KitCode=""
+                                    ManufacturerItem=""
+                                    ManufacturerName="" ShortDescription=""/>
+                                </Item>
+                            </Component>
+                        </Components>
+                        <AssetList>
+                            <Asset ContentID="" ContentLocation=""
+                                Description="" Label="" Type="" Value=""/>
+                        </AssetList>
+                        <Availability CurrentAvailableQty=""
+                            FutureAvailableDate=""
+                            FutureAvailableQuantity=""
+                            OnhandAvailableDate="" OnhandAvailableQuantity=""/>
+                        <ClassificationCodes Model=""/>
+                        <ComputedPrice BundleTotal="" ListPrice="" UnitPrice=""/>
+                        <PrimaryInformation BundleFulfillmentMode=""
+                            DefaultProductClass="" Description=""
+                            EffectiveStartDate="" ExtendedDescription=""
+                            ExtendedDisplayDescription="" ImageID=""
+                            ImageLabel="" ImageLocation=""
+                            IsConfigurable="" IsDeliveryAllowed=""
+                            IsModelItem="" IsPickupAllowed=""
+                            IsPreConfigured="" IsShippingAllowed=""
+                            IsStandaloneService="" KitCode=""
+                            ManufacturerItem="" ManufacturerName="" ShortDescription=""/>
+                    </Item>
+                </ItemList>
+            </Template>
+        </API>
+        <classInformation name="com.ibm.isccs.item.mashups.SCCSGetItemDetailsMashup"/>
+        <APINamespace inputNS="itemDetails_getCompleteItemDetails_input" outputNS="itemDetails_getCompleteItemDetails_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCPROD00001"/>
+        </AlternateResourceIds>
+    </mashup>
+	<mashup
+        description="This custom mashup is used to perform the following a)calls getCompleteItemList api to fetch variation item details if item is a model item.b)If showInUI rule is enabled for enterprise,calls getCompleteItemList api to get the item's corresponding association types and item details of first association type c)If item is superseded and substitution on order is not allowed then calls getCompleteItemList api to fetch Substited item details"
+        endpoint="EP_PRODUCT" id="additems_getCompleteItemList"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSIGetCompleteItemListForAddItem">
+            <Input>
+				<Item ApplyDeliveryMethodOverrides="Y" BarCode=""
+					CallingOrganizationCode="VSI-Cat" Currency=""
+					DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+					ExecuteQueries="Y" GetAvailabilityFromCache="Y"
+					IgnoreInvalidItems="N" IgnoreOrdering="Y"
+					IsForOrdering="Y" ItemID="" MaximumRecords="2"
+					OrganizationCode="VSI-Cat"
+					PurposeForDisplayClassification="Specification" ShowFinalSupersededItemOnly="Y">
+					<BarCode BarCodeData="" BarCodeType="Item">
+						<ContextualInfo EnterpriseCode="" OrganizationCode=""/>
+					</BarCode>
+					<CustomerInformation BuyerUserId="" CustomerID=""/>
+					<ItemAssociationTypeList>
+						<ItemAssociationType Type="Substitutions"/>
+					</ItemAssociationTypeList>
+					<ComplexQuery>
+						<And>
+							<Exp Name="ItemGroupCode" QryType="NE" Value="DSOPT"/>
+							<Exp Name="ItemGroupCode" QryType="NE" Value="DS"/>
+							<Or>
+								<Exp Name="" Value=""/>
+							</Or>
+						</And>
+					</ComplexQuery>
+				</Item>
+			</Input>
+            <Template>
+				<ItemList CallingOrganizationCode="" Currency="">
+					<Item HasVisibleAssociations="" IsItemSuperseded=""
+						ItemGroupCode="" ItemID="" ItemKey=""
+						OrganizationCode="" UnitOfMeasure="">
+						<PrimaryInformation AssumeInfiniteInventory=""
+							BundleFulfillmentMethod=""
+							BundleFulfillmentMode=""
+							BundlePricingStrategy="" DefaultProductClass=""
+							ExtendedDisplayDescription="" ImageID=""
+							ImageLabel="" ImageLocation=""
+							IsDeliveryAllowed=""
+							IsDeliveryAllowedOverridden="" IsModelItem=""
+							IsPickupAllowed="" IsPickupAllowedOverridden=""
+							IsShippingAllowed=""
+							IsShippingAllowedOverridden=""
+							IsStandaloneService="" IsSubOnOrderAllowed=""
+							IsValid="" KitCode="" MinOrderQuantity=""/>
+						<ComputedPrice BundleTotal="" ListPrice="" UnitPrice="">
+							<QuantityRangePriceList>
+								<QuantityRangePrice BreakQtyHigh="" UnitPrice=""/>
+							</QuantityRangePriceList>
+						</ComputedPrice>
+						<Availability FirstFutureAvailableDate=""
+							FutureAvailableDate=""
+							FutureAvailableQuantity=""
+							OnhandAvailableDate="" OnhandAvailableQuantity="">
+							<AvailabilityInformation>
+								<AvailableInventory AvailableQuantity=""
+									EffectiveUntilDate="" IsOnhand="" MaxShipDate=""/>
+							</AvailabilityInformation>
+						</Availability>
+						<Components>
+							<Component ComponentDescription=""
+								ComponentItemGroupCode="" ComponentItemID=""
+								ComponentOrganizationCode=""
+								ComponentUnitOfMeasure="" KitQuantity=""/>
+						</Components>
+						<ItemServiceAssocList TotalNumberOfRecords="">
+							<ItemServiceAssoc ProductQuantity=""
+								ServiceItemDesc="" ServiceItemGroupCode=""
+								ServiceItemId="" ServiceQuantity="" ServiceUOM="">
+								<ServiceItem HasVisibleAssociations=""
+									IsItemSuperseded="" ItemGroupCode=""
+									ItemID="" ItemKey="" OrganizationCode="" UnitOfMeasure="">
+									<PrimaryInformation
+										AssumeInfiniteInventory=""
+										ExtendedDisplayDescription=""
+										ImageID="" ImageLabel="" ImageLocation=""/>
+									<ComputedPrice BundleTotal=""
+										ListPrice="" UnitPrice="">
+										<QuantityRangePriceList>
+										<QuantityRangePrice
+										BreakQtyHigh="" UnitPrice=""/>
+										</QuantityRangePriceList>
+									</ComputedPrice>
+								</ServiceItem>
+							</ItemServiceAssoc>
+						</ItemServiceAssocList>
+						<ClassificationCodes Model=""/>
+						<Extn ExtnIsRestrcitedItem="" ItemID="" ExtnIsSignReqdItem="">
+							<VSIShipRestrictedItemList>
+								<VSIShipRestrictedItem Country="" State="" ZipCode=""/>
+							</VSIShipRestrictedItemList>
+							<VSISignatureRequiredItemList>
+							<VSISignatureRequiredItem ItemID="" State="" Extn18SignReqd="" Extn21SignReqd="" OrganizationCode=""/>
+							</VSISignatureRequiredItemList>
+						</Extn>
+					</Item>
+				</ItemList>
+			</Template>
+        </API>
+        <classInformation name="com.ibm.isccs.order.mashups.SCCSAddItemsGetCompleteItemList"/>
+        <APINamespace inputNS="additems_getCompleteItemList_input" outputNS="additems_getCompleteItemList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCRET0002"/>
+            <AlternateResourceId altResourceId="ISCORD0004"/>
+            <AlternateResourceId altResourceId="ISCCRTORD0001"/>
+        </AlternateResourceIds>
+    </mashup>
+	<mashup
+        description="This mashup is used to massage the input to getCompleteOrderLineList api by updating the OrderHeaderKey from exchange order if exchange order is present in    screen input data.This mashup also massages the output of getCompleteOrderLineList api by calling ValidateItemForOrdering api. If there are any orderlines with Errors element present, then Error element is merged into the getCompleteOrderLineList api output OrderLine element.If the order has a bundle item and if bundle components have Error element present, then Error element will be copied into bundle parent Orderline element of getCompleteOrderLineList api output."
+        endpoint="EP_ORDER" id="addItems_getCompleteOrderLineList"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getCompleteOrderLineList">
+            <Input>
+                <OrderLine BundleParentOrderLineKey=""
+                    BundleParentOrderLineKeyQryType="ISNULL"
+                    CallingOrganizationCode=""
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    ItemGroupCode="DS" ItemGroupCodeQryType="NE"
+                    MaximumRecords="" Modifyts=""
+                    OrderHeaderKey="xml:scControllerInput:/Order/@OrderHeaderKey"
+                    OrderedQty="0" OrderedQtyQryType="NE">
+                    <OrderBy>
+                        <Attribute Desc="N" Name="PrimeLineNo"/>
+                        <Attribute Desc="N" Name="GroupSequenceNumber"/>
+                    </OrderBy>
+                    <Order
+                        EnterpriseCode="xml:scControllerInput:/Order/@EnterpriseCode"
+                        OrderNo="xml:scControllerInput:/Order/@OrderNo" SellerOrganizationCode="xml:scControllerInput:/Order/@SellerOrganizationCode"/>
+                    <Modifications>
+                        <Modification ModificationType="REMOVE"/>
+                        <Modification ModificationType="CANCEL"/>
+                    </Modifications>
+                </OrderLine>
+            </Input>
+            <Template>
+                <OrderLineList>
+                    <OrderLine Action="" CanDeleteOnUI="" Createts=""
+                        DeliveryMethod="" GiftFlag="" GiftWrap=""
+                        GroupSequenceNumber="" HasNotes=""
+                        IsBundleParent="" IsDeliveryAllowed=""
+                        IsPickupAllowed="" IsPriceMatched=""
+                        IsShippingAllowed="" ItemGroupCode="" KitCode=""
+                        Modifyts="" OrderLineKey="" OrderedQty=""
+                        OverrideMinMaxQty="" ParentTransactionLineID=""
+                        PrimeLineNo="" ReshippedQty="" ShipNode=""
+                        ShipnodeFullDescription="" Status=""
+                        TransactionalUOM="" newLine="" ovp_Notes="">
+                        <Order DraftOrderFlag="" EnterpriseCode=""/>
+                        <ItemDetails HasVisibleAssociations="" ItemID=""
+                            ItemKey="" UnitOfMeasure="">
+                            <ClassificationCodes Model=""/>
+                            <PrimaryInformation BundleFulfillmentMode=""
+                                BundlePricingStrategy=""
+                                DefaultProductClass=""
+                                ExtendedDisplayDescription="" ImageID=""
+                                ImageLabel="" ImageLocation=""
+                                IsDeliveryAllowed="" IsModelItem=""
+                                IsPickupAllowed="" IsShippingAllowed="" IsStandaloneService=""/>
+                            <ItemServiceAssocList TotalNumberOfRecords="">
+                                <ItemServiceAssoc ProductQuantity=""
+                                    ServiceItemDesc=""
+                                    ServiceItemGroupCode=""
+                                    ServiceItemId="" ServiceQuantity="" ServiceUOM=""/>
+                            </ItemServiceAssocList>
+                        </ItemDetails>
+                        <BundleParentLine OrderLineKey=""/>
+                        <OrderLineTranQuantity OrderedQty="" TransactionalUOM=""/>
+                        <Item UnitOfMeasure="">
+                            <ItemAttributeGroupTypeList>
+                                <ItemAttributeGroupType
+                                    ClassificationPurposeCode="" ItemAttributeGroupType=""/>
+                            </ItemAttributeGroupTypeList>
+                        </Item>
+                        <ChildOrderLineRelationships>
+                            <OrderLineRelationship ChildOrderLineKey=""
+                                OrderHeaderKey=""
+                                OrderLineRelationshipKey=""
+                                ParentOrderLineKey="" RelationshipType="">
+                                <ParentLine OrderLineKey=""
+                                    PrimeLineNo="" SubLineNo=""/>
+                                <ChildLine OrderLineKey=""
+                                    PrimeLineNo="" SubLineNo=""/>
+                            </OrderLineRelationship>
+                        </ChildOrderLineRelationships>
+                        <ParentOrderLineRelationships>
+                            <OrderLineRelationship ParentOrderLineKey=""/>
+                        </ParentOrderLineRelationships>
+                        <LinePriceInfo BundleTotal=""
+                            DisplayUnitPrice="" IsPriceLocked=""
+                            ListPrice="" UnitPrice=""/>
+                        <Modifications>
+                            <Modification ModificationAllowed="" ModificationType=""/>
+                        </Modifications>
+                        <LineOverallTotals DisplayLineAdjustments=""
+                            DisplayLineTotalWithoutTaxes="" DisplayUnitPrice=""/>
+                        <Shipnode Description="">
+                            <ShipNodePersonInfo City="" Country="" ZipCode=""/>
+                        </Shipnode>
+                        <StopDeliveryRequestDetails TotalNumberOfRecords=""/>
+                    </OrderLine>
+                    <OrderLineRelationships>
+                        <OrderLineRelationship ChildOrderLineKey=""
+                            OrderLineRelationshipKey=""
+                            ParentOrderLineKey="" RelationshipType="">
+                            <ParentLine OrderLineKey=""/>
+                            <ChildLine OrderLineKey=""/>
+                        </OrderLineRelationship>
+                    </OrderLineRelationships>
+                </OrderLineList>
+            </Template>
+        </API>
+        <classInformation name="com.vsi.isccs.mashups.VSIAddItemsOrderLineListMashup"/>
+        <APINamespace inputNS="addItems_getCompleteOrderLineList_input" outputNS="addItems_getCompleteOrderLineList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCCRTORD0001"/>
+            <AlternateResourceId altResourceId="ISCRET0002"/>
+            <AlternateResourceId altResourceId="ISCORD0004"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup
+        description="This mashup is used to get complete customer details"
+        endpoint="EP_CUSTOMER"
+        id="customerDetails_getCompleteConsumerCustomerDetails"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="getCompleteCustomerDetails">
+            <Input>
+                <Customer
+                    CustomerID="xml:scControllerInput:/Customer/@CustomerID"
+                    CustomerKey="xml:scControllerInput:/Customer/@CustomerKey"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode" OrganizationCode="VSI.com"/>
+            </Input>
+            <Template>
+                <Customer AggregateStatus="" CustomerID=""
+                    CustomerKey="" CustomerType="" EmailOptIn=""
+                    OrganizationCode="" PhoneOptIn="" PostalOptIn="" Status="" HealthyRewardPoints="">
+                    <DefaultShipToAddress AddressType="">
+                        <PersonInfo/>
+                    </DefaultShipToAddress>
+                    <Extn ExtnLoyaltyCustomer="" ExtnPreferredCarrier="" ExtnLoyaltyTier=""
+                        ExtnPreferredCarrierDescription=""
+                        ExtnTaxExemptFlag="" ExtnTaxExemptionCode="" ExtnVIPFlag=""/>
+                    <DefaultBillToAddress AddressType="">
+                        <PersonInfo/>
+                    </DefaultBillToAddress>
+                    <CustomerContactList>
+                        <CustomerContact AggregateStatus="" Company=""
+                            CustomerContactID="" DateOfBirth=""
+                            DayFaxNo="" DayPhone="" EmailID=""
+                            EveningFaxNo="" EveningPhone=""
+                            ExtnGender="" FirstName="" LastName=""
+                            MiddleName="" MobilePhone=""
+                            SpouseDateOfBirth="" Title="" UserID=""
+                            WeddingAniversaryDate="" WeddingAnniversaryDate="">
+                            <User DisplayUserID="" Loginid=""/>
+                            <DefaultShipToAddress AddressType="">
+                                <PersonInfo/>
+                            </DefaultShipToAddress>
+                            <DefaultBillToAddress AddressType="">
+                                <PersonInfo/>
+                            </DefaultBillToAddress>
+                        </CustomerContact>
+                    </CustomerContactList>
+                </Customer>
+            </Template>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace
+            inputNS="customerDetails_getCompleteConsumerCustomerDetails_input" outputNS="customerDetails_getCompleteConsumerCustomerDetails_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCCUST0001"/>
+        </AlternateResourceIds>
+    </mashup>
+	<!--OMS-1005 : START -->
+	<mashup
+        description="This is a mashup which is meant to do two things. a) It selects the list of carrier service which is common to all the Lines which are selected and passed in the input. b) If any line passed in step a. is having parcel shipping option not allowed for the product, then the PARCEL carrier service type is removed from list of carrier service in step a."
+        endpoint="EP_ORDER"
+        id="fulfillmentSummary_getCarrierServiceOptionsForOrdering"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+		<classInformation name="com.vsi.isccs.mashups.VSIGetCarrierServiceOptionsForOrdering"/>
+        <API Name="getCarrierServiceOptionsForOrdering">
+            <Input>
+                <Order
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode" OrderHeaderKey="">
+                    <PersonInfoShipTo AddressID="" AddressLine1=""
+                        AddressLine2="" AddressLine3="" AddressLine4=""
+                        AddressLine5="" AddressLine6=""
+                        AlternateEmailID="" Beeper="" City="" Company=""
+                        Country="" DayFaxNo="" DayPhone="" Department=""
+                        EMailID="" EveningFaxNo="" EveningPhone=""
+                        FirstName="" IsCommercialAddress="" JobTitle=""
+                        LastName="" MiddleName="" MobilePhone=""
+                        OtherPhone="" PersonID="" State="" Suffix=""
+                        TaxGeoCode="" Title="" ZipCode=""/>
+                    <OrderLines>
+                        <OrderLine EarliestShipDate=""
+                            IsParcelShippingAllowed="" ItemID=""
+                            OrderLineKey="" ShipNode="">
+                            <PersonInfoShipTo AddressID=""
+                                AddressLine1="" AddressLine2=""
+                                AddressLine3="" AddressLine4=""
+                                AddressLine5="" AddressLine6=""
+                                AlternateEmailID="" Beeper="" City=""
+                                Company="" Country="" DayFaxNo=""
+                                DayPhone="" Department="" EMailID=""
+                                EveningFaxNo="" EveningPhone=""
+                                FirstName="" IsCommercialAddress=""
+                                JobTitle="" LastName="" MiddleName=""
+                                MobilePhone="" OtherPhone="" PersonID=""
+                                State="" Suffix="" TaxGeoCode=""
+                                Title="" ZipCode=""/>
+                        </OrderLine>
+                    </OrderLines>
+                </Order>
+            </Input>
+            <Template>
+                <Order OrderHeaderKey="">
+                    <OrderLines>
+                        <OrderLine CarrierServiceCode="" OrderLineKey="">
+						<PersonInfoShipTo AddressID=""
+                                AddressLine1="" AddressLine2=""
+                                AddressLine3="" AddressLine4=""
+                                AddressLine5="" AddressLine6=""
+                                AlternateEmailID="" Beeper="" City=""
+                                Company="" Country="" DayFaxNo=""
+                                DayPhone="" Department="" EMailID=""
+                                EveningFaxNo="" EveningPhone=""
+                                FirstName="" IsCommercialAddress=""
+                                JobTitle="" LastName="" MiddleName=""
+                                MobilePhone="" OtherPhone="" PersonID=""
+                                State="" Suffix="" TaxGeoCode=""
+                                Title="" ZipCode=""/>
+                            <CarrierServiceList>
+                                <CarrierService CarrierServiceCode=""
+                                    CarrierServiceDesc="" CarrierType=""
+                                    Currency="" DeliveryEndDate=""
+                                    DeliveryStartDate=""
+                                    OrganizationCode="" Price=""/>
+                            </CarrierServiceList>
+                        </OrderLine>
+                    </OrderLines>
+                </Order>
+            </Template>
+        </API>
+        <APINamespace
+            inputNS="getCarrierServiceOptionsForOrdering_input" outputNS="getCarrierServiceOptionsForOrdering_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCCSCFO01"/>
+            <AlternateResourceId altResourceId="ISCORD0010"/>
+            <AlternateResourceId altResourceId="ISCORD0004"/>
+            <AlternateResourceId altResourceId="ISCCRTORD0001"/>
+            <AlternateResourceId altResourceId="ISCRET0002"/>
+            <AlternateResourceId altResourceId="ISCORD0013"/>
+        </AlternateResourceIds>
+    </mashup>
+    <!--OMS-1005 :END -->
+    <mashup
+        description="Used by the Mashup Data Provider to fetch a Charge Category Description for an Charge Category"
+        endpoint="EP_CONFIG" id="order_getChargeCategoryList"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSIWholeSaleGetChargeCategoryList">
+            <Input>
+                <ChargeCategory
+                    CallingOrganizationCode="xml:scControllerInput:/Order/@EnterpriseCode"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    DocumentType="xml:scControllerInput:/Order/@DocumentType"
+					OrderHeaderKey="xml:scControllerInput:/Order/@OrderHeaderKey"
+                    MaximumRecords="" OrderType="xml:scControllerInput:/Order/@EntryType">
+                    <ComplexQuery Operator="And">
+                        <Or>
+                            <Exp AliasNameQryType="LIKE"
+                                Name="ChargeCategory" Value="Replacement charge"/>
+                            <Exp AliasNameQryType="LIKE"
+                                Name="ChargeCategory" Value="Adjustments"/>
+                        </Or>
+                    </ComplexQuery>
+                </ChargeCategory>
+            </Input>
+            <Template>
+                <ChargeCategoryList>
+                    <ChargeCategory ChargeCategory="" Description=""/>
+                </ChargeCategoryList>
+            </Template>
+        </API>
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <APINamespace inputNS="order_getChargeCategoryList_input" outputNS="order_getChargeCategoryList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCORD0005"/>
+            <AlternateResourceId altResourceId="ISCCSCFO01"/>
+            <AlternateResourceId altResourceId="ISCORD0010"/>
+            <AlternateResourceId altResourceId="ISCCSGO001"/>
+            <AlternateResourceId altResourceId="ISCORD0002"/>
+            <AlternateResourceId altResourceId="ISCCSOC001"/>
+            <AlternateResourceId altResourceId="ISCORD0004"/>
+            <AlternateResourceId altResourceId="ISCRET0001"/>
+            <AlternateResourceId altResourceId="ISCCRTORD0001"/>
+            <AlternateResourceId altResourceId="ISCRET0002"/>
+            <AlternateResourceId altResourceId="ISCORD0001"/>
+            <AlternateResourceId altResourceId="ISCORD0013"/>
+            <AlternateResourceId altResourceId="ISCCSCO001"/>
+            <AlternateResourceId altResourceId="ISCPRMTCH002"/>
+            <AlternateResourceId altResourceId="ISCINV0002"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup
+        description="This mashup extends SCCSAddSalesOrderDocumentTypeMashup mashup class and it massages the input to add the appropriate DocumentType to the input. If OrderHoldType is present in the input, appropriate Status and StatusQryType, CallingOrganizationCode attributes are added to the OrderHoldType element. Also, if the hold type is ORDER_LINE, then the order line element is added in the OrderHoldType element. Additionally, it removes the DocumentType attribute from the input if OrderNo attribute is present in the input. This mashup is invoked in the Order Potrtlet when Find Order action is performed"
+        endpoint="EP_ORDER" id="orderPortletList_getOrderList"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSIGetOrderListForUI">
+            <Input>
+                <Order BillToID="" CallingOrganizationCode=""
+                    CustomerEMailID="" CustomerEMailIDQryType=""
+                    CustomerFirstName="" CustomerLastName=""
+                    CustomerPONo="" CustomerPhoneNo=""
+                    CustomerZipCode="" OrderHeaderKey=""
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    DocumentType="0001" DraftOrderFlag=""
+                    EnterpriseCode="" FromOrderDate=""
+                    IgnoreOrdering="N" MaximumRecords=""
+                    OrderDateQryType="DATERANGE" OrderName=""
+                    OrderNameQryType="" OrderNo="" QueryTimeout=""
+                    ReadFromHistory="" TaxExemptFlag=""
+                    TaxExemptionCertificate="" ToOrderDate="">
+                    <OrderHoldType HoldType="" Status="" StatusQryType=""/>
+                    <OrderBy>
+                        <Attribute Desc="Y" Name="OrderDate"/>
+                    </OrderBy>
+                </Order>
+            </Input>
+            <Template />
+        </API>
+        <classInformation name="com.ibm.isccs.order.mashups.SCCSAddSalesOrderDocumentTypePortletMashup"/>
+        <APINamespace inputNS="orderPortletList_getOrderList_input" outputNS="orderPortletList_getOrderList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCORD0001"/>
+        </AlternateResourceIds>
+    </mashup>
+	<mashup
+    description="This is a paginated mashup is called when calling the getOrderListAPI to fetch the return orders in return search screen. The input of the API is massaged to set the appropriate hold level of the hold type sent in the input from the search screen. The getHoldTypeList API is called internally to get the hold level of the HoldType."
+    endpoint="EP_ORDER" id="returnList_getOrderList" mashuptype="XAPI"
+    skipDataProvider="false" transactional="true">
+    <classInformation name="com.ibm.isccs.returns.mashups.SCCSReturnOrderPaginationMashup"/>
+    <API FlowName="VSIGetOrderListForUI">
+        <Input>
+            <Order ApplyQueryTimeout="Y" BillToID="" CustomerEMailID=""
+                CustomerEMailIDQryType="" CustomerFirstName=""
+                CustomerLastName="" CustomerPhoneNo=""
+                CustomerZipCode=""
+                DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                DocumentType=" " DraftOrderFlag="" EnterpriseCode=""
+                FromOrderDate="" IgnoreOrdering="N" MaximumRecords=""
+                OrderDateQryType="DATERANGE" OrderName=""
+                OrderNameQryType="" OrderNo="" OrganizationCode=""
+                QueryTimeout="" ReadFromHistory="" ToOrderDate="">
+                <PaymentMethod DisplayCreditCardNo=""/>
+                <OrderLine>
+                    <DerivedFrom OrderHeaderKey="" OrderNo=""/>
+                </OrderLine>
+                <OrderBy>
+                    <Attribute Desc="Y" Name="OrderDate"/>
+                </OrderBy>
+            </Order>
+        </Input>
+        <Template/>
+    </API>
+    <APINamespace inputNS="getOrderList_input" outputNS="getOrderList_output"/>
+    <AlternateResourceIds>
+        <AlternateResourceId altResourceId="ISCCUST0001"/>
+        <AlternateResourceId altResourceId="ISCRET0001"/>
+    </AlternateResourceIds>
+</mashup>
+<mashup
+        description="This is a custom mashup to fetch sales orders with pagination. This mashup adds the sales order document type to the input. If OrderHoldType element is present in the input,Status, StatusQryType and CallingOrganizationCode attributes are added to OrderHoldType element. If the HoldType is at the orderline level and if OrderLine element is present in the input, OrderHoldType element will be added to the OrderLine element."
+        endpoint="EP_ORDER" id="orderList_getOrderList"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSIGetOrderListForUI">
+            <Input>
+                <Order ApplyQueryTimeout="Y" BillToID=""
+                    CallingOrganizationCode="" CustomerEMailID=""
+                    CustomerEMailIDQryType="" CustomerFirstName=""
+                    CustomerLastName="" CustomerPONo="" OrderHeaderKey=""
+                    CustomerPhoneNo="" CustomerZipCode=""
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    DocumentType=" " DraftOrderFlag="" EnterpriseCode=""
+                    FromOrderDate="" IgnoreOrdering="N"
+                    MaximumRecords="" OrderDate=""
+                    OrderDateQryType="DATERANGE" OrderName=""
+                    OrderNameQryType="" OrderNo="" QueryTimeout=""
+                    ReadFromHistory="" TaxExemptFlag=""
+                    TaxExemptionCertificate="" ToOrderDate="">
+                    <OrderLine>
+                        <OrderHoldType HoldType="" Status="" StatusQryType=""/>
+                    </OrderLine>
+                    <OrderHoldType HoldType="" Status="" StatusQryType=""/>
+                    <OrderBy>
+                        <Attribute Desc="Y" Name="OrderDate"/>
+                    </OrderBy>
+                </Order>
+            </Input>
+            <Template />
+        </API>
+        <classInformation name="com.ibm.isccs.order.mashups.SCCSSalesOrderPaginatedMashup"/>
+        <APINamespace inputNS="orderList_getOrderList_input" outputNS="orderList_getOrderList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCCUST0001"/>
+            <AlternateResourceId altResourceId="ISCORD0001"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup cached="PAGE"
+        description="This mashup is used for fetching the return reasons common codes.The input of the mashup is modified to pass the return order document type to the getCommonCodeList API."
+        endpoint="EP_CONFIG" id="createReturn_getReturnReasonCodes"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.isccs.returns.mashups.SCCSAddReturnOrderDocumentTypeMashup"/>
+        <API FlowName="VSIGetReturnReasonListForUI">
+            <Input>
+                <CommonCode
+                    CallingOrganizationCode="xml:scControllerInput:/Order/@EnterpriseCode"
+					OrderHeaderKey="xml:scControllerInput:/Order/SearchCriteria/@OrderHeaderKey"
+                    CodeType="RETURN_REASON"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    DocumentType="" MaximumRecords="">
+                    <OrderBy>
+                        <Attribute Desc="N" Name="CodeShortDescription"/>
+                    </OrderBy>
+                </CommonCode>
+            </Input>
+            <Template>
+                <CommonCodeList>
+                    <CommonCode CodeName="" CodeShortDescription="" CodeValue=""/>
+                </CommonCodeList>
+            </Template>
+        </API>
+        <APINamespace inputNS="getReturnReasonCodes_input" outputNS="getReturnReasonCodes_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCRET0002"/>
+            <AlternateResourceId altResourceId="ISCCSSYS002"/>
+        </AlternateResourceIds>
+    </mashup>
+	
+	<mashup cached="PAGE"
+        description="Used by the Mashup Data Provider to fetch a Common Code Description for an Code Value"
+        endpoint="EP_CONFIG" id="dataprovider_getCommonCodeDescForValue"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.sterlingcommerce.ui.web.platform.mashup.SCUIXAPIMashup"/>
+        <API FlowName="VSIGetReturnReasonListForUI">
+            <Input>
+                <CommonCode CallingOrganizationCode="" CodeType=""
+                    CodeValue=""
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    DocumentType="" MaximumRecords="" OrganizationCode=""/>
+            </Input>
+            <Template>
+                <CommonCodeList>
+                    <CommonCode CodeLongDescription="" CodeName=""
+                        CodeShortDescription="" CodeValue=""/>
+                </CommonCodeList>
+            </Template>
+        </API>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCCSSYS002"/>
+        </AlternateResourceIds>
+    </mashup>
+</mashups>

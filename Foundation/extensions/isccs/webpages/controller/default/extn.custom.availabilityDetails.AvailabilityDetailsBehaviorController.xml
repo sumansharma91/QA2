@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.custom.availabilityDetails.AvailabilityDetailsBehaviorController"
+    requestMethodSupported="POST" screenId="extn.custom.availabilityDetails.AvailabilityDetails">
+    <MashupRefs>
+    </MashupRefs>		
+</Controller>

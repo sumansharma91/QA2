@@ -1,0 +1,96 @@
+<OrderLineList TotalLineList="1">
+<OrderLine ReqShipDate="" GiftWrap="" DepartmentCode="" Createts="2014-09-08T15:06:04-04:00" Createuserid="admin" CustomerPONo="09802140888001439100" 
+DeliveryMethod="PICK" LineType="SHIP_TO_STORE" Modifyprogid="SterlingHttpTester" Modifyts="2014-09-08T15:06:04-04:00" Modifyuserid="admin" 
+OrderedQty="2.00" OriginalOrderedQty="2.00" PrimeLineNo="2" ShipNode="9802" ShippedQuantity="0.00" SplitQty="0.00" SubLineNo="1" Status="" StatusQuantity="">
+<ItemDetails>
+<Extn ExtnTaxProductCode="" />
+<ItemAliasList>
+<ItemAlias AliasValue="" AliasName="" />
+</ItemAliasList>
+</ItemDetails>
+<Item ItemID="" ItemDesc="" UPCCode=""  />
+
+<Shipnode>
+                                    <ShipNodePersonInfo ZipCode=""/>
+                                    </Shipnode>
+
+<Instructions >
+                        <Instruction InstructionText="" InstructionType="" />
+                    </Instructions>										
+
+<LineCharges>
+<LineCharge ChargeAmount="" ChargeCategory="" ChargePerLine="" ChargeName="" ChargePerUnit ="" IsManual="" >
+<Extn IsRealDisc="" IsTranLevel="" Num="" Percent="" Price="" PromoIndicator=""  Tag="" IsEmpDisc="" ReducedAmt="" Idx="" CouponNumber="" PromoNum="" ReasonCode="" ReasonDesc="" ReasonType="" PromoDesc="" PromoName="" ExtnCouponID="" ExtnType="" ExtnDiscType="" ExtnDiscGrp="" />
+</LineCharge>
+</LineCharges >
+<LineOverallTotals UnitPrice="" LineTotal="" Tax="" LineTotalWithoutTax="" LineCost="" ExtendedPrice="" Discount="" Charges="" OptionPrice="" ShippingTotal="" ShippingDiscount="" ShippingCharges="" ShippingBaseCharge="" PricingQty="" ManualOverridePercentage="" ManualDiscountPercentage=""/>
+<LineTaxes>
+<LineTax ChargeCategory="" Reference_1="" Reference_3="" Tax="" Reference_2="" TaxName="" TaxPercentage="" >
+<Extn GroupId="" ZoneId="" IsOverrideZone="" IsManual="" RuleId="" IsTranLevel="" />
+</LineTax>
+</LineTaxes>
+<Extn ExtnPublished="N" ExtnLineTotal="" ExtnOrderedQty="" ShipMethod="" ExtnPriceMod="" ExtnPriceModCode="" ExtnPriceModCodeStr="" ExtnPriceModDesc="" ExtnPriceModDiv="" ExtnPriceModType="" ExtnOrigUnitPrice="" >
+<VSIOrderItemTOBList>
+<VSIOrderItemTOB ExtUnitPrice="" LineItemNum="" OrigExtPrice=""  OrigQty=""  />
+</VSIOrderItemTOBList>
+</Extn>
+<LinePriceInfo TaxExemptionCertificate="" ActualPricingQty="2.00" DiscountPercentage="0.00" DiscountReference="" DiscountType="" InvoicedLineTotal="0.00" InvoicedPricingQty="0.00" IsPriceLocked="Y" LineTotal="10.00" ListPrice="0.00" OrderedPricingQty="2.00" PricingQtyConversionFactor="0.00"  PricingUOM="EACH" RepricingQty="2.00" RetailPrice="0.00" SettledAmount="0.00" SettledQuantity="0.00" Tax="0.00" TaxableFlag="N" UnitPrice="5.00"/>
+<PersonInfoShipTo State="" AddressLine1="2100 88th Street" AddressLine2="" City="North Bergen" Country="US" DayFaxNo="" DayPhone="201-758-0404" EMailID="" EveningFaxNo="" EveningPhone="" FirstName="NORTH BERGEN, NJ #9802 - Store: 00391" LastName="" MiddleName="" PersonInfoKey="2014081214391068267944" ZipCode="07047"/>
+<Notes NumberOfNotes="2">
+<Note AuditTransactionId="" ContactReference="" ContactTime="2014-09-08T15:06:04-04:00" ContactType="" ContactUser="72509" Createprogid="SterlingHttpTester" Createts="2014-09-08T15:06:04-04:00" Createuserid="admin" CustomerSatIndicator="" Lockid="0" Modifyprogid="SterlingHttpTester" Modifyts="2014-09-08T15:06:04-04:00" Modifyuserid="admin" NoteText="Line one comment one" NotesKey="2014090815060469193647" Priority="0.00" ReasonCode="" SequenceNo="1" TableKey="2014090815060469193636" TableName="YFS_ORDER_LINE" Tranid="ORDER_CREATE" isHistory="N"/>
+<Note AuditTransactionId="" ContactReference="" ContactTime="2014-09-08T15:06:04-04:00" ContactType="" ContactUser="72509" Createprogid="SterlingHttpTester" Createts="2014-09-08T15:06:04-04:00" Createuserid="admin" CustomerSatIndicator="" Lockid="0" Modifyprogid="SterlingHttpTester" Modifyts="2014-09-08T15:06:04-04:00" Modifyuserid="admin" NoteText="Line one comment two" NotesKey="2014090815060469193648" Priority="0.00" ReasonCode="" SequenceNo="2" TableKey="2014090815060469193636" TableName="YFS_ORDER_LINE" Tranid="ORDER_CREATE" isHistory="N"/>
+</Notes>
+<Order Status="" SCAC="" OrderType="" TaxExemptionCertificate="" DocumentType="" OrderDate="" BillToID="" ShipNode="" BillToKey="2014080111513468207183" CreatedAtNode="" Createprogid="SterlingHttpTester" Createts="2014-09-08T15:06:04-04:00" Createuserid="admin" 
+CustCustPONo="000143" CustomerEMailID="nish.pingle@email.com" CustomerFirstName="Nish" CustomerLastName="Pingle" CustomerPONo="" CustomerPhoneNo="615-440-0000" CustomerZipCode="07047" EnteredBy="STORE" EnterpriseCode="VSI.com" EntryType="WEB" PaymentStatus="AUTHORIZED" PriorityCode="" PriorityNumber="0" SellerOrganizationCode="VSI.com">
+<Extn AttrSeq="500" OrderType="" ExtnTotalPrice="10">
+<VSIOrderTOBList>
+<VSIOrderTOB Tran="" ClientID="" EmployeeNum="" Wkstn="" IsAbort="" Coupon="" Status="" BalanceDue="" Type="" AcctStatus="" OrderComments="" StatusDate="" OrigAmt="" PickupTob="" IsTobDirty="" IsCashandCarryIncl="" />
+</VSIOrderTOBList>
+<VSIItemTOBList>
+<VSIItemTOB FinalPrice="" Qty="" Status="" Desc="" Price="" Tag="" UPC="" OrigPrice="" Sku="" Idx="" IsNonMdse="" IsTax="" Div="" IsDiscount="" />
+</VSIItemTOBList>
+<VSIItemDiscountTOBList>
+<VSIItemDiscountTOB IsDiscount="" Sku="" Amt="" Desc="" IsEmpDisc="" IsItemLevel="" IsPromo="" IsRealDisc="" IsTranLevel="" Num="" Percent="" Price="" PromoIndicator="" Reduction="" Tag="" />
+</VSIItemDiscountTOBList>
+<VSIItemTaxTOBList>
+<VSIItemTaxTOB IsDiscount="" IsExempt="" IsItemLevel="" Rate="" GroupId="" RoundedAmount="" Amt="" TotalByRate="" IsRegular="" Desc="" AuthId=""  RuleID="" ZoneId="" 
+ TaxRoundRule="" AuthName="" EffectiveRate=""  />
+</VSIItemTaxTOBList>
+</Extn>
+<PersonInfoBillTo State="" AddressLine1="North Bergen" AddressLine2="" City="North Bergen" Country="US" DayFaxNo="" DayPhone="615-440-0000" EMailID="nish.pingle@email.com" EveningFaxNo="" EveningPhone="" FirstName="Nish" LastName="Pingle" MiddleName="" PersonInfoKey="2014080111513468207183" ZipCode="07047"/>
+<PersonInfoShipTo State="" AddressLine1="2100 88th Street" AddressLine2="" City="North Bergen" Country="US" DayFaxNo="" DayPhone="201-758-0404" EMailID="" EveningFaxNo="" EveningPhone="" FirstName="NORTH BERGEN, NJ #9802 - Store: 00391" LastName="" MiddleName="" PersonInfoKey="2014081214391068267944" ZipCode="07047"/>
+<Instructions NumberOfInstructions="0" >
+<Instruction InstructionText="" />
+</Instructions >
+<PaymentMethods>
+<PaymentMethod SvcNo="" Action="" BillToKey="" ChargeSequence="0" CheckNo="" CheckReference="" Createprogid="SterlingHttpTester" Createts="2014-09-08T15:06:04-04:00" Createuserid="admin" CreditCardExpDate="12/2014" CreditCardName="" CreditCardNo="4012009915480026" CreditCardType="VISA" CustomerPONo="" DisplayCreditCardNo="1111" DisplayCustomerAccountNo="" DisplayPaymentReference1="" DisplayPrimaryAccountNo="1111" DisplaySvcNo="" ExtendedFlag="" FirstName="Nish" IncompletePaymentType="" LastName="Pingle" Lockid="0" MaxChargeLimit="0.00" Modifyprogid="SterlingHttpTester" Modifyts="2014-09-08T15:06:04-04:00" Modifyuserid="admin" OrderHeaderKey="2014090815060469193634" PayMethodOverride="" PaymentKey="201409081523060469193637" PaymentReference1="" PaymentReference2="4012009915480026" PaymentReference3="" PaymentReference8=""  PaymentReference4="" PaymentReference5="" PaymentReference6="" PaymentReference7="" PaymentType="CREDIT_CARD" PaymentTypeGroup="CREDIT_CARD" PrimaryAccountNo="4012009915480026" RequestedAuthAmount="0.00" RequestedChargeAmount="0.00" RequestedRefundAmount="0.00" SecondaryAmount="0.00" SuspendAnyMoreCharges="N" TotalAltRefundedAmount="0.00" TotalAuthorized="0.00" TotalCharged="0.00" TotalRefundedAmount="0.00" UnlimitedCharges="Y" isHistory="N"/>
+</PaymentMethods>
+<HeaderCharges>
+<HeaderCharge ChargeAmount="" ChargeName=""  Reference="" />
+</HeaderCharges>
+<HeaderTaxes>
+<HeaderTax Tax="" TaxName="" ChargeCategory="" Reference_1="" Reference_3="" Reference_2="" TaxPercentage="" >
+<Extn GroupId="" ZoneId="" IsOverrideZone="" IsManual="" RuleId="" />
+</HeaderTax>
+</HeaderTaxes>
+<ChargeTransactionDetails>
+<ChargeTransactionDetail AuthorizationID="" ChargeType="" RequestAmount="" CollectionDate=""  >
+<CreditCardTransactions>
+<CreditCardTransaction AuthCode="" AuthTime="" />
+</CreditCardTransactions>
+<PaymentMethod SvcNo="" Action="" BillToKey="" ChargeSequence="0" CheckNo="" CheckReference="" Createprogid="SterlingHttpTester" Createts="2014-09-08T15:06:04-04:00" Createuserid="admin" CreditCardExpDate="12/2014" CreditCardName="" CreditCardNo="4012009915480026" CreditCardType="VISA" CustomerPONo="" DisplayCreditCardNo="1111" DisplayCustomerAccountNo="" DisplayPaymentReference1="" DisplayPrimaryAccountNo="1111" DisplaySvcNo="" ExtendedFlag="" FirstName="Nish" IncompletePaymentType="" LastName="Pingle" Lockid="0" MaxChargeLimit="0.00" Modifyprogid="SterlingHttpTester" Modifyts="2014-09-08T15:06:04-04:00" Modifyuserid="admin" OrderHeaderKey="2014090815060469193634" PayMethodOverride="" PaymentKey="201409081523060469193637" PaymentReference1="" PaymentReference2="4012009915480026" PaymentReference3="" PaymentReference8=""  PaymentReference4="" PaymentReference5="" PaymentReference6="" PaymentReference7="" PaymentType="CREDIT_CARD" PaymentTypeGroup="CREDIT_CARD" PrimaryAccountNo="4012009915480026" RequestedAuthAmount="0.00" RequestedChargeAmount="0.00" RequestedRefundAmount="0.00" SecondaryAmount="0.00" SuspendAnyMoreCharges="N" TotalAltRefundedAmount="0.00" TotalAuthorized="0.00" TotalCharged="0.00" TotalRefundedAmount="0.00" UnlimitedCharges="Y" isHistory="N"/>
+</ChargeTransactionDetail>
+</ChargeTransactionDetails>
+<Promotions>
+<Promotion PromotionId="" >
+<Extn ExtnCouponID="" DiscLevel="" FName="" LName1="" LName2="" EmployeeID="" IsEmpDisc="" />
+</Promotion>
+</Promotions>
+<OverallTotals GrandCharges="" GrandDiscount=""
+			GrandShippingCharges="" GrandShippingDiscount="" GrandShippingTotal=""
+			GrandTax="" GrandTotal="" LineSubTotal="" />
+</Order>
+
+</OrderLine>
+</OrderLineList>
+

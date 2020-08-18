@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://www.sterlingcommerce.com/documentation"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:yfc="http://www.sterlingcommerce.com/documentation" xmlns:yfctype="http://www.sterlingcommerce.com/documentation/types">
+    <xsd:annotation yfc:fileName="VSIESWorkOrderListOutput.xsd" yfc:rootElement="OrderList">
+        <xsd:appinfo source="yfc:structure">
+            <OrderList>
+                <Order hasAttributes="Y"/>
+            </OrderList>
+        </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:import
+        namespace="http://www.sterlingcommerce.com/documentation/types" schemaLocation="datatypes.xsd"/>
+    <xsd:element name="OrderList" type="yfc:OrderListXSDType"/>
+    <xsd:complexType name="OrderListXSDType">
+       <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="yfc:Order"/>
+        </xsd:sequence>
+        <xsd:attribute name="FirstOrderHeaderKey" type="yfctype:Key" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>First Order Header Key in the output.<br/>
+                    <em>
+                        <code>FirstOrderHeaderKey</code> is not supported when getPage API is used in multiTenancy environment.</em>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="LastOrderHeaderKey" type="yfctype:Key" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>Last Order Header Key in the output.<br/>
+                    <em>
+                        <code>LastOrderHeaderKey</code> is not supported when getPage API is used in multiTenancy environment.</em>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="LastRecordSet" type="yfctype:Flag" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div> Flag to indicate if the records obtained are a complete list. If there are more than 500 or <code>MaximumRecords</code> records matching the criteria passed in input xml, only 500 (or <code>MaximumRecords</code>) records are returned and this flag is set to <b>N</b>
+                    </div>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="ReadFromHistory" type="yfctype:Text-1" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+					Default: <b>
+                            <code>N</code>
+                        </b>
+                        <br/>Valid Values:
+					<br/>
+                        <b>
+                            <code>N</code>
+                        </b> - Returns records that satisfy the input criteria from the YFS_ORDER_HEADER table.
+					<br/>
+                        <b>
+                            <code>Y</code>
+                        </b> - Returns records that satisfy the input criteria from the YFS_ORDER_HEADER_H table (the history table).
+					<br/>
+                        <b>
+                            <code>B</code>
+                        </b> - Returns records that satisfy the input criteria from both YFS_ORDER_HEADER and YFS_ORDER_HEADER_H tables. Records returned from the current table are first in the output.
+					</div>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        
+    </xsd:complexType>
+    <xsd:element name="Order">
+        <xsd:annotation yfc:tableName="YFS_ORDER_HEADER">
+            <xsd:documentation>This table stores all order documents in the system.  These orders can be further classified into various types of documents. For example, ORDERS, PLANNED ORDERS and any other future types that the system may provide.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:attribute name="CustomerFirstName"
+                type="yfctype:Text-64" use="optional">
+                <xsd:annotation yfc:columnName="CUSTOMER_FIRST_NAME" yfc:tableName="YFS_ORDER_HEADER">
+                    <xsd:documentation>First name of the customer placing the order.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="CustomerLastName"
+                type="yfctype:Text-64" use="optional">
+                <xsd:annotation yfc:columnName="CUSTOMER_LAST_NAME" yfc:tableName="YFS_ORDER_HEADER">
+                    <xsd:documentation>Last name of the customer placing the order.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="CustomerPONo" type="yfctype:Text-100" use="optional">
+                <xsd:annotation yfc:columnName="CUSTOMER_PO_NO" yfc:tableName="YFS_ORDER_HEADER">
+                    <xsd:documentation>The PO number of the customer. For purchase orders, this can be used for storing the purchase order number of the purchasing system if that number is not already stored as part of the order number.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="EnteredBy" type="yfctype:Text-254" use="optional">
+                <xsd:annotation yfc:columnName="ENTERED_BY" yfc:tableName="YFS_ORDER_HEADER">
+                    <xsd:documentation>The system or sales person who created the order.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="LineType" type="xsd:string" use="optional"/>
+            <xsd:attribute name="OrderDate" type="yfctype:TimeStamp" use="optional">
+                <xsd:annotation yfc:columnName="ORDER_DATE" yfc:tableName="YFS_ORDER_HEADER">
+                    <xsd:documentation>The date on which the order was taken. If not passed during order creation, it is defaulted to current system date.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="OrderTotal" type="xsd:string" use="optional"/>
+            <xsd:attribute name="SellingDivisionID" type="xsd:string" use="optional"/>
+            <xsd:attribute name="Status" type="xsd:string" use="optional"/>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

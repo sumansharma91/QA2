@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ContainerPackShipmentLineListExtn"
+        extnPackage="extn.components.shipment.container.pack"
+        originalScreen="wsc.components.shipment.container.pack.ContainerPackShipmentLineList"
+        originalScreenPackage="wsc.components.shipment.container.pack" type="diffrential">
+        <Items>
+            <DataLabel _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_packinstruction"
+                class="quantitySpinnerLabelAlign blockComponent"
+                label="$(_scSimpleBundle:extn_UPC_Code)" uId="extn_pack_upc">
+                <BindingData>
+                    <SourceBinding dynamicBindingFunc="AliasValue1"
+                        namespace="Shipment" path="ShipmentLine.OrderLine.ItemDetails.ItemAliasList.ItemAlias.AliasValue1"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="remainingQty"
+                label="$(_scSimpleBundle:extn_Pack_Instruction)" uId="extn_packinstruction">
+                <BindingData>
+                    <SourceBinding namespace="shipmentLine_Src" path="ShipmentLine.OrderLine.ItemDetails.Extn.ExtnPackingReference"/>
+                </BindingData>
+            </DataLabel>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

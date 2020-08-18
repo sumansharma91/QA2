@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.common.paymentCapture.PaymentCapture_OtherExtnBundle" screenId="extn.common.paymentCapture.PaymentCapture_OtherExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="txtMaxChargeLimit_CurrencyTextBox_label"
+            bundleKey="extn_Voucher_Balance" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txtMaxChargeLimit"/>
+        <BundleEntry
+            bundleEntryId="txtPaymentReference1_TextField_label"
+            bundleKey="extn_Healthy_Awards_Voucher_"
+            bundleValueFn="_scBundle" property="label" type="WIDGET" uId="txtPaymentReference1"/>
+    </BundleEntries>
+</ScreenBundle>

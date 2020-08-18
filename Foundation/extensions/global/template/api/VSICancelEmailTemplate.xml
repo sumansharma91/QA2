@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OrderList>
+	<Order BillToID="" CarrierAccountNo="" CarrierServiceCode="" CustomerEMailID="" CustomerPONo="" DocumentType="" EnteredBy="" EnterpriseCode="" EntryType="" MaxOrderStatus="" MinOrderStatus="" OrderDate="" OrderHeaderKey="" OrderNo="" OrderType="" OriginalTax="" PaymentRuleId="" OriginalTotalAmount="" PaymentStatus="" ReceivingNode="" ReqDeliveryDate="" ReqShipDate="" SCAC="" ScacAndService="" SellerOrganizationCode="" ShipCompleteFlag="" ShipToID="" Status="" TaxExemptFlag=""    TaxExemptionCertificate="" TaxJurisdiction="" TaxPayerId="" TotalAdjustmentAmount="">
+		<Extn ExtnDTCOrder=""/>
+		<Promotions>
+			<Promotion Action="" DenialReason="" ExclusivityId="" ExclusivityType="" IsExternal="" OverrideAdjustmentValue="" OverrideMaxAdjustment="" Priority="" PromotionApplied="" PromotionCategory="" PromotionId="" PromotionType=""  > 
+				<Extn ExtnCouponID="" />
+			</Promotion>
+		</Promotions>
+		<OrderLines NumberOfOrderLines="">
+			<OrderLine CustomerLinePONo="" CustomerPONo="" LineType="" MaxLineStatus="" MinLineStatus="" OrderHeaderKey="" OrderLineKey=""
+            OrderedQty="" OriginalOrderedQty="" OtherCharges="" PrimeLineNo="" ReceivingNode="" ReqDeliveryDate="" ReqShipDate="" SCAC="" ScacAndService="" ShipNode="" ShipToID="" Status="" StatusQuantity="" SubLineNo="" Modifyts="">
+				<Extn ExtnSDKLine="" />
+				<Item ItemDesc="" ItemID="" ItemShortDesc="" TaxProductCode="" UPCCode="" UnitCost="" UnitOfMeasure=""/>
+				<ItemDetails>
+					<Extn ExtnActSkuID="" ExtnBrand="" ExtnBrandTitle="" ExtnItemSize="" ExtnItemType="" ExtnItemUOM=""/>
+				</ItemDetails>
+				<PersonInfoShipTo AddressLine1="" AddressLine2=""
+                AddressLine3="" AddressLine4="" AddressLine5=""
+                AddressLine6="" AlternateEmailID="" Beeper="" City=""
+                Company="" Country="" DayFaxNo="" DayPhone=""
+                Department="" EMailID="" EveningFaxNo="" EveningPhone=""
+                FirstName="" JobTitle="" LastName="" MiddleName=""
+                MobilePhone="" OtherPhone="" PersonID=""
+                PersonInfoKey="" State="" Suffix="" Title="" ZipCode=""/>
+				<LinePriceInfo DiscountPercentage="" LineTotal=""
+                ListPrice="" RetailPrice="" TaxableFlag="" UnitPrice=""/>
+				<Instructions NumberOfInstructions="">
+					<Instruction InstructionText="" InstructionType="" InstructionURL=""/>
+				</Instructions>
+				<References>
+					<Reference Name="" Value=""/>
+				</References>
+				<LineOverallTotals Charges="" Discount="" ExtendedPrice=""
+                LineTotal="" Tax="" UnitPrice=""/>
+				<LineInvoicedTotals Charges="" Discount="" ExtendedPrice=""
+                LineTotal="" Tax="" UnitPrice=""/>
+				<LineRemainingTotals Charges="" Discount="" ExtendedPrice=""
+                LineTotal="" Tax="" UnitPrice=""/>
+				<LineCharges>
+					<LineCharge ChargeCategory="" ChargeName=""
+                    ChargeNameKey="" InvoicedChargeAmount=""
+                    InvoicedChargePerLine="" InvoicedChargePerUnit=""
+                    ChargeAmount="" ChargePerLine=""
+                    ChargePerUnit="" Reference=""
+                    RemainingChargeAmount="" RemainingChargePerLine="" RemainingChargePerUnit=""/>
+				</LineCharges>
+				<LineTaxes>
+					<LineTax ChargeNameKey="" ChargeCategory="" ChargeName="" InvoicedTax=""
+                    Tax="" Reference_1="" Reference_2=""
+                    Reference_3="" RemainingTax=""  TaxName="" TaxPercentage=""/>
+					<TaxSummary>
+						<TaxSummaryDetail InvoicedTax="" OverallTax=""
+                        RemainingTax="" TaxName=""/>
+					</TaxSummary>
+				</LineTaxes>
+				<Promotions>
+					<Promotion Action="" DenialReason="" ExclusivityId="" ExclusivityType="" IsExternal="" OverrideAdjustmentValue="" OverrideMaxAdjustment="" Priority="" PromotionApplied="" PromotionCategory="" PromotionId="" PromotionType=""  > 
+						<Extn ExtnCouponID="" />
+					</Promotion>
+				</Promotions>
+
+				<OrderStatuses>
+					<OrderStatus Status="" StatusDescription="" StatusQty="">
+					</OrderStatus>
+				</OrderStatuses>
+			</OrderLine>
+		</OrderLines>
+		<Instructions NumberOfInstructions="">
+			<Instruction InstructionText="" InstructionType="" InstructionURL=""/>
+		</Instructions>
+		<PersonInfoShipTo AddressLine1="" AddressLine2="" AddressLine3=""
+        AddressLine4="" AddressLine5="" AddressLine6=""
+        AlternateEmailID="" Beeper="" City="" Company="" Country=""
+        DayFaxNo="" DayPhone="" Department="" EMailID="" EveningFaxNo=""
+        EveningPhone="" FirstName="" JobTitle="" LastName=""
+        MiddleName="" MobilePhone="" OtherPhone="" PersonID=""
+        PersonInfoKey="" State="" Suffix="" Title="" ZipCode=""/>
+		<PersonInfoBillTo AddressLine1="" AddressLine2="" AddressLine3=""
+        AddressLine4="" AddressLine5="" AddressLine6=""
+        AlternateEmailID="" Beeper="" City="" Company="" Country=""
+        DayFaxNo="" DayPhone="" Department="" EMailID="" EveningFaxNo=""
+        EveningPhone="" FirstName="" JobTitle="" LastName=""
+        MiddleName="" MobilePhone="" OtherPhone="" PersonID=""
+        PersonInfoKey="" State="" Suffix="" Title="" ZipCode=""/>
+		<PriceInfo Currency="" EnterpriseCurrency=""
+        ReportingConversionDate="" ReportingConversionRate="" TotalAmount=""/>
+		<HeaderCharges>
+			<HeaderCharge ChargeCategory="" ChargeName="" ChargeNameKey=""
+            InvoicedChargeAmount="" ChargeAmount="" Reference="" RemainingChargeAmount=""/>
+		</HeaderCharges>
+		<HeaderTaxes>
+			<HeaderTax ChargeNameKey="" ChargeCategory="" ChargeName="" InvoicedTax=""
+            Tax="" Reference_1="" Reference_2="" Reference_3=""
+            RemainingTax="" TaxName="" TaxPercentage="" TaxableFlag=""/>
+			<TaxSummary>
+				<TaxSummaryDetail InvoicedTax="" OverallTax=""
+                RemainingTax="" TaxName=""/>
+			</TaxSummary>
+		</HeaderTaxes>
+		<OverallTotals/>
+		<PaymentMethods>
+			<PaymentMethod PaymentKey="" PaymentType="" ChargeSequence="" CustomerAccountNo="" CustomerPONo="" CreditCardType="" CreditCardName="" CreditCardNo="" CreditCardExpDate="" DisplayCreditCardNo="" PaymentReference1="" PaymentReference2="" PaymentReference3="" CheckNo="" CheckReference="" MaxChargeLimit="" TotalAuthorized="" TotalCharged="" RequestedAuthAmount="" RequestedChargeAmount="" AwaitingAuthInterfaceAmount="" AwaitingChargeInterfaceAmount="" TotalRefundedAmount="" IncompletePaymentType="" SuspendAnyMoreCharges="" UnlimitedCharges=""/>
+		</PaymentMethods>
+	</Order>
+</OrderList>

@@ -1,0 +1,196 @@
+<%/*******************************************************************************
+Licensed Materials - Property of IBM
+IBM Sterling Selling And Fulfillment Suite
+(C) Copyright IBM Corp. 2005, 2013 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ ********************************************************************************/%>
+<%@ page import="com.yantra.yfc.util.*" %>
+
+<%!
+	YFCDocument formTimeLineInputDocumentForDelAppt(YFCElement inputElement)
+	{
+		String sEarliestDate = getValue("Promise", "xml:/Promise/SuggestedOption/Option/Interactions/Interaction/@EarliestDate");
+		String sLatestDate = getValue("Promise", "xml:/Promise/SuggestedOption/Option/Interactions/Interaction/@LastDate");
+
+		YFCDocument timeLineInputDoc = YFCDocument.createDocument("TimeLineInput");
+		YFCElement timeLineInputElem = timeLineInputDoc.getDocumentElement();
+		timeLineInputElem.setAttribute("StartDate",sEarliestDate);
+		timeLineInputElem.setAttribute("EndDate",sLatestDate);
+		timeLineInputElem.setAttribute("Title","Delivery_Timeline_View");
+		timeLineInputElem.setAttribute("LoopBinding","xml:/TimeLineInput/PromiseLines/@PromiseLine");
+		timeLineInputElem.setAttribute("LoopID","PromiseLine");
+		timeLineInputElem.setAttribute("TableDivStyle","width:845px;overflow-y:visible;overflow-x:scroll;");
+
+//		System.out.println("Input element ------------------------------------------------------------------------");	
+//		System.out.println(inputElement.getString());
+	//	YFCElement inputElement = (YFCElement)request.getAttribute("Promise");
+
+		YFCElement suggestedoptionElement = inputElement.getChildElement("SuggestedOption");
+		YFCElement optionElement = suggestedoptionElement.getChildElement("Option");
+		YFCElement interactionsElement = optionElement.getChildElement("Interactions");
+		YFCElement interactionElement = interactionsElement.getChildElement("Interaction");
+
+	//	adding promiseLinesElement in entirity to the base XML
+		YFCElement promiseLinesElement = optionElement.getChildElement("PromiseLines",true);
+
+		YFCElement OmittedLinesElement = inputElement.getChildElement("OmittedLines");
+		if(OmittedLinesElement != null)	
+		{
+			YFCNodeList lstOmittedLine = OmittedLinesElement.getElementsByTagName("OrderLine");
+			if(lstOmittedLine != null)
+			{	for(int j = 0; j < lstOmittedLine.getLength(); j++)
+				{	
+					YFCElement OmittedLineElem = (YFCElement)lstOmittedLine.item(j);
+					String OmittedOrdLinKey = OmittedLineElem.getAttribute("OrderLineKey");
+					String OmittedItemID = OmittedLineElem.getAttribute("ItemID");
+					String OmittedPrimeLineNo = OmittedLineElem.getAttribute("PrimeLineNo");
+					String OmittedRequiredQty = OmittedLineElem.getAttribute("RequiredQty");
+
+					YFCElement promiseLineElem = inputElement.getOwnerDocument().createElement("PromiseLine");
+					YFCElement AssignmentsElem = inputElement.getOwnerDocument().createElement("Assignments");
+					YFCElement AssignmentElem = inputElement.getOwnerDocument().createElement("Assignment");
+					promiseLineElem.setAttribute("OrderLineKey",OmittedOrdLinKey);
+					promiseLineElem.setAttribute("ItemID",OmittedItemID);
+					promiseLineElem.setAttribute("PrimeLineNo",OmittedPrimeLineNo);
+					AssignmentElem.setAttribute("Quantity",OmittedRequiredQty);
+					promiseLineElem.setAttribute("Omitted","Y");
+//					System.out.println("looping through ------------------------------------------------------------ "+j);
+					
+					AssignmentsElem.appendChild(AssignmentElem);
+					promiseLineElem.appendChild(AssignmentsElem);
+					promiseLinesElement.appendChild(promiseLineElem);
+
+//					System.out.println("promiseLineElem = "+promiseLineElem.getString());
+				}
+			}
+		}
+
+		timeLineInputElem.importNode(promiseLinesElement);
+
+	//	adding nonWorkingDaysElement in entirity to the base XML
+		YFCElement nonWorkingDaysElement = interactionElement.getChildElement("NonWorkingDays",true);
+		timeLineInputElem.importNode(nonWorkingDaysElement);
+
+	//	building list of columsn that need to be shown in the timeline View
+		YFCElement tableColumnsElement = timeLineInputDoc.createElement("TableColumns");
+		timeLineInputElem.appendChild(tableColumnsElement);
+
+	//	first column	
+		YFCElement singleColumnElement1 = timeLineInputDoc.createElement("TableColumn");
+		tableColumnsElement.appendChild(singleColumnElement1);
+		singleColumnElement1.setAttribute("ColumnTitle",getI18N("Omit"));	//Title of column to be shown in timeline view. Required
+
+		singleColumnElement1.setAttribute("useyfcMultiSelectToSingleAPIOnAction","Y"); //pass as Y only is you want checkbox to behave as yfcMultiSelectToSingleAPIOnAction
+		singleColumnElement1.setAttribute("multiSelectNoOfLevels","1"); 
+		singleColumnElement1.setAttribute("multiSelectXMLAttributeOne","PromiseLine/@OrderLineKey");
+
+
+	//	If you want only getcheckboxoptions for your checkbox, pass in the following
+	//	singleColumnElement1.setAttribute("usegetCheckBoxOptions","Y");	//singleColumnElement1.setAttribute("getCheckBoxOptionsName","xml:/Promise/SuggestedOption/Option/Interactions/Interaction/PromiseLines/PromiseLine/@Omitted");	// the path to the value that needs to be part of getCheckBoxOptions. Pass only if TDType="checkbox" and usegetCheckBoxOptions="Y"
+		//singleColumnElement1.setAttribute("getCheckBoxOptionsChecked","/PromiseLine/@Omitted");	// relative path from base to the attribute that needs to be part of getCheckBoxOptions. MUST Pass only if TDType="checkbox"  and usegetCheckBoxOptions="Y"
+		//singleColumnElement1.setAttribute("getCheckBoxOptionsValue","Y");	// value of the attribute that needs to be part of getCheckBoxOptions. MUST Pass only if TDType="checkbox"  and usegetCheckBoxOptions="Y"
+		
+		singleColumnElement1.setAttribute("Sortable","Y");	//if column is non-sortable, then N. Do not pass otherwise. It will assume "Y" as default
+		singleColumnElement1.setAttribute("TDType","checkbox"); //only valid values supported now are "text" or "checkbox". this MUST be passed for each column definition
+
+
+	//	second column	
+		YFCElement singleColumnElement2 = timeLineInputDoc.createElement("TableColumn");
+		tableColumnsElement.appendChild(singleColumnElement2);
+		singleColumnElement2.setAttribute("ColumnTitle",getI18N("Line"));	//Title of column to be shown in timeline view. Required
+		singleColumnElement2.setAttribute("XMLAttribute","/@PrimeLineNo");	// Path within repeating element (In this case, it is PromiseLine) which stores attributes. Required 
+		singleColumnElement2.setAttribute("TDType","text");
+
+		singleColumnElement2.setAttribute("Link","L02");	//if value is to be linked, then link ID, Do not pass otherwise
+	//	making Link element for making makeXMLinput. Make this ONLY if "Link" attribuet has been set
+		YFCElement ColumnLinkElement = timeLineInputDoc.createElement("Links");
+		singleColumnElement2.appendChild(ColumnLinkElement);
+		YFCElement ColumnLinkSingleElement = timeLineInputDoc.createElement("Link");
+		ColumnLinkElement.appendChild(ColumnLinkSingleElement);
+		ColumnLinkSingleElement.setAttribute("makeXMLInputBinding","xml:/OrderLineDetail/@OrderLineKey");	// the path to the value that needs to be part of makeXMLInput. Pass only if makeXMLinput needs to be made (i.e. ColumnLinkElement exists).
+		ColumnLinkSingleElement.setAttribute("makeXMLInputValue","/PromiseLine/@OrderLineKey");	// relative path from base to the attribute that needs to be part of makeXMLInput. Pass only if makeXMLinput needs to be made (i.e. ColumnLinkElement exists)
+
+	//	third column	
+		YFCElement singleColumnElement3 = timeLineInputDoc.createElement("TableColumn");
+		tableColumnsElement.appendChild(singleColumnElement3);
+		singleColumnElement3.setAttribute("ColumnTitle",getI18N("Item_ID"));
+		singleColumnElement3.setAttribute("XMLAttribute","/@ItemID");	
+		singleColumnElement3.setAttribute("TDType","text");
+	//	fourth column	
+		YFCElement singleColumnElement4 = timeLineInputDoc.createElement("TableColumn");
+		tableColumnsElement.appendChild(singleColumnElement4);
+		singleColumnElement4.setAttribute("ColumnTitle",getI18N("Quantity"));
+		singleColumnElement4.setAttribute("XMLAttribute","/Assignments/Assignment/@Quantity");	
+		singleColumnElement4.setAttribute("TDType","text");
+
+	//	Building list of Dates whose attributes are to be understood to paint the JSP
+		YFCElement dateAttributesListElement = timeLineInputDoc.createElement("DateAttributesList");
+		timeLineInputElem.appendChild(dateAttributesListElement);
+
+	//	First Date to be understood. All parameters have been explained here
+		YFCElement dateAttributesElement1 = timeLineInputDoc.createElement("DateAttributes");
+		dateAttributesListElement.appendChild(dateAttributesElement1);
+		dateAttributesElement1.setAttribute("XMLAttribute","/Assignments/Assignment/@ProductAvailDate"); //Link storing value of date attribute. Do not pass if date is one that determines a range (You can pass that in StartDateRange or EndDateOfRange
+		dateAttributesElement1.setAttribute("Icon",request.getContextPath() + "/console/icons/reservations.gif"); //icon that needs to be displayed. Do not pass if not required
+	//	dateAttributesElement1.setAttribute("IconLink",""); // Link ID if Icon connects to a link. Do not pass otherwise
+	//	dateAttributesElement1.setAttribute("TDLink","");	// TDLink if cell needs to connect to a link. Do not pass otherwise
+		dateAttributesElement1.setAttribute("Tooltip",getI18N("Product_Availability_Date")); // Tooltip to be shown on Icon or TD.  Do not pass otherwise
+	//	dateAttributesElement1.setAttribute("TDStyle",""); // Any specific style if cell needs it. Do not pass otherwise
+	//	dateAttributesElement1.setAttribute("StartDateRange","");	// pass in complete path from loop base if the date is the start date of a range after which cells need special TD links or styles
+	//	dateAttributesElement1.setAttribute("EndDateOfRange","");	// pass in complete path from loop base if the date is the end date of a range ebfore which cells need special TD links or styles
+
+	//	Second Date
+	//	YFCElement dateAttributesElement2 = timeLineInputDoc.createElement("DateAttributes");
+	//	dateAttributesListElement.appendChild(dateAttributesElement2);
+	//	dateAttributesElement2.setAttribute("XMLAttribute","/Assignments/Assignment/@ShipDate"); 
+	//	dateAttributesElement2.setAttribute("Icon",request.getContextPath() + "/console/icons/shippingcartons.gif"); 
+	//	dateAttributesElement2.setAttribute("Tooltip","Expected_Ship_Date"); 
+
+	//	Third Date
+		YFCElement dateAttributesElement3 = timeLineInputDoc.createElement("DateAttributes");
+		dateAttributesListElement.appendChild(dateAttributesElement3);
+		dateAttributesElement3.setAttribute("XMLAttribute","/Assignments/Assignment/@DeliveryDate"); 
+		dateAttributesElement3.setAttribute("Icon",request.getContextPath() + "/console/icons/shipments.gif"); 
+		dateAttributesElement3.setAttribute("Tooltip",getI18N("Earliest_Delivery_Date")); 
+
+	//	Fourth Date
+		YFCElement dateAttributesElement4 = timeLineInputDoc.createElement("DateAttributes");
+		dateAttributesListElement.appendChild(dateAttributesElement4);
+		dateAttributesElement4.setAttribute("Tooltip",getI18N("Line_Has_Constraints_Click_To_View")); 
+		dateAttributesElement4.setAttribute("TDLink","L01");	// TDLink if cell needs to connect to a link. Do not pass otherwise
+	//	dateAttributesElement1.setAttribute("TDStyle",""); // Any specific style if cell needs it. Do not pass otherwise
+		dateAttributesElement4.setAttribute("EndDateOfRange","/@CannotScheduleBeforeDate");	// pass in complete path from loop base if the date is the end date of a range before which cells need special TD links or styles
+	//	making Link element for making makeXMLinput
+		YFCElement DateLinkElement4 = timeLineInputDoc.createElement("Links");
+		dateAttributesElement4.appendChild(DateLinkElement4);
+		YFCElement DateLinkSingleElement4 = timeLineInputDoc.createElement("Link");
+		DateLinkElement4.appendChild(DateLinkSingleElement4);
+		DateLinkSingleElement4.setAttribute("makeXMLInputBinding","xml:/OrderLine/@OrderLineKey");	// the path to the value that needs to be part of makeXMLInput. Pass only if makeXMLinput needs to be made (i.e. ColumnLinkElement exists).
+		DateLinkSingleElement4.setAttribute("makeXMLInputValue","/PromiseLine/@OrderLineKey");	// relative path from base to the attribute that needs to be part of makeXMLInput. Pass only if makeXMLinput needs to be made (i.e. ColumnLinkElement exists)
+
+	//	Fifth Date
+		YFCElement dateAttributesElement5 = timeLineInputDoc.createElement("DateAttributes");
+		dateAttributesListElement.appendChild(dateAttributesElement5);
+		dateAttributesElement5.setAttribute("Tooltip",getI18N("Line_Has_Constraints_Click_To_View")); 
+		dateAttributesElement5.setAttribute("TDLink","L01");	// TDLink if cell needs to connect to a link. Do not pass otherwise
+	//	dateAttributesElement1.setAttribute("TDStyle",""); // Any specific style if cell needs it. Do not pass otherwise
+		dateAttributesElement5.setAttribute("StartDateOfRange","/@CannotScheduleAfterDate");	// pass in complete path from loop base if the date is the start date of a range after which cells need special TD links or styles
+	//	making Link element for making makeXMLinput
+		YFCElement DateLinkElement5 = timeLineInputDoc.createElement("Links");
+		dateAttributesElement5.appendChild(DateLinkElement5);
+		YFCElement DateLinkSingleElement5 = timeLineInputDoc.createElement("Link");
+		DateLinkElement5.appendChild(DateLinkSingleElement5);
+		DateLinkSingleElement5.setAttribute("makeXMLInputBinding","xml:/OrderLine/@OrderLineKey");	// the path to the value that needs to be part of makeXMLInput. Pass only if makeXMLinput needs to be made (i.e. ColumnLinkElement exists).
+		DateLinkSingleElement5.setAttribute("makeXMLInputValue","/PromiseLine/@OrderLineKey");	// relative path from base to the attribute that needs to be part of makeXMLInput. Pass only if makeXMLinput needs to be made (i.e. ColumnLinkElement exists)
+
+
+		YFCElement highlightedRowElement = timeLineInputDoc.createElement("highlightRow");
+		timeLineInputElem.appendChild(highlightedRowElement);
+		highlightedRowElement.setAttribute("XMLAttribute","/PromiseLine/@Omitted");	// XMLAttribute that stores value depending on whether a row needs highlighting to be done. Pass only if highlighting is needed.Do not pass otherwise
+		highlightedRowElement.setAttribute("CompareValue","Y");	// Value to be compared if row needs highligting. Pass only if highlighting is needed.Do not pass otherwise
+		highlightedRowElement.setAttribute("ToolTipToShow",getI18N("Line_Has_Been_Omitted_From_Calculation"));	// tooltip to be shown on highlighted row. Pass only if highlighting is needed.Do not pass otherwise
+		
+		return(timeLineInputDoc);
+	}
+
+%>

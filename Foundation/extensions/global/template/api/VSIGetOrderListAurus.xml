@@ -1,0 +1,40 @@
+<OrderList>
+	<Order PaymentStatus="" OrderNo="" OrderHeaderKey="" CustomerEMailID="" SCAC="" EntryType="" OrderDate="" DocumentType="" EnterpriseCode="" CustomerFirstName="" CustomerLastName="" BillToID="" Createts="">
+		<Extn ExtnSubscriptionOrder="" ExtnOriginalADPOrder="" ExtnMobileOrder="" ExtnMobileType="" ExtnSessionID="" ExtnAurusToken="">
+			<TNSAuthRecordsList>
+				<TNSAuthRecords AvsResp="" CVVResp=""/>
+			</TNSAuthRecordsList>
+		</Extn>
+		<OverallTotals/>
+		<OrderLines>
+			<OrderLine  LineType="" ShipNode="" OrderedQty="" CarrierServiceCode="" OrderLineKey="">
+			<PersonInfoShipTo />
+			<Item>
+			<Extn />
+			</Item>
+			<ItemDetails>
+				<Extn />
+			</ItemDetails>
+			<LinePriceInfo />
+				<OrderDates>
+					<OrderDate />
+				</OrderDates>
+                <LineCharges>
+					<LineCharge ChargeCategory="" ChargeName="" ChargePerLine="">
+						<Extn PromoName="" PromoDesc=""/>
+					</LineCharge>
+				</LineCharges>				
+				<OrderHoldTypes>
+					<OrderHoldType HoldType="" LastHoldTypeDate="" OrderHeaderKey="" OrderLineKey="" Status="" />
+				</OrderHoldTypes>		
+			</OrderLine>
+		</OrderLines>
+		<PaymentMethods />
+		<PersonInfoBillTo />
+		<PersonInfoShipTo />
+		<OverallTotals />
+		<OrderHoldTypes>
+					<OrderHoldType HoldType="" LastHoldTypeDate="" OrderHeaderKey="" OrderLineKey="" Status="" />
+		</OrderHoldTypes>
+	</Order>
+</OrderList>

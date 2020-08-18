@@ -1,0 +1,19 @@
+<Organization OrganizationCode="" >
+    <Calendars>
+        <Calendar AllowShiftOverride="" CalendarDescription=""
+            CalendarId="Required" CalendarKey="" OrganizationCode="">
+            <InheritFromCalendar CalendarId="" InheritCalendarKey="" OrganizationCode=""/>
+            <EffectivePeriods>
+                <EffectivePeriod EffectiveFromDate="" EffectiveToDate="" ShiftEffectivePeriodKey="">
+                    <Shifts>
+                        <Shift FridayValid="" MondayValid=""
+                            SaturdayValid="" ShiftEndTime="" ShiftKey=""
+                            ShiftName="" ShiftStartTime="" ShiftType=""
+                            SundayValid="" ThursdayValid=""
+                            TuesdayValid="" WednesdayValid=""/>
+                    </Shifts>
+                </EffectivePeriod>
+            </EffectivePeriods>
+        </Calendar>
+    </Calendars>
+</Organization>

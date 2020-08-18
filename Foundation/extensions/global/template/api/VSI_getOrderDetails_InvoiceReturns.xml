@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Order BillToID="" CustomerEMailID="" ExternalCustomerID=""
+	OrderDate="" DocumentType="" EnterpriseCode="" IsNewOrder=""
+	OrderHeaderKey="" OrderNo="" EntryType=""
+	ReturnOrderHeaderKeyForExchange="" OrderPurpose="" MaxOrderStatus=""
+	MinOrderStatus="" Status="" OrderType="" SellerOrganizationCode="">
+	<PaymentMethods>
+		<PaymentMethod IncompletePaymentType="" PaymentKey=""
+			SuspendAnyMoreCharges="" SvcNo="" TotalRefundedAmount="" PaymentType="" PlannedRefundAmount="">
+		</PaymentMethod>
+	</PaymentMethods>
+	<OverallTotals GrandCharges="" GrandDiscount="" GrandTax="" GrandTotal="" HdrCharges="" HdrDiscount="" HdrTax="" HdrTotal="" LineSubTotal=""/>
+</Order>
+
+
+

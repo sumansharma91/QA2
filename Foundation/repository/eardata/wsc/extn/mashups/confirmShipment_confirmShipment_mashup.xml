@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mashups>
+    <mashup
+        description="Used to confirm a shipment by closing the manifest and marking the shipment as shipped."
+        endpoint="EP_CONFIG" id="confirmShipment_confirmShipment"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.wsc.common.mashups.WSCBaseMashup"/>
+        <API FlowName="VSISFSConfirmShipment">
+            <Input>
+                <Shipment Action=""
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    EnterpriseCode="xml:CurrentStore:/Store/@EnterpriseCode"
+                    SCAC="" ShipNode="xml:CurrentStore:/Store/@ShipNode" ShipmentKey="">
+				<Containers>
+                <Container ShipmentKey=""  ShipmentContainerKey="" ContainerNo=""/>
+                </Containers>
+				</Shipment>
+            </Input>
+            <Template>
+                <Shipment EnterpriseCode="" SCAC="" ShipNode="" ShipmentKey="">
+				<Containers>
+                <Container ShipmentContainerKey=""/>
+                </Containers>
+				</Shipment>
+            </Template>
+        </API>
+        <APINamespace inputNS="confirmShipment_input" outputNS="confirmShipment_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="WSC000020"/>
+        </AlternateResourceIds>
+    </mashup>
+</mashups>

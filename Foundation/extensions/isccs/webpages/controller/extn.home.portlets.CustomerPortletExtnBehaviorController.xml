@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.home.portlets.CustomerPortletExtnBehaviorController"
+    requestMethodSupported="POST" screenId="extn.home.portlets.CustomerPortletExtn">
+    <MashupRefs>
+        <MashupRef extnType="MODIFY" mashupId="home_getCustomerList"
+            mashupRefId="getCustomerList" permissionId=""/>
+    </MashupRefs>
+</Controller>

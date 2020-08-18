@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.order.customerAppeasement.CustomerAppeasementSelectionExtnBundle" screenId="extn.order.customerAppeasement.CustomerAppeasementSelectionExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="extn_textfield_TrackingNumber_TextField_label"
+            bundleKey="extn_Tracking_Number"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_textfield_TrackingNumber"/>
+        <BundleEntry
+            bundleEntryId="extn_txt_Coupon_Code_TextField_label"
+            bundleKey="extn_Coupon_Code" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_txt_Coupon_Code"/>
+    </BundleEntries>
+</ScreenBundle>

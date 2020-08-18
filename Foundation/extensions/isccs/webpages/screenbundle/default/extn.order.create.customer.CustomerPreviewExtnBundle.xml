@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.order.create.customer.CustomerPreviewExtnBundle" screenId="extn.order.create.customer.CustomerPreviewExtn">
+    <BundleEntries>
+        <BundleEntry bundleEntryId="extn_link_loyaltyDetails_Link_value"
+            bundleKey="extn_Loyalty_Details"
+            bundleValueFn="_scSimpleBundle" property="value"
+            type="WIDGET" uId="extn_link_loyaltyDetails"/>
+        <BundleEntry
+            bundleEntryId="extn_filteringselect_ShipPreference_FilteringSelect_label"
+            bundleKey="extn_Ship_Preference"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_filteringselect_ShipPreference"/>
+        <BundleEntry
+            bundleEntryId="extn_datalabelHealthyAwardsNo_DataLabel_label"
+            bundleKey="extn_Healthy_Awards_" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="extn_datalabelHealthyAwardsNo"/>
+        <BundleEntry
+            bundleEntryId="extn_datalabelHealthyAwardsNo_DataLabel_value"
+            bundleKey="blank" bundleValueFn="_scSimpleBundle"
+            property="value" type="WIDGET" uId="extn_datalabelHealthyAwardsNo"/>
+        <BundleEntry
+            bundleEntryId="extn_datalabel_Gender_DataLabel_label"
+            bundleKey="extn_Gender" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="extn_datalabel_Gender"/>
+        <BundleEntry
+            bundleEntryId="extn_datalabel_CustomerType_DataLabel_label"
+            bundleKey="CustomerType" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_datalabel_CustomerType"/>
+        <BundleEntry
+            bundleEntryId="extn_textfield_Tax_Exempt_TextField_label"
+            bundleKey="extn_Tax_exempt_ID"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_textfield_Tax_Exempt"/>
+    </BundleEntries>
+</ScreenBundle>

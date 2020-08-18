@@ -1,0 +1,85 @@
+<div class="sc-platform-screen-default CustomerLoyaltyDetails">
+	<head>
+		<!-- <link rel="stylesheet" type="text/css" href="C:\STR95\repository\dojo\src\dojo\gridx\resources\basic.css"> -->
+		<style>
+			.headerCell {
+					overflow: hidden;
+					border: 1px solid #ccc;
+					clear: both;
+					border-top: 1px solid transparent;
+					border-bottom: 1px solid #ccc;
+					border-left: 1px solid transparent;
+					border-right: 1px solid #ccc;
+					padding: 13px 7px;
+					font-weight: bold;
+					color: #444;
+					vertical-align: top;
+					text-shadow: 1px 1px 1px #fff;
+
+					background: #ededed; /* Old browsers */
+					background: -moz-linear-gradient(top,  #ffffff 0%, #ededed 100%); /* FF3.6+ */
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+					background: -webkit-linear-gradient(top,  #ffffff 0%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+					background: -o-linear-gradient(top,  #ffffff 0%,#ededed 100%); /* Opera 11.10+ */
+					background: -ms-linear-gradient(top,  #ffffff 0%,#ededed 100%); /* IE10+ */
+					background: linear-gradient(top,  #ffffff 0%,#ededed 100%); /* W3C */
+			}
+			.headerRowInner {
+				font-family: Arial, Tahoma, Verdana, sans-serif;
+				font-size: 1em;
+				overflow: visible;
+				border-collapse: separate;
+				border-spacing: 0;
+				border: none;
+				table-layout: fixed;
+				width: 100%;				
+				<!-- border-style: solid; -->
+				border-width: 1px;
+				border-color: transparent #ccc transparent transparent;
+				padding: 3px;
+				text-align: left;
+			}
+			.valueCells {
+				font-family: Arial, Tahoma, Verdana, sans-serif;
+				font-size: 1em;
+				overflow: visible;
+				padding: 7px;
+				border-spacing: 0px;
+				width: 8em;
+				padding-left: 5px;
+				border-style: solid;
+				border-color: transparent #ccc transparent transparent;
+				border-width: 1px;
+				border-top: 1px solid transparent;
+				border-bottom: 1px solid #ccc;
+				border-right: 1px solid #ccc;
+				<!-- border-left: 1px solid #ccc; -->
+				padding: 13px 7px;
+				text-align: left;
+				color: #444;
+				vertical-align: top;
+				text-shadow: 1px 1px 1px #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<table class="headerRowInner" id="table">
+			<thead>
+				<tr>
+					<th class="headerCell" style="border-left: 1px solid #ccc;">Reward Id</th>
+					<th class="headerCell">Amount</th>
+					<th class="headerCell">Expiration Date</th>
+					<th class="headerCell">Status</th>
+				</tr>
+			</thead>
+			<tbody id="rowBody">
+			</tbody>
+		</table>
+	</body>
+	<div data-dojo-type="dijit/form/Button" data-dojo-props="		spanLabel : true , 'class' : 'idxSecondaryButton' , showLabel : true , uId : 'Popup_btnClose'  ,scParamDataFn :
+				 function() { 
+					return { label : 			this.getSimpleBundleString('Close')
+					}
+				}">
+			</div>
+</div>

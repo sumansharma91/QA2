@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="AddItemsLinesExtn"
+        extnPackage="extn.order.create.additems"
+        originalScreen="isccs.order.create.additems.AddItemsLines"
+        originalScreenPackage="isccs.order.create.additems" type="diffrential">
+        <Items>
+            <ContentPane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="LST_ListScreenContent" renderHidden="false"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

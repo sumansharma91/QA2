@@ -1,0 +1,10 @@
+<OrderList>
+<Order MaxOrderStatus="" MinOrderStatus="">
+<OrderLines TotalNumberOfRecords="2">
+<OrderLine MaxLineStatus="" OrderLineKey=""/>
+</OrderLines>
+<OrderHoldTypes>
+<OrderHoldType HoldType=""/>
+</OrderHoldTypes>
+</Order>
+</OrderList>

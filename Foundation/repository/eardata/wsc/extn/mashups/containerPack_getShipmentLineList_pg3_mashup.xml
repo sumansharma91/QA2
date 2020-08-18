@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mashups>
+    <mashup
+        description="Get ShipmentLine List for showing it in the products view"
+        endpoint="EP_CONFIG" id="containerPack_getShipmentLineList_pg3"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.wsc.shipment.container.pack.PackGetShipmentLineListMashup"/>
+        <API Name="getShipmentLineList">
+            <Input>
+                <ShipmentLine
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    MaximumRecords=""
+                    ShipmentContainerKey="xml:scControllerInput:/Shipment/@ShipmentContainerKey" ShipmentKey="xml:scControllerInput:/Shipment/@ShipmentKey">
+                    <!-- <Shipment ShipmentKey="xml:scControllerInput:/Shipment/@ShipmentKey"/> -->
+                    <ContainerDetails>
+                        <ContainerDetail Quantity="0.00" QuantityQryType="NE">
+                            <Container
+                                ShipmentContainerKey="xml:scControllerInput:/Shipment/@ShipmentContainerKey" ShipmentKey="xml:scControllerInput:/Shipment/@ShipmentKey"/>
+                        </ContainerDetail>
+                    </ContainerDetails>
+                    <!--  <OrderBy>
+                   <Attribute Name="GroupSequenceNumber"/>
+                   <Attribute Name="PrimeLineNo"/>
+                  </OrderBy> -->
+                    <OrderLine KitCode="BUNDLE" KitCodeQryType="NE"/>
+                </ShipmentLine>
+            </Input>
+            <Template>
+                <ShipmentLines>
+                    <ShipmentLine IsPackComplete="" OrderNo=""
+                        OriginalQuantity="" PlacedQuantity=""
+                        Quantity="" ShipmentKey="" ShipmentLineKey="" ShortageQty="">
+                        <OrderLine ItemGroupCode="">
+                            <ItemDetails ItemGroupCode="" ItemID="" UnitOfMeasure="">
+                                <PrimaryInformation
+                                    ExtendedDisplayDescription=""
+                                    ImageID="" ImageLabel="" ImageLocation=""/>
+                                <ClassificationCodes Model=""/>
+								<Extn ExtnPackingReference=""/>
+								<ItemAliasList>
+								 <ItemAlias AliasValue="" AliasName=""/>
+								 </ItemAliasList>
+                            </ItemDetails>
+                        </OrderLine>
+                        <!-- <ContainerDetails>
+                  <ContainerDetail Quantity="" QuantityPlaced="" >
+                </ContainerDetail>
+                </ContainerDetails> -->
+                    </ShipmentLine>
+                </ShipmentLines>
+            </Template>
+        </API>
+        <APINamespace inputNS="containerPack_getShipmentLineList_input" outputNS="containerPack_getShipmentLineList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="WSC000019"/>
+            <AlternateResourceId altResourceId="WSCSYS00001"/>
+        </AlternateResourceIds>
+    </mashup>
+</mashups>

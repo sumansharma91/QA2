@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.order.customerAppeasement.CustomerAppeasementSelectionExtnInitController"
+    requestMethodSupported="POST" screenId="extn.order.customerAppeasement.CustomerAppeasementSelectionExtn">
+    <Group isAggregator="Y"/>
+    <MashupRefs>
+        <MashupRef extnType="ADD" mashupId="extn_TrackingNo_CommonCode"
+            mashupRefId="extn_getTrackingNo_CommonCode_RefID" permissionId=""/>
+    </MashupRefs>
+</Controller>

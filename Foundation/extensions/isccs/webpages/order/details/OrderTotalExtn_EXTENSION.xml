@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="OrderTotalExtn"
+        extnPackage="extn.order.details"
+        originalScreen="isccs.order.details.OrderTotal"
+        originalScreenPackage="isccs.order.details" type="diffrential">
+        <Items>
+            <DataLabel _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lblSubtotal"
+                class="numericLabel blockComponent"
+                label="$(_scBundle:extn_Merchandise_Total)" uId="extn_MerchandiseTotal">
+                <BindingData>
+                    <CurrencyBinding namespace="OrderPrice" path="Order.PriceInfo.Currency"/>
+                    <SourceBinding namespace="OrderPrice" path="Order.OverallTotals.LineSubTotal"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblSubtotal" renderHidden="true"/>
+            <DataLabel _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lblOrderAdjustments" uId="lblTaxes"/>
+            <DataLabel _sc_extensibility_moveOrder="3"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lblShippingCharges"
+                class="numericLabel blockComponent"
+                label="$(_scBundle:extn_lblDiscounts)" uId="extn_lblDiscounts">
+                <BindingData>
+                    <CurrencyBinding namespace="OrderPrice" path="Order.PriceInfo.Currency"/>
+                    <SourceBinding namespace="OrderPrice" path="Order.OverallTotals.GrandAdjustmentsWithoutTotalShipping"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblOrderAdjustments" renderHidden="true"/>
+            <DataLabel _sc_extensibility_moveOrder="4"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_lblDiscounts" uId="lblOrderAdjustments"/>
+            <DataLabel _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblOrderAdjustments" renderHidden="true"/>
+            <DataLabel _sc_extensibility_moveOrder="5"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="lblShippingCharges"
+                class="numericLabel blockComponent"
+                label="$(_scSimpleBundle:extn_Shipping_Taxes)" uId="extn_datalabel_Shipping_Taxes">
+                <BindingData>
+                    <CurrencyBinding namespace="OrderPrice" path="Order.PriceInfo.Currency"/>
+                    <SourceBinding dynamicBindingFunc="getTax"
+                        namespace="OrderPrice" path="Order.HeaderTaxes"/>
+                </BindingData>
+            </DataLabel>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

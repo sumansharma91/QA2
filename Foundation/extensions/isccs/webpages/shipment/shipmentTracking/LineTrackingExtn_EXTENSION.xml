@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="LineTrackingExtn"
+        extnPackage="extn.shipment.shipmentTracking"
+        originalScreen="isccs.shipment.shipmentTracking.LineTracking"
+        originalScreenPackage="isccs.shipment.shipmentTracking" type="diffrential">
+        <Namespaces>
+            <TargetNamespaces>
+                <Target
+                    description="The order line containing ChainedFromOrderLineKey as input to getCompleteOrderLineList to get the transfer order line"
+                    isExtn="true"
+                    scExtensibilityArrayItemId="extn_TargetNamespaces_0" value="extn_TransferOrderLine"/>
+                <Target
+                    description="Output from getCompleteOrderLineList"
+                    isExtn="true"
+                    scExtensibilityArrayItemId="extn_TargetNamespaces_1" value="extn_orderLineList_output"/>
+                <Target
+                    description="The original sale order line with OrderLineKey"
+                    isExtn="true"
+                    scExtensibilityArrayItemId="extn_TargetNamespaces_2" value="extn_SalesOrderLine"/>
+            </TargetNamespaces>
+        </Namespaces>
+        <MashupRefs>
+            <Behavior>
+                <MashupRef extnType="ADD"
+                    mashupId="lineTrack_getOrderLineList" mashupRefId="extn_getOrderLineList"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

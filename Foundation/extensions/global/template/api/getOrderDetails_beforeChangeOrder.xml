@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Order BuyerOrganizationCode="" SellerOrganizationCode="" DocumentType="" PaymentStatus="" EnterpriseCode="" OrderType="" OrderPurpose="" OrderName="" LevelOfService="" CurrentUserRole="" SourceType="" OrderNo="" OrderHeaderKey=""   AllocationRuleID="" DraftOrderFlag="" >
+<OrderLines>
+<OrderLine LineType=""/>
+<Promotions>
+<Promotion/>
+</Promotions>
+<Awards>
+<Award/>
+</Awards>
+</OrderLines>
+   <PriceInfo Currency="" EnterpriseCurrency="" ReportingConversionDate="" ReportingConversionRate="" TotalAmount=""/>
+<OrderStatuses>
+<OrderStatus Status=""/>
+</OrderStatuses>
+<PersonInfoShipTo AddressLine1="" City="" Country="" DayPhone="" FirstName="" LastName="" State="" ZipCode="" />
+</Order>

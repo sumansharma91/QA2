@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="DefaultAlertExtn"
+        extnPackage="extn.alert.manage.details"
+        originalScreen="isccs.alert.manage.details.DefaultAlert"
+        originalScreenPackage="isccs.alert.manage.details" type="diffrential">
+        <Items>
+            <Textarea _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lblAlertDetails"
+                class="alertDetailMessage" cols="500" colspan="1000"
+                readOnly="true" renderHidden="true" uId="extn_textarea">
+                <BindingData>
+                    <SourceBinding
+                        dynamicBindingFunc="getValueFrombundle"
+                        namespace="getExceptionDetails_Output" path="Inbox.DetailDescription"/>
+                </BindingData>
+            </Textarea>
+            <Label _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblAlertDetails" renderHidden="false"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

@@ -1,0 +1,25 @@
+<OrderList>
+	<Order  OrderHeaderKey="" DraftOrderFlag="" MaxOrderStatus="" MinOrderStatus="" DocumentType="" EntryType="" OrderType="">
+		<Extn ExtnAurusToken=""/>
+		<OrderLines>
+			<OrderLine OrderHeaderKey="" OrderLineKey="" LineType="" OrderedQty="" PrimeLineNo="" >
+				<DerivedFromOrder DocumentType="" EnterpriseCode="" OrderNo="" MaxOrderStatus="" MinOrderStatus="" OrderHeaderKey="">
+					<Extn ExtnAurusToken=""/>
+					<OrderLines>
+						<OrderLine OrderLineKey="" LineType="" OrderedQty="" PrimeLineNo="" />
+					</OrderLines>					
+				</DerivedFromOrder>
+				
+				
+			</OrderLine>
+		</OrderLines>
+
+		<PaymentMethods>
+			<PaymentMethod>
+			<Extn/>
+			</PaymentMethod>
+			 
+		</PaymentMethods>
+		
+	</Order>
+</OrderList>

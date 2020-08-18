@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms>
+    <form Id="com.yantra.pca.ycd.rcp.tasks.lineSummary.screens.YCDStoreDetails">
+        <commands>
+            <command APIName="getCalendarDetails" APIType="API" 
+            Name="getCalendarDetails" URL="DEFAULT" 
+            inputNamespace="" outputNamespace="getCalendarDetails_output" version="ver77"/>
+        </commands>
+        <namespaces>
+            <namespace name="getCalendarDetails_output" 
+            					templateName="getCalendarDetails_output" type="output"/>
+        </namespaces>
+    </form>
+    <form Id="com.yantra.pca.ycd.rcp.tasks.returnEntry.screens.YCDReturnLineSelection">
+        <commands>
+            <command APIName="VSIGetOrderListWithCustPO" APIType="SERVICE" 
+            Name="getOrderLinesWithTransactionQuantity" URL="DEFAULT" 
+            inputNamespace="" outputNamespace="" version="ver77"/>
+        </commands>
+    </form>
+    <form Id="com.yantra.pca.ycd.rcp.tasks.cancelOrder.wizards.YCDCancelOrderWizard">
+        <commands>
+            <command APIName="getCompleteOrderDetails" APIType="API" 
+            Name="getSalesOrderDetailsWithLocalQty" URL="DEFAULT" 
+            inputNamespace="" outputNamespace="CancelOrder" version="ver77"/>
+        </commands>
+        <namespaces>
+            <namespace name="CancelOrder" 
+            					templateName="CancelOrder" type="output"/>
+        </namespaces>
+    </form>
+    
+     <form Id="com.yantra.pca.ycd.rcp.tasks.lineSummary.wizards.YCDLineSummaryWizard">
+        <commands>
+            <command APIName="getOrganizationHierarchy" APIType="API" 
+            Name="getOrganizationHierarchy" URL="DEFAULT" 
+            inputNamespace="" outputNamespace="getOrganizationHierarchy_output" version="ver77"/>
+        </commands>
+        <namespaces>
+            <namespace name="getOrganizationHierarchy_output" 
+            					templateName="getOrganizationHierarchy_output" type="output"/>
+        </namespaces>
+    </form>
+    
+
+     <form Id="com.yantra.pca.ycd.rcp.tasks.payment.screens.YCDOtherPaymentMethodDetails">
+        <commands>
+            <command APIName="VSICheckVoucher" APIType="SERVICE" 
+            Name="VSICheckVoucher" URL="DEFAULT"
+            inputNamespace="" outputNamespace="" version="ver77"/>
+        </commands>
+        
+    </form>
+    <form Id="com.yantra.pca.ycd.rcp.tasks.payment.screens.YCDSVCDetails">
+        <commands>
+            <command APIName="VSICheckGCBalance" APIType="SERVICE" 
+            Name="VSICheckGCBalance" URL="DEFAULT"
+            inputNamespace="" outputNamespace="" version="ver77"/>
+        </commands>
+        
+    </form>
+    <form Id="com.yantra.pca.ycd.rcp.tasks.common.screens.YCDAlternateStores">
+        <commands>
+            <command APIName="multiApi" APIType="API" 
+            Name="multiApi" URL="DEFAULT"
+            inputNamespace="" outputNamespace="" version="ver77"/>
+        </commands>
+        
+    </form>
+    	<form
+		Id="com.yantra.pca.ycd.rcp.tasks.returnSummary.wizards.YCDReturnOrderSummaryWizard">
+		
+		<commands>
+		
+		
+		
+		
+		<command APIName="getReceiptList" APIType="API"
+			Name="getReceiptList" URL="" inputNamespace=""
+			outputNamespace="" outputnamespace="getReceiptList_op" postCommand="" preCommand=""
+			version="ver77" />
+			
+		<command APIName="getReceiptDetails" APIType="API"
+			Name="getReceiptDetails" URL="" inputNamespace="" outputNamespace="getReceiptDetails_op"
+			outputnamespace="" postCommand="" preCommand="" version="ver77" />
+		<command APIName="getReceiptLineList" APIType="API"
+			Name="getReceiptLineList" URL="" inputNamespace="" outputNamespace="getReceiptLineList_op"
+			outputnamespace="" postCommand="" preCommand="" version="ver77" />
+			
+		<namespaces>
+			<namespace name="getReceiptList_op" templateName="" type="output" />
+			<namespace name="getReceiptDetails_op" templateName="" type="output" />
+			<namespace name="getReceiptLineList_op" templateName="getReceiptLineListOPTemplate" type="output" />
+		</namespaces>
+		</commands>
+
+	</form>
+	 <form Id="com.vsi.scc.oms.pca.order.receive.wizard.ReceiveOrderWizard">
+        <Wizard>
+             <WizardEntities>
+                <WizardEntity id="ReceiveOrderWizardPage"
+                    impl="com.vsi.scc.oms.pca.order.receive.wizardPages.ReceiveOrderWizardPage"
+                    start="true" type="PAGE"/>
+            </WizardEntities>
+            <WizardTransitions>
+                <WizardTransition id="showFirstPage"
+                    source="ReceiveOrderWizardPage" start="true"/>
+            </WizardTransitions>
+        </Wizard>
+        <commands>
+            <command APIName="getCommonCodeList" APIType="API"
+                Name="GetCommonCodeList" URL="" inputNamespace=""
+                outputNamespace="getCommonCodeList_Output"
+                postCommand="" preCommand="" version="ver77"/>
+            <command APIName="getReturnDispositionList" APIType="API"
+                Name="GetReturnDispositionList" URL="" inputNamespace=""
+                outputNamespace="getReturnDispositionList_Output"
+                postCommand="" preCommand="" version="ver77"/>
+             <command APIName="VSIReturnOrderStartCloseReceiptService" APIType="SERVICE"
+                Name="VSIReturnOrderStartCloseReceiptService" URL="" inputNamespace=""
+                outputNamespace=""
+                outputnamespace="" postCommand="" preCommand="" version="ver77"/>
+             
+               <command APIName="changeOrder" APIType="API"
+                Name="ChangeOrder" URL="" inputNamespace=""
+                outputNamespace="getChangeOrder_Output"
+                postCommand="" preCommand="" version="ver77"/>
+        </commands>
+        <namespaces>
+            <namespace name="getCommonCodeList_Output"
+                templateName="getCommonCodeList_Output" type="output"/>
+
+                 <namespace name="getChangeOrder_Output"
+                templateName="getChangeOrder_Output" type="output"/>
+        </namespaces>
+    </form>
+  
+                     <form Id="com.yantra.pca.ycd.rcp.tasks.common.fulfillmentSummary.screens.YCDReturnFulfillmentPanel">
+        <commands>
+            <command APIName="getCommonCodeList" APIType="API" 
+            Name="getCommonCodeList" URL="DEFAULT" 
+            inputNamespace="" outputNamespace="getCommonCodeList_output" version="ver77"/>
+        </commands>
+        <namespaces>
+            <namespace name="getCommonCodeList_output" 
+            					templateName="getCommonCodeList_output" type="output"/>
+        </namespaces>
+    </form>
+    <form Id="com.yantra.pca.ycd.rcp.tasks.issueRefundNow.wizards.YCDIssueRefundNowWizard">
+		<commands>
+			<command Name="VSIIssueRefundActions" APIName="VSIIssueRefundActions" APIType="SERVICE" prototype="" inputNamespace="" outputNamespace="" version="ver77" URL="DEFAULT"/>
+		</commands>
+		<namespaces>
+			<namespace name="" templateName="" type="output"/>
+			<namespace name="" templateName="" type="input"/>
+		</namespaces>
+	</form>
+
+
+    
+     <form Id="com.yantra.pca.ycd.rcp.tasks.payment.screens.YCDPaymentTypeEntryPanel">
+        <commands>
+	     <command APIName="getCommonCodeList"
+                APIType="API" Name="getCommonCodeList"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+        </commands>
+    </form>
+    
+    <form Id="com.yantra.pca.ycd.rcp.tasks.alert.screens.YCDCreateAlert">
+        <commands>
+	     <command APIName="getCommonCodeList"
+                APIType="API" Name="getCommonCodeList"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+        </commands>
+    </form>
+    
+     <form Id="com.yantra.pca.ycd.rcp.tasks.addModifyCharges.screens.YCDAddModifyChargesPopup">
+        <commands>
+	     <command APIName="getCommonCodeList"
+                APIType="API" Name="getCommonCodeList"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+        </commands>
+    </form>
+    
+         <form Id="com.yantra.pca.ycd.rcp.tasks.common.fulfillmentSummary.screens.YCDPickupPanel">
+        <commands>
+	     <command APIName="VSIPromisedDates"
+                APIType="SERVICE" Name="VSIPromisedDates"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+        </commands>
+    </form>
+           <form Id="com.yantra.pca.ycd.rcp.tasks.orderEntry.wizards.YCDOrderEntryWizard">
+        <commands>
+	     <command APIName="VSIVerifyDataPower"
+                APIType="SERVICE" Name="VSIVerifyCreditCard"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+         <command APIName="VSIApplyBOGO"
+                APIType="SERVICE" Name="VSIApplyBOGO"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>       
+        </commands>
+    </form>
+    <form Id="com.yantra.pca.ycd.rcp.tasks.multiAddLine.wizards.YCDMultiAddLineWizard">
+        <commands>
+	     <command APIName="VSIVerifyDataPower"
+                APIType="SERVICE" Name="VSIVerifyCreditCard"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+        </commands>
+    </form>
+
+	 <form Id="com.yantra.pca.ycd.rcp.tasks.customerConsumerEntry.wizards.YCDConsumerEntryWizard">
+	 
+        <commands>
+	     <command APIName="VSISaveNewCustomer"
+                APIType="SERVICE" Name="manageCustomer"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+        </commands>
+    </form>
+    <form Id="com.yantra.pca.ycd.rcp.tasks.customerConsumerEntry.wizardpages.YCDConsumerCustomerEntryWizardPage">
+	 
+        <commands>
+	     <command APIName="VSISaveNewCustomer"
+                APIType="SERVICE" Name="manageCustomer"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+        </commands>
+    </form>
+       
+     <form Id="com.yantra.pca.ycd.rcp.tasks.common.screens.YCDAddCouponComposite">
+     
+	 
+        <commands>
+	     <command APIName="VSIValidateCouponUE" 
+                APIType="SERVICE" Name="validateCoupon"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+        </commands>
+    </form>	
+     
+     
+          <form Id="com.yantra.pca.ycd.rcp.tasks.common.deliveryOptions.screens.YCDChangeDeliveryOptionsPageComposite">
+        <commands>
+	     <command APIName="VSIGetCustomerDetailsUE"
+                APIType="SERVICE" Name="getCustomerDetails"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+        </commands>
+    </form>
+    
+    <form Id="com.yantra.pca.ycd.rcp.tasks.common.customerRating.YCDCustomerRatingCommonPanel">
+        <commands>
+	     <command APIName="VSIGetCustomerDetailsUE"
+                APIType="SERVICE" Name="getCustomerDetails"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+        </commands>
+    </form>
+    <form Id="com.yantra.pca.ycd.rcp.tasks.payment.screens.YCDPaymentConfirmationPanel">
+        <commands>
+	     <command APIName="VSIGetCustomerDetailsUE"
+                APIType="SERVICE" Name="getCustomerDetails"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+        </commands>
+    </form>
+    
+     <form Id="com.yantra.pca.ycd.rcp.tasks.quickAccess.wizards.YCDQuickAccessWizard">
+        <commands>
+	     <command APIName="VSIGetCustomerDetailsUE"
+                APIType="SERVICE" Name="getCustomerList"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+	     <command APIName="VSIGetAJBSettlementList"
+                APIType="SERVICE" Name="getAJBSettlementList"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+				
+	     <command APIName="VSIGetShipmentContainerList"
+                APIType="SERVICE" Name="getShipmentContainerList"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>				
+        </commands>
+    </form>
+
+	<form Id="com.yantra.pca.ycd.rcp.tasks.orderSearch.wizards.YCDOrderSearchWizard">
+		<commands>
+			<command APIName="VSIGetAJBSettlementList"
+					APIType="SERVICE" Name="getAJBSettlementList"
+					URL="DEFAULT" outputnamespace=""  
+					inputnamespace="" prototype="" version=""/>
+					
+			 <command APIName="VSIGetShipmentContainerList"
+					APIType="SERVICE" Name="getShipmentContainerList"
+					URL="DEFAULT" outputnamespace=""  
+					inputnamespace="" prototype="" version=""/>
+        </commands>
+	</form>
+    
+    <form Id="com.yantra.pca.ycd.rcp.tasks.customerBusinessEntry.wizardpages.YCDCustomerPaymentMethodEntryWizardPage">
+        <commands>
+	     <command APIName="VSIGetCustomerDetailsUE"
+                APIType="SERVICE" Name="getCustomerDetails"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+        </commands>
+    </form>
+        <form Id="com.yantra.pca.ycd.rcp.tasks.customerDetails.wizardpages.YCDConsumerDetails">
+        <commands>
+	     <command APIName="VSIGetCustomerDetailsUE"
+                APIType="SERVICE" Name="getCustomerDetails"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+        </commands>
+    </form>
+	<form Id="com.yantra.pca.ycd.rcp.tasks.common.fulfillmentSummary.screens.YCDFulfillmentSummaryScreen">
+        <commands>
+	     <command APIName="VSIGetCustomerDetailsUE"
+                APIType="SERVICE" Name="getCustomerDetails"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+        </commands>
+    </form>
+    <form Id="com.yantra.pca.ycd.rcp.tasks.customerAddressManagement.wizardpages.YCDManageAddressWizardPage">
+        <commands>
+	     <command APIName="VSIGetCustomerDetailsUE"
+                APIType="SERVICE" Name="getCustomerDetails"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+        </commands>
+    </form>
+     <form Id="com.yantra.pca.ycd.rcp.tasks.customerContactManagement.wizardpages.YCDManageContactsWizardPage">
+        <commands>
+	     <command APIName="VSIGetCustomerDetailsUE"
+                APIType="SERVICE" Name="getCustomerDetails"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+        </commands>
+    </form>
+    <form Id="com.yantra.pca.ycd.rcp.tasks.customerContactManagement.wizardpages.YCDManageContactsWizardPage">
+        <commands>
+	     <command APIName="VSIModifyCustomer"
+                APIType="SERVICE" Name="manageCustomer"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+        </commands>
+    </form>
+    <form Id="com.yantra.pca.ycd.rcp.tasks.customerAddressManagement.wizardpages.YCDManageAddressWizardPage">
+        <commands>
+	     <command APIName="VSIModifyCustomer"
+                APIType="SERVICE" Name="manageCustomer"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+        </commands>
+    </form>
+     <form Id="com.vsi.scc.oms.pca.screens.SendGCMailComposite">
+        <commands>
+	     <command APIName="VSITriggerEmailOnVGCRefund"
+                APIType="SERVICE" Name="VSITriggerEmailOnVGCRefund"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+        </commands>
+    </form>
+    
+         <form Id="com.yantra.pca.ycd.rcp.tasks.customerAppeasement.wizards.YCDCustomerAppeasementWizard">
+        <commands>
+	     <command APIName="getOrderInvoiceList"
+                APIType="API" Name="getOrderInvoiceList"
+                URL="DEFAULT" outputnamespace=""  
+                inputnamespace="" prototype="" version=""/>
+        </commands>
+    </form>
+</forms>

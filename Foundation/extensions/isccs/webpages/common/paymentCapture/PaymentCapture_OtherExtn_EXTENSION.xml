@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="PaymentCapture_OtherExtn"
+        extnPackage="extn.common.paymentCapture"
+        originalScreen="isccs.common.paymentCapture.PaymentCapture_Other"
+        originalScreenPackage="isccs.common.paymentCapture" type="diffrential">
+        <Items>
+            <CurrencyTextBox _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtMaxChargeLimit" label="$(_scBundle:extn_Voucher_Balance)"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtPaymentReference1" label="$(_scBundle:extn_Healthy_Awards_Voucher_)"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtPaymentReference2" renderHidden="false"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtPaymentReference3" renderHidden="false"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="txtPaymentReference1_onBlur"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="getVoucherValue"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Behavior>
+                <MashupRef extnType="ADD" mashupId="extn_checkVoucher" mashupRefId="extn_VSICheckVoucher_RefID"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

@@ -1,0 +1,5 @@
+<GetLinesToReceive EnterpriseCode="" ShipmentKey="">
+  <ReceivableLineList>
+  <ReceivableLine />
+  </ReceivableLineList>
+  </GetLinesToReceive>

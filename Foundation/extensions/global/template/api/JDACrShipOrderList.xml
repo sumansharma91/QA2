@@ -1,0 +1,27 @@
+	<OrderList>
+	<Order OrderHeaderKey="" OrderNo="" PaymentRuleId="" Status="">
+		<OrderLines>
+			<OrderLine CustomerPONo="" FulfillmentType="" LineType=""
+				MaxLineStatus="" MaxLineStatusDesc="" MinLineStatus=""
+				MinLineStatusDesc="" OrderHeaderKey="" OrderLineKey="" OrderedQty=""
+				PrimeLineNo="" SubLineNo="" ItemID="">
+				<LinePriceInfo LineTotal="" UnitPrice="" />
+				<Item ItemID="" />
+			</OrderLine>
+		</OrderLines>
+		<OrderStatuses>
+			<OrderStatus Status="" OrderLineKey="" StatusDescription=""
+				TotalQuantity="" StatusQty="">
+				<OrderStatusTranQuantity TransactionalUOM=""
+					TotalQuantity="" StatusQty="" />
+			</OrderStatus>
+		</OrderStatuses>
+		<HeaderCharges>
+<HeaderCharge ChargeAmount="" ChargeCategory="" ChargeName="" ChargeNameKey="" InvoicedChargeAmount="" IsBillable="" IsDiscount="" IsManual="Y" IsRefundable="" IsShippingCharge="" Reference="" RemainingChargeAmount="">
+<ChargeNameDetails Description=""/>
+<ChargeCategoryDetails ChargeCategoryKey="" ConsiderForProfitMargin="" Description="" IsBillable="" IsDiscount="" IsRefundable=""/>
+
+</HeaderCharge>
+</HeaderCharges>
+	</Order>
+</OrderList>

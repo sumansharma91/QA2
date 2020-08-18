@@ -1,0 +1,10 @@
+<OrderList>
+<Order Status="" CustomerLastName="" OrderNo="" CustomerFirstName="" CustomerPONo="" OrderDate="" EnteredBy="">
+<OrderLines>
+<OrderLine OrderLineKey="" LineType="" CustomerPONo=""  Status="" StatusQuantity="" MaxLineStatus="" ConditionVariable1="" >
+<Extn ExtnLastPickDate="" />
+<LinePriceInfo LineTotal=""/>
+</OrderLine>
+</OrderLines>
+</Order>
+</OrderList>

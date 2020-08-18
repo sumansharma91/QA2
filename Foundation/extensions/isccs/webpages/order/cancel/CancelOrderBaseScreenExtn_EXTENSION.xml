@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="CancelOrderBaseScreenExtn"
+        extnPackage="extn.order.cancel"
+        originalScreen="isccs.order.cancel.CancelOrderBaseScreen"
+        originalScreenPackage="isccs.order.cancel" type="diffrential">
+        <Items>
+            <Button _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="update_order" renderHidden="true"/>
+            <Label _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblnoCancellation" class="isccsScreen cancellationLabelMessage"/>
+            <RadioButtonSet _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="cancelType" label="$(_scSimpleBundle:blank)"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

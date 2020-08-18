@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.order.create.customer.CustomerPreviewExtnInitController"
+    requestMethodSupported="POST" screenId="extn.order.create.customer.CustomerPreviewExtn">
+    <Group isAggregator="Y"/>
+    <MashupRefs>
+        <MashupRef callSequence="2" extnType="ADD"
+            mashupId="customerIdentification_getCompleteCustomerDetails"
+            mashupRefId="getCompleteCustomerDetails" permissionId=""/>
+        <MashupRef extnType="ADD" mashupId="getCarrierList"
+            mashupRefId="extn_getCarrierListRefID" permissionId=""/>
+        <MashupRef extnType="ADD"
+            mashupId="customerIdentification_getCompleteCustomerDetails"
+            mashupRefId="extn_getCompleteCustomerDetails" permissionId=""/>
+    </MashupRefs>
+</Controller>

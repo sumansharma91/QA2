@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.shipment.reship.ReshipShipmentLineExtnBundle" screenId="extn.shipment.reship.ReshipShipmentLineExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="extn_LevelOfService_FilteringSelect_label"
+            bundleKey="Level_of_Service" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_LevelOfService"/>
+        <BundleEntry
+            bundleEntryId="extn_textfield_TrackingNumber_TextField_label"
+            bundleKey="extn_Tracking_Number"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_textfield_TrackingNumber"/>
+    </BundleEntries>
+</ScreenBundle>

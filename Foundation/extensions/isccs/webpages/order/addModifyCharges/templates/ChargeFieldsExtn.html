@@ -1,0 +1,106 @@
+		<div>
+		 	<div data-dojo-type="idx/form/CurrencyTextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'txt_chargeAmount'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getBundleString('Amount')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'cmbApplyTo' , 
+		renderHidden : true , 
+		defaultValue : 'CPL'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '1' , 
+		_sc_extensibility_referenceUId : 'txt_chargeAmount' , 
+		uId : 'extn_Apply_To' , 
+		_sc_extensibility_position : 'before'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	value : 			this.getSimpleBundleString('ChargePerLine')
+,	
+			 	label : 			this.getBundleString('ApplyTo')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '2' , 
+		_sc_extensibility_referenceUId : 'cmbApplyTo' , 
+		uId : 'extn_coupon_number' , 
+		_sc_extensibility_position : 'after'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+,
+		 path : 			'Reference'
+,
+		 namespace : 			'getCompleteOrderDetails_input'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 path : 			'HeaderCharge.Reference'
+,
+		 namespace : 			'getCompleteOrderDetails_output'
+	}
+	}
+,	
+			 	label : 			this.getBundleString('extn_coupon_number')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '3' , 
+		_sc_extensibility_referenceUId : 'txt_chargeName' , 
+		uId : 'extn_textfield_TrackingNumber' , 
+		renderHidden : true , 
+		_sc_extensibility_position : 'before'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+,
+		 path : 			'ExtnOriginalTrackingNo'
+,
+		 namespace : 			'getCompleteOrderDetails_input'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 path : 			'Order.Extn.ExtnOriginalTrackingNo'
+,
+		 namespace : 			'getCompleteOrderDetails_output'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Tracking_Number')
+			}
+		}
+	 					}">
+		 	</div>  
+		</div>

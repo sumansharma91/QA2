@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.common.paymentCapture.PaymentCaptureExtnInitController"
+    requestMethodSupported="POST" screenId="extn.common.paymentCapture.PaymentCaptureExtn">
+    <Group isAggregator="Y"/>
+    <MashupRefs>
+        <MashupRef extnType="MODIFY"
+            mashupId="paymentCapturePanel_getPaymentTypeList"
+            mashupRefId="getPaymentTypeListMashup" permissionId=""/>
+        <MashupRef extnType="MODIFY"
+            mashupId="paymentCapture_getCustomerPaymentMethodList"
+            mashupRefId="getCustomerPaymentMethodList" permissionId=""/>
+    </MashupRefs>
+</Controller>

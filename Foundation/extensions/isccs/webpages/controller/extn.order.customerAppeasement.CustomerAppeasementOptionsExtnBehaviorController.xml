@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.order.customerAppeasement.CustomerAppeasementOptionsExtnBehaviorController"
+    requestMethodSupported="POST" screenId="extn.order.customerAppeasement.CustomerAppeasementOptionsExtn">
+    <MashupRefs>
+        <MashupRef extnType="MODIFY"
+            mashupId="customerAppeasement_recordInvoiceCreation"
+            mashupRefId="recordInvoiceCreation" permissionId=""/>
+        <MashupRef extnType="ADD"
+            mashupId="extn_VSICreateAppeasementApprovalAlert"
+            mashupRefId="extn_VSICreateAppeasementApprovalAlert" permissionId=""/>
+        <MashupRef extnType="ADD"
+            mashupId="extn_VSIIssueEGiftCardForAppeasementsSyncService"
+            mashupRefId="extn_VSIIssueEGiftCardForAppeasementsSyncService" permissionId=""/>
+    </MashupRefs>
+</Controller>

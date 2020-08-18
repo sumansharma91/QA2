@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.customer.create.CreateContactExtnBehaviorController"
+    requestMethodSupported="POST" screenId="extn.customer.create.CreateContactExtn">
+    <MashupRefs>
+        <MashupRef extnType="MODIFY"
+            mashupId="manageContact_getCustomerDetails"
+            mashupRefId="getCustomerDetails" permissionId=""/>
+        <MashupRef extnType="ADD"
+            mashupId="modifyCustomer_manageCustomer"
+            mashupRefId="extn_modifyCustomer_RefID" permissionId=""/>
+    </MashupRefs>
+</Controller>

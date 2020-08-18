@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ReturnSummaryLinesExtn"
+        extnPackage="extn.return.details"
+        originalScreen="isccs.return.details.ReturnSummaryLines"
+        originalScreenPackage="isccs.return.details" type="diffrential">
+        <Items>
+            <ContentPane _sc_extensibility_operation="change" _sc_extensibility_referenceUId="LST_ListScreenContent"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

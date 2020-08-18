@@ -1,0 +1,28 @@
+		<div>
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_upc' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '1' , 
+		'class' : 'location autoLabelZeroWidth' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'remainingQty'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'ShipmentLine'
+,
+		 path : 			'ShipmentLine.OrderLine.ItemDetails.ItemAliasList.ItemAlias.AliasValue'
+,
+		 dynamicBindingFunc : 			'AliasValue'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_UPC_Code')
+			}
+		}
+	 					}">
+		 	</div>  
+		</div>

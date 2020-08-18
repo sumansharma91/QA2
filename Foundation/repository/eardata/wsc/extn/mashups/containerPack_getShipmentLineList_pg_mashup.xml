@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mashups>
+    <mashup
+        description="Get ShipmentLine List for showing it in the products view"
+        endpoint="EP_CONFIG" id="containerPack_getShipmentLineList_pg"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.wsc.shipment.container.pack.PackGetShipmentLineListMashup"/>
+        <API Name="getShipmentLineList">
+            <Input>
+                <ShipmentLine
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    IsPackComplete="" IsPackCompleteQryType="" ItemID=""
+                    MaximumRecords="" ShipmentKey="xml:scControllerInput:/Shipment/@ShipmentKey">
+                    <!--  <OrderBy>
+                        <Attribute Name="GroupSequenceNumber"/>
+                        <Attribute Name="PrimeLineNo"/>
+                    </OrderBy>  -->
+                    <OrderLine KitCode="BUNDLE" KitCodeQryType="NE"/>
+                </ShipmentLine>
+            </Input>
+            <Template>
+                <ShipmentLines>
+                    <ShipmentLine BackroomPickedQuantity=""
+                        IsPackComplete="" OrderHeaderKey=""
+                        OrderLineKey="" OrderNo="" OriginalQuantity=""
+                        PlacedQuantity="" Quantity="" ShipmentKey=""
+                        ShipmentLineKey="" ShortageQty="" UnitOfMeasure="">
+                        <OrderLine GiftFlag="" IsBundleParent="" ItemGroupCode="">
+                            <ItemDetails ItemGroupCode="" ItemID="" UnitOfMeasure="">
+                                <PrimaryInformation
+                                    ExtendedDisplayDescription=""
+                                    ImageID="" ImageLabel="" ImageLocation=""/>
+								<Extn ExtnPackingReference=""/>
+								<ItemAliasList>
+								 <ItemAlias AliasValue="" AliasName=""/>
+								 </ItemAliasList>
+                                <ClassificationCodes Model=""/>
+                                <ItemInstructionList>
+                                    <ItemInstruction InstructionText="" InstructionType=""/>
+                                </ItemInstructionList>
+                            </ItemDetails>
+                        </OrderLine>
+                        <Instructions>
+                            <Instruction InstructionText=""
+                                InstructionType="" SeqNo=""/>
+                        </Instructions>
+                    </ShipmentLine>
+                </ShipmentLines>
+            </Template>
+        </API>
+        <APINamespace inputNS="containerPack_getShipmentLineList_input" outputNS="containerPack_getShipmentLineList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="WSC000019"/>
+        </AlternateResourceIds>
+    </mashup>
+</mashups>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Extensions>
+    <Identifier id="">
+        <UIExtns>
+            <UIExtn
+                appScreen="wsc.mobile.common.screens.shipment.picking.ShipmentPickDetails"
+                extnScreen="extn.mobile.common.screens.shipment.picking.ShipmentPickDetailsExtn" type="diffrential">
+                <IdentifierList>
+                    <Identifier identifierId="Pick" type="change"/>
+                </IdentifierList>
+            </UIExtn>
+            <UIExtn appScreen="wsc.mobile.home.search.Search"
+                extnScreen="extn.mobile.home.search.SearchExtn" type="diffrential"/>
+			<UIExtn appScreen="wsc.components.alerts.AlertDetails"
+                extnScreen="extn.components.alerts.AlertDetailsExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="wsc.components.shipment.container.pack.ContainerPackContainerList"
+                extnScreen="extn.components.shipment.container.pack.ContainerPackContainerListExtn" type="diffrential"/>
+			<UIExtn
+                appScreen="wsc.components.shipment.summary.ShipmentRT"
+                extnScreen="extn.components.shipment.summary.ShipmentRTExtn" type="diffrential"/>
+			 <UIExtn appScreen="wsc.mobile.home.MobileHome"
+                extnScreen="extn.mobile.home.MobileHomeExtn" type="diffrential"/>
+			<UIExtn
+                appScreen="wsc.components.shipment.container.pack.ContainerPackShipmentLineList"
+                extnScreen="extn.components.shipment.container.pack.ContainerPackShipmentLineListExtn" type="diffrential"/>
+			<UIExtn
+                appScreen="wsc.components.shipment.common.screens.ShipmentLineDetails"
+                extnScreen="extn.components.shipment.common.screens.ShipmentLineDetailsExtn" type="diffrential"/>
+			<UIExtn
+                appScreen="wsc.components.shipment.customerpickup.PickupOrderLineDetails"
+                extnScreen="extn.components.shipment.customerpickup.PickupOrderLineDetailsExtn" type="diffrential">
+                <IdentifierList>
+                    <Identifier identifierId="ReadyForPickLine" type="change"/>
+                    <Identifier identifierId="ItemScan" type="change"/>
+                    <Identifier identifierId="PickedLine" type="change"/>
+                </IdentifierList>
+            </UIExtn>
+        </UIExtns>
+    </Identifier>
+</Extensions>

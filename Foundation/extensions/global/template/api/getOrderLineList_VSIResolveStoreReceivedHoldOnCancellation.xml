@@ -1,0 +1,8 @@
+<OrderLineList TotalLineList="">
+<OrderLine CustomerPONo="" LineType="" MaxLineStatus="" MaxLineStatusDesc="" MinLineStatus="" MinLineStatusDesc="" OrderLineKey=""  PrimeLineNo="">
+<OrderHoldTypes>
+<OrderHoldType HoldType="" Status=""  OrderLineKey=""/>
+</OrderHoldTypes>
+<Order DocumentType="" EnterpriseCode="" MaxOrderStatus="" MaxOrderStatusDesc="" MinOrderStatus="" MinOrderStatusDesc="" OrderHeaderKey="" OrderNo=""/>
+</OrderLine>
+</OrderLineList>

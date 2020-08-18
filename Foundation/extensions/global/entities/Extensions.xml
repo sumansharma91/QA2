@@ -1,0 +1,3281 @@
+<DBSchema>
+	<Entities>
+		<Entity TableName="YFS_ORGANIZATION">
+			<Attributes>
+				<Attribute ColumnName="EXTN_REGION" DecimalDigits=""
+					DefaultValue="" Description="Region Codes" Nullable="true" Size="20"
+					Type="CHAR" XMLName="ExtnRegion" XMLGroup="Extn"
+					SqlServerDataType="" />
+
+				<Attribute ColumnName="EXTN_REGION_NAME"
+					DecimalDigits="" DefaultValue="" Description="Region Name"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnRegionName"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+				<Attribute ColumnName="EXTN_BOPUS_ENABLED" DataType="Flag"
+					DefaultValue="N" Description="Bopus Enabled" XMLGroup="Extn"  XMLName="ExtnBopusEnabled"
+					Type="CHAR" />
+					
+				<Attribute ColumnName="EXTN_ZONE_NAME"
+					DecimalDigits="" DefaultValue="" Description="Zone Name"
+					Nullable="true" Size="50" Type="CHAR" XMLName="ExtnZoneName"
+					XMLGroup="Extn" SqlServerDataType="" />	
+
+				<Attribute ColumnName="EXTN_DISTRICT" DecimalDigits=""
+					DefaultValue="" Description="District Code" Nullable="true"
+					Size="20" Type="CHAR" XMLName="ExtnDistrict" XMLGroup="Extn"
+					SqlServerDataType="" />
+
+				<Attribute ColumnName="EXTN_DISTRICT_NAME"
+					DecimalDigits="" DefaultValue="" Description="District Name"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnDistrictName"
+					XMLGroup="Extn" SqlServerDataType="" />
+
+				<Attribute ColumnName="EXTN_WAREHOUSE" DecimalDigits=""
+					DefaultValue="" Description="Warehouse" Nullable="true" Size="20"
+					Type="CHAR" XMLName="ExtnWarehouse" XMLGroup="Extn"
+					SqlServerDataType="" />
+
+				<Attribute ColumnName="EXTN_BANK" DecimalDigits=""
+					DefaultValue="" Description="Bank" Nullable="true" Size="20"
+					Type="CHAR" XMLName="ExtnBank" XMLGroup="Extn"
+					SqlServerDataType="" />
+
+				<Attribute ColumnName="EXTN_MERCHID" DecimalDigits=""
+					DefaultValue="" Description="MerchantId" Nullable="true" Size="20"
+					Type="CHAR" XMLName="ExtnMerchId" XMLGroup="Extn"
+					SqlServerDataType="" />
+					
+					<Attribute ColumnName="EXTN_CLOSE_DATE" DecimalDigits=""
+					DefaultValue="" Description="Close Date of the store" Nullable="true" Size="30"
+					Type="CHAR" XMLName="ExtnCloseDate" XMLGroup="Extn"
+					SqlServerDataType="" />
+
+				<Attribute ColumnName="EXTN_LEADTIME" DecimalDigits=""
+					DefaultValue="" Description="LeadTime" Nullable="true" Size="20"
+					Type="CHAR" XMLName="ExtnLeadTime" XMLGroup="Extn"
+					SqlServerDataType="" />
+					
+				<Attribute ColumnName="EXTN_IS_WHOLESALE_ORG" DecimalDigits="" DefaultValue="N"
+				Description="Is Wholesale Partner Org? (Y/N)" Nullable="false" Size="1" DataType="UIFlag" 
+				XMLName="ExtnIsWholesaleOrg" XMLGroup="Extn" SqlServerDataType="" />
+			</Attributes>
+		</Entity>
+
+		<Entity TableName="YFS_ORDER_HEADER">
+			<Attributes>
+			   <Attribute ColumnName="EXTN_IS_MIGRATED" DecimalDigits=""
+					DefaultValue="N" Description="Indicates whether the order is migrated from ACT"
+					Nullable="true" Size="1" DataType="Flag" XMLName="ExtnIsMigrated"
+					XMLGroup="Extn" SqlServerDataType="" />	
+			  
+			  <Attribute ColumnName="EXTN_GENERATE_CALL_TAGALERT" DataType="Flag"
+					DefaultValue="N" Description="" XMLName="ExtnGenerateCallTagalert" Type="CHAR" XMLGroup="Extn" />
+					
+				<Attribute ColumnName="EXTN_SUBSCRIPTION_ORDER" DecimalDigits="" DefaultValue="N"
+				Description="Used to store subscription order flag" Nullable="true" Size="1" DataType="Flag" 
+				XMLName="ExtnSubscriptionOrder" XMLGroup="Extn" SqlServerDataType="" />
+				
+					
+				<Attribute ColumnName="EXTN_ORIGINAL_ADP_ORDER" DecimalDigits="" DefaultValue="N"
+				Description="Used to store ADP original order flag" Nullable="true" Size="1" DataType="Flag" 
+				XMLName="ExtnOriginalADPOrder" XMLGroup="Extn" SqlServerDataType="" />
+				
+				<Attribute ColumnName="EXTN_CRM_CUSTOMER" DecimalDigits="" DefaultValue="Y" 
+				Description="Used to store customer sync flag" Nullable="true" Size="1" DataType="Flag"
+				XMLName="ExtnCRMCustomer" XMLGroup="Extn" SqlServerDataType="" />
+				
+				<Attribute ColumnName="EXTN_TOTAL_PRICE"
+					DecimalDigits="" DefaultValue="" Description="Total Price"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnTotalPrice"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+					<Attribute ColumnName="EXTN_PAYPAL_AUTH_ID"
+					DecimalDigits="" DefaultValue="" Description="PayPal auth Id"
+					Nullable="true" Size="20" Type="CHAR" XMLName="PayPalAuthID"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+					<Attribute ColumnName="EXTN_ORDER_DATE" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="Order Date as per Time zone" Type="VARCHAR2"
+					XMLGroup="Extn" Size="20" Nullable="true" XMLName="ExtnOrderDate" />
+					
+					<Attribute ColumnName="EXTN_DTC_ORDER"
+					DecimalDigits="" DefaultValue="" Description="ExtnDTCOrder"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnDTCOrder"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+					<Attribute ColumnName="EXTN_SOURCE" Nullable="true" Size="20" Type="CHAR" 
+					 Description="ExtnSource" DecimalDigits="" DefaultValue="" 
+					 XMLName="ExtnSource"
+					XMLGroup="Extn"  />
+					
+					
+					<Attribute ColumnName="EXTN_ATG_CARRIER_CODE"
+					DecimalDigits="" DefaultValue="" Description="ATGCarrierCode"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ATGCarrierCode"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+					<Attribute ColumnName="EXTN_VOUCHER_AMT"
+					DecimalDigits="" DefaultValue="" Description="VoucherAmt"
+					Nullable="true" Size="20" Type="CHAR" XMLName="VoucherAmt"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+					<Attribute ColumnName="EXTN_CUSTOMER_ALT_KEY"
+					DecimalDigits="" DefaultValue="" Description="CustomerAltKey"
+					Nullable="true" Size="20" Type="CHAR" XMLName="CustomerAltKey"
+					XMLGroup="Extn" SqlServerDataType="" />
+												
+					
+															
+					
+					<Attribute ColumnName="EXTN_IS_GUEST_CHECKOUT"
+					DecimalDigits="" DefaultValue="" Description="ExtnIsGuestCheckout"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnIsGuestCheckout"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+				<Attribute ColumnName="EXTN_POINTS_EARNED"
+					DecimalDigits="" DefaultValue="" Description="Order Points"
+					Nullable="true" Size="20" Type="VARCHAR2" XMLName="ExtnPointsEarned"
+					XMLGroup="Extn" SqlServerDataType="" />
+
+				<Attribute ColumnName="EXTN_TOTAL_POINTS_EARNED"
+					DecimalDigits="" DefaultValue=""
+					Description="Healthy Rewards Point" Nullable="true" Size="20"
+					Type="CHAR" XMLName="ExtnTotalPointsEarned" XMLGroup="Extn"
+					SqlServerDataType="" />
+
+				<Attribute ColumnName="EXTN_ATG_ORDER_NO"
+					DecimalDigits="" DefaultValue="" Description="ExtnATGOrderNo"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnATGOrderNo"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+					<Attribute ColumnName="EXTN_PREFIX"
+					DecimalDigits="" DefaultValue="" Description="ExtnPrefix"
+					Nullable="true" Size="20" Type="CHAR" XMLName="Prefix"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+					<Attribute ColumnName="EXTN_STORE_NO"
+					DecimalDigits="" DefaultValue="" Description="ExtnStoreNo"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnStoreNo"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+					<Attribute ColumnName="EXTN_ORDER_TAX_AREA_ID"
+					DecimalDigits="" DefaultValue="" Description="ExtnOrderTaxAreaID"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnOrderTaxAreaID"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+					<Attribute ColumnName="EXTN_IS_TAX_CALCULATED"
+					DecimalDigits="" DefaultValue="" Description="ExtnIsTaxCalculated"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnIsTaxCalculated"
+					XMLGroup="Extn" SqlServerDataType="" />
+
+				<Attribute ColumnName="EXTN_VERTEX_ENGINE"
+					DecimalDigits="" DefaultValue="" Description="ExtnVertexEngine"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnVertexEngine"
+					XMLGroup="Extn" SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_EVENT_TIME_STAMP"
+					DecimalDigits="" DefaultValue="" Description="EventTimeStamp"
+					Nullable="true" Size="30" Type="CHAR" XMLName="EventTimeStamp"
+					XMLGroup="Extn" SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_FULFILLMENT_ID"
+					DecimalDigits="" DefaultValue="" Description="FulfillmentID"
+					Nullable="true" Size="20" Type="CHAR" XMLName="FulfillmentID"
+					XMLGroup="Extn" SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_ORDER_TYPE" DecimalDigits=""
+					DefaultValue="" Description="OrderType" Nullable="true" Size="20"
+					Type="CHAR" XMLName="OrderType" XMLGroup="Extn"
+					SqlServerDataType="" />
+
+				<Attribute ColumnName="EXTN_FIRST_NAME" Type="VARCHAR2"
+					Size="64"
+					Description="First name of the Employee placing the order."
+					Name="First_Name" Nullable="true" XMLName="FirstName"
+					XMLGroup="Extn" />
+				<Attribute ColumnName="EXTN_EMP_LAST_NAME1"
+					Type="VARCHAR2" Size="64"
+					Description="Last name1 of the Employee placing the order."
+					Name="Emp_Last_Name1" Nullable="true" XMLName="EmpLastName1"
+					XMLGroup="Extn" />
+				<Attribute ColumnName="EXTN_EMP_LAST_NAME2"
+					Type="VARCHAR2" Size="64"
+					Description="Last name2 of the Employee placing the order."
+					Name="Emp_Last_Name2" Nullable="true" XMLName="EmpLastName2"
+					XMLGroup="Extn" />
+				<Attribute ColumnName="EXTN_EMP_DISC_LEVEL"
+					Type="VARCHAR2" Size="20" Description="Employee Disc Level"
+					Name="Extn_Emp_Disc_Level" Nullable="true"
+					XMLName="ExtnEmpDiscLevel" XMLGroup="Extn" />
+				<Attribute ColumnName="EXTN_EMPLOYEE_ID" Type="VARCHAR2"
+					Size="64"
+					Description="Employee ID of the employee placing the order."
+					Name="Employee_ID" Nullable="true" XMLName="EmployeeID"
+					XMLGroup="Extn" />
+
+				<Attribute ColumnName="EXTN_ATTR_SEQ" DecimalDigits=""
+					DefaultValue="" Description="ExtnAttrSeq" Nullable="true" Size="20"
+					Type="NUMBER" XMLName="AttrSeq" XMLGroup="Extn"
+					SqlServerDataType="" />
+
+				<Attribute ColumnName="CUSTOMER_EMAILID"
+					CaseInsensitiveSearch="Y" />
+
+				<Attribute ColumnName="CUSTOMER_FIRST_NAME"
+					CaseInsensitiveSearch="Y" />
+
+				<Attribute ColumnName="CUSTOMER_LAST_NAME"
+					CaseInsensitiveSearch="Y" />
+
+				<Attribute ColumnName="CUSTOMER_ZIP_CODE"
+					CaseInsensitiveSearch="Y" />
+
+				<Attribute ColumnName="ORDER_NAME"
+					CaseInsensitiveSearch="Y" />
+				<Attribute ColumnName="ORDER_NO"
+					CaseInsensitiveSearch="Y" />
+					
+				<Attribute ColumnName="EXTN_PRICING_DATE" DataType="TimeStamp"
+					DefaultValue="" Description="Used to capture pricing date on call center" Nullable="true" XMLGroup="Extn" XMLName="ExtnPricingDate"
+					Type="DATE" />
+					
+				<Attribute ColumnName="EXTN_MCL_ORDER_SHIPMENT_ID"
+					Type="VARCHAR2" Size="64"
+					Description="MCL Shipment id"
+					Nullable="true" XMLName="ExtnMCLOderShipmentID"
+					XMLGroup="Extn"/>
+				
+				<Attribute ColumnName="EXTN_DM_BATCH_NO"
+					Type="VARCHAR2" Size="64"
+					Description="Batch No - Data Migration Orders"
+					Nullable="true" XMLName="ExtnDMBatchNo"
+					XMLGroup="Extn"/>
+				<!-- OMS-978 : Start -->	
+				<Attribute ColumnName="EXTN_KOUNT_SESSION_ID"
+					DefaultValue="" Description="Kount session ID"
+					Nullable="true" Size="100" Type="VARCHAR2" XMLName="ExtnSessionID"
+					XMLGroup="Extn"  />	
+				<!-- OMS-978 : End -->	
+				<!-- OMS-1092 : Start -->
+				<Attribute ColumnName="EXTN_SHIPMENT_CHARGE"
+					DecimalDigits="" DefaultValue="" Description="Shipment charge"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnShipmentCharge"
+					XMLGroup="Extn"  />
+				<Attribute ColumnName="EXTN_SHIPMENT_DISCOUNT"
+					DecimalDigits="" DefaultValue="" Description="Order level shipment discount"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnShipmentDiscount"
+					XMLGroup="Extn"  />
+				<Attribute ColumnName="EXTN_ORDER_DISCOUNT"
+					DecimalDigits="" DefaultValue="" Description="Order level discount"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnOrderDiscount"
+					XMLGroup="Extn"  />
+				<Attribute ColumnName="EXTN_ORDER_TAX"
+					DecimalDigits="" DefaultValue="" Description="Order level tax"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnOrderTax"
+					XMLGroup="Extn"  />
+				<!-- OMS-1092 : End -->
+				<!-- OMS-1220 : Start-->
+				<Attribute ColumnName="EXTN_RE_ORDER" DecimalDigits=""
+					DefaultValue="N" Description="Indicates whether the order is Easy Reorder orders"
+					Nullable="true" Size="1" DataType="Flag" XMLName="ExtnReOrder"
+					XMLGroup="Extn" SqlServerDataType="" />
+				<!-- OMS-1220 : End-->
+<!-- OMS-1363 : Start-->
+				<Attribute ColumnName="EXTN_MOBILE_ORDER" DecimalDigits=""
+					DefaultValue="N" Description="Indicates whether the order is Mobile order"
+					Nullable="true" Size="1" DataType="Flag" XMLName="ExtnMobileOrder"
+					XMLGroup="Extn" SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_MOBILE_ORDER_TYPE" DecimalDigits=""
+					DefaultValue="N" Description="Indicates what is the mobile type of the order"
+					Nullable="true" Size="10" Type="CHAR" XMLName="ExtnMobileType"
+					XMLGroup="Extn" SqlServerDataType="" />
+				<!-- OMS-1363 : End-->
+				<!-- Wholesale : Start -->
+				<Attribute ColumnName="EXTN_VENDOR_ID"
+					Description="Vendor ID for wholesale orders"
+					Nullable="true"  DataType="Text-50"
+					DefaultValue="" XMLName="ExtnVendorID"
+					XMLGroup="Extn" />
+					<Attribute ColumnName="EXTN_DEPT_ID" Description="Department ID for wholesale orders" 
+					DataType="Text-50" DefaultValue="" Nullable="true" XMLName="ExtnDepartmentID" XMLGroup="Extn"/>
+				<Attribute ColumnName="EXTN_COST_CENTER" Description="Wholesale Trading Partner Cost Center" 
+					DataType="Text-20" DefaultValue="" Nullable="true" XMLName="ExtnCostCenter" XMLGroup="Extn"/>
+				<!-- Wholesale : End -->
+				<Attribute ColumnName="EXTN_NEW_ORDER" DecimalDigits=""
+					DefaultValue="N" Description="Indicates whether the order is a new order. This will be used as a check in CreditCard UE to default MerchantId value"
+					Nullable="true" Size="1" DataType="Flag" XMLName="ExtnNewOrder"
+					XMLGroup="Extn" SqlServerDataType="" />
+				<!--OMS-1635: END-->
+				<!--OMS-1951: START-->
+				<Attribute ColumnName="EXTN_TNS_AUTHORIZED" DecimalDigits=""
+					DefaultValue="N" Description="Indicates whether the order is authorized with TNS"
+					Nullable="true" Size="1" DataType="Flag" XMLName="ExtnTnsAuthorized"
+					XMLGroup="Extn"  />
+				<!--OMS-1951: END-->
+				<!--OMS-2046: START-->
+                 <Attribute ColumnName="EXTN_BROWSER_IP"
+                    DefaultValue="" Description="ExtnBrowserIP"
+                    Nullable="true" Size="100" Type="VARCHAR2" XMLName="ExtnBrowserIP"
+                    XMLGroup="Extn"  />    
+                <Attribute ColumnName="EXTN_CUSTOMER_CREATETS"
+                     DefaultValue="" Description="ExtnCustomerCreatets"
+                     Nullable="true" Size="100" DataType="TimeStamp" XMLName="ExtnCustomerCreatets"
+                      XMLGroup="Extn"  />    
+                <Attribute ColumnName="EXTN_USER_AGENT"
+                    DefaultValue="" Description="ExtnUserAgent"
+                    Nullable="true" Size="500" Type="VARCHAR2" XMLName="ExtnUserAgent"
+                    XMLGroup="Extn"  />    
+                <Attribute ColumnName="EXTN_ACCEPT_LANG"
+                    DefaultValue="" Description="ExtnAcceptLang"
+                    Nullable="true" Size="500" Type="VARCHAR2" XMLName="ExtnAcceptLang"
+                    XMLGroup="Extn"  />    
+                <Attribute ColumnName="EXTN_ATG_ORDERID"
+                    DefaultValue="" Description="ATGOrderId"
+                    Nullable="true" Size="100" Type="VARCHAR2" XMLName="ATGOrderId"
+                    XMLGroup="Extn"  /> 
+					<!--OMS-2375: START-->
+					<Attribute ColumnName="EXTN_CUSTOMER_TIER"
+                    DefaultValue="" Description="ExtnCustomerTier"
+                    Nullable="true" Size="100" Type="VARCHAR2" XMLName="ExtnCustomerTier"
+                    XMLGroup="Extn"  /> 
+					
+                <Attribute ColumnName="EXTN_RISKIFIED_SESSION"
+                    DefaultValue="" Description="ExtnRiskifiedSession"
+                    Nullable="true" Size="200" Type="VARCHAR2" XMLName="ExtnRiskifiedSession"
+                    XMLGroup="Extn"  />						
+                <!--OMS-2046: END-->
+               <Attribute ColumnName="EXTN_AURUS_TOKEN" DecimalDigits=""
+                    DefaultValue="" Description="ExtnAurusToken"
+                    Nullable="true" Size="1" Type="CHAR" XMLName="ExtnAurusToken"
+                    XMLGroup="Extn"  SqlServerDataType="" />
+				<!--OMS-2419: START-->
+				<Attribute ColumnName="EXTN_RISKIFIED_COUNT" DecimalDigits=""
+                DefaultValue="" Description="ExtnRiskifiedCount"
+                Nullable="true" Size="100" Type="VARCHAR2" XMLName="ExtnRiskifiedCount"
+                XMLGroup="Extn"  SqlServerDataType="" />
+				<!--OMS-2419: END-->
+                
+
+
+			</Attributes>
+			<Indices>
+				<Index Name="EXTN_YFS_ORDER_HEADER_001">
+					<Column Name="ORDER_NO_LC" />
+					<Column Name="DOCUMENT_TYPE" />
+				</Index>																			
+			</Indices>
+		</Entity>
+	<Entity TableName="YFS_PAYMENT">
+			<Attributes>		   
+                    
+               <Attribute ColumnName="EXTN_AURUS_CI" DecimalDigits=""
+                    DefaultValue="" Description="ExtnAurusCI"
+                    Nullable="true" Size="100" Type="VARCHAR2" XMLName="ExtnAurusCI"
+                    XMLGroup="Extn"  />
+                    
+                <Attribute ColumnName="EXTN_AURUS_OOT" DecimalDigits=""
+                    DefaultValue="" Description="ExtnAurusOOT"
+                    Nullable="true" Size="100" Type="VARCHAR2" XMLName="ExtnAurusOOT"
+                    XMLGroup="Extn"   />
+                <Attribute ColumnName="EXTN_POST_AUTH_COUNT" DecimalDigits=""
+                    DefaultValue="" Description="ExtnPostAuthCount"
+                    Nullable="true" Size="100" Type="VARCHAR2" XMLName="ExtnPostAuthCount"
+                    XMLGroup="Extn"   />		
+                <Attribute ColumnName="EXTN_POST_AUTH_SEQ_NO" DecimalDigits=""
+                    DefaultValue="" Description="ExtnPostAuthSequenceNo"
+                    Nullable="true" Size="100" Type="VARCHAR2" XMLName="ExtnPostAuthSequenceNo"
+                    XMLGroup="Extn"   />
+				<Attribute ColumnName="EXTN_REFUND_COUNT" DecimalDigits=""
+                    DefaultValue="" Description="ExtnRefundCount"
+                    Nullable="true" Size="100" Type="VARCHAR2" XMLName="ExtnRefundCount"
+                    XMLGroup="Extn"   />		
+                <Attribute ColumnName="EXTN_REFUND_SEQ_NO" DecimalDigits=""
+                    DefaultValue="" Description="ExtnRefundSequenceNo"
+                    Nullable="true" Size="100" Type="VARCHAR2" XMLName="ExtnRefundSequenceNo"
+                    XMLGroup="Extn"   />
+
+				<Attribute ColumnName="EXTN_AURUS_REF_NO" DecimalDigits=""
+                    DefaultValue="" Description="ExtnAurusReferralNUM"
+                    Nullable="true" Size="100" Type="VARCHAR2" XMLName="ExtnAurusReferralNUM"
+                    XMLGroup="Extn"   />
+				<Attribute ColumnName="EXTN_AURUS_REAUTHORIZED" DecimalDigits=""
+                    DefaultValue="" Description="ExtnAurusReauthorized"
+                    Nullable="true" Size="100" Type="VARCHAR2" XMLName="ExtnAurusReauthorized"
+                    XMLGroup="Extn"   />
+
+			</Attributes>
+			
+		</Entity>
+		
+		<Entity TableName="YFS_SHIPMENT_CONTAINER">
+			<Attributes>
+				<Attribute ColumnName="EXTN_PARCEL_TYPE" DecimalDigits=""
+					DefaultValue="" Description="Used to store parcel type either Envelope or Carton"
+					Nullable="true" Size="50" Type="VARCHAR2" XMLName="ExtnParcelType"
+					XMLGroup="Extn" SqlServerDataType="" />				
+				<Attribute ColumnName="EXTN_CONTAINER_VOLUME" DecimalDigits="" DefaultValue=""
+				Description="Used to store container volume" Nullable="true" Size="15" Type="VARCHAR2" 
+				XMLName="ExtnContainerVolume" XMLGroup="Extn" SqlServerDataType="" />
+			</Attributes>
+		</Entity>
+		
+
+		<Entity TableName="YFS_ORDER_LINE">
+			<Attributes>
+				<Attribute ColumnName="EXTN_SIGN_TYPE" DecimalDigits=""
+					DefaultValue="N" Description="Used to store adult signature required flag"
+					Nullable="true" Size="1" DataType="Flag" XMLName="ExtnSignatureType"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+					<Attribute ColumnName="EXTN_SDK_LINE" DecimalDigits="" DefaultValue="N"
+				Description="Used to store ADP original order flag" Nullable="true" Size="1" DataType="Flag" 
+				XMLName="ExtnSDKLine" XMLGroup="Extn" SqlServerDataType="" />
+					
+					<Attribute ColumnName="EXTN_PUBLISHED" DecimalDigits=""
+					DefaultValue="N" Description="JDA Order Published flag"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnPublished"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+					<Attribute ColumnName="EXTN_REVIEW" DecimalDigits=""
+					DefaultValue="" Description="ExtnReview"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnReview"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+					<Attribute ColumnName="EXTN_LAST_PICK_DATE" DecimalDigits=""
+					DefaultValue="" Description="ExtnLastPickDate"
+					Nullable="true" Size="40" Type="CHAR" XMLName="ExtnLastPickDate"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+					<Attribute ColumnName="EXTN_LAST_PICK_DATE_FOR_CANCEL" DecimalDigits=""
+					DefaultValue="" Description="ExtnLastPickDateForCancel"
+					Nullable="true" Size="40" Type="CHAR" XMLName="ExtnLastPickDateForCancel"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+					<Attribute ColumnName="EXTN_PICK_DATE" DecimalDigits=""
+					DefaultValue="" Description="ExtnPickDate"
+					Nullable="true" Size="40" Type="CHAR" XMLName="ExtnPickDate"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+					<Attribute ColumnName="EXTN_RELEASE_ID" DecimalDigits=""
+					DefaultValue="" Description="ExtnReleaseID"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnReleaseID"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+					
+					<Attribute ColumnName="EXTN_AVG_RATING" DecimalDigits=""
+					DefaultValue="" Description="ExtnAvgRating"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnAvgRating"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+					<Attribute ColumnName="EXTN_DESCRIPTION" DecimalDigits=""
+					DefaultValue="" Description="ExtendedDescription"
+					Nullable="true" Size="180" Type="CHAR" XMLName="ExtendedDescription"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+					<Attribute ColumnName="EXTN_ACT_ITEM_ID" DecimalDigits=""
+					DefaultValue="" Description="ExtnActItemID"
+					Nullable="true" Size="40" Type="CHAR" XMLName="ExtnActItemID"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+				<Attribute ColumnName="EXTN_LINE_TOTAL" DecimalDigits=""
+					DefaultValue="" Description="" Nullable="true" Size="20"
+					Type="CHAR" XMLName="ExtnLineTotal" XMLGroup="Extn"
+					SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_ORDERED_QTY"
+					DecimalDigits="" DefaultValue="" Description="" Nullable="true"
+					Size="20" Type="CHAR" XMLName="ExtnOrderedQty" XMLGroup="Extn"
+					SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_SHIP_METHOD"
+					DecimalDigits="" DefaultValue="" Description="" Nullable="true"
+					Size="20" Type="CHAR" XMLName="ShipMethod" XMLGroup="Extn"
+					SqlServerDataType="" />
+						<Attribute ColumnName="EXTN_VERTEX_ENGINE"
+					DecimalDigits="" DefaultValue="" Description="ExtnVertexEngine"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnVertexEngine"
+					XMLGroup="Extn" SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_PRICE_MOD" DecimalDigits=""
+					DefaultValue="" Description="" Nullable="true" Size="10"
+					Type="VARCHAR2" XMLName="ExtnPriceMod" XMLGroup="Extn"
+					SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_PRICE_MOD_DESC"
+					DecimalDigits="" DefaultValue="" Description="" Nullable="true"
+					Size="40" Type="VARCHAR2" XMLName="ExtnPriceModDesc" XMLGroup="Extn"
+					SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_PRICE_MOD_TYPE"
+					DecimalDigits="" DefaultValue="" Description="" Nullable="true"
+					Size="40" Type="VARCHAR2" XMLName="ExtnPriceModType" XMLGroup="Extn"
+					SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_PRICE_MOD_CODE"
+					DecimalDigits="" DefaultValue="" Description="" Nullable="true"
+					Size="10" Type="VARCHAR2" XMLName="ExtnPriceModCode" XMLGroup="Extn"
+					SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_PRICE_MOD_DIV"
+					DecimalDigits="" DefaultValue="" Description="" Nullable="true"
+					Size="10" Type="VARCHAR2" XMLName="ExtnPriceModDiv" XMLGroup="Extn"
+					SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_PRICE_MOD_CODE_STR"
+					DecimalDigits="" DefaultValue="" Description="" Nullable="true"
+					Size="20" Type="VARCHAR2" XMLName="ExtnPriceModCodeStr" XMLGroup="Extn"
+					SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_ORIG_UNITPRICE"
+					DecimalDigits="6" DefaultValue="" Description="" Nullable="true"
+					Size="19" Type="NUMBER" XMLName="ExtnOrigUnitPrice" XMLGroup="Extn"
+					SqlServerDataType="" />	
+                <Attribute ColumnName="EXTN_MKTPLACE_SHIP_AMT"
+					DecimalDigits="6" DefaultValue="0.0" Description="Line level shipping amount" Nullable="true"
+					Size="19" Type="NUMBER" XMLName="ExtnMktplaceLineShipAmt" XMLGroup="Extn"
+					SqlServerDataType="" />	
+				<Attribute ColumnName="EXTN_MKTPLACE_SHIP_DISC"
+					DecimalDigits="6" DefaultValue="0.0" Description="Line level shipping amount" Nullable="true"
+					Size="19" Type="NUMBER" XMLName="ExtnMktplaceLineShipDiscount" XMLGroup="Extn"
+					SqlServerDataType="" />
+                <Attribute ColumnName="EXTN_MKTPLACE_SHIP_TAX"
+					DecimalDigits="6" DefaultValue="0.0" Description="Line level shipping amount" Nullable="true"
+					Size="19" Type="NUMBER" XMLName="ExtnMktplaceLineShipTax" XMLGroup="Extn"
+					SqlServerDataType="" />	
+                <Attribute ColumnName="EXTN_MKTPLACE_COMMISSION"
+					DecimalDigits="6" DefaultValue="0.0" Description="Line level shipping amount" Nullable="true"
+					Size="19" Type="NUMBER" XMLName="ExtnMarketplaceCommission" XMLGroup="Extn"
+					SqlServerDataType="" />	
+				<Attribute ColumnName="EXTN_IS_GWP" DataType="Flag"
+					DefaultValue="N" Description="Used to capture GWP/ free item flag" Nullable="true" XMLGroup="Extn" XMLName="ExtnIsGWP"
+					Type="CHAR" />	
+				<Attribute ColumnName="EXTN_CHANNEL_ITEM_ID"
+					 DefaultValue="Null" Description="Channel Item ID sent by marketplace" Nullable="true"
+					Size="500" Type="NVARCHAR" XMLName="ExtnChannelItemID" XMLGroup="Extn"
+					SqlServerDataType="" />	
+				<Attribute ColumnName="EXTN_ORIGINAL_TRACKING_NO"
+					DecimalDigits="" DefaultValue="" Description="Container tracking no of original shipment" Nullable="true"
+					Size="40" Type="VARCHAR2" XMLName="ExtnOriginalTrackingNo" XMLGroup="Extn"
+					SqlServerDataType="" />	
+				
+				<Attribute ColumnName="EXTN_IS_MIGRATED" DecimalDigits=""
+					DefaultValue="N" Description="Indicates whether the order is migrated from ACT"
+					Nullable="true" Size="1" DataType="Flag" XMLName="ExtnIsMigrated"
+					XMLGroup="Extn" SqlServerDataType="" />	
+				<!-- OMS-1092 : Start -->
+				<Attribute ColumnName="EXTN_TOTAL_DISCOUNT"
+					DecimalDigits="" DefaultValue="" Description="Total discount at the line level"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnTotalDiscount" XMLGroup="Extn"  />
+				<Attribute ColumnName="EXTN_TOTAL_TAX"
+					DecimalDigits="" DefaultValue="" Description="Total tax at the line level"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnTotalTax" XMLGroup="Extn"  />
+				<!-- OMS-1092 : End -->
+				<!-- Parcel logic : Start -->
+				 <Attribute ColumnName="EXTN_SHIP_ALONE_SKU_NO"
+                    DataType="Number" DefaultValue=""
+                    Description="This value will be used during release to create separate release for ship alone lines"
+                    Nullable="true" XMLName="ExtnShipAloneSKUNo"  XMLGroup="Extn" />
+				<!-- Parcel logic : End -->
+				<!-- Wholesale : Start -->
+				<Attribute ColumnName="EXTN_REQ_SHIP_DATE"
+                    DataType="TimeStamp" DefaultValue=""
+                    Description="Requested ship date for wholesale order"
+                    Nullable="true" XMLName="ExtnReqShipDate"  XMLGroup="Extn" />
+				<Attribute ColumnName="EXTN_REQ_DELIVERY_DATE"
+                    DataType="TimeStamp" DefaultValue=""
+                    Description="Requested delivery date for wholesale order"
+                    Nullable="true" XMLName="ExtnReqDeliveryDate"  XMLGroup="Extn" />
+				<Attribute ColumnName="EXTN_SHIP_NOT_BEFORE_DATE"
+                    DataType="TimeStamp" DefaultValue=""
+                    Description="Requested delivery date for wholesale order"
+                    Nullable="true" XMLName="ExtnShipNotBeforeDate"  XMLGroup="Extn" />
+				<Attribute ColumnName="EXTN_SHIP_NOT_AFTER_DATE"
+                    DataType="TimeStamp" DefaultValue=""
+                    Description="Requested delivery date for wholesale order"
+                    Nullable="true" XMLName="ExtnShipNotAfterDate"  XMLGroup="Extn" />
+				<Attribute ColumnName="EXTN_DELIVER_NOT_BEFORE_DT"
+                    DataType="TimeStamp" DefaultValue=""
+                    Description="Requested delivery date for wholesale order"
+                    Nullable="true" XMLName="ExtnDeliverNotBeforeDate"  XMLGroup="Extn" />
+				<Attribute ColumnName="EXTN_DELIVER_NOT_AFTER_DT"
+                    DataType="TimeStamp" DefaultValue=""
+                    Description="Requested delivery date for wholesale order"
+                    Nullable="true" XMLName="ExtnDeliverNotAfterDate"  XMLGroup="Extn" />
+				<Attribute ColumnName="EXTN_IS_BACKORDERED"
+                    Type="VARCHAR2" DefaultValue="" Size="3"
+                    Description="Flag to determine whether whole STH order line is backordered or not"
+                    Nullable="true" XMLName="ExtnIsBackordered"  XMLGroup="Extn" />
+				<Attribute ColumnName="EXTN_MARK_FOR_STORE_NO"
+                    DataType="ShipNode" DefaultValue=""
+                    Description="Mark For Store No"
+                    Nullable="true" XMLName="ExtnMarkForStoreNo"  XMLGroup="Extn" />
+				<!-- Wholesale : End -->
+				<!-- Customer order line pickup changes: start-->
+				<Attribute ColumnName="EXTN_PICKUP_EMAIL_FLAG" DecimalDigits=""
+					DefaultValue="N" Description="Used to track customer pickup email"
+					Nullable="true" Size="1" DataType="Flag" XMLName="ExtnPickupEmailFlag"
+					XMLGroup="Extn" SqlServerDataType="" />
+				<!-- Customer order line pickup changes: end-->
+			</Attributes>
+			<!-- Added indexes for customer po no and (shipnode_key and order_header_key) -->	
+			<Indices>
+				<Index Name="EXTN_VSI_ORDER_LINE_007">
+					<Column Name="SHIPNODE_KEY" />
+					<Column Name="ORDER_HEADER_KEY" />
+				</Index>										
+				<Index Name="EXTN_VSI_ORDER_LINE_001">
+					<Column Name="CUSTOMER_PO_NO" />
+				</Index>										
+			</Indices>	
+		</Entity>
+
+		<Entity TableName="YFS_CUSTOMER_CONTACT">
+			<Attributes>
+				<Attribute ColumnName="EMAILID"
+					CaseInsensitiveSearch="Y" />
+
+				<Attribute ColumnName="FIRST_NAME"
+					CaseInsensitiveSearch="Y" />
+
+				<Attribute ColumnName="LAST_NAME"
+					CaseInsensitiveSearch="Y" />
+			</Attributes>
+		</Entity>
+
+		<Entity TableName="YFS_PERSON_INFO">
+			<Attributes>
+				<Attribute ColumnName="ADDRESS_LINE1"
+					CaseInsensitiveSearch="Y" />
+				<!--<Attribute ColumnName="EXTN_MARK_FOR_STORE_NO"
+                    DataType="ShipNode" DefaultValue=" "
+                    Description="Mark For Store No"
+                    Nullable="true" XMLName="ExtnMarkForStoreNo"  XMLGroup="Extn" />-->
+			</Attributes>
+		</Entity>
+
+		<Entity Name="" XMLName="TransactionCharge" ApiNeeded="Y"
+			AuditRequired="N"
+			Description="Entity keeps the information related to tripped fraud rules on a given order"
+			Prefix="VSI_" TableName="VSI_TRANSACTION_CHARGE_RULE">
+			<!-- Table columns -->
+			<Attributes>
+				<Attribute ColumnName="TRAN_KEY" DataType="Key"
+					DefaultValue="' '" XMLName="TranKey" Type="CHAR" Nullable="false"
+					Description="" />
+
+				<Attribute ColumnName="ORDER_HEADER_KEY" DataType="Key"
+					DefaultValue="' '" Type="CHAR" Nullable="false" Description=""
+					XMLName="OrderHeaderKey" />
+
+				<Attribute ColumnName="TRANSACTION_ID"
+					DataType="Text-20" DefaultValue="' '" Description=""
+					XMLName="TransactionID" Type="VARCHAR2" Nullable="false" />
+
+				<Attribute ColumnName="TRANSACTION_AMOUNT"
+					DataType="ComputedMoney" Nullable="true" Description=""
+					XMLName="TransactionAmount" Type="" />
+
+				<Attribute ColumnName="CREATETS" DataType="TimeStamp"
+					DefaultValue="sysdate" Description="" XMLName="AuthLineCreateTS"
+					Type="DATE" />
+
+				<Attribute ColumnName="MODIFYTS" DataType="TimeStamp"
+					DefaultValue="sysdate" Description="" XMLName="AuthLineModifyTS"
+					Type="DATE" />
+
+				<Attribute ColumnName="CREATEUSERID"
+					DataType="Createuserid" DefaultValue="' '" Description=""
+					XMLName="CreateUserID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="MODIFYUSERID"
+					DataType="Modifyuserid" DefaultValue="' '" Description=""
+					XMLName="ModifyUserID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="Createprogid" DefaultValue="' '" Description=""
+					XMLName="CreateProgID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="Modifyprogid" DefaultValue="' '" Description=""
+					XMLName="ModifyProgID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="" XMLName="LockID" Type="NUMBER" />
+			</Attributes>
+
+			<!-- PrimaryKey is a mandatory attribute in entity definition. This element can have ONLY ONE attribute element -->
+			<PrimaryKey Name="TranKey">
+				<Attribute ColumnName="TRAN_KEY" />
+			</PrimaryKey>
+
+			<Indices></Indices>
+
+			<Parent ParentTableName="YFS_ORDER_HEADER">
+				<Attribute ColumnName="ORDER_HEADER_KEY"
+					ParentColumnName="ORDER_HEADER_KEY" />
+			</Parent>
+		</Entity>
+		<Entity Name="" XMLName="AJBSettlement" ApiNeeded="Y"
+			AuditRequired="N"
+			Description="Entity keeps the information related to tripped fraud rules on a given order"
+			Prefix="VSI_" TableName="VSI_AJB_SETTLEMENT_RECORDS">
+
+			<!-- Table columns -->
+			<Attributes>
+
+				<Attribute ColumnName="SETTLEMENT_KEY" DataType="Key"
+					DefaultValue="' '" XMLName="SettlementKey" Type="CHAR"
+					Nullable="false" Description="" />
+				                               
+				<Attribute ColumnName="ORDER_HEADER_KEY" DataType="Key"
+					DefaultValue="' '" Type="CHAR" Nullable="false" Description=""
+					XMLName="OrderHeaderKey" />
+				                               
+				<Attribute ColumnName="STORE_NUMBER" DataType="Text-20"
+					DefaultValue="' '" Description="" XMLName="StoreNumber"
+					Type="VARCHAR2" Nullable="false" />
+				<Attribute ColumnName="AUTHORIZATION_NUMBER"
+					DataType="Text-20" DefaultValue="' '" Description=""
+					XMLName="AuthorizationNumber" Type="VARCHAR2" Nullable="false" />
+				<Attribute ColumnName="TERMINAL_NAME" DataType="Text-20"
+					Nullable="true" Description="" XMLName="TerminalName"
+					Type="VARCHAR2" />
+					
+					<Attribute ColumnName="AVS_RESP"
+					DataType="Text-20" DefaultValue="' '" Description=""
+					XMLName="AvsResp" Type="VARCHAR2" Nullable="false" />
+
+				<Attribute ColumnName="TRANSACTION_AMOUNT"
+					DataType="ComputedMoney" Nullable="true" Description=""
+					XMLName="TransactionAmount" Type="NUMBER" />
+				<Attribute ColumnName="TRANSACTION_AQ_TIME"
+					DataType="Text-20" DefaultValue="' '" Description=""
+					XMLName="TransactionAqTime" Type="VARCHAR2" Nullable="false" />
+				<Attribute ColumnName="TRANSACTION_AQ_DATE"
+					DataType="Text-20" DefaultValue="' '" Description=""
+					XMLName="TransactionAqDate" Type="VARCHAR2" Nullable="false" />
+				<Attribute ColumnName="TRANSACTION_AQ_CODE"
+					DataType="Text-20" DefaultValue="' '" Description=""
+					XMLName="TransactionAqCode" Type="VARCHAR2" Nullable="false" />
+				<Attribute ColumnName="TRANSACTION_SOURCE"
+					DataType="Text-20" DefaultValue="' '" Description=""
+					XMLName="TransactionSource" Type="VARCHAR2" Nullable="false" />
+				<Attribute ColumnName="CHARGE_TRAN_KEY" DataType="Key"
+					DefaultValue="' '" Description="" XMLName="ChargeTransactionKey"
+					Type="CHAR" Nullable="false" />
+				<Attribute ColumnName="TRANSACTION_TYPE"
+					DataType="Text-20" DefaultValue="' '" Description=""
+					XMLName="TransactionType" Type="VARCHAR2" Nullable="false" />
+				<Attribute ColumnName="TRANSACTION_NUMBER"
+					DataType="Text-20" DefaultValue="' '" Description=""
+					XMLName="TransactionNumber" Type="VARCHAR2" Nullable="false" />
+				<Attribute ColumnName="TOKEN_NUMBER" DataType="Text-20"
+					DefaultValue="' '" Description="" XMLName="TokenNumber"
+					Type="VARCHAR2" Nullable="false" />
+				<Attribute ColumnName="IS_SETTLED" DataType="Flag"
+					DefaultValue="N" Description="" XMLName="IsSettled" Type="CHAR" />
+				<Attribute ColumnName="EXPIRY_DATE" DataType="Text-20"
+					DefaultValue="' '" Description="" XMLName="ExpiryDate"
+					Type="VARCHAR2" Nullable="false" />
+				<Attribute ColumnName="BATCH_NO" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="Batch Number"
+					Type="VARCHAR2" Size="200" Nullable="true" XMLName="BatchNo" />
+
+
+
+				<Attribute ColumnName="CREATETS" DataType="TimeStamp"
+					DefaultValue="sysdate" Description="" XMLName="AuthLineCreateTS"
+					Type="DATE" />
+
+				<Attribute ColumnName="MODIFYTS" DataType="TimeStamp"
+					DefaultValue="sysdate" Description="" XMLName="AuthLineModifyTS"
+					Type="DATE" />
+				                                                               
+				<Attribute ColumnName="CREATEUSERID"
+					DataType="Createuserid" DefaultValue="' '" Description=""
+					XMLName="CreateUserID" Type="VARCHAR2" />
+				                                                               
+				<Attribute ColumnName="MODIFYUSERID"
+					DataType="Modifyuserid" DefaultValue="' '" Description=""
+					XMLName="ModifyUserID" Type="VARCHAR2" />
+				                                                               
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="Createprogid" DefaultValue="' '" Description=""
+					XMLName="CreateProgID" Type="VARCHAR2" />
+				                                                               
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="Modifyprogid" DefaultValue="' '" Description=""
+					XMLName="ModifyProgID" Type="VARCHAR2" />
+				                                                               
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="" XMLName="LockID" Type="NUMBER" />
+
+				               
+			</Attributes>
+
+			<!-- PrimaryKey is a mandatory attribute in entity definition. This element can have ONLY ONE attribute element -->
+			                                               
+			<PrimaryKey Name="SettlementKey">
+				                                                               
+				<Attribute ColumnName="SETTLEMENT_KEY" />
+				                                               
+			</PrimaryKey>
+			
+			<Parent ParentTableName="YFS_ORDER_HEADER">
+				<Attribute ColumnName="ORDER_HEADER_KEY"
+					ParentColumnName="ORDER_HEADER_KEY" />
+			</Parent>
+			
+			<!-- Added Index for ORDER_HEADER_KEY -->		
+			<Indices>
+				<Index Name="EXTN_VSI_AJB_RECORDS_001">
+					<Column Name="ORDER_HEADER_KEY" />
+				</Index>
+-           <!--Added index for OMS-1397-->
+				<Index Name="EXTN_VSI_AJB_RECORDS_002">
+					<Column Name="STORE_NUMBER" />
+				</Index>
+				<Index Name="EXTN_VSI_AJB_RECORDS_003">
+					<Column Name="TRANSACTION_AQ_DATE" />
+				</Index>
+			<!--Added index for OMS-1397-->				                                               
+			</Indices>	
+
+		</Entity>
+
+
+
+
+		<Entity Name="" XMLName="Voucher" ApiNeeded="Y"
+			AuditRequired="N" Description="Vouchers Table" Prefix="VSI"
+			TableName="VSI_VOUCHERS">
+			<!-- Table columns -->
+			<Attributes>
+				<Attribute ColumnName="CERTIFICATE_NO"
+					DataType="Text-20" DefaultValue="" XMLName="CertNo" Type="VARCHAR2"
+					Nullable="false" Description="" />
+
+				<Attribute ColumnName="CERT_TYPE" DataType="Text-20"
+					DefaultValue="" Description="" XMLName="CertType" Type="CHAR"
+					Nullable="true" />
+
+				<Attribute ColumnName="ISSUE_AMOUNT" DataType="Text-20"
+					DefaultValue="" Description="" XMLName="IssueAmount"
+					Type="VARCHAR2" Nullable="true" />
+
+				<Attribute ColumnName="ISSUE_CUSTOMER_NO"
+					DataType="Text-20" DefaultValue="" Description=""
+					XMLName="IssueCustNo" Type="VARCHAR2" Nullable="true" />
+
+				<Attribute ColumnName="ISSUE_DATE" DataType="TimeStamp"
+					DefaultValue="" Description="" XMLName="IssueDate" Type="DATE"
+					Nullable="true" />
+
+				<Attribute ColumnName="ISSUE_STORE" DataType="Text-20"
+					DefaultValue="" Description="" XMLName="IssueStore" Type="VARCHAR2"
+					Nullable="true" />
+
+				<Attribute ColumnName="ISSUE_ORDER_NO"
+					DataType="Text-20" DefaultValue="" Description=""
+					XMLName="IssueOrderNo" Type="VARCHAR2" Nullable="true" />
+
+				<Attribute ColumnName="REDEEM_AMOUNT" DataType="Text-20"
+					DefaultValue="" Description="" XMLName="RedeemAmount"
+					Type="VARCHAR2" Nullable="true" />
+
+				<Attribute ColumnName="REDEEM_STATUS" DataType="Flag"
+					DefaultValue="N" Description="" XMLName="RedeemStatus" Type="CHAR"
+					Nullable="true" />
+
+				<Attribute ColumnName="REDEEM_DATE" DataType="TimeStamp"
+					DefaultValue="" Description="" XMLName="RedeemDate" Type="DATE"
+					Nullable="true" />
+
+				<Attribute ColumnName="REDEEM_STORE" DataType="Text-20"
+					DefaultValue="" Description="" XMLName="RedeemStore"
+					Type="VARCHAR2" Nullable="true" />
+
+				<Attribute ColumnName="REDEEM_ORDER_NO"
+					DataType="Text-20" DefaultValue="" Description=""
+					XMLName="RedeemOrderNo" Type="VARCHAR2" Nullable="true" />
+
+				<Attribute ColumnName="REDEEM_CUSTOMER_NO"
+					DataType="Text-20" DefaultValue="" Description=""
+					XMLName="RedeemCustomerNo" Type="VARCHAR2" Nullable="true" />
+
+				<Attribute ColumnName="COMMENTS" DataType="Text-20"
+					DefaultValue="" Description="" XMLName="Comments" Type="VARCHAR2"
+					Nullable="true" />
+
+				<Attribute ColumnName="DATE_MODIFIED"
+					DataType="TimeStamp" DefaultValue="sysdate" Description=""
+					XMLName="DateModified" Type="DATE" Nullable="true" />
+
+				<Attribute ColumnName="CREATETS" DataType="TimeStamp"
+					DefaultValue="sysdate" Description="" XMLName="VoucherCreateTS"
+					Type="DATE" />
+
+				<Attribute ColumnName="MODIFYTS" DataType="TimeStamp"
+					DefaultValue="sysdate" Description="" XMLName="VoucherModifyTS"
+					Type="DATE" />
+
+				<Attribute ColumnName="CREATEUSERID"
+					DataType="Createuserid" DefaultValue="' '" Description=""
+					XMLName="CreateUserID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="MODIFYUSERID"
+					DataType="Modifyuserid" DefaultValue="' '" Description=""
+					XMLName="ModifyUserID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="Createprogid" DefaultValue="' '" Description=""
+					XMLName="CreateProgID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="Modifyprogid" DefaultValue="' '" Description=""
+					XMLName="ModifyProgID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="" XMLName="LockID" Type="NUMBER" />
+			</Attributes>
+
+			<!-- PrimaryKey is a mandatory attribute in entity definition. This element can have ONLY ONE attribute element -->
+			<PrimaryKey Name="CertificateNo">
+				<Attribute ColumnName="CERTIFICATE_NO" />
+			</PrimaryKey>
+		</Entity>
+
+		<Entity TableName="YFS_ITEM">
+			<Attributes>
+				<Attribute ColumnName="EXTN_ACT_SKU_ID" DefaultValue=""
+					Description="ACT/JDA sku id" Nullable="true" Size="40" Type="CHAR"
+					XMLName="ExtnActSkuID" XMLGroup="Extn" />
+				<Attribute ColumnName="EXTN_PACK_REFERENCE" DefaultValue="" Description="Packing Instructions" Nullable="true" Size="40" Type="VARCHAR2" XMLName="ExtnPackingReference" XMLGroup="Extn" />
+				//OMS-2485 Start
+                                        <Attribute ColumnName="EXTN_SFS_ELIGIBLE" DefaultValue=""
+					Description="Is sku SFS Eligible" Nullable="true" Size="10" Type="CHAR"
+					XMLName="ExtnSFSEligible" XMLGroup="Extn" />
+                                //OMS-2485 End
+				<Attribute ColumnName="EXTN_SKU_TYPE" DefaultValue=""
+					Description="ACT/JDA sku type" Nullable="true" Size="10" Type="CHAR"
+					XMLName="ExtnSKUType" XMLGroup="Extn" />
+					<Attribute ColumnName="EXTN_INTERNET_MSRP" DefaultValue=""
+					Description="ACT/JDA Internet MSRP" Nullable="true" Size="10" Type="CHAR"
+					XMLName="ExtnInternetMSRP" XMLGroup="Extn" />
+					<Attribute ColumnName="EXTN_ATG_ELIGIBLE"
+					Description="Fag for ATG eligible SKU"
+					Nullable="true"  DataType="Flag"
+					DefaultValue="N" XMLName="ExtnATGEligible"
+					XMLGroup="Extn" />
+				<Attribute ColumnName="EXTN_BRAND" DefaultValue=""
+					Description="Brand Name" Nullable="true" Size="100" Type="CHAR"
+					XMLName="ExtnBrand" XMLGroup="Extn" />
+				<Attribute ColumnName="EXTN_TAX_PRODUCT_CODE"
+					DefaultValue="" Description="Tax product code to calculate taxes"
+					Nullable="true" Size="40" Type="CHAR" XMLName="ExtnTaxProductCode"
+					XMLGroup="Extn" />
+					
+				<Attribute ColumnName="EXTN_BRAND_TITLE"
+					DefaultValue="" Description="Brand title"
+					Nullable="true" Size="100" Type="CHAR" XMLName="ExtnBrandTitle"
+					XMLGroup="Extn" />
+					
+				<Attribute ColumnName="EXTN_ITEM_SIZE"
+					DefaultValue="" Description="Size Of Item"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnItemSize"
+					XMLGroup="Extn" />
+					
+				<Attribute ColumnName="EXTN_ITEM_UOM"
+					DefaultValue="" Description="UOM Of Item"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnItemUOM"
+					XMLGroup="Extn" />
+					
+				<Attribute ColumnName="EXTN_ITEM_TYPE"
+					DefaultValue="" Description="Type Of Item"
+					Nullable="true" Size="100" Type="CHAR" XMLName="ExtnItemType"
+					XMLGroup="Extn" />
+					
+				<Attribute ColumnName="EXTN_IS_PROP65_ITEM"
+				    	Description="Prop 65 item flag"
+					Nullable="true"  DataType="Flag"
+					DefaultValue="N" XMLName="ExtnIsProp65Item"
+					XMLGroup="Extn" />
+					
+				<Attribute ColumnName="EXTN_IS_REFRIGERATED_ITEM"
+					Description="Refrigerated Item Flag"
+					Nullable="true"  DataType="Flag"
+					DefaultValue="N" XMLName="ExtnIsRefrigeratedItem"
+					XMLGroup="Extn" />
+					
+										
+				<Attribute ColumnName="EXTN_DISCONTINUED_DATE"
+					DefaultValue="" Description="Date for discontinuity"
+					Nullable="true" Size="100" Type="CHAR" XMLName="ExtnIsDiscontinuedDate"
+					XMLGroup="Extn" />
+					
+				<Attribute ColumnName="EXTN_SHIP_ALONE"
+					Description="Ship Alone flag"
+					Nullable="true"  DataType="Flag"
+					DefaultValue="N" XMLName="ExtnShipAlone"
+					XMLGroup="Extn" />
+				<Attribute ColumnName="EXTN_IS_DISCONTINUED_ITEM"
+					Description="Disconinued date flag"
+					Nullable="true"  DataType="Flag"
+					DefaultValue="N" XMLName="ExtnIsDiscontinuedItem"
+					XMLGroup="Extn" />
+					
+				<Attribute ColumnName="EXTN_IS_RESTRICTED_ITEM"
+					Description="Indicates if item is restricted in certain area."
+					Nullable="true"  DataType="Flag"
+					DefaultValue="N" XMLName="ExtnIsRestrictedItem"
+					XMLGroup="Extn" />
+					
+				<Attribute ColumnName="EXTN_IS_SIGNATURE_REQD_ITEM"
+					Description="Indicated signature reqd during order delivery"
+					Nullable="true"  DataType="Flag"
+					DefaultValue="N" XMLName="ExtnIsSignReqdItem"
+					XMLGroup="Extn" />
+					
+				<Attribute ColumnName="EXTN_IS_RECALLED_ITEM"
+					Description="Indicated signature reqd during order delivery"
+					Nullable="true"  DataType="Flag"
+					DefaultValue="N" XMLName="ExtnIsRecalledItem"
+					XMLGroup="Extn" />
+					
+				<Attribute ColumnName="EXTN_IS_VSI_BRAND_ITEM" 
+					Description="Stores if item is a VSI brand item" Nullable="true" Type="CHAR"
+					XMLName="ExtnIsVSIBrandItem" XMLGroup="Extn" DataType="Flag" />
+				
+				<Attribute ColumnName="EXTN_IS_MCL_ITEM"
+					Description="Indicates if SKU is a MCL SKU"
+					Nullable="true"  DataType="Flag"
+					DefaultValue="N" XMLName="ExtnIsMCLItem"
+					XMLGroup="Extn" />
+				
+				<!-- OMS-1654 start-->		
+			   <Attribute ColumnName="EXTN_DEPT"
+					DefaultValue="" Description="extn dept"
+					Nullable="true" Size="40" Type="VARCHAR2" XMLName="ExtnDept"
+					XMLGroup="Extn" />
+				<Attribute ColumnName="EXTN_CLASS"
+					DefaultValue="" Description="extn class"
+					Nullable="true" Size="40" Type="VARCHAR2" XMLName="ExtnClass"
+					XMLGroup="Extn" />
+		        <!-- OMS-1654 End-->
+				
+					<!-- Case Pack Quantity -->
+					<Attribute ColumnName="EXTN_CASE_QTY"
+					Description="Case Pack Quantity"
+					DataType="Quantity" DefaultValue="1" Nullable="false" 
+					XMLName="ExtnCaseQuantity"
+					XMLGroup="Extn" />				
+				<!-- OMS-1801 start-->		
+			   <Attribute ColumnName="EXTN_COLOR"
+					DefaultValue="" Description="extn color"
+					Nullable="true" Size="40" Type="VARCHAR2" XMLName="ExtnColor"
+					XMLGroup="Extn" />
+				<Attribute ColumnName="EXTN_STYLE"
+					DefaultValue="" Description="extn style"
+					Nullable="true" Size="40" Type="VARCHAR2" XMLName="ExtnStyle"
+					XMLGroup="Extn" />
+		        <!-- OMS-1801 End-->			
+			</Attributes>
+		</Entity>
+
+
+
+		<Entity TableName="YFS_PROMOTION">
+			<Attributes>
+
+				<Attribute ColumnName="EXTN_COUPON_ID" DecimalDigits=""
+					DefaultValue="" Description="Extn Coupon ID" Nullable="true"
+					Size="20" Type="CHAR" XMLName="ExtnCouponID" XMLGroup="Extn"
+					SqlServerDataType="" />
+
+				<Attribute ColumnName="EXTN_IS_EMP_DISCOUNT"
+					DecimalDigits="" DefaultValue="N"
+					Description="Is Employee Discount" Type="CHAR" Size="1"
+					Nullable="true" XMLGroup="Extn" XMLName="IsEmpDisc"
+					SqlServerDataType="" />
+
+				<Attribute ColumnName="EXTN_DISC_LEVEL" DecimalDigits=""
+					DefaultValue="" Description="Extn DiscLevel" Nullable="true"
+					Size="20" Type="CHAR" XMLName="DiscLevel" XMLGroup="Extn"
+					SqlServerDataType="" />
+
+				<Attribute ColumnName="EXTN_FNAME" DecimalDigits=""
+					DefaultValue="" Description="Extn Fname" Nullable="true" Size="20"
+					Type="CHAR" XMLName="FName" XMLGroup="Extn" SqlServerDataType="" />
+
+				<Attribute ColumnName="EXTN_LNAME1" DecimalDigits=""
+					DefaultValue="" Description="Extn LName1" Nullable="true" Size="20"
+					Type="CHAR" XMLName="LName1" XMLGroup="Extn" SqlServerDataType="" />
+
+				<Attribute ColumnName="EXTN_LNAME2" DecimalDigits=""
+					DefaultValue="" Description="Extn LName2" Nullable="true" Size="20"
+					Type="CHAR" XMLName="LName2" XMLGroup="Extn" SqlServerDataType="" />
+
+				<Attribute ColumnName="EXTN_EMPLOYEE_ID"
+					DecimalDigits="" DefaultValue="" Description="Extn EmployeeID"
+					Nullable="true" Size="20" Type="CHAR" XMLName="EmployeeID"
+					XMLGroup="Extn" SqlServerDataType="" />
+					
+					<Attribute ColumnName="EXTN_DESCRIPTION"
+					DecimalDigits="" DefaultValue="" Description="Extn Description"
+					Nullable="true" Size="500" Type="VARCHAR2" XMLName="ExtnDescription"
+					XMLGroup="Extn" SqlServerDataType="" />
+
+			</Attributes>
+
+		</Entity>
+
+		<Entity ApiNeeded="Y" AuditRequired="N" Description=""
+			HasHistory="Y" Prefix="VSI_" TableName="VSI_ORDER_TOB"
+			XMLName="VSIOrderTOB">
+			<Attributes>
+				<Attribute ColumnName="CREATETS" DataType="Createts"
+					DefaultValue="sysdate" Description="Create Time Stamp" />
+
+				<Attribute ColumnName="MODIFYTS" DataType="Modifyts"
+					DefaultValue="sysdate" Description="Modify Time Stamp" />
+
+				<Attribute ColumnName="CREATEUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Creating User ID" />
+
+				<Attribute ColumnName="MODIFYUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Modifying User ID" />
+
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Creating Program ID" />
+
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Modifying Program ID" />
+
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="Lock ID" />
+
+				<Attribute ColumnName="EXTN_VSI_ORDER_TOB_KEY"
+					DataType="Key" DefaultValue="' '" Description="" Nullable="False"
+					XMLName="ExtnVSIOrderTobKey" />
+
+				<Attribute ColumnName="ORDER_HEADER_KEY" DataType="Key"
+					DefaultValue="' '" Description="" Nullable="False"
+					XMLName="OrderHeaderKey" />
+
+				<Attribute ColumnName="EXTN_CLIENT_ID" DataType=""
+					DecimalDigits="" DefaultValue="''"
+					Description="POS: Identifies client identification string"
+					Type="VARCHAR2" Size="120" Nullable="true" XMLName="ClientID" />
+
+				<Attribute ColumnName="PICKUP_TOB" DataType="CLOB"
+					DefaultValue="''" Description="TOB that is created is placed here"
+					Nullable="true" Name="PickupTob" XMLName="PickupTob"  CompressionSupported="true"
+                    UseCompression="true"/>
+
+				<Attribute ColumnName="VSI_ATG_TO_ACT" DataType="CLOB"
+					DefaultValue="''" Description="ATG original xml that is created is placed here"
+					Nullable="true" Name="VSIAtgToACT" XMLName="VSIAtgToACT"  CompressionSupported="true"
+                    UseCompression="true"/>
+					
+				<Attribute ColumnName="IS_TOB_DIRTY" DataType="Flag"
+					DefaultValue="'N'" Description="Indicates if TOB is dirty or not."
+					Nullable="false" Name="IsTobDirty" XMLName="IsTobDirty" />
+				<Attribute ColumnName="IS_CASH_AND_CARRY_INCL"
+					DataType="Flag" DefaultValue="'N'"
+					Description="Indicates if Cash and Carry is Included"
+					Nullable="false" Name="IsCashandCarryIncl"
+					XMLName="IsCashandCarryIncl" />
+
+				<Attribute ColumnName="EXTN_EMPLOYEE_NUM" DataType=""
+					DecimalDigits="" DefaultValue="''"
+					Description="POS: Employee number" Type="VARCHAR2" Size="40"
+					Nullable="true" XMLName="EmployeeNum" />
+
+				<Attribute ColumnName="EXTN_WKSTN" DataType=""
+					DecimalDigits="" DefaultValue="''"
+					Description="POS: The workstation number" Type="VARCHAR2"
+					Size="120" Nullable="true" XMLName="Wkstn" />
+
+				<Attribute ColumnName="EXTN_IS_ABORT" DataType=""
+					DecimalDigits="" DefaultValue="''"
+					Description="POS: Transaction aborted" Type="VARCHAR2" Size="120"
+					Nullable="true" XMLName="IsAbort" />
+
+				<Attribute ColumnName="EXTN_COUPON" DataType=""
+					DecimalDigits="" DefaultValue="''"
+					Description="POS: Coupon number used to identify coupon activated promotions."
+					Type="VARCHAR2" Size="120" Nullable="true" XMLName="Coupon" />
+
+				<Attribute ColumnName="EXTN_STATUS" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="POS: Order Status"
+					Type="VARCHAR2" Size="120" Nullable="true" XMLName="Status" />
+
+				<Attribute ColumnName="EXTN_BALANCE_DUE" DataType=""
+					DecimalDigits="" DefaultValue="''"
+					Description="POS: Remaining order account balance" Type="VARCHAR2"
+					Size="120" Nullable="true" XMLName="BalanceDue" />
+
+				<Attribute ColumnName="EXTN_TYPE" DataType=""
+					DecimalDigits="" DefaultValue="N" Description="POS: Order Type"
+					Type="VARCHAR2" Size="20" Nullable="true" XMLName="Type" />
+
+				<Attribute ColumnName="EXTN_ACCT_STATUS" DataType=""
+					DecimalDigits="" DefaultValue="N"
+					Description="POS: The account status." Type="VARCHAR2" Size="20"
+					Nullable="true" XMLName="AcctStatus" />
+				<!--OMS-753 updating the size from 120 to 2000       -->
+				<Attribute ColumnName="EXTN_ORDER_COMMENTS" DataType=""
+					DecimalDigits="" DefaultValue="''"
+					Description="POS: Represents a comment made on a customer order"
+					Type="VARCHAR2" Size="2000" Nullable="true" XMLName="OrderComments" />
+
+			</Attributes>
+
+			<PrimaryKey Name="VSI_ORDER_TOB_PK">
+				<Attribute ColumnName="EXTN_VSI_ORDER_TOB_KEY" />
+			</PrimaryKey>
+
+			<!-- Added index for order header key -->
+			<Indices>
+				<Index Name="EXTN_VSI_ORDER_TOB_001">
+					<Column Name="ORDER_HEADER_KEY" />
+				</Index>										
+			</Indices>
+
+			<!-- Relationship -->
+			<Parent ParentTableName="YFS_ORDER_HEADER">
+				<Attribute ColumnName="ORDER_HEADER_KEY"
+					ParentColumnName="ORDER_HEADER_KEY" />
+			</Parent>
+		</Entity>
+
+		<Entity Name="" XMLName="TNSAuthRecords" ApiNeeded="Y"
+			AuditRequired="N"
+			Description="Entity keeps the information related to authorization records"
+			Prefix="VSI_" TableName="VSI_TNS_AUTH_RECORD">
+			<!-- Table columns -->
+			<Attributes>
+				<Attribute ColumnName="TNS_AUTH_RECORD_KEY"
+					DataType="Key" DefaultValue="' '" XMLName="TNSAuthRecordKey"
+					Type="CHAR" Nullable="false" Description="" />
+
+				<Attribute ColumnName="ORDER_HEADER_KEY" DataType="Key"
+					DefaultValue="' '" Type="CHAR" Nullable="false" Description=""
+					XMLName="OrderHeaderKey" />
+
+				<Attribute ColumnName="TRANSACTION_ID" DataType=""
+					DefaultValue="' '" Description="" XMLName="TransactionID"
+					Type="VARCHAR2" Size="40" Nullable="false" />
+				<Attribute ColumnName="TRANSACTION_TERMINAL"
+					DataType="Text-20" DefaultValue="' '" Description=""
+					XMLName="TransactionTerminal" Type="VARCHAR2" Nullable="false" />
+					<Attribute ColumnName="AVS_RESP"
+					DataType="Text-20" DefaultValue="' '" Description=""
+					XMLName="AvsResp" Type="VARCHAR2" Nullable="false" />
+					 <!--OMS-2046: START-->
+				<Attribute ColumnName="CVV_RESP"
+                    DefaultValue="" Description="CVVResp"
+                    Nullable="true" Size="100" Type="VARCHAR2" XMLName="CVVResp" />
+                <Attribute ColumnName="AVS_GATEWAYCODE"
+                    DefaultValue="" Description="AvsGatewayCode"
+                    Nullable="true" Size="100" Type="VARCHAR2" XMLName="AvsGatewayCode" />					
+                    <!--OMS-2046: END-->
+					
+				<Attribute ColumnName="AURUS_RESPONSE_CODE"
+                    DefaultValue="" Description="AurusResponseCode"
+                    Nullable="true" Size="100" Type="VARCHAR2" XMLName="AurusResponseCode" />
+				<Attribute ColumnName="PROCESSOR_RESPONSE_CODE"
+                    DefaultValue="" Description="ProcessorResponseCode"
+                    Nullable="true" Size="100" Type="VARCHAR2" XMLName="ProcessorResponseCode" />
+
+				<Attribute ColumnName="TRANSACTION_RECEIPT"
+					DataType="Text-20" DefaultValue="' '" Description=""
+					XMLName="TransactionReceipt" Type="VARCHAR2" Nullable="false" />
+				<Attribute ColumnName="TRANSACTION_SOURCE"
+					DataType="Text-20" DefaultValue="' '" Description=""
+					XMLName="TransactionSource" Type="VARCHAR2" Nullable="false" />
+				<Attribute ColumnName="TRANSACTION_AUTH_CODE"
+					DataType="Text-20" DefaultValue="' '" Description=""
+					XMLName="TransactionAuthCode" Type="VARCHAR2" Nullable="false" />
+				<Attribute ColumnName="TRANSACTION_AQ_TIME"
+					DataType="Text-20" DefaultValue="' '" Description=""
+					XMLName="TransactionAqTime" Type="VARCHAR2" Nullable="false" />
+				<Attribute ColumnName="TRANSACTION_AQ_DATE"
+					DataType="Text-20" DefaultValue="' '" Description=""
+					XMLName="TransactionAqDate" Type="VARCHAR2" Nullable="false" />
+				<Attribute ColumnName="TRANSACTION_AQ_CODE"
+					DataType="Text-20" DefaultValue="' '" Description=""
+					XMLName="TransactionAqCode" Type="VARCHAR2" Nullable="false" />
+				<Attribute ColumnName="EXPIRY_DATE" DataType="Text-20"
+					DefaultValue="' '" Description="" XMLName="ExpiryDate"
+					Type="VARCHAR2" Nullable="false" />
+
+				<Attribute ColumnName="TRANSACTION_IDENTIFIER" DataType=""
+				       DefaultValue="" Size="40" Description="" XMLName="ExtnAurusTransactionIdentifier"
+				       Type="VARCHAR2" Nullable="true" />                                                      
+				
+				<Attribute ColumnName="REFERENCE_NUMBER"
+				       DataType="" DefaultValue="" Description="" XMLName="ReferenceNumber"
+				       Type="VARCHAR2" Size="40" Nullable="true" />
+				                                                       
+				<Attribute ColumnName="AURUS_PAY_TICKETNUM" DataType=""
+				       DefaultValue="" Description="" XMLName="AurusPayTicketNumber"
+				       Type="VARCHAR2" Size="40" Nullable="true" />
+				                                 
+				<Attribute ColumnName="EXTN_AURUS_TOKEN" DecimalDigits=""
+				       DefaultValue="" Description="ExtnAurusToken"
+				       Nullable="true" Size="1" Type="CHAR" XMLName="ExtnAurusToken"/>
+
+				<Attribute ColumnName="CREATETS" DataType="TimeStamp"
+					DefaultValue="sysdate" Description="" XMLName="AuthLineCreateTS"
+					Type="DATE" />
+
+				<Attribute ColumnName="MODIFYTS" DataType="TimeStamp"
+					DefaultValue="sysdate" Description="" XMLName="AuthLineModifyTS"
+					Type="DATE" />
+
+				<Attribute ColumnName="CREATEUSERID"
+					DataType="Createuserid" DefaultValue="' '" Description=""
+					XMLName="CreateUserID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="MODIFYUSERID"
+					DataType="Modifyuserid" DefaultValue="' '" Description=""
+					XMLName="ModifyUserID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="Createprogid" DefaultValue="' '" Description=""
+					XMLName="CreateProgID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="Modifyprogid" DefaultValue="' '" Description=""
+					XMLName="ModifyProgID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="" XMLName="LockID" Type="NUMBER" />
+			</Attributes>
+
+			<!-- PrimaryKey is a mandatory attribute in entity definition. This element can have ONLY ONE attribute element -->
+			<PrimaryKey Name="TNSAuthRecordKey">
+				<Attribute ColumnName="TNS_AUTH_RECORD_KEY" />
+			</PrimaryKey>
+
+			<Indices>
+				<Index Name="EXTN_VSI_TNS_AUTH_RECORD_001">
+					<Column Name="ORDER_HEADER_KEY" />
+				</Index>
+			</Indices>
+
+			<Parent ParentTableName="YFS_ORDER_HEADER">
+				<Attribute ColumnName="ORDER_HEADER_KEY"
+					ParentColumnName="ORDER_HEADER_KEY" />
+			</Parent>
+		</Entity>
+		<Entity TableName="YFS_SHIPMENT">
+			<Attributes>
+				<Attribute ColumnName="EXTN_SHIPMENT_SEQ_NO"
+					DecimalDigits="" DefaultValue=""
+					Description="Shipment Sequence number for an order" Nullable="true"
+					Size="20" Type="CHAR" XMLName="ShipmentSeqNo" XMLGroup="Extn"
+					SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_IS_MIGRATED" DecimalDigits=""
+					DefaultValue="N" Description="Indicates whether the order is migrated from ACT"
+					Nullable="true" Size="1" DataType="Flag" XMLName="ExtnIsMigrated"
+					XMLGroup="Extn" SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_DM_BATCH_NO"
+					Type="VARCHAR2" Size="64"
+					Description="Batch No - Data Migration Orders"
+					Nullable="true" XMLName="ExtnDMBatchNo"
+					XMLGroup="Extn"/>
+				<!-- OMS-915 : Start -->
+				<Attribute ColumnName="EXTN_TRANSACTION_NO"
+					DecimalDigits="" DefaultValue=""
+					Description="Transaction no sent to sales audit" Nullable="true"
+					Size="20" Type="CHAR" XMLName="ExtnTransactionNo" XMLGroup="Extn"
+					SqlServerDataType="" />
+				<!-- OMS-915 : End -->
+				<Attribute ColumnName="EXTN_LAST_TRAILER_SHIP"
+					DataType="Flag" Size="1" DecimalDigits=""
+					DefaultValue="N"
+					Description="Indicates whether It is Last Shipment in the Trailer"
+					Nullable="true" XMLName="ExtnLastTrailerShip"
+					XMLGroup="Extn" SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_UNIQUE_TRAILER_ID"
+					DecimalDigits="" DefaultValue=""
+					Description="Unique Trailer ID for wholesale shipments" Nullable="true"
+					DataType="Text-20" XMLName="ExtnUniqueTrailerID" XMLGroup="Extn"
+					SqlServerDataType="" />
+				<!--OMS-1892 START-->	
+				<Attribute ColumnName="EXTN_SHIP_DATE" Size="50"
+					DefaultValue="" Description="ShipDate received from IIB" XMLName="ExtnShipDate" XMLGroup="Extn"
+					Type="VARCHAR2" Nullable="true" />
+				<!--OMS-1892 END--> 	
+				<!--SOM and SFS Print Changes START-->
+				<Attribute ColumnName="EXTN_PICK_PACK_FLAG" Size="10"
+					DefaultValue="" Description="BackRoom Pick Completion Flag" XMLName="ExtnPickPackFlag" XMLGroup="Extn"
+					Type="VARCHAR2" Nullable="true" />
+				<Attribute ColumnName="EXTN_CUSTOMER_RECEIPT_FLAG" Size="10"
+					DefaultValue="" Description="Customer Pickup Completion Flag" XMLName="ExtnCustomerReceiptFlag" XMLGroup="Extn"
+					Type="VARCHAR2" Nullable="true" />
+				<Attribute ColumnName="EXTN_PACK_SHIP_FLAG" Size="10"
+					DefaultValue="" Description="Pack Ship Completion Flag" XMLName="ExtnPackShipFlag" XMLGroup="Extn"
+					Type="VARCHAR2" Nullable="true" />
+				<!--SOM and SFS Print Changes END-->
+			</Attributes>
+			<Indices>
+				<Index Name="EXTN_SHIPMENT_I1" >
+					<Column Name="EXTN_UNIQUE_TRAILER_ID" />
+				</Index>
+			</Indices>
+		</Entity>
+		<!-- OMS-1589 : Start -->
+		<Entity TableName="YFS_INBOX">
+			<Attributes>
+			    <Attribute ColumnName="EXTN_ORDER_RELEASE_KEY" DecimalDigits=""
+					DefaultValue="" Description="store orderReleaseKey"
+					Nullable="true" Size="25" Type="VARCHAR2" XMLName="OrderReleaseKey"
+					XMLGroup="Extn" SqlServerDataType="" />	
+			
+			</Attributes>
+			<Indices>
+			<Index Name="ORDER_RELEASE_KEY_I1" >
+				<Column Name="EXTN_ORDER_RELEASE_KEY" />
+			</Index>
+		</Indices>
+		</Entity>
+		<!-- OMS-1589 : End -->
+		
+		<Entity TableName="YFS_SHIPMENT_LINE">
+			<Attributes>
+			    <Attribute ColumnName="EXTN_IS_MIGRATED" DecimalDigits=""
+					DefaultValue="N" Description="Indicates whether the order is migrated from ACT"
+					Nullable="true" Size="1" DataType="Flag" XMLName="ExtnIsMigrated"
+					XMLGroup="Extn" SqlServerDataType="" />	
+				<Attribute ColumnName="EXTN_GIFT_CARD_NO"
+					DecimalDigits="" DefaultValue=""
+					Description="Used to store the gift card number for gift card shipments" Nullable="true"
+					Size="20" Type="VARCHAR2" XMLName="ExtnGiftCardNo" XMLGroup="Extn"
+					SqlServerDataType="" />
+			</Attributes>
+		</Entity>
+		<Entity TableName="YFS_ORDER_INVOICE">
+			<Attributes>
+				<Attribute ColumnName="EXTN_TRANSACTION_NO"
+					DecimalDigits="" DefaultValue=""
+					Description="Transaction no sent to sales audit" Nullable="true"
+					Size="20" Type="CHAR" XMLName="ExtnTransactionNo" XMLGroup="Extn"
+					SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_ORIGINAL_TRACKING_NO"
+					DecimalDigits="" DefaultValue=""
+					Description="Container tracking no of original shipment" Nullable="true"
+					Size="40" Type="VARCHAR2" XMLName="ExtnOriginalTrackingNo" XMLGroup="Extn"
+					SqlServerDataType="" />
+				
+			</Attributes>
+		</Entity>
+
+	
+		
+		<Entity ApiNeeded="Y" AuditRequired="N" Description=""
+			HasHistory="Y" Prefix="VSI_" TableName="VSI_ITEM_TOB"
+			XMLName="VSIItemTOB">
+			<Attributes>
+				<Attribute ColumnName="CREATETS" DataType="Createts"
+					DefaultValue="sysdate" Description="Create Time Stamp" />
+				<Attribute ColumnName="MODIFYTS" DataType="Modifyts"
+					DefaultValue="sysdate" Description="Modify Time Stamp" />
+				<Attribute ColumnName="CREATEUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Creating User ID" />
+				<Attribute ColumnName="MODIFYUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Modifying User ID" />
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Creating Program ID" />
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Modifying Program ID" />
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="Lock ID" />
+				<Attribute ColumnName="VSI_ITEM_TOB_KEY" DataType="Key"
+					DefaultValue="' '" Description="" Nullable="False"
+					XMLName="ExtnVSIItemTobKey" />
+				<Attribute ColumnName="ORDER_HEADER_KEY" DataType="Key"
+					DefaultValue="' '" Description="" Nullable="False"
+					XMLName="OrderHeaderKey" />
+				<Attribute ColumnName="FINAL_PRICE" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="FinalPrice" />
+				<Attribute ColumnName="QTY" DataType="" DecimalDigits=""
+					DefaultValue="''" Description="POS: Qty" Type="VARCHAR2" Size="20"
+					Nullable="true" XMLName="Qty" />
+				<Attribute ColumnName="STATUS" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="POS: Status"
+					Type="VARCHAR2" Size="20" Nullable="true" XMLName="Status" />
+				<Attribute ColumnName="DSCRIPTION" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="POS: Description"
+					Type="VARCHAR2" Size="120" Nullable="true" XMLName="Desc" />
+				<Attribute ColumnName="PRICE" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="POS:Price"
+					Type="VARCHAR2" Size="20" Nullable="true" XMLName="Price" />
+				<Attribute ColumnName="TAG" DataType="" DecimalDigits=""
+					DefaultValue="''" Description="POS:Tag" Type="VARCHAR2" Size="30"
+					Nullable="true" XMLName="Tag" />
+				<Attribute ColumnName="UPC" DataType="" DecimalDigits=""
+					DefaultValue="''" Description="POS:UPC" Type="VARCHAR2" Size="30"
+					Nullable="true" XMLName="UPC" />
+				<Attribute ColumnName="ORIG_PRICE" DataType=""
+					DecimalDigits="" DefaultValue="" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="OrigPrice" />
+				<Attribute ColumnName="SKU" DataType="" DecimalDigits=""
+					DefaultValue="" Description="" Type="VARCHAR2" Size="20"
+					Nullable="true" XMLName="Sku" />
+				<Attribute ColumnName="IDX" DataType="" DecimalDigits=""
+					DefaultValue="''" Description="" Type="VARCHAR2" Size="20"
+					Nullable="true" XMLName="Idx" />
+				<Attribute ColumnName="IS_NON_MDSE" DataType=""
+					DecimalDigits="" DefaultValue="N" Description="" Type="VARCHAR2"
+					Size="1" Nullable="true" XMLName="IsNonMdse" />
+				<Attribute ColumnName="IS_TAX" DataType=""
+					DecimalDigits="" DefaultValue="N" Description="" Type="VARCHAR2"
+					Size="1" Nullable="true" XMLName="IsTax" />
+				<Attribute ColumnName="DIV" DataType="" DecimalDigits=""
+					DefaultValue="" Description="" Type="VARCHAR2" Size="20"
+					Nullable="true" XMLName="Div" />
+				<Attribute ColumnName="IS_DISCOUNT" DataType=""
+					DecimalDigits="" DefaultValue="N" Description="" Type="VARCHAR2"
+					Size="1" Nullable="true" XMLName="IsDiscount" />
+			</Attributes>
+
+			<PrimaryKey Name="VSI_ITEM_TOB_KEY">
+				<Attribute ColumnName="VSI_ITEM_TOB_KEY" />
+			</PrimaryKey>
+
+			<Indices>
+                    <Index Name="VSI_ITEM_TOB_001">
+					<Column Name="ORDER_HEADER_KEY" />
+				</Index>
+			</Indices>
+
+			<!-- Relationship -->
+			<Parent ParentTableName="YFS_ORDER_HEADER">
+				<Attribute ColumnName="ORDER_HEADER_KEY"
+					ParentColumnName="ORDER_HEADER_KEY" />
+			</Parent>
+			
+		</Entity>
+
+		<Entity ApiNeeded="Y" AuditRequired="N" Description=""
+			HasHistory="Y" Prefix="VSI_" TableName="VSI_ITEM_DISCOUNT_TOB"
+			XMLName="VSIItemDiscountTOB">
+			<Attributes>
+				<Attribute ColumnName="CREATETS" DataType="Createts"
+					DefaultValue="sysdate" Description="Create Time Stamp" />
+				<Attribute ColumnName="MODIFYTS" DataType="Modifyts"
+					DefaultValue="sysdate" Description="Modify Time Stamp" />
+				<Attribute ColumnName="CREATEUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Creating User ID" />
+				<Attribute ColumnName="MODIFYUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Modifying User ID" />
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Creating Program ID" />
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Modifying Program ID" />
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="Lock ID" />
+				<Attribute ColumnName="VSI_ITEM_DIS_TOB" DataType="Key"
+					DefaultValue="' '" Description="" Nullable="False"
+					XMLName="ExtnVSIItemDiscountTobKey" />
+				<Attribute ColumnName="ORDER_HEADER_KEY" DataType="Key"
+					DefaultValue="' '" Description="" Nullable="False"
+					XMLName="OrderHeaderKey" />
+				<Attribute ColumnName="AMT" DataType="" DecimalDigits=""
+					DefaultValue="''" Description="" Type="VARCHAR2" Size="20"
+					Nullable="true" XMLName="AMT" />
+				<Attribute ColumnName="REDUCTION" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="Reduction" />
+				<Attribute ColumnName="PROMOINDICATOR" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="PromoIndicator" />
+				<Attribute ColumnName="PERCENT" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="Percent" />
+				<Attribute ColumnName="NUM" DataType="" DecimalDigits=""
+					DefaultValue="''" Description="" Type="VARCHAR2" Size="20"
+					Nullable="true" XMLName="Num" />
+				<Attribute ColumnName="DSCRIPTION" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="120" Nullable="true" XMLName="Desc" />
+				<Attribute ColumnName="PRICE" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="Price" />
+				<Attribute ColumnName="TAG" DataType="" DecimalDigits=""
+					DefaultValue="''" Description="" Type="VARCHAR2" Size="30"
+					Nullable="true" XMLName="Tag" />
+				<Attribute ColumnName="SKU" DataType="" DecimalDigits=""
+					DefaultValue="''" Description="" Type="VARCHAR2" Size="30"
+					Nullable="true" XMLName="Sku" />
+				<Attribute ColumnName="IS_DISCOUNT" DataType=""
+					DecimalDigits="" DefaultValue="N" Description="" Type="VARCHAR2"
+					Size="1" Nullable="true" XMLName="IsDiscount" />
+				<Attribute ColumnName="IS_EMP_DISCOUNT" DataType=""
+					DecimalDigits="" DefaultValue="N" Description="" Type="VARCHAR2"
+					Size="1" Nullable="true" XMLName="IsEmpDisc" />
+				<Attribute ColumnName="IS_ITEM_LEVEL" DataType=""
+					DecimalDigits="" DefaultValue="N" Description="" Type="VARCHAR2"
+					Size="1" Nullable="true" XMLName="IsItemLevel" />
+				<Attribute ColumnName="IS_PROMO" DataType=""
+					DecimalDigits="" DefaultValue="N" Description="" Type="VARCHAR2"
+					Size="1" Nullable="true" XMLName="IsPromo" />
+				<Attribute ColumnName="IS_REAL_DISC" DataType=""
+					DecimalDigits="" DefaultValue="N" Description="" Type="VARCHAR2"
+					Size="1" Nullable="true" XMLName="IsRealDisc" />
+				<Attribute ColumnName="IS_TRAN_LEVEL" DataType=""
+					DecimalDigits="" DefaultValue="N" Description="" Type="VARCHAR2"
+					Size="1" Nullable="true" XMLName="IsTranLevel" />
+			</Attributes>
+			
+
+			<PrimaryKey Name="VSI_ITEM_DIS_TOB">
+				<Attribute ColumnName="VSI_ITEM_DIS_TOB" />
+			</PrimaryKey>
+
+			<Indices>
+                    <Index Name="VSI_ITEM_DISCOUNT_TOB_001">
+					<Column Name="ORDER_HEADER_KEY" />
+				</Index>
+			</Indices>
+
+			<!-- Relationship -->
+			<Parent ParentTableName="YFS_ORDER_HEADER">
+				<Attribute ColumnName="ORDER_HEADER_KEY"
+					ParentColumnName="ORDER_HEADER_KEY" />
+			</Parent>
+		</Entity>
+
+		<Entity ApiNeeded="Y" AuditRequired="N" Description=""
+			HasHistory="Y" Prefix="VSI_" TableName="VSI_ITEM_TAX_TOB"
+			XMLName="VSIItemTaxTOB">
+			<Attributes>
+				<Attribute ColumnName="CREATETS" DataType="Createts"
+					DefaultValue="sysdate" Description="Create Time Stamp" />
+				<Attribute ColumnName="MODIFYTS" DataType="Modifyts"
+					DefaultValue="sysdate" Description="Modify Time Stamp" />
+				<Attribute ColumnName="CREATEUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Creating User ID" />
+				<Attribute ColumnName="MODIFYUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Modifying User ID" />
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Creating Program ID" />
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Modifying Program ID" />
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="Lock ID" />
+				<Attribute ColumnName="VSI_ITEM_TAX_TOB" DataType="Key"
+					DefaultValue="' '" Description="" Nullable="False"
+					XMLName="ExtnVSIItemTaxTobKey" />
+				<Attribute ColumnName="ORDER_HEADER_KEY" DataType="Key"
+					DefaultValue="' '" Description="" Nullable="False"
+					XMLName="OrderHeaderKey" />
+				<Attribute ColumnName="AMT" DataType="" DecimalDigits=""
+					DefaultValue="''" Description="" Type="VARCHAR2" Size="20"
+					Nullable="true" XMLName="AMT" />
+				<Attribute ColumnName="TOTAL_BY_RATE" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="TotalByRate" />
+				<Attribute ColumnName="AUTH_ID" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="AuthId" />
+				<Attribute ColumnName="RULE_ID" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="RuleID" />
+				<Attribute ColumnName="ZONE_ID" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="ZoneId" />
+				<Attribute ColumnName="TAX_ROUND_RULE" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="TaxRoundRule" />
+				<Attribute ColumnName="AUTH_NAME" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="AuthName" />
+				<Attribute ColumnName="DSCRIPTION" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="120" Nullable="true" XMLName="Desc" />
+				<Attribute ColumnName="EFFECTIVE_RATE" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="EffectiveRate" />
+				<Attribute ColumnName="RATE" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="30" Nullable="true" XMLName="Rate" />
+				<Attribute ColumnName="IS_DISCOUNT" DataType=""
+					DecimalDigits="" DefaultValue="N" Description="" Type="VARCHAR2"
+					Size="1" Nullable="true" XMLName="IsDiscount" />
+				<Attribute ColumnName="IS_EXEMPT" DataType=""
+					DecimalDigits="" DefaultValue="N" Description="" Type="VARCHAR2"
+					Size="1" Nullable="true" XMLName="IsExempt" />
+				<Attribute ColumnName="IS_ITEM_LEVEL" DataType=""
+					DecimalDigits="" DefaultValue="N" Description="" Type="VARCHAR2"
+					Size="1" Nullable="true" XMLName="IsItemLevel" />
+				<Attribute ColumnName="IS_REGULAR" DataType=""
+					DecimalDigits="" DefaultValue="N" Description="" Type="VARCHAR2"
+					Size="1" Nullable="true" XMLName="IsRegular" />
+			</Attributes>
+
+			<PrimaryKey Name="VSI_ITEM_TAX_TOB">
+				<Attribute ColumnName="VSI_ITEM_TAX_TOB" />
+			</PrimaryKey>
+
+			<Indices>
+
+			</Indices>
+
+			<!-- Relationship -->
+			<Parent ParentTableName="YFS_ORDER_HEADER">
+				<Attribute ColumnName="ORDER_HEADER_KEY"
+					ParentColumnName="ORDER_HEADER_KEY" />
+			</Parent>
+		</Entity>
+
+
+		<Entity ApiNeeded="Y" AuditRequired="N" Description=""
+			HasHistory="Y" Prefix="VSI_" TableName="VSI_ORDER_ITEM_TOB"
+			XMLName="VSIOrderItemTOB">
+			<Attributes>
+				<Attribute ColumnName="CREATETS" DataType="Createts"
+					DefaultValue="sysdate" Description="Create Time Stamp" />
+				<Attribute ColumnName="MODIFYTS" DataType="Modifyts"
+					DefaultValue="sysdate" Description="Modify Time Stamp" />
+				<Attribute ColumnName="CREATEUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Creating User ID" />
+				<Attribute ColumnName="MODIFYUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Modifying User ID" />
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Creating Program ID" />
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Modifying Program ID" />
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="Lock ID" />
+				<Attribute ColumnName="VSI_ORDER_ITEM_TOB"
+					DataType="Key" DefaultValue="' '" Description="" Nullable="False"
+					XMLName="ExtnVSIOrderItemTobKey" />
+				<Attribute ColumnName="ORDER_LINE_KEY" DataType="Key"
+					DefaultValue="' '" Description="" Nullable="False"
+					XMLName="OrderHeaderKey" />
+				<Attribute ColumnName="LINE_ITEM_NUM" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="LineItemNum" />
+				<Attribute ColumnName="ORIG_EXT_PRICE" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="OrigExtPrice" />
+				<Attribute ColumnName="EXT_UNIT_PRICE" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="ExtUnitPrice" />
+				<Attribute ColumnName="ORIG_QTY" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="OrigQty" />
+			</Attributes>
+
+			<PrimaryKey Name="ORDER_ITEM_TOB">
+				<Attribute ColumnName="VSI_ORDER_ITEM_TOB" />
+			</PrimaryKey>
+
+			<!-- Added index for order line key -->	
+			<Indices>
+				<Index Name="EXTN_VSI_ORDER_ITEM_TOB_001">
+					<Column Name="ORDER_LINE_KEY" />
+				</Index>										
+			</Indices>	
+
+			<!-- Relationship -->
+			<Parent ParentTableName="YFS_ORDER_LINE">
+				<Attribute ColumnName="ORDER_LINE_KEY"
+					ParentColumnName="ORDER_LINE_KEY" />
+			</Parent>
+		</Entity>
+		<Entity TableName="YFS_TAX_BREAKUP">
+			<Attributes>
+
+				<Attribute ColumnName="EXTN_TAX_PER_UNIT"
+					DecimalDigits="" DefaultValue="" Description="Tax per Unit"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnTaxPerUnit"
+					XMLGroup="Extn" SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_REMAINING_TAX_PER_LINE"
+					DecimalDigits="" DefaultValue="" Description="Remaining Tax per Line"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnRemTaxPerLine"
+					XMLGroup="Extn" SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_TAX_AREA_ID"
+					DecimalDigits="" DefaultValue="" Description="Tax Area ID"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnTaxAreaID"
+					XMLGroup="Extn" SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_TAX_TYPE" DecimalDigits=""
+					DefaultValue="" Description="Tax type" Nullable="true" Size="20"
+					Type="CHAR" XMLName="TaxType" XMLGroup="Extn" SqlServerDataType="" />
+
+				<Attribute ColumnName="EXTN_GROUP_ID" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="POS: Final Price"
+					Type="VARCHAR2" XMLGroup="Extn" Size="20" Nullable="true"
+					XMLName="GroupId" />
+				<Attribute ColumnName="EXTN_ZONE_ID" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="POS: Final Price"
+					Type="VARCHAR2" Size="20" XMLGroup="Extn" Nullable="true"
+					XMLName="ZoneId" />
+				<Attribute ColumnName="EXTN_IS_OVERRIDE_ZONE"
+					DataType="" DecimalDigits="" DefaultValue="N"
+					Description="POS: Final Price" Type="VARCHAR2" XMLGroup="Extn"
+					Size="1" Nullable="true" XMLName="IsOverrideZone" />
+				<Attribute ColumnName="EXTN_IS_MANUAL" DataType=""
+					DecimalDigits="" DefaultValue="N" Description="POS: Final Price"
+					Type="VARCHAR2" Size="1" XMLGroup="Extn" Nullable="true"
+					XMLName="IsManual" />
+
+				<Attribute ColumnName="EXTN_RULE_ID" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="POS: RuleId"
+					Type="VARCHAR2" Size="20" XMLGroup="Extn" Nullable="true"
+					XMLName="RuleId" />
+				<Attribute ColumnName="EXTN_IS_TRAN_LEVEL" DataType=""
+					DecimalDigits="" DefaultValue="N" Description="" Type="VARCHAR2"
+					XMLGroup="Extn" Size="1" Nullable="true" XMLName="IsTranLevel" />
+				<Attribute ColumnName="EXTN_REFERENCE_1" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="POS: Final Price"
+					Type="VARCHAR2" XMLGroup="Extn" Size="20" Nullable="true"
+					XMLName="Reference_1" />
+				<Attribute ColumnName="EXTN_REFERENCE_2" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="POS: Final Price"
+					Type="VARCHAR2" XMLGroup="Extn" Size="20" Nullable="true"
+					XMLName="Reference_2" />
+				<Attribute ColumnName="EXTN_REFERENCE_3" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="POS: Final Price"
+					Type="VARCHAR2" XMLGroup="Extn" Size="20" Nullable="true"
+					XMLName="Reference_3" />
+				<Attribute ColumnName="EXTN_IS_TAX_CALCULATED"
+					DecimalDigits="" DefaultValue="" Description="ExtnIsTaxCalculated"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnIsTaxCalculated"
+					XMLGroup="Extn" SqlServerDataType="" />
+
+				<Attribute ColumnName="EXTN_VERTEX_ENGINE"
+					DecimalDigits="" DefaultValue="" Description="ExtnVertexEngine"
+					Nullable="true" Size="20" Type="CHAR" XMLName="ExtnVertexEngine"
+					XMLGroup="Extn" SqlServerDataType="" />
+				<Attribute ColumnName="EXTN_COUNTY" DataType="Text-100"
+					DecimalDigits="" DefaultValue="null" Description="Used to capture County jurisdiction" Nullable="true" Size="100" Type="CHAR" XMLName="ExtnCounty" XMLGroup="Extn" SqlServerDataType=""/>	
+			</Attributes>
+		</Entity>
+
+
+		<Entity TableName="YFS_LINE_CHARGES">
+			<Attributes>
+				<Attribute ColumnName="EXTN_PROMOINDICATOR" DataType=""
+					DecimalDigits="" DefaultValue="''" XMLGroup="Extn"
+					Description="POS: Final Price" Type="VARCHAR2" Size="20"
+					Nullable="true" XMLName="PromoIndicator" />
+				<Attribute ColumnName="EXTN_PRICE" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="30" XMLGroup="Extn" Nullable="true" XMLName="Price" />
+				<Attribute ColumnName="EXTN_TAG" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="30" XMLGroup="Extn" Nullable="true" XMLName="Tag" />
+				<Attribute ColumnName="EXTN_IS_REAL_DISC" DataType=""
+					DecimalDigits="" DefaultValue="N" Description="" Type="VARCHAR2"
+					XMLGroup="Extn" Size="1" Nullable="true" XMLName="IsRealDisc" />
+				<Attribute ColumnName="EXTN_IS_TRAN_LEVEL" DataType=""
+					DecimalDigits="" DefaultValue="N" Description="" Type="VARCHAR2"
+					XMLGroup="Extn" Size="1" Nullable="true" XMLName="IsTranLevel" />
+				
+					<Attribute ColumnName="EXTN_IS_PROMO" DataType=""
+					DecimalDigits="" DefaultValue="N" Description="" Type="VARCHAR2"
+					XMLGroup="Extn" Size="1" Nullable="true" XMLName="IsPromo" />
+					
+					<Attribute ColumnName="EXTN_CHARGE_ID" DataType=""
+					DecimalDigits="" DefaultValue="" Description="" Type="VARCHAR2"
+					XMLGroup="Extn" Size="30" Nullable="true" XMLName="ExtnChargeId" />
+					
+					<Attribute ColumnName="EXTN_QTY" DataType=""
+					DecimalDigits="" DefaultValue="N" Description="" Type="VARCHAR2"
+					XMLGroup="Extn" Size="20" Nullable="true" XMLName="ExtnQty" />
+					
+				<Attribute ColumnName="EXTN_IS_EMP_DISC" DataType=""
+					DecimalDigits="" DefaultValue="" Description="" Type="VARCHAR2"
+					XMLGroup="Extn" Size="1" Nullable="true" XMLName="IsEmpDisc" />
+				<Attribute ColumnName="EXTN_PERCENT" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" XMLGroup="Extn"
+					Type="VARCHAR2" Size="20" Nullable="true" XMLName="Percent" />
+				<Attribute ColumnName="EXTN_NUM" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					XMLGroup="Extn" Size="20" Nullable="true" XMLName="Num" />
+				<Attribute ColumnName="EXTN_REDUCED_AMT" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" XMLGroup="Extn"
+					Type="VARCHAR2" Size="20" Nullable="true" XMLName="ReducedAmt" />
+				<Attribute ColumnName="EXTN_IDX" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" XMLGroup="Extn"
+					Type="VARCHAR2" Size="20" Nullable="true" XMLName="Idx" />
+				<Attribute ColumnName="EXTN_COUPON_NUMBER" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" XMLGroup="Extn"
+					Type="VARCHAR2" Size="20" Nullable="true" XMLName="CouponNumber" />
+				<Attribute ColumnName="EXTN_PROMO_NUMBER" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" XMLGroup="Extn"
+					Type="VARCHAR2" Size="100" Nullable="true" XMLName="PromoNum" />
+				<Attribute ColumnName="EXTN_PROMO_DESC" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" XMLGroup="Extn"
+					Type="VARCHAR2" Size="100" Nullable="true" XMLName="PromoDesc" />
+				<Attribute ColumnName="EXTN_PROMO_NAME" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" XMLGroup="Extn"
+					Type="VARCHAR2" Size="100" Nullable="true" XMLName="PromoName" />
+				<Attribute ColumnName="EXTN_REASON_CODE" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" XMLGroup="Extn"
+					Type="VARCHAR2" Size="100" Nullable="true" XMLName="ReasonCode" />
+				<Attribute ColumnName="EXTN_REASON_DESC" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" XMLGroup="Extn"
+					Type="VARCHAR2" Size="100" Nullable="true" XMLName="ReasonDesc" />
+				<Attribute ColumnName="EXTN_REASON_TYPE" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" XMLGroup="Extn"
+					Type="VARCHAR2" Size="100" Nullable="true" XMLName="ReasonType" />
+				<Attribute ColumnName="EXTN_COUPON_ID" DecimalDigits=""
+					DefaultValue="" Description="Extn Coupon ID" Nullable="true"
+					Size="20" Type="CHAR" XMLName="ExtnCouponID" XMLGroup="Extn" />
+				<Attribute ColumnName="EXTN_CODE_STR" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" XMLGroup="Extn"
+					Type="VARCHAR2" Size="100" Nullable="true" XMLName="CodeStr" />
+				<Attribute ColumnName="EXTN_IS_COMP_PRICE" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" XMLGroup="Extn"
+					Type="VARCHAR2" Size="100" Nullable="true"
+					XMLName="ExtnIsCompPrice" />
+				<Attribute ColumnName="EXTN_TYPE" DataType=""
+					DecimalDigits="" DefaultValue="SMPL" XMLGroup="Extn"
+					Description="Charge Type" Type="VARCHAR2" Size="20" Nullable="true"
+					XMLName="ExtnType" />
+				<Attribute ColumnName="EXTN_DISC_TYPE" DataType=""
+					DecimalDigits="" DefaultValue="''" XMLGroup="Extn"
+					Description="ExtnDiscType" Type="VARCHAR2" Size="20"
+					Nullable="true" XMLName="ExtnDiscType" />
+				<Attribute ColumnName="EXTN_DISC_GRP" DataType=""
+					DecimalDigits="" DefaultValue="''" XMLGroup="Extn"
+					Description="ExtnDiscGrp" Type="VARCHAR2" Size="20"
+					Nullable="true" XMLName="ExtnDiscGrp" />	
+			</Attributes>
+		</Entity>
+
+
+		<Entity ApiNeeded="Y" AuditRequired="N" Description=""
+			HasHistory="Y" Prefix="TOB_" TableName="TOB_TAX_JURISDICTION"
+			XMLName="TobTaxJurisdiction">
+			<Attributes>
+				<Attribute ColumnName="TAX_JURISDICTION_KEY"
+					DecimalDigits="" DefaultValue="''" Description="" Nullable="false"
+					DataType="Key" XMLName="TaxJurisdictionKey" SqlServerDataType="" />
+
+				<Attribute ColumnName="TAX_JURISDICTION"
+					DecimalDigits="" DefaultValue="''" Description="" Nullable="true"
+					Size="10" Type="VARCHAR2" XMLName="TaxJurisdiction"
+					SqlServerDataType="" />
+
+				<Attribute ColumnName="TAX_ZONE_ID" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="false" Size="10"
+					Type="VARCHAR2" XMLName="TaxZoneId" SqlServerDataType="" />
+
+				<Attribute ColumnName="JURISDICTION_NAME"
+					DecimalDigits="" DefaultValue="''" Description="" Nullable="true"
+					Size="50" Type="VARCHAR2" XMLName="JurisdictionName"
+					SqlServerDataType="" />
+
+				<Attribute ColumnName="TAX_AUTH_ID" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="5"
+					Type="VARCHAR2" XMLName="TaxAuthId" SqlServerDataType="" />
+
+				<Attribute ColumnName="TAX_RATE_CODE" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="5"
+					Type="VARCHAR2" XMLName="TaxRateCode" SqlServerDataType="" />
+
+				<Attribute ColumnName="TAX_RULE_ID" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="10"
+					Type="VARCHAR2" XMLName="TaxRuleId" SqlServerDataType="" />
+
+				<Attribute ColumnName="FROM_POST_CODE" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="10"
+					Type="VARCHAR2" XMLName="FromPostCode" SqlServerDataType="" />
+
+				<Attribute ColumnName="TO_POST_CODE" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="10"
+					Type="VARCHAR2" XMLName="ToPostCode" SqlServerDataType="" />
+
+				<Attribute ColumnName="CREATETS" DataType="Createts"
+					DefaultValue="sysdate" Description="Create Time Stamp" />
+
+				<Attribute ColumnName="MODIFYTS" DataType="Modifyts"
+					DefaultValue="sysdate" Description="Modify Time Stamp" />
+
+				<Attribute ColumnName="CREATEUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Creating User ID" />
+
+				<Attribute ColumnName="MODIFYUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Modifying User ID" />
+
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Creating Program ID" />
+
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Modifying Program ID" />
+
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="Lock ID" />
+			</Attributes>
+
+			<PrimaryKey Name="TOB_TAX_JDTN_PK">
+				<Attribute ColumnName="TAX_JURISDICTION_KEY" />
+			</PrimaryKey>
+
+		</Entity>
+		
+		
+		<Entity ApiNeeded="Y" AuditRequired="N" Description="This Table Stores information about all the OGC"
+			HasHistory="Y" Prefix="VSI_" TableName="VSI_ONLINE_GIFT_CARD"
+			XMLName="VSIOnlineGiftCard">
+			<Attributes>
+				<Attribute ColumnName="GIFT_CARD_KEY"
+					DecimalDigits="" DefaultValue="''" Description="Key for primary record" Nullable="false"
+					DataType="Key" XMLName="GiftCardKey" SqlServerDataType="" />
+
+				<Attribute ColumnName="GIFT_CARD_NO"
+					DecimalDigits="" DefaultValue="''" Description="Gift Card No" Nullable="false"
+					Size="30" Type="VARCHAR2" XMLName="GiftCardNo"
+					SqlServerDataType="" />
+				
+				
+				
+				<Attribute ColumnName="CARD_AMOUNT" DataType="Text-20"
+     DefaultValue="" Description="" XMLName="CardAmount"
+     Type="VARCHAR2" Nullable="true" />	
+
+				<Attribute ColumnName="PIN_NO" DecimalDigits=""
+					DefaultValue="''" Description="Pin No" Nullable="false" Size="20"
+					Type="VARCHAR2" XMLName="PinNo" SqlServerDataType="" />
+
+				<Attribute ColumnName="ORDER_NO"
+					DecimalDigits="" DefaultValue="''" Description="Order no for which the card is activated" Nullable="true"
+					Size="50" Type="VARCHAR2" XMLName="OrderNo"
+					SqlServerDataType="" />
+
+				<Attribute ColumnName="IS_ACTIVATED" DecimalDigits=""
+					DefaultValue="N" Description="Flag to tell if the gift card is activated or not" Nullable="false" Size="5"
+					Type="VARCHAR2" XMLName="IsActivated" SqlServerDataType="" />
+				
+				<Attribute ColumnName="IS_CARD_USED" DecimalDigits=""
+					DefaultValue="N" Description="Flag to tell if the gift card is used or not" Nullable="false" Size="5"
+					Type="VARCHAR2" XMLName="IsCardUsed" SqlServerDataType="" />
+
+				<Attribute ColumnName="CREATETS" DataType="Createts"
+					DefaultValue="sysdate" Description="Create Time Stamp" />
+
+				<Attribute ColumnName="MODIFYTS" DataType="Modifyts"
+					DefaultValue="sysdate" Description="Modify Time Stamp" />
+
+				<Attribute ColumnName="CREATEUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Creating User ID" />
+
+				<Attribute ColumnName="MODIFYUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Modifying User ID" />
+
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Creating Program ID" />
+
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Modifying Program ID" />
+
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="Lock ID" />
+			</Attributes>
+
+			<PrimaryKey Name="VSI_ONLINE_GC_PK">
+				<Attribute ColumnName="GIFT_CARD_KEY" />
+			</PrimaryKey>
+
+		</Entity>
+		
+		
+		
+		
+		<Entity ApiNeeded="Y" AuditRequired="N" Description=""
+			HasHistory="Y" Prefix="TOB_" TableName="TOB_TAX_JURISDICTION_TMP1"
+			XMLName="TobTaxJurisdictionTmp1">
+			<Attributes>
+				<Attribute ColumnName="TAX_JURISDICTION_TMP1_KEY"
+					DecimalDigits="" DefaultValue="''" Description="" Nullable="false"
+					DataType="Key" XMLName="TaxJurisdictionTmp1Key" SqlServerDataType="" />
+
+				<Attribute ColumnName="TAX_JURISDICTION"
+					DecimalDigits="" DefaultValue="''" Description="" Nullable="true"
+					Size="10" Type="VARCHAR2" XMLName="TaxJurisdiction"
+					SqlServerDataType="" />
+
+				<Attribute ColumnName="TAX_ZONE_ID" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="10"
+					Type="VARCHAR2" XMLName="TaxZoneId" SqlServerDataType="" />
+
+				<Attribute ColumnName="JURISDICTION_NAME"
+					DecimalDigits="" DefaultValue="''" Description="" Nullable="true"
+					Size="50" Type="VARCHAR2" XMLName="JurisdictionName"
+					SqlServerDataType="" />
+
+				<Attribute ColumnName="TAX_AUTH_ID" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="5"
+					Type="VARCHAR2" XMLName="TaxAuthId" SqlServerDataType="" />
+
+				<Attribute ColumnName="TAX_RATE_CODE" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="5"
+					Type="VARCHAR2" XMLName="TaxRateCode" SqlServerDataType="" />
+
+				<Attribute ColumnName="TAX_RULE_ID" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="10"
+					Type="VARCHAR2" XMLName="TaxRuleId" SqlServerDataType="" />
+
+				<Attribute ColumnName="FROM_POST_CODE" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="10"
+					Type="VARCHAR2" XMLName="FromPostCode" SqlServerDataType="" />
+
+				<Attribute ColumnName="TO_POST_CODE" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="10"
+					Type="VARCHAR2" XMLName="ToPostCode" SqlServerDataType="" />
+
+				<Attribute ColumnName="CREATETS" DataType="Createts"
+					DefaultValue="sysdate" Description="Create Time Stamp" />
+
+				<Attribute ColumnName="MODIFYTS" DataType="Modifyts"
+					DefaultValue="sysdate" Description="Modify Time Stamp" />
+
+				<Attribute ColumnName="CREATEUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Creating User ID" />
+
+				<Attribute ColumnName="MODIFYUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Modifying User ID" />
+
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Creating Program ID" />
+
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Modifying Program ID" />
+
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="Lock ID" />
+			</Attributes>
+
+			<PrimaryKey Name="TOB_TAX_JN_P1_PK">
+				<Attribute ColumnName="TAX_JURISDICTION_TMP1_KEY" />
+			</PrimaryKey>
+
+		</Entity>
+		
+		
+		<Entity ApiNeeded="Y" AuditRequired="N" Description=""
+			HasHistory="Y" Prefix="TOB_" TableName="TOB_TAX_JURISDICTION_TMP2"
+			XMLName="TobTaxJurisdictionTmp2">
+			<Attributes>
+				<Attribute ColumnName="TAX_JURISDICTION_TMP2_KEY"
+					DecimalDigits="" DefaultValue="''" Description="" Nullable="false"
+					DataType="Key" XMLName="TaxJurisdictionTmp2Key" SqlServerDataType="" />
+
+				<Attribute ColumnName="TAX_JURISDICTION"
+					DecimalDigits="" DefaultValue="''" Description="" Nullable="true"
+					Size="10" Type="VARCHAR2" XMLName="TaxJurisdiction"
+					SqlServerDataType="" />
+
+				<Attribute ColumnName="TAX_ZONE_ID" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="10"
+					Type="VARCHAR2" XMLName="TaxZoneId" SqlServerDataType="" />
+
+				<Attribute ColumnName="JURISDICTION_NAME"
+					DecimalDigits="" DefaultValue="''" Description="" Nullable="true"
+					Size="50" Type="VARCHAR2" XMLName="JurisdictionName"
+					SqlServerDataType="" />
+
+				<Attribute ColumnName="TAX_AUTH_ID" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="5"
+					Type="VARCHAR2" XMLName="TaxAuthId" SqlServerDataType="" />
+
+				<Attribute ColumnName="TAX_RATE_CODE" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="5"
+					Type="VARCHAR2" XMLName="TaxRateCode" SqlServerDataType="" />
+
+				<Attribute ColumnName="TAX_RULE_ID" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="10"
+					Type="VARCHAR2" XMLName="TaxRuleId" SqlServerDataType="" />
+
+				<Attribute ColumnName="FROM_POST_CODE" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="10"
+					Type="VARCHAR2" XMLName="FromPostCode" SqlServerDataType="" />
+
+				<Attribute ColumnName="TO_POST_CODE" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="10"
+					Type="VARCHAR2" XMLName="ToPostCode" SqlServerDataType="" />
+
+				<Attribute ColumnName="CREATETS" DataType="Createts"
+					DefaultValue="sysdate" Description="Create Time Stamp" />
+
+				<Attribute ColumnName="MODIFYTS" DataType="Modifyts"
+					DefaultValue="sysdate" Description="Modify Time Stamp" />
+
+				<Attribute ColumnName="CREATEUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Creating User ID" />
+
+				<Attribute ColumnName="MODIFYUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Modifying User ID" />
+
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Creating Program ID" />
+
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Modifying Program ID" />
+
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="Lock ID" />
+			</Attributes>
+
+			<PrimaryKey Name="TOB_TAX_JN_P2_PK">
+				<Attribute ColumnName="TAX_JURISDICTION_TMP2_KEY" />
+			</PrimaryKey>
+
+		</Entity>
+		
+		
+		
+		<Entity ApiNeeded="Y" AuditRequired="N" Description=""
+			HasHistory="Y" Prefix="TOB_" TableName="TOB_TAX_ZONE"
+			XMLName="TobTaxZone">
+			<Attributes>
+				<Attribute ColumnName="TAX_KEY" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="false" DataType="Key"
+					XMLName="TaxKey" SqlServerDataType="" />
+
+				<Attribute ColumnName="TAX_ZONE_ID" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="24"
+					Type="VARCHAR2" XMLName="TaxZoneId" SqlServerDataType="" />
+
+				<Attribute ColumnName="TAX_TYPE" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="10"
+					Type="VARCHAR2" XMLName="TaxType" SqlServerDataType="" />
+
+
+				<Attribute ColumnName="CREATETS" DataType="Createts"
+					DefaultValue="sysdate" Description="Create Time Stamp" />
+
+				<Attribute ColumnName="MODIFYTS" DataType="Modifyts"
+					DefaultValue="sysdate" Description="Modify Time Stamp" />
+
+				<Attribute ColumnName="CREATEUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Creating User ID" />
+
+				<Attribute ColumnName="MODIFYUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Modifying User ID" />
+
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Creating Program ID" />
+
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Modifying Program ID" />
+
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="Lock ID" />
+			</Attributes>
+
+			<PrimaryKey Name="TAX_KEY_PK">
+				<Attribute ColumnName="TAX_KEY" />
+			</PrimaryKey>
+
+		</Entity>
+		<Entity ApiNeeded="Y" AuditRequired="N"
+			Description="Entity keeps the information about Promotion relation on Order"
+			HasHistory="Y" Prefix="VSI_" TableName="VSI_PROMO_RELATION"
+			XMLName="VSIPromoRelation">
+			<Attributes>
+				<Attribute ColumnName="PROMO_KEY" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="false" DataType="Key"
+					XMLName="PromoKey" SqlServerDataType="" />
+				<Attribute ColumnName="PROMO_ID" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="40"
+					Type="VARCHAR2" XMLName="PromoID" SqlServerDataType="" />
+				<Attribute ColumnName="COMPLEX_TYPE" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="40"
+					Type="VARCHAR2" XMLName="ComplexType" SqlServerDataType="" />
+				<Attribute ColumnName="IDX" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="40"
+					Type="VARCHAR2" XMLName="Idx" SqlServerDataType="" />
+				<Attribute ColumnName="CREATETS" DataType="Createts"
+					DefaultValue="sysdate" Description="Create Time Stamp" />
+				<Attribute ColumnName="MODIFYTS" DataType="Modifyts"
+					DefaultValue="sysdate" Description="Modify Time Stamp" />
+				<Attribute ColumnName="CREATEUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Creating User ID" />
+				<Attribute ColumnName="MODIFYUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Modifying User ID" />
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Creating Program ID" />
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Modifying Program ID" />
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="Lock ID" />
+			</Attributes>
+			<PrimaryKey Name="PROMO_KEY_PK">
+				<Attribute ColumnName="PROMO_KEY" />
+			</PrimaryKey>
+		</Entity>
+
+
+		<Entity ApiNeeded="Y" AuditRequired="N"
+			Description="entity keeps the records for customer PO no and the tenders for getOrderDetails"
+			HasHistory="Y" Prefix="VSI_" TableName="VSI_GET_CUST_PONO"
+			XMLName="CustomerPoNoRecords">
+			<Attributes>
+				<Attribute ColumnName="CUST_PO_NO_KEY" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="false" DataType="Key"
+					XMLName="CustPoNoKey" SqlServerDataType="" />
+				<Attribute ColumnName="ORDER_HEADER_KEY" DataType="Key"
+					DefaultValue="' '" Type="CHAR" Nullable="false" Description=""
+					XMLName="OrderHeaderKey" />
+				<Attribute ColumnName="CUSTOMER_PO_NO" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="40"
+					Type="VARCHAR2" XMLName="CustomerPONo" SqlServerDataType="" />
+				<Attribute ColumnName="VOUCHERS_AMT"
+					DataType="ComputedMoney" Nullable="true" Description=""
+					XMLName="VouchersAmt" Type="NUMBER" />
+				<Attribute ColumnName="GIFT_CARD_AMT"
+					DataType="ComputedMoney" Nullable="true" Description=""
+					XMLName="GiftCardAmt" Type="NUMBER" />
+				<Attribute ColumnName="CREDIT_CARD_AMT"
+					DataType="ComputedMoney" Nullable="true" Description=""
+					XMLName="CreaditCardAmt" Type="NUMBER" />
+					<Attribute ColumnName="PAYPAL_AMT"
+					DataType="ComputedMoney" Nullable="true" Description=""
+					XMLName="PayPalAmt" Type="NUMBER" />
+					
+					<Attribute ColumnName="TENDER_NO" DecimalDigits=""
+					DefaultValue="''" Description="" Nullable="true" Size="40"
+					Type="VARCHAR2" XMLName="TenderNo" SqlServerDataType="" />
+				<Attribute ColumnName="CREATETS" DataType="Createts"
+					DefaultValue="sysdate" Description="Create Time Stamp" />
+				<Attribute ColumnName="MODIFYTS" DataType="Modifyts"
+					DefaultValue="sysdate" Description="Modify Time Stamp" />
+				<Attribute ColumnName="CREATEUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Creating User ID" />
+				<Attribute ColumnName="MODIFYUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Modifying User ID" />
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Creating Program ID" />
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Modifying Program ID" />
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="Lock ID" />
+			</Attributes>
+			
+			<PrimaryKey Name="CUST_PO_NO_KEY">
+				<Attribute ColumnName="CUST_PO_NO_KEY" />
+			</PrimaryKey>
+			<Indices>
+                    <Index Name="VSI_GET_CUST_PONO_001">
+					<Column Name="ORDER_HEADER_KEY" />
+				</Index>
+			</Indices>
+		</Entity>
+		
+	
+				<Entity ApiNeeded="Y" AuditRequired="N" Description=""
+			HasHistory="Y" Prefix="VSI_" TableName="VSI_LINE_AVAILBILITY"
+			XMLName="VSILineAvailbility">
+			<Attributes>
+				<Attribute ColumnName="CREATETS" DataType="Createts"
+					DefaultValue="sysdate" Description="Create Time Stamp" />
+				<Attribute ColumnName="MODIFYTS" DataType="Modifyts"
+					DefaultValue="sysdate" Description="Modify Time Stamp" />
+				<Attribute ColumnName="CREATEUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Creating User ID" />
+				<Attribute ColumnName="MODIFYUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Modifying User ID" />
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Creating Program ID" />
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Modifying Program ID" />
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="Lock ID" />
+				<Attribute ColumnName="VSI_LINE_AVAILBILITY_KEY"
+					DataType="Key" DefaultValue="' '" Description="" Nullable="False"
+					XMLName="VSILineAvailbilityKey" />
+				<Attribute ColumnName="ORDER_LINE_KEY" DataType="Key"
+					DefaultValue="' '" Description="" Nullable="False"
+					XMLName="ORDER_LINE_KEY" />
+				<Attribute ColumnName="AVAILBILITY_DATE" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="AvailbilityDate" />
+				<Attribute ColumnName="Quantity" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="Quantity" />
+				
+			</Attributes>
+
+			<PrimaryKey Name="LINE_AV_KEY">
+				<Attribute ColumnName="VSI_LINE_AVAILBILITY_KEY" />
+			</PrimaryKey>
+
+			<Indices>
+
+			</Indices>
+
+			<!-- Relationship -->
+			<Parent ParentTableName="YFS_ORDER_LINE">
+				<Attribute ColumnName="ORDER_LINE_KEY"
+					ParentColumnName="ORDER_LINE_KEY" />
+			</Parent>
+		</Entity>
+		
+		
+		<Entity ApiNeeded="Y" AuditRequired="N" Description=""
+			HasHistory="Y" Prefix="VSI_" TableName="VSI_CUSTOM_PRICE"
+			XMLName="VSICustomPrice">
+			<Attributes>
+				<Attribute ColumnName="CREATETS" DataType="Createts"
+					DefaultValue="sysdate" Description="Create Time Stamp" />
+				<Attribute ColumnName="MODIFYTS" DataType="Modifyts"
+					DefaultValue="sysdate" Description="Modify Time Stamp" />
+				<Attribute ColumnName="CREATEUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Creating User ID" />
+				<Attribute ColumnName="MODIFYUSERID" DataType="UserId"
+					DefaultValue="' '" Description="Modifying User ID" />
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Creating Program ID" />
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="ProgramID" DefaultValue="' '"
+					Description="Modifying Program ID" />
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="Lock ID" />
+				<Attribute ColumnName="VSI_CUSTOM_PRICE_KEY"
+					DataType="Key" DefaultValue="' '" Description="" Nullable="False"
+					XMLName="VSICustomPriceKey" />
+				<Attribute ColumnName="ORDER_LINE_KEY" DataType="Key"
+					DefaultValue="' '" Description="" Nullable="False"
+					XMLName="ORDER_LINE_KEY" />
+				<Attribute ColumnName="Amt" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="Amt" />
+				<Attribute ColumnName="Qty" DataType=""
+					DecimalDigits="" DefaultValue="''" Description="" Type="VARCHAR2"
+					Size="20" Nullable="true" XMLName="Qty" />
+				
+			</Attributes>
+
+			<PrimaryKey Name="VSI_PRICE_KEY">
+				<Attribute ColumnName="VSI_CUSTOM_PRICE_KEY" />
+			</PrimaryKey>
+
+			<Indices>
+
+			</Indices>
+
+			<!-- Relationship -->
+			<Parent ParentTableName="YFS_ORDER_LINE">
+				<Attribute ColumnName="ORDER_LINE_KEY"
+					ParentColumnName="ORDER_LINE_KEY" />
+			</Parent>
+		</Entity>
+		
+		<Entity TableName="YFS_ORDER_INVOICE">
+			<Attributes>
+				<Attribute ColumnName="EXTN_COUPON_CODE" DecimalDigits=""
+					DefaultValue="" Description="Coupon Code" Nullable="true" Size="40"
+					Type="VARCHAR2" XMLName="ExtnCouponCode" XMLGroup="Extn"
+					SqlServerDataType="" ApiNeeded="Y"/>
+				<Attribute ColumnName="EXTN_APPEASE_AMOUNT" DecimalDigits=""
+					DefaultValue="" Description="Appeased Amount" Nullable="true" Size="40"
+					Type="VARCHAR2" XMLName="ExtnAppeaseAmount" XMLGroup="Extn"
+					SqlServerDataType="" ApiNeeded="Y"/>
+				<Attribute ColumnName="EXTN_SEND_TRAILER_INVOICE" DecimalDigits=""
+					DefaultValue="N" Description="Indicates whether Trailer Invoice has been Send" Nullable="true" Size="1"
+					DataType="Flag" XMLName="ExtnSendTrailerInvoice" XMLGroup="Extn"
+					SqlServerDataType="" ApiNeeded="Y"/>
+				<Attribute ColumnName="EXTN_TRAILER_NO" DecimalDigits=""
+					DefaultValue="" Description="Trailer No" Nullable="true" Size="40"
+					Type="VARCHAR2" XMLName="ExtnTrailerNo" XMLGroup="Extn"
+					SqlServerDataType="" ApiNeeded="Y"/>
+				<Attribute ColumnName="EXTN_IS_LAST_INVOICE_FOR_ORDER" DecimalDigits=""
+					DefaultValue="N" Description="Flag for last order invoice" Nullable="true" Size="1"
+					DataType="Flag" XMLName="ExtnIsLastInvoiceForOrder" XMLGroup="Extn"
+					SqlServerDataType="" ApiNeeded="Y"/>	
+			</Attributes>
+		</Entity>
+		
+		<Entity ApiNeeded="Y" Description="Ship Restricted Item Details" Prefix="VSI" TableName="VSI_ITEM_SHIP_RESTRICTION" TableType="TRANSACTION" XMLName="VSIShipRestrictedItem">
+         <Attributes>
+            <Attribute ColumnName="RESTRICTED_ITEM_KEY" DataType="Key" DefaultValue="" Nullable="False" Description="PrimaryKey" XMLName="RestrictedItemKey" />
+
+            <Attribute ColumnName="ITEM_KEY" DataType="Key" DefaultValue="" Nullable="False" XMLName="ItemKey" />
+
+            <Attribute ColumnName="ITEM_ID" Type="VARCHAR2" Size="20" DefaultValue="" Nullable="False" XMLName="ItemID" />
+
+            <Attribute ColumnName="UNIT_OF_MEASURE" Type="VARCHAR2" Size="20" DefaultValue="" Nullable="True" XMLName="UnitOfMeasure" />
+			
+			<Attribute ColumnName="ORGANIZATION_CODE" Type="VARCHAR2" Size="20" DefaultValue="" Nullable="True" XMLName="OrganizationCode" />
+
+            <Attribute ColumnName="ZIPCODE" Type="VARCHAR2" Size="20" DefaultValue="" Nullable="True" XMLName="ZipCode" />
+			
+			<Attribute ColumnName="STATE" Type="VARCHAR2" Size="50" DefaultValue="" Nullable="True" XMLName="State" />
+
+            <Attribute ColumnName="COUNTRY" Type="VARCHAR2" Size="50" DefaultValue="" Nullable="True" XMLName="Country" />
+			
+			<Attribute ColumnName="CREATETS" DataType="TimeStamp" DefaultValue="sysdate" Nullable="False" Description="Create TimeStamp" />
+
+            <Attribute ColumnName="MODIFYTS" DataType="TimeStamp" DefaultValue="sysdate" Nullable="False" Description="Modify TimeStamp" />
+
+            <Attribute ColumnName="CREATEUSERID" DataType="UserId" DefaultValue="" Nullable="False" Description="Creating User ID" />
+
+            <Attribute ColumnName="MODIFYUSERID" DataType="UserId" DefaultValue="" Nullable="False" Description="Modifying User ID" />
+
+            <Attribute ColumnName="CREATEPROGID" DataType="ProgramID" DefaultValue="" Nullable="False" Description="Creating Program ID" />
+
+            <Attribute ColumnName="MODIFYPROGID" DataType="ProgramID" DefaultValue="" Nullable="False" Description="Modifying Program ID" />
+
+            <Attribute ColumnName="LOCKID" DataType="Lockid" DefaultValue="0" Nullable="False" Description="Lock ID" />
+         </Attributes>
+
+         <PrimaryKey Name="RESTRICT_ITEM_KEY">
+            <Attribute ColumnName="RESTRICTED_ITEM_KEY" />
+         </PrimaryKey>
+		 <Indices>
+				<Index Name="RESTRICTED_ITEM_INDEX_I1" Unique="true">
+					<Column Name="ITEM_ID" />
+					<Column Name="STATE" />
+					<Column Name="COUNTRY" />
+				</Index>
+		</Indices>
+
+         <Parent ParentTableName="YFS_ITEM">
+            <Attribute ColumnName="ITEM_KEY" ParentColumnName="ITEM_KEY" />
+         </Parent>
+      </Entity>
+	  
+	  
+	  <Entity ApiNeeded="Y" Description="Signature Required Item Details" Prefix="VSI" TableName="VSI_SIGNATURE_REQUIRED_ITEM" TableType="TRANSACTION" XMLName="VSISignatureRequiredItem">
+         <Attributes>
+            <Attribute ColumnName="SIGNATURE_REQUIRED_KEY" DataType="Key" DefaultValue="" Nullable="False" Description="Primary Key for the hang-off table" XMLName="SignatureReqdItemKey" />
+
+            <Attribute ColumnName="ITEM_KEY" DataType="Key" DefaultValue="" Nullable="False" XMLName="ItemKey" />
+
+            <Attribute ColumnName="ITEM_ID" Type="VARCHAR2" Size="20" DefaultValue="" Nullable="False" XMLName="ItemID" />
+
+            <Attribute ColumnName="UNIT_OF_MEASURE" Type="VARCHAR2" Size="20" DefaultValue="" Nullable="True" XMLName="UnitOfMeasure" />
+			
+			<Attribute ColumnName="ORGANIZATION_CODE" Type="VARCHAR2" Size="20" DefaultValue="" Nullable="True" XMLName="OrganizationCode" />
+			
+			<Attribute ColumnName="STATE" Type="VARCHAR2" Size="50" DefaultValue="" Nullable="True" XMLName="State" />
+
+             <Attribute ColumnName="SIGN_18_REQD" DataType="Flag" DefaultValue="N" Nullable="True" XMLName="Extn18SignReqd" />
+			 
+			  <Attribute ColumnName="SIGN_21_REQD" DataType="Flag" DefaultValue="N" Nullable="True" XMLName="Extn21SignReqd" />
+			
+			<Attribute ColumnName="CREATETS" DataType="TimeStamp" DefaultValue="sysdate" Nullable="False" Description="Create TimeStamp" />
+
+            <Attribute ColumnName="MODIFYTS" DataType="TimeStamp" DefaultValue="sysdate" Nullable="False" Description="Modify TimeStamp" />
+
+            <Attribute ColumnName="CREATEUSERID" DataType="UserId" DefaultValue="" Nullable="False" Description="Creating User ID" />
+
+            <Attribute ColumnName="MODIFYUSERID" DataType="UserId" DefaultValue="" Nullable="False" Description="Modifying User ID" />
+
+            <Attribute ColumnName="CREATEPROGID" DataType="ProgramID" DefaultValue="" Nullable="False" Description="Creating Program ID" />
+
+            <Attribute ColumnName="MODIFYPROGID" DataType="ProgramID" DefaultValue="" Nullable="False" Description="Modifying Program ID" />
+
+            <Attribute ColumnName="LOCKID" DataType="Lockid" DefaultValue="0" Nullable="False" Description="Lock ID" />
+         </Attributes>
+
+         <PrimaryKey Name="SIGNATURE_REQ_KEY">
+            <Attribute ColumnName="SIGNATURE_REQUIRED_KEY" />
+         </PrimaryKey>
+
+         <Parent ParentTableName="YFS_ITEM">
+            <Attribute ColumnName="ITEM_KEY" ParentColumnName="ITEM_KEY" />
+         </Parent>
+         
+          <Indices>
+				<Index Name="SIG_REQ_ITEM_INDEX_I1" Unique="true">
+					<Column Name="ITEM_ID" />
+					<Column Name="STATE" />
+				</Index>
+		</Indices>
+      </Entity>
+		
+		<Entity Name="" XMLName="SVSAuthRecords" ApiNeeded="Y"
+			AuditRequired="N"
+			Description="Entity keeps the information related to authorization records"
+			Prefix="VSI_" TableName="VSI_SVS_AUTH_RECORD">
+			<!-- Table columns -->
+			<Attributes>
+				<Attribute ColumnName="SVS_AUTH_RECORD_KEY"
+					DataType="Key" DefaultValue="' '" XMLName="SVSAuthRecordKey"
+					Type="CHAR" Nullable="false" Description="" />
+
+				<Attribute ColumnName="ORDER_HEADER_KEY" DataType="Key"
+					DefaultValue="' '" Type="CHAR" Nullable="false" Description=""
+					XMLName="OrderHeaderKey" />
+
+				<Attribute ColumnName="AUTHORIZATION_ID" DataType=""
+					DefaultValue="' '" Description="" XMLName="AuthorizationId"
+					Type="VARCHAR2" Size="40" Nullable="false" />
+				<Attribute ColumnName="SVC_NO"
+					DataType="Text-20" DefaultValue="' '" Description=""
+					XMLName="SVCNo" Type="VARCHAR2" Nullable="false" />
+					
+
+				<Attribute ColumnName="CREATETS" DataType="TimeStamp"
+					DefaultValue="sysdate" Description="" XMLName="AuthLineCreateTS"
+					Type="DATE" />
+
+				<Attribute ColumnName="MODIFYTS" DataType="TimeStamp"
+					DefaultValue="sysdate" Description="" XMLName="AuthLineModifyTS"
+					Type="DATE" />
+
+				<Attribute ColumnName="CREATEUSERID"
+					DataType="Createuserid" DefaultValue="' '" Description=""
+					XMLName="CreateUserID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="MODIFYUSERID"
+					DataType="Modifyuserid" DefaultValue="' '" Description=""
+					XMLName="ModifyUserID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="Createprogid" DefaultValue="' '" Description=""
+					XMLName="CreateProgID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="Modifyprogid" DefaultValue="' '" Description=""
+					XMLName="ModifyProgID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="" XMLName="LockID" Type="NUMBER" />
+			</Attributes>
+
+			<!-- PrimaryKey is a mandatory attribute in entity definition. This element can have ONLY ONE attribute element -->
+			<PrimaryKey Name="SVSAuthRecordKey">
+				<Attribute ColumnName="SVS_AUTH_RECORD_KEY" />
+			</PrimaryKey>
+
+			<Indices></Indices>
+
+			<Parent ParentTableName="YFS_ORDER_HEADER">
+				<Attribute ColumnName="ORDER_HEADER_KEY"
+					ParentColumnName="ORDER_HEADER_KEY" />
+			</Parent>
+		</Entity>
+		
+		<Entity Name="" XMLName="PaymentRecords" ApiNeeded="Y"
+			AuditRequired="N"
+			Description="Entity keeps the information related to authorization records"
+			Prefix="VSI_" TableName="VSI_PAYMENT_RECORD">
+			<!-- Table columns -->
+			<Attributes>
+				<Attribute ColumnName="PAYMENT_RECORD_KEY"
+					DataType="Key" DefaultValue="' '" XMLName="PaymentRecordKey"
+					Type="CHAR" Nullable="false" Description="" />
+
+				<Attribute ColumnName="ORDER_HEADER_KEY" DataType="Key"
+					DefaultValue="' '" Type="CHAR" Nullable="false" Description=""
+					XMLName="OrderHeaderKey" />
+
+				<Attribute ColumnName="RECORD" DataType="CLOB"
+					DefaultValue="''" Description="Request and Response For Credit Cards"
+					Nullable="true" Name="Record" XMLName="Record" />
+					
+				<Attribute ColumnName="CHARGE_TYPE"
+					DefaultValue="' '" Description="" XMLName="ChargeType"
+					Type="VARCHAR2" Size="40" Nullable="false" />
+				
+				
+				<Attribute ColumnName="CREATETS" DataType="TimeStamp"
+					DefaultValue="sysdate" Description="" XMLName="PaymentRecordsCreateTS"
+					Type="DATE" />
+
+				<Attribute ColumnName="MODIFYTS" DataType="TimeStamp"
+					DefaultValue="sysdate" Description="" XMLName="PaymentRecordsModifyTS"
+					Type="DATE" />
+
+				<Attribute ColumnName="CREATEUSERID"
+					DataType="Createuserid" DefaultValue="' '" Description=""
+					XMLName="CreateUserID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="MODIFYUSERID"
+					DataType="Modifyuserid" DefaultValue="' '" Description=""
+					XMLName="ModifyUserID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="Createprogid" DefaultValue="' '" Description=""
+					XMLName="CreateProgID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="Modifyprogid" DefaultValue="' '" Description=""
+					XMLName="ModifyProgID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="" XMLName="LockID" Type="NUMBER" />
+			</Attributes>
+
+			<!-- PrimaryKey is a mandatory attribute in entity definition. This element can have ONLY ONE attribute element -->
+			<PrimaryKey Name="PaymentRecordKey">
+				<Attribute ColumnName="PAYMENT_RECORD_KEY" />
+			</PrimaryKey>
+
+			<Indices>
+				<Index Name="EXTN_VSI_PAYMENT_RECORD_001">
+					<Column Name="ORDER_HEADER_KEY" />
+				</Index>										
+			</Indices>
+
+			<Parent ParentTableName="YFS_ORDER_HEADER">
+				<Attribute ColumnName="ORDER_HEADER_KEY"
+					ParentColumnName="ORDER_HEADER_KEY" />
+			</Parent>
+		</Entity>
+		
+		<Entity TableName="YFS_CUSTOMER">
+			<Attributes>
+				<Attribute ColumnName="EXTN_TAX_EXEMPT_FLAG" DefaultValue=""
+					Description="Stores Customer's Tax Exempt Status" Nullable="true" Size="1" Type="CHAR"
+					XMLName="ExtnTaxExemptFlag" XMLGroup="Extn" />
+				<Attribute ColumnName="EXTN_EXEMPTION_CODE" DefaultValue=""
+					Description="Stores Customer's Tax Exempt Code" Nullable="true" Size="40" Type="VARCHAR2"
+					XMLName="ExtnTaxExemptionCode" XMLGroup="Extn" />
+				<Attribute ColumnName="EXTN_PREFERRED_CARRIER" DefaultValue=""
+					Description="Stores Customer's Preferred Carrier" Nullable="true" Size="40" Type="VARCHAR2"
+					XMLName="ExtnPreferredCarrier" XMLGroup="Extn" />
+			</Attributes>
+		</Entity>
+		
+		<Entity TableName="YFS_ORDER_RELEASE">
+			<Attributes>
+				<Attribute ColumnName="EXTN_JDA_TRN_NBR" DefaultValue=""
+					Description="JDA Transfer Number" Nullable="true" Size="40" Type="VARCHAR2"
+					XMLName="ExtnJDATransferNumber" XMLGroup="Extn" />
+			</Attributes>
+			<Indices>
+				<Index Name="EXTN_YFS_ORDER_RELEASE_001">
+					<Column Name="CUSTOMER_PO_NO" />
+					<Column Name="RELEASE_NO" />
+				</Index>																				
+			</Indices>
+		</Entity>
+		
+		<!-- Custom Table for Time In Transit feed - EXTN_TIME_IN_TRANSIT -->
+		<Entity ApiNeeded="Y" Description="Table used to store time in transit information" Prefix="EXTN" TableName="EXTN_TIME_IN_TRANSIT" XMLName="ExtnTimeInTransit" Cacheable="true">
+			<Attributes>
+				<Attribute ColumnName="TNT_LINE_KEY" DataType="Key" DefaultValue=" " Nullable="false" XMLName="ExtnTNTLineKey" Description="Primary key of EXTN_TIME_IN_TRANSIT" />
+				<Attribute ColumnName="SHIP_FROM_ZIP_CODE" Size="35" Type="VARCHAR2" DefaultValue=" " Nullable="false" XMLName="ExtnShipFromZipCode" Description="Ship From Zip" />
+				<Attribute ColumnName="SHIP_TO_ZIP_CODE" Size="35" Type="VARCHAR2" DefaultValue=" " Nullable="false" XMLName="ExtnShipToZipCode" Description="Ship To Zip" />
+				<Attribute ColumnName="CARRIER" Size="24" Type="CHAR" DefaultValue="" Nullable="true" XMLName="ExtnCarrier" Description="Carrier Name" />
+				<Attribute ColumnName="CARRIER_SERVICE_CODE" Size="40" Type="VARCHAR2" DefaultValue="" Nullable="true" XMLName="ExtnCarrierServiceCode" Description="Carrier Service Code" />
+				<Attribute ColumnName="TIME_IN_TRANSIT" Size="10" Type="NUMBER" DefaultValue="" Nullable="true" XMLName="ExtnTimeInTransit" Description="Time In transit" />
+				
+				<Attribute ColumnName="CREATETS" DataType="TimeStamp" DefaultValue="sysdate" Description="Create TimeStamp" />
+				<Attribute ColumnName="MODIFYTS" DataType="TimeStamp" DefaultValue="sysdate" Description="Modify TimeStamp" />
+				<Attribute ColumnName="CREATEUSERID" DataType="UserId" DefaultValue=" " Description="Creating User ID" />
+				<Attribute ColumnName="MODIFYUSERID" DataType="UserId" DefaultValue=" " Description="Modifying User ID" />
+				<Attribute ColumnName="CREATEPROGID" DataType="ProgramID" DefaultValue=" " Description="Creating Program ID" />
+				<Attribute ColumnName="MODIFYPROGID" DataType="ProgramID" DefaultValue=" " Description="Modifying Program ID" />
+				<Attribute ColumnName="LOCKID" DataType="Lockid" DefaultValue="0" Description="Lock ID" />
+			</Attributes>
+			<PrimaryKey>
+				<Attribute ColumnName="TNT_LINE_KEY" />
+			</PrimaryKey>
+			<Indices>
+				<Index Name="TNT_INDEX_I1" Unique="true">
+					<Column Name="SHIP_FROM_ZIP_CODE" />
+					<Column Name="SHIP_TO_ZIP_CODE" />
+					<Column Name="CARRIER" />
+					<Column Name="CARRIER_SERVICE_CODE" />
+				</Index>
+				<Index Name="TNT_INDEX_I2" Unique="false">
+					<Column Name="SHIP_FROM_ZIP_CODE" />
+					<Column Name="SHIP_TO_ZIP_CODE" />
+					<Column Name="CARRIER_SERVICE_CODE" />
+				</Index>
+				<Index Name="TNT_INDEX_I3" Unique="false">
+					<Column Name="SHIP_FROM_ZIP_CODE" />
+					<Column Name="SHIP_TO_ZIP_CODE" />
+				</Index>
+			</Indices>
+		</Entity> 
+		
+ <Entity ApiNeeded="Y" Description="Table for City and county data" Prefix="VSI_" TableName="VSI_CITY_COUNTY_DATA" XMLName="VSICountyData">
+         <Attributes>
+
+            <Attribute ColumnName="CITY_COUNTY_KEY" DataType="Key" Size="24" DefaultValue="' '" Nullable="false" Description="PrimaryKey" XMLName="ExtnCityCountyKey"/>
+
+             <Attribute ColumnName="CITY" DataType="City" Size="35" DefaultValue="' '" Nullable="false" Description="City" XMLName="ExtnCity"/>
+
+			<Attribute ColumnName="STATE" DataType="State" Size="35" DefaultValue="' '" Nullable="false" Description="State" XMLName="ExtnState"/>
+
+			<Attribute ColumnName="ZIP_CODE" DataType="ZipCode" Size="35" DefaultValue="" Nullable="true" Description="Zip Code" XMLName="ExtnZipCode"/>
+
+			<Attribute ColumnName="COUNTY" DataType="Country" Size="40" DefaultValue="" Nullable="true" Description="County" XMLName="ExtnCounty"/>
+
+			<Attribute ColumnName="COUNTRY" DataType="Country" Size="40" DefaultValue="' '" Nullable="false" Description="Country Code" XMLName="ExtnCountry"/>
+			
+			<Attribute ColumnName="CREATETS" DataType="TimeStamp" DefaultValue="sysdate" Nullable="false" Description="Create TimeStamp" />
+
+            <Attribute ColumnName="MODIFYTS" DataType="TimeStamp" DefaultValue="sysdate" Nullable="false" Description="Modify TimeStamp" />
+
+            <Attribute ColumnName="CREATEUSERID" DataType="UserId" DefaultValue="" Nullable="false" Description="Creating User ID" />
+
+            <Attribute ColumnName="MODIFYUSERID" DataType="UserId" DefaultValue="" sNullable="false" Description="Modifying User ID" />
+
+            <Attribute ColumnName="CREATEPROGID" DataType="ProgramID" DefaultValue="" Nullable="false" Description="Creating Program ID" />
+
+            <Attribute ColumnName="MODIFYPROGID" DataType="ProgramID" DefaultValue="" Nullable="false" Description="Modifying Program ID" />
+
+            <Attribute ColumnName="LOCKID" DataType="Lockid" DefaultValue="0" Nullable="false" Description="Lock ID" />
+
+         </Attributes>
+         <PrimaryKey Name="CITY_COUNTY_KEY">
+            <Attribute ColumnName="CITY_COUNTY_KEY"/>
+         </PrimaryKey>
+         			<Indices> 
+				<Index Name="INDEX_COUNTYDATA_I1" Unique="true">
+					<Column Name="CITY" />
+					<Column Name="COUNTRY" />
+					<Column Name="STATE" />
+					<Column Name="ZIP_CODE" />
+				</Index>
+			</Indices>
+      </Entity>  
+
+		<!-- Start: Added for VSISettlementLoad Integration -->	
+	<Entity ApiNeeded="Y" Description="Settlement Header Table" Prefix="VSI" TableName="VSI_SETTLEMENT_HEADER" TableType="TRANSACTION" XMLName="VSISettlement">
+         <Attributes>
+            <Attribute ColumnName="SETTLEMENT_KEY" DataType="Key" DefaultValue="" Nullable="False" Description="PrimaryKey" XMLName="SettlementKey" />
+            <Attribute ColumnName="SETTLEMENT_ID" Type="VARCHAR2" Size="50" DefaultValue="" Nullable="True" XMLName="SettlementId" />
+			<Attribute ColumnName="SETTLEMENT_START_DATE" DataType="TimeStamp" DefaultValue="" Description="" XMLName="SettlementStartDate" Type="DATE" Nullable="true" />
+			<Attribute ColumnName="SETTLEMENT_END_DATE" DataType="TimeStamp" DefaultValue="" Description="" XMLName="SettlementEndDate" Type="DATE" Nullable="true" />
+			<Attribute ColumnName="SETTLEMENT_DEPOSIT_DATE" DataType="TimeStamp" DefaultValue="" Description="" XMLName="SettlementDepositDate" Type="DATE" Nullable="true" />
+			<Attribute ColumnName="TOTAL_AMOUNT" Type="VARCHAR2" Size="50" DefaultValue="" Nullable="True" XMLName="TotalAmount" />
+		    <Attribute ColumnName="EXTN_STOREFRONT" Type="VARCHAR2" Size="50" DefaultValue="" Nullable="True" XMLName="ExtnStoreFront" />
+			<Attribute ColumnName="CREATETS" DataType="TimeStamp" DefaultValue="sysdate" Nullable="False" Description="Create TimeStamp" Type="DATE"/>
+            <Attribute ColumnName="MODIFYTS" DataType="TimeStamp" DefaultValue="sysdate" Nullable="False" Description="Modify TimeStamp" Type="DATE"/>
+            <Attribute ColumnName="CREATEUSERID" DataType="UserId" DefaultValue="" Nullable="False" Description="Creating User ID" />
+            <Attribute ColumnName="MODIFYUSERID" DataType="UserId" DefaultValue="" Nullable="False" Description="Modifying User ID" />
+            <Attribute ColumnName="CREATEPROGID" DataType="ProgramID" DefaultValue="" Nullable="False" Description="Creating Program ID" />
+            <Attribute ColumnName="MODIFYPROGID" DataType="ProgramID" DefaultValue="" Nullable="False" Description="Modifying Program ID" />
+            <Attribute ColumnName="LOCKID" DataType="Lockid" DefaultValue="0" Nullable="False" Description="Lock ID" />
+        </Attributes>
+        	  <!-- Primary Key -->
+		<PrimaryKey Name="SETTLEMENT_KEY">
+            <Attribute ColumnName="SETTLEMENT_KEY" />
+        </PrimaryKey>
+		 	  <!-- Unique Index -->
+		<Indices>
+			<Index Name="INDEX_SETTL_ID_I1" Unique="True">
+				<Column Name="SETTLEMENT_ID" />
+			</Index>
+		</Indices>
+    </Entity>
+	
+	
+	<Entity ApiNeeded="Y" Description="Settlement Transaction Table" Prefix="VSI" TableName="VSI_SETL_TRANSACTION" TableType="TRANSACTION" XMLName="VSISetlTransaction">
+         <Attributes>
+            <Attribute ColumnName="TRANSACTION_KEY" DataType="Key" DefaultValue="" Nullable="False" Description="PrimaryKey" XMLName="TransactionKey" />
+            <Attribute ColumnName="SETTLEMENT_ID" Type="VARCHAR2" Size="50" DefaultValue="" Nullable="False" XMLName="SettlementId" />
+            <Attribute ColumnName="TRANSACTION_TYPE" Type="VARCHAR2" Size="50" DefaultValue="" Nullable="True" XMLName="TransactionType" />
+			<Attribute ColumnName="ORDER_ID" Type="VARCHAR2" Size="50" DefaultValue="" Nullable="True" XMLName="OrderId" />
+			<Attribute ColumnName="FULFILLMENT_ID" Type="VARCHAR2" Size="50" DefaultValue="" Nullable="True" XMLName="FulfillmentId" />
+		    <Attribute ColumnName="EXTN_STOREFRONT" Type="VARCHAR2" Size="50" DefaultValue="" Nullable="True" XMLName="ExtnStoreFront" />
+			<Attribute ColumnName="SKU" Type="VARCHAR2" Size="50" DefaultValue="" Nullable="True" XMLName="Sku" />
+			<Attribute ColumnName="QUANTITY_PURCHASED" Type="VARCHAR2" Size="50" DefaultValue="" Nullable="True" XMLName="QuantityPurchased" />
+			<Attribute ColumnName="CREATETS" DataType="TimeStamp" DefaultValue="sysdate" Nullable="False" Description="Create TimeStamp" Type="DATE"/>
+            <Attribute ColumnName="MODIFYTS" DataType="TimeStamp" DefaultValue="sysdate" Nullable="False" Description="Modify TimeStamp" Type="DATE"/>
+            <Attribute ColumnName="CREATEUSERID" DataType="UserId" DefaultValue="" Nullable="False" Description="Creating User ID" />
+            <Attribute ColumnName="MODIFYUSERID" DataType="UserId" DefaultValue="" Nullable="False" Description="Modifying User ID" />
+            <Attribute ColumnName="CREATEPROGID" DataType="ProgramID" DefaultValue="" Nullable="False" Description="Creating Program ID" />
+            <Attribute ColumnName="MODIFYPROGID" DataType="ProgramID" DefaultValue="" Nullable="False" Description="Modifying Program ID" />
+            <Attribute ColumnName="LOCKID" DataType="Lockid" DefaultValue="0" Nullable="False" Description="Lock ID" />
+         </Attributes>
+		 	  <!-- Primary Key -->
+         <PrimaryKey Name="TRANSACTION_KEY">
+            <Attribute ColumnName="TRANSACTION_KEY" />
+         </PrimaryKey>
+		 	  <!-- Foreign Key -->
+		 <ForeignKeys>
+			<ForeignKey ParentTableName="VSI_SETTLEMENT_HEADER" XMLName="VSISettlement" >
+				<Attribute ColumnName="SETTLEMENT_ID" ParentColumnName="SETTLEMENT_ID" />
+			</ForeignKey>
+		</ForeignKeys>
+			  <!-- Non Unique Index -->
+		<Indices>
+			<Index Name="INDEX_SET_TRAN_ID_I1" >
+				<Column Name="SETTLEMENT_ID" />
+				<Column Name="TRANSACTION_TYPE" />
+				<Column Name="ORDER_ID" />
+			</Index>
+		</Indices>
+		
+    </Entity>
+	
+	
+	<Entity ApiNeeded="N" Description="Settlement Charge Transaction Table" Prefix="VSI" TableName="VSI_SETL_TRANS_CHARGE" TableType="TRANSACTION" XMLName="VSISetlTransCharge">
+         <Attributes>
+            <Attribute ColumnName="CHARGE_KEY" DataType="Key" DefaultValue="" Nullable="False" Description="PrimaryKey" XMLName="ChargeKey" />
+			<Attribute ColumnName="TRANSACTION_KEY" DataType="Key" DefaultValue="" Nullable="False" Description="" XMLName="TransactionKey" />
+            <Attribute ColumnName="CHARGE_TYPE" Type="VARCHAR2" Size="50" DefaultValue="" Nullable="True" XMLName="ChargeType" />
+            <Attribute ColumnName="CHARGE_AMOUNT" Type="VARCHAR2" Size="50" DefaultValue="" Nullable="True" XMLName="ChargeAmount" />
+			<Attribute ColumnName="PROMOTION_ID" Type="VARCHAR2" Size="1000" DefaultValue="" Nullable="True" XMLName="PromotionId" />
+			<Attribute ColumnName="EXTN_STOREFRONT" Type="VARCHAR2" Size="50" DefaultValue="" Nullable="True" XMLName="ExtnStoreFront" />
+			<Attribute ColumnName="CREATETS" DataType="TimeStamp" DefaultValue="sysdate" Nullable="False" Description="Create TimeStamp" Type="DATE" />
+            <Attribute ColumnName="MODIFYTS" DataType="TimeStamp" DefaultValue="sysdate" Nullable="False" Description="Modify TimeStamp" Type="DATE" />
+            <Attribute ColumnName="CREATEUSERID" DataType="UserId" DefaultValue="" Nullable="False" Description="Creating User ID" />
+            <Attribute ColumnName="MODIFYUSERID" DataType="UserId" DefaultValue="" Nullable="False" Description="Modifying User ID" />
+            <Attribute ColumnName="CREATEPROGID" DataType="ProgramID" DefaultValue="" Nullable="False" Description="Creating Program ID" />
+            <Attribute ColumnName="MODIFYPROGID" DataType="ProgramID" DefaultValue="" Nullable="False" Description="Modifying Program ID" />
+            <Attribute ColumnName="LOCKID" DataType="Lockid" DefaultValue="0" Nullable="False" Description="Lock ID" />
+         </Attributes>
+		  <!-- Primary Key -->
+         <PrimaryKey Name="CHARGE_KEY">
+            <Attribute ColumnName="CHARGE_KEY" />
+         </PrimaryKey>
+		 <!-- Relationship -->
+		<Parent ParentTableName="VSI_SETL_TRANSACTION">
+			<Attribute ColumnName="TRANSACTION_KEY" ParentColumnName="TRANSACTION_KEY" />
+		</Parent>
+		<Indices>
+			<Index Name="XX_TRANSACTION_KEY2" >
+				<Column Name="TRANSACTION_KEY" />
+			</Index>
+		</Indices>
+    </Entity>
+	
+	 <!-- End: Added for VSISettlementLoad Integration -->	
+	 	 	 <!-- Start: Added for VSICommissionOrder Integration -->	
+	<Entity ApiNeeded="Y" Description="Commission Junction Orders" Prefix="VSI" TableName="VSI_COMMISSION_ORDER" TableType="TRANSACTION" XMLName="VSICommissionOrder">
+         <Attributes>
+            <Attribute ColumnName="ORDER_KEY" DataType="Key" DefaultValue="" Nullable="False" Description="PrimaryKey" XMLName="OrderKey" />
+            <Attribute ColumnName="ORDER_NO" Type="VARCHAR2" Size="40" DefaultValue="" Nullable="False" XMLName="OrderNo" />
+			<Attribute ColumnName="CREATETS" DataType="TimeStamp" DefaultValue="sysdate" Nullable="False" Description="Create TimeStamp" Type="DATE"/>
+            <Attribute ColumnName="MODIFYTS" DataType="TimeStamp" DefaultValue="sysdate" Nullable="False" Description="Modify TimeStamp" Type="DATE"/>
+            <Attribute ColumnName="CREATEUSERID" DataType="UserId" DefaultValue="" Nullable="False" Description="Creating User ID" />
+            <Attribute ColumnName="MODIFYUSERID" DataType="UserId" DefaultValue="" Nullable="False" Description="Modifying User ID" />
+            <Attribute ColumnName="CREATEPROGID" DataType="ProgramID" DefaultValue="" Nullable="False" Description="Creating Program ID" />
+            <Attribute ColumnName="MODIFYPROGID" DataType="ProgramID" DefaultValue="" Nullable="False" Description="Modifying Program ID" />
+            <Attribute ColumnName="LOCKID" DataType="Lockid" DefaultValue="0" Nullable="False" Description="Lock ID" />
+        </Attributes>
+        	  <!-- Primary Key -->
+		<PrimaryKey Name="VSI_COMMISN_ORD_PK">
+            <Attribute ColumnName="ORDER_KEY" />
+        </PrimaryKey>
+    </Entity>
+
+	<!-- Added for Returns Receiving -->
+	
+	<Entity TableName="YFS_RECEIPT_LINE">
+		<Attributes>
+			<Attribute ColumnName="EXTN_WH_RTNRSNCODE" Type="VARCHAR2" Size="40" DefaultValue="" Nullable="true" XMLName="ExtnWHRtnRsnCode" XMLGroup="Extn" Description="Return Reason Code captured during WareHouse Return" DecimalDigits=""/>
+		</Attributes>
+	</Entity>
+	<Entity ApiNeeded="Y" Description="MCL Inventory Availability" Prefix="VSI" TableName="VSI_MCL_INV_AVAILABILITY" TableType="TRANSACTION" XMLName="VSIMCLInvAvailability">
+         <Attributes>
+            <Attribute ColumnName="INV_AVAIL_KEY" DataType="Key" DefaultValue="" Nullable="False" Description="PrimaryKey" XMLName="InvAvailKey" />
+            <Attribute ColumnName="ITEM_ID" DataType="ItemID" DefaultValue="" Nullable="False" XMLName="ItemID" />
+			<Attribute ColumnName="PRODUCT_CLASS" DataType="ProductClass" DefaultValue="" Nullable="False" XMLName="ProductClass" />
+			<Attribute ColumnName="UOM" DataType="UOM" DefaultValue="" Nullable="False" XMLName="UnitOfMeasure" />
+			<Attribute ColumnName="AVAILABLE_QTY" DataType="Quantity" DefaultValue="0" Nullable="False" XMLName="AvailableQty" />
+			<Attribute ColumnName="STATUS" DataType="Flag" DefaultValue="N" Nullable="False" XMLName="Status" />
+            <Attribute ColumnName="INVENTORY_FLAG" DataType="Flag" DefaultValue="" Nullable="True" XMLName="InventoryFlag" />
+			<Attribute ColumnName="STORE_ID" Type="VARCHAR2" Size="10" DefaultValue="" Nullable="True" XMLName="Node" />
+            <Attribute ColumnName="MODIFYTS" DataType="TimeStamp" DefaultValue="sysdate" Nullable="False" Description="Modify TimeStamp" Type="DATE"/>
+            <Attribute ColumnName="CREATEUSERID" DataType="UserId" DefaultValue="" Nullable="False" Description="Creating User ID" />
+            <Attribute ColumnName="MODIFYUSERID" DataType="UserId" DefaultValue="" Nullable="False" Description="Modifying User ID" />
+            <Attribute ColumnName="CREATEPROGID" DataType="ProgramID" DefaultValue="" Nullable="False" Description="Creating Program ID" />
+            <Attribute ColumnName="MODIFYPROGID" DataType="ProgramID" DefaultValue="" Nullable="False" Description="Modifying Program ID" />
+            <Attribute ColumnName="LOCKID" DataType="Lockid" DefaultValue="0" Nullable="False" Description="Lock ID" />
+        </Attributes>
+        	  <!-- Primary Key -->
+		<PrimaryKey Name="INV_AVAIL_KEY_PK">
+            <Attribute ColumnName="INV_AVAIL_KEY" />
+        </PrimaryKey>
+		<Indices>
+			<Index Name="MCL_INV_AVAIL_I1" Unique="true">
+				<Column Name="ITEM_ID" />
+				<Column Name="PRODUCT_CLASS" />
+				<Column Name="UOM" />
+				<Column Name="STORE_ID" />
+			</Index>
+		</Indices>
+    </Entity>
+	
+	<!-- Added for VSIOrderCancelReport Design : BEGIN -->	
+	<Entity ApiNeeded="Y" Description="This table holds the relevant details required for reporting the cancelled orders and orderlines" Prefix="VSI" TableName="VSI_ORDER_CANCEL_REPORT" TableType="TRANSACTION" XMLName="VSIOrderCancelReport">
+         <Attributes>
+            <Attribute ColumnName="ORDER_CNCL_RPT_KEY" DataType="Key" DefaultValue="" Nullable="False" Description="PrimaryKey" XMLName="OrderCancelReportKey" />
+            <Attribute ColumnName="ORDER_LINE_KEY" Type="CHAR" Size="24" DefaultValue="" Nullable="False" XMLName="OrderLineKey" />
+            <Attribute ColumnName="ORDER_HEADER_KEY" Type="CHAR" Size="24" DefaultValue="" Nullable="False" XMLName="OrderHeaderKey" />
+            <Attribute ColumnName="ITEM_ID" Type="CHAR" Size="40" DefaultValue="" Nullable="False" XMLName="ItemID" />
+            <Attribute ColumnName="CANCEL_REASON_CODE" Type="VARCHAR2" Size="40" DefaultValue="" Nullable="False" XMLName="CancelReasonCode" />
+            <Attribute ColumnName="UNIT_PRICE" Type="NUMBER" Size="19" DecimalDigits="6" DefaultValue="" Nullable="False" XMLName="UnitPrice" />
+            <Attribute ColumnName="CANCELLED_QTY" Type="NUMBER" Size="14" DecimalDigits="4" DefaultValue="" Nullable="False" XMLName="CancelledQty" />
+            <Attribute ColumnName="CUSTOMER_ID" Type="VARCHAR2" Size="40" DefaultValue="" Nullable="False" XMLName="CustomerID" />
+            <Attribute ColumnName="CANCELLED_DATE" DataType="TimeStamp" Type="DATE" DefaultValue="" Nullable="False" XMLName="CancelledDate" />
+			<Attribute ColumnName="CREATETS" DataType="TimeStamp" DefaultValue="sysdate" Nullable="False" Description="Create TimeStamp" Type="DATE"/>
+            <Attribute ColumnName="MODIFYTS" DataType="TimeStamp" DefaultValue="sysdate" Nullable="False" Description="Modify TimeStamp" Type="DATE"/>
+            <Attribute ColumnName="CREATEUSERID" DataType="UserId" DefaultValue="" Nullable="False" Description="Creating User ID" />
+            <Attribute ColumnName="MODIFYUSERID" DataType="UserId" DefaultValue="" Nullable="False" Description="Modifying User ID" />
+            <Attribute ColumnName="CREATEPROGID" DataType="ProgramID" DefaultValue="" Nullable="False" Description="Creating Program ID" />
+            <Attribute ColumnName="MODIFYPROGID" DataType="ProgramID" DefaultValue="" Nullable="False" Description="Modifying Program ID" />
+            <Attribute ColumnName="LOCKID" DataType="Lockid" DefaultValue="0" Nullable="False" Description="Lock ID" />
+        </Attributes>
+        <!-- Primary Key -->
+		<PrimaryKey Name="ORDER_CNCL_RPT_KEY">
+            <Attribute ColumnName="ORDER_CNCL_RPT_KEY" />
+        </PrimaryKey>
+		<!-- Non Unique Index -->
+		<Indices>
+			<Index Name="INDEX_CNCL_ORD_RPT_ID_I1" Unique="False">
+				<Column Name="ORDER_LINE_KEY" />
+			</Index>
+			<Index Name="INDEX_SETTL_ID_I2" Unique="False">
+				<Column Name="ORDER_HEADER_KEY" />
+			</Index>
+		</Indices>
+    </Entity>
+
+	<!-- Added for VSIOrderCancelReport Design : END -->
+		<!-- OMS-870 : Start -->
+	<Entity Name="VSIPaymentRetry" XMLName="VSIPaymentRetry" ApiNeeded="Y"
+		AuditRequired="N"
+		Description="Entity keeps the information related to retry count for failed payment"
+		Prefix="VSI_" TableName="VSI_PAYMENT_RETRY">
+
+			<!-- Table columns -->
+			<Attributes>
+				<Attribute ColumnName="PAYMENT_RETRY_KEY" DataType="Key"
+					DefaultValue="' '" XMLName="PaymentRetryKey" Type="CHAR"
+					Nullable="false" Description="" />
+				<Attribute ColumnName="ORDER_HEADER_KEY" DataType="Key"
+					DefaultValue="' '" Type="CHAR" Nullable="false" Description=""
+					XMLName="OrderHeaderKey" />	
+				<Attribute ColumnName="CHARGE_TRANSACTION_KEY" DataType="Key"
+					DefaultValue="' '" Type="CHAR" Nullable="false" Description=""
+					XMLName="ChargeTransactionKey"/>
+					
+				<Attribute ColumnName="RETRY_COUNT"  DecimalDigits="" DefaultValue="0" 
+				Description="RetryCount" Nullable="false" Size="2" Type="CHAR" 
+						XMLName="RetryCount" />
+				<Attribute ColumnName="CREATETS" DataType="TimeStamp" 
+					DefaultValue="sysdate" Nullable="False" Description="Create TimeStamp" 
+					Type="DATE"/>
+				<Attribute ColumnName="MODIFYTS" DataType="TimeStamp" 
+					DefaultValue="sysdate" Nullable="False" Description="Modify TimeStamp"
+					Type="DATE"/>
+				<Attribute ColumnName="CREATEUSERID" DataType="UserId" DefaultValue="" 
+					Nullable="False" Description="Creating User ID" />	
+				<Attribute ColumnName="MODIFYUSERID" DataType="UserId" DefaultValue="" 
+					Nullable="False" Description="Modifying User ID" />	
+				<Attribute ColumnName="CREATEPROGID" DataType="ProgramID" DefaultValue="" 
+					Nullable="False" Description="Creating Program ID" />	
+				<Attribute ColumnName="MODIFYPROGID" DataType="ProgramID" DefaultValue="" 
+					Nullable="False" Description="Modifying Program ID" />					
+				<Attribute ColumnName="LOCKID" DataType="Lockid" DefaultValue="0" 
+					Nullable="False" Description="Lock ID" />
+				</Attributes>
+			<!-- PrimaryKey is a mandatory attribute in entity definition. This element can have ONLY ONE attribute element -->
+			<PrimaryKey Name="VSI_PYMNT_RTY_PK">
+				<Attribute ColumnName="PAYMENT_RETRY_KEY" />
+			</PrimaryKey>
+			
+			<Parent ParentTableName="YFS_ORDER_HEADER">
+				<Attribute ColumnName="ORDER_HEADER_KEY"
+					ParentColumnName="ORDER_HEADER_KEY" />
+			</Parent>
+			
+			<!-- Added Index for ORDER_HEADER_KEY -->		
+			<Indices>
+				<Index Name="INDEX_PYMNT_RTY_I1" Unique="false">
+					<Column Name="ORDER_HEADER_KEY" />
+				</Index>
+				<Index Name="INDEX_PYMNT_RTY_I2" Unique="true">
+					<Column Name="CHARGE_TRANSACTION_KEY" />
+				</Index>
+			</Indices>	
+			
+		</Entity>
+	<!-- OMS-870 : End -->
+	
+	<Entity Name="" XMLName="" ApiNeeded="Y"
+			AuditRequired="Y" Description="WholeSale Customer Credit Details" Prefix="VSI"
+			TableName="VSI_WH_CUST_CREDIT_DETAILS">
+			<!-- Table columns -->
+			<Attributes>
+			<Attribute ColumnName="CUST_CRDT_DTLS_KEY" DataType="Key"
+					DefaultValue="' '" XMLName="CustCreditDetailsKey" 
+					Nullable="false" Description="Primary Key" />
+					
+				<Attribute ColumnName="ENTERPRISE_CODE" Size="40"
+					DataType="" DefaultValue="" XMLName="EnterpriseCode" Type="VARCHAR2"
+					Nullable="false" Description="Enterprise Code of the Trading Partner" />
+
+				<Attribute Size="24" ColumnName="CUSTOMER_ID" DataType=""
+					DefaultValue="" Description="Unique ID for the trading partner" XMLName="CustomerID" Type="VARCHAR2"
+					Nullable="false" />
+
+				<Attribute ColumnName="CREDIT_LIMIT" DataType="ComputedMoney"
+					DefaultValue="0.00" Description="Credit Limit of the trading partner" XMLName="CreditLimit"
+					Nullable="false" />
+
+				<Attribute ColumnName="CREDIT_AVAILED"
+					DataType="ComputedMoney" Description="Credit Availed by the trading partner"
+					XMLName="CreditAvailed" Type="" Nullable="false" DefaultValue="0.00" />
+
+				<Attribute ColumnName="CREATETS" DataType="TimeStamp"
+					DefaultValue="sysdate" Description="Create TimeStamp" XMLName="CreateTS"
+					Type="DATE" />
+
+				<Attribute ColumnName="MODIFYTS" DataType="TimeStamp"
+					DefaultValue="sysdate" Description="Modify TimeStamp" XMLName="ModifyTS"
+					Type="DATE" />
+
+				<Attribute ColumnName="CREATEUSERID"
+					DataType="Createuserid" DefaultValue="' '" Description="Creating User ID"
+					XMLName="CreateUserID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="MODIFYUSERID"
+					DataType="Modifyuserid" DefaultValue="' '" Description="Modifying User ID"
+					XMLName="ModifyUserID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="Createprogid" DefaultValue="' '" Description="Creating Program ID"
+					XMLName="CreateProgID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="Modifyprogid" DefaultValue="' '" Description="Modifying Program ID"
+					XMLName="ModifyProgID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="" XMLName="LockID" Type="NUMBER" />
+					
+				<Attribute ColumnName="PAYMENT_TERMS" DataType="Text-50"
+					DefaultValue="" Nullable="true" Description="Payment Terms" XMLName="PaymentTerms" />
+				
+				<Attribute ColumnName="CURRENT_BALANCE"
+					DataType="ComputedMoney" Description="Current AR Balance for Trading Partner"
+					XMLName="CurrentBalance" Type="" Nullable="false" DefaultValue="0.00" />
+					
+				<Attribute ColumnName="CREDIT_HOLD_FLAG" DataType="Flag"
+					DefaultValue="N" Description="Flag to determine if Credit is Held for Trading Partner" 
+					XMLName="CreditHoldFlag" Type="CHAR" />
+					
+				<Attribute ColumnName="TERMS_DISC_PERCENT" DataType="Percentage"
+					DefaultValue="0.00" Description="Payment Terms Discount Percentage" 
+					XMLName="TermsDiscountPercentage" />
+				
+				<Attribute ColumnName="TERMS_DISC_DUE_DAYS" DataType="NumberOfDays"
+					DefaultValue="0" Description="Payment Terms Discount Due Days" 
+					XMLName="TermsDiscountDueDays" />
+					
+				<Attribute ColumnName="TERMS_NET_DUE_DAYS" DataType="NumberOfDays"
+					DefaultValue="0" Description="Payment Terms Net Due Days" 
+					XMLName="TermsNetDueDays" />
+					
+			</Attributes>
+
+			<!-- PrimaryKey is a mandatory attribute in entity definition. This element can have ONLY ONE attribute element -->
+			<PrimaryKey Name="CustCreditDtlsPKey">
+				<Attribute ColumnName="CUST_CRDT_DTLS_KEY" />
+			</PrimaryKey>
+		</Entity>
+		<!--OMS-1672 :START-->
+		<Entity TableName="YFS_ORDER_AUDIT_DETAIL" TableType="TRANSACTION" GenerateIndexedListMethods="true">
+            <Attributes>
+			 <Attribute ColumnName="AUDIT_XML" 
+                      CompressionSupported="true"
+                    UseCompression="true"/>
+            </Attributes>
+            <AuditReferences/>
+		</Entity>
+		<!--OMS-1672 : END-->
+		<!--OMS-1874 :START-->
+		<Entity TableName="YFS_AUDIT" >
+            <Attributes>
+			 <Attribute ColumnName="AUDIT_XML" 
+                      CompressionSupported="true"
+                    UseCompression="true"/>
+            </Attributes>
+            <AuditReferences/>
+		</Entity>
+		<!--OMS-1874 : END-->
+		
+		<Entity Name="" XMLName="AurusRefundDetails" ApiNeeded="Y"
+			AuditRequired="N"
+			Description="Entity keeps the information related to refund records"
+			Prefix="VSI_" TableName="VSI_AURUS_REFUND_DETAILS">
+			<!-- Table columns -->
+			<Attributes>
+				<Attribute ColumnName="VSI_AURUS_REFUND_DETAIL_KEY"
+					DataType="Key" DefaultValue="" XMLName="AurusRefundDetailKey"
+					Type="CHAR" Nullable="false" Description="" />
+				<Attribute ColumnName="ORDER_HEADER_KEY" DataType="Key"
+					DefaultValue="' '" Type="CHAR" Nullable="false" Description=""
+					XMLName="OrderHeaderKey" />
+
+				<Attribute ColumnName="EXTN_REFUND_COUNT" 
+                    DefaultValue="" Description="ExtnRefundCount"
+                    Nullable="true" Size="100" Type="VARCHAR2" XMLName="ExtnRefundCount"
+                    />		
+                <Attribute ColumnName="EXTN_REFUND_SEQ_NO" 
+                    DefaultValue="" Description="ExtnRefundSequenceNo"
+                    Nullable="true" Size="100" Type="VARCHAR2" XMLName="ExtnRefundSequenceNo"
+                    />
+					
+				<Attribute ColumnName="CREATETS" DataType="TimeStamp"
+					DefaultValue="sysdate" Description="" XMLName="RefundCreateTS"
+					Type="DATE" />
+
+				<Attribute ColumnName="MODIFYTS" DataType="TimeStamp"
+					DefaultValue="sysdate" Description="" XMLName="RefundModifyTS"
+					Type="DATE" />
+
+				<Attribute ColumnName="CREATEUSERID"
+					DataType="Createuserid" DefaultValue="' '" Description=""
+					XMLName="CreateUserID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="MODIFYUSERID"
+					DataType="Modifyuserid" DefaultValue="' '" Description=""
+					XMLName="ModifyUserID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="CREATEPROGID"
+					DataType="Createprogid" DefaultValue="' '" Description=""
+					XMLName="CreateProgID" Type="VARCHAR2" />
+
+				<Attribute ColumnName="MODIFYPROGID"
+					DataType="Modifyprogid" DefaultValue="' '" Description=""
+					XMLName="ModifyProgID" Type="VARCHAR2" />
+				
+			</Attributes>
+
+			<!-- PrimaryKey is a mandatory attribute in entity definition. This element can have ONLY ONE attribute element -->
+			<PrimaryKey Name="AurusRfdDtlKey">
+				<Attribute ColumnName="VSI_AURUS_REFUND_DETAIL_KEY" />
+			</PrimaryKey>
+
+			<Indices>
+				<Index Name="VSI_AURUS_REFUND_001">
+					<Column Name="ORDER_HEADER_KEY" />
+				</Index>
+			</Indices>
+
+			<Parent ParentTableName="YFS_ORDER_HEADER">
+				<Attribute ColumnName="ORDER_HEADER_KEY"
+					ParentColumnName="ORDER_HEADER_KEY" />
+			</Parent>
+		</Entity>
+	</Entities>
+	
+</DBSchema>

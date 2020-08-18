@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.home.VoucherLookupScreenBehaviorController"
+    requestMethodSupported="POST" screenId="extn.home.VoucherLookupScreen">
+    <MashupRefs>
+        <MashupRef extnType="ADD" 
+            mashupId="extn_checkVoucher"
+            mashupRefId="extn_VSICheckVoucher_RefID" permissionId=""/>
+
+    </MashupRefs>	
+	
+	
+</Controller>

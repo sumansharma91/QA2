@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mashups>
+    <mashup description="Get Shipment Line List details"
+        endpoint="EP_CONFIG" id="backroomPick_getShipmentLineDetails"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.wsc.shipment.common.mashups.ShipmentLineListMashup"/>
+        <API Name="getShipmentLineList">
+            <Input>
+                <ShipmentLine
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    IsPickable="Y" MaximumRecords=""
+                    ShipmentKey="xml:scControllerInput:/Shipment/@ShipmentKey" ShipmentLineKey=""/>
+            </Input>
+            <Template>
+                <ShipmentLines>
+                    <ShipmentLine BackroomPickComplete=""
+                        BackroomPickedQuantity="" ItemID=""
+                        OrderHeaderKey="" OrderLineKey=""
+                        OriginalQuantity="" ProductClass="" Quantity=""
+                        ShipmentKey="" ShipmentLineKey="" ShortageQty="" UnitOfMeasure="">
+                        <OrderLine IsBundleParent="" ItemGroupCode="">
+                            <ItemDetails ItemGroupCode="" ItemID="" UnitOfMeasure="">
+                                <PrimaryInformation
+                                    ExtendedDisplayDescription=""
+                                    ImageID="" ImageLabel="" ImageLocation=""/>
+								<ItemAliasList>
+								 <ItemAlias AliasValue="" AliasName=""/>
+								 </ItemAliasList>
+                                <ClassificationCodes Model=""/>
+                            </ItemDetails>
+                        </OrderLine>
+                    </ShipmentLine>
+                </ShipmentLines>
+            </Template>
+        </API>
+        <APINamespace inputNS="backroomPickShipmentLineList_output" outputNS="backroomPickShipmentLineList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="WSCSYS00001"/>
+            <AlternateResourceId altResourceId="WSC000001"/>
+        </AlternateResourceIds>
+    </mashup>
+</mashups>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="AddressEntryExtn"
+        extnPackage="extn.order.create.address"
+        originalScreen="isccs.order.create.address.AddressEntry"
+        originalScreenPackage="isccs.order.create.address" type="diffrential">
+        <Items>
+            <TitlePane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="orderAddresses"
+                collapsible="true" toggleable="false"/>
+            <CheckBox _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="hiddenField"
+                label="$(_scSimpleBundle:extn_Schedule_Pick_Up_Call_Tag)" uId="extn_Generate_Call_Tag_Alert">
+                <BindingData>
+                    <CheckedValue value="Y"/>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="extn_changeOrderHeaderToGenerateTag_Input"
+                            path="Order.Extn.ExtnGenerateCallTagalert" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                    <UncheckedValue value="N"/>
+                </BindingData>
+            </CheckBox>
+        </Items>
+        <Namespaces>
+            <TargetNamespaces>
+                <Target
+                    description="To hold the value of Generate Call Tag Attribute"
+                    isExtn="true"
+                    scExtensibilityArrayItemId="extn_TargetNamespaces_1" value="extn_changeOrderHeaderToGenerateTag_Input"/>
+            </TargetNamespaces>
+        </Namespaces>
+        <Subscribers>
+            <Local>
+                <Subscriber
+                    description="This method Calls Change Order to update the Order Header for generating a Call Tag"
+                    eventId="extn_Generate_Call_Tag_Alert_onClick"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="manageGenerateCallTagAlert"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Behavior>
+                <MashupRef extnType="ADD"
+                    mashupId="extn_changeOrderHeaderToGenerateTag" mashupRefId="extn_changeOrderHeader_CallTag"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

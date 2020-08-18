@@ -1,0 +1,54 @@
+		<div>
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_ItemID' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '1' , 
+		'class' : 'autoLabelZeroWidth blockComponent hashNumberAlign' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'lbl_OrderNum'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'Inbox'
+,
+		 path : 			'Inbox.ItemID'
+,
+		 dynamicBindingFunc : 			'ItemID'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_ItemID')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_Quantity' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '2' , 
+		'class' : 'autoLabelZeroWidth blockComponent hashNumberAlign' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_ItemID'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'Inbox'
+,
+		 path : 			'Inbox.Quantity'
+,
+		 dynamicBindingFunc : 			'Quantity'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Quantity')
+			}
+		}
+	 					}">
+		 	</div>  
+		</div>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ManageAlertExtn"
+        extnPackage="extn.alert.manage"
+        originalScreen="isccs.alert.manage.ManageAlert"
+        originalScreenPackage="isccs.alert.manage" type="diffrential">
+        <Items>
+            <FilteringSelect _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txt_Priority" uId="cmb_Alert_Status"/>
+            <DataLabel _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lblAlertID" uId="lblAlertType"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

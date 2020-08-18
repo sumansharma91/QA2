@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle screenBundleId="extn.editors.OrderEditorRTExtnBundle" screenId="extn.editors.OrderEditorRTExtn">
+    <BundleEntries>
+        <BundleEntry bundleEntryId="managePayment_Link_value"
+            bundleKey="extn_View_Change_Payment_Method"
+            bundleValueFn="_scSimpleBundle" property="value"
+            type="WIDGET" uId="managePayment"/>
+        <BundleEntry bundleEntryId="cancelOrder_Link_label"
+            bundleKey="blank" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="cancelOrder"/>
+        <BundleEntry bundleEntryId="cancelOrder_Link_value"
+            bundleKey="TITLE_cancelorder"
+            bundleValueFn="_scSimpleBundle" property="value"
+            type="WIDGET" uId="cancelOrder"/>
+        <BundleEntry bundleEntryId="extn_giftCardFulfillment_Link_value"
+            bundleKey="extn_Fulfill_Gift_Cards"
+            bundleValueFn="_scSimpleBundle" property="value"
+            type="WIDGET" uId="extn_giftCardFulfillment"/>
+    </BundleEntries>
+</ScreenBundle>

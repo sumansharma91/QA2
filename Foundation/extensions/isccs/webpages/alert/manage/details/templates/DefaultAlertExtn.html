@@ -1,0 +1,37 @@
+		<div>
+		 	<div data-dojo-type="idx/form/Textarea" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'insert' , 
+		cols : 500 , 
+		readOnly : true , 
+		'class' : 'alertDetailMessage' , 
+		colspan : 1000 , 
+		_sc_extensibility_moveOrder : '2' , 
+		_sc_extensibility_referenceUId : 'lblAlertDetails' , 
+		uId : 'extn_textarea' , 
+		renderHidden : true , 
+		_sc_extensibility_position : 'before'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 path : 			'Inbox.DetailDescription'
+,
+		 dynamicBindingFunc : 			'massageOutputForCallTagalert'
+,
+		 namespace : 			'getExceptionDetails_Output'
+	}
+	}
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Label" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'lblAlertDetails' , 
+		renderHidden : false  
+	 					}">
+		 	</div>  
+		</div>

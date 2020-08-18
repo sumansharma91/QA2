@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="FulfillmentSummaryDetailsScreenExtn"
+        extnPackage="extn.order.fulfillmentSummary"
+        originalScreen="isccs.order.fulfillmentSummary.FulfillmentSummaryDetailsScreen"
+        originalScreenPackage="isccs.order.fulfillmentSummary" type="diffrential">
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="afterScreenInit" isExtn="true" sequence="51">
+                    <Handler methodName="extn_InitScreen"/>
+                </Subscriber>
+                <Subscriber description="checkFulfillmentOptions"
+                    eventId="saveCurrentPage" isExtn="true" sequence="19">
+                    <Handler methodName="checkFulfillmentOptions"/>
+                </Subscriber>
+                <Subscriber description="applyBOGO"
+                    eventId="saveCurrentPage" isExtn="true" sequence="51">
+                    <Handler methodName="applyBOGO"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Init>
+                <MashupRef extnType="MODIFY"
+                    mashupId="fulfillmentSummary_getFulfillmentSummaryDetails" mashupRefId="getFulfillmentSummaryDetails"/>
+            </Init>
+            <Behavior>
+                <MashupRef extnType="ADD"
+                    mashupId="extn_getOrderFulfillmentDetails" mashupRefId="extn_getOrderFulfillmentDetails_referenceid"/>
+                <MashupRef extnType="ADD" mashupId="extn_vsiPromiseDate" mashupRefId="extn_vsiPromiseDate_referenceid"/>
+                <MashupRef extnType="ADD" mashupId="extn_changeOrder" mashupRefId="extn_changeOrder_referenceid"/>
+                <MashupRef extnType="ADD" mashupId="extn_applyBOGO" mashupRefId="extn_applyBOGO_referenceid"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

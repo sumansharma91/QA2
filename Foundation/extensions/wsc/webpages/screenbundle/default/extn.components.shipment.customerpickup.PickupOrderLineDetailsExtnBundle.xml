@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.components.shipment.customerpickup.PickupOrderLineDetailsExtnBundle" screenId="extn.components.shipment.customerpickup.PickupOrderLineDetailsExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="extn_customerpickup_upc_DataLabel_label"
+            bundleKey="extn_UPC_Code" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_customerpickup_upc"/>
+        <BundleEntry bundleEntryId="extn_custpickup_upc_DataLabel_label"
+            bundleKey="extn_UPC_Code" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_custpickup_upc"/>
+        <BundleEntry
+            bundleEntryId="extn_finishpickup_upc_DataLabel_label"
+            bundleKey="extn_UPC_Code" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_finishpickup_upc"/>
+    </BundleEntries>
+</ScreenBundle>

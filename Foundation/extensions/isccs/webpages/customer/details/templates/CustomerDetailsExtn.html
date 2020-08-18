@@ -1,0 +1,334 @@
+		<div>
+			<div data-dojo-type="sc/plat/dojo/widgets/ControllerWidget"
+				data-dojo-props="data_dojo_props_diff: {
+				uId: 'extn_screenref_CustomerLoyaltyDetails',
+				packageName: 'extn.customer.loyalty',
+				className: 'CustomerLoyaltyDetails',
+				handleInit: true,
+				dynamicLoading: true,
+			_sc_extensibility_operation: 'insert',
+			_sc_extensibility_referenceUId: 'extn_pnlLoyaltyDetails',
+			_sc_extensibility_position: 'first',
+			_sc_extensibility_moveOrder: '12',
+			scExtensionDataFn: function() {
+				return {
+				}
+			}}">
+	</div>
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'pnlPrimaryInfo'  
+	 					}">
+		 	<div data-dojo-type="sc/plat/dojo/layout/AdvancedTableLayout" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								cols : 2  
+	 					}">
+		 	</div>  
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : false , 
+		_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'DST_MainInfoPanel'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : false , 
+		_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'pnlNotes'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'pnlAlerts'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'pnlReturns'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'pnlDemographics'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_pnlLoyaltyDetails' , 
+		resourceId : 'ISCORD0001' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '10' , 
+		'class' : 'singlecolumntable' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'ManageCustomerAddresses'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	title : 			this.getSimpleBundleString('extn_Loyalty_Details')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_pnlLoyaltyDetails' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '11' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'pnlAddresses'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'pnlPaymentMethods'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'pnlOrdersFromCart'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		uId : 'extn_datalabel_VIP' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '8' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'lblDayPhone'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'getCompleteCustomerDetails_output'
+,
+		 path : 			'Customer.Extn.ExtnVIPFlag'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_VIP')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'lblDayPhone'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getBundleString('extn_Primary_Phone')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'lblDayPhone' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '6' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'lnkEmailAddress'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		uId : 'extn_datalabel_LoyaltyCustomer' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '9' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'lblDayPhone'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'getCompleteCustomerDetails_output'
+,
+		 path : 			'Customer.Extn.ExtnLoyaltyCustomer'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Loyalty_Customer')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_datalabel_HealthyAwards' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '1' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'lblDayPhone'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'getCustomerContact_output'
+,
+		 path : 			'CustomerContact.CustomerContactID'
+	}
+	}
+,	
+			 	label : 			this.getBundleString('extn_Healthy_Awards_')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_datalabel_Gender' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '5' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'lblDayPhone'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'getCustomerContact_output'
+,
+		 path : 			'CustomerContact.ExtnGender'
+	}
+	}
+,	
+			 	label : 			this.getBundleString('extn_Gender')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_datalabel_Gender' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '7' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_datalabel_HealthyAwards'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_datalabel_Ship_Preference' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '2' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_datalabel_HealthyAwards'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'getCompleteCustomerDetails_output'
+,
+		 path : 			'Customer.Extn.ExtnPreferredCarrierDescription'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Ship_Preference')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_datalabel_Tax_Exempt' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '3' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'lblDayPhone'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'getCompleteCustomerDetails_output'
+,
+		 path : 			'Customer.Extn.ExtnTaxExemptionCode'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Tax_Exempt')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'lblEveningPhone'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'lblMobilePhone'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_HealthyRewardPoints' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '13' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_screenref_CustomerLoyaltyDetails'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'getCompleteCustomerDetails_output'
+,
+		 path : 			'Customer.HealthyRewardPoints'
+	}
+	}
+,	
+			 	label : 			this.getBundleString('extn_HealthyRewardPoints')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_datalabel_LoyaltyTier' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '15' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'pnlPrimaryInfo'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'getCompleteCustomerDetails_output'
+,
+		 path : 			'Customer.Extn.ExtnLoyaltyTier'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Loyalty_Tier')
+			}
+		}
+	 					}">
+		 	</div>  
+		</div>

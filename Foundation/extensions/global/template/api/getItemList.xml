@@ -1,0 +1,9 @@
+<ItemList>
+<Item CanUseAsServiceTool="" Createprogid="" Createts="" Createuserid="" DisplayItemId="" GlobalItemID="" InheritAttributesFromClassification="" IsShippingCntr="" ItemGroupCode="" ItemID="" ItemKey="" Lockid="" MaxModifyTS="" Modifyprogid="" Modifyts="" Modifyuserid="" OrganizationCode="" UnitOfMeasure="">
+<Extn ExtnActSkuID="" ExtnTaxProductCode="" ExtnIsDiscontinuedItem="" ExtnIsSignReqdItem="" ExtnItemType="" ExtnIsRestrictedItem="" ExtnSFSEligible=""/>
+<PrimaryInformation UnitWeight="" UnitWeightUOM=""/>
+<ItemAliasList>
+   <ItemAlias AliasName="" AliasValue=""/>
+</ItemAliasList>
+</Item>
+</ItemList>

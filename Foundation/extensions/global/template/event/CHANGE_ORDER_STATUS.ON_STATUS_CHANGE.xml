@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OrderStatusChange>
+<OrderAudit AuditTransactionId="" OrderAuditKey=""
+        OrderHeaderKey="" OrderLineKey="" OrderReleaseKey=""
+        ReasonCode="" ReasonText="" Reference1="" Reference2=""
+        Reference3="" Reference4="" XMLFlag="">
+    <Order EnterpriseCode="" OrderNo="" DocumentType="" CustomerPONo="" OrderType="" OrderHeaderKey="" MinOrderStatus="" MaxOrderStatus=""/>
+    <OrderAuditLevels >
+	<OrderAuditLevel ModificationLevel="" OrderReleaseKey="" OrderLineKey="">
+	   <OrderLine OrderLineKey="" OrderedQty="" PrimeLineNo="" SubLineNo="" CustomerPONo="" >
+     <Item ItemID="" ProductClass="" OrganizationCode="" UnitOfMeasure=""/>
+    </OrderLine>
+	</OrderAuditLevel>
+    </OrderAuditLevels>
+</OrderAudit>
+</OrderStatusChange>

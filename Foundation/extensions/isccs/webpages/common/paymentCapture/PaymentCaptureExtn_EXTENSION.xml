@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="PaymentCaptureExtn"
+        extnPackage="extn.common.paymentCapture"
+        originalScreen="isccs.common.paymentCapture.PaymentCapture"
+        originalScreenPackage="isccs.common.paymentCapture" type="diffrential">
+        <Items>
+            <Button _sc_extensibility_operation="change" _sc_extensibility_referenceUId="Popup_btnNext"/>
+            <FilteringSelect _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="cmbPaymentType" renderHidden="false"/>
+            <CheckBox _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="chkSaveAgainstCustomer"
+                disabled="true" renderHidden="true"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber description="getCommonCode"
+                    eventId="afterScreenInit" isExtn="true" sequence="51">
+                    <Handler methodName="getCommonCode"/>
+                </Subscriber>
+                <Subscriber eventId="afterScreenInit" isExtn="true" sequence="52">
+                    <Handler methodName="extn_init"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Init>
+                <MashupRef extnType="MODIFY"
+                    mashupId="paymentCapturePanel_getPaymentTypeList"
+                    mashupRefId="getPaymentTypeListMashup" sequence="5"/>
+                <MashupRef extnType="MODIFY"
+                    mashupId="paymentCapture_getCustomerPaymentMethodList"
+                    mashupRefId="getCustomerPaymentMethodList" sequence="5"/>
+            </Init>
+            <Behavior>
+                <MashupRef extnType="ADD" mashupId="extn_getToken" mashupRefId="extn_getToken_referenceid"/>
+                <MashupRef extnType="ADD" mashupId="extn_getCommonCode" mashupRefId="extn_getCommonCode_referenceid"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

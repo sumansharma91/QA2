@@ -1,0 +1,80 @@
+<div class="sc-platform-screen-default">
+    <!-- Licensed Materials - Property of IBM IBM Call Center for Commerce
+    (5725-P82) (C) Copyright IBM Corp. 2013 All Rights Reserved. US Government
+    Users Restricted Rights - Use, duplication or disclosure restricted by
+    GSA ADP Schedule Contract with IBM Corp. -->
+    <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 
+		'class' : 'isccsScreen' , 
+		colspan : 1 , 
+		aria_label_key : 'aria_wizardContent' , 
+		uId : 'WizardScreenPanel' , 
+		layoutAlign : 'top'  
+ " role='region'>
+        <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		'class' : 'wizardNavigationPanelTop wizardNavigationPanel ' , 
+		uId : 'navigationPanel2' , 
+		renderHidden : true  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	'aria-label' : 			this.getSimpleBundleString('Region_wizard_navigation')
+			}
+		}
+" role='region'>
+            <div data-dojo-type="dijit/form/Button" data-dojo-props="		'class' : 'idxButtonIcon idxSecondaryButton navClose' , 
+		uId : 'closeBttn2' , 
+		iconClass : ' idxCloseIcon'  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getSimpleBundleString('Close')
+			}
+		}
+"></div>
+            <div data-dojo-type="dijit/form/Button" data-dojo-props="		'class' : 'idxButtonIcon floatRight navNote' , 
+		uId : 'addNoteBtn2'  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getSimpleBundleString('Add_View_Note')
+			}
+		}
+"></div>
+        </div>
+        <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		uId : 'AdditionalButtonsPanel'  
+ "></div>
+        <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		'class' : 'wizardMainContainer' , 
+		dojoAttachPoint : 'stackContainerNode' , 
+		uId : 'mainContent'  
+ "></div>
+        <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		'class' : 'wizardNavigationPanel wizardNavigationPanelBottom' , 
+		uId : 'navigationPanel' , 
+		renderHidden : true  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	'aria-label' : 			this.getSimpleBundleString('Region_wizard_navigation')
+			}
+		}
+" role='region'>
+            <div data-dojo-type="dijit/form/Button" data-dojo-props="		'class' : 'idxButtonIcon idxSecondaryButton navClose' , 
+		uId : 'closeBttn' , 
+		iconClass : ' idxCloseIcon'  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getSimpleBundleString('Close')
+			}
+		}
+"></div>
+            <div data-dojo-type="dijit/form/Button" data-dojo-props="		'class' : 'idxButtonIcon floatRight navNote' , 
+		uId : 'addNoteBtn'  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getSimpleBundleString('Add_View_Note')
+			}
+		}
+"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<OrderList>
+	<Order CustomerEMailID="" EntryType="" MessageType="" OrderNo="" >
+		<Extn ExtnPointsEarned="" ExtnTotalPointsEarned="" />
+		<OrderLines>
+			<OrderLine CarrierServiceCode="" CustomerPONo="" LineType="" ReqShipDate="" OrderedQty="" ShipNode="" >
+				<Extn ExtnLastPickDate="" />
+				<Item ItemID="" ItemDesc="" ItemSize="" />
+				<LineOverallTotals ExtendedPrice="" />
+				<ItemDetails>
+					<Extn ExtnItemSize="" ExtnActSkuID="" ExtnBrandTitle="" ExtnItemUOM="" ExtnItemType="" />
+				</ItemDetails>
+				<OrderDates>
+				<OrderDate/>
+				</OrderDates>
+			</OrderLine>			
+		</OrderLines>
+		<OverallTotals GrandDiscount="" LineSubTotal="" GrandShippingCharges="" GrandTax="" GrandTotal="" />
+		<Promotions>
+			<Promotion Description="" />
+		</Promotions>
+		<PaymentMethods>
+			<PaymentMethod PaymentType="" CreditCardType="" DisplayCreditCardNo="" TotalAuthorized="" TotalCharged="" PaymentReference1="" PaymentReference3="" MaxChargeLimit="" DisplaySvcNo=""/>
+		</PaymentMethods>
+		<PersonInfoBillTo FirstName="" LastName="" AddressLine1="" AddressLine2="" City="" State="" ZipCode="" Country="" DayPhone="" EMailID="" />
+		<PersonInfoShipTo FirstName="" LastName="" AddressLine1="" AddressLine2="" City="" State="" ZipCode="" Country="" DayPhone="" EMailID="" />
+	</Order>
+</OrderList>

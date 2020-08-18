@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- **File Format*** 000 OrderNo,extn_transaction_no 666 **File with Data*** 000 WO40440193,347276 666 -->
+<FlatfileDelimitedSchema  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ParserDefaults RecordIdStartPosition="1" DefaultPadCharacter="#" DefaultFieldDelimiter="," DefaultRecordDelimiter="Newline">
+<FileHeader FileHeaderLength="3" FileHeaderStartPos="1" FileHeaderId="000"/>
+<FileTrailer FileTrailerLength="3" FileTrailerStartPos="1" FileTrailerId="666"/>
+</ParserDefaults>
+<Root Name="OrderList">
+<Header Name="Order" MaxOccurrence="1" MinOccurrence="1" RecordName="Order"/> 
+</Root>
+<RecordDefinitions>
+
+
+<Record Name="ORDER" XMLName="Order" RecordId="ORDER">
+<Field Name="OrderNo" XMLName="OrderNo" FieldPosition="1"/>
+<Field Name="ExtnTransactionNo" XMLName="ExtnTransactionNo" FieldPosition="2"/>
+<Field Name="Amount" XMLName="Amount" FieldPosition="3"/>
+</Record>
+</RecordDefinitions>
+</FlatfileDelimitedSchema>

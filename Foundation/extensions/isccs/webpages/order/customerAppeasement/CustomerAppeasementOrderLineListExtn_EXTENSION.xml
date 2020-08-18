@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension
+        extnClassName="CustomerAppeasementOrderLineListExtn"
+        extnPackage="extn.order.customerAppeasement"
+        originalScreen="isccs.order.customerAppeasement.CustomerAppeasementOrderLineList"
+        originalScreenPackage="isccs.order.customerAppeasement" type="diffrential">
+        <Items>
+            <GridX _sc_extensibility_operation="change" _sc_extensibility_referenceUId="OLST_listGrid">
+                <Structure>
+                    <Layout>
+                        <View __isCurrentOrgInsert="true"
+                            _sc_extensibility_operation="change"
+                            _sc_extensibility_referenceUId="tblColQuantity"
+                            hidden="false" uId="tblColQuantity"/>
+                    </Layout>
+                </Structure>
+            </GridX>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber
+                    description="This method will store the Customer Email ID to Context on Page Load."
+                    eventId="afterScreenInit" isExtn="true" sequence="51">
+                    <Handler methodName="storeCustomerEmailIDToContext"/>
+                </Subscriber>
+                <Subscriber description="extnMashupCompletion"
+                    eventId="onExtnMashupCompletion" isExtn="true" sequence="51">
+                    <Handler methodName="extnMashupCompletion"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Init>
+                <MashupRef extnType="MODIFY"
+                    mashupId="customerAppeasement_getCompleteOrderLineList"
+                    mashupRefId="getCompleteOrderLineList_Init"
+                    pageSize="1" pageSizeType="OrderLine" paginationStrategy="NEXTPAGE"/>
+            </Init>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

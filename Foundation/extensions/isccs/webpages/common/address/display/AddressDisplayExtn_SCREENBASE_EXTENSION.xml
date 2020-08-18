@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="AddressDisplayExtn"
+        extnPackage="extn.common.address.display"
+        originalScreen="isccs.common.address.display.AddressDisplay"
+        originalScreenPackage="isccs.common.address.display" type="diffrential">
+        <Items>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lnkEditAddress" renderHidden="true"/>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lnkEmail" renderHidden="true"/>
+            <Link _sc_extensibility_moveOrder="9"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="lnkEmail"
+                scuiDataType="EMailID" uId="extn_screenbase_link_Email"/>
+            <Label _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblAddressLine1" renderHidden="false"/>
+            <Label _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lblAddressCity" uId="extn_screenbase_label_AddressLine1"/>
+            <Label _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblAddressLine2" renderHidden="false"/>
+            <Label _sc_extensibility_moveOrder="3"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="lblAddressLine2" uId="extn_screenbase_label_AddressLine2"/>
+            <Label _sc_extensibility_moveOrder="5"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lblDayPhone" uId="extn_screenbase_label_Country"/>
+            <Label _sc_extensibility_moveOrder="7"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lnkEmail" uId="extn_screenbase_label_DayPhone"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="afterScreenInit" isExtn="true" sequence="51">
+                    <Handler methodName="extn_init"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+    </ScreenExtension>
+</ExtensionMetaData>

@@ -1,0 +1,7 @@
+<OrderList>
+<Order OrderHeaderKey="">
+<PaymentMethods>
+<PaymentMethod PaymentType="" TotalAuthorized="" TotalCharged=""/>
+</PaymentMethods>
+</Order>
+</OrderList>

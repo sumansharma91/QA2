@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.home.portlets.ReturnsPortletExtnBundle" screenId="extn.home.portlets.ReturnsPortletExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="extn_textfield_OrderNo_TextField_label"
+            bundleKey="extn_Order_" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_textfield_OrderNo"/>
+    </BundleEntries>
+</ScreenBundle>

@@ -1,0 +1,25 @@
+<OrderList>
+	<Order  >
+		<OrderLines>
+			<OrderLine  >
+			<Item>
+			<Extn />
+			</Item>
+			<LinePriceInfo />
+				<OrderDates>
+					<OrderDate />
+				</OrderDates>	
+				<OrderHoldTypes>
+					<OrderHoldType HoldType="" LastHoldTypeDate="" OrderHeaderKey="" OrderLineKey="" Status="" />
+				</OrderHoldTypes>		
+			</OrderLine>
+		</OrderLines>
+		<PaymentMethods />
+		<PersonInfoBillTo />
+		<PersonInfoShipTo />
+		<OverallTotals />
+		<OrderHoldTypes>
+					<OrderHoldType HoldType="" LastHoldTypeDate="" OrderHeaderKey="" OrderLineKey="" Status="" />
+		</OrderHoldTypes>
+	</Order>
+</OrderList>

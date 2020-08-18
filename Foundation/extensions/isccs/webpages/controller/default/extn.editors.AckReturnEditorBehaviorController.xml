@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Licensed Materials - Property of IBM
+IBM Call Center for Commerce (5725-P82)
+(C) Copyright IBM Corp. 2013 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.editors.AckReturnEditorBehaviorController"
+    requestMethodSupported="POST" screenId="extn.editors.AckReturnEditor">
+	<MashupRefs>
+        <MashupRef mashupId="testScreen_flushCache"
+            mashupRefId="flushCache" permissionId=""/>
+		<MashupRef mashupId="getEnterpriseList"
+            mashupRefId="getEnterpriseList" permissionId=""/>	
+    </MashupRefs>
+</Controller>

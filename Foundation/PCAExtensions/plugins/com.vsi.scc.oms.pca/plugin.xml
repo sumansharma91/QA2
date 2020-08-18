@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+    <extension id="com.vsi.scc.oms.pca.AutoLoader" point="com.yantra.yfc.rcp.YRCPluginAutoLoader">
+        <AutoLoad ClassToLoad="com.vsi.scc.oms.pca.registry.ExtnAutoLoader" LoadOrder="500"/>
+    </extension>
+    <extension
+          point="com.yantra.yfc.rcp.YRCRelatedTasks">
+       <tasks
+             id="ReceiveOrderTasks">
+          <task
+                actionId="com.vsi.scc.oms.pca.order.action.ReceiveOrderAction"
+                filterRequired="true"
+                groupId="Return_Tasks"
+                id="ReceiveOrderTask"
+                isExtension="false"
+                name="Receive Order">
+             <categories
+                   id="VSIRelatedCategories">
+                <category
+                      id="YCD_RETURN_SUMMARY_RELATED">
+                </category>
+             </categories>
+          </task>
+       </tasks>
+    </extension>
+    <extension
+          point="org.eclipse.ui.actionSets">
+       <actionSet
+             id="com.vsi.scc.oms.pca.actionSet1"
+             label="com.vsi.scc.oms.pca.actionSet1"
+             visible="true">
+          <action
+                class="com.vsi.scc.oms.pca.order.action.ReceiveOrderAction"
+                definitionId="com.vsi.scc.oms.pca.order.action.ReceiveOrderAction"
+                id="com.vsi.scc.oms.pca.order.action.ReceiveOrderAction"
+                label="com.vsi.scc.oms.pca.order.action.ReceiveOrderAction"
+                style="push">
+          </action>
+          <action
+                class="com.vsi.scc.oms.pca.order.action.ReceiveOrderReasonCodesApplyAction"
+                definitionId="com.vsi.scc.oms.pca.order.action.ReceiveOrderReasonCodesApplyAction"
+                id="com.vsi.scc.oms.pca.order.action.ReceiveOrderReasonCodesApplyAction"
+                label="com.vsi.scc.oms.pca.order.action.ReceiveOrderReasonCodesApplyAction"
+                style="push">
+          </action>
+       </actionSet>
+    </extension>
+    <extension
+          point="org.eclipse.ui.bindings">
+       <key
+             commandId="com.vsi.scc.oms.pca.order.action.ReceiveOrderAction"
+             contextId="com.vsi.scc.oms.pca.order.receive.wizardPages.ReceiveOrderWizardPage"
+             schemeId="defaultYantraKeyConfigurations"
+             sequence="M1+M2+Q">
+       </key>
+    </extension>
+    <extension
+          point="org.eclipse.ui.commands">
+       <command
+             categoryId="YCD_RETURN_SUMMARY_RELATED"
+             id="com.vsi.scc.oms.pca.order.action.ReceiveOrderAction"
+             name="com.vsi.scc.oms.pca.order.action.ReceiveOrderAction">
+       </command>
+       <command
+             categoryId="com.vsi.scc.oms.pca.order.action.ReceiveOrderReasonCodes"
+             id="com.vsi.scc.oms.pca.order.action.ReceiveOrderReasonCodesApplyAction"
+             name="com.vsi.scc.oms.pca.order.action.ReceiveOrderReasonCodesApplyAction">
+       </command>
+       <category
+             description="ApplyReceiveOrderReasonCodes"
+             id="com.vsi.scc.oms.pca.order.action.ReceiveOrderReasonCodes"
+             name="ApplyReceiveOrderReasonCodes">
+       </category>
+    </extension>
+    <extension
+          point="com.yantra.yfc.rcp.YRCRelatedTaskGroups">
+       <groups
+             id="com.vsi.scc.oms.pca.groups1">
+          <group
+                id="Return_Tasks"
+                name="Return_Tasks"
+                sequence="30">
+          </group>
+       </groups>
+    </extension>
+    <extension
+          point="com.yantra.yfc.rcp.YRCRelatedTaskCategories">
+       <categories
+             id="VSIRelatedCategories">
+          <category
+                id="YCD_RETURN_SUMMARY_RELATED">
+             <tasks
+                   id="ReceiveOrderTasks">
+                <task
+                      id="ReceiveOrderTask">
+                </task>
+             </tasks>
+          </category>
+       </categories>
+    </extension>
+    <extension
+          point="org.eclipse.ui.editors">
+       <editor
+             class="com.vsi.scc.oms.pca.order.receive.editor.ReceiveOrderEditor"
+             default="false"
+             icon="Koala.jpg"
+             id="com.vsi.scc.oms.pca.order.receive.editor.ReceiveOrderEditor"
+             name="com.vsi.scc.oms.pca.order.receive.editor.ReceiveOrderEditor">
+       </editor>
+    </extension>
+    <extension
+          point="com.yantra.yfc.rcp.YRCRelatedTasksExtensionContributor">
+       <relatedTasksExtensionContributor
+             class="com.vsi.scc.oms.pca.order.action.createStoreReceiveOrderExtensionContributor"
+             editorId="com.yantra.pca.ycd.rcp.editors.YCDReturnEditor">
+       </relatedTasksExtensionContributor>
+    </extension>
+    
+    <extension point="com.yantra.yfc.rcp.YRCRelatedTasks">
+        <tasks id="com.vsi.scc.oms.pca.tasks1">
+            <task
+                actionId="com.vsi.scc.oms.pca.order.giftCard.action.VSISendGCMailAction"
+                filterRequired="false" groupId="Modify_Tasks"
+                id="SendGCMail" isExtension="false" name="Send Gift Card E-Mail">
+                <categories id="com.vsi.scc.oms.pca.categories1">
+                    <category id="YCD_GLOBAL_RELATED"/>
+                </categories>
+            </task>
+        </tasks>
+    </extension>
+    <extension point="com.yantra.yfc.rcp.YRCRelatedTaskCategories">
+        <categories id="com.vsi.scc.oms.pca.categories1">
+            <category id="YCD_GLOBAL_RELATED">
+                <tasks id="com.vsi.scc.oms.pca.tasks1">
+                    <task id="SendGCMail"/>
+                </tasks>
+            </category>
+        </categories>
+    </extension>
+    <extension point="com.yantra.yfc.rcp.YRCRelatedTaskGroups">
+        <groups id="com.vsi.scc.oms.pca.groups1">
+            <group id="Modify_Tasks" name="Send Gift Card E-Mail" sequence="10"/>
+        </groups>
+    </extension>
+    <extension point="org.eclipse.ui.actionSets">
+        <actionSet id="com.vsi.scc.oms.pca.actionSet"
+            label="Sample Action Set" visible="true">
+            <action
+                  class="com.vsi.scc.oms.pca.order.giftCard.action.VSISendGCMailAction"
+                  definitionId="com.vsi.scc.oms.pca.order.giftCard.action.VSISendGCMailAction"
+                  id="com.vsi.scc.oms.pca.order.giftCard.action.VSISendGCMailAction"
+                  label="com.vsi.scc.oms.pca.order.giftCard.action.VSISendGCMailAction"/>
+        </actionSet>
+    </extension>
+  
+    <extension
+          point="org.eclipse.ui.bindings">
+          <key
+             commandId="com.vsi.scc.oms.pca.order.giftCard.action.VSISendGCMailAction"
+             contextId="com.vsi.scc.oms.pca.order.giftCard.action.VSISendGCMailAction" schemeId="defaultYantraKeyConfigurations" sequence="Ctrl+Alt+1" >
+       </key>
+    </extension>
+    <extension
+          point="org.eclipse.ui.commands">
+           <command
+             categoryId="YCD_GLOBAL_RELATED"
+             id="com.vsi.scc.oms.pca.order.giftCard.action.VSISendGCMailAction"
+             name="com.vsi.scc.oms.pca.order.giftCard.action.VSISendGCMailAction">
+       </command>
+    </extension>
+    <extension
+          point="com.yantra.yfc.rcp.YRCRelatedTasksExtensionContributor">
+       <relatedTasksExtensionContributor
+             class="com.vsi.scc.oms.pca.sendemail.SendEmailExtensionContributor"
+             editorId="com.yantra.pca.ycd.rcp.editors.YCDReturnEditor"/>
+    </extension>
+    
+</plugin>

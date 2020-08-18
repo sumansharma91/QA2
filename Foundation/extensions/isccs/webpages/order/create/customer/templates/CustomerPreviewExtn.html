@@ -1,0 +1,185 @@
+		<div>
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Link" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '27' , 
+		_sc_extensibility_referenceUId : 'extn_textfield_Tax_Exempt' , 
+		uId : 'extn_link_loyaltyDetails' , 
+		_sc_extensibility_position : 'after'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	value : 			this.getSimpleBundleString('extn_Loyalty_Details')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		uId : 'extn_filteringselect_ShipPreference' , 
+		_sc_extensibility_moveOrder : '24' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_datalabel_CustomerType'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 optionsBinding : 	{
+		 namespace : 			'extn_getOrgList_Output'
+,
+		 addEmptyOption : 			true
+,
+		 path : 			'OrganizationList.Organization'
+,
+		 descriptionField : 			'OrganizationCode'
+,
+		 valueField : 			'OrganizationName'
+	}
+,
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'selectedRow_input'
+,
+		 path : 			'Order.SCAC'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+,
+	 		{
+		 namespace : 			'extn_selectedRow_input'
+,
+		 path : 			'Order.SCAC'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_1'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'Customer'
+,
+		 path : 			'Customer.Extn.ExtnPreferredCarrier'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Ship_Preference')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfield_Tax_Exempt' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '25' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_filteringselect_ShipPreference'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'selectedRow_input'
+,
+		 path : 			'Order.TaxExemptionCertificate'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+,
+	 		{
+		 namespace : 			'extn_selectedRow_input'
+,
+		 path : 			'Order.TaxExemptionCertificate'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_1'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'Customer'
+,
+		 path : 			'Customer.Extn.ExtnTaxExemptionCode'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Tax_exempt_ID')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_datalabelHealthyAwardsNo' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '3' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'lblOrganizationCode'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getBundleString('extn_Healthy_Awards_')
+,	
+			 	value : 			this.getSimpleBundleString('blank')
+,	
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'Customer'
+,
+		 path : 			'Customer.CustomerID'
+	}
+	}
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_datalabel_Gender' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '23' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_datalabel_CustomerType'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'customerContactModel'
+,
+		 path : 			'ExtnGender'
+	}
+	}
+,	
+			 	label : 			this.getBundleString('extn_Gender')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		uId : 'extn_datalabel_CustomerType' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '22' , 
+		'class' : 'customerSearchResults' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'email'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'Customer'
+,
+		 path : 			'Customer.CustomerType'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('CustomerType')
+			}
+		}
+	 					}">
+		 	</div>  
+		</div>

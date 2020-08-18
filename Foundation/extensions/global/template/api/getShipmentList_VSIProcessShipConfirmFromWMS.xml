@@ -1,0 +1,8 @@
+<ShipmentList>
+	<Shipment>
+		<ToAddress />
+		<ShipmentLines>
+			<ShipmentLine />
+		</ShipmentLines>
+	</Shipment>
+</ShipmentList>

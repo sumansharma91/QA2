@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ItemBrowsingExtn"
+        extnPackage="extn.item.browsing"
+        originalScreen="isccs.item.browsing.ItemBrowsing"
+        originalScreenPackage="isccs.item.browsing" type="diffrential">
+        <Items>
+            <FilteringSelect _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="cmbEnterprise" renderHidden="true"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mashups>
+    <mashup description="Get Shipment Line List details"
+        endpoint="EP_CONFIG"
+        id="customerpickup_getPickupShipmentLineList" mashuptype="XAPI"
+        skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.wsc.shipment.common.mashups.ShipmentLineListPaginatedMashup"/>
+        <API Name="getShipmentLineList">
+            <Input>
+                <ShipmentLine
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    IsPickable="Y" MaximumRecords="" ShipmentKey="xml:scControllerInput:/Shipment/@ShipmentKey"/>
+            </Input>
+            <Template>
+                <ShipmentLines>
+                    <ShipmentLine CancelReason=""
+                        CustomerPickedQuantity=""
+                        IsCustomerPickComplete="" ItemID=""
+                        OrderHeaderKey="" OrderLineKey="" OrderNo=""
+                        OriginalQuantity="" Quantity="" ShipmentKey=""
+                        ShipmentLineKey="" ShipmentLineNo=""
+                        ShipmentSubLineNo="" ShortageQty=""
+                        ShortageResolutionReason="" UnitOfMeasure="">
+                        <OrderLine IsBundleParent="" ItemGroupCode="">
+                            <ItemDetails ItemGroupCode="" ItemID="" UnitOfMeasure="">
+                                <PrimaryInformation
+                                    ExtendedDisplayDescription=""
+                                    ImageID="" ImageLabel="" ImageLocation=""/>
+                                <ClassificationCodes Model=""/>
+								<ItemAliasList>
+								 <ItemAlias AliasValue="" AliasName=""/>
+								 </ItemAliasList>
+                            </ItemDetails>
+                        </OrderLine>
+                    </ShipmentLine>
+                </ShipmentLines>
+            </Template>
+        </API>
+        <APINamespace inputNS="customerPickUpShipmentLineList_input" outputNS="customerPickUpShipmentLineList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="WSCSYS00001"/>
+            <AlternateResourceId altResourceId="WSC000001"/>
+        </AlternateResourceIds>
+    </mashup>
+</mashups>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ResolveHoldExtn"
+        extnPackage="extn.order.orderHold"
+        originalScreen="isccs.order.orderHold.ResolveHold"
+        originalScreenPackage="isccs.order.orderHold" type="diffrential">
+        <Items>
+            <Button _sc_extensibility_operation="change" _sc_extensibility_referenceUId="update_holds"/>
+        </Items>
+        <MashupRefs>
+            <Behavior>
+                <MashupRef extnType="ADD" mashupId="extn_getOrderList" mashupRefId="extn_getOrderList_RefID"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

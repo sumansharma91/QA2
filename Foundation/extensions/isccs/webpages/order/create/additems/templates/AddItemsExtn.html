@@ -1,0 +1,44 @@
+		<div>
+		 	<div data-dojo-type="dijit/form/Button" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'copyOrder' , 
+		renderHidden : true  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/DateTextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'insert' , 
+		resourceId : 'VSIPROMOOVRDE' , 
+		'class' : 'productAddPanel relative' , 
+		_sc_extensibility_moveOrder : '1' , 
+		_sc_extensibility_referenceUId : 'updateButtonContainer' , 
+		uId : 'extn_datetextbox_PromotionCodeDateOverride' , 
+		_sc_extensibility_position : 'after'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getSimpleBundleString('extn_Promotion_code_date_override')
+,	
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 path : 			'Order.Extn.ExtnPricingDate'
+,
+		 namespace : 			'getCompleteOrderDetails_output'
+	}
+,
+		 targetBinding : 	[
+	 		{
+		 path : 			'Order.Extn.ExtnPricingDate'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+,
+		 namespace : 			'getCompleteOrderLineList_input'
+	}
+	]
+	}
+			}
+		}
+	 					}">
+		 	</div>  
+		</div>

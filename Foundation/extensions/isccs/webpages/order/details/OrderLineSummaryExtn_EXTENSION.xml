@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="OrderLineSummaryExtn"
+        extnPackage="extn.order.details"
+        originalScreen="isccs.order.details.OrderLineSummary"
+        originalScreenPackage="isccs.order.details" type="diffrential">
+        <Items>
+            <DataLabel _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="ContentPane110"
+                label="$(_scSimpleBundle:extn_Original_Line_Total)" uId="extn_Original_Line_Total">
+                <BindingData>
+                    <SourceBinding
+                        namespace="getCompleteOrderLineDetails_output" path="OrderLine.Extn.ExtnLineTotal"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_moveOrder="3"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_Original_Line_Total"
+                label="$(_scSimpleBundle:extn_Original_Line_Tax)" uId="extn_Original_Line_Tax">
+                <BindingData>
+                    <SourceBinding
+                        namespace="getCompleteOrderLineDetails_output" path="OrderLine.Extn.ExtnTotalTax"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_moveOrder="4"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_Original_Line_Tax"
+                label="$(_scSimpleBundle:extn_Original_Line_Discount)" uId="extn_Original_Line_Discount">
+                <BindingData>
+                    <SourceBinding
+                        namespace="getCompleteOrderLineDetails_output" path="OrderLine.Extn.ExtnTotalDiscount"/>
+                </BindingData>
+            </DataLabel>
+            <GridX _sc_extensibility_moveOrder="5"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="pnlFulfillment"
+                autoHeight="true" autoWidth="false"
+                cacheClass="gridx/core/model/cache/Async" uId="extn_gridx_OrderLineStatus">
+                <Modules>
+                    <Module isExtn="true" name="columnResizer">
+                        <Properties>
+                            <Property initialValue="0" name="minWidth"
+                                scExtensibilityArrayItemId="extn_ModuleProperty_1" type="Number"/>
+                        </Properties>
+                    </Module>
+                    <Module isExtn="true" name="columnWidth">
+                        <Properties>
+                            <Property initialValue="true"
+                                name="autoResize"
+                                scExtensibilityArrayItemId="extn_ModuleProperty_1" type="Boolean"/>
+                        </Properties>
+                    </Module>
+                    <Module isExtn="true" name="selectRow">
+                        <Properties>
+                            <Property initialValue="true"
+                                name="triggerOnCell"
+                                scExtensibilityArrayItemId="extn_ModuleProperty_1" type="Boolean"/>
+                        </Properties>
+                    </Module>
+                </Modules>
+                <Structure>
+                    <Layout>
+                        <View _sc_extensibility_moveOrder="7"
+                            _sc_extensibility_operation="insert"
+                            _sc_extensibility_position="last"
+                            _sc_extensibility_referenceUId="extn_gridx_OrderLineStatus"
+                            field="extn_StatusQuantity"
+                            name="$(_scSimpleBundle:extn_Status_Quantity)"
+                            uId="extn_gridx_OrderLineStatus_view_Quantity" width="30%">
+                            <BindingData>
+                                <SourceBinding path="StatusQty"/>
+                            </BindingData>
+                        </View>
+                        <View _sc_extensibility_moveOrder="10"
+                            _sc_extensibility_operation="insert"
+                            _sc_extensibility_position="last"
+                            _sc_extensibility_referenceUId="extn_gridx_OrderLineStatus"
+                            field="extn_Status_Name"
+                            name="$(_scSimpleBundle:extn_Status)"
+                            scuiDataType="NText-255"
+                            uId="extn_gridx_OrderLineStatus_view_Status_Name" width="35%">
+                            <BindingData>
+                                <SourceBinding path="StatusDescription"/>
+                            </BindingData>
+                        </View>
+                        <View _sc_extensibility_moveOrder="11"
+                            _sc_extensibility_operation="move"
+                            _sc_extensibility_position="before"
+                            _sc_extensibility_referenceUId="extn_gridx_OrderLineStatus_view_Quantity" uId="extn_gridx_OrderLineStatus_view_Status_Name"/>
+                        <View _sc_extensibility_moveOrder="12"
+                            _sc_extensibility_operation="insert"
+                            _sc_extensibility_position="last"
+                            _sc_extensibility_referenceUId="extn_gridx_OrderLineStatus"
+                            field="extn_Status_Date"
+                            name="$(_scSimpleBundle:extn_Status_Date)"
+                            scuiDataType="TimeStamp"
+                            uId="extn_gridx_OrderLineStatus_view_StatusDate" width="35%">
+                            <BindingData>
+                                <SourceBinding path="StatusDate"/>
+                            </BindingData>
+                        </View>
+                    </Layout>
+                </Structure>
+                <BindingData>
+                    <SourceBinding
+                        namespace="getCompleteOrderLineDetails_output" path="OrderLine.OrderStatuses.OrderStatus"/>
+                </BindingData>
+                <__scModuleInfo>
+                    <Modules>
+                        <Module isExtn="true" name="columnResizer">
+                            <Properties>
+                                <Property initialValue="0"
+                                    name="minWidth"
+                                    scExtensibilityArrayItemId="extn_ModuleProperty_1" type="Number"/>
+                            </Properties>
+                        </Module>
+                        <Module isExtn="true" name="columnWidth">
+                            <Properties>
+                                <Property initialValue="true"
+                                    name="autoResize"
+                                    scExtensibilityArrayItemId="extn_ModuleProperty_1" type="Boolean"/>
+                            </Properties>
+                        </Module>
+                        <Module isExtn="true" name="selectRow">
+                            <Properties>
+                                <Property initialValue="true"
+                                    name="triggerOnCell"
+                                    scExtensibilityArrayItemId="extn_ModuleProperty_1" type="Boolean"/>
+                            </Properties>
+                        </Module>
+                    </Modules>
+                </__scModuleInfo>
+            </GridX>
+            <GridX _sc_extensibility_moveOrder="13"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="ContentPane10"
+                cacheClass="gridx/core/model/cache/Async" uId="extn_gridx_Promo_Coupon_Details">
+                <Modules>
+                    <Module name="columnResizer">
+                        <Properties>
+                            <Property initialValue="0" name="minWidth"
+                                scExtensibilityArrayItemId="extn_ModuleProperty_1" type="Number"/>
+                        </Properties>
+                    </Module>
+                    <Module name="columnWidth">
+                        <Properties>
+                            <Property initialValue="true"
+                                name="autoResize"
+                                scExtensibilityArrayItemId="extn_ModuleProperty_1" type="Boolean"/>
+                        </Properties>
+                    </Module>
+                    <Module name="selectRow">
+                        <Properties>
+                            <Property initialValue="true"
+                                name="triggerOnCell"
+                                scExtensibilityArrayItemId="extn_ModuleProperty_1" type="Boolean"/>
+                        </Properties>
+                    </Module>
+                </Modules>
+                <Structure>
+                    <Layout>
+                        <View _sc_extensibility_moveOrder="15"
+                            _sc_extensibility_operation="insert"
+                            _sc_extensibility_position="last"
+                            _sc_extensibility_referenceUId="extn_gridx_Promo_Coupon_Details"
+                            field="extn_Promotion"
+                            name="$(_scSimpleBundle:extn_Promotion)" uId="extn_gridx_Promo_Details_view">
+                            <BindingData>
+                                <SourceBinding path="Extn.PromoNum"/>
+                            </BindingData>
+                        </View>
+                        <View _sc_extensibility_moveOrder="16"
+                            _sc_extensibility_operation="insert"
+                            _sc_extensibility_position="last"
+                            _sc_extensibility_referenceUId="extn_gridx_Promo_Coupon_Details"
+                            field="extn_Coupon"
+                            name="$(_scSimpleBundle:extn_Coupon)" uId="extn_gridx_Coupon_Details_view">
+                            <BindingData>
+                                <SourceBinding path="Extn.CouponNumber"/>
+                            </BindingData>
+                        </View>
+                    </Layout>
+                </Structure>
+                <BindingData>
+                    <SourceBinding
+                        namespace="getCompleteOrderLineDetails_output" path="OrderLine.LineCharges.LineCharge"/>
+                </BindingData>
+                <__scModuleInfo>
+                    <Modules>
+                        <Module name="columnResizer">
+                            <Properties>
+                                <Property initialValue="0"
+                                    name="minWidth"
+                                    scExtensibilityArrayItemId="extn_ModuleProperty_1" type="Number"/>
+                            </Properties>
+                        </Module>
+                        <Module name="columnWidth">
+                            <Properties>
+                                <Property initialValue="true"
+                                    name="autoResize"
+                                    scExtensibilityArrayItemId="extn_ModuleProperty_1" type="Boolean"/>
+                            </Properties>
+                        </Module>
+                        <Module name="selectRow">
+                            <Properties>
+                                <Property initialValue="true"
+                                    name="triggerOnCell"
+                                    scExtensibilityArrayItemId="extn_ModuleProperty_1" type="Boolean"/>
+                            </Properties>
+                        </Module>
+                    </Modules>
+                </__scModuleInfo>
+            </GridX>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="afterScreenLoad" isExtn="true" sequence="51">
+                    <Handler
+                        description="Checks whether this order is migrated. If yes, disables any actionable links" methodName="checkMigratedOrderFlag"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+    </ScreenExtension>
+</ExtensionMetaData>

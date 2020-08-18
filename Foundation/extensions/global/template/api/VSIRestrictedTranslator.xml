@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FlatfileDelimitedSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation='delimitedreceiver.xsd'>
+   <ParserDefaults DefaultRecordDelimiter="Newline" DefaultFieldDelimiter="," DefaultPadCharacter="#" RecordIdStartPosition="1">
+   </ParserDefaults>
+
+
+   <Root Name="VSIItemListHierarchy">
+      <Header Name="HEADER" RecordName="HEADER" MinOccurence="1" MaxOccurence="1" />
+
+      <Terminal Name="ITEMLIST" RecordName="ITEMLIST" MinOccurence="1" MaxOccurence="10000000" />
+   </Root>
+
+   <RecordDefinitions>
+   
+      <Record RecordId="HEADER" Name="HEADER" XMLName="Header">
+			<Field Name="HeaderValue" FieldPosition="2" XMLName="Value" />
+      </Record>
+	  
+	  <Record RecordId="ITEMLIST" Name="ITEMLIST" XMLName="ItemList">
+		   <Field Name="SKU" FieldPosition="2" XMLName="Sku" />
+		   <Field Name="JDANO" FieldPosition="3" XMLName="ItemID" />
+		   <Field Name="DESC" FieldPosition="4" XMLName="ItemDesc" />
+		   <Field Name="EFFDATE" FieldPosition="5" XMLName="EffectiveDate" />	 
+		   <Field Name="COUNTRY" FieldPosition="6" XMLName="Country" />	 
+		   <Field Name="CNTYREASON" FieldPosition="7" XMLName="CountryReason" />	 
+		   <Field Name="STATE" FieldPosition="8" XMLName="State" />	 
+		   <Field Name="STTREASON" FieldPosition="9" XMLName="StateReason" />	 
+		   <Field Name="ZIPCODE" FieldPosition="10" XMLName="ZipCode" />	 
+	  </Record>
+		
+   </RecordDefinitions>
+
+</FlatfileDelimitedSchema>
+

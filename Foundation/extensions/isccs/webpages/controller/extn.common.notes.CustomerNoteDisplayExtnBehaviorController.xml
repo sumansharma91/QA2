@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.common.notes.CustomerNoteDisplayExtnBehaviorController"
+    requestMethodSupported="POST" screenId="extn.common.notes.CustomerNoteDisplayExtn">
+    <MashupRefs>
+        <MashupRef extnType="MODIFY"
+            mashupId="customerNoteCapture_getNoteList"
+            mashupRefId="getNoteList" permissionId=""/>
+        <MashupRef extnType="MODIFY"
+            mashupId="customerIdentification_manageCustomer"
+            mashupRefId="saveNote" permissionId=""/>
+        <MashupRef extnType="MODIFY"
+            mashupId="customerIdentification_manageCustomer"
+            mashupRefId="deleteNote" permissionId=""/>
+    </MashupRefs>
+</Controller>

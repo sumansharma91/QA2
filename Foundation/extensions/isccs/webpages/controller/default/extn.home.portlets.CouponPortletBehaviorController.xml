@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.home.portlets.CouponPortletBehaviorController"
+    requestMethodSupported="POST" screenId="extn.home.portlets.CouponPortlet">
+    <MashupRefs>
+        <MashupRef extnType="" mashupId="extn_getCouponDetails"
+            mashupRefId="extn_getCouponDetails_RefID" permissionId=""/>
+    </MashupRefs>
+</Controller>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="OrderSummaryLinesExtn"
+        extnPackage="extn.order.details"
+        originalScreen="isccs.order.details.OrderSummaryLines"
+        originalScreenPackage="isccs.order.details" type="diffrential">
+        <Items>
+            <GridX _sc_extensibility_operation="change" _sc_extensibility_referenceUId="OLST_listGrid">
+                <Structure>
+                    <Layout>
+                        <View _sc_extensibility_operation="change"
+                            _sc_extensibility_referenceUId="tblColProductAddItems"
+                            name="$(_scSimpleBundle:extn_Item)" uId="tblColProductAddItems"/>
+                        <View _sc_extensibility_moveOrder="1"
+                            _sc_extensibility_operation="insert"
+                            _sc_extensibility_position="before"
+                            _sc_extensibility_referenceUId="tblColUnitPrice"
+                            field="extn_Customer_PO_No"
+                            name="$(_scSimpleBundle:extn_Customer_PO_No)"
+                            uId="extn_OLST_listGrid_view_Customer_PO_No" width="15%">
+                            <BindingData>
+                                <SourceBinding
+                                    dynamicBindingFunc="getCustomerPoNo" path="CustomerPONo"/>
+                            </BindingData>
+                        </View>
+                        <View _sc_extensibility_moveOrder="2"
+                            _sc_extensibility_operation="insert"
+                            _sc_extensibility_position="before"
+                            _sc_extensibility_referenceUId="tblColExpectedOn"
+                            field="extn_Fulfillment_Details"
+                            name="$(_scSimpleBundle:extn_Fulfillment_Details)"
+                            uId="extn_OLST_listGrid_view_Fulfillment_Details" width="15%">
+                            <BindingData>
+                                <SourceBinding
+                                    dynamicBindingFunc="getFulfillmentDetails" path="LineType"/>
+                            </BindingData>
+                        </View>
+                        <View _sc_extensibility_moveOrder="3"
+                            _sc_extensibility_operation="insert"
+                            _sc_extensibility_position="after"
+                            _sc_extensibility_referenceUId="tblColExpectedOn"
+                            field="extn_Ship_Node"
+                            name="$(_scSimpleBundle:ShipNode)"
+                            uId="extn_OLST_listGrid_view_Ship_Node" width="10%">
+                            <BindingData>
+                                <SourceBinding
+                                    dynamicBindingFunc="getShipNode" path="Shipnode"/>
+                            </BindingData>
+                        </View>
+                        <View _sc_extensibility_operation="change"
+                            _sc_extensibility_referenceUId="tblColDeliveryMethod"
+                            uId="tblColDeliveryMethod" width="15%"/>
+                    </Layout>
+                </Structure>
+            </GridX>
+        </Items>
+        <MashupRefs>
+            <Behavior>
+                <MashupRef
+                    mashupId="OrderSummaryLines_getCompleteOrderLineList" mashupRefId="getCompleteOrderLineList"/>
+                <MashupRef extnType="ADD"
+                    mashupId="extn_getSTSTrackingNo" mashupRefId="extn_getSTSTrackingNo"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

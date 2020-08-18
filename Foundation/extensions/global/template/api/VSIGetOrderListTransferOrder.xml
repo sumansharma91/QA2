@@ -1,0 +1,7 @@
+<OrderList>
+	<Order OrderHeaderKey="">
+		<OrderLines>
+			<OrderLine OrderLineKey="" ChainedFromOrderHeaderKey="" ChainedFromOrderLineKey="" Status="" />
+		</OrderLines>
+	</Order>
+</OrderList>

@@ -1,0 +1,1973 @@
+		<div>
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_filteringselect_Gender' , 
+		_sc_extensibility_moveOrder : '120' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'txtLastName'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 optionsBinding : 	{
+		 namespace : 			'extn_getGenderList_output'
+,
+		 path : 			'CommonCodeList.CommonCode'
+,
+		 descriptionField : 			'CodeLongDescription'
+,
+		 valueField : 			'CodeLongDescription'
+	}
+,
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'manageCustomer_input'
+,
+		 path : 			'Customer.CustomerContactList.CustomerContact.ExtnGender'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'getCustomerContact_output'
+,
+		 path : 			'CustomerContact.ExtnGender'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Gender')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'cmbTitle'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'cmbStatus'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		uId : 'extn_filteringselect_ShipPreference' , 
+		_sc_extensibility_moveOrder : '122' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'txtDayPhone'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 optionsBinding : 	{
+		 namespace : 			'extn_get_OrganizationList_ouput'
+,
+		 path : 			'OrganizationList.Organization'
+,
+		 descriptionField : 			'OrganizationCode'
+,
+		 valueField : 			'OrganizationName'
+	}
+,
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'manageCustomer_input'
+,
+		 path : 			'Customer.Extn.ExtnPreferredCarrier'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'getCustomerDetails_output'
+,
+		 path : 			'Customer.Extn.ExtnPreferredCarrier'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Ship_Preference')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_filteringselectCountryRegion' , 
+		_sc_extensibility_moveOrder : '39' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_position : 'after' , 
+		readOnly : true , 
+		_sc_extensibility_referenceUId : 'extn_textfieldPostalCode' , 
+		required : false  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 optionsBinding : 	{
+		 namespace : 			'extn_getCountryList'
+,
+		 readDescFromBundle : 			false
+,
+		 path : 			'CommonCodeList.CommonCode'
+,
+		 descriptionField : 			'CodeLongDescription'
+,
+		 valueField : 			'CodeLongDescription'
+	}
+,
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'manageCustomer_input'
+,
+		 path : 			'Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.Country'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'extn_ShipToAddress'
+,
+		 path : 			'Country'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('Country_Region')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_filteringselectCountryRegion' , 
+		_sc_extensibility_moveOrder : '60' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipToRight'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_filteringselectCountryRegion' , 
+		_sc_extensibility_moveOrder : '71' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_textfieldPostalCode'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_filteringselectCountryRegion' , 
+		_sc_extensibility_moveOrder : '104' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipToRight'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_filteringselectCountryRegion' , 
+		_sc_extensibility_moveOrder : '112' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_textfieldAddressDisplayName'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_filteringselectBillToCountryRegion' , 
+		_sc_extensibility_moveOrder : '51' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_position : 'after' , 
+		readOnly : true , 
+		_sc_extensibility_referenceUId : 'extn_textfieldBillToPostalCode'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 optionsBinding : 	{
+		 namespace : 			'extn_getCountryList'
+,
+		 readDescFromBundle : 			true
+,
+		 path : 			'CommonCodeList.CommonCode'
+,
+		 descriptionField : 			'CodeLongDescription'
+,
+		 valueField : 			'CodeLongDescription'
+	}
+,
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'extn_billToAddress_input'
+,
+		 path : 			'Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.Country'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'screenInput'
+,
+		 path : 			'Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.Country'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('Country_Region')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_filteringselectBillToCountryRegion' , 
+		_sc_extensibility_moveOrder : '76' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToRightSide'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_filteringselectBillToCountryRegion' , 
+		_sc_extensibility_moveOrder : '81' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToLeftSide'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_filteringselectBillToCountryRegion' , 
+		_sc_extensibility_moveOrder : '82' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToLeftSide'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_filteringselectBillToCountryRegion' , 
+		_sc_extensibility_moveOrder : '99' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_textfieldBillToState'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_filteringselectBillToCountryRegion' , 
+		_sc_extensibility_moveOrder : '115' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_textfieldBilltoAddressDisplayName'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/DateTextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'txtDateOfBirth'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/DateTextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'txtDateOfBirth' , 
+		_sc_extensibility_moveOrder : '6' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_radiobuttonsetPhoneOptIn'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/DateTextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'txtDateOfBirth' , 
+		_sc_extensibility_moveOrder : '8' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_radiobuttonsetPhoneOptIn'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/DateTextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'txtDateOfBirth' , 
+		_sc_extensibility_moveOrder : '108' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'txtSpouseDOB'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/DateTextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'txtSpouseDOB'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/DateTextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'txtSpouseDOB' , 
+		_sc_extensibility_moveOrder : '106' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneOptIn'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/DateTextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'txtSpouseDOB' , 
+		_sc_extensibility_moveOrder : '107' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_position : 'first' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneDates'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/DateTextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'txtWeddingAnniversary'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/DateTextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'txtWeddingAnniversary' , 
+		_sc_extensibility_moveOrder : '109' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneDates'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/TitlePane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_titlepaneAddressInfo' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '25' , 
+		'class' : 'primaryTitlePane' , 
+		spanLabel : true , 
+		_sc_extensibility_position : 'first' , 
+		_sc_extensibility_referenceUId : 'DST_AdditionalPanel'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	title : 			this.getSimpleBundleString('extn_Ship_To_Address')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/TitlePane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_titlepaneBillToAddress' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '32' , 
+		'class' : 'primaryTitlePane' , 
+		spanLabel : true , 
+		_sc_extensibility_position : 'first' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneAdditionalPanel'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	title : 			this.getSimpleBundleString('extn_Bill_To_Address')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		'class' : 'detailsPrimaryInfoPanel' , 
+		_sc_extensibility_referenceUId : 'DST_AdditionalPanel'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'DST_AdditionalPanel' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '22' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'DST_PrimaryInfoPanel'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'DST_AdditionalPanel' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '23' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'DST_PrimaryInfoPanel'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'DST_AdditionalPanel' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '24' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'DST_MainInfoPanel'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_contentpaneShipTo' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '26' , 
+		_sc_extensibility_position : 'first' , 
+		_sc_extensibility_referenceUId : 'extn_titlepaneAddressInfo'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_contentpaneShipToLeft' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '56' , 
+		'class' : 'singlecolumntable' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipTo'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_contentpaneShipToRight' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '57' , 
+		'class' : 'singlecolumntable' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipToLeft'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : false , 
+		uId : 'extn_contentpaneAdditionalPanel' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '31' , 
+		'class' : 'detailsPrimaryInfoPanel' , 
+		spanLabel : true , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'DST_AdditionalPanel'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_contentpaneCheckBox' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '41' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_checkboxBillTo'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		uId : 'extn_contentpaneBillTo' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '43' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_titlepaneBillToAddress'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_contentpaneBillToLeftSide' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '77' , 
+		'class' : 'singlecolumntable' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToRightSide'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_contentpaneBillToRightSide' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '72' , 
+		'class' : 'singlecolumntable' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_textfieldBillToAddressLine1'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_contentpaneBillToRightSide' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '83' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_textfieldBiilToAddressLine2'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_contentpaneDates' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '105' , 
+		'class' : 'singlecolumntable' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'pnlDemographics'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_contentpaneDates' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '110' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneOptIn'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_contentpaneOptIn' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '52' , 
+		'class' : 'singlecolumntable' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_radiobuttonsetPhoneOptIn'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'DST_SecondaryInfoPanel'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	title : 			this.getSimpleBundleString('Address')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'DST_SecondaryInfoPanel' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '15' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'DST_MainInfoPanel'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/CheckBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_checkboxBillTo' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '40' , 
+		_sc_extensibility_position : 'first' , 
+		checked : true , 
+		disabled : false , 
+		_sc_extensibility_referenceUId : 'extn_titlepaneBillToAddress'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getSimpleBundleString('extn_Use_Ship_To_Address')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/CheckBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_checkboxBillTo' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '42' , 
+		_sc_extensibility_position : 'first' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneCheckBox'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'txtMiddleName'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'txtEmailAddress' , 
+		required : true  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'txtEmailAddress' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '121' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'cmbTitle'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'txtDepartment'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'txtDayPhone' , 
+		required : false  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getSimpleBundleString('extn_Primary_Phone')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'txtDayPhone' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '119' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'txtMobilePhone'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfield_TaxExempt' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '123' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_filteringselect_ShipPreference'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'manageCustomer_input'
+,
+		 path : 			'Customer.Extn.ExtnTaxExemptionCode'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'getCustomerDetails_output'
+,
+		 path : 			'Customer.Extn.ExtnTaxExemptionCode'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Tax_exempt_ID')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		_sc_extensibility_operation : 'change' , 
+		selectOnClick : false , 
+		_sc_extensibility_referenceUId : 'txtMobilePhone'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'txtEveningPhone'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldShipToAddressLine1' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '27' , 
+		_sc_extensibility_position : 'first' , 
+		readOnly : true , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipTo' , 
+		required : false  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'manageCustomer_input'
+,
+		 path : 			'Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.AddressLine1'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'extn_ShipToAddress'
+,
+		 path : 			'AddressLine1'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('AddressLine1')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldShipToAddressLine1' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '61' , 
+		_sc_extensibility_position : 'first' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipToLeft'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldShipToAddressLine2' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '33' , 
+		_sc_extensibility_position : 'after' , 
+		readOnly : true , 
+		_sc_extensibility_referenceUId : 'extn_textfieldShipToAddressLine1'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'manageCustomer_input'
+,
+		 path : 			'Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.AddressLine2'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'extn_ShipToAddress'
+,
+		 path : 			'AddressLine2'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('AddressLine2')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldShipToAddressLine2' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '62' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipToLeft'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldShipToAddressLine2' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '67' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_textfieldAddressDisplayName'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldShipToAddressLine2' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '100' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipToLeft'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldShipToAddressLine2' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '111' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_textfieldCity'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldCity' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '34' , 
+		_sc_extensibility_position : 'after' , 
+		readOnly : true , 
+		_sc_extensibility_referenceUId : 'extn_textfieldShipToAddressLine2' , 
+		required : false  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'manageCustomer_input'
+,
+		 path : 			'Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.City'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'extn_ShipToAddress'
+,
+		 path : 			'City'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('City')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldCity' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '63' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipToLeft'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldPostalCode' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '36' , 
+		_sc_extensibility_position : 'after' , 
+		readOnly : true , 
+		_sc_extensibility_referenceUId : 'extn_textfieldState' , 
+		required : false  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'manageCustomer_input'
+,
+		 path : 			'Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.ZipCode'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'extn_ShipToAddress'
+,
+		 path : 			'ZipCode'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('ZipCodeCol')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldPostalCode' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '66' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipToRight'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldPostalCode' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '69' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_textfieldCity'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldState' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '35' , 
+		_sc_extensibility_position : 'after' , 
+		readOnly : true , 
+		_sc_extensibility_referenceUId : 'extn_textfieldCity' , 
+		required : false  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'manageCustomer_input'
+,
+		 path : 			'Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.State'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'extn_ShipToAddress'
+,
+		 path : 			'State'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('State')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldState' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '64' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipToLeft'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldState' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '68' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_textfieldShipToAddressLine2'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldState' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '102' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipToRight'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldState' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '113' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_filteringselectCountryRegion'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		uId : 'extn_textfieldAddressDisplayName' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '37' , 
+		_sc_extensibility_position : 'after' , 
+		readOnly : true , 
+		_sc_extensibility_referenceUId : 'extn_textfieldPostalCode'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'manageCustomer_input'
+,
+		 path : 			'Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.AddressID'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'extn_ShipToAddress'
+,
+		 path : 			'AddressID'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Address_Display_Name')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldAddressDisplayName' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '58' , 
+		_sc_extensibility_position : 'first' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipToRight'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldAddressDisplayName' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '101' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipToRight'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldAddressDisplayName' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '103' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_radiobuttonsetAddressType'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBillToAddressLine1' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '44' , 
+		_sc_extensibility_position : 'first' , 
+		readOnly : true , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillTo'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'extn_billToAddress_input'
+,
+		 path : 			'Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.AddressLine1'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'extn_BillToAddress'
+,
+		 path : 			'AddressLine1'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('AddressLine1')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBillToAddressLine1' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '73' , 
+		_sc_extensibility_position : 'first' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToRightSide'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBillToAddressLine1' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '78' , 
+		_sc_extensibility_position : 'first' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToLeftSide'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBiilToAddressLine2' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '45' , 
+		_sc_extensibility_position : 'last' , 
+		readOnly : true , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillTo'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'extn_billToAddress_input'
+,
+		 path : 			'Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.AddressLine2'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'extn_BillToAddress'
+,
+		 path : 			'AddressLine2'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('AddressLine2')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBiilToAddressLine2' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '84' , 
+		_sc_extensibility_position : 'first' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToRightSide'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBiilToAddressLine2' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '89' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_textfieldBiiToCity'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBiilToAddressLine2' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '96' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_textfieldBiiToCity'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBiilToAddressLine2' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '114' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_textfieldBiiToCity'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBiiToCity' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '46' , 
+		_sc_extensibility_position : 'last' , 
+		readOnly : true , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillTo'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'extn_billToAddress_input'
+,
+		 path : 			'Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.City'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'extn_BillToAddress'
+,
+		 path : 			'City'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('City')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBiiToCity' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '74' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToRightSide'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBiiToCity' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '79' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToLeftSide'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBiiToCity' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '90' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToLeftSide'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBiiToCity' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '97' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_filteringselectBillToCountryRegion'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBillToPostalCode' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '48' , 
+		_sc_extensibility_position : 'last' , 
+		readOnly : true , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillTo'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'extn_billToAddress_input'
+,
+		 path : 			'Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.ZipCode'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'extn_BillToAddress'
+,
+		 path : 			'ZipCode'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('ZipCodeCol')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBillToPostalCode' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '75' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToRightSide'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBillToPostalCode' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '80' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToLeftSide'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBillToPostalCode' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '91' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToLeftSide'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBillToPostalCode' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '98' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_filteringselectBillToCountryRegion'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBillToState' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '47' , 
+		_sc_extensibility_position : 'last' , 
+		readOnly : true , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillTo'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'extn_billToAddress_input'
+,
+		 path : 			'Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.State'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'extn_BillToAddress'
+,
+		 path : 			'State'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('State')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBillToState' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '85' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToRightSide'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBillToState' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '92' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToRightSide'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBillToState' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '93' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_textfieldBillToPostalCode'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBillToState' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '116' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToRightSide'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBillToState' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '117' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_textfieldBilltoAddressDisplayName'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBillToState' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '118' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_filteringselectBillToCountryRegion'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		uId : 'extn_textfieldBilltoAddressDisplayName' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '49' , 
+		_sc_extensibility_position : 'after' , 
+		readOnly : true , 
+		_sc_extensibility_referenceUId : 'extn_textfieldBillToPostalCode'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'extn_billToAddress_input'
+,
+		 path : 			'Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.AddressID'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'extn_BillToAddress'
+,
+		 path : 			'AddressID'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Address_Display_Name')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBilltoAddressDisplayName' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '87' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToRightSide'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_textfieldBilltoAddressDisplayName' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '94' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_radiobuttonsetBillToAddressType'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		groupAlignment : 'horizontal' , 
+		uId : 'extn_radiobuttonsetAddressType' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '38' , 
+		_sc_extensibility_position : 'before' , 
+		disabled : false , 
+		_sc_extensibility_referenceUId : 'extn_textfieldAddressDisplayName'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'manageCustomer_input'
+,
+		 path : 			'Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.IsCommercialAddress'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 radioBinding : 	{
+		 options : 	[
+	 		{
+		 label : 			this.getSimpleBundleString('extn_Residential')
+,
+		 scExtensibilityArrayItemId : 			'extn_RadioBinding_0'
+,
+		 value : 			'N'
+,
+		 selected : 			true
+	}
+,
+	 		{
+		 label : 			this.getSimpleBundleString('extn_Commercial')
+,
+		 scExtensibilityArrayItemId : 			'extn_RadioBinding_1'
+,
+		 value : 			'Y'
+	}
+	]
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Address_Type')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_radiobuttonsetAddressType' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '59' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipToRight'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_radiobuttonsetAddressType' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '65' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipToRight'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_radiobuttonsetAddressType' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '70' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_textfieldAddressDisplayName'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_radiobuttonsetAddressType' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '138' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipTo'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_radiobuttonsetAddressType' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '139' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipToLeft'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_radiobuttonsetAddressType' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '140' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneAdditionalPanel'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_radiobuttonsetAddressType' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '141' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipToRight'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		groupAlignment : 'horizontal' , 
+		uId : 'extn_radiobuttonsetBillToAddressType' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '50' , 
+		_sc_extensibility_position : 'before' , 
+		disabled : false , 
+		_sc_extensibility_referenceUId : 'extn_textfieldBilltoAddressDisplayName'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'extn_billToAddress_input'
+,
+		 path : 			'Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.IsCommercialAddress'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 radioBinding : 	{
+		 options : 	[
+	 		{
+		 label : 			this.getSimpleBundleString('extn_Commercial')
+,
+		 scExtensibilityArrayItemId : 			'extn_RadioBinding_0'
+,
+		 value : 			'Y'
+	}
+,
+	 		{
+		 label : 			this.getSimpleBundleString('extn_Residential')
+,
+		 scExtensibilityArrayItemId : 			'extn_RadioBinding_1'
+,
+		 value : 			'N'
+,
+		 selected : 			true
+	}
+	]
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Address_Type')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_radiobuttonsetBillToAddressType' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '86' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToRightSide'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_radiobuttonsetBillToAddressType' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '137' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillTo'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_radiobuttonsetBillToAddressType' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '142' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_textfieldBilltoAddressDisplayName'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								groupAlignment : 'horizontal' , 
+		uId : 'extn_radiobuttonsetPhoneOptIn' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '2' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'pnlDemographics'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'manageCustomer_input'
+,
+		 path : 			'Customer.PhoneOptIn'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'getCustomerDetails_output'
+,
+		 path : 			'Customer.PhoneOptIn'
+	}
+,
+		 radioBinding : 	{
+		 options : 	[
+	 		{
+		 label : 			this.getSimpleBundleString('textYes')
+,
+		 scExtensibilityArrayItemId : 			'extn_RadioBinding_0'
+,
+		 value : 			'Y'
+,
+		 selected : 			true
+	}
+,
+	 		{
+		 label : 			this.getSimpleBundleString('textNo')
+,
+		 scExtensibilityArrayItemId : 			'extn_RadioBinding_1'
+,
+		 value : 			'N'
+	}
+	]
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Phone_Opt_In')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_radiobuttonsetPhoneOptIn' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '5' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'txtWeddingAnniversary'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_radiobuttonsetPhoneOptIn' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '53' , 
+		_sc_extensibility_position : 'first' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneOptIn'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								groupAlignment : 'horizontal' , 
+		uId : 'extn_radiobuttonsetPostalOptIn' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '4' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_radiobuttonsetEmailOptIn'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'manageCustomer_input'
+,
+		 path : 			'Customer.PostalOptIn'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'getCustomerDetails_output'
+,
+		 path : 			'Customer.PostalOptIn'
+	}
+,
+		 radioBinding : 	{
+		 options : 	[
+	 		{
+		 label : 			this.getSimpleBundleString('textYes')
+,
+		 scExtensibilityArrayItemId : 			'extn_RadioBinding_0'
+,
+		 value : 			'Y'
+,
+		 selected : 			true
+	}
+,
+	 		{
+		 label : 			this.getSimpleBundleString('textNo')
+,
+		 scExtensibilityArrayItemId : 			'extn_RadioBinding_1'
+,
+		 value : 			'N'
+	}
+	]
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Postal_Opt_In')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_radiobuttonsetPostalOptIn' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '7' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'txtDateOfBirth'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_radiobuttonsetPostalOptIn' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '54' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneOptIn'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								groupAlignment : 'horizontal' , 
+		uId : 'extn_radiobuttonsetEmailOptIn' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '3' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_radiobuttonsetPhoneOptIn'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'manageCustomer_input'
+,
+		 path : 			'Customer.EmailOptIn'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'getCustomerDetails_output'
+,
+		 path : 			'Customer.EmailOptIn'
+	}
+,
+		 radioBinding : 	{
+		 options : 	[
+	 		{
+		 label : 			this.getSimpleBundleString('textYes')
+,
+		 scExtensibilityArrayItemId : 			'extn_RadioBinding_0'
+,
+		 value : 			'Y'
+,
+		 selected : 			true
+	}
+,
+	 		{
+		 label : 			this.getSimpleBundleString('textNo')
+,
+		 scExtensibilityArrayItemId : 			'extn_RadioBinding_1'
+,
+		 value : 			'N'
+	}
+	]
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_E_mail_Opt_In')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_radiobuttonsetEmailOptIn' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '9' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_radiobuttonsetPostalOptIn'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_radiobuttonsetEmailOptIn' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '55' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneOptIn'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Link" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_EditAddress' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '126' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_AddAddress'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	value : 			this.getSimpleBundleString('extn_Edit_Address')
+,	
+			 	label : 			this.getSimpleBundleString('blank')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Link" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_AddAddress' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '124' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipTo'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	value : 			this.getSimpleBundleString('AddressEntry')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Link" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_AddAddress' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '125' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneShipToLeft'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Link" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_AddAddressLink' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '129' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToLeftSide'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	value : 			this.getSimpleBundleString('AddressEntry')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Link" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_AddAddressLink' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '130' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_textfieldBillToAddressLine1'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Link" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_AddAddressLink' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '133' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillTo'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Link" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_AddAddressLink' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '135' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToLeftSide'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Link" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_EditAddressLink' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '131' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillToLeftSide'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	value : 			this.getSimpleBundleString('extn_Edit_Address')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Link" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_EditAddressLink' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '132' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'extn_textfieldBillToAddressLine1'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Link" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_EditAddressLink' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '134' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'extn_contentpaneBillTo'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Link" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_EditAddressLink' , 
+		_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '136' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_AddAddressLink'  
+	 					}">
+		 	</div>  
+		</div>

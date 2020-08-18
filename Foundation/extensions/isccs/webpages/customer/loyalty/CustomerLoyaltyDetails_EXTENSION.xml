@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaData version="1.0" xmlns="http://ibm.com/sterling/afc/cuf/tns">
+    <Screen className="CustomerLoyaltyDetails"
+        description="This screen displays the list of rewards in a table."
+        extensible="true" package="extn.customer.loyalty"
+        superClass="${conf:BaseScreen}" title="Rewards_Results" uId="CustomerLoyaltyDetails">
+        <Items>
+            <ContentPane aria_label="$(_scSimpleBundle:Rewards_Results)"
+                aria_live="assertive" class="listScreen" role="region" uId="LST_ListScreenContent">
+                <Items>
+                    <GridX autoHeight="true" autoWidth="false"
+                        cacheClass="gridx/core/model/cache/Async"
+                        loadingMessage="$(_scSimpleBundle:Loading)"
+                        noDataMessage="$(_scSimpleBundle:NoSearchResults)"
+                        spanLabel="true" uId="listGrid">
+                        <Modules>
+                            <Module name="columnWidth">
+                                <Properties>
+                                    <Property initialValue="true"
+                                    name="autoResize" type="Boolean"/>
+                                </Properties>
+                            </Module>
+                            <Module name="paginationBar">
+                                <Properties/>
+                            </Module>
+                        </Modules>
+                        <BindingData>
+                            <SourceBinding
+                                namespace="getRewardList_output" path="Customer.RewardsList.Reward"/>
+                            <TargetBindings/>
+                            <PaginationBinding
+                                pageSizeClassName="UIUtils"
+                                pageSizeFunc="getPageSize"
+                                pageSizePackage="isccs.utils"
+                                pageSizesClassName="UIUtils"
+                                pageSizesFunc="getPageSizes"
+                                pageSizesPackage="isccs.utils"
+                                path="Customer.RewardsList.Reward"
+                                strategy="NEXTPAGE" type="NOSCROLL"/>
+                        </BindingData>
+                        <Structure>
+                            <Layout>
+                                <View
+                                    aria_label="$(_scSimpleBundle:RewardIdCol)"
+                                    field="extn_Reward_Id"
+                                    name="$(_scSimpleBundle:RewardIdCol)"
+                                    uId="extn_tblColRewardId" width="15%">
+                                    <BindingData>
+                                    	<SourceBinding path="Customer.RewardsList.Reward.RewardId"/>
+                                    </BindingData>
+                                </View>
+                                <View
+                                    aria_label="$(_scSimpleBundle:AmountCol)"
+                                    field="extn_Amount"
+                                    name="$(_scSimpleBundle:AmountCol)"
+                                    uId="extn_tblColAmount" width="15%">
+                                    <BindingData>
+                                    	<SourceBinding path="Customer.RewardsList.Reward.RewardAmount"/>
+                                    </BindingData>
+                                </View>
+                                <View
+                                    aria_label="$(_scSimpleBundle:ExpirationDateCol)"
+                                    field="extn_Expiration_Date"
+                                    name="$(_scSimpleBundle:ExpirationDateCol)"
+                                    uId="extn_tblColExpirationDate" width="15%">
+                                    <BindingData>
+                                    	<SourceBinding path="Customer.RewardsList.Reward.ExpirationDate"/>
+                                    </BindingData>
+                                </View>
+                                <View
+                                    aria_label="$(_scSimpleBundle:ActiveCol)"
+                                    field="extn_Active"
+                                    name="$(_scSimpleBundle:ActiveCol)"
+                                    uId="extn_tblColActive" width="5%">
+                                    <BindingData>
+                                    	<SourceBinding path="Customer.RewardsList.Reward.IsActive"/>
+                                    </BindingData>
+                                </View>
+                            </Layout>
+                        </Structure>
+                    </GridX>
+                </Items>
+            </ContentPane>
+        </Items>
+        <Events>
+            <Event description="" name="callListApi"/>
+            <Event description="" name="addExtraHandlers"/>
+        </Events>
+        <Namespaces>
+            <SourceNamespaces>
+                <Source
+                    description="This namespace is used to store the input used to load the data in the grid. It is used when the grid is refreshed." value="LST_listAPIInput"/>
+                <Source
+                    description="This is the list of orders retrieved with the provided search criteria used to populate the grid." value="getRewardList_output"/>
+            </SourceNamespaces>
+        </Namespaces>
+        <Subscribers>
+            <Local>
+                <Subscriber description="" eventId="callListApi" sequence="25">
+                    <Handler description="" methodName="LST_executeApi"/>
+                </Subscriber>
+                <Subscriber description="Listens for after Paging load"
+                    eventId="listGrid_pagingload" sequence="25">
+                    <Handler
+                        description="Handles the hook to perform some actions such as collapsing search criteria panel, opening details page when there is a single record, select first Row" methodName="onPagingload"/>
+                </Subscriber>
+                <Subscriber
+                    description="Listens for after every Paging load"
+                    eventId="listGrid_afterPagingload" sequence="25">
+                    <Handler
+                        description="Handles the hook to perform some actions such as select first Row after every next is performed" methodName="afterPagingload"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Behavior>
+                <MashupRef mashupId="extn_getRewardsList" mashupRefId="extn_getRewardsList_RefID"/>
+            </Behavior>
+        </MashupRefs>
+        <Properties>
+            <Property initialValue="false" name="showRelatedTask" type="boolean"/>
+            <Property initialValue="true" name="isDirtyCheckRequired" type="Boolean"/>
+        </Properties>
+    </Screen>
+    <ScreenModeList>
+        <ScreenMode className="CustomerLoyaltyDetails"
+            mode="customerRewardsList" package="extn.customer.loyalty">
+            <View fieldName="CustomerName" hidden="true"
+                uId="tblColCustomerName" width="0%"/>
+            <View uId="tblColOrderTotal" width="15%"/>
+            <View uId="tblColOrderDate" width="15%"/>
+        </ScreenMode>
+    </ScreenModeList>
+</MetaData>

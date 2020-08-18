@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="OverridePricePopupExtn"
+        extnPackage="extn.order.create.additems"
+        originalScreen="isccs.order.create.additems.OverridePricePopup"
+        originalScreenPackage="isccs.order.create.additems" type="diffrential">
+        <Items>
+            <CurrencyTextBox _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="NewPriceText" required="true"/>
+        </Items>
+        <Namespaces>
+            <SourceNamespaces>
+                <Source description="extn_Alpine_Validation_output"
+                    isExtn="true"
+                    scExtensibilityArrayItemId="extn_SourceNamespaces_6" value="extn_Alpine_Validation_output"/>
+            </SourceNamespaces>
+        </Namespaces>
+        <Subscribers>
+            <Local>
+                <Subscriber description="Call Alpine Mashup"
+                    eventId="afterScreenInit" isExtn="true" sequence="51">
+                    <Handler methodName="getAlpineCC"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Behavior>
+                <MashupRef extnType="ADD"
+                    mashupId="extn_Alpine_Validation" mashupRefId="extn_AlpineValidation"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

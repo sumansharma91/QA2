@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ReturnSummaryExtn"
+        extnPackage="extn.return.details"
+        originalScreen="isccs.return.details.ReturnSummary"
+        originalScreenPackage="isccs.return.details" type="diffrential">
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="afterScreenInit" isExtn="true" sequence="51">
+                    <Handler
+                        description="Checks whether this is a migrated order. If yes, disables all actionable links." methodName="checkMigratedOrderFlag"/>
+                </Subscriber>
+                <Subscriber eventId="addressChanged" isExtn="true" sequence="51">
+                    <Handler methodName="handleAddressChange"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Init>
+                <MashupRef extnType="MODIFY"
+                    mashupId="returnSummary_getCompleteOrderDetails" mashupRefId="getCompleteOrderDetails"/>
+            </Init>
+            <Behavior>
+                <MashupRef extnType="ADD" mashupId="extn_changeOrder" mashupRefId="extn_changeOrder"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

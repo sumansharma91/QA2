@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.order.addModifyCharges.ChargeFieldsExtnInitController"
+    requestMethodSupported="POST" screenId="extn.order.addModifyCharges.ChargeFieldsExtn">
+    <Group isAggregator="Y"/>
+    <MashupRefs>
+        <MashupRef callSequence="1" extnType="MODIFY"
+            mashupId="order_getChargeCategoryList"
+            mashupRefId="getChargeCategoryList" permissionId=""/>
+        <MashupRef extnType="ADD" mashupId="extn_TrackingNo_CommonCode"
+            mashupRefId="extn_getTrackingNo_CommonCode" permissionId=""/>
+    </MashupRefs>
+</Controller>

@@ -1,0 +1,83 @@
+		<div>
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+		 				data-ibmsc-uid="extn_customerpickup_upc"
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_customerpickup_upc' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '2' , 
+		'class' : 'quantitySpinnerLabelAlign' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'updateQtyButton'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'ShipmentLine'
+,
+		 path : 			'ShipmentLine.OrderLine.ItemDetails.ItemAliasList.ItemAlias.AliasValue2'
+,
+		 dynamicBindingFunc : 			'AliasValue2'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_UPC_Code')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+		 				data-ibmsc-uid="extn_custpickup_upc"
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_custpickup_upc' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '1' , 
+		'class' : 'blockComponent autoLabelZeroWidth' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'originalQuantityLabelDetails'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'ShipmentLine'
+,
+		 path : 			'ShipmentLine.OrderLine.ItemDetails.ItemAliasList.ItemAlias.AliasValue2'
+,
+		 dynamicBindingFunc : 			'AliasValue2'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_UPC_Code')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+		 				data-ibmsc-uid="extn_finishpickup_upc"
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_finishpickup_upc' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '3' , 
+		'class' : 'blockComponent autoLabelZeroWidth' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'shortageResolutionLink'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'ShipmentLine'
+,
+		 path : 			'ShipmentLine.OrderLine.ItemDetails.ItemAliasList.ItemAlias.AliasValue2'
+,
+		 dynamicBindingFunc : 			'AliasValue2'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_UPC_Code')
+			}
+		}
+	 					}">
+		 	</div>  
+		</div>

@@ -1,0 +1,17 @@
+<OrderList>
+	<Order OrderHeaderKey="" EntryType="" >
+		<OrderLines>
+			<OrderLine OrderLineKey="" >
+				<OrderDates>
+					<OrderDate />
+				</OrderDates>	
+				<OrderHoldTypes>
+					<OrderHoldType HoldType="" LastHoldTypeDate="" OrderHeaderKey="" OrderLineKey="" Status="" />
+				</OrderHoldTypes>		
+			</OrderLine>
+		</OrderLines>
+		<OrderHoldTypes>
+					<OrderHoldType HoldType="" LastHoldTypeDate="" OrderHeaderKey="" OrderLineKey="" Status="" />
+		</OrderHoldTypes>
+	</Order>
+</OrderList>

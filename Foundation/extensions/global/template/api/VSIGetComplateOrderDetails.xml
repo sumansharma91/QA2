@@ -1,0 +1,20 @@
+<Order>
+	<HeaderCharges>
+		<HeaderCharge ChargeAmount="" ChargeCategory="" ChargeName=""  InvoicedChargeAmount="" IsShippingCharge="" />
+	</HeaderCharges>
+	<HeaderTaxes>
+		<HeaderTax ChargeCategory="" ChargeName="" InvoicedTax="" RemainingTax="" Tax="" TaxName="" TaxPercentage="" />
+	</HeaderTaxes>
+	<ReturnOrders OrderNo="">
+		<ReturnOrder>
+			<OrderLines>
+				<OrderLine DerivedFromOrderLineKey="" OrderLineKey="">
+					<LineInvoicedTotals LineTotal="" Tax=""/>
+					<LineTaxes>
+						<LineTax ChargeCategory="" ChargeName="" Tax="" TaxName="" TaxPercentage=""/>
+					</LineTaxes>
+				</OrderLine>
+			</OrderLines>
+		</ReturnOrder>
+	</ReturnOrders>
+</Order>

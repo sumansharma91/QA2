@@ -1,0 +1,13 @@
+<Promise OrganizationCode="">
+	<PromiseLines>
+		<PromiseLine ItemID="" LineId="" ProductClass="" UnitOfMeasure="">
+			<Availability>
+				<AvailableInventory AvailableFromUnplannedInventory="" AvailableQuantity="" >
+					<ShipNodeAvailableInventory>
+							<Inventory  AvailableQuantity="" Node="" /> 
+					</ShipNodeAvailableInventory>
+				</AvailableInventory>
+			</Availability>
+		</PromiseLine>
+	</PromiseLines>
+</Promise>

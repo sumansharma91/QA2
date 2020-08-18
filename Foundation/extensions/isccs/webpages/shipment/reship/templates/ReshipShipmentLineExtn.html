@@ -1,0 +1,102 @@
+		<div>
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'cmb_reshipReason'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_LevelOfService' , 
+		_sc_extensibility_moveOrder : '1' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'txt_qtyToReship' , 
+		required : true  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 optionsBinding : 	{
+		 namespace : 			'extn_getCarrierServiceOptionsForOrdering_output'
+,
+		 path : 			'CarrierServiceList.CarrierService'
+,
+		 descriptionField : 			'CarrierServiceDesc'
+,
+		 valueField : 			'CarrierServiceCode'
+	}
+,
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'extn_changeOrderLineCarrier_input'
+,
+		 path : 			'Order.OrderLines.OrderLine.CarrierServiceCode'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+,
+	 		{
+		 namespace : 			'reshipOrderLines_input'
+,
+		 path : 			'Order.OrderLines.OrderLine.Reship_CarrierServiceCode'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_1'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'extn_levelOfService_output'
+,
+		 path : 			'CarrierService'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('Level_of_Service')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		uId : 'extn_textfield_TrackingNumber' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '2' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'txt_qtyToReship'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'reshipOrderLines_input'
+,
+		 path : 			'Order.OrderLines.OrderLine.Extn.ExtnOriginalTrackingNo'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+,
+	 		{
+		 namespace : 			'validateReship_input'
+,
+		 path : 			'Order.OrderLines.OrderLine.Extn.ExtnOriginalTrackingNo'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_1'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'screenInput'
+,
+		 path : 			'Order.OrderLine.Extn.ExtnOriginalTrackingNo'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Tracking_Number')
+			}
+		}
+	 					}">
+		 	</div>  
+		</div>

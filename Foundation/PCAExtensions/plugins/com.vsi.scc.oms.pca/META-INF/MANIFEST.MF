@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: VSI Plug-in
+Bundle-SymbolicName: com.vsi.scc.oms.pca; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: com.vsi.scc.oms.pca.registry.VSIPluginActivator
+Bundle-Vendor: VSI
+Require-Bundle: com.yantra.yfc.rcp, 
+ org.eclipse.ui,
+ org.eclipse.core.runtime
+Eclipse-LazyStart: true
+Eclipse-AutoStart: true

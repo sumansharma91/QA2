@@ -1,0 +1,20 @@
+<OrderInvoiceList>
+	<OrderInvoice DisplayLocalizedFieldInLocale="" IgnoreOrdering="" InvoiceCreationReason=""
+		InvoiceType="" OrderHeaderKey="" UseOrderLineCharges="" OrderNo="" Reference1="">
+		<HeaderChargeList>
+			<HeaderCharge ChargeAmount="" ChargeCategory="" ChargeName="" IsShippingCharge=""/>
+		</HeaderChargeList>
+		<LineDetails>
+			<LineDetail OrderLineKey="" Quantity="">
+				<LineChargeList>
+					<LineCharge ChargeCategory=""
+						ChargeName="" ChargePerLine="" ChargePerUnit=""/>
+				</LineChargeList>
+				<LineTaxList>
+					<LineTax ChargeCategory=""
+						ChargeName="" Tax="" TaxName=""/>
+				</LineTaxList>
+			</LineDetail>
+		</LineDetails>
+	</OrderInvoice>
+</OrderInvoiceList>

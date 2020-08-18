@@ -1,0 +1,87 @@
+		<div>
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'cmbReasoncode'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		uId : 'extn_contentpane_CouponCode' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '1' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'radAppeasementLevel'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		uId : 'extn_textfield_TrackingNumber' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '3' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'cmbReasoncode'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'getOrderModel'
+,
+		 path : 			'Order.Extn.ExtnOriginalTrackingNo'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'getCompleteOrderDetails_output'
+,
+		 path : 			'Order.Extn.ExtnOriginalTrackingNo'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Tracking_Number')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_txt_Coupon_Code' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '2' , 
+		_sc_extensibility_position : 'first' , 
+		_sc_extensibility_referenceUId : 'extn_contentpane_CouponCode'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'getAppeasementProp_input'
+,
+		 path : 			'Order.AppeasementReason.ExtnCouponCode'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+,
+	 		{
+		 namespace : 			'getOrderModel'
+,
+		 path : 			'Order.AppeasementReason.ExtnCouponCode'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_1'
+	}
+	]
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Coupon_Code')
+			}
+		}
+	 					}">
+		 	</div>  
+		</div>

@@ -1,0 +1,11 @@
+<OrderList>
+	<Order OrderHeaderKey="">
+		<OrderLines>
+			<OrderLine OrderLineKey="">
+				<Schedules>
+					<Schedule OrderLineKey="" ProductAvailabilityDate="" Quantity=""/>
+				</Schedules>
+			</OrderLine>
+		</OrderLines>
+	</Order>
+</OrderList>

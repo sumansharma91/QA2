@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ItemDetailsExtn"
+        extnPackage="extn.item.details"
+        originalScreen="isccs.item.details.ItemDetails"
+        originalScreenPackage="isccs.item.details" type="diffrential">
+        <Items>
+            <Image _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="imgDelivery" renderHidden="false"/>
+            <Image _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="imgDelNotallowed" renderHidden="true"/>
+            <Label _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblDelInfoVal" renderHidden="false"/>
+            <Label _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblDelInfoVal1" renderHidden="true"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

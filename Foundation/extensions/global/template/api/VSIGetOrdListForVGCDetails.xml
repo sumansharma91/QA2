@@ -1,0 +1,9 @@
+<OrderList>
+<Order OrderNo="" CustomerEMailID="" CustomerFirstName=""
+		CustomerLastName="" EntryType="" >
+
+<PaymentMethods>
+<PaymentMethod PaymentType="" SvcNo="" PaymentKey="" TotalCharged="" />
+</PaymentMethods>
+</Order>
+</OrderList>

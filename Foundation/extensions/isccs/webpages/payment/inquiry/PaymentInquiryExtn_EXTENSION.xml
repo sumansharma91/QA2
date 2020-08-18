@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="PaymentInquiryExtn"
+        extnPackage="extn.payment.inquiry"
+        originalScreen="isccs.payment.inquiry.PaymentInquiry"
+        originalScreenPackage="isccs.payment.inquiry" type="diffrential">
+        <Items>
+            <GridX _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="grdChargesAndRefunds" renderHidden="false"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

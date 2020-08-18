@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mashups>
+    <mashup description="Get Shipment list matching search criteria"
+        endpoint="EP_CONFIG" id="mobileHomeSearch_getShipmentList"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.wsc.shipment.backroompick.mashups.WSCBackroomPickFetchPaginatedShipmentListMashup"/>
+        <API Name="getShipmentList">
+            <Input>
+                <Shipment ApplyQueryTimeout="Y"
+                    DeliveryMethod="xml:scControllerInput:/Shipment/@DeliveryMethod"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    MaximumRecords="" QueryTimeout=""
+                    SCAC="xml:scControllerInput:/Shipment/@SCAC"
+                    ShipNode="xml:scControllerInput:/Shipment/@ShipNode"
+                    ShipmentNo="xml:scControllerInput:/Shipment/@ShipmentNo"
+                    ShipmentNoQryType="FLIKE" Status="xml:scControllerInput:/Shipment/@Status">
+                    <BillToAddress
+                        DayPhone="xml:scControllerInput:/Shipment/BillToAddress/@DayPhone"
+                        EMailID="xml:scControllerInput:/Shipment/BillToAddress/@EMailID"
+                        FirstName="xml:scControllerInput:/Shipment/BillToAddress/@FirstName" LastName="xml:scControllerInput:/Shipment/BillToAddress/@LastName"/>
+                    <ShipmentLines>
+                        <ShipmentLine
+                            OrderNo="xml:scControllerInput:/Shipment/@OrderNo" OrderNoQryType="FLIKE"
+							CustomerPoNo="xml:scControllerInput:/Shipment/@CustomerPoNo" CustomerPoNoQryType="FLIKE"/>
+                    </ShipmentLines>
+                    <OrderBy>
+                        <Attribute Desc="" Name="xml:scControllerInput:/Shipment/@OrderByAttribute"/>
+                    </OrderBy>
+                </Shipment>
+            </Input>
+            <Template>
+                <Shipments>
+                    <Shipment DeliveryMethod="" DisplayOrderNo=""
+                        ExpectedShipmentDate="" HoldLocation=""
+                        IncludedInBatch="" OrderNo="" SCAC=""
+                        ScacAndService="" ShipNode="" ShipmentKey=""
+                        ShipmentNo="" TotalNumOfSKUS="" CustomerPoNo="">
+                        <Status Description="" Status=""/>
+                        <BillToAddress AddressLine1="" AddressLine2=""
+                            City="" Country="" DayFaxNo="" DayPhone=""
+                            EMailID="" EveningFaxNo="" EveningPhone=""
+                            FirstName="" IsCommercialAddress=""
+                            LastName="" MiddleName="" MobilePhone=""
+                            PersonInfoKey="" PreferredShipAddress=""
+                            State="" ZipCode=""/>
+                        <ShipmentLines TotalNumberOfRecords="">
+                            <ShipmentLine OriginalQuantity=""/>
+                        </ShipmentLines>
+                    </Shipment>
+                </Shipments>
+            </Template>
+        </API>
+        <APINamespace inputNS="getShipmentList_input" outputNS="getShipmentList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="WSC000008"/>
+        </AlternateResourceIds>
+    </mashup>
+</mashups>

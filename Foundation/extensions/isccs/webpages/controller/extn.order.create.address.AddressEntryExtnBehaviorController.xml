@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.order.create.address.AddressEntryExtnBehaviorController"
+    requestMethodSupported="POST" screenId="extn.order.create.address.AddressEntryExtn">
+    <MashupRefs>
+        <MashupRef extnType="ADD"
+            mashupId="extn_changeOrderHeaderToGenerateTag"
+            mashupRefId="extn_changeOrderHeader_CallTag" permissionId=""/>
+    </MashupRefs>
+</Controller>

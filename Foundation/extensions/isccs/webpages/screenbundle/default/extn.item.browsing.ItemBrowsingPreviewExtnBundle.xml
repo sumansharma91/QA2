@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.item.browsing.ItemBrowsingPreviewExtnBundle" screenId="extn.item.browsing.ItemBrowsingPreviewExtn">
+    <BundleEntries/>
+</ScreenBundle>

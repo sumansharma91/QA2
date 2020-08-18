@@ -1,0 +1,71 @@
+
+<OrderList LastOrderHeaderKey="2014121017145581448072" LastRecordSet="Y" ReadFromHistory="" TotalOrderList="1">
+<Order BillToID="250000234" CustomerEMailID="sagar.sapkota@vitaminshoppe.com" CustomerFirstName="SAGAR" CustomerLastName="SAPKOTA" CustomerPONo="" DocumentType="0001" EnteredBy="7001" EnterpriseCode="VSI.com" EntryType="Call Center" OrderDate="2014-12-10T17:14:55-05:00" OrderHeaderKey="2014121017145581448072" OrderNo="Y0002468" OrderType="WEB" SCAC="" ScacAndService="" SellerOrganizationCode="VSI.com">
+<OrderLines>
+<OrderLine CustomerPONo="09803141288012449100" DeliveryMethod="PICK" LineType="PICK_IN_STORE" OrderHeaderKey="2014121017145581448072" OrderLineKey="2014121017151781448074" OrderedQty="3" PrimeLineNo="1" ReqDeliveryDate="2014-12-10T17:15:25-05:00" ReqShipDate="2014-12-10T17:15:25-05:00" SCAC="" ScacAndService="" ShipNode="9803" SubLineNo="1">
+<Item ItemDesc="ANTI-FUNGAL TREATMENT FOR NAIL" ItemID="1294223" ProductClass="GOOD" UnitOfMeasure="EACH"/>
+<LinePriceInfo LineTotal="42.91" UnitPrice="13.99"/>
+<PersonInfoShipTo AddressLine1="1243 TORRENCE AVE" AddressLine2="" AddressLine3="" AddressLine4="" AddressLine5="" AddressLine6="" AlternateEmailID="" Beeper="" City="CALUMET CITY" Company="VSI" Country="US" DayFaxNo="(800) 852-7153" DayPhone="(201) 868-5959" Department="" EMailID="store09803@vitaminshoppe.com" EveningFaxNo="" EveningPhone="" FirstName="" JobTitle="" LastName="" MiddleName="" MobilePhone="" OtherPhone="" PersonID="" State="IL" Suffix="" Title="" ZipCode="60409"/>
+<Notes NumberOfNotes="0"/>
+<Promotions/>
+<LineCharges/>
+<LineTaxes>
+<LineTax ChargeCategory="" ChargeName="" ChargeNameKey="" InvoicedTax="0.94" Reference_1="Y" Reference_2="" Reference_3="" RemainingTax="0.00" Tax="0.94" TaxName="General Sales and Use Tax" TaxPercentage="2.25">
+<Extn ExtnIsTaxCalculated="Y" ExtnTaxAreaID="140310320" ExtnTaxPerUnit="0.31" ExtnVertexEngine="vertex-O" GroupId="0013" IsManual="N" IsOverrideZone="N" IsTranLevel="N" Reference_1="" Reference_2="" Reference_3="" RuleId="365" TaxType="Alternate" ZoneId="574"/>
+</LineTax>
+</LineTaxes>
+</OrderLine>
+<OrderLine CustomerPONo="09803141288012449100" DeliveryMethod="PICK" LineType="PICK_IN_STORE" OrderHeaderKey="2014121017145581448072" OrderLineKey="2014121017151781448075" OrderedQty="4" PrimeLineNo="2" ReqDeliveryDate="2014-12-10T17:15:25-05:00" ReqShipDate="2014-12-10T17:15:25-05:00" SCAC="" ScacAndService="" ShipNode="9803" SubLineNo="1">
+<Item ItemDesc="SEA MOBILITY JERKY CHICKEN" ItemID="1472195" ProductClass="GOOD" UnitOfMeasure="EACH"/>
+<LinePriceInfo LineTotal="56.63" UnitPrice="12.99"/>
+<PersonInfoShipTo AddressLine1="1243 TORRENCE AVE" AddressLine2="" AddressLine3="" AddressLine4="" AddressLine5="" AddressLine6="" AlternateEmailID="" Beeper="" City="CALUMET CITY" Company="VSI" Country="US" DayFaxNo="(800) 852-7153" DayPhone="(201) 868-5959" Department="" EMailID="store09803@vitaminshoppe.com" EveningFaxNo="" EveningPhone="" FirstName="" JobTitle="" LastName="" MiddleName="" MobilePhone="" OtherPhone="" PersonID="" State="IL" Suffix="" Title="" ZipCode="60409"/>
+<Notes NumberOfNotes="0"/>
+<Promotions/>
+<LineCharges/>
+<LineTaxes>
+<LineTax ChargeCategory="" ChargeName="" ChargeNameKey="" InvoicedTax="4.67" Reference_1="Y" Reference_2="" Reference_3="" RemainingTax="0.00" Tax="4.67" TaxName="General Sales and Use Tax" TaxPercentage="9.00">
+<Extn ExtnIsTaxCalculated="Y" ExtnTaxAreaID="140310320" ExtnTaxPerUnit="1.17" ExtnVertexEngine="vertex-O" GroupId="0038" IsManual="N" IsOverrideZone="N" IsTranLevel="N" Reference_1="" Reference_2="" Reference_3="" RuleId="119" TaxType="Standard" ZoneId="574"/>
+</LineTax>
+</LineTaxes>
+</OrderLine>
+<OrderLine CustomerPONo="09803141288012449101" DeliveryMethod="PICK" LineType="SHIP_TO_STORE" OrderHeaderKey="2014121017145581448072" OrderLineKey="2014121017151781448076" OrderedQty="3" PrimeLineNo="3" ReqDeliveryDate="2015-01-05T17:15:26-05:00" SCAC="" ScacAndService="" ShipNode="9803" SubLineNo="1">
+<Item ItemDesc="SUPERBERRY KOMBUCHA" ItemID="1915727" ProductClass="GOOD" UnitOfMeasure="EACH"/>
+<LinePriceInfo LineTotal="10.09" UnitPrice="3.29"/>
+<PersonInfoShipTo AddressLine1="1243 TORRENCE AVE" AddressLine2="" AddressLine3="" AddressLine4="" AddressLine5="" AddressLine6="" AlternateEmailID="" Beeper="" City="CALUMET CITY" Company="VSI" Country="US" DayFaxNo="(800) 852-7153" DayPhone="(201) 868-5959" Department="" EMailID="store09803@vitaminshoppe.com" EveningFaxNo="" EveningPhone="" FirstName="" JobTitle="" LastName="" MiddleName="" MobilePhone="" OtherPhone="" PersonID="" State="IL" Suffix="" Title="" ZipCode="60409"/>
+<Notes NumberOfNotes="0"/>
+<Promotions/>
+<LineCharges/>
+<LineTaxes>
+<LineTax ChargeCategory="" ChargeName="" ChargeNameKey="" InvoicedTax="0.00" Reference_1="Y" Reference_2="" Reference_3="" RemainingTax="0.22" Tax="0.22" TaxName="General Sales and Use Tax" TaxPercentage="2.25">
+<Extn ExtnIsTaxCalculated="Y" ExtnTaxAreaID="140310320" ExtnTaxPerUnit="0.07" ExtnVertexEngine="vertex-O" GroupId="0031" IsManual="N" IsOverrideZone="N" IsTranLevel="N" Reference_1="" Reference_2="" Reference_3="" RuleId="8511" TaxType="Alternate" ZoneId="2920"/>
+</LineTax>
+</LineTaxes>
+</OrderLine>
+<OrderLine CustomerPONo="09803141288012449101" DeliveryMethod="PICK" LineType="SHIP_TO_STORE" OrderHeaderKey="2014121017145581448072" OrderLineKey="2014121017151781448077" OrderedQty="4" PrimeLineNo="4" ReqDeliveryDate="2015-01-05T17:15:26-05:00" SCAC="" ScacAndService="" ShipNode="9803" SubLineNo="1">
+<Item ItemDesc="TOOTHBRUSH MED" ItemID="1923168" ProductClass="GOOD" UnitOfMeasure="EACH"/>
+<LinePriceInfo LineTotal="13.92" UnitPrice="3.19"/>
+<PersonInfoShipTo AddressLine1="1243 TORRENCE AVE" AddressLine2="" AddressLine3="" AddressLine4="" AddressLine5="" AddressLine6="" AlternateEmailID="" Beeper="" City="CALUMET CITY" Company="VSI" Country="US" DayFaxNo="(800) 852-7153" DayPhone="(201) 868-5959" Department="" EMailID="store09803@vitaminshoppe.com" EveningFaxNo="" EveningPhone="" FirstName="" JobTitle="" LastName="" MiddleName="" MobilePhone="" OtherPhone="" PersonID="" State="IL" Suffix="" Title="" ZipCode="60409"/>
+<Notes NumberOfNotes="0"/>
+<Promotions/>
+<LineCharges/>
+<LineTaxes>
+<LineTax ChargeCategory="" ChargeName="" ChargeNameKey="" InvoicedTax="0.00" Reference_1="Y" Reference_2="" Reference_3="" RemainingTax="1.16" Tax="1.16" TaxName="General Sales and Use Tax" TaxPercentage="9.00">
+<Extn ExtnIsTaxCalculated="Y" ExtnTaxAreaID="140310320" ExtnTaxPerUnit="0.29" ExtnVertexEngine="vertex-O" GroupId="0035" IsManual="N" IsOverrideZone="N" IsTranLevel="N" Reference_1="" Reference_2="" Reference_3="" RuleId="4455" TaxType="Standard" ZoneId="2920"/>
+</LineTax>
+</LineTaxes>
+</OrderLine>
+</OrderLines>
+<Notes NumberOfNotes="1">
+<Note NoteText="requested to create an order."/>
+</Notes>
+<PaymentMethods>
+<PaymentMethod CreditCardExpDate="" CreditCardName="" CreditCardType="" DisplayCreditCardNo="" MaxChargeLimit="10.00" PaymentReference1="394114950" PaymentReference2="" PaymentType="VOUCHERS" UnlimitedCharges="N"/>
+<PaymentMethod CreditCardExpDate="05/2017" CreditCardName="" CreditCardNo="4012005281770026" CreditCardType="VISA" DisplayCreditCardNo="0026" FirstName="Sagar" LastName="Sapkota" MaxChargeLimit="113.55" PaymentReference1="" PaymentReference2="4012005281770026" PaymentType="CREDIT_CARD" UnlimitedCharges="N"/>
+</PaymentMethods>
+<OverallTotals />
+<PersonInfoBillTo AddressLine1="1249 Torrence Ave." AddressLine2="" AddressLine3="" AddressLine4="" AlternateEmailID="" Beeper="" City="Calumet City" Company="" Country="US" DayPhone="6093329436" Department="" EMailID="sagar.sapkota@vitaminshoppe.com" EveningPhone="" FirstName="SAGAR" JobTitle="" LastName="SAPKOTA" MiddleName="" MobilePhone="" OtherPhone="" PersonID="" State="IL" Suffix="" ZipCode="60409"/>
+<Promotions/>
+<HeaderCharges/>
+<HeaderTaxes/>
+</Order>
+</OrderList>

@@ -1,0 +1,7 @@
+<Shipment ShipmentKey="" ShipmentContainerizedFlag="">
+	<ShipmentLines>
+		<ShipmentLine >
+			<Extn />
+		</ShipmentLine>
+	</ShipmentLines>
+</Shipment>

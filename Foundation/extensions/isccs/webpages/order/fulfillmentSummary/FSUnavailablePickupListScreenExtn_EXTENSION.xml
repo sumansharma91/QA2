@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="FSUnavailablePickupListScreenExtn"
+        extnPackage="extn.order.fulfillmentSummary"
+        originalScreen="isccs.order.fulfillmentSummary.FSUnavailablePickupListScreen"
+        originalScreenPackage="isccs.order.fulfillmentSummary" type="diffrential">
+        <Items>
+            <ContentPane _sc_extensibility_operation="change" _sc_extensibility_referenceUId="gridOptions2"/>
+            <Button _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="changeToDelivery" renderHidden="true"/>
+            <GridX _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="OLST_listGrid" renderHidden="false"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber description="selectAllRows"
+                    eventId="OLST_listGrid_afterPagingload"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="selectAllRows"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+    </ScreenExtension>
+</ExtensionMetaData>

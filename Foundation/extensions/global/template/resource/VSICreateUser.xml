@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- **File Format*** 000 USER,OrganizationKey,Loginid,Username,DataSecurityGroupId,QueueKey,UsergroupId,Localecode,Theme,MenuId 666 **File with Data*** 000 USERHDR,DUMMY USER,Matrix-B,TEST,TEST,test,Matrix-B_Q1,STORE_CSR,en_US_EST,sapphire,DEFAULT_MENU USER,Matrix-B,TEST1,TEST1,test,Matrix-B_Q1,STORE_CSR,en_US_EST,sapphire,DEFAULT_MENU 666 -->
+<FlatfileDelimitedSchema  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ParserDefaults RecordIdStartPosition="1" DefaultPadCharacter="#" DefaultFieldDelimiter="," DefaultRecordDelimiter="Newline">
+<FileHeader FileHeaderLength="3" FileHeaderStartPos="1" FileHeaderId="000"/>
+<FileTrailer FileTrailerLength="3" FileTrailerStartPos="1" FileTrailerId="666"/>
+</ParserDefaults>
+<Root Name="UserList">
+<Header Name="USER" MaxOccurrence="1" MinOccurrence="1" RecordName="USER"/> 
+<!--   <Terminal Name="USER" MaxOccurrence="10000" MinOccurrence="1" RecordName="USER"/> -->
+</Root>
+<RecordDefinitions>
+
+<Record Name="USERHDR" XMLName="USERHDR" RecordId="USERHDR">
+<Field Name="Organization" XMLName="Organization" FieldPosition="2"/>
+</Record>  
+
+<Record Name="USER" XMLName="User" RecordId="USER">
+<Field Name="OrganizationKey" XMLName="OrganizationKey" FieldPosition="2"/>
+<Field Name="Loginid" XMLName="Loginid" FieldPosition="3"/>
+<Field Name="Username" XMLName="Username" FieldPosition="4"/>
+<Field Name="DataSecurityGroupId" XMLName="DataSecurityGroupId" FieldPosition="5"/>
+<Field Name="UsergroupId" XMLName="UsergroupId" FieldPosition="6"/>
+<Field Name="Localecode" XMLName="Localecode" FieldPosition="7"/>
+<Field Name="Theme" XMLName="Theme" FieldPosition="8"/>
+<Field Name="MenuId" XMLName="MenuId" FieldPosition="9"/>
+<Field Name="Action" XMLName="Action" FieldPosition="10"/>
+</Record>
+</RecordDefinitions>
+</FlatfileDelimitedSchema>

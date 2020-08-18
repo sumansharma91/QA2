@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="AlertDetailsExtn"
+        extnPackage="extn.components.alerts"
+        originalScreen="wsc.components.alerts.AlertDetails"
+        originalScreenPackage="wsc.components.alerts" type="diffrential">
+        <Items>
+            <DataLabel _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="lbl_OrderNum"
+                class="autoLabelZeroWidth blockComponent hashNumberAlign"
+                label="$(_scSimpleBundle:extn_ItemID)" uId="extn_ItemID">
+                <BindingData>
+                    <SourceBinding dynamicBindingFunc="ItemID"
+                        namespace="Inbox" path="Inbox.ItemID"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_ItemID"
+                class="autoLabelZeroWidth blockComponent hashNumberAlign"
+                label="$(_scSimpleBundle:extn_Quantity)" uId="extn_Quantity">
+                <BindingData>
+                    <SourceBinding dynamicBindingFunc="Quantity"
+                        namespace="Inbox" path="Inbox.Quantity"/>
+                </BindingData>
+            </DataLabel>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

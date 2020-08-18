@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mashups>
+    <mashup description="" endpoint="EP_CONFIG"
+        id="extn_Print_Customer_Receipt" mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSISOMPrintCustomerReceipt">
+            <Input>
+                <Shipment ShipmentKey=""/>
+            </Input>
+            <Template/>
+        </API>
+        <classInformation name="com.ibm.wsc.common.mashups.WSCBaseMashup"/>
+        <APINamespace inputNS="extn_Print_Customer_Receipt_input" outputNS="extn_Print_Customer_Receipt_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+    <mashup description="" endpoint="EP_CONFIG"
+        id="extn_printpickpackreceipt" mashuptype="XAPI" resourceId="" transactional="true">
+        <API FlowName="VSISOMPrintPickPackXML">
+            <Input>
+                <Shipment ShipmentKey=""/>
+            </Input>
+            <Template/>
+        </API>
+        <classInformation name="com.ibm.wsc.common.mashups.WSCBaseMashup"/>
+        <APINamespace inputNS="extn_printpickpackreceipt_input" outputNS="extn_printpickpackreceipt_output"/>
+        <AlternateResourceIds/>
+    </mashup>
+</mashups>

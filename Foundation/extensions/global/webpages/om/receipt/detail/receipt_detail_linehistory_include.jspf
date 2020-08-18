@@ -1,0 +1,61 @@
+<%/*******************************************************************************
+Licensed Materials - Property of IBM
+IBM Sterling Selling And Fulfillment Suite
+(C) Copyright IBM Corp. 2005, 2013 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ ********************************************************************************/%>
+<%@ page import="com.yantra.yfs.ui.backend.*" %>
+<%@ page import="com.yantra.yfc.dom.*" %>
+
+<%!
+    //This function goes through the output of getReceiptDetails API.
+    //For each line in the output, this method stamps an attribute called "IsRequired" 
+    //if that line is an ancestor of the linekey that has been passed as input to this method.
+    //This is a recursive method (it calls itself).
+    void stampLineAsRequired(String lineKey, int level) 
+    {
+        YFCElement receiptLines = null;
+        YFCElement receiptLine = null;
+        String origKey = null;
+        
+        receiptLines = getReceiptLines();
+
+        if (receiptLines != null) {
+            for (Iterator i = receiptLines.getChildren(); i.hasNext();) {
+                receiptLine = (YFCElement)i.next();
+                if (equals(lineKey, receiptLine.getAttribute("ReceiptLineKey"))) {
+                    receiptLine.setAttribute("UIAncestorLevel", level);
+
+            		if (level == 0) {
+            			request.setAttribute("CurrentReceiptLine", receiptLine);
+            		}
+                    
+                    level ++;
+                    //Get the orig receipt key for this line, and go one level up the ancestry.
+                    //Thus, this is a recursive function so that we can trvel up the ancestry 
+                    //and mark all the ancestors of the current line as "required".
+                    
+                    origKey = receiptLine.getAttribute("OrigReceiptLineKey");
+                    if (!isVoid(origKey)) {
+                        stampLineAsRequired(origKey, level);
+                    }
+                }
+            }
+        }
+    }
+ 
+    YFCElement getReceiptLines() 
+    {
+        YFCElement receipt = null;
+        YFCElement receiptLines = null;
+        
+        receipt = (YFCElement) request.getAttribute("Receipt");
+        
+        if (receipt != null) {
+            receiptLines = receipt.getChildElement("ReceiptLines");
+        }
+        
+        return receiptLines;
+    }
+%>
+

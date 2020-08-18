@@ -1,0 +1,1203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaData version="1.0" xmlns="http://ibm.com/sterling/afc/cuf/tns">
+    <Actions>
+        <Method name="handleMashupCompletion" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="mashupContext" type="Bean"/>
+                <ArgumentDefinition name="mashupRefObj" type="Bean"/>
+                <ArgumentDefinition name="mashupRefList" type="List"/>
+                <ArgumentDefinition name="inputData" type="List"/>
+                <ArgumentDefinition name="hasError" type="Boolean"/>
+                <ArgumentDefinition name="data" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Expression className="BaseTemplateUtils"
+                    methodName="handleMashupCompletion" package="isccs.utils">
+                    <Arguments>
+                        <Argument type="Bean" value="${var:mashupContext}"/>
+                        <Argument type="Bean" value="${var:mashupRefObj}"/>
+                        <Argument type="List" value="${var:mashupRefList}"/>
+                        <Argument type="List" value="${var:inputData}"/>
+                        <Argument type="Boolean" value="${var:hasError}"/>
+                        <Argument type="Bean" value="${var:data}"/>
+                        <Argument type="Screen" value="${screen}"/>
+                    </Arguments>
+                </Expression>
+            </Statements>
+        </Method>
+        <Method name="setInitialized" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="event" type="UIEvent"/>
+                <ArgumentDefinition name="bEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="ctrl" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Variable declare="true"
+                    name="${screenVar:isScreeninitialized}"
+                    type="Boolean" value="${var:true}"/>
+            </Statements>
+        </Method>
+        <Method name="save" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="event" type="UIEvent"/>
+                <ArgumentDefinition name="bEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="ctrl" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Variable name="eventDefinition" type="Bean" value="${var:null}"/>
+                <Expression transformed_valueToAssign="{}">
+                    <Arguments/>
+                    <AssignToVariable isGlobal="false" name="eventDefinition"/>
+                </Expression>
+                <Expression className="BaseUtils"
+                    methodName="setAttributeValue" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="String" value="argumentList"/>
+                        <Argument type="String" value="${var:args}"/>
+                        <Argument type="Bean" value="${var:eventDefinition}"/>
+                    </Arguments>
+                </Expression>
+                <Expression className="EventUtils"
+                    methodName="fireEventToParent" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="Screen" value="${screen}"/>
+                        <Argument type="String" value="onSaveSuccess"/>
+                        <Argument type="Bean" value="${var:eventDefinition}"/>
+                    </Arguments>
+                </Expression>
+            </Statements>
+        </Method>
+        <Method name="onAddNotes" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="uiEvent" type="UIEvent"/>
+                <ArgumentDefinition name="businessEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="control" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Expression className="BaseUtils"
+                    methodName="addBeanValueToBean"
+                    package="sc.plat.utils" transformed_argumentList="true">
+                    <Arguments transformed_argumentList="true">
+                        <Argument _POST_ARG_Symbol_="[" type="Bean" value="${var:args}"/>
+                        <Argument _POST_ARG_Symbol_="] = " type="String" value="argumentList"/>
+                        <Argument>
+                            <Expression className="BaseUtils"
+                                methodName="getNewBeanInstance" package="sc.plat.utils">
+                                <Arguments/>
+                            </Expression>
+                        </Argument>
+                    </Arguments>
+                </Expression>
+                <Expression className="EventUtils"
+                    methodName="fireEventToParent" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="Screen" value="${screen}"/>
+                        <Argument type="String" value="openNote"/>
+                        <Argument type="Bean" value="${var:args}"/>
+                    </Arguments>
+                </Expression>
+            </Statements>
+        </Method>
+        <Method name="enableNextButton" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="uiEvent" type="UIEvent"/>
+                <ArgumentDefinition name="businessEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="control" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Expression className="WizardUtils"
+                    methodName="enableNavigationalWidget" package="isccs.utils">
+                    <Arguments>
+                        <Argument type="Screen" value="${screen}"/>
+                        <Argument type="String" value="nextBttn"/>
+                    </Arguments>
+                </Expression>
+            </Statements>
+        </Method>
+        <Method name="disableNextButton" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="uiEvent" type="UIEvent"/>
+                <ArgumentDefinition name="businessEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="control" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Expression className="WizardUtils"
+                    methodName="disableNavigationalWidget" package="isccs.utils">
+                    <Arguments>
+                        <Argument type="Screen" value="${screen}"/>
+                        <Argument type="String" value="nextBttn"/>
+                    </Arguments>
+                </Expression>
+            </Statements>
+        </Method>
+        <Method name="handleTabClose" returnType="Bean" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="uiEvent" type="UIEvent"/>
+                <ArgumentDefinition name="businessEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="control" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Variable name="isPageDirty" type="Boolean" value="${var:false}"/>
+                <Expression className="BaseUtils"
+                    methodName="setAttributeValue" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="String" value="argumentList.closeTab"/>
+                        <Argument type="Boolean" value="${var:true}"/>
+                        <Argument type="Bean" value="${var:args}"/>
+                    </Arguments>
+                </Expression>
+                <Variable name="returnObject" type="Bean" value="${var:null}"/>
+                <Expression methodName="handleClose">
+                    <Arguments>
+                        <Argument type="UIEvent" value="${var:uiEvent}"/>
+                        <Argument type="BusinessEvent" value="${var:businessEvent}"/>
+                        <Argument type="String" value="${var:control}"/>
+                        <Argument type="Bean" value="${var:args}"/>
+                    </Arguments>
+                    <AssignToVariable isGlobal="false" name="returnObject"/>
+                </Expression>
+                <Return isGlobal="false" value="${var:returnObject}"/>
+            </Statements>
+        </Method>
+        <Method name="handleNext" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="uiEvent" type="UIEvent"/>
+                <ArgumentDefinition name="businessEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="control" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Expression methodName="sendEventForSavePage">
+                    <Arguments>
+                        <Argument type="String" value="NEXT"/>
+                    </Arguments>
+                </Expression>
+            </Statements>
+        </Method>
+        <Method name="handleClose" returnType="Bean" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="uiEvent" type="UIEvent"/>
+                <ArgumentDefinition name="businessEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="control" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Variable name="isPageDirty" type="Boolean" value="${var:false}"/>
+                <Variable name="returnObject" type="Bean" value="${var:null}"/>
+                <Expression className="WidgetUtils"
+                    methodName="isWizardPageDirty" package="isccs.utils">
+                    <Arguments>
+                        <Argument type="Screen" value="${screen}"/>
+                    </Arguments>
+                    <AssignToVariable name="isPageDirty"/>
+                </Expression>
+                <If>
+                    <Expression className="BaseUtils"
+                        methodName="isBooleanTrue"
+                        package="sc.plat.utils" transformed_argumentList="true">
+                        <Arguments transformed_argumentList="true">
+                            <Argument type="Boolean" value="${var:isPageDirty}"/>
+                        </Arguments>
+                    </Expression>
+                    <Statements>
+                        <Variable name="msg" type="String" value="${var:null}"/>
+                        <Expression className="ScreenUtils"
+                            methodName="getString" package="sc.plat.utils">
+                            <Arguments>
+                                <Argument type="Screen" value="${screen}"/>
+                                <Argument type="String" value="DirtyCloseConfirmationMessage"/>
+                            </Arguments>
+                            <AssignToVariable isGlobal="false" name="msg"/>
+                        </Expression>
+                        <Expression className="ScreenUtils"
+                            methodName="showConfirmMessageBox" package="sc.plat.utils">
+                            <Arguments>
+                                <Argument type="Screen" value="${screen}"/>
+                                <Argument type="String" value="${var:msg}"/>
+                                <Argument type="String" value="handleWizardCloseConfirmation"/>
+                                <Argument type="Bean" value="${var:null}"/>
+                                <Argument type="Bean" value="${var:args}"/>
+                            </Arguments>
+                        </Expression>
+                        <Expression transformed_valueToAssign="{}">
+                            <AssignToVariable isGlobal="false" name="returnObject"/>
+                        </Expression>
+                        <Expression className="BaseUtils"
+                            methodName="addBooleanValueToBean"
+                            package="sc.plat.utils" transformed_argumentList="true">
+                            <Arguments transformed_argumentList="true">
+                                <Argument _POST_ARG_Symbol_="["
+                                    type="Bean" value="${var:returnObject}"/>
+                                <Argument _POST_ARG_Symbol_="] = "
+                                    type="String" value="closeEditor"/>
+                                <Argument type="Boolean" value="${var:false}"/>
+                            </Arguments>
+                        </Expression>
+                        <Return isGlobal="false" value="${var:returnObject}"/>
+                    </Statements>
+                </If>
+                <ElseIf>
+                    <Expression methodName="customEntityExists">
+                        <Arguments/>
+                    </Expression>
+                    <Statements>
+                        <Expression className="WizardUtils"
+                            methodName="closeWizard" package="sc.plat.utils">
+                            <Arguments>
+                                <Argument type="Wizard" value="${screen}"/>
+                            </Arguments>
+                        </Expression>
+                    </Statements>
+                </ElseIf>
+                <Else>
+                    <Statements>
+                        <Expression className="WizardUtils"
+                            methodName="handleWizardCloseConfirmation" package="isccs.utils">
+                            <Arguments>
+                                <Argument type="Screen" value="${screen}"/>
+                                <Argument type="String" value="Ok"/>
+                                <Argument type="Bean" value="${var:args}"/>
+                            </Arguments>
+                        </Expression>
+                        <Expression transformed_valueToAssign="{}">
+                            <AssignToVariable isGlobal="false" name="returnObject"/>
+                        </Expression>
+                        <Expression className="BaseUtils"
+                            methodName="addBooleanValueToBean"
+                            package="sc.plat.utils" transformed_argumentList="true">
+                            <Arguments transformed_argumentList="true">
+                                <Argument _POST_ARG_Symbol_="["
+                                    type="Bean" value="${var:returnObject}"/>
+                                <Argument _POST_ARG_Symbol_="] = "
+                                    type="String" value="closeEditor"/>
+                                <Argument type="Boolean" value="${var:false}"/>
+                            </Arguments>
+                        </Expression>
+                        <Return isGlobal="false" value="${var:returnObject}"/>
+                    </Statements>
+                </Else>
+            </Statements>
+        </Method>
+        <Method name="customEntityExists" returnType="Boolean" visibility="local">
+            <ArgumentDefinitions/>
+            <Statements>
+                <Return value="${var:false}"/>
+            </Statements>
+        </Method>
+        <Method name="handleWizardCloseConfirmation" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="res" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Variable name="argumentList" type="Bean" value="${var:null}"/>
+                <Variable name="closeTab" type=" Boolean" value="${var:false}"/>
+                <Expression className="BaseUtils"
+                    methodName="getAttributeValue" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="String" value="argumentList"/>
+                        <Argument type="Boolean" value="${var:false}"/>
+                        <Argument type="Bean" value="${var:args}"/>
+                    </Arguments>
+                    <AssignToVariable isGlobal="false" name="argumentList"/>
+                </Expression>
+                <If>
+                    <Not>
+                        <Expression className="BaseUtils"
+                            methodName="isVoid" package="sc.plat.utils">
+                            <Arguments>
+                                <Argument type="Bean" value="${var:argumentList}"/>
+                            </Arguments>
+                        </Expression>
+                    </Not>
+                    <Statements>
+                        <Expression className="BaseUtils"
+                            methodName="getAttributeValue" package="sc.plat.utils">
+                            <Arguments>
+                                <Argument type="String" value="closeTab"/>
+                                <Argument type="Boolean" value="${var:false}"/>
+                                <Argument type="Bean" value="${var:argumentList}"/>
+                            </Arguments>
+                            <AssignToVariable isGlobal="false" name="closeTab"/>
+                        </Expression>
+                    </Statements>
+                </If>
+                <If>
+                    <Expression transformed_operatorToSet="||">
+                        <Arguments transformed_operatorToSet="||">
+                            <Argument>
+                                <Expression methodName="customEntityExists">
+                                    <Arguments/>
+                                </Expression>
+                            </Argument>
+                            <Argument type="Boolean" value="${var:closeTab}"/>
+                        </Arguments>
+                    </Expression>
+                    <Statements>
+                        <Expression className="WizardUtils"
+                            methodName="closeWizard" package="sc.plat.utils">
+                            <Arguments>
+                                <Argument type="Wizard" value="${screen}"/>
+                            </Arguments>
+                        </Expression>
+                    </Statements>
+                </If>
+                <Else>
+                    <Statements>
+                        <Expression className="ScreenUtils"
+                            methodName="clearScreen" package="sc.plat.utils">
+                            <Arguments>
+                                <Argument type="Screen" value="${screen}"/>
+                                <Argument type="String" value="${var:null}"/>
+                            </Arguments>
+                        </Expression>
+                        <Expression className="WizardUtils"
+                            methodName="handleWizardCloseConfirmation" package="isccs.utils">
+                            <Arguments>
+                                <Argument type="Screen" value="${screen}"/>
+                                <Argument type="String" value="${var:res}"/>
+                                <Argument type="Bean" value="${var:args}"/>
+                            </Arguments>
+                        </Expression>
+                    </Statements>
+                </Else>
+            </Statements>
+        </Method>
+        <Method name="handleConfirm" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="uiEvent" type="UIEvent"/>
+                <ArgumentDefinition name="businessEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="control" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Expression methodName="sendEventForSavePage">
+                    <Arguments>
+                        <Argument type="String" value="CONFIRM"/>
+                    </Arguments>
+                </Expression>
+            </Statements>
+        </Method>
+        <Method name="handleCustomPrevious" returnType="Boolean" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="uiEvent" type="UIEvent"/>
+                <ArgumentDefinition name="businessEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="control" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Return isGlobal="false" value="${var:false}"/>
+            </Statements>
+        </Method>
+        <Method name="handlePrevious" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="uiEvent" type="UIEvent"/>
+                <ArgumentDefinition name="businessEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="control" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <If>
+                    <Not>
+                        <Expression methodName="handleCustomPrevious">
+                            <Arguments>
+                                <Argument type="UIEvent" value="${var:uiEvent}"/>
+                                <Argument type="BusinessEvent" value="${var:businessEvent}"/>
+                                <Argument type="String" value="${var:control}"/>
+                                <Argument type="Bean" value="${var:args}"/>
+                            </Arguments>
+                        </Expression>
+                    </Not>
+                    <Statements>
+                        <Variable name="isPageDirty" type="Boolean" value="${var:false}"/>
+                        <Expression className="BaseTemplateUtils"
+                            methodName="hideMessage" package="isccs.utils">
+                            <Arguments>
+                                <Argument type="Screen" value="${screen}"/>
+                            </Arguments>
+                        </Expression>
+                        <Expression className="WidgetUtils"
+                            methodName="isWizardPageDirty" package="isccs.utils">
+                            <Arguments>
+                                <Argument type="Screen" value="${screen}"/>
+                            </Arguments>
+                            <AssignToVariable name="isPageDirty"/>
+                        </Expression>
+                        <If>
+                            <Expression className="BaseUtils"
+                                methodName="isBooleanTrue"
+                                package="sc.plat.utils" transformed_argumentList="true">
+                                <Arguments transformed_argumentList="true">
+                                    <Argument type="Boolean" value="${var:isPageDirty}"/>
+                                </Arguments>
+                            </Expression>
+                            <Statements>
+                                <Expression className="OrderUtils"
+                                    methodName="openOrderEntryOnPreviousPopup" package="isccs.utils">
+                                    <Arguments>
+                                    <Argument type="Screen" value="${screen}"/>
+                                    <Argument type="String" value="handlePrevious"/>
+                                    </Arguments>
+                                </Expression>
+                            </Statements>
+                        </If>
+                        <Else>
+                            <Statements>
+                                <If>
+                                    <Expression transformed_operatorToSet="&amp;&amp;">
+                                    <Arguments transformed_operatorToSet="&amp;&amp;">
+                                    <Argument>
+                                    <Expression
+                                    className="WizardUtils"
+                                    methodName="isCurrentPageFirstEntity" package="sc.plat.utils">
+                                    <Arguments>
+                                    <Argument
+                                    type="Wizard" value="${screen}"/>
+                                    </Arguments>
+                                    </Expression>
+                                    </Argument>
+                                    <Argument>
+                                    <Expression
+                                    className="ContextUtils"
+                                    methodName="isMobileContainer" package="isccs.utils">
+                                    <Arguments/>
+                                    </Expression>
+                                    </Argument>
+                                    </Arguments>
+                                    </Expression>
+                                    <Statements>
+                                    <Expression
+                                    className="ControllerUtils"
+                                    methodName="openScreenInEditor" package="sc.plat.utils">
+                                    <Arguments>
+                                    <Argument type="String" value="wsc.home.MobileHome"/>
+                                    <Argument type="Model" value="${var:null}"/>
+                                    <Argument type="Screen" value="${screen}"/>
+                                    <Argument type="Bean" value="${var:null}"/>
+                                    <Argument type="Bean" value="${var:null}"/>
+                                    <Argument type="String" value="wsc.editors.MobileEditor"/>
+                                    </Arguments>
+                                    </Expression>
+                                    </Statements>
+                                </If>
+                                <Else>
+                                    <Statements>
+                                    <Expression
+                                    className="WizardUtils"
+                                    methodName="previousScreen" package="sc.plat.utils">
+                                    <Arguments>
+                                    <Argument type="Wizard" value="${screen}"/>
+                                    </Arguments>
+                                    </Expression>
+                                    </Statements>
+                                </Else>
+                            </Statements>
+                        </Else>
+                    </Statements>
+                </If>
+            </Statements>
+        </Method>
+        <Method name="showNextPage" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="uiEvent" type="UIEvent"/>
+                <ArgumentDefinition name="businessEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="control" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Expression className="WizardUtils"
+                    methodName="nextScreen" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="Wizard" value="${screen}"/>
+                    </Arguments>
+                </Expression>
+            </Statements>
+        </Method>
+        <Method name="sendEventForSavePage" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="actionPerformed" type="String"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Variable name="wizscreen" type="Screen" value="${var:null}"/>
+                <Variable name="wizscreenUId" type="String" value="${var:null}"/>
+                <Variable name="isScreenValid" type="Boolean" value="${var:null}"/>
+                <Variable declare="false"
+                    name="${screenVar:ActionPerformed}" type="String" value="${var:actionPerformed}"/>
+                <Expression className="WizardUtils"
+                    methodName="getCurrentPage" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="Wizard" value="${screen}"/>
+                    </Arguments>
+                    <AssignToVariable name="wizscreen"/>
+                </Expression>
+                <Expression className="WizardUtils"
+                    methodName="getCurrentPageByUId" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="Wizard" value="${screen}"/>
+                    </Arguments>
+                    <AssignToVariable name="wizscreenUId"/>
+                </Expression>
+                <If>
+                    <Expression className="ScreenUtils"
+                        methodName="validate" package="sc.plat.utils">
+                        <Arguments>
+                            <Argument type="Screen" value="${var:wizscreen}"/>
+                        </Arguments>
+                        <AssignToVariable name="isScreenValid"/>
+                    </Expression>
+                    <Statements>
+                        <Variable name="tempModel" type="Bean" value="${var:null}"/>
+                        <Expression transformed_valueToAssign="{}">
+                            <Arguments/>
+                            <AssignToVariable isGlobal="false" name="tempModel"/>
+                        </Expression>
+                        <Variable name="eventArg" type="Bean" value="${var:null}"/>
+                        <Expression transformed_valueToAssign="{}">
+                            <Arguments/>
+                            <AssignToVariable isGlobal="false" name="eventArg"/>
+                        </Expression>
+                        <If>
+                            <Not>
+                                <Expression className="BaseUtils"
+                                    methodName="isVoid" package="sc.plat.utils">
+                                    <Arguments>
+                                    <Argument type="String" value="${screenVar:ActionPerformed}"/>
+                                    </Arguments>
+                                </Expression>
+                            </Not>
+                            <Statements>
+                                <Expression className="BaseUtils"
+                                    methodName="addStringValueToBean"
+                                    package="sc.plat.utils" transformed_argumentList="true">
+                                    <Arguments transformed_argumentList="true">
+                                    <Argument _POST_ARG_Symbol_="["
+                                    type="Bean" value="${var:tempModel}"/>
+                                    <Argument
+                                    _POST_ARG_Symbol_="] = "
+                                    type="String" value="Action"/>
+                                    <Argument type="String" value="${screenVar:ActionPerformed}"/>
+                                    </Arguments>
+                                </Expression>
+                            </Statements>
+                        </If>
+                        <Expression className="BaseUtils"
+                            methodName="addBeanValueToBean"
+                            package="sc.plat.utils" transformed_argumentList="true">
+                            <Arguments transformed_argumentList="true">
+                                <Argument _POST_ARG_Symbol_="["
+                                    type="Bean" value="${var:eventArg}"/>
+                                <Argument _POST_ARG_Symbol_="] = "
+                                    type="String" value="argumentList"/>
+                                <Argument type="Bean" value="${var:tempModel}"/>
+                            </Arguments>
+                        </Expression>
+                        <Expression className="EventUtils"
+                            methodName="fireEventToChild" package="sc.plat.utils">
+                            <Arguments>
+                                <Argument type="Screen" value="${screen}"/>
+                                <Argument type="String" value="${var:wizscreenUId}"/>
+                                <Argument type="String" value="saveCurrentPage"/>
+                                <Argument type="Bean" value="${var:eventArg}"/>
+                            </Arguments>
+                        </Expression>
+                    </Statements>
+                </If>
+                <Else>
+                    <Statements>
+                        <Expression className="BaseTemplateUtils"
+                            methodName="showMessage" package="isccs.utils">
+                            <Arguments>
+                                <Argument type="Screen" value="${screen}"/>
+                                <Argument type="String" value="Message_screenHasErrors"/>
+                                <Argument type="String" value="error"/>
+                                <Argument type="Bean" value="${var:null}"/>
+                            </Arguments>
+                        </Expression>
+                    </Statements>
+                </Else>
+            </Statements>
+        </Method>
+        <Method name="onSaveSuccess" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="uiEvent" type="UIEvent"/>
+                <ArgumentDefinition name="businessEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="control" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <If>
+                    <Expression className="BaseUtils"
+                        methodName="equals" package="sc.plat.utils">
+                        <Arguments>
+                            <Argument type="String" value="${screenVar:ActionPerformed}"/>
+                            <Argument type="String" value="NEXT"/>
+                        </Arguments>
+                    </Expression>
+                    <Statements>
+                        <Expression className="WizardUtils"
+                            methodName="nextScreen" package="sc.plat.utils">
+                            <Arguments>
+                                <Argument type="Wizard" value="${screen}"/>
+                            </Arguments>
+                        </Expression>
+                        <Variable declare="false"
+                            name="${screenVar:ActionPerformed}"
+                            type="String" value=""/>
+                    </Statements>
+                </If>
+                <If>
+                    <Expression className="BaseUtils"
+                        methodName="equals" package="sc.plat.utils">
+                        <Arguments>
+                            <Argument type="String" value="${screenVar:ActionPerformed}"/>
+                            <Argument type="String" value="CONFIRM"/>
+                        </Arguments>
+                    </Expression>
+                    <Statements>
+                        <Expression className="WizardUtils"
+                            methodName="confirmWizard" package="sc.plat.utils">
+                            <Arguments>
+                                <Argument type="Wizard" value="${screen}"/>
+                            </Arguments>
+                        </Expression>
+                        <Variable declare="false"
+                            name="${screenVar:ActionPerformed}"
+                            type="String" value=""/>
+                    </Statements>
+                </If>
+                <If>
+                    <Expression className="BaseUtils"
+                        methodName="equals" package="sc.plat.utils">
+                        <Arguments>
+                            <Argument type="String" value="${screenVar:ActionPerformed}"/>
+                            <Argument type="String" value="CLOSE"/>
+                        </Arguments>
+                    </Expression>
+                    <Statements>
+                        <Expression className="WizardUtils"
+                            methodName="closeWizard" package="sc.plat.utils">
+                            <Arguments>
+                                <Argument type="Wizard" value="${screen}"/>
+                            </Arguments>
+                        </Expression>
+                        <Variable declare="false"
+                            name="${screenVar:ActionPerformed}"
+                            type="String" value=""/>
+                    </Statements>
+                </If>
+                <If>
+                    <Expression className="BaseUtils"
+                        methodName="equals" package="sc.plat.utils">
+                        <Arguments>
+                            <Argument type="String" value="${screenVar:ActionPerformed}"/>
+                            <Argument type="String" value="SAVEONPREVIOUS"/>
+                        </Arguments>
+                    </Expression>
+                    <Statements>
+                        <Expression className="WizardUtils"
+                            methodName="previousScreen" package="sc.plat.utils">
+                            <Arguments>
+                                <Argument type="Wizard" value="${screen}"/>
+                            </Arguments>
+                        </Expression>
+                        <Variable declare="false"
+                            name="${screenVar:ActionPerformed}"
+                            type="String" value=""/>
+                        <Variable declare="false"
+                            name="${screenVar:parentScreenAction}"
+                            type="String" value=""/>
+                    </Statements>
+                </If>
+            </Statements>
+        </Method>
+        <Method name="handleBeforeNext" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="uiEvent" type="UIEvent"/>
+                <ArgumentDefinition name="businessEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="control" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Expression className="BaseTemplateUtils"
+                    methodName="hideMessage" package="isccs.utils">
+                    <Arguments>
+                        <Argument type="Screen" value="${screen}"/>
+                    </Arguments>
+                </Expression>
+            </Statements>
+        </Method>
+        <Method name="afterPrevious" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="uiEvent" type="UIEvent"/>
+                <ArgumentDefinition name="businessEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="control" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Variable name="wizscreenUId" type="String" value="${var:null}"/>
+                <Expression className="WizardUtils"
+                    methodName="getCurrentPageByUId" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="Wizard" value="${screen}"/>
+                    </Arguments>
+                    <AssignToVariable name="wizscreenUId"/>
+                </Expression>
+                <Variable name="eventArg" type="Bean" value="${var:null}"/>
+                <Expression transformed_valueToAssign="{}">
+                    <Arguments/>
+                    <AssignToVariable isGlobal="false" name="eventArg"/>
+                </Expression>
+                <Variable name="argsBean" type="Bean" value="${var:null}"/>
+                <Expression transformed_valueToAssign="{}">
+                    <Arguments/>
+                    <AssignToVariable isGlobal="false" name="argsBean"/>
+                </Expression>
+                <Expression className="BaseUtils"
+                    methodName="setAttributeValue" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="String" value="ReloadContext"/>
+                        <Argument type="String" value="WizardPrevious"/>
+                        <Argument type="Bean" value="${var:argsBean}"/>
+                    </Arguments>
+                </Expression>
+                <Expression className="BaseUtils"
+                    methodName="addBeanValueToBean"
+                    package="sc.plat.utils" transformed_argumentList="true">
+                    <Arguments transformed_argumentList="true">
+                        <Argument _POST_ARG_Symbol_="[" type="Bean" value="${var:eventArg}"/>
+                        <Argument _POST_ARG_Symbol_="] = " type="String" value="argumentList"/>
+                        <Argument type="Bean" value="${var:argsBean}"/>
+                    </Arguments>
+                </Expression>
+                <Expression className="EventUtils"
+                    methodName="fireEventToChild" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="Screen" value="${screen}"/>
+                        <Argument type="String" value="${var:wizscreenUId}"/>
+                        <Argument type="String" value="reloadScreen"/>
+                        <Argument type="Bean" value="${var:eventArg}"/>
+                    </Arguments>
+                </Expression>
+            </Statements>
+        </Method>
+        <Method name="aftercancelnext" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="uiEvent" type="UIEvent"/>
+                <ArgumentDefinition name="businessEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="control" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Variable name="wizscreenUId" type="String" value="${var:null}"/>
+                <Expression className="WizardUtils"
+                    methodName="getCurrentPageByUId" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="Wizard" value="${screen}"/>
+                    </Arguments>
+                    <AssignToVariable name="wizscreenUId"/>
+                </Expression>
+                <Variable name="eventArg" type="Bean" value="${var:null}"/>
+                <Expression transformed_valueToAssign="{}">
+                    <Arguments/>
+                    <AssignToVariable isGlobal="false" name="eventArg"/>
+                </Expression>
+                <Variable name="argsBean" type="Bean" value="${var:null}"/>
+                <Expression transformed_valueToAssign="{}">
+                    <Arguments/>
+                    <AssignToVariable isGlobal="false" name="argsBean"/>
+                </Expression>
+                <Expression className="BaseUtils"
+                    methodName="setAttributeValue" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="String" value="ReloadContext"/>
+                        <Argument type="String" value="WizardCancelNext"/>
+                        <Argument type="Bean" value="${var:argsBean}"/>
+                    </Arguments>
+                </Expression>
+                <Expression className="BaseUtils"
+                    methodName="addBeanValueToBean"
+                    package="sc.plat.utils" transformed_argumentList="true">
+                    <Arguments transformed_argumentList="true">
+                        <Argument _POST_ARG_Symbol_="[" type="Bean" value="${var:eventArg}"/>
+                        <Argument _POST_ARG_Symbol_="] = " type="String" value="argumentList"/>
+                        <Argument type="Bean" value="${var:argsBean}"/>
+                    </Arguments>
+                </Expression>
+                <Expression className="EventUtils"
+                    methodName="fireEventToChild" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="Screen" value="${screen}"/>
+                        <Argument type="String" value="${var:wizscreenUId}"/>
+                        <Argument type="String" value="reloadScreen"/>
+                        <Argument type="Bean" value="${var:eventArg}"/>
+                    </Arguments>
+                </Expression>
+            </Statements>
+        </Method>
+        <Method name="afterSaveSuccessOnConfirm" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="uiEvent" type="UIEvent"/>
+                <ArgumentDefinition name="businessEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="control" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Expression className="WizardUtils"
+                    methodName="confirmWizard" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="Wizard" value="${screen}"/>
+                    </Arguments>
+                </Expression>
+            </Statements>
+        </Method>
+        <Method name="afterWizardConfirm" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="uiEvent" type="UIEvent"/>
+                <ArgumentDefinition name="businessEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="control" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Expression className="WizardUtils"
+                    methodName="handleWizardCloseConfirmation" package="isccs.utils">
+                    <Arguments>
+                        <Argument type="Screen" value="${screen}"/>
+                        <Argument type="String" value="Ok"/>
+                        <Argument type="Bean" value="${var:args}"/>
+                    </Arguments>
+                </Expression>
+            </Statements>
+        </Method>
+        <Method name="onPreviousDialogCallback" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="actionPerformed" type="String"/>
+                <ArgumentDefinition name="model" type="Model"/>
+                <ArgumentDefinition name="popupParams" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Variable name="currentPage" type="String" value="${var:null}"/>
+                <Variable name="parentScreenAction" type="String" value="${var:null}"/>
+                <Expression className="BaseUtils"
+                    methodName="getValueFromPath" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="String" value="screenInput.parentScreenAction"/>
+                        <Argument type="Bean" value="${var:popupParams}"/>
+                    </Arguments>
+                    <AssignToVariable isGlobal="false" name="${screenVar:parentScreenAction}"/>
+                </Expression>
+                <Expression className="WizardUtils"
+                    methodName="getCurrentPageByUId" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="Wizard" value="${screen}"/>
+                    </Arguments>
+                    <AssignToVariable isGlobal="false" name="currentPage"/>
+                </Expression>
+                <If>
+                    <Expression className="BaseUtils"
+                        methodName="equals" package="sc.plat.utils">
+                        <Arguments>
+                            <Argument type="String" value="${var:actionPerformed}"/>
+                            <Argument type="String" value="SAVEONPREVIOUS"/>
+                        </Arguments>
+                    </Expression>
+                    <Statements>
+                        <Expression methodName="sendEventForSavePage">
+                            <Arguments>
+                                <Argument type="String" value="SAVEONPREVIOUS"/>
+                            </Arguments>
+                        </Expression>
+                    </Statements>
+                </If>
+                <If>
+                    <Expression className="BaseUtils"
+                        methodName="equals" package="sc.plat.utils">
+                        <Arguments>
+                            <Argument type="String" value="${var:actionPerformed}"/>
+                            <Argument type="String" value="DISCARD"/>
+                        </Arguments>
+                    </Expression>
+                    <Statements>
+                        <Variable declare="false"
+                            name="${screenVar:parentScreenAction}"
+                            type="String" value=""/>
+                        <Expression className="WizardUtils"
+                            methodName="previousScreen" package="sc.plat.utils">
+                            <Arguments>
+                                <Argument type="Wizard" value="${screen}"/>
+                            </Arguments>
+                        </Expression>
+                    </Statements>
+                </If>
+                <If>
+                    <Expression className="BaseUtils"
+                        methodName="equals" package="sc.plat.utils">
+                        <Arguments>
+                            <Argument type="String" value="${var:actionPerformed}"/>
+                            <Argument type="String" value="CANCEL"/>
+                        </Arguments>
+                    </Expression>
+                    <Statements/>
+                </If>
+            </Statements>
+        </Method>
+        <Method name="setScreenTitle" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="event" type="UIEvent"/>
+                <ArgumentDefinition name="bEvent" type="Bean"/>
+                <ArgumentDefinition name="ctrl" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Variable name="argumentList" type="Bean" value="${var:null}"/>
+                <Expression className="BaseUtils"
+                    methodName="getAttributeValue" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="String" value="argumentList"/>
+                        <Argument type="Boolean" value="${var:false}"/>
+                        <Argument type="Bean" value="${var:bEvent}"/>
+                    </Arguments>
+                    <AssignToVariable isGlobal="false" name="argumentList"/>
+                </Expression>
+                <Variable name="inputData" type="Model" value="${var:null}"/>
+                <Expression className="BaseUtils"
+                    methodName="getAttributeValue" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="String" value="inputData"/>
+                        <Argument type="Boolean" value="${var:false}"/>
+                        <Argument type="Bean" value="${var:argumentList}"/>
+                    </Arguments>
+                    <AssignToVariable isGlobal="false" name="inputData"/>
+                </Expression>
+                <Variable name="subTitle" type="String" value="${var:null}"/>
+                <Expression className="BaseTemplateUtils"
+                    methodName="updateTitle" package="isccs.utils">
+                    <Arguments>
+                        <Argument type="Screen" value="${screen}"/>
+                        <Argument type="String" value="GiftCardFulfillment"/>
+                        <Argument type="String" value="${var:subTitle}"/>
+                    </Arguments>
+                </Expression>
+            </Statements>
+        </Method>
+        <Method name="handleShowPrevious" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="event" type="UIEvent"/>
+                <ArgumentDefinition name="bEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="ctrl" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Expression className="WizardUtils"
+                    methodName="showNavigationalWidget" package="isccs.utils">
+                    <Arguments>
+                        <Argument type="Screen" value="${screen}"/>
+                        <Argument type="String" value="prevBttn"/>
+                        <Argument type="Boolean" value="${var:false}"/>
+                        <Argument type="String" value="${var:null}"/>
+                    </Arguments>
+                </Expression>
+            </Statements>
+        </Method>
+        <Method name="handleHidePrevious" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="event" type="UIEvent"/>
+                <ArgumentDefinition name="bEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="ctrl" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Expression className="WizardUtils"
+                    methodName="hideNavigationalWidget" package="isccs.utils">
+                    <Arguments>
+                        <Argument type="Screen" value="${screen}"/>
+                        <Argument type="String" value="prevBttn"/>
+                        <Argument type="Boolean" value="${var:false}"/>
+                    </Arguments>
+                </Expression>
+            </Statements>
+        </Method>
+        <Method name="handleScreenChanged" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="event" type="UIEvent"/>
+                <ArgumentDefinition name="bEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="ctrl" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Expression className="WizardUtils"
+                    methodName="handleScreenChanged" package="isccs.utils">
+                    <Arguments>
+                        <Argument type="Screen" value="${screen}"/>
+                        <Argument type="String" value=""/>
+                    </Arguments>
+                </Expression>
+            </Statements>
+        </Method>
+        <Method name="handleRelatedTasks" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="uiEvent" type="UIEvent"/>
+                <ArgumentDefinition name="businessEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="control" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Variable declare="true" name="eventDefn" type="Bean" value="${var:null}"/>
+                <Expression transformed_valueToAssign="{}">
+                    <Arguments/>
+                    <AssignToVariable isGlobal="false" name="eventDefn"/>
+                </Expression>
+                <Expression className="BaseUtils"
+                    methodName="setAttributeValue" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="String" value="argumentList.isWizardinitialized"/>
+                        <Argument type="String" value="true"/>
+                        <Argument type="Bean" value="eventDefn"/>
+                    </Arguments>
+                </Expression>
+                <Expression className="EventUtils"
+                    methodName="fireEventToParent" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="Screen" value="${screen}"/>
+                        <Argument type="String" value="showOrHideRelatedTask"/>
+                        <Argument type="Bean" value="${var:eventDefn}"/>
+                        <!-- <Argument>
+                                <Expression className="BaseUtils"
+                                    methodName="getNewBeanInstance" package="sc.plat.utils">
+                                    <Arguments/>
+                                </Expression> 
+                            </Argument>-->
+                    </Arguments>
+                </Expression>
+            </Statements>
+        </Method>
+        <Method name="onStartWizard" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="uiEvent" type="UIEvent"/>
+                <ArgumentDefinition name="businessEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="control" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Variable name="screenInput" type="Model" value="${var:null}"/>
+                <Variable name="nodeName" type="String" value="${var:null}"/>
+                <!--   <Expression package="isccs.utils" className="BaseTemplateUtils" methodName="hideRelatedTask">
+					<Arguments>
+                        <Argument>
+                        <Expression
+                                 className="EditorUtils"
+                                 methodName="getCurrentEditor" package="sc.plat.utils">
+                                    <Arguments/>
+                                </Expression>
+                        </Argument>
+					</Arguments>
+				</Expression> -->
+                <Expression className="ScreenUtils"
+                    methodName="getInitialInputData" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="Screen" value="${screen}"/>
+                    </Arguments>
+                    <AssignToVariable isGlobal="false" name="screenInput"/>
+                </Expression>
+                <Expression className="UIUtils" methodName="getRootName" package="isccs.utils">
+                    <Arguments>
+                        <Argument type="Model" value="${var:screenInput}"/>
+                    </Arguments>
+                    <AssignToVariable isGlobal="false" name="nodeName"/>
+                </Expression>
+                <Expression className="WizardUtils"
+                    methodName="handleDisplayOfAddNoteButton" package="isccs.utils">
+                    <Arguments>
+                        <Argument type="Screen" value="${screen}"/>
+                    </Arguments>
+                </Expression>
+                <Expression methodName="handleDisplayOfCloseButton">
+                    <Arguments>
+                        <Argument type="String" value="${var:nodeName}"/>
+                    </Arguments>
+                </Expression>
+                <Expression className="MobileUtils"
+                    methodName="showMobileBackButton" package="isccs.utils">
+                    <Arguments/>
+                </Expression>
+            </Statements>
+        </Method>
+        <Method name="handleDisplayOfCloseButton" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="nodeName" type="String"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Variable name="msg" type="String" value="${var:null}"/>
+                <If>
+                    <Expression className="BaseUtils"
+                        methodName="isBooleanTrue"
+                        package="sc.plat.utils" transformed_argumentList="true">
+                        <Arguments transformed_argumentList="true">
+                            <Argument type="Boolean" value="${screenVar:showBackButton}"/>
+                        </Arguments>
+                    </Expression>
+                    <Statements>
+                        <If>
+                            <Expression className="BaseUtils"
+                                methodName="equals" package="sc.plat.utils">
+                                <Arguments>
+                                    <Argument type="String" value="${var:nodeName}"/>
+                                    <Argument type="String" value="Order"/>
+                                </Arguments>
+                            </Expression>
+                            <Statements>
+                                <Expression className="WizardUtils"
+                                    methodName="getGoBackButtonText" package="isccs.utils">
+                                    <Arguments>
+                                    <Argument type="Screen" value="${screen}"/>
+                                    </Arguments>
+                                    <AssignToVariable isGlobal="false" name="msg"/>
+                                </Expression>
+                                <Expression className="WizardUtils"
+                                    methodName="setLabelOnNavigationalWidget" package="isccs.utils">
+                                    <Arguments>
+                                    <Argument type="Screen" value="${screen}"/>
+                                    <Argument type="String" value="closeBttn"/>
+                                    <Argument type="String" value="${var:msg}"/>
+                                    </Arguments>
+                                </Expression>
+                                <Expression className="WizardUtils"
+                                    methodName="removeClassToNavigationalWidget" package="isccs.utils">
+                                    <Arguments>
+                                    <Argument type="Screen" value="${screen}"/>
+                                    <Argument type="String" value="closeBttn"/>
+                                    <Argument type="String" value="idxSecondaryButton"/>
+                                    </Arguments>
+                                </Expression>
+                            </Statements>
+                        </If>
+                    </Statements>
+                </If>
+            </Statements>
+        </Method>
+        <Method name="showNotesButton" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="uiEvent" type="UIEvent"/>
+                <ArgumentDefinition name="businessEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="control" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <Expression className="WizardUtils"
+                    methodName="showNavigationalWidget" package="isccs.utils">
+                    <Arguments>
+                        <Argument type="Screen" value="${screen}"/>
+                        <Argument type="String" value="addNoteBtn"/>
+                        <Argument type="Boolean" value="${var:false}"/>
+                        <Argument type="String" value="${var:null}"/>
+                    </Arguments>
+                </Expression>
+            </Statements>
+        </Method>
+    </Actions>
+</MetaData>

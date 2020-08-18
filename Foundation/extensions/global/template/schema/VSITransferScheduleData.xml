@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 
+Licensed Materials - Property of IBM
+IBM Sterling Selling And Fulfillment Suite
+(C) Copyright IBM Corp. 2005, 2013 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ -->
+<FlatfileDelimitedSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+	<ParserDefaults DefaultRecordDelimiter="Newline" DefaultFieldDelimiter="," DefaultPadCharacter="#" RecordIdStartPosition="1">
+		<FileHeader FileHeaderId="RECORD,EffectiveFrom,EffectiveTo,FromNode,ToNode,MondayShip,MondayTransitTime,TuesdayShip,TuesdayTransitTime,WednesdayShip,WednesdayTransitTime,ThursdayShip,ThursdayTransitTime,FridayShip,FridayTransitTime,SaturdayShip,SaturdayTransitTime,SundayShip,SundayTransitTime" FileHeaderStartPos="1" FileHeaderLength="260"/>
+		<FileTrailer FileTrailerId="END" FileTrailerStartPos="1" FileTrailerLength="3"/>
+    </ParserDefaults>
+
+	<Root Name="TransferSchedules">
+   		<Header Name="TransferSchedule" RecordName="RECORD" MinOccurence="1" MaxOccurence="1"/>
+	</Root>
+
+	<RecordDefinitions>
+		<Record RecordId="RECORD" Name="RECORD" XMLName="TransferSchedule" >
+		    <Field Name="EffectiveFrom" FieldPosition="2" XMLName="EffectiveFrom"/>
+			<Field Name="EffectiveTo" FieldPosition="3" XMLName="EffectiveTo"/>
+		    <Field Name="FromNode" FieldPosition="4" XMLName="FromNode"/>
+			<Field Name="ToNode" FieldPosition="5" XMLName="ToNode"/>
+		    <Field Name="MondayShip" FieldPosition="6" XMLName="MondayShip"/>
+			<Field Name="MondayTransitTime" FieldPosition="7" XMLName="MondayTransitTime"/>
+		    <Field Name="TuesdayShip" FieldPosition="8" XMLName="TuesdayShip"/>
+			<Field Name="TuesdayTransitTime" FieldPosition="9" XMLName="TuesdayTransitTime"/>
+		    <Field Name="WednesdayShip" FieldPosition="10" XMLName="WednesdayShip"/>
+			<Field Name="WednesdayTransitTime" FieldPosition="11" XMLName="WednesdayTransitTime"/>
+		    <Field Name="ThursdayShip" FieldPosition="12" XMLName="ThursdayShip"/>
+			<Field Name="ThursdayTransitTime" FieldPosition="13" XMLName="ThursdayTransitTime"/>
+		    <Field Name="FridayShip" FieldPosition="14" XMLName="FridayShip"/>
+			<Field Name="FridayTransitTime" FieldPosition="15" XMLName="FridayTransitTime"/>
+		    <Field Name="SaturdayShip" FieldPosition="16" XMLName="SaturdayShip"/>
+			<Field Name="SaturdayTransitTime" FieldPosition="17" XMLName="SaturdayTransitTime"/>
+		    <Field Name="SundayShip" FieldPosition="18" XMLName="SundayShip"/>
+			<Field Name="SundayTransitTime" FieldPosition="19" XMLName="SundayTransitTime"/>
+		</Record>
+	</RecordDefinitions>
+</FlatfileDelimitedSchema>

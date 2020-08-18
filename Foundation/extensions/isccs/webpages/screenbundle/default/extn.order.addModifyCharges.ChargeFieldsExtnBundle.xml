@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.order.addModifyCharges.ChargeFieldsExtnBundle" screenId="extn.order.addModifyCharges.ChargeFieldsExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="txt_chargeAmount_CurrencyTextBox_label"
+            bundleKey="Amount" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txt_chargeAmount"/>
+        <BundleEntry bundleEntryId="extn_Apply_To_DataLabel_label"
+            bundleKey="ApplyTo" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="extn_Apply_To"/>
+        <BundleEntry bundleEntryId="extn_Apply_To_DataLabel_value"
+            bundleKey="ChargePerLine" bundleValueFn="_scSimpleBundle"
+            property="value" type="WIDGET" uId="extn_Apply_To"/>
+        <BundleEntry bundleEntryId="extn_coupon_number_TextField_label"
+            bundleKey="extn_coupon_number" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="extn_coupon_number"/>
+        <BundleEntry
+            bundleEntryId="extn_textfield_TrackingNumber_TextField_label"
+            bundleKey="extn_Tracking_Number"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_textfield_TrackingNumber"/>
+    </BundleEntries>
+</ScreenBundle>

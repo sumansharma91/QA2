@@ -1,0 +1,73 @@
+<div class="sc-platform-screen-default TNSPaymentCapture_CreditCard">
+<div> 
+		<table cellpadding="10">
+			 
+			<form method="POST" id="payment-form" class="form-horizontal">
+ 			<iframe id="frame_carddetails" name="frame_carddetails"   style="height:250px;width:100%;border:0px; margin-top:15px;" 
+        	src="">
+            <!--Aurus_iFrame_URL : Iframe URL from response of Session API. -->
+
+            </iframe>
+			<!-- 
+				<tr>
+					<td style="vertical-align:middle; padding-left:-8px; ">		<b>Card&#160;Number: 		</b>								</td>
+					<td>	<input type="text"  required="true" class="input-field" id="card-number" value="" readonly  
+									style=" font-size:12px; height:25px; width: 182px; border-color:#c3c3c3;
+									border-style: solid; -webkit-appearance:none;  box-shadow: none !important;
+									">	 <p>     
+					</td>		 
+				</tr> 
+				<tr/>	 	
+				<tr>
+					<td  height="20"  style="padding-left:-8px; " >	<b>Expiration Month: 		</b>									</td>  
+					<td  height="20">		
+					  <select id="expiry-month" 
+							style		= "font-size:12px; width: 182px; border-color:#c3c3c3;"
+							class		= "padding:5px;"
+							onchange 	= "this.size = 1;"	
+							onmouseout	= "this.size = 1;"
+							onmouseover	= "this.size = 5;" >
+							<option value="01">01-Jan</option>
+							<option value="02">02-Feb</option>
+							<option value="03">03-Mar</option>
+							<option value="04">04-Apr</option>
+							<option value="05">05-May</option>
+							<option value="06">06-Jun</option>
+							<option value="07">07-Jul</option>
+							<option value="08">08-Aug</option>
+							<option value="09">09-Sept</option>
+							<option value="10">10-Oct</option>
+							<option value="11">11-Nov</option>
+							<option value="12">12-Dec</option>
+						  </select>		
+					</td>
+				</tr>
+				<tr>
+					<td height="50" style="padding-left:-8px; padding-right:84px;">	<b>Expiration Year: 		</b>									</td>  
+					<td height="20"  >		
+					<select id="expiry-year"  	
+							style		= "font-size:12px; width: 182px; border-color:#c3c3c3;"
+							onchange 	= "this.size = 1;" 		
+							onmouseout	= "this.size=1;"
+							onmouseover	= "this.size = 5;"	>					
+					</select>
+					</td>
+				 </tr>
+ 			-->
+				<!-- ARE-453 : Added style="display:none;" to hide the Security Code text box : BEGIN -->
+				<!-- 
+				<tr style="display:none;"> 
+						<td style="vertical-align:top; padding-left:-8px; padding-right:90px;">	<b>Security&#160;Code: 		</b>	</td>
+						<td>	<input type="text" required="true" class="input-field" id="security-code"	value=""   readonly
+										style="font-size:12px; height:25px; width: 182px; border-color:#c3c3c3;
+										border-style: solid; -webkit-appearance:none;  box-shadow: none !important;
+										" >	<p>     
+						</td>
+				</tr>
+				-->
+				<!-- ARE-453 : Added style="display:none;" to hide the Security Code text box : END -->
+			</form>
+		</table>
+	</div>
+</div>
+  

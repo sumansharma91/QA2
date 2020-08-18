@@ -1,0 +1,36 @@
+		<div>
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_store_order_num' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '1' , 
+		'class' : 'autoLabelZeroWidth longTextbox' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'txt_SearchOrderNo'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'getShipmentSearch_input'
+,
+		 path : 			'Shipment.CustomerPoNo'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'SavedSearchCriteria'
+,
+		 path : 			'Shipment.CustomerPoNo'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Store_Order_number')
+			}
+		}
+	 					}">
+		 	</div>  
+		</div>

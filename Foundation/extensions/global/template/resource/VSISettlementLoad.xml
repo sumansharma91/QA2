@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlatfileDelimitedSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation='delimitedreceiver.xsd'>
+   <ParserDefaults DefaultRecordDelimiter="Newline" DefaultFieldDelimiter="," DefaultPadCharacter=" " RecordIdStartPosition="1" >
+  
+   </ParserDefaults>
+
+   <Root Name="SettlementList">
+        <Header Name="Settlement" RecordName="STLMHDR" MinOccurrence="1" MaxOccurrence="1"/>
+   </Root>
+
+   <RecordDefinitions>
+      <Record RecordId="SETTLEMENT" Name="STLMHDR" XMLName="Settlement">
+      
+        <Field Name="SETLID" FieldPosition="2" XMLName="SettlementId"/>
+         <Field Name="SETLSDT" FieldPosition="3" XMLName="SettlementStartDate"/>
+         <Field Name="SETLEDT" FieldPosition="4" XMLName="SettlementEndDate"/>
+         <Field Name="DEPDT" FieldPosition="5" XMLName="DepositDate"/>
+         <Field Name="TOTAMT" FieldPosition="6" XMLName="TotalAmount"/>
+         <Field Name="CURR" FieldPosition="7" XMLName="Currency"/>
+         <Field Name="TRNTYP" FieldPosition="8" XMLName="TransactionType"/>
+         <Field Name="ORDRID" FieldPosition="9" XMLName="OrderId"/>
+         <Field Name="MORDRID" FieldPosition="10" XMLName="MerchantOrderId"/>
+         <Field Name="AJDID" FieldPosition="11" XMLName="AdjustmentId"/>
+         <Field Name="SHPID" FieldPosition="12" XMLName="ShipmentId"/>
+         <Field Name="MKTPNM" FieldPosition="13" XMLName="MarketplaceName"/>
+         <Field Name="SHPFEETYP" FieldPosition="14" XMLName="ShipmentFeeType"/>
+         <Field Name="SHPFEEAMT" FieldPosition="15" XMLName="ShipmentFeeAmount"/>
+         <Field Name="ORDFEETYP" FieldPosition="16" XMLName="OrderFeeType"/>
+         <Field Name="ORDFEEAMT" FieldPosition="17" XMLName="OrderFeeAmount"/>
+         <Field Name="FULFLMNTID" FieldPosition="18" XMLName="FulfillmentId"/>
+         <Field Name="PSTDDTE" FieldPosition="19" XMLName="PostedDate"/>
+         <Field Name="ORDITMCDE" FieldPosition="20" XMLName="OrderItemCode"/>
+         <Field Name="MORDITMID" FieldPosition="21" XMLName="MerchangeOrderItemId"/>
+         <Field Name="MADJITMID" FieldPosition="22" XMLName="MerchangeAdjustmentItemId"/>
+         <Field Name="SKU" FieldPosition="23" XMLName="Sku"/>
+         <Field Name="QTYPRCHD" FieldPosition="24" XMLName="QuantityPurchased"/>
+         <Field Name="PRCTYP" FieldPosition="25" XMLName="PriceType"/>
+         <Field Name="PRCAMT" FieldPosition="26" XMLName="PriceAmount"/>
+         <Field Name="ITMFEETYP" FieldPosition="27" XMLName="ItemRelatedFeeType"/>
+         <Field Name="ITMFEEAMT" FieldPosition="28" XMLName="ItemRelatedFeeAmount"/>
+         <Field Name="MISCFEEAMT" FieldPosition="29" XMLName="MiscFeeAmount"/>
+         <Field Name="OTRFEEAMT" FieldPosition="30" XMLName="OtherFeeAmount"/>
+         <Field Name="OTRFEERDES" FieldPosition="31" XMLName="OtherFeeReasonDescription"/>
+         <Field Name="PROID" FieldPosition="32" XMLName="PromotionId"/>
+         <Field Name="PROTYP" FieldPosition="33" XMLName="PromotionType"/>
+         <Field Name="PROAMT" FieldPosition="34" XMLName="PromotionAmount"/>
+         <Field Name="DIRPAYTYP" FieldPosition="35" XMLName="DirectPaymentType"/>
+         <Field Name="DIRPAYAMT" FieldPosition="36" XMLName="DirectPaymentAmount"/>
+         <Field Name="OTRAMT" FieldPosition="37" XMLName="OtherAmount"/>
+         
+      </Record>
+   </RecordDefinitions>
+</FlatfileDelimitedSchema>

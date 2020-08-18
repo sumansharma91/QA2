@@ -1,0 +1,56 @@
+		<div>
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Link" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_printpickpackreceipt' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '2' , 
+		'class' : 'relatedTaskLink' , 
+		spanLabel : true , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'm_lnk_RT_PrintReceipt'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	value : 			this.getSimpleBundleString('extn_Print_Pick_Pack_Receipt')
+,	
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'getShipmentDetails_output'
+,
+		 path : 			'Shipment.ShipmentKey'
+,
+		 dynamicBindingFunc : 			'printPickPackReceipt'
+	}
+	}
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Link" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_customerpickupreceipt' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '3' , 
+		'class' : 'relatedTaskLink' , 
+		spanLabel : true , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_printpickpackreceipt'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	value : 			this.getSimpleBundleString('extn_Print_Customer_Receipt')
+,	
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'getShipmentDetails_output'
+,
+		 path : 			'Shipment.ShipmentKey'
+,
+		 dynamicBindingFunc : 			'printCustomerReceipt'
+	}
+	}
+			}
+		}
+	 					}">
+		 	</div>  
+		</div>

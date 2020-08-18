@@ -1,0 +1,23 @@
+<Customer CustomerID="" CustomerKey=""
+    CustomerType="" EmailOptIn="" HealthyRewardPoints=""
+    OrganizationCode="" PhoneOptIn="" PostalOptIn="" Status="">
+    <CustomerContactList>
+        <CustomerContact CustomerContactID=""
+            DayPhone="" EMailID=""
+            EmailID="" ExtnGender=""
+            FirstName="" LastName="">
+            <CustomerAdditionalAddressList>
+                <CustomerAdditionalAddress
+                    CustomerAdditionalAddressID="" ID=""
+                    IsBillTo="" IsDefaultBillTo="" IsDefaultShipTo="" IsShipTo="">
+                    <PersonInfo AddressLine1=""
+                        AddressLine2="" City="" Country=""
+                        DayPhone="" EMailID=""
+                        EmailID="" FirstName=""
+                        ID="" LastName="" State="LA" ZipCode=""/>
+                </CustomerAdditionalAddress>
+            </CustomerAdditionalAddressList>
+        </CustomerContact>
+    </CustomerContactList>
+    <Extn ExtnPreferredCarrier="" ExtnTaxExemptionCode=""/>
+</Customer>

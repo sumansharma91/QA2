@@ -1,0 +1,189 @@
+<div class="sc-platform-screen-default orderlinesummary">
+    <!-- Licensed Materials - Property of IBM IBM Call Center for Commerce
+    (5725-P82) (C) Copyright IBM Corp. 2013 All Rights Reserved. US Government
+    Users Restricted Rights - Use, duplication or disclosure restricted by
+    GSA ADP Schedule Contract with IBM Corp. -->
+    <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 
+		'class' : 'isccsScreen' , 
+		colspan : 1 , 
+		uId : 'DST_DetailScreenPanel' , 
+		layoutAlign : 'top'  
+ ">
+		
+	    <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		'class' : 'detailsPrimaryInfoPanel' , 
+		aria_label_key : 'aria_primaryinformation' ,  uId : 'DST_PrimaryInfoPanel'  " role='region'>
+			 
+            <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		uId : 'PrimaryInfoTitle'  ">
+                <div data-dojo-type="sc/plat/dojo/layout/AdvancedTableLayout" data-dojo-props="		showLabels : false ,  cols : 2 , customClass : 'tableLayout-cols-2'  ">
+                </div>
+                    <div data-dojo-type="sc/plat/dojo/widgets/Label" data-dojo-props="		spanLabel : true , 'class' : 'primaryInformation' , 
+							uId : 'lblDisplayDescription'  ,scParamDataFn :
+							function() { 
+									return { 
+											
+										title : 			this.getSimpleBundleString('extn_Voucher_Details'),	
+										bindingData : 	{
+											
+														}
+											}
+										}
+				"></div>				
+            </div>
+            <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		uId : 'PrimaryInfoPanelMain'   ">
+                <div data-dojo-type="sc/plat/dojo/layout/AdvancedTableLayout" data-dojo-props="		showLabels : false ,    cols : 2 ,    customClass : 'tableLayout-cols-2'  ">
+                  <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true ,     uId : 'PrimaryInfoPanelRight'  ">
+                        <div data-dojo-type="sc/plat/dojo/layout/AdvancedTableLayout" data-dojo-props="		cols : 2 ,   customClass : 'tableLayout-cols-2'  ">
+						<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" data-dojo-props="		spanLabel : true , 
+										uId : 'lblCertNo'  ,scParamDataFn :
+											function() { 
+													return { 
+														label : 			this.getBundleString('extn_Customer_No'),	
+														bindingData : 	{
+															sourceBinding : 	{
+																	path : 			'IssueCustNo',
+																	
+																	namespace : 			'voucherDetails'
+																				}
+																		}
+															}
+														}
+							"></div>
+							<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" data-dojo-props="		spanLabel : true , 
+										uId : 'lblCertNo'  ,scParamDataFn :
+											function() { 
+													return { 
+														label : 			this.getBundleString('extn_Issue_Date'),	
+														bindingData : 	{
+															sourceBinding : 	{
+																	path : 			'ModIssueDate',
+																	
+																	namespace : 			'voucherDetails'
+																				}
+																		}
+															}
+														}
+							"></div>
+                            <div data-dojo-type="sc/plat/dojo/widgets/DataLabel" data-dojo-props="		spanLabel : true , 
+										uId : 'lblCertNo'  ,scParamDataFn :
+											function() { 
+													return { 
+														label : 			this.getBundleString('extn_Certificate_No'),	
+														bindingData : 	{
+															sourceBinding : 	{
+																	path : 			'CertNo',
+																	
+																	namespace : 			'voucherDetails'
+																				}
+																		}
+															}
+														}
+							"></div>
+
+                            <div data-dojo-type="sc/plat/dojo/widgets/DataLabel" data-dojo-props="		spanLabel : true , 
+										uId : 'lblPromotionDescription'    ,scParamDataFn :
+										function() { 
+												return { 
+													label : 			this.getBundleString('extn_Cert_Type'),
+													bindingData : 	{
+														sourceBinding : 	{
+																path : 			'CertType',
+				
+																namespace : 			'voucherDetails'
+																			}
+																	}
+														}
+													}
+							"></div>
+                            <div data-dojo-type="sc/plat/dojo/widgets/DataLabel" data-dojo-props="		spanLabel : true , 
+										uId : 'lblReason'     ,scParamDataFn :
+										function() { 
+												return { 
+													label : 			this.getBundleString('extn_Issue_Amount'),	
+													bindingData : 	{
+														sourceBinding : 	{
+																path : 			'IssueAmount',
+																namespace : 			'voucherDetails'
+																			}
+																	}
+														}
+													}
+							"></div>
+                           <!--
+							<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" data-dojo-props="		spanLabel : true , 
+										uId : 'lblEndDate'   ,scParamDataFn :
+										function() { 
+												return { 
+													label : 			this.getBundleString('extn_Balance'),	
+													bindingData : 	{
+														sourceBinding : 	{
+																path : 			'BalanceAmount',
+																namespace : 			'voucherDetails'
+																			}
+																	}
+														}
+													}
+							"></div>-->
+							<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" data-dojo-props="		spanLabel : true , 
+										uId : 'lblEndDate'   ,scParamDataFn :
+										function() { 
+												return { 
+													label : 			this.getBundleString('extn_Redeem_Status'),	
+													bindingData : 	{
+														sourceBinding : 	{
+																path : 			'IsRedeemed',
+																namespace : 			'voucherDetails'
+																			}
+																	}
+														}
+													}
+							"></div>
+							<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" data-dojo-props="		spanLabel : true , 
+										uId : 'lblEndDate'   ,scParamDataFn :
+										function() { 
+												return { 
+													label : 			this.getBundleString('extn_Valid'),	
+													bindingData : 	{
+														sourceBinding : 	{
+																path : 			'Valid',
+																namespace : 			'voucherDetails'
+																			}
+																	}
+														}
+													}
+							"></div>
+							<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" data-dojo-props="		spanLabel : true , 
+										uId : 'lblEndDate'   ,scParamDataFn :
+										function() { 
+												return { 
+													label : 			this.getBundleString('extn_Redeem_Store'),	
+													bindingData : 	{
+														sourceBinding : 	{
+																path : 			'RedeemStore',
+																namespace : 			'voucherDetails'
+																			}
+																	}
+														}
+													}
+							"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+	</div>
+
+			<div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 'class' : 'popupNavigation messageDialogFooter' , 	uId : 'ContentPane4'   ">
+			
+				<div data-dojo-type="dijit/form/Button" data-dojo-props="		spanLabel : true , 'class' : 'buttonCloseVoucherDetails' , showLabel : true , uId : 		'Popup_btnClose'  ,scParamDataFn :
+										function() { 
+												return { label : 			this.getSimpleBundleString('Close')
+													}
+												}">
+				</div>
+			</div> 
+	
+	
+</div>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle screenBundleId="extn.mobile.home.search.SearchExtnBundle" screenId="extn.mobile.home.search.SearchExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="extn_store_order_num_TextField_label"
+            bundleKey="extn_Store_Order_number"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_store_order_num"/>
+    </BundleEntries>
+</ScreenBundle>

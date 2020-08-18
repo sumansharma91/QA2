@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ItemBrowsingListExtn"
+        extnPackage="extn.item.browsing"
+        originalScreen="isccs.item.browsing.ItemBrowsingList"
+        originalScreenPackage="isccs.item.browsing" type="diffrential">
+        <Items>
+            <ContentPane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="catFilterPanel" renderHidden="true"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

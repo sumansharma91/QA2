@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.home.HomeExtnBehaviorController"
+    requestMethodSupported="POST" screenId="extn.home.HomeExtn">
+	<MashupRefs>
+        <MashupRef extnType="ADD"
+            mashupId="extn_getProperty"
+            mashupRefId="extn_getProperty_referenceid" permissionId=""/>
+    </MashupRefs>
+</Controller>

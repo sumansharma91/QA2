@@ -1,0 +1,6 @@
+<OrderLineList>
+<OrderLine OrderHeaderKey="" LineType="" OrderLineKey="" ShipNode="" ConditionVariable1="" OrderedQty="" CustomerPONo="">
+<Extn ExtnPickupEmailFlag= ""/>
+<Order OrderHeaderKey="" />
+</OrderLine>
+</OrderLineList>

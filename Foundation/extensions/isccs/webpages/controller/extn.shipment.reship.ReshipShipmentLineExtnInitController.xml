@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.shipment.reship.ReshipShipmentLineExtnInitController"
+    requestMethodSupported="POST" screenId="extn.shipment.reship.ReshipShipmentLineExtn">
+    <Group isAggregator="Y"/>
+    <MashupRefs>
+        <MashupRef extnType="ADD" mashupId="extn_TrackingNo_CommonCode"
+            mashupRefId="extn_trackingNoCommonCode_RefID" permissionId=""/>
+    </MashupRefs>
+</Controller>

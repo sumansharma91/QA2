@@ -1,0 +1,49 @@
+		<div>
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Link" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		resourceId : 'VSIRETRNRT' , 
+		_sc_extensibility_referenceUId : 'bCreate'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '1' , 
+		_sc_extensibility_referenceUId : 'txtReturnPhoneNo' , 
+		uId : 'extn_textfield_OrderNo' , 
+		_sc_extensibility_position : 'before'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getSimpleBundleString('extn_Order_')
+,	
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 path : 			'Order.OrderLine.DerivedFrom.OrderNo'
+,
+		 namespace : 			'screenInput'
+	}
+,
+		 targetBinding : 	[
+	 		{
+		 path : 			'Order.OrderLine.DerivedFrom.OrderNo'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+,
+		 namespace : 			'getReturnOrderList'
+	}
+	]
+	}
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'txtReturnPhoneNo' , 
+		renderHidden : true  
+	 					}">
+		 	</div>  
+		</div>

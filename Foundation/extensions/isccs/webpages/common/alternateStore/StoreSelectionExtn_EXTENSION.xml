@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="StoreSelectionExtn"
+        extnPackage="extn.common.alternateStore"
+        originalScreen="isccs.common.alternateStore.StoreSelection"
+        originalScreenPackage="isccs.common.alternateStore" type="diffrential">
+        <Items>
+            <ContentPane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="systemMessagePanelPopup" renderHidden="true"/>
+            <GridX _sc_extensibility_operation="change" _sc_extensibility_referenceUId="listStore">
+                <Structure>
+                    <Layout>
+                        <View __isCurrentOrgInsert="true"
+                            _sc_extensibility_operation="change"
+                            _sc_extensibility_referenceUId="clmAvailability"
+                            linkField="true" uId="clmAvailability"/>
+                    </Layout>
+                </Structure>
+            </GridX>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber description="getLinkText"
+                    eventId="listStore_Link_ScGetLinkText" isExtn="true" sequence="51">
+                    <Handler methodName="getLinkText"/>
+                </Subscriber>
+                <Subscriber description="handleLinkClicked"
+                    eventId="listStore_Link_ScHandleLinkClicked"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="handleLinkClicked"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Behavior>
+                <MashupRef extnType="ADD"
+                    mashupId="extn_getFulfillmentOptionForLines" mashupRefId="extn_getFulfillmentOptionForLines"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

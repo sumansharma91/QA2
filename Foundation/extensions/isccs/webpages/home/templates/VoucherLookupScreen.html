@@ -1,0 +1,30 @@
+<div class="sc-platform-screen-default paymentcapture_other">
+
+    <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 'class' : 'isccsScreen singlecolumntable' , uId : 'ContentPane3'   ">
+		
+        <div data-dojo-type="idx/form/TextBox" data-dojo-props="		spanLabel : true , scuiDataType : 'Text-10', uId : 'txtVoucherNo', required : true ,scParamDataFn :
+			 function() { 
+				return { 
+					label :	this.getBundleString('extn_Voucher_No'),	
+					bindingData : 	{ sourceBinding : 	{ path : 'Voucher.CertNo', 	namespace : 'voucherLookup_input'},
+					targetBinding : 	[{	              path : 'Voucher.CertNo', 				namespace : 'voucherLookup_input'}] }
+				}
+			}">
+		</div>
+		<div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 'class' : 'popupNavigation messageDialogFooter' , 	uId : 'ContentPane4'   ">
+			<div data-dojo-type="dijit/form/Button" data-dojo-props="		spanLabel : true , 	showLabel : true , 	uId : 'Popup_btnConfirm' ,scParamDataFn :
+				function() { 
+					return { label : 			this.getSimpleBundleString('extn_Confirm')
+					}
+				}">
+			</div>
+			<div data-dojo-type="dijit/form/Button" data-dojo-props="		spanLabel : true , 'class' : 'idxSecondaryButton' , showLabel : true , uId : 'Popup_btnClose'  ,scParamDataFn :
+				 function() { 
+					return { label : 			this.getSimpleBundleString('Close')
+					}
+				}">
+			</div>
+		</div>
+    </div>
+
+</div>

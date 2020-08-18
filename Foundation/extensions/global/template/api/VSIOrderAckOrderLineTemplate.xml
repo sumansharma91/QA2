@@ -1,0 +1,7 @@
+<OrderLineList TotalLineList="">
+    <OrderLine OrderHeaderKey=""
+        OrderLineKey="" OrderedQty="" ShipNode="" ShipToID="" ShipTogetherNo="" SplitQty="" Status=""
+        StatusQuantity="" SubLineNo="" >
+		<Item ItemID=""/>        
+    </OrderLine>
+</OrderLineList>

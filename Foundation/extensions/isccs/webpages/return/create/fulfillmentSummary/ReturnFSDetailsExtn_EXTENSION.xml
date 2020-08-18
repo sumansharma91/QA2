@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ReturnFSDetailsExtn"
+        extnPackage="extn.return.create.fulfillmentSummary"
+        originalScreen="isccs.return.create.fulfillmentSummary.ReturnFSDetails"
+        originalScreenPackage="isccs.return.create.fulfillmentSummary" type="diffrential">
+        <Items>
+            <TitlePane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="pnlCustomerKeepLinesContainer" renderHidden="false"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

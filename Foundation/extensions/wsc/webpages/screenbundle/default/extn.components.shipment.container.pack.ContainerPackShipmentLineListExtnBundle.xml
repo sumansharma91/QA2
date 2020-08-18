@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.components.shipment.container.pack.ContainerPackShipmentLineListExtnBundle" screenId="extn.components.shipment.container.pack.ContainerPackShipmentLineListExtn">
+    <BundleEntries>
+        <BundleEntry bundleEntryId="extn_pack_upc_DataLabel_label"
+            bundleKey="extn_UPC_Code" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_pack_upc"/>
+        <BundleEntry
+            bundleEntryId="extn_packinstruction_DataLabel_label"
+            bundleKey="extn_Pack_Instruction"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_packinstruction"/>
+    </BundleEntries>
+</ScreenBundle>

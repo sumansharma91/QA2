@@ -1,0 +1,3195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataTypes>
+	<DataType Name="UIFlag" Size="1" Type="NCHAR">
+        <UIType Size="1" UITableSize="1" DisplayInUI="true"/>
+    </DataType>
+    <DataType Name="SciRegNumber" Size="22" Type="SCI_REGNUMBER"/>
+    <DataType Name="BLOB" Size="200000000" Type="BLOB"/>
+    <DataType Name="CLOB" Size="0" Type="CLOB"/>
+    <DataType Name="String" Type="String"/>
+    <DataType Name="Action" Size="40" Type="NVARCHAR"/>
+    <DataType Name="Address" Size="70" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="City" Size="35" Type="NCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="CodeType" Size="20" Type="NCHAR"/>
+    <DataType Name="CommonCode" Size="100" Type="NVARCHAR">
+        <UIType Size="10" UITableSize="10"/>
+    </DataType>
+    <DataType Name="Count" NegativeAllowed="false" Size="5" Type="NUMBER">
+        <UIType Size="5"/>
+    </DataType>
+    <DataType Name="UnitTimeOut" NegativeAllowed="false" Size="10" Type="NUMBER">
+        <UIType Size="10"/>
+    </DataType>
+    <DataType Name="Country" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType DecimalDigits="16" Name="ConversionRate"
+        NegativeAllowed="false" Size="28" Type="NUMBER"/>
+    <DataType DecimalDigits="10" Name="CurrencyConversionRate"
+        NegativeAllowed="false" Size="20" Type="NUMBER"/>
+    <DataType Name="Currency" Size="20" Type="NVARCHAR">
+        <UIType Size="4" UITableSize="4"/>
+    </DataType>
+    <DataType Name="Date" PpcSize="12" Size="7" Type="DATE">
+        <Validation>
+            <Rule Extends="yfc-datetime-abstract-rule"/>
+        </Validation>
+        <UIType Size="8" UITableSize="15"/>
+    </DataType>
+    <DataType Name="Time" Size="7" Type="TIME">
+        <Validation>
+            <Rule Extends="yfc-datetime-abstract-rule"/>
+        </Validation>
+        <UIType Size="8" UITableSize="15"/>
+    </DataType>
+    <DataType Name="TimeStamp" Size="17" Type="DATETIME">
+        <Validation>
+            <Rule Extends="yfc-datetime-abstract-rule"/>
+        </Validation>
+    </DataType>
+    <DataType DisplaySeconds="false" Name="HourMinuteTime" Size="7" Type="TIME">
+        <Validation>
+            <Rule Extends="yfc-datetime-abstract-rule"/>
+        </Validation>
+        <UIType Size="8" UITableSize="15"/>
+    </DataType>
+    <DataType DecimalDigits="4" Name="Dimension" NegativeAllowed="false"
+        Size="14" Type="NUMBER">
+        <UIType Size="9" UITableSize="9"/>
+    </DataType>
+    <DataType Name="DocumentNo" Size="40" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="EMailID" Size="150" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="30"/>
+    </DataType>
+    <DataType Name="FileName" Size="100" Type="NVARCHAR"/>
+    <DataType Name="FlowName" Size="128" Type="NVARCHAR">
+        <UIType Size="40" UITableSize="40"/>
+    </DataType>
+    <DataType Name="SubFlowName" Size="128" Type="NVARCHAR">
+        <UIType Size="40" UITableSize="40"/>
+    </DataType>
+    <DataType Name="ApiName-128" Size="128" Type="NVARCHAR">
+        <UIType Size="40" UITableSize="40"/>
+    </DataType>
+    <DataType Name="Flag" Size="1" Type="NCHAR">
+        <UIType Size="1" UITableSize="1"/>
+    </DataType>
+    <DataType Name="ID-10" Size="10" Type="NCHAR"/>
+    <DataType Name="ID-24" Size="24" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="ID-35" Size="35" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="ID-40" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="DateTypeId" Size="40" Type="NVARCHAR"/>
+    <DataType Name="Createprogid" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="Modifyprogid" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="ItemID" Size="40" Type="NCHAR">
+        <UIType Size="20" UITableSize="25"/>
+    </DataType>
+    <DataType Name="Key" Size="24" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="DataMartKey" Size="24" Type="NUMBER"/>
+    <DataType Name="ExceptionId" Size="40" Type="NVARCHAR"/>
+    <DataType Name="Locale" Size="20" Type="NVARCHAR"/>
+    <DataType Name="LongFileName" Size="255" Type="NVARCHAR"/>
+    <DataType DecimalDigits="2" Name="Money" NegativeAllowed="false"
+        Size="15" Type="NUMBER">
+        <UIType Size="12" UITableSize="15"/>
+    </DataType>
+    <DataType Name="Integer" Size="9" Type="NUMBER">
+        <UIType Size="7" UITableSize="7"/>
+    </DataType>
+    <DataType DecimalDigits="4" Name="Number" Size="14" Type="NUMBER">
+        <UIType Size="7" UITableSize="7"/>
+    </DataType>
+    <DataType Name="NumberOfDays" NegativeAllowed="false" Size="5" Type="NUMBER"/>
+    <DataType DecimalDigits="4" Name="NumberOfHoursWithDecimal"
+        NegativeAllowed="false" Size="14" Type="NUMBER"/>
+    <DataType Name="OrgCode" Size="24" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="PhoneNo" Size="40" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="Priority" NegativeAllowed="false" Size="10" Type="NUMBER"/>
+    <DataType DecimalDigits="2" Name="PriorityWithDecimal"
+        NegativeAllowed="false" Size="10" Type="NUMBER">
+        <UIType Size="6" UITableSize="6"/>
+    </DataType>
+    <DataType Name="ProgramID" Size="40" Type="NVARCHAR"/>
+    <DataType DecimalDigits="4" Name="Quantity" NegativeAllowed="false"
+        PpcSize="8" Size="14" Type="NUMBER">
+        <XMLType Type="QUANTITY"/>
+    </DataType>
+    <DataType Name="ShipNode" Size="24" Type="NCHAR">
+        <UIType Size="10" UITableSize="15"/>
+    </DataType>
+    <DataType DecimalDigits="4" Name="Number-22" NegativeAllowed="false"
+        Size="22" Type="NUMBER"/>
+    <DataType DecimalDigits="4" Name="Number-20" NegativeAllowed="false"
+        Size="20" Type="NUMBER"/>
+    <DataType DecimalDigits="4" Name="ShortNumber"
+        NegativeAllowed="false" Size="10" Type="NUMBER"/>
+    <DataType Name="ShorterNumber" NegativeAllowed="false" Size="5" Type="NUMBER"/>
+    <DataType Name="PositiveShorterNumber" NegativeAllowed="false"
+        Size="5" Type="NUMBER" ZeroAllowed="false"/>
+    <DataType Name="Lockid" NegativeAllowed="false" Size="5" Type="NUMBER"/>
+    <DataType Name="State" Size="35" Type="NCHAR">
+        <UIType Size="10" UITableSize="10"/>
+    </DataType>
+    <DataType Name="ColonyStatus" Size="20" Type="NVARCHAR"/>
+    <DataType Name="Status" Size="40" Type="NCHAR">
+        <UIType Size="10" UITableSize="10"/>
+    </DataType>
+    <DataType Name="ShortStatus" Size="15" Type="NCHAR">
+        <UIType Size="10" UITableSize="10"/>
+    </DataType>
+    <DataType Name="IndexVersion" NegativeAllowed="false" Size="10" Type="NUMBER"/>
+    <DataType Name="EnumNewStatus" Size="15" Type="NCHAR">
+        <UIType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates that the status is not yet processed." Value="00"/>
+            <Enum
+                Description="Indicates that the status has been processed." Value="10"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="Text-10" Size="10" Type="NVARCHAR"/>
+    <DataType Name="Text-100" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Text-1000" Size="1000" Type="NVARCHAR"/>
+    <DataType Name="NonUnicode-Text-1000" Size="1000" Type="NVARCHAR"/>
+    <DataType Name="Text-15" Size="15" Type="NVARCHAR"/>
+    <DataType Name="Text-1500" Size="1500" Type="NVARCHAR"/>
+    <DataType Name="Text-2" Size="2" Type="NCHAR"/>
+    <DataType Name="Text-1" Size="1" Type="NCHAR"/>
+    <DataType Name="Text-20" Size="20" Type="NVARCHAR"/>
+    <DataType Name="Text-200" Size="200" Type="NVARCHAR"/>
+    <DataType Name="NonUnicode-Text-2000" Size="2000" Type="NVARCHAR">
+        <UIType Size="50" UITableSize="50"/>
+    </DataType>
+    <DataType Name="Text-2000" Size="2000" Type="NVARCHAR">
+        <UIType Size="50" UITableSize="50"/>
+    </DataType>
+    <DataType Name="Text-2048" Size="2048" Type="NVARCHAR"/>
+    <DataType Name="Text-4000" Size="4000" Type="NVARCHAR"/>
+    <DataType Name="NonUnicode-Text-4000" Size="4000" Type="NVARCHAR"/>
+    <DataType Name="Text-24" Size="24" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="Text-128" Size="128" Type="NVARCHAR">
+        <UIType Size="40" UITableSize="40"/>
+    </DataType>
+    <DataType Name="Text-256-Informix-255" Size="256" Type="NVARCHAR">
+        <DBType Name="INFORMIX" Size="255"/>
+    </DataType>
+    <DataType Name="Text-256-Informix-MySQL-255" Size="256" Type="NVARCHAR">
+        <DBType Name="INFORMIX" Size="255"/>
+        <DBType Name="MYSQL" Size="255"/>
+    </DataType>
+    <DataType Name="Text-255" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="NonUnicode-Text-255" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Text-3" Size="3" Type="NCHAR"/>
+    <DataType Name="Text-8" Size="8" Type="NCHAR"/>
+    <DataType Name="Text-30" Size="30" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="ServerName" Size="100" Type="NVARCHAR"/>
+    <DataType Name="Text-4" Size="4" Type="NCHAR"/>
+    <DataType Name="PurgeCode" Size="40" Type="NCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Text-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Text-50" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="Text-500" Size="500" Type="NVARCHAR"/>
+    <DataType Name="NonUnicode-Text-500" Size="500" Type="NVARCHAR"/>
+    <DataType Name="Text-254" Size="254" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="TransactionID" Size="40" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="UOM" Size="40" Type="NVARCHAR">
+        <UIType Size="10" UITableSize="10"/>
+    </DataType>
+    <DataType Name="URL" Size="255" Type="NVARCHAR">
+        <UIType Size="50" UITableSize="50"/>
+    </DataType>
+    <DataType Name="NonUnicode-URL" Size="255" Type="NVARCHAR">
+        <UIType Size="50" UITableSize="50"/>
+    </DataType>
+    <DataType Name="UserGroup" Size="25" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="UserId" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="10"/>
+    </DataType>
+    <DataType Name="Createuserid" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="Modifyuserid" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="CreateUserId" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="ModifyUserId" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="ZipCode" Size="35" Type="NVARCHAR">
+        <UIType Size="10" UITableSize="10"/>
+    </DataType>
+    <DataType Name="StringQryType">
+        <Enumeration>
+            <Enum Description="" Value="EQ"/>
+            <Enum Description="" Value="FLIKE"/>
+            <Enum Description="" Value="LIKE"/>
+            <Enum Description="" Value="GT"/>
+            <Enum Description="" Value="LT"/>
+            <Enum Description="" Value="ISNULL"/>
+            <Enum Description="" Value="NOTNULL"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="DateQryType">
+        <Enumeration>
+            <Enum Description="" Value="BETWEEN"/>
+            <Enum Description="" Value="DATERANGE"/>
+            <Enum Description="" Value="EQ"/>
+            <Enum Description="" Value="GE"/>
+            <Enum Description="" Value="GT"/>
+            <Enum Description="" Value="LE"/>
+            <Enum Description="" Value="LT"/>
+            <Enum Description="" Value="NE"/>
+            <Enum Description="" Value="ISNULL"/>
+            <Enum Description="" Value="NOTNULL"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="NumberQryType">
+        <Enumeration>
+            <Enum Description="" Value="BETWEEN"/>
+            <Enum Description="" Value="EQ"/>
+            <Enum Description="" Value="GE"/>
+            <Enum Description="" Value="GT"/>
+            <Enum Description="" Value="LE"/>
+            <Enum Description="" Value="LT"/>
+            <Enum Description="" Value="NE"/>
+            <Enum Description="" Value="ISNULL"/>
+            <Enum Description="" Value="NOTNULL"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="Boolean">
+        <Enumeration>
+            <Enum Description="" Value="Y"/>
+            <Enum Description="" Value="N"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="TFBoolean">
+        <Enumeration>
+            <Enum Description="" Value="true"/>
+            <Enum Description="" Value="false"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="Mode">
+        <Enumeration>
+            <Enum Description="" Value="Add"/>
+            <Enum Description="" Value="Update"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="XML" Size="50000" Type="NVARCHAR">
+        <Validation>
+            <Rule Extends="yfc-xml-abstract-rule"/>
+        </Validation>
+    </DataType>
+    <DataType Name="MaxRecordCount" NegativeAllowed="false" Size="3"
+        Type="NUMBER" ZeroAllowed="false">
+        <UIType Size="4"/>
+    </DataType>
+    <DataType Name="ListMaxRecordCount" NegativeAllowed="false" Size="5" Type="NUMBER">
+        <UIType Size="7"/>
+    </DataType>
+    <DataType Name="SessionTimeOut" NegativeAllowed="true" Size="10"
+        Type="NUMBER" ZeroAllowed="true"/>
+    <DataType Name="TimeOut" NegativeAllowed="false" Size="5"
+        Type="NUMBER" ZeroAllowed="false">
+        <UIType Size="5"/>
+    </DataType>
+    <DataType Name="CacheLimit" Size="10" Type="NUMBER"/>
+    <DataType Name="Integer4AgentCriteria" NegativeAllowed="false"
+        Size="6" Type="NUMBER"/>
+    <DataType DecimalDigits="2" Name="ExecutionDuration"
+        NegativeAllowed="false" Size="5" Type="NUMBER">
+        <UIType Size="5" UITableSize="5"/>
+    </DataType>
+    <DataType Name="QueueId" Size="40" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="Activity" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="ActivityGroup" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="ModificationLevel" Size="40" Type="NCHAR"/>
+    <DataType Name="GraphType" Size="40" Type="NCHAR"/>
+    <DataType Name="OwnerType" Size="20" Type="NCHAR"/>
+    <DataType Name="LoginId" Size="50" Type="NCHAR"/>
+    <DataType Name="Password" Size="100" Type="NVARCHAR">
+        <UIType Size="15" UITableSize="15"/>
+    </DataType>
+    <DataType Name="PasswordSalt" Size="50" Type="NVARCHAR"/>
+    <DataType Name="TranId" Size="40" Type="NCHAR"/>
+    <DataType Name="SessionId" Size="1024" Type="NVARCHAR"/>
+    <DataType Name="SessionIdSuffix" Size="40" Type="NVARCHAR"/>
+    <DataType Name="DataSecurityGroupId" Size="40" Type="NVARCHAR"/>
+    <DataType Name="Description" Size="100" Type="NVARCHAR"/>
+    <DataType Name="ModuleId" Size="3" Type="NCHAR"/>
+    <DataType Name="ServiceName" Size="100" Type="NVARCHAR"/>
+    <DataType Name="Context" Size="80" Type="NVARCHAR"/>
+    <DataType Name="StatName" Size="80" Type="NVARCHAR"/>
+    <DataType DecimalDigits="2" Name="StatValue" NegativeAllowed="false"
+        Size="15" Type="NUMBER"/>
+    <DataType Name="MonitorType" Size="10" Type="NCHAR"/>
+    <DataType Name="DocumentType" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="CodeShortDescription" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="JavaClass" Size="128" Type="NVARCHAR"/>
+    <DataType Name="GroupName" Size="40" Type="NCHAR"/>
+    <DataType Name="AttributeName" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="CustomerId" Size="40" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="ListenerType" Size="2" Type="NCHAR"/>
+    <DataType Name="ReasonCode" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ReasonText" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="TableName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="UOMType" Size="40" Type="NVARCHAR"/>
+    <DataType Name="ErrorState" Size="40" Type="NVARCHAR"/>
+    <DataType Name="NonUnicode-ErrorString" Size="2048" Type="NVARCHAR"/>
+    <DataType Name="DayOfMonth" NegativeAllowed="false" Size="2" Type="NUMBER"/>
+    <DataType Name="Threshold" NegativeAllowed="false" Size="10"
+        Type="NUMBER" ZeroAllowed="false"/>
+    <DataType DecimalDigits="1" Name="ThresholdWithDecimal"
+        NegativeAllowed="false" Size="11" Type="NUMBER" ZeroAllowed="false"/>
+    <DataType Name="Text-150" Size="150" Type="NVARCHAR"/>
+    <DataType Name="GroupLevel" Size="40" Type="NCHAR"/>
+    <DataType Name="RuleName" Size="100" Type="NCHAR"/>
+    <DataType Name="SectionName" Size="40" Type="NVARCHAR"/>
+    <DataType DecimalDigits="8" Name="DecimalWithNegative" Size="11" Type="NUMBER"/>
+    <DataType Name="ContactReference" Size="150" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ColonyId" Size="40" Type="NVARCHAR"/>
+    <DataType Name="ColonyPrefix" Size="2" Type="NCHAR"/>
+    <DataType Name="TableType" Size="40" Type="NVARCHAR"/>
+    <DataType Name="ColonyMapType" Size="40" Type="NVARCHAR"/>
+    <DataType Name="ColonyMapKey" Size="50" Type="NVARCHAR"/>
+    <DataType Name="DatabasePoolId" Size="40" Type="NVARCHAR"/>
+    <DataType Name="ColonyVersion" Size="40" Type="NVARCHAR"/>
+    <DataType Name="MetaUniqueId" Size="200" Type="NVARCHAR"/>
+    <DataType Name="DispatchSequenceNo" NegativeAllowed="false"
+        Size="19" Type="NUMBER">
+        <DBType Name="MYSQL" Size="10"/>
+    </DataType>
+    <DataType Name="ResourceSequenceNo" NegativeAllowed="true" Size="5" Type="NUMBER">
+        <UIType Size="5"/>
+    </DataType>
+    <DataType Name="EnumListenerType" Size="2" Type="NCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates the chained order to sales order listener type." Value="01"/>
+            <Enum
+                Description="Indicates the derived order to sales order listener type." Value="02"/>
+            <Enum
+                Description="Indicates the shipment to order listener type." Value="03"/>
+            <Enum
+                Description="Indicates the load to shipment listener type." Value="04"/>
+            <Enum
+                Description="Indicates the receipt to shipment listener type." Value="05"/>
+            <Enum
+                Description="Indicates the receipt to order listener type." Value="06"/>
+            <Enum
+                Description="Indicates the work order to container listener type." Value="07"/>
+            <Enum
+                Description="Indicates the work order to order listener type." Value="08"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumRequiresDerivedDocType" Size="1" Type="NCHAR">
+        <UIType Size="1" UITableSize="1"/>
+        <Enumeration>
+            <Enum Description="Indicates that it is not required." Value="N"/>
+            <Enum
+                Description="Indicates a single instance of each DERIVED_DOCUMENT_TYPE for a process type and base transaction." Value="S"/>
+            <Enum
+                Description="Indicates multiple instances of each DERIVED_DOCUMENT_TYPE for a process type and base transaction." Value="M"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumPickStatusFilter" Size="5" Type="NCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that derived transactions can have any pickup statuses." Value="ALL"/>
+            <Enum
+                Description="Indicates that derived transactions can only have base pickup statuses." Value="EXACT"/>
+            <Enum
+                Description="Indicates that derived transactions can only have base pickup statuses." Value="BASE"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumConditionType" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates that the condition is used for events and pipeline related to process model activities. This is the default value." Value="PROCESS_MODELLING"/>
+            <Enum
+                Description="Indicates that the condition is used by the hold type configuration." Value="HOLD_TYPE"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumDropStatusFilter" Size="5" Type="NCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that derived transactions can have any drop statuses." Value="ALL"/>
+            <Enum
+                Description="Indiates that derived transactions can only have base drop statuses." Value="EXACT"/>
+            <Enum
+                Description="Indicates that derived transactions can have base drop statuses or any of its extensions." Value="EXTN"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumUserType" Size="15" Type="NVARCHAR">
+        <Enumeration>
+            <Enum Description="Indicates an internal user." Value="INTERNAL"/>
+            <Enum Description="Indicates an external user." Value="EXTERNAL"/>
+            <Enum
+                Description="Indicates an external user.  N is a variable that tells which LDAP server to point to." Value="EXTERNAL_LDAP_N"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumStatus3" Size="24" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+        <Enumeration>
+            <Enum Description="Indicates the exception is open." Value="OPEN"/>
+            <Enum
+                Description="Indicates the exception is a work in progress." Value="WIP"/>
+            <Enum Description="Indicates the exception is closed." Value="CLOSED"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumDateSubTypeToMonitor" Size="2" Type="NCHAR">
+        <Enumeration>
+            <Enum Description="Indicates a requested date." Value="01"/>
+            <Enum Description="Indicates an expected date." Value="02"/>
+            <Enum Description="Indicates an actual date." Value="03"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="SuperUser" Size="12" Type="NVARCHAR">
+        <UIType Size="10" UITableSize="10"/>
+    </DataType>
+    <DataType Name="ConfirmValue" Size="99" Type="NVARCHAR">
+        <UIType Size="99" UITableSize="99"/>
+    </DataType>
+    <DataType Name="PasswordPolicyId" Size="255" Type="NVARCHAR">
+        <UIType Size="99" UITableSize="99"/>
+    </DataType>
+    <DataType Name="Text-28" Size="28" Type="NVARCHAR"/>
+    <DataType Name="Text-36" Size="36" Type="NVARCHAR"/>
+    <DataType Name="ChangePassNext" NegativeAllowed="false" Size="10" Type="NUMBER"/>
+    <DataType Name="Text-64" Size="64" Type="NVARCHAR"/>
+    <DataType Name="Number-11" NegativeAllowed="false" Size="11" Type="NUMBER">
+        <DBType Name="MYSQL" Size="10"/>
+    </DataType>
+    <DataType Name="EnumRoutingType" Size="2" Type="NCHAR">
+        <Enumeration>
+            <Enum Description="Use Department's Queue." Value="01"/>
+            <Enum Description="Use Specified Queue." Value="02"/>
+            <Enum Description="Use Interface to obtain Queue." Value="03"/>
+            <Enum Description="Route to Role." Value="04"/>
+            <Enum Description="Route to Custom Role." Value="05"/>
+            <Enum Description="Route to Exception Type's Queue." Value="06"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumConsolidationWindow" Size="20" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="exceptions a day old will be looked for consolidation." Value="DAY"/>
+            <Enum
+                Description="exceptions an hour old will be looked for consolidation." Value="HOUR"/>
+            <Enum
+                Description="all exceptions irrespective of time of creation will be looked for consolidation." Value="FOREVER"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumFlowType" Size="2" Type="NCHAR">
+        <UIType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates that this service belongs to an Integration server. This is the default value." Value="00"/>
+            <Enum
+                Description="Indicates that this service belongs to an AgentServer." Value="01"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumIsRealTime" Size="1" Type="NCHAR">
+        <UIType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates a real time response is needed. In this case, an asynchronous transport node is not allowed in the service." Value="Y"/>
+            <Enum
+                Description="Indicates a real time response is not needed." Value="N"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumCanAllCreateHoldType" Size="1" Type="NCHAR">
+        <UIType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates that any user can create the hold type." Value="Y"/>
+            <Enum
+                Description="Indicates that only cerrtain users can create the hold type." Value="N"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumCanAllResolveHoldType" Size="1" Type="NCHAR">
+        <UIType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates that any user can resolve or reject the hold type." Value="Y"/>
+            <Enum
+                Description="Indicates that only certain users can resolve or reject the hold type." Value="N"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumPermission" Size="40" Type="NVARCHAR">
+        <UIType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates that the user group can create this hold on transactional entity." Value="APPLY"/>
+            <Enum
+                Description="Indicates that the user group can resolve or reject the hold." Value="RESOLVE"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumPurpose3" Size="40" Type="NVARCHAR">
+        <UIType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum
+                Description="The hold type will be applied when the modification type takes place. This is the default value." Value="APPLY"/>
+            <Enum
+                Description="When an order is on a hold of this type, the listed modification types at the defined levels will be prevented." Value="PREVENT"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumPurpose4" Size="40" Type="NVARCHAR">
+        <UIType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum
+                Description="When an order is executed by the transaction, the hold type will be applied to the order. This is the default value." Value="APPLY"/>
+            <Enum
+                Description="When an order is on a hold of this type, the order can not be processed by the transaction." Value="PREVENT"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumResourceCreateType" Size="40" Type="NVARCHAR">
+        <UIType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates that the resource is a system resource." Value="SYSTEM"/>
+            <Enum
+                Description="Indicates that the resource is a user created custom resource." Value="USER"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumHoldTypeEnabled" Size="1" Type="NCHAR">
+        <UIType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum
+                Description="If passed, only hold type aware transactions satisfying other input conditions are returned. If this flag is passed in conjunction with ProcessTypeKey then transactions that are hold type aware for the process type key are returned." Value="Y"/>
+            <Enum
+                Description="Transactions satisfying input criteria are returned. This is the default value." Value="N"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumTranType" Size="15" Type="NVARCHAR">
+        <UIType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates that the transaction is system-defined." Value="SYSTEM"/>
+            <Enum
+                Description="Indicates that the transaction is user-defined." Value="USER"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumMonitorRulePurpose" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum Description="Indicates Pipeline based rule." Value="' ' "/>
+            <Enum Description="Indicates Order monitor based rule." Value="ORDER_MONITOR"/>
+            <Enum Description="Indicates Shipment monitor based rule." Value="SHIPMENT_MONITOR"/>
+            <Enum Description="Indicates Work Order monitor based rule." Value="WORK_ORDER_MONITOR"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="NVText-5" Size="5" Type="NVARCHAR"/>
+    <DataType Name="NText-10" Size="10" Type="NVARCHAR"/>
+    <DataType Name="NText-12" Size="12" Type="NVARCHAR"/>
+    <DataType Name="NText-13" Size="13" Type="NVARCHAR"/>
+    <DataType Name="NText-15" Size="15" Type="NVARCHAR"/>
+    <DataType Name="NText-25" Size="25" Type="NVARCHAR"/>
+    <DataType Name="NText-48" Size="48" Type="NVARCHAR"/>
+    <DataType Name="NText-50" Size="50" Type="NVARCHAR"/>
+    <DataType Name="NText-64" Size="64" Type="NVARCHAR"/>
+    <DataType Name="NText-128" Size="128" Type="NVARCHAR"/>
+    <DataType Name="NText-255" Size="255" Type="NVARCHAR"/>
+    <DataType Name="BlobReference" Size="255" Type="NVARCHAR"/>
+    <DataType Name="NUM-19" Size="19" Type="NUMBER">
+        <DBType Name="MYSQL" Size="10"/>
+    </DataType>
+    <DataType Name="NUM-8" Size="8" Type="NUMBER"/>
+    <DataType Name="NText-100-Informix-50" Size="100" Type="NVARCHAR">
+        <DBType Name="INFORMIX" Size="50"/>
+    </DataType>
+    <DataType Name="NText-255-Informix-100" Size="255" Type="NVARCHAR">
+        <DBType Name="INFORMIX" Size="100"/>
+    </DataType>
+    <DataType Name="EnterpriseAccessMode" Size="2" Type="NCHAR">
+        <Enumeration>
+            <Enum Description="Normal access mode." Value="01"/>
+            <Enum
+                Description="Restricted access mode. Access is restricted to the list configured in the data security enterprise entity." Value="02"/>
+            <Enum
+                Description="Use parent data security group access mode" Value="10"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="DocumentTypeAccessMode" Size="2" Type="NCHAR">
+        <Enumeration>
+            <Enum Description="Normal access mode." Value="01"/>
+            <Enum
+                Description="Restricted access mode. Access is restricted to the list configured in the Data security document types entity." Value="02"/>
+            <Enum
+                Description="Use parent data security group access mode" Value="10"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="ShipNodeAccessMode" Size="2" Type="NCHAR">
+        <Enumeration>
+            <Enum Description="Access allowed to users node only." Value="01"/>
+            <Enum
+                Description="Access allowed to users enterprises node." Value="02"/>
+            <Enum
+                Description="Access allowed to restricted nodes in the data security nodes entity." Value="03"/>
+            <Enum
+                Description="Use parent data security group access mode" Value="10"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="VersionLabelID" Size="40" Type="NVARCHAR"/>
+    <DataType Name="WF_ID" Type="SCI_LONG">
+        <DBType Name="DB2" Size="19"/>
+    </DataType>
+    <DataType Name="NUM-22" Size="22" Type="SCI_INT"/>
+    <DataType Name="SCI_LONG" Type="SCI_LONG">
+        <DBType Name="DB2" Size="19"/>
+    </DataType>
+    <DataType Name="NText-255-Informix-130" Size="255" Type="NVARCHAR">
+        <DBType Name="INFORMIX" Size="130"/>
+    </DataType>
+    <DataType Name="DATA_OBJECT-4000" Size="200000000" Type="BLOB"/>
+    <DataType Name="NonZeroCount" NegativeAllowed="false" Size="5"
+        Type="NUMBER" ZeroAllowed="false">
+        <UIType Size="5"/>
+    </DataType>
+    <DataType Name="MenuType" Size="10" Type="NVARCHAR"/>
+    <DataType Name="FailureType" Size="10" Type="NVARCHAR"/>
+    <DataType Name="Language" Size="10" Type="NVARCHAR"/>
+    <DataType Name="InstructionUsage" Size="10" Type="NVARCHAR"/>
+    <DataType Name="Version" Size="10" Type="NVARCHAR"/>
+    <DataType Name="Title-10" Size="10" Type="NVARCHAR"/>
+    <DataType Name="ShortAction" Size="10" Type="NVARCHAR"/>
+    <DataType Name="ResourceInput" Size="1500" Type="NVARCHAR"/>
+    <DataType Name="ErrorMessage-1500" Size="1500" Type="NVARCHAR"/>
+    <DataType Name="Operation" Size="24" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="DocumentType-24" Size="24" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="ProcessType-24" Size="24" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="RollbackSegment" Size="30" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="StoredProcedure" Size="30" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="JavaType" Size="200" Type="NVARCHAR"/>
+    <DataType Name="ComponentName" Size="200" Type="NVARCHAR"/>
+    <DataType Name="ComponentName-Informix" Size="256" Type="NVARCHAR">
+        <DBType Name="INFORMIX" Size="255"/>
+        <DBType Name="MYSQL" Size="255"/>
+    </DataType>
+    <DataType Name="Status-24" Size="24" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="EntityType" Size="24" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="ExceptionSeqNo" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="ListenerStatus" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="DropStatus" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="NodeType" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="StoreFront" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="DateType" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="Identifier" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="PresentationTheme" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="PropertyName-40" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="InboxDescription" Size="500" Type="NVARCHAR"/>
+    <DataType Name="EventName" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="ActionName" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="ExceptionType-50" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="QualifiedTagType" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="QualifiedTagId" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="ApplicationVersion" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="RuleType-50" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="TransactionName-50" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="UserName" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="ScreenName" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="ApplicationCode" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="ProcessTypeName" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="StatusName" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="ComponentType-50" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="InboxType" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="Company" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ResourceNameSpace" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ResourceToolTip" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ResourceViewId" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ResourceBinding" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="JspPage" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ResourceSubType" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ExceptionTemplate" Size="500" Type="NVARCHAR"/>
+    <DataType Name="AttributeLocation" Size="500" Type="NVARCHAR"/>
+    <DataType Name="QueueGroupId" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="AttributeValue-100" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="DefaultValue" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="VariantReference" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="EnterpriseName" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="QueryName" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ServerIp" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ShiftName" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="PropertyValue" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="PropertyOverrideType" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Parameter" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ClassName" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="DepartmentName" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ServerPort" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="FieldXmlName" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="UserId-100" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="RuleValue" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ConstantValue" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ToName" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="PropertyGroup" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="FieldDescription" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="OrganizationName" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="PropertyScope" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="CodeValue" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="JvmType" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="FromName" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ResourceId-100" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="PropertyOverrideName" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ErrorAction" Size="1000" Type="NVARCHAR"/>
+    <DataType Name="LongPropertyValue" Size="1000" Type="NVARCHAR"/>
+    <DataType Name="ErrorCause" Size="1000" Type="NVARCHAR"/>
+    <DataType Name="ImplementationNotes" Size="1000" Type="NVARCHAR"/>
+    <DataType Name="TransactionGroup" Size="20" Type="NVARCHAR"/>
+    <DataType Name="ConditionType" Size="20" Type="NVARCHAR"/>
+    <DataType Name="ErrorType" Size="20" Type="NVARCHAR"/>
+    <DataType Name="ActionCode" Size="20" Type="NVARCHAR"/>
+    <DataType Name="DepartmentAbbreviation" Size="20" Type="NVARCHAR"/>
+    <DataType Name="RuleType-20" Size="20" Type="NVARCHAR"/>
+    <DataType Name="GroupType-20" Size="20" Type="NVARCHAR"/>
+    <DataType Name="RoundingRule" Size="20" Type="NVARCHAR"/>
+    <DataType Name="ShipnodeType" Size="20" Type="NVARCHAR"/>
+    <DataType Name="TransactionType-20" Size="20" Type="NVARCHAR"/>
+    <DataType Name="QueryType" Size="20" Type="NVARCHAR"/>
+    <DataType Name="TransactionStatus" Size="20" Type="NVARCHAR"/>
+    <DataType Name="ResetType" Size="20" Type="NVARCHAR"/>
+    <DataType Name="ComponentLevel" Size="20" Type="NVARCHAR"/>
+    <DataType Name="Symbol" Size="20" Type="NVARCHAR"/>
+    <DataType Name="DocumentId-20" Size="20" Type="NVARCHAR"/>
+    <DataType Name="PolicyName" Size="20" Type="NVARCHAR"/>
+    <DataType Name="SupportLevel" Size="20" Type="NVARCHAR"/>
+    <DataType Name="DepartmentCode" Size="20" Type="NVARCHAR"/>
+    <DataType Name="Variant" Size="20" Type="NVARCHAR"/>
+    <DataType Name="MessageId" Size="128" Type="NVARCHAR">
+        <UIType Size="40" UITableSize="40"/>
+    </DataType>
+    <DataType Name="ErrorReason" Size="128" Type="NVARCHAR">
+        <UIType Size="40" UITableSize="40"/>
+    </DataType>
+    <DataType Name="QueueId-128" Size="128" Type="NVARCHAR">
+        <UIType Size="40" UITableSize="40"/>
+    </DataType>
+    <DataType Name="ErrorCode-128" Size="128" Type="NVARCHAR">
+        <UIType Size="40" UITableSize="40"/>
+    </DataType>
+    <DataType Name="PersonId" Size="35" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="NotesContactReference" Size="150" Type="NVARCHAR"/>
+    <DataType Name="TransactionDependencyName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="TemplateType" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ViewGroupId" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ServiceType" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ProtocolName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="EntityName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="TransactionType-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ServerName-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="SearchName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Timezone-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="TaskSectionName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Form-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ColumnName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Version-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="XmlName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ServerId" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="GroupName-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Suffix" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="GroupType-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="OrganizationCode" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ModificationType" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="PreventionLevel" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="HostName" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="UOM-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ConditionName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="GlobalLocationNumber" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="AttributeName-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="CodeDescription" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ShipNodeClass" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="TaskType-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="AgentCriteriaId" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Description-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ApplicationName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="DunsNumber" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="EntityClassName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ProcessType-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ReferenceType" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="MenuDescription" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ApiName-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="GeoCode" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="FormatId" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ResourceType-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="PolicyRuleName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="TransactionName-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ExceptionGroupId" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="AdapterName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ReferenceName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="RelationShipType" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="QueueName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ExceptionType-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Department" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="AttributeValue-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="AgentCriteriaGroup" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="SystemName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="AlertQueueId" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="IpAddress" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ServerType-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ResourceId-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="TaskName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Title-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="RoleName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="HeartBeatServerStatusEnum" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum Description="RUNNING" Value="00"/>
+            <Enum Description="STOPPED" Value="01"/>
+            <Enum Description="TERMINATE" Value="02"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="ServerStatus" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="DocumentName-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ObjectType" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="DateFormat" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="MiddleName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="MonitorConsolidationId" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="HoldEffectLevel" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="DisplayMode" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="EventComponent" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="FileName-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="CodeName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="CommonCodeName" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Role" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="AddressType" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ComponentType-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ReferenceValue" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ActionType" Size="15" Type="NVARCHAR"/>
+    <DataType Name="Timezone-15" Size="15" Type="NVARCHAR"/>
+    <DataType Name="ErrorCode-15" Size="15" Type="NVARCHAR"/>
+    <DataType Name="BaseStatus" Size="15" Type="NVARCHAR"/>
+    <DataType Name="PersonName" Size="64" Type="NVARCHAR"/>
+    <DataType Name="GroupOwnerId" Size="36" Type="NVARCHAR"/>
+    <DataType Name="MilestoneLevel" Size="2" Type="NCHAR"/>
+    <DataType Name="OverrideMode" Size="2" Type="NCHAR"/>
+    <DataType Name="AgeType" Size="2" Type="NCHAR"/>
+    <DataType Name="ActivityType" Size="2" Type="NCHAR">
+        <Enumeration>
+            <Enum Description="This represents an HTTP Session." Value="01"/>
+            <Enum Description="This represents an API Login Token." Value="02"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="QuantityType" Size="2" Type="NCHAR"/>
+    <DataType Name="ServerType-2" Size="2" Type="NCHAR"/>
+    <DataType Name="InstanceNo" Size="2" Type="NCHAR"/>
+    <DataType Name="Status-1" Size="1" Type="NCHAR"/>
+    <DataType Name="ExceptionType-1" Size="1" Type="NCHAR"/>
+    <DataType Name="ShiftType" Size="1" Type="NCHAR"/>
+    <DataType Name="LockedParameters" Size="254" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="LockedObject" Size="254" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="PurgeCodeDescription" Size="254" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Form-255" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="PublishReceivers" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="SearchContext" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Answer" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ResourceId-255" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="CustomerSatisfactionLevel" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ExecuteProgram" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Description-255" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ApiName-255" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="PropertyName-255" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="EmailTemplate" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="UserExitName" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="RequestId" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Question" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ViewId" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ProcedureName" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="QualifiedTagValidatorClass" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="EntityId" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Icon" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="KeyName" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ResourceType-255" Size="255" Type="NVARCHAR"/>
+    <DataType Name="ResourceName" Size="255" Type="NVARCHAR"/>
+    <DataType Name="ResourceDescription" Size="255" Type="NVARCHAR"/>
+    <DataType Name="ClumpInfo" Size="255" Type="NVARCHAR"/>
+    <DataType Name="VersionInfo" Size="255" Type="NVARCHAR"/>
+    <DataType Name="DeprecatedTime" Size="19" Type="NUMBER">
+        <DBType Name="MYSQL" Size="10"/>
+    </DataType>
+    <DataType Name="ProductLabel" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="BuildNumber" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="VersionLicense" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="VersionComments" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Subject" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ContentType" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ContentSubType" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="DocumentId-255" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="BodyName" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="CharacterEncoding" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="EncryptionAlgorithm" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="EncryptionAlgorithm-Informix" Size="255" Type="NVARCHAR">
+        <DBType Name="INFORMIX" Size="100"/>
+    </DataType>
+    <DataType Name="InitializationVector" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="EncryptionKey" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="DocumentName-255" Size="255" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="UserId-50" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="NumValidDays" NegativeAllowed="false" Size="11" Type="NUMBER">
+        <DBType Name="MYSQL" Size="10"/>
+    </DataType>
+    <DataType Name="MinPasswordLength" NegativeAllowed="false" Size="11" Type="NUMBER">
+        <DBType Name="MYSQL" Size="10"/>
+    </DataType>
+    <DataType Name="MaxPasswordLength" NegativeAllowed="false" Size="11" Type="NUMBER">
+        <DBType Name="MYSQL" Size="10"/>
+    </DataType>
+    <DataType Name="NumPasswordEntries" NegativeAllowed="false"
+        Size="11" Type="NUMBER">
+        <DBType Name="MYSQL" Size="10"/>
+    </DataType>
+    <DataType Name="SpecialCharRequired" NegativeAllowed="false"
+        Size="11" Type="NUMBER">
+        <DBType Name="MYSQL" Size="10"/>
+    </DataType>
+    <DataType Name="FirstAttempt" NegativeAllowed="false" Size="11" Type="NUMBER">
+        <DBType Name="MYSQL" Size="10"/>
+    </DataType>
+    <DataType Name="PolicyStatus" NegativeAllowed="false" Size="11" Type="NUMBER">
+        <DBType Name="MYSQL" Size="10"/>
+    </DataType>
+    <DataType Name="DocumentId-Informix" Size="255" Type="NVARCHAR">
+        <DBType Name="INFORMIX" Size="100"/>
+    </DataType>
+    <DataType Name="DocumentName-Informix" Size="255" Type="NVARCHAR">
+        <DBType Name="INFORMIX" Size="100"/>
+    </DataType>
+    <DataType Name="DocumentBodyName" Size="255" Type="NVARCHAR">
+        <DBType Name="INFORMIX" Size="100"/>
+    </DataType>
+    <DataType Name="DocumentBody" Size="255" Type="NVARCHAR">
+        <DBType Name="INFORMIX" Size="100"/>
+    </DataType>
+    <DataType Name="EncyptionAlgorithm-Informix" Size="255" Type="NVARCHAR">
+        <DBType Name="INFORMIX" Size="100"/>
+    </DataType>
+    <DataType Name="InitializationVector-Informix" Size="255" Type="NVARCHAR">
+        <DBType Name="INFORMIX" Size="100"/>
+    </DataType>
+    <DataType Name="EncryptionKey-Informix" Size="255" Type="NVARCHAR">
+        <DBType Name="INFORMIX" Size="100"/>
+    </DataType>
+    <DataType Name="DataId" Size="255" Type="NVARCHAR">
+        <DBType Name="INFORMIX" Size="100"/>
+    </DataType>
+    <DataType Name="ReferenceTable" Size="255" Type="NVARCHAR">
+        <DBType Name="INFORMIX" Size="100"/>
+    </DataType>
+    <DataType Name="PasswordPolicyId-Informix" Size="255" Type="NVARCHAR">
+        <DBType Name="INFORMIX" Size="100"/>
+    </DataType>
+    <DataType Name="PasswordPolicyName" Size="255" Type="NVARCHAR">
+        <DBType Name="INFORMIX" Size="100"/>
+    </DataType>
+    <DataType Name="StorageType" Size="22" Type="SCI_INT"/>
+    <DataType Name="PageIndex" Size="22" Type="SCI_INT"/>
+    <DataType Name="StoredDataType" Size="22" Type="SCI_INT"/>
+    <DataType Name="UserKey-Informix" Size="255" Type="NVARCHAR">
+        <DBType Name="INFORMIX" Size="130"/>
+    </DataType>
+    <DataType Name="DispatchType" Size="9" Type="NUMBER">
+        <UIType Size="7" UITableSize="7"/>
+    </DataType>
+    <DataType Name="OriginalLocaleDescription" Size="2000" Type="NVARCHAR">
+        <UIType Size="50" UITableSize="50"/>
+    </DataType>
+    <DataType Name="ErrorMessage-4000" Size="4000" Type="NVARCHAR"/>
+    <DataType Name="DetailDescription" Size="4000" Type="NVARCHAR"/>
+    <DataType Name="InstructionText" Size="4000" Type="NVARCHAR"/>
+    <DataType Name="ResourceTemplate" Size="4000" Type="NVARCHAR"/>
+    <DataType Name="NonTranslatedString" Size="4000" Type="NVARCHAR"/>
+    <DataType Name="PickupDropStatus" Size="2" Type="NCHAR"/>
+    <DataType Name="DateSubType" Size="2" Type="NCHAR"/>
+    <DataType Name="LongDescription" Size="2000" Type="NVARCHAR">
+        <UIType Size="50" UITableSize="50"/>
+    </DataType>
+    <DataType Name="ErrorReference" Size="2048" Type="NVARCHAR"/>
+    <DataType Name="UserReference" Size="2048" Type="NVARCHAR"/>
+    <DataType Name="ConditionValue" Size="2000" Type="NVARCHAR">
+        <UIType Size="50" UITableSize="50"/>
+    </DataType>
+    <DataType Name="ReferenceValue-2000" Size="2000" Type="NVARCHAR">
+        <UIType Size="50" UITableSize="50"/>
+    </DataType>
+    <DataType Name="JavaScript" Size="1000" Type="NVARCHAR"/>
+    <DataType Name="AdditionalAttribute" Size="2000" Type="NVARCHAR">
+        <UIType Size="50" UITableSize="50"/>
+    </DataType>
+    <DataType Name="PermissibleValues" Size="2000" Type="NVARCHAR">
+        <UIType Size="50" UITableSize="50"/>
+    </DataType>
+    <DataType Name="ArchiveFlag" Size="22" Type="SCI_INT"/>
+    <DataType Name="UserGroupName" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="ExceptionSequenceNo" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="ComparisonDateType" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="DocumentEntityType" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ApplicationCode-3" Size="3" Type="NCHAR"/>
+    <DataType Name="NoteText" Size="2000" Type="NVARCHAR">
+        <UIType Size="50" UITableSize="50"/>
+    </DataType>
+    <DataType Name="StatusType" Size="15" Type="NVARCHAR"/>
+    <DataType Name="ProcessCreateType" Size="20" Type="NVARCHAR"/>
+    <DataType Name="TransactionSequence" Size="15" Type="NVARCHAR"/>
+    <DataType Name="ErrorText" Size="1000" Type="NVARCHAR"/>
+    <DataType Name="AccessGroupId" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ExtendableCode" Size="20" Type="NVARCHAR"/>
+    <DataType Name="ReturnType" Size="8" Type="NCHAR"/>
+    <DataType Name="ErrorSeverity" Size="4" Type="NCHAR"/>
+    <DataType Name="HoldLevel" Size="10" Type="NCHAR"/>
+    <DataType Name="DestinationCode" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="InstructionType" Size="10" Type="NCHAR"/>
+    <DataType Name="MonthFilter" Size="10" Type="NCHAR"/>
+    <DataType Name="YearFilter" Size="10" Type="NCHAR"/>
+    <DataType Name="TokenInvalidTimeOut" Size="8" Type="NUMBER"/>
+    <DataType Name="InterfaceType" Size="20" Type="NVARCHAR"/>
+    <DataType Name="CarrierServiceCode" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="AccountWithHub" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="AssignToUserId" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ErrorXml" Size="1000" Type="NVARCHAR"/>
+    <DataType Name="ExistingPassword" Size="15" Type="NVARCHAR"/>
+    <DataType Name="CategoryId" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="PropertyType" Size="10" Type="NVARCHAR"/>
+    <DataType Name="Category" Size="20" Type="NVARCHAR"/>
+    <DataType Name="UserComment" Size="200" Type="NVARCHAR"/>
+    <DataType Name="Reference" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="ErrorString-100" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ErrorMessage-100" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="SubFlowName-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="FlowName-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="AccessToken" Size="40" Type="NVARCHAR"/>
+    <DataType Name="AccessTokenExpireTime" NegativeAllowed="false"
+        Size="10" Type="NUMBER" ZeroAllowed="false"/>
+    <DataType Name="DelPackage" Size="30" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="SelPackage" Size="30" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="ItemClassification" Size="100" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="Description-200" Size="200" Type="NVARCHAR"/>
+    <DataType Name="ScreenName-200" Size="200" Type="NVARCHAR"/>
+    <DataType Name="FirstName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="LastName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Icon-254" Size="254" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Description-1500" Size="1500" Type="NVARCHAR"/>
+    <DataType Name="DunsNumber-20" Size="20" Type="NVARCHAR"/>
+    <DataType Name="ReasonText-100" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Password-15" Size="15" Type="NVARCHAR"/>
+    <DataType Name="PropertyName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="PropertyValue-2000" Size="2000" Type="NVARCHAR">
+        <UIType Size="50" UITableSize="50"/>
+    </DataType>
+    <DataType Name="URL-100" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Description-100" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="LoginId-50" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="PresentationTheme-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="RoleId" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="UserId-40" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="AssignToUserId-50" Size="50" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="OperationLevel" Size="20" Type="NVARCHAR"/>
+    <DataType Name="ReferenceValue-255" Size="255" Type="NVARCHAR"/>
+    <DataType Name="ReferenceValue-200" Size="200" Type="NVARCHAR"/>
+    <DataType Name="FileSize" NegativeAllowed="false" Size="12" Type="NUMBER"/>
+    <DataType Name="FileLocation" Size="200" Type="NVARCHAR"/>
+    <DataType Name="FileContentType" Size="100" Type="NVARCHAR"/>
+    <DataType Name="JarsToInclude" Size="1000" Type="NVARCHAR"/>
+    <DataType Name="ActivityConfigName" Size="128" Type="NVARCHAR">
+        <UIType Size="40" UITableSize="40"/>
+    </DataType>
+    <DataType Name="ActivityConfigDescription" Size="500" Type="NVARCHAR">
+        <UIType Size="50" UITableSize="50"/>
+    </DataType>
+    <DataType Name="TransactionName-100" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ScriptName" Size="100" Type="NVARCHAR"/>
+    <DataType Name="ProcessStatusName" Size="100" Type="NVARCHAR"/>
+    <DataType Name="ScriptType" Size="100" Type="NVARCHAR"/>
+    <DataType Name="ProcessStatus" Size="3" Type="NVARCHAR">
+        <UIType Size="3" UITableSize="3"/>
+        <Enumeration>
+            <Enum Description="WAITING" Value="01"/>
+            <Enum Description="ACTIVE" Value="02"/>
+            <Enum Description="SUCCESS" Value="03"/>
+            <Enum Description="FAILED" Value="04"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="PageSetToken" Size="40" Type="NVARCHAR"/>
+    <DataType Name="PageRecordType" Size="1" Type="NCHAR">
+        <Enumeration>
+            <Enum Description="Sorted Data" Value="S"/>
+            <Enum Description="Base sharded data" Value="B"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="RecordNumber" NegativeAllowed="false" Size="10" Type="NUMBER"/>
+    <DataType Name="FileRecordNumber" NegativeAllowed="false" Size="10" Type="NUMBER"/>
+    <DataType Name="FileRecordStatusEnum" NegativeAllowed="false"
+        Size="2" Type="NCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that the record is being processed" Value="01"/>
+            <Enum
+                Description="Indicates that the record has been completed." Value="02"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="TemplateTypeEnum" Size="2" Type="NVARCHAR">
+        <Enumeration>
+            <Enum Description="API Template" Value="00"/>
+            <Enum Description="Resource Template" Value="01"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="TemplateId" Size="40" Type="NVARCHAR"/>
+    <DataType Name="IndexName" Size="25" Type="NVARCHAR"/>
+    <DataType Name="YSCOperation" Size="6" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Creates a new record if a matching record doesn't exist. If it does exist, it modifies the matching record." Value="Manage"/>
+            <Enum Description="Creates a new record." Value="Create"/>
+            <Enum Description="Modifies the matching record." Value="Modify"/>
+            <Enum Description="Deletes the matching record." Value="Delete"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="ComponentCategorySet-4000" Size="4000" Type="NVARCHAR">
+        <UIType Size="4000" UITableSize="4000"/>
+    </DataType>
+    <DataType Name="AccountNo" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="CatalogId" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="DecryptedString" Size="100" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="ChargeCategory" Size="20" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="OrderLineNo" NegativeAllowed="false" Size="7" Type="NUMBER">
+        <UIType Size="5"/>
+    </DataType>
+    <DataType Name="CompanyUCCPrefix" Size="7" Type="NVARCHAR">
+        <UIType Size="7"/>
+    </DataType>
+    <DataType Name="Digit" NegativeAllowed="false" Size="1" Type="NUMBER">
+        <UIType Size="1"/>
+    </DataType>
+    <DataType Name="Counter" Size="35" Type="NCHAR"/>
+    <DataType DecimalDigits="4" Name="Volume" NegativeAllowed="false"
+        Size="14" Type="NUMBER">
+        <UIType Size="9" UITableSize="9"/>
+    </DataType>
+    <DataType Name="ID-2" Size="2" Type="NCHAR"/>
+    <DataType Name="ID-15" Size="15" Type="NCHAR"/>
+    <DataType Name="LineNo" NegativeAllowed="false" Size="5" Type="NUMBER"/>
+    <DataType Name="PrimeLineNo" NegativeAllowed="false" Size="4"
+        Type="NUMBER" ZeroAllowed="false"/>
+    <DataType Name="MenuId" Size="40" Type="NVARCHAR"/>
+    <DataType DecimalDigits="2" Name="ComputedMoney" Size="15" Type="NUMBER">
+        <UIType Size="12" UITableSize="15"/>
+    </DataType>
+    <DataType DecimalDigits="2" Name="PlusMinusMoney" Size="15" Type="NUMBER">
+        <UIType Size="12" UITableSize="15"/>
+    </DataType>
+    <DataType DecimalDigits="2" Name="Amount" NegativeAllowed="false"
+        Size="15" Type="NUMBER">
+        <UIType Size="12" UITableSize="15"/>
+    </DataType>
+    <DataType Name="PositiveInteger" NegativeAllowed="false" Size="14"
+        Type="NUMBER" ZeroAllowed="false">
+        <UIType Size="7" UITableSize="7"/>
+    </DataType>
+    <DataType Name="BarCodeInteger" NegativeAllowed="false" Size="14" Type="NUMBER">
+        <UIType Size="7" UITableSize="7"/>
+    </DataType>
+    <DataType Name="FifoNo" NegativeAllowed="false" Size="14" Type="NUMBER">
+        <UIType Size="7" UITableSize="7"/>
+    </DataType>
+    <DataType DecimalDigits="4" Name="NumberOfDaysWithDecimal"
+        NegativeAllowed="false" Size="9" Type="NUMBER"/>
+    <DataType DecimalDigits="4" Name="NumberOfHours"
+        NegativeAllowed="false" Size="14" Type="NUMBER"/>
+    <DataType Name="NumberOfHours-7" NegativeAllowed="false" Size="7" Type="NUMBER"/>
+    <DataType Name="NumberOfMinutes" NegativeAllowed="false" Size="5" Type="NUMBER"/>
+    <DataType Name="PositiveNumberOfMinutes" NegativeAllowed="false"
+        Size="5" Type="NUMBER" ZeroAllowed="false"/>
+    <DataType Name="Milliseconds" NegativeAllowed="false" Size="14" Type="NUMBER"/>
+    <DataType Name="PollingFrequency" NegativeAllowed="false" Size="5"
+        Type="NUMBER" ZeroAllowed="false"/>
+    <DataType Name="CallingOrganizationCode" Size="24" Type="NCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="CarrierOrganizationCode" Size="24" Type="NCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="PaymentTerms" Size="20" Type="NCHAR">
+        <UIType Size="10" UITableSize="10"/>
+    </DataType>
+    <DataType Name="PositiveDigit" NegativeAllowed="false" Size="1"
+        Type="Number" ZeroAllowed="false"/>
+    <DataType Name="NumberOfAssignment" NegativeAllowed="false"
+        Size="20" Type="Number">
+        <UIType Size="10" UITableSize="10"/>
+    </DataType>
+    <DataType DecimalDigits="2" Name="Percentage" NegativeAllowed="true"
+        Size="5" Type="NUMBER"/>
+    <DataType DecimalDigits="2" Name="CapacityPercentage"
+        NegativeAllowed="false" Size="4" Type="NUMBER"/>
+    <DataType DecimalDigits="5" Name="TaxType" NegativeAllowed="false"
+        Size="8" Type="NUMBER"/>
+    <DataType DecimalDigits="2" Name="PositivePercentage"
+        NegativeAllowed="false" Size="5" Type="NUMBER" ZeroAllowed="false"/>
+    <DataType DecimalDigits="2" Name="Distance" NegativeAllowed="false"
+        Size="15" Type="NUMBER">
+        <UIType Size="10" UITableSize="10"/>
+    </DataType>
+    <DataType DecimalDigits="2" Name="DimensionWithDecimal"
+        NegativeAllowed="false" Size="15" Type="NUMBER"/>
+    <DataType Name="ProductClass" Size="10" Type="NCHAR">
+        <UIType Size="10" UITableSize="10"/>
+    </DataType>
+    <DataType DecimalDigits="4" Name="ConversionQuantity"
+        NegativeAllowed="false" Size="14" Type="NUMBER"/>
+    <DataType DecimalDigits="2" Name="VarianceValue" Size="19" Type="NUMBER"/>
+    <DataType Name="PositiveQuantity" NegativeAllowed="false" Size="10"
+        Type="NUMBER" ZeroAllowed="false">
+        <XMLType Type="QUANTITY"/>
+    </DataType>
+    <DataType Name="NegativeQuantity" Size="10" Type="NUMBER" ZeroAllowed="false">
+        <XMLType Type="QUANTITY"/>
+    </DataType>
+    <DataType DecimalDigits="4" Name="QuantityPositiveAndNegative"
+        PpcSize="8" Size="14" Type="NUMBER">
+        <XMLType Type="QUANTITY"/>
+    </DataType>
+    <DataType Name="KitLineQuantity" NegativeAllowed="false" Size="10"
+        Type="NUMBER" ZeroAllowed="false">
+        <UIType Size="10" UITableSize="10"/>
+    </DataType>
+    <DataType Name="SequenceNo" Size="40" Type="NVARCHAR">
+        <UIType Size="10" UITableSize="10"/>
+    </DataType>
+    <DataType Name="ShipMode" Size="40" Type="NVARCHAR"/>
+    <DataType DecimalDigits="4" Name="DBSizerLongNumber"
+        NegativeAllowed="false" Size="14" Type="NUMBER"/>
+    <DataType Name="Text-12" Size="12" Type="NVARCHAR"/>
+    <DataType Name="Text-120" Size="120" Type="NVARCHAR"/>
+    <DataType Name="Text-250" Size="250" Type="NVARCHAR"/>
+    <DataType Name="Text-256" Size="256" Type="NVARCHAR"/>
+    <DataType Name="Text-300" Size="300" Type="NVARCHAR"/>
+    <DataType Name="Text-400" Size="400" Type="NVARCHAR"/>
+    <DataType Name="Text-512" Size="512" Type="NVARCHAR"/>
+    <DataType Name="Text-7" Size="7" Type="NCHAR"/>
+    <DataType Name="Text-5" Size="5" Type="NCHAR"/>
+    <DataType Name="Text-37" Size="37" Type="NVARCHAR"/>
+    <DataType Name="Text-32" Size="32" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="Text-6" Size="6" Type="NCHAR"/>
+    <DataType Name="UCC128" Size="40" Type="NVARCHAR">
+        <UIType Size="24" UITableSize="24"/>
+    </DataType>
+    <DataType DecimalDigits="6" Name="UnitPrice" NegativeAllowed="false"
+        Size="19" Type="NUMBER">
+        <UIType Size="7" UITableSize="7"/>
+    </DataType>
+    <DataType Name="YCMAction">
+        <Enumeration>
+            <Enum Description="" Value="Modify"/>
+            <Enum Description="" Value="Delete"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="SelectMethod">
+        <Enumeration>
+            <Enum
+                Description="The select operation waits until database resource becomes available." Value="WAIT"/>
+            <Enum
+                Description="Peform a select immediately regardless the database resource availability." Value="NO_WAIT"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="YFSAction">
+        <Enumeration>
+            <Enum Description="" Value="CANCEL"/>
+            <Enum Description="" Value="BACKORDER"/>
+            <Enum Description="" Value="MODIFY"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="YFSActionWithCreateWithoutModify">
+        <Enumeration>
+            <Enum Description="" Value="CREATE"/>
+            <Enum Description="" Value="CANCEL"/>
+            <Enum Description="" Value="BACKORDER"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="InventoryQuantity" Size="10" Type="NUMBER">
+        <XMLType Type="QUANTITY"/>
+    </DataType>
+    <DataType Name="NewQuantity" NegativeAllowed="false" Size="10" Type="NUMBER">
+        <XMLType Type="QUANTITY"/>
+    </DataType>
+    <DataType Name="InboxReferenceValue" Size="2000" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="MaxFileSize" NegativeAllowed="false" Size="9" Type="NUMBER"/>
+    <DataType Name="AdapterNodeType" NegativeAllowed="false" Size="3"
+        Type="NUMBER" ZeroAllowed="false"/>
+    <DataType Name="MaxTransactionPerFile" NegativeAllowed="false"
+        Size="9" Type="NUMBER"/>
+    <DataType Name="MaxTimeToRollOver" NegativeAllowed="false" Size="9" Type="NUMBER"/>
+    <DataType DecimalDigits="2" Name="Integer4WithDecimal2"
+        NegativeAllowed="false" Size="6" Type="NUMBER"/>
+    <DataType Name="SegmentType" Size="40" Type="NVARCHAR">
+        <UIType Size="10" UITableSize="10"/>
+    </DataType>
+    <DataType Name="InventoryStatus" Size="10" Type="NCHAR">
+        <UIType Size="10" UITableSize="10"/>
+    </DataType>
+    <DataType Name="Segment" Size="40" Type="NVARCHAR">
+        <UIType Size="24" UITableSize="10"/>
+    </DataType>
+    <DataType Name="TagNumber" Size="120" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="TaskType" Size="10" Type="NCHAR"/>
+    <DataType Name="WorkType" Size="40" Type="NVARCHAR"/>
+    <DataType Name="LongSequence" NegativeAllowed="false" Size="10" Type="NUMBER"/>
+    <DataType Name="Aisle" Size="10" Type="NCHAR">
+        <UIType Size="4" UITableSize="4"/>
+    </DataType>
+    <DataType Name="ZoneId" Size="40" Type="NVARCHAR">
+        <UIType Size="4" UITableSize="4"/>
+    </DataType>
+    <DataType Name="TagNo" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="LocationId" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="10"/>
+    </DataType>
+    <DataType Name="VelocityCode" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="EquipmentType" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="EquipmentId" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="LPNNo" Size="40" Type="NVARCHAR">
+        <UIType Size="18" UITableSize="18"/>
+    </DataType>
+    <DataType Name="LPNType" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="ProductLine" Size="100" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="InventoryType" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="PackagingType" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="SupplyType" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="SerialNo" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="AllocType" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="LotKeyReference" Size="4000" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="DistributionRuleId" Size="40" Type="NCHAR"/>
+    <DataType Name="LoginId-40" Size="40" Type="NCHAR"/>
+    <DataType Name="AvailabilityType" Size="20" Type="NCHAR"/>
+    <DataType Name="PrecisionDigits" NegativeAllowed="false" Size="5" Type="NUMBER"/>
+    <DataType Name="GlobalItemID" Size="128" Type="NCHAR">
+        <UIType Size="20" UITableSize="25"/>
+    </DataType>
+    <DataType Name="MaxWaitPeriodType" Size="10" Type="NCHAR"/>
+    <DataType Name="Text-800" Size="800" Type="NVARCHAR"/>
+    <DataType Name="ContainerNo" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="DeliveryCode" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="DispositionCode" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Division" Size="10" Type="NVARCHAR"/>
+    <DataType Name="HoldReasonCode" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="InvoiceNo" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ItemGroupCode" Size="20" Type="NVARCHAR"/>
+    <DataType Name="LineType" Size="20" Type="NVARCHAR"/>
+    <DataType Name="ReceiptNo" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="SlotGroupId" Size="40" Type="NVARCHAR"/>
+    <DataType Name="ErrorString" Size="2048" Type="NVARCHAR"/>
+    <DataType Name="ProductivityType" Size="40" Type="NCHAR"/>
+    <DataType Name="ProductivityReference" Size="100" Type="NCHAR"/>
+    <DataType Name="BolPrefix" Size="2" Type="NVARCHAR">
+        <UIType Size="2"/>
+    </DataType>
+    <DataType Name="DiversionType" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="PutawayType" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="ModuleCode" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="ProductivityMetric" NegativeAllowed="false"
+        Size="14" Type="NUMBER">
+        <UIType Size="7" UITableSize="7"/>
+    </DataType>
+    <DataType DecimalDigits="4" Name="Capacity" NegativeAllowed="false"
+        Size="14" Type="NUMBER">
+        <UIType Size="14" UITableSize="14"/>
+    </DataType>
+    <DataType DecimalDigits="4" Name="AdditionalCapacity"
+        NegativeAllowed="false" Size="14" Type="NUMBER" ZeroAllowed="false">
+        <UIType Size="14" UITableSize="14"/>
+    </DataType>
+    <DataType Name="NumberOfDaysForCapacity" NegativeAllowed="false"
+        Size="2" Type="NUMBER"/>
+    <DataType Name="MaxActiveSize" NegativeAllowed="false" Size="9" Type="NUMBER"/>
+    <DataType Name="InspectionComments" Size="2000" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="Comments" Size="1500" Type="NVARCHAR">
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="DelayWindow" NegativeAllowed="false" Size="3" Type="NUMBER">
+        <UIType Size="3" UITableSize="3"/>
+    </DataType>
+    <DataType Name="RequestType" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="Text-80" Size="80" Type="NCHAR"/>
+    <DataType Name="Text-11" Size="11" Type="NVARCHAR"/>
+    <DataType Name="Text-14" Size="15" Type="NVARCHAR"/>
+    <DataType Name="Text-16" Size="16" Type="NVARCHAR"/>
+    <DataType Name="Text-19" Size="19" Type="NVARCHAR"/>
+    <DataType Name="Text-25" Size="25" Type="NVARCHAR"/>
+    <DataType Name="Text-69" Size="69" Type="NVARCHAR"/>
+    <DataType Name="Text-9" Size="9" Type="NCHAR"/>
+    <DataType DecimalDigits="2" Name="BigPercentage"
+        NegativeAllowed="false" Size="15" Type="NUMBER"/>
+    <DataType Name="ServiceSkillId" Size="40" Type="NCHAR"/>
+    <DataType DecimalDigits="8" Name="Decimal" NegativeAllowed="false"
+        Size="11" Type="NUMBER"/>
+    <DataType Name="PromoCode" Size="100" Type="NVARCHAR"/>
+    <DataType Name="AtrributeName" Size="24" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+        <Enumeration>
+            <Enum Description="Overpack" Value="Overpack"/>
+            <Enum Description="Parcel" Value="Parcel"/>
+            <Enum Description="Less Than Truckload" Value="LTL"/>
+            <Enum Description="Truck Load" Value="TL"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="TransferType" Size="24" Type="NCHAR">
+        <UIType Size="20" UITableSize="20"/>
+        <Enumeration>
+            <Enum Description="Automatic" Value="Automatic"/>
+            <Enum Description="Manual" Value="Manual"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumStatus" Size="15" Type="NCHAR">
+        <UIType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum Description="Indicates the Open status" Value="1100"/>
+            <Enum Description="Indicates the Completed status." Value="2000"/>
+            <Enum Description="Indicates the Cancelled status." Value="9000"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumContainerizationComplete" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates that the containerization is system-defined." Value="SYSTEM"/>
+            <Enum
+                Description="Indicates that the containorization is done manually." Value="MANUAL"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumPurpose" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates that this rule is a sourcing rule." Value="SOURCING"/>
+            <Enum
+                Description="Indicates that this rule is a procurement rule." Value="PROCUREMENT"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="ServiceSupervisorId" Size="40" Type="NVARCHAR">
+        <UIType Size="15" UITableSize="15"/>
+    </DataType>
+    <DataType Name="EnumOptimizationType" Size="2" Type="NCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that scheduling will first optimize on the date, then on priority, and finally on number of shipments." Value="01"/>
+            <Enum
+                Description="Indicates that scheduling will first optimize on priority, then on number of shipments, and finally on date." Value="02"/>
+            <Enum
+                Description="Indicates that scheduling will first optmize on number of shipments, then on priority, and finally on date." Value="03"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumInterfaceTime" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates that the invoice will be published at invoice creation time." Value="At Creation"/>
+            <Enum
+                Description="Indicates that the invoice will be published at collection time, if the COLLECT_EXTERNAL_THROUGH_AR flag is set to 'N'." Value="At Collection"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumPaymentTypeGroup" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates that the payment type is in the credit card group." Value="CREDIT_CARD"/>
+            <Enum
+                Description="Indicates that the payment type is in the customer account group." Value="CUSTOMER_ACCOUNT"/>
+            <Enum
+                Description="Indicates that the payment type is in the stored value card group." Value="STORED_VALUE_CARD"/>
+            <Enum
+                Description="Indicates that the payment type is in the other group. Payment types such as checks can be configured in this group." Value="OTHER"/>
+            <Enum
+                Description="Indicates that the payment type is in the debit card group." Value="DEBIT_CARD"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumRefundConstraintOperator" Size="4" Type="NCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that the operator is greater than." Value="GT"/>
+            <Enum
+                Description="Indicates that the operator is less than." Value="LT"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumItemGroupCode" Size="20" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that the item is a product item." Value="PROD"/>
+            <Enum
+                Description="Indicates that the item is a provided service item." Value="PS"/>
+            <Enum
+                Description="Indicates that the item is a delivery service item." Value="DS"/>
+            <Enum
+                Description="Indicates that the item is a special service item." Value="SS"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumStatus2" Size="15" Type="NCHAR">
+        <UIType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates that this record is in open status." Value="OPEN"/>
+            <Enum
+                Description="Indicates that this record is in closed status." Value="CLOSED"/>
+            <Enum
+                Description="Indicates that this record has encountered an error." Value="ERROR"/>
+            <Enum
+                Description="Indicates that this record is in its final status." Value="CHECKED"/>
+            <Enum
+                Description="Indicates that this record is in voided status." Value="VOIDED"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumOrderPurpose" Size="20" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that this is an exchange order." Value="EXCHANGE"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumExchangeType" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates that this is a regular exchange." Value="REGULAR"/>
+            <Enum
+                Description="Indicates that this is an advanced pre-paid exchange." Value="ADVANCED_PP"/>
+            <Enum
+                Description="Indicates that this is an advanced exchange." Value="ADVANCED"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumChainType" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates that the chain type is drop ship." Value="DROP_SHIP"/>
+            <Enum
+                Description="Indicates that the chain type is procure to ship." Value="PROCURE_TO_SHIP"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumDependencyShippingRule" Size="2" Type="NCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that the lines should be shipped together." Value="01"/>
+            <Enum
+                Description="Indicates that the lines should be delivered together." Value="02"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumPricingQuantityStrategy" Size="20" Type="NVARCHAR">
+        <Enumeration>
+            <Enum Description="Indicates that the strategy is fixed." Value="FIXED"/>
+            <Enum
+                Description="Indicates that the strategy is incremental." Value="INCREMENTAL"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumItemGroupCode2" Size="20" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that this resource pool is used for delivery service items." Value="DS"/>
+            <Enum
+                Description="Indicates that this resource pool is used for provided service items." Value="PS"/>
+            <Enum
+                Description="Indicates that this resource pool is used for special service items." Value="SS"/>
+            <Enum
+                Description="Indicates that this resource pool is used for product items." Value="PROD"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumAvailabilityType" Size="20" Type="NCHAR">
+        <Enumeration>
+            <Enum Description="Indicates that availability is infinite." Value="INFINITE"/>
+            <Enum Description="Indicates that availability is tracked." Value="TRACK"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumServiceItemGroupCode" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates Kitting as the service item group code." Value="KIT"/>
+            <Enum
+                Description="Indicates Dekitting as the service item group code." Value="DKIT"/>
+            <Enum
+                Description="Indicates Inventory Compliance as the service item group code." Value="COMPL"/>
+            <Enum
+                Description="Indicates Inventory Changes as the service item group code." Value="INVC"/>
+            <Enum
+                Description="Indicates Provided Service as the service item group code." Value="PS"/>
+            <Enum
+                Description="Indicates Delivery Service as the service item group code." Value="DS"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumPurpose2" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates order-related purpose for the work order." Value="ORDER"/>
+            <Enum
+                Description="Indicates inventory-related purpose for the work order." Value="STOCK"/>
+            <Enum
+                Description="Indicates shipment-related purpose for the work order." Value="SHIP"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="AddressDeliveryType" Size="20" Type="NCHAR">
+        <Enumeration>
+            <Enum Description="Commercial Address." Value="COMMERCIAL"/>
+            <Enum Description="Residential Address." Value="RESIDENTIAL"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumCustomerType" Size="2" Type="NCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that this customer is a business." Value="01"/>
+            <Enum
+                Description="Indicates that this customer is a consumer." Value="02"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumSlotPreferenceType" Size="5" Type="NCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that only the preferred slots are to be considered." Value="HARD"/>
+            <Enum
+                Description="Indicates that other slots will also be considered." Value="SOFT"/>
+            <Enum
+                Description="Indicates that the any slot will be considered." Value="NONE"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumInventoryType" Size="20" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that the ship node tracks inventory." Value="TRACK"/>
+            <Enum
+                Description="Indicates that the ship node does not track inventory." Value="INFINITE"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumNodeType" Size="20" Type="NVARCHAR">
+        <Enumeration>
+            <Enum Description="Indicates that this node is a store." Value="STORE"/>
+            <Enum
+                Description="Indicates that this node is a distribution center. This is the default value." Value="DC"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumKitCode" Size="20" Type="NVARCHAR">
+        <Enumeration>
+            <Enum Description="Indicates a logical kit." Value="LK"/>
+            <Enum Description="Indicates a physical kit." Value="PK"/>
+            <Enum Description="Indicates a dynamic physical kit." Value="DPK"/>
+            <Enum Description="Indicates a bundle item." Value="BUNDLE"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumShortStatus" Size="15" Type="NCHAR">
+        <UIType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum Description="Indicates that the item is published." Value="3000"/>
+            <Enum Description="Indicates that the item is held." Value="2000"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumTagControlFlag" Size="1" Type="NCHAR">
+        <UIType Size="1" UITableSize="1"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates that the item is always tag controlled. In this case, tag details are mandatory." Value="Y"/>
+            <Enum
+                Description="Indicates that the item is never tag controlled." Value="N"/>
+            <Enum
+                Description="Indicates that the item is sometimes tag controlled. In this case, tag details are not mandatory." Value="S"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumLPNType" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+        <Enumeration>
+            <Enum Description="Case" Value="Case"/>
+            <Enum Description="Pallet" Value="Pallet"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumAllocType" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates that the item is hard allocated" Value="HARD_ALLOCATED"/>
+            <Enum
+                Description="Indicates that the item is soft allocated" Value="SOFT_ALLOCATED"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumRoutingSource" Size="2" Type="NCHAR">
+        <Enumeration>
+            <Enum Description="Supplied by system" Value="01"/>
+            <Enum Description="Pre Assigned" Value="02"/>
+            <Enum Description="Supplied by External System" Value="03"/>
+            <Enum Description="Supplied by User" Value="04"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumStopType" Size="1" Type="NCHAR">
+        <UIType Size="1" UITableSize="1"/>
+        <Enumeration>
+            <Enum Description="Corresponds to the origin stop" Value="O"/>
+            <Enum Description="corresponds to the destination stop" Value="D"/>
+            <Enum Description="For an immediate stop" Value="I"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumShipmentContainerizedFlag" Size="2" Type="NCHAR">
+        <Enumeration>
+            <Enum Description="Not containerized" Value="01"/>
+            <Enum Description="Containerization in progress" Value="02"/>
+            <Enum Description="Indicating complete containerization" Value="03"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumContainerGroup" Size="10" Type="NVARCHAR">
+        <Enumeration>
+            <Enum Description="Shipment" Value="SHIPMENT"/>
+            <Enum Description="Load" Value="LOAD"/>
+            <Enum Description="Inventory" Value="INVENTORY"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumContainerType" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum Description="Case" Value="Case"/>
+            <Enum Description="Pallet" Value="Pallet"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumConsUnplanInvMode" Size="20" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+        <Enumeration>
+            <Enum
+                Description="Always Use: Unplanned Inventory will always be considered." Value="ALL"/>
+            <Enum
+                Description="Only When Inquiring: Unplanned Inventory will only be considered when inquiring (only API's that inquire)." Value="INQ"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumCarrierType" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum Description="Less-than Truck Load" Value="LTL"/>
+            <Enum Description="Truck Load" Value="TL"/>
+            <Enum Description="Parcel" Value="PARCEL"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumMoveRequestStatus" Size="40" Type="NCHAR">
+        <UIType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum Description="Move Request Created" Value="CREATED"/>
+            <Enum Description="Move Request Released" Value="RELEASED"/>
+            <Enum Description="Move Request Closed" Value="CLOSED"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumNodeControlType" Size="20" Type="NVARCHAR">
+        <UTType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum Description="Inventory is on hold." Value="ON_HOLD"/>
+            <Enum Description="Inventory is idle." Value="IDLE_ASSET"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumInvoiceStatus" Size="15" Type="NCHAR">
+        <UTType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum Description="Invoice Created." Value="00"/>
+            <Enum Description="Published to external system." Value="01"/>
+            <Enum Description="Voided." Value="02"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumInvCheckCode" Size="24" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates node has no available inventory." Value="NOINV"/>
+            <Enum
+                Description="Indicates node has sufficient inventory for the line." Value="INFINV"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="Number20" NegativeAllowed="false" Size="20" Type="NUMBER"/>
+    <DataType Name="OrgSuffix" Size="8" Type="NVARCHAR"/>
+    <DataType Name="ContactUserId" Size="60" Type="NVARCHAR"/>
+    <DataType Name="CreditCardExpDate" Size="30" Type="NVARCHAR"/>
+    <DataType Name="MobileShortProductClass" Size="10" Type="NCHAR">
+        <UIType Size="4" UITableSize="4"/>
+    </DataType>
+    <DataType Name="MobileProductClass" Size="10" Type="NCHAR">
+        <UIType Size="6" UITableSize="6"/>
+    </DataType>
+    <DataType Name="NumOfDays" Size="4" Type="NUMBER"/>
+    <DataType Name="LevelOfService" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="EnumModeledAs" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum Description="Case" Value="Case"/>
+            <Enum Description="Pallet" Value="Pallet"/>
+            <Enum Description="Location" Value="Location"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumAttributeDataType" Size="20" Type="NVARCHAR">
+        <UTType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum Description="Allowed Value is a Decimal." Value="DECIMAL"/>
+            <Enum Description="Allowed Value is a Boolean." Value="BOOLEAN"/>
+            <Enum Description="Allowed Value is an Integer." Value="INTEGER"/>
+            <Enum Description="Allowed Value is a Text." Value="TEXT"/>
+            <Enum Description="Allowed Value is a Date." Value="DATE"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="PricingStatus" Size="40" Type="NVARCHAR">
+        <Enumeration>
+            <Enum Description="Indicates that pricing entity is active." Value="ACTIVE"/>
+            <Enum
+                Description="Indicates that pricing entity is not active." Value="INACTIVE"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="CouponId" Size="120" Type="NVARCHAR"/>
+    <DataType Name="Text-240" Size="240" Type="NVARCHAR"/>
+    <DataType DecimalDigits="6" Name="Price" Size="19" Type="NUMBER">
+        <UIType Size="7" UITableSize="7"/>
+    </DataType>
+    <DataType DecimalDigits="2" Name="PercentAdjustment" Size="5" Type="NUMBER"/>
+    <DataType Name="EnumAssignmentCustomerType" Size="2" Type="NCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that this assignment is for business customer." Value="01"/>
+            <Enum
+                Description="Indicates that this assignment is for consumer customer." Value="02"/>
+            <Enum
+                Description="Indicates that this assignment is for anonymous customer." Value="03"/>
+            <Enum
+                Description="Indicates that this assignment is for everyone." Value="04"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumRuleType" Size="40" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that this rule is applied based on combination of items in the order." Value="COMBINATION"/>
+            <Enum
+                Description="Indicates that this rule is applied based on order total before shipping or tax." Value="ORDER_TOTAL"/>
+            <Enum
+                Description="Indicates that this rule is applied based on item and it's quantity in the order." Value="ITEM_QUANTITY"/>
+            <Enum
+                Description="Indicates that the rule is for applying a surcharge." Value="SURCHARGE"/>
+            <Enum
+                Description="Indicates that the rule is for excluding certain items, categories or attributes from all pricing rules." Value="GLOBAL_EXCLUSION"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumRuleCategory" Size="40" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that this rule belongs to pricing category. This rule generates adjustments for extended price of a line or for order total before shipping and tax." Value="PRICING"/>
+            <Enum
+                Description="Indicates that this rule belongs to shipping category. This rule generates shipping surcharge for a line or adjustment on shipping charge of the order." Value="SHIPPING"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumPricingAdjustmentType" Size="40" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Applicable only for shipping order total rule. A flat fee action generates an adjustment such that the shipping charge is discounted to the value specified in the adjustment." Value="FLAT_FEE"/>
+            <Enum
+                Description="Indicates that the adjustment is a percentage on the unit price of an item or order total before shipping and tax or on the shipping charge of an item for shipping rules." Value="PERCENT"/>
+            <Enum
+                Description="Indicates that the adjustment is a absolute value on the unit price of an item or order total before shipping and tax for pricing rules or on the shipping charge of an item for shipping rules." Value="ABSOLUTE"/>
+            <Enum
+                Description="Indicates the rule is for fixed cost for a particular item or combination of multiple items." Value="FIXED_LINE_PRICE"/>
+            <Enum
+                Description="Applicable only for shipping item quantity rule. Indicates that the adjustment is a absolute value on the total shipping charge across all applicable items." Value="ABSOLUTE_TOTAL"/>
+            <Enum
+                Description="Applicable only for shipping item quantity rule. A flat fee total action generates an adjustment such that the total shipping charge across all applicable items is discounted to the value specified in the adjustment." Value="FLAT_FEE_TOTAL"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumPricingExclusivityType" Size="40" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Can combine with any other pricing Rule.  (default value)" Value="ALL"/>
+            <Enum
+                Description="Cannot combine with Pricing Rules of same RuleType for same Item." Value="RULE_TYPE_ITEM"/>
+            <Enum
+                Description="Cannot combine with Pricing Rules of same RuleType for same Item instance." Value="RULE_TYPE_ITEM_INST"/>
+            <Enum
+                Description="Cannot combine with Pricing Rules of same RuleType for same Order." Value="RULE_TYPE_ORDER"/>
+            <Enum
+                Description="Cannot combine with any other Pricing rule within the same id" Value="ONE_RULE_WITHIN_ID"/>
+            <Enum
+                Description="Cannot combine with any other Pricing rule" Value="GLOBAL"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumTargetItemDeterminationRule" Size="20" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that the adjustment is to be applied on item with the lowest unit price." Value="LOW_PRICED_ITEM"/>
+            <Enum
+                Description="Indicates that the adjustment is to be applied on item with the highest unit price." Value="HIGH_PRICED_ITEM"/>
+            <Enum
+                Description="Indicates that the adjustment is to be applied on item with the same or less unit price than any item on which the pricing rule is triggered." Value="SAME_LOW_PRICE_ITEM"/>
+            <Enum
+                Description="This value is used when defining combination rules with target as 'All items in order', but excludes certain items." Value="ALL_ITEMS"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumQualifierAmountType" Size="40" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="This rule condition satisfies only when trigger item's unit price is greater or equal to the value in the QUALIFIER_AMOUNT column." Value="TRIGGER_MINIMUM_UNIT_PRICE"/>
+            <Enum
+                Description="This rule condition satisfies only when the sum of trigger items' extended prices is greater or equal to the value in the QUALIFIER_AMOUNT column." Value="TRIGGER_MINIMUM_TOTAL_EXTENDED_PRICE"/>
+            <Enum
+                Description="This rule condition satisfies only when the sum of the trigger items' extended prices plus any already applied discounts to the trigger items is greater or equal to the value in the QUALIFIER_AMOUNT column." Value="TRIGGER_MINIMUM_CUMULATIVE_EXT_PRICE"/>
+            <Enum
+                Description="This rule condition satisfies only when the target item's unit price is greater or equal to the value in QUALIFIER_AMOUNT column." Value="TARGET_MINIMUM_UNIT_PRICE"/>
+            <Enum
+                Description="This rule condition satisfies only when the sum of target items' extended prices is greater or equal to the value in the QUALIFIER_AMOUNT column." Value="TARGET_MINIMUM_TOTAL_EXTENDED_PRICE"/>
+            <Enum
+                Description="This rule condition satisfies only when the sum of the target items' extended prices plus any already applied discounts to the target items is greater or equal to the value in the QUALIFIER_AMOUNT column." Value="TARGET_MINIMUM_CUMULATIVE_EXT_PRICE"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumIncludeOrExclude" Size="40" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that combination of item and quantity is used to trigger the pricing rule." Value="INCLUDE"/>
+            <Enum
+                Description="Indicates that combination of item and quantity is used to filter out the pricing rule." Value="EXCLUDE"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumRuleApplicationType" Size="40" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that the rule adjustment is applicable on one unit of target item." Value="SINGLE_ITEM"/>
+            <Enum
+                Description="Indicates that the rule adjustment is applicable on all units of target item." Value="ALL"/>
+            <Enum
+                Description="Indicates that the rule adjustment is applicable on the target item, as many times as the rule condition is satisfied. Applicable only for combination type of rules." Value="EACH_COMBINATION"/>
+            <Enum
+                Description="Indicates that the rule adjustment is applicable on specific units of target item" Value="SPECIFIC_NUMBER"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumPricingShippingChargeActionType" Size="10" Type="NVARCHAR">
+        <Enumeration>
+            <Enum Description="Item Quantity" Value="IQ"/>
+            <Enum Description="Total Weight" Value="TW"/>
+            <Enum
+                Description="Order Total (before applying order level discounts" Value="OTBD"/>
+            <Enum
+                Description="Order Total (after applying order level discounts" Value="OTAD"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumPricingShippingDelMethod" Size="10" Type="NVARCHAR">
+        <Enumeration>
+            <Enum Description="Delivery at Customer Address" Value="DEL"/>
+            <Enum Description="Shipping" Value="SHP"/>
+            <Enum Description="Pickup by the user" Value="PICK"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="YSCManageOrDeleteOperation" Size="6" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Creates a new record if a matching record doesn't exist. If it does exist, it modifies the matching record." Value="Manage"/>
+            <Enum Description="Deletes the matching record." Value="Delete"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumItemOperatorCode" Size="40" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that the rule condition is satisfied if all of the items in the condition is present." Value="ALL_ITEMS"/>
+            <Enum
+                Description="Indicates that the rule condition is satisfied if any of the item in the condition is present." Value="ANY_ITEM"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="Text-480" Size="480" Type="NVARCHAR"/>
+    <DataType Name="VARCHAR2-40" Size="40" Type="NVARCHAR"/>
+    <DataType Name="VARCHAR2-800" Size="800" Type="NVARCHAR"/>
+    <DataType Name="EnumCustomerStatus" Size="2" Type="NCHAR">
+        <Enumeration>
+            <Enum Description="Indicates that this customer is Active." Value="10"/>
+            <Enum Description="Indicates that this customer is On Hold." Value="20"/>
+            <Enum
+                Description="Indicates that this customer is Inactive." Value="30"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumInputCustomerType" Size="2" Type="NCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that the customer is a business." Value="01"/>
+            <Enum
+                Description="Indicates that the customer is a consumer." Value="02"/>
+            <Enum
+                Description="Indicates that the customer is anonymous." Value="03"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="DeliveryMethod" Size="40" Type="NVARCHAR">
+        <Enumeration>
+            <Enum Description="Indicates that the line is delivered." Value="DEL"/>
+            <Enum Description="Indicates that the line is shipped." Value="SHP"/>
+            <Enum Description="Indicates that the line is picked." Value="PICK"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="BundlePricingStrategy" Size="6" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Bundle pricing should only include the totals from the bundle parent." Value="PARENT"/>
+            <Enum
+                Description="Bundle pricing should only include the totals from the components of the bundle." Value="COMP"/>
+            <Enum
+                Description="Bundle pricing should include the totals from both the bundle parent and its components." Value="ALL"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="AssignmentStatus" Size="40" Type="NVARCHAR">
+        <Enumeration>
+            <Enum Description="Indicates that assignment is open." Value="OPEN"/>
+            <Enum
+                Description="Indicates that assignment is suggested to a user." Value="ASSIGNED"/>
+            <Enum Description="Indicates that assignment is completed." Value="COMPLETE"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="VarcharID-24" Size="24" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="VarcharShortStatus" Size="15" Type="NVARCHAR">
+        <UIType Size="10" UITableSize="10"/>
+    </DataType>
+    <DataType Name="NText-30" Size="30" Type="NVARCHAR"/>
+    <DataType Name="VarcharDistributionRuleId" Size="40" Type="NVARCHAR"/>
+    <DataType Name="VarcharShipNode" Size="24" Type="NVARCHAR">
+        <UIType Size="10" UITableSize="15"/>
+    </DataType>
+    <DataType Name="VarcharDocumentNo" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="EnumSearchIndexFilterType" Size="40" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates the normal filter based on item's attributes." Value="Normal"/>
+            <Enum
+                Description="Indicates the price range filter based on customer's assigned prices." Value="PriceRange"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="VText-5" Size="5" Type="NVARCHAR"/>
+    <DataType Name="CustomerAccessMode" Size="2" Type="NCHAR">
+        <Enumeration>
+            <Enum
+                Description="Normal access mode. The team can access all customer data." Value="01"/>
+            <Enum
+                Description="Restricted based on team. Access to customer data is restricted based on team assignments." Value="02"/>
+            <Enum
+                Description="Restricted based on user. Access to customer data is restricted based on direct customer assignments regardless of the Enterprise's manual assignment rule." Value="03"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="AuthorizationPaymentStatus" Size="15" Type="NVARCHAR">
+        <UIType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum
+                Description="Part of the order amount is pending authorization." Value="AWAIT_AUTH"/>
+            <Enum
+                Description="The authorization request has been sent, but a reply has not been received from the payment system. This status only occurs in asynchronous environments." Value="REQUESTED_AUTH"/>
+            <Enum
+                Description="The order amount is less than or equal to the authorized amount. When delayed reauthorization is configured, an AUTHORIZED status indicates that the order can move through the pipeline, but may not indicate full authorization." Value="AUTHORIZED"/>
+            <Enum Description="An authorization request failed." Value="FAILED_AUTH"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="PaymentStatus" Size="15" Type="NVARCHAR">
+        <UIType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum
+                Description="The payment information was not available at order creation or during authorization or charging. An order can also go to this state if the provided payment methods are insufficient to cover the order amount or the amount to be refunded." Value="AWAIT_PAY_INFO"/>
+            <Enum
+                Description="Part of the order amount is pending authorization." Value="AWAIT_AUTH"/>
+            <Enum
+                Description="The authorization request has been sent, but a reply has not been received from the payment system. This status only occurs in asynchronous environments." Value="REQUESTED_AUTH"/>
+            <Enum
+                Description="A charge request has been sent, but a reply has not been received from the payment system. This status only occurs in asynchronous environments." Value="REQUEST_CHARGE"/>
+            <Enum
+                Description="The order amount is less than or equal to the authorized amount. When delayed reauthorization is configured, an AUTHORIZED status indicates that the order can move through the pipeline, but may not indicate full authorization." Value="AUTHORIZED"/>
+            <Enum
+                Description="The order is invoiced completely and there is no open order amount." Value="INVOICED"/>
+            <Enum Description="The payment was collected for the order." Value="PAID"/>
+            <Enum Description="An authorization request failed." Value="FAILED_AUTH"/>
+            <Enum Description="A charge request failed." Value="FAILED_CHARGE"/>
+            <Enum
+                Description="The order is a draft order, the document type of the order does not need payment processing, or the seller organization does not need payment processing." Value="NOT_APPLICABLE"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="PossibleKey" Size="24" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="SecureCode" Size="2000" Type="NVARCHAR"/>
+    <DataType Name="ApprovalPlanPredecessorSeq" Size="2000" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^[0-9,]*$" JSPattern="^[0-9,]*$"/>
+		</Validation> -->
+    </DataType>
+    <DataType Name="OrderApprovalPredecessorOrderApprSeq" Size="2000" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^[0-9,]*$" JSPattern="^[0-9,]*$"/>
+		</Validation> -->
+    </DataType>
+    <DataType Name="FreeInstructionText" Size="4000" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+    </DataType>
+    <DataType Name="HoldReasonText" Size="254" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="FreeDescription-100" Size="100" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="FreeDescription-1500" Size="1500" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="CodeLongDescription" Size="255" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="ItemDesc" Size="200" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="OrderLineItemDesc" Size="100" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+    </DataType>
+    <DataType Name="FreeText-20" Size="20" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+    </DataType>
+    <DataType Name="FreeText-24" Size="24" Type="NCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="FreeText-30" Size="30" Type="NCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="FreeText-40" Size="40" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="FreeText-50" Size="50" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+        <UIType Size="25" UITableSize="25"/>
+    </DataType>
+    <DataType Name="FreeText-100" Size="100" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="FreeText-200" Size="200" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+    </DataType>
+    <DataType Name="FreeText-240" Size="200" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+    </DataType>
+    <DataType Name="FreeText-254" Size="254" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="FreeText-255" Size="255" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="FreeText-2000" Size="2000" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+        <UIType Size="50" UITableSize="50"/>
+    </DataType>
+    <DataType Name="OrderApprovalApproverComments" Size="2000" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+    </DataType>
+    <DataType Name="OrderApprovalRuleMessage" Size="200" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+    </DataType>
+    <DataType Name="PricingRuleDescription" Size="2000" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+    </DataType>
+    <DataType Name="ReasonDesc" Size="40" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^(.*[\s]*)*$" JSPattern="^(.*[\s]*)*$"/>
+		</Validation> -->
+        <UIType Size="15" UITableSize="15"/>
+    </DataType>
+    <DataType Name="ShipmentProfileID" Size="200" Type="NVARCHAR">
+        <!-- <Validation>
+				<Regex JavaPattern="^[a-zA-Z0-9.,!\-/+=_ |]*$" JSPattern="^[a-zA-Z0-9.,!\-/+=_ |]*$"/>
+		</Validation> -->
+    </DataType>
+    <DataType DisplaySeconds="false" Name="HourMinuteTimeStamp"
+        Size="17" Type="DATETIME">
+        <!-- <Validation>
+				<Regex JavaPattern="^[a-zA-Z0-9.,!\-/+=_ :]*$" JSPattern="^[a-zA-Z0-9.,!\-/+=_ :]*$"/>
+		</Validation> -->
+    </DataType>
+    <DataType Name="Createts" Size="17" Type="DATETIME">
+        <!-- <Validation>
+				<Regex JavaPattern="^[a-zA-Z0-9.,!\-/+=_ :]*$" JSPattern="^[a-zA-Z0-9.,!\-/+=_ :]*$"/>
+		</Validation> -->
+        <UIType Size="10" UITableSize="15"/>
+    </DataType>
+    <DataType Name="Modifyts" Size="17" Type="DATETIME">
+        <!-- <Validation>
+				<Regex JavaPattern="^[a-zA-Z0-9.,!\-/+=_ :]*$" JSPattern="^[a-zA-Z0-9.,!\-/+=_ :]*$"/>
+		</Validation> -->
+        <UIType Size="10" UITableSize="15"/>
+    </DataType>
+    <DataType Name="ApprovalPlanApprovalName" Size="200" Type="NVARCHAR"/>
+    <DataType Name="TaskTypeName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="PricelistName" Size="90" Type="NVARCHAR"/>
+    <DataType Name="PricingRuleName" Size="120" Type="NVARCHAR"/>
+    <DataType Name="ChargeName" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+    </DataType>
+    <DataType Name="OrderApprovalRuleRuleID" Size="40" Type="NVARCHAR"/>
+    <DataType Name="OrderApprovalRuleType" Size="10" Type="NVARCHAR">
+        <Enumeration>
+            <Enum Description="Header" Value="01"/>
+            <Enum Description="Line" Value="02"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="OrderApprovalRuleMessageCode" Size="100" Type="NVARCHAR"/>
+    <DataType Name="OrderApprovalStatus" Size="4" Type="NUMBER">
+        <Enumeration>
+            <Enum Description="Pending Approval" Value="1100"/>
+            <Enum Description="Pending Immediate Approval" Value="1150"/>
+            <Enum Description="Approved" Value="1200"/>
+            <Enum Description="Rejected" Value="1300"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="OrderApprovalCycle" Size="4" Type="NVARCHAR"/>
+    <DataType Name="PromotionGroup" Size="6" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that this promotion is intended for coupons." Value="COUPON"/>
+            <Enum
+                Description="Indicates that this promotion is intended for manual pricing rules." Value="MANUAL"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumIsManualCharge" Size="1" Type="NCHAR">
+        <UIType Size="1" UITableSize="1"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates that the charge was created manually." Value="Y"/>
+            <Enum
+                Description="Indicates that the charge was automatically generated through the pricing engine." Value="N"/>
+            <Enum
+                Description="Indicates that the charge was automatically generated through the pricing engine due to a manual pricing rule being applied." Value="M"/>
+        </Enumeration>
+    </DataType>
+    <DataType DecimalDigits="2" Name="CustomerRating"
+        NegativeAllowed="false" Size="5" Type="NUMBER" ZeroAllowed="true"/>
+    <DataType Name="GradeCode" Size="20" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="AuthReversalStrategy" Size="20" Type="NVARCHAR">
+        <UTType Size="10" UITableSize="10"/>
+        <Enumeration>
+            <Enum
+                Description="This strategy will never generate reversal requests for authorizations.  This is the default strategy." Value="NO_REVERSE"/>
+            <Enum
+                Description="This strategy will generate a reversal request for an authorization after it expires." Value="EXPIRED"/>
+            <Enum
+                Description="This strategy will still reverse authorizations that are expired, but it will also reverse authorizations that are in excess of either the order total or the CTR they are mapped to. In additon, any authorization that cannot be mapped to a CTR and is marked as unusable will also be reversed." Value="REVERSE_EXCESS"/>
+        </Enumeration>
+    </DataType>
+    <DataType DecimalDigits="2" Name="ExternalAmount"
+        NegativeAllowed="true" Size="15" Type="NUMBER">
+        <UIType Size="12" UITableSize="15"/>
+    </DataType>
+    <DataType Name="AttributeStatus" Size="40" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that the extended Attribute is mapped to a column in the hang-off of the Entity in TableName for the document type in DocumentType column." Value="PENDING"/>
+            <Enum
+                Description="Indicates that the attribute can be used for storing transaction data." Value="ACTIVE"/>
+            <Enum
+                Description="Indicates that the mapped column is not currently used." Value="INACTIVE"/>
+            <Enum
+                Description="Indicates that the corresponding Column can now be re-mapped to another Attribute." Value="DELETED"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="ChangeProjectStatus" Size="10" Type="NVARCHAR">
+        <Enumeration>
+            <Enum Description="Draft" Value="1000"/>
+            <Enum Description="Open" Value="1100"/>
+            <Enum Description="Work In Progress" Value="1100.50"/>
+            <Enum Description="Waiting for Approval" Value="1150"/>
+            <Enum Description="Approved" Value="1200"/>
+            <Enum Description="Being Published" Value="1200.50"/>
+            <Enum Description="Published" Value="1300"/>
+            <Enum Description="Rejected" Value="1400"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="ChangeRequestStatus" Size="10" Type="NVARCHAR">
+        <Enumeration>
+            <Enum Description="Draft" Value="1000"/>
+            <Enum Description="Open" Value="1100"/>
+            <Enum Description="Work In Progress" Value="1100.50"/>
+            <Enum Description="Completed" Value="1200"/>
+            <Enum Description="Published" Value="1300"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="DBOperation" Size="10" Type="NVARCHAR"/>
+    <DataType Name="Exported" Size="2" Type="NVARCHAR"/>
+    <DataType Name="ContainerCount" NegativeAllowed="false" Size="8" Type="NUMBER">
+        <UIType Size="8"/>
+    </DataType>
+    <DataType Name="EnumDelegationPurpose" Size="24" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that the user delegation is for quote approval." Value="QUOTE_APPROVAL"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="ApprovalGroupId" Size="24" Type="NVARCHAR"/>
+    <DataType Name="ApprovalGroupName" Size="40" Type="NVARCHAR"/>
+    <DataType Name="INVResourcePoolPurpose" Size="10" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that the resource pool is for delivery or provided services scheduling." Value="SERVICE"/>
+            <Enum
+                Description="Indicates that the resource pool is for special services." Value="SPLSERVICE"/>
+            <Enum
+                Description="Indicates that the resource pool is for dock scheduling." Value="DOCK"/>
+            <Enum Description="WMS Resource Planning" Value="WMS-RP"/>
+            <Enum
+                Description="Indicates that the resource pool availability should be consider when scheduling products." Value="INVENTORY"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="PaymentCaptureOperation" Size="20" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Creates a new record if a matching record doesn't exist. If it does exist, it modifies the matching record." Value="Manage"/>
+            <Enum
+                Description="Operates the same as Manage, except that the PaymentMethod will be suspend for charging." Value="Suspend"/>
+            <Enum
+                Description="Operates the same as Manage, except that the PaymentMethod will be suspend for both charges and refunds." Value="SuspendRefund"/>
+            <Enum
+                Description="Deletes the matching record, if possible.  If not possible, then the PaymentMethod will be suspended." Value="Delete"/>
+            <Enum
+                Description="Operates the same as Manage, but additionally executes the RequestedAmount against the payment user exits.  This Operation will execute partially in a separate transaction boundary and cannot be used with any of the order modification APIs or any APIs that modify orders." Value="Collect"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="PreviousChargeTransactionOperation" Size="20" Type="NVARCHAR">
+        <Enumeration>
+            <Enum
+                Description="Submits the OPEN ChargeTransactionDetail to the gateway in order to reattempt processing." Value="Retry"/>
+            <Enum
+                Descripttion="Process the ChargeTransactionDetail with an authorization code input by the user." Value="CallForAuthorization"/>
+            <Enum
+                Description="Submits the ChargeTransactionDetail to the voidChargeTransaction API." Value="Void"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="SyncTableID-40" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="25"/>
+    </DataType>
+    <DataType Name="AttributeDomainPurpose" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates that the attribute domain is intended for catalog attributes." Value="ITEM"/>
+            <Enum
+                Description="Indicates that the attribute domain is intended for entity custom attributes." Value="ENTITY_EXTN"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="VARCHAR2-10" Size="10" Type="NVARCHAR"/>
+    <DataType Name="VARCHAR2-20" Size="20" Type="NVARCHAR"/>
+    <DataType Name="VARCHAR2-50" Size="50" Type="NVARCHAR"/>
+    <DataType Name="VARCHAR2-100" Size="100" Type="NVARCHAR"/>
+    <DataType Name="VARCHAR2-200" Size="200" Type="NVARCHAR"/>
+    <DataType Name="VARCHAR2-2000" Size="2000" Type="NVARCHAR"/>
+    <DataType Name="CHAR-1" Size="1" Type="NCHAR"/>
+    <DataType Name="CHAR-24" Size="24" Type="NCHAR"/>
+    <DataType Name="CHAR-25" Size="25" Type="NCHAR"/>
+    <DataType Name="NUMBER-2" NegativeAllowed="true" Size="2" Type="NUMBER"/>
+    <DataType Name="NUMBER-4" NegativeAllowed="false" Size="4" Type="NUMBER"/>
+    <DataType Name="ViolationStatus" NegativeAllowed="false" Size="4" Type="NUMBER">
+        <UIType Size="4" UITableSize="4"/>
+        <Enumeration>
+            <Enum Description="Pending" Value="1100"/>
+            <Enum Description="Approved" Value="1200"/>
+            <Enum Description="Rejected" Value="1300"/>
+            <Enum Description="System Approved" Value="1400"/>
+            <Enum Description="System Rejected" Value="1500"/>
+            <Enum Description="Expired" Value="9000"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="NUMBER-10" NegativeAllowed="false" Size="10" Type="NUMBER"/>
+    <DataType Name="IsOverrideFlag" Size="1" Type="NCHAR">
+        <UIType Size="1" UITableSize="1"/>
+        <Enumeration>
+            <Enum
+                Description="Indicates that approval is required to proceed with the transaction." Value="X"/>
+            <Enum
+                Description="Indicates that the transaction is allowed and no approval is required" Value="Y"/>
+            <Enum
+                Description="Indicates that the transaction is not allowed." Value="Z"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="CallForAuthStatus" Size="20" Type="NVARCHAR">
+        <Enumeration>
+            <Enum Description="If a call for auth needs to be placed." Value="REQUIRES_CALL"/>
+            <Enum Description="Once the auth code has been entered." Value="AUTH_CODE_ACQUIRED"/>
+            <Enum
+                Description="Once the gateway has been communicated with and the funds have been transferred via the normal means." Value="CLOSED"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="ActivityPurpose" Size="2" Type="NCHAR">
+        <Enumeration>
+            <Enum Description="Inventory activity occurred." Value="10"/>
+            <Enum Description="Forced due to API call." Value="40"/>
+            <Enum Description="Related item activity change." Value="70"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="PriceTypeName" Size="120" Type="NVARCHAR"/>
+    <DataType Name="ImageID" Size="100" Type="NCHAR">
+        <UIType Size="20" UITableSize="25"/>
+    </DataType>
+    <DataType Name="AlertType" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum
+                Description="Deprecated. ATP_MONITOR for on hand availability." Value="ONHAND"/>
+            <Enum
+                Description="Deprecated. ATP_MONITOR for current availability." Value="CURRENT"/>
+            <Enum
+                Description="Deprecated. ATP_MONITOR for future availability." Value="FUTURE"/>
+            <Enum
+                Description="REALTIME_ATP_MONITOR for on hand availability." Value="REALTIME_ONHAND"/>
+            <Enum
+                Description="REALTIME_ATP_MONITOR for future maximum inventory within the horizon." Value="REALTIME_FUTURE_MAX"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="MigrationPhase" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum
+                Description="The initial Migration Phase. Migration has not started for existing records, and changes to RDBMS not will be propagated to Cassandra." Value="INITIAL"/>
+            <Enum
+                Description="All future RDBMS changes will be propagated to Cassandra." Value="BEGIN_PROPAGATION"/>
+            <Enum
+                Description="Existing records will be migrated from RDBMS to Cassandra. Changes to RDBMS will continue to be propagated to Cassandra." Value="BEGIN_MIGRATION"/>
+            <Enum
+                Description="Some applicable transactions will begin to operate using data from Cassandra." Value="BEGIN_VERIFICATION"/>
+            <Enum
+                Description="Applicable transactions will continue to operate using data from Cassandra. Reading from and writing to RDBMS will be discontinued for applicable tables/transactions." Value="COMPLETE_VERIFICATION"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="DoubleDigit" NegativeAllowed="false" Size="2" Type="NUMBER">
+        <UIType Size="2"/>
+    </DataType>
+    <DataType Name="LocationBarCode" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="LocationType" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="LocationSizeCode" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="StorageCode" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+    </DataType>
+    <DataType Name="CartLocationId" Size="40" Type="NVARCHAR"/>
+    <DataType Name="EnumWMSInventoryType" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+        <Enumeration>
+            <Enum Description="Single SKU Putaway" Value="SingleSku"/>
+            <Enum Description="Multi SKU Putaway" Value="MultiSku"/>
+            <Enum
+                Description="Putaway of pallets or cases without contents" Value="UnknownSku"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumMixConstraints" Size="1" Type="NCHAR">
+        <UIType Size="1" UITableSize="1"/>
+        <Enumeration>
+            <Enum Description="Always allow" Value="A"/>
+            <Enum Description="Allow only if license plated" Value="L"/>
+            <Enum Description="Never allow" Value="N"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumRecordType" Size="2" Type="NCHAR">
+        <Enumeration>
+            <Enum
+                Description="Indicates that the work area record applies to the Source Zone and Aisle" Value="01"/>
+            <Enum
+                Description="Indicates that the work area record applies to the Target Zone and Aisle" Value="02"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumExecutionException" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum Description="Pick Execution Exception" Value="PICK"/>
+            <Enum Description="Deposit Execution Exception" Value="DEPOSIT"/>
+            <Enum Description="Skip Execution Exception" Value="SKIP"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumLocationType" Size="40" Type="NVARCHAR">
+        <UIType Size="20" UITableSize="20"/>
+        <Enumeration>
+            <Enum Description="In Transit Location" Value="INTRANSIT"/>
+            <Enum Description="Staging Location" Value="STAGING"/>
+            <Enum Description="Virtual Location" Value="VIRTUAL"/>
+            <Enum Description="Regular Location" Value="REGULAR"/>
+            <Enum Description="Dock Location" Value="DOCK"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumFillCode" Size="1" Type="NCHAR">
+        <Enumeration>
+            <Enum Description="Empty" Value="0"/>
+            <Enum Description="Partially Full" Value="1"/>
+            <Enum Description="Full" Value="2"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumAdjustmentType" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum Description="Receipt" Value="RECEIPT"/>
+            <Enum Description="Return" Value="RETURN"/>
+            <Enum Description="Shipment" Value="SHIPMENT"/>
+            <Enum Description="Adjustment" Value="ADJUSTMENT"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumBuildPreference" Size="1" Type="NCHAR">
+        <UIType Size="1" UITableSize="1"/>
+        <Enumeration>
+            <Enum Description="Always" Value="A"/>
+            <Enum Description="Optional" Value="O"/>
+            <Enum Description="If tag or serial tracked" Value="T"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumCloseReceiptPreference" Size="1" Type="NCHAR">
+        <UIType Size="1" UITableSize="1"/>
+        <Enumeration>
+            <Enum Description="Close Now" Value="0"/>
+            <Enum
+                Description="Expected quantity at least equal to received quantity" Value="1"/>
+            <Enum Description="Stock putaway" Value="2"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumVarianceType" Size="20" Type="NVARCHAR">
+        <Enumeration>
+            <Enum Description="Missing" Value="Missing"/>
+            <Enum Description="New" Value="New"/>
+            <Enum Description="No Variance" Value="No Variance"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumTaskGranularity" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum Description="Request" Value="REQUEST"/>
+            <Enum Description="Variance" Value="VARIANCE"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumPickAlgorithmCode" Size="20" Type="NVARCHAR">
+        <Enumeration>
+            <Enum Description="Pick to clean" Value="PICK_TO_CLEAN"/>
+            <Enum Description="Least number of trips" Value="LEAST_TRIPS"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumPriority" NegativeAllowed="false" Size="10" Type="NUMBER">
+        <Enumeration>
+            <Enum Description="Urgent" Value="1"/>
+            <Enum Description="High" Value="2"/>
+            <Enum Description="Normal" Value="3"/>
+            <Enum Description="Low" Value="4"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="EnumActivityGroup" Size="40" Type="NVARCHAR">
+        <UIType Size="30" UITableSize="30"/>
+        <Enumeration>
+            <Enum Description="Replenishment" Value="REPLENISHMENT"/>
+            <Enum Description="Outbound Picking" Value="OUTBOUND_PICKING"/>
+            <Enum Description="Receipt" Value="RECEIPT"/>
+            <Enum Description="Count" Value="COUNT"/>
+            <Enum Description="Value Added Services" Value="VAS"/>
+            <Enum Description="Packing" Value="PACK"/>
+            <Enum Description="Outbound Inventory Container Build" Value="OUTBOUND_INVENTORY_CONTAINER_BUILD"/>
+            <Enum Description="Shipping Container Build" Value="SHIPPING_CONTAINER_BUILD"/>
+            <Enum Description="Shipping" Value="SHIP"/>
+            <Enum Description="Inspection" Value="INSPECTION"/>
+        </Enumeration>
+    </DataType>
+    <DataType Name="PoolParam" Size="128" Type="NVARCHAR">
+        <Validation>
+            <Rule Extends="sma-datatypes-abstract-rule-1"/>
+        </Validation>
+    </DataType>
+    <DataType Name="PropValParam" Size="100" Type="NVARCHAR">
+        <Validation>
+            <Rule Extends="sma-datatypes-abstract-rule-1"/>
+        </Validation>
+    </DataType>
+</DataTypes>

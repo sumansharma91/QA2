@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.customer.loyalty.CustomerLoyaltyDetailsBehaviorController"
+    requestMethodSupported="POST" screenId="extn.customer.loyalty.CustomerLoyaltyDetails">
+    <MashupRefs>
+        <MashupRef extnType="ADD" 
+            mashupId="extn_getRewardsList"
+            mashupRefId="extn_getRewardsList_RefID" permissionId=""/>
+    </MashupRefs>
+</Controller>

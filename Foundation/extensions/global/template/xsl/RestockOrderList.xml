@@ -1,0 +1,7 @@
+<OrderList LastOrderHeaderKey="2014103016424773955254" LastRecordSet="Y" ReadFromHistory="" TotalOrderList="1">
+<Order BillToID="1454" CustomerEMailID="invalid11314@111314email.com" CustomerFirstName="Faith" CustomerLastName="Charityy" CustomerPONo="09808140901008899100" DocumentType="0001" EnteredBy="9808" EnterpriseCode="VSI.com" EntryType="STORE" OrderDate="2014-10-30T16:35:43-04:00" OrderHeaderKey="2014103016424773955254" OrderNo="09808140901008899100" OrderType="POS" SCAC="" ScacAndService="" SellerOrganizationCode="VSI.com">
+<OrderLines>
+<OrderLine Status="" CustomerPONo="09808140901008899100" DeliveryMethod="PICK" LineType="PICK_IN_STORE" OrderHeaderKey="2014103016424773955254" OrderLineKey="2014103016424873955255" OrderedQty="1" PrimeLineNo="1" SCAC="" ScacAndService="" ShipNode="9998" SubLineNo="1"/>
+  </OrderLines>
+  </Order>
+  </OrderList>

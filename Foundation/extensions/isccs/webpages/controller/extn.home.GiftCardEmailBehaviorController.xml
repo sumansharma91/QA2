@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.home.GiftCardEmailBehaviorController"
+    requestMethodSupported="POST" screenId="extn.home.GiftCardEmail">
+    <MashupRefs>
+        <MashupRef extnType="ADD" 
+            mashupId="extn_triggerEmailOnVGCRefund"
+            mashupRefId="extn_triggerEmailOnVGCRefund_Ref_Id" permissionId=""/>
+
+    </MashupRefs>	
+	
+	
+</Controller>

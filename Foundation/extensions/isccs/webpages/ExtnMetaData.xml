@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Extensions>
+    <Identifier id="">
+        <UIExtns>
+            <UIExtn appScreen="isccs.home.portlets.OrderPortlet"
+                extnScreen="extn.home.portlets.OrderPortletExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.home.portlets.ProductPortlet"
+                extnScreen="extn.home.portlets.ProductPortletExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.home.portlets.CustomerPortlet"
+                extnScreen="extn.home.portlets.CustomerPortletExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.home.Home"
+                extnScreen="extn.home.HomeExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.home.portlets.ProductPortlet"
+                extnScreen="extn.home.portlets.ProductPortletExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.editors.HomeEditorRT"
+                extnScreen="extn.editors.HomeEditorRTExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.item.browsing.ItemBrowsing"
+                extnScreen="extn.item.browsing.ItemBrowsingExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.order.create.customer.CustomerIdentification"
+                extnScreen="extn.order.create.customer.CustomerIdentificationExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.order.create.customer.CustomerPreview"
+                extnScreen="extn.order.create.customer.CustomerPreviewExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.customer.details.CustomerDetails"
+                extnScreen="extn.customer.details.CustomerDetailsExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.customer.create.CreateContact"
+                extnScreen="extn.customer.create.CreateContactExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.order.search.OrderSearch"
+                extnScreen="extn.order.search.OrderSearchExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.customer.search.CustomerListScreen"
+                extnScreen="extn.customer.search.CustomerListScreenExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.customer.search.CustomerSearch"
+                extnScreen="extn.customer.search.CustomerSearchExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.editors.CustomerEditorRT"
+                extnScreen="extn.editors.CustomerEditorRTExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.order.details.OrderTotal"
+                extnScreen="extn.order.details.OrderTotalExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.common.address.filter.AddressFilter"
+                extnScreen="extn.common.address.filter.AddressFilterExtn" type="diffrential">
+                <IdentifierList>
+                    <Identifier identifierId="US" type="change"/>
+                </IdentifierList>
+            </UIExtn>
+            <UIExtn
+                appScreen="isccs.order.customerAppeasement.CustomerAppeasementSelection"
+                extnScreen="extn.order.customerAppeasement.CustomerAppeasementSelectionExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.order.customerAppeasement.CustomerAppeasementOrderLineList"
+                extnScreen="extn.order.customerAppeasement.CustomerAppeasementOrderLineListExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.order.customerAppeasement.CustomerAppeasementOptions"
+                extnScreen="extn.order.customerAppeasement.CustomerAppeasementOptionsExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.order.create.additems.AddItemsLines"
+                extnScreen="extn.order.create.additems.AddItemsLinesExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.order.fulfillmentSummary.FSPickupScreen"
+                extnScreen="extn.order.fulfillmentSummary.FSPickupScreenExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.editors.OrderEditorRT"
+                extnScreen="extn.editors.OrderEditorRTExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.order.cancel.CancelOrderListScreen"
+                extnScreen="extn.order.cancel.CancelOrderListScreenExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.order.details.OrderSummaryLines"
+                extnScreen="extn.order.details.OrderSummaryLinesExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.order.cancel.CancelOrderBaseScreen"
+                extnScreen="extn.order.cancel.CancelOrderBaseScreenExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.order.details.OrderSummary"
+                extnScreen="extn.order.details.OrderSummaryExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.common.paymentCapture.PaymentCapture"
+                extnScreen="extn.common.paymentCapture.PaymentCaptureExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.common.paymentCapture.PaymentCapture_StoredValue"
+                extnScreen="extn.common.paymentCapture.PaymentCapture_StoredValueExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.common.paymentCapture.PaymentCapture_CreditCard"
+                extnScreen="extn.common.paymentCapture.PaymentCapture_CreditCardExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.common.paymentCapture.PaymentCapture_Other"
+                extnScreen="extn.common.paymentCapture.PaymentCapture_OtherExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.order.fulfillmentSummary.FSUnavailableShippingListScreen"
+                extnScreen="extn.order.fulfillmentSummary.FSUnavailableShippingListScreenExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.order.fulfillmentSummary.FSShippingScreen"
+                extnScreen="extn.order.fulfillmentSummary.FSShippingScreenExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.payment.confirmation.PaymentConfirmation"
+                extnScreen="extn.payment.confirmation.PaymentConfirmationExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.order.create.additems.AddItems"
+                extnScreen="extn.order.create.additems.AddItemsExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.order.fulfillmentSummary.FulfillmentSummaryDetailsScreen"
+                extnScreen="extn.order.fulfillmentSummary.FulfillmentSummaryDetailsScreenExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.common.address.display.AddressDisplay"
+                extnScreen="extn.common.address.display.AddressDisplayExtn" type="diffrential">
+                <IdentifierList>
+                    <Identifier identifierId="US" type="change"/>
+					<Identifier identifierId="CA" type="change"/>
+                </IdentifierList>
+            </UIExtn>
+            <UIExtn
+                appScreen="isccs.order.create.additems.AddItemsLinesFulfillmentDetails"
+                extnScreen="extn.order.create.additems.AddItemsLinesFulfillmentDetailsExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.common.alternateStore.StoreSelection"
+                extnScreen="extn.common.alternateStore.StoreSelectionExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.order.fulfillmentSummary.FSPickupLinesWithNoShipnode"
+                extnScreen="extn.order.fulfillmentSummary.FSPickupLinesWithNoShipnodeExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.order.addModifyCharges.AddModifyChargesPopup"
+                extnScreen="extn.order.addModifyCharges.AddModifyChargesPopupExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.order.details.OrderPricingSummary"
+                extnScreen="extn.order.details.OrderPricingSummaryExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.order.fulfillmentSummary.FSUnavailablePickupListScreen"
+                extnScreen="extn.order.fulfillmentSummary.FSUnavailablePickupListScreenExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.order.search.OrderListScreen"
+                extnScreen="extn.order.search.OrderListScreenExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.home.portlets.ReturnsPortlet"
+                extnScreen="extn.home.portlets.ReturnsPortletExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.item.browsing.ItemBrowsingList"
+                extnScreen="extn.item.browsing.ItemBrowsingListExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.item.browsing.ItemBrowsingPreview"
+                extnScreen="extn.item.browsing.ItemBrowsingPreviewExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.item.details.ItemDetails"
+                extnScreen="extn.item.details.ItemDetailsExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.invoice.InvoiceDetails"
+                extnScreen="extn.invoice.InvoiceDetailsExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.payment.inquiry.PaymentInquiry"
+                extnScreen="extn.payment.inquiry.PaymentInquiryExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.alert.create.CreateAlert"
+                extnScreen="extn.alert.create.CreateAlertExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.alert.manage.ManageAlert"
+                extnScreen="extn.alert.manage.ManageAlertExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.order.fulfillmentSummary.CarrierServicePopup"
+                extnScreen="extn.order.fulfillmentSummary.CarrierServicePopupExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.order.details.ImportantEvents"
+                extnScreen="extn.order.details.ImportantEventsExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.payment.confirmation.PaymentMethod"
+                extnScreen="extn.payment.confirmation.PaymentMethodExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.return.create.lines.AddReturnLines"
+                extnScreen="extn.return.create.lines.AddReturnLinesExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.return.create.lines.ExistingOrderLine"
+                extnScreen="extn.return.create.lines.ExistingOrderLineExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.return.create.fulfillmentSummary.ReturnFSShippingGroup"
+                extnScreen="extn.return.create.fulfillmentSummary.ReturnFSShippingGroupExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.order.create.address.AddressEntry"
+                extnScreen="extn.order.create.address.AddressEntryExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.return.create.fulfillmentSummary.ReturnFSCustomerKeepGroup"
+                extnScreen="extn.return.create.fulfillmentSummary.ReturnFSCustomerKeepGroupExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.shipment.reship.ReshipShipmentLine"
+                extnScreen="extn.shipment.reship.ReshipShipmentLineExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.order.addModifyCharges.ChargeFields"
+                extnScreen="extn.order.addModifyCharges.ChargeFieldsExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.order.addModifyCharges.AddModifyChargesPopup"
+                extnScreen="extn.order.addModifyCharges.AddModifyChargesPopupExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.return.details.ReturnSummary"
+                extnScreen="extn.return.details.ReturnSummaryExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.return.details.ReturnSummaryLines"
+                extnScreen="extn.return.details.ReturnSummaryLinesExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.return.details.ReturnLineSummary"
+                extnScreen="extn.return.details.ReturnLineSummaryExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.order.details.OrderLineSummary"
+                extnScreen="extn.order.details.OrderLineSummaryExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.alert.manage.details.DefaultAlert"
+                extnScreen="extn.alert.manage.details.DefaultAlertExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.editors.ReturnEditorRT"
+                extnScreen="extn.editors.ReturnEditorRTExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.shipment.shipmentTracking.lineStatePanels.ShipTrackShipping"
+                extnScreen="extn.shipment.shipmentTracking.lineStatePanels.ShipTrackShippingExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.order.create.additems.OverridePricePopup"
+                extnScreen="extn.order.create.additems.OverridePricePopupExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.return.create.lines.ReturnOrderLines"
+                extnScreen="extn.return.create.lines.ReturnOrderLinesExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.customer.create.address.ManageCustomerAddresses"
+                extnScreen="extn.customer.create.address.ManageCustomerAddressesExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.common.address.capture.AddressCapture"
+                extnScreen="extn.common.address.capture.AddressCaptureExtn" type="diffrential">
+                <IdentifierList>
+                    <Identifier identifierId="US" type="change"/>
+                    <Identifier identifierId="CA" type="change"/>
+                </IdentifierList>
+            </UIExtn>
+            <UIExtn
+                appScreen="isccs.common.address.capture.AddressCapturePage"
+                extnScreen="extn.common.address.capture.AddressCapturePageExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.common.notes.CustomerNoteDisplay"
+                extnScreen="extn.common.notes.CustomerNoteDisplayExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.common.notes.CustomerNote"
+                extnScreen="extn.common.notes.CustomerNoteExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.common.customer.BusinessCard"
+                extnScreen="extn.common.customer.BusinessCardExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.order.create.customer.CreateOrderCustomerListScreen"
+                extnScreen="extn.order.create.customer.CreateOrderCustomerListScreenExtn" type="diffrential"/>
+            <UIExtn appScreen="isccs.order.orderHold.ResolveHold"
+                extnScreen="extn.order.orderHold.ResolveHoldExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.shipment.shipmentTracking.lineStatePanels.ShipTrackPickup"
+                extnScreen="extn.shipment.shipmentTracking.lineStatePanels.ShipTrackPickupExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.shipment.shipmentTracking.LineTracking"
+                extnScreen="extn.shipment.shipmentTracking.LineTrackingExtn" type="diffrential"/>
+            <UIExtn
+                appScreen="isccs.shipment.shipmentTracking.ShipmentTracking"
+                extnScreen="extn.shipment.shipmentTracking.ShipmentTrackingExtn" type="diffrential"/>
+        </UIExtns>
+    </Identifier>
+</Extensions>

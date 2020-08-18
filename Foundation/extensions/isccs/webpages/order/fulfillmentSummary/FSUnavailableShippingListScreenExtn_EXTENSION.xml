@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="FSUnavailableShippingListScreenExtn"
+        extnPackage="extn.order.fulfillmentSummary"
+        originalScreen="isccs.order.fulfillmentSummary.FSUnavailableShippingListScreen"
+        originalScreenPackage="isccs.order.fulfillmentSummary" type="diffrential">
+        <Items>
+            <Button _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="changeToPickup" disabled="false"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="OLST_listGrid_ScRowSelect"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="extn_InitScreen"/>
+                </Subscriber>
+                <Subscriber eventId="OLST_listGrid_ScHeaderSelect"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="extn_InitScreen"/>
+                </Subscriber>
+                <Subscriber eventId="OLST_listGrid_ScRowDeselect"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="extn_InitScreen"/>
+                </Subscriber>
+                <Subscriber eventId="OLST_listGrid_ScHeaderDeselect"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="extn_InitScreen"/>
+                </Subscriber>
+                <Subscriber eventId="afterScreenInit" isExtn="true" sequence="51">
+                    <Handler methodName="extn_InitScreen"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+    </ScreenExtension>
+</ExtensionMetaData>

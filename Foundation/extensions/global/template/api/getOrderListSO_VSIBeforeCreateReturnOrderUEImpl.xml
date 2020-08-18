@@ -1,0 +1,20 @@
+<OrderList>
+	<Order OrderHeaderKey="" CustomerEMailID="" CustomerPONo="" DocumentType="" EnteredBy=""  EnterpriseCode="" EntryType="" OrderNo="" OrderType="" PaymentStatus="" SCAC="" ScacAndService="" SellerOrganizationCode="" OrderDate="" CustCustPONo="">
+		<OrderLines>
+			<OrderLine OrderLineKey="" OrderedQty="" DerivedFromOrderLineKey="" DerivedFromOrderHeaderKey="">
+				<LinePriceInfo ListPrice="" RetailPrice="" UnitPrice="" />
+				<LineCharges>
+					<LineCharge ChargeAmount="" ChargeCategory="" ChargeName="" ChargeNameKey="" ChargePerLine="" ChargePerUnit="" InvoicedChargeAmount="" InvoicedChargePerLine="" InvoicedChargePerUnit="" IsBillable="" IsDiscount="" IsManual="" IsRefundable="" IsShippingCharge="" Reference="" >
+					<Extn />
+					</LineCharge>
+				</LineCharges>
+				<LineTaxes>
+					<LineTax ChargeCategory="" ChargeName="" ChargeNameKey="" InvoicedTax="" Reference_1="" Reference_2="" Reference_3="" Tax="" TaxName="" TaxPercentage="" RemainingTax="" > 
+					<Extn />
+					</LineTax>
+				</LineTaxes>
+			</OrderLine>
+		</OrderLines>
+		<HeaderCharges><HeaderCharge ChargeAmount="" ChargeCategory="" ChargeName=""/></HeaderCharges>
+	</Order>
+</OrderList>

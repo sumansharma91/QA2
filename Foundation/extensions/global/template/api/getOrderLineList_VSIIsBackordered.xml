@@ -1,0 +1,6 @@
+<OrderLineList>
+<OrderLine OrderHeaderKey="" LineType="" ShipNode="" ConditionVariable1="" OrderedQty="" CustomerPONo="">
+<Extn ExtnIsBackordered="" ExtnLastPickDate="" ExtnLastPickDateForCancel=""/>
+<Item ItemID=""/>
+</OrderLine>
+</OrderLineList>

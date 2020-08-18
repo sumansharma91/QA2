@@ -1,0 +1,9 @@
+<Shipments>
+	<Shipment CustomerPoNo="" ShipNode="" EnterpriseCode="">
+		<ShipmentLines>
+			<ShipmentLine  ItemDesc="" ItemID="" OrderHeaderKey="" OrderLineKey="" OrderNo="" OriginalQuantity="" OverShipQuantity="" PrimeLineNo="" ProductClass="" Quantity="" ShipmentKey="" ShipmentLineKey="" >
+				<OrderLine ChainedFromOrderHeaderKey="" ChainedFromOrderLineKey="" LineType=""  OrderHeaderKey="" OrderLineKey="" OrderedQty="" OrderingUOM="" OriginalOrderedQty="" QuantityToSplit="" ReceivedQty="" ReceivingNode="" ReqDeliveryDate="" ReqShipDate="" ShipNode="" ShipToID="" ShipToKey="" ShipTogetherNo="" ShippedQuantity="" StatusQuantity="" InvoicedQuantity=""/>
+			</ShipmentLine>
+		</ShipmentLines>
+	</Shipment>
+</Shipments>

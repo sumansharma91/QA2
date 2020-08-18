@@ -1,0 +1,47 @@
+<%/*******************************************************************************
+Licensed Materials - Property of IBM
+IBM Sterling Selling And Fulfillment Suite
+(C) Copyright IBM Corp. 2005, 2013 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ ********************************************************************************/%>
+<%@ page import="java.util.*" %>
+<%@ include file="/console/jsp/editable_table_utils.jspf" %>
+
+<%
+		String sOperation = request.getParameter("userOperation");
+		int iNumOrderLines = 0;
+		 YFCElement errors = (YFCElement)request.getAttribute("YFC_EXCEPTIONXML");
+		YFCElement oNewOrder = null;
+		YFCElement oNewOrderLines = null;
+		YFCElement oExistingOrder = null;
+		YFCElement oExistingOrderLines = null;
+		YFCElement detailAPIRoot = (YFCElement) request.getAttribute("Order"); //Detail API Output
+
+		if(detailAPIRoot != null)
+			oExistingOrderLines = detailAPIRoot.getChildElement("OrderLines");
+			
+		if(!isVoid(errors) || equals(sOperation,"Y") || equals(sOperation,"DELETE"))
+		{
+			YFCElement root = (YFCElement)request.getAttribute("getRequestDOMOutput");
+			if(root != null)
+			{
+				oNewOrder = root.getChildElement("Order");
+				if(oNewOrder != null)
+					oNewOrderLines = oNewOrder.getChildElement("OrderLines");
+			}
+			mergeDOMGeneral("Order",oNewOrderLines,oExistingOrderLines,"OrderLines","OrderLine","OrderLineKey","chkEntityKey","SubLineNo");
+		}
+		else
+		{
+			
+			//Need to check if it's a blank draft order.if so, add 8 blank rows
+			if(oExistingOrderLines != null)
+			{
+				YFCNodeList oLineList = oExistingOrderLines.getElementsByTagName("OrderLine");
+				iNumOrderLines = oLineList.getLength();
+				if(iNumOrderLines <= 0)
+					appendBlankTemplateNodesGeneral(oExistingOrderLines,"OrderLine","chkEntityKey");
+			}
+		}
+
+%>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="CreateOrderCustomerListScreenExtn"
+        extnPackage="extn.order.create.customer"
+        originalScreen="isccs.order.create.customer.CreateOrderCustomerListScreen"
+        originalScreenPackage="isccs.order.create.customer" type="diffrential">
+        <MashupRefs>
+            <Behavior>
+                <MashupRef extnType="MODIFY"
+                    mashupId="customerIdentification_getCustomerList" mashupRefId="getCustomerList"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

@@ -1,0 +1,40 @@
+<DBSchema>
+	<Entities>
+		<Entity TableName="YFS_ORDER_AUDIT_LEVEL" OverrideDefaultFilters="Y">
+			<Attributes>			
+					<Attribute ColumnName="MODIFICATION_LEVEL" AttributeQuery="IN">
+						<AttributeValues>
+							<AttributeValue Value="ORDER"/>
+							<AttributeValue Value="ORDER_LINE"/>
+							</AttributeValues>
+							</Attribute>
+			</Attributes>
+		</Entity>
+		<Entity TableName="YFS_HEADER_CHARGES" DriverEntity="YFS_ORDER_TS_TAG"  NumberOfLoadIntervals="2">
+			<Attributes/>
+			<RelationShips>
+				<RelationShip   ForeignEntity="YFS_ORDER_TS_TAG">
+					<Attribute Name="HEADER_KEY" ParentName="ORDER_HEADER_KEY"/>
+				</RelationShip>
+			</RelationShips>
+		</Entity>		
+		<Entity TableName="YFS_CALENDAR">
+			<Attributes/>			
+		</Entity>
+		<Entity TableName="YFS_CALENDAR_SHIFT">
+			<Attributes/>			
+		</Entity>
+		<Entity TableName="YFS_CALENDAR_SHIFT_EFF_PERD">
+			<Attributes/>			
+		</Entity>
+		<Entity TableName="YFS_CALENDAR_DAY_EXCP">
+			<Attributes/>			
+		</Entity>
+		<Entity TableName="YFS_CALENDAR_EXCP_SHIFT">
+			<Attributes/>			
+		</Entity>
+		<Entity TableName="YFS_TAX_BREAKUP" DriverEntity="">
+			<Attributes/>			
+		</Entity>
+	</Entities>
+</DBSchema>	

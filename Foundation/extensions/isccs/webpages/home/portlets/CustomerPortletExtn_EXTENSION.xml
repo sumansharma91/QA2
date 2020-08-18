@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="CustomerPortletExtn"
+        extnPackage="extn.home.portlets"
+        originalScreen="isccs.home.portlets.CustomerPortlet"
+        originalScreenPackage="isccs.home.portlets" type="diffrential">
+        <Items>
+            <FilteringSelect _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="cb_customerEnterprise" renderHidden="true"/>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="bCreateConsumer" renderHidden="false"/>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="bCreateBusiness" renderHidden="true"/>
+            <RadioButtonSet _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="radHomeCustomerType" renderHidden="false"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtOrganizationName" renderHidden="true"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtContactEmail" label="$(_scBundle:extn_Contact_Email)"/>
+            <TextField _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="txtContactEmail"
+                label="$(_scSimpleBundle:extn_Healthy_Awards_)" uId="extn_textfield_HealthyAwards">
+                <BindingData>
+                    <SourceBinding namespace="initializeModel" path="Customer.CustomerID"/>
+                    <TargetBindings>
+                        <TargetBinding namespace="getCustomerList_input"
+                            path="Customer.CustomerID" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtPhoneNo_Customer" label="$(_scBundle:extn_Primary_Phone)"/>
+            <TextField _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="txtContactEmail" uId="txtPhoneNo_Customer"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="afterScreenInit" isExtn="true" sequence="56">
+                    <Handler methodName="initScreen"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Behavior>
+                <MashupRef extnType="MODIFY"
+                    mashupId="home_getCustomerList" mashupRefId="getCustomerList"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

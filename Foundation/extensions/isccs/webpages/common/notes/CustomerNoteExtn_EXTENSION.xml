@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="CustomerNoteExtn"
+        extnPackage="extn.common.notes"
+        originalScreen="isccs.common.notes.CustomerNote"
+        originalScreenPackage="isccs.common.notes" type="diffrential">
+        <Items>
+            <ContentPane _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="remove"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="_extensibilityHiddenWidgetsHolder" uId="systemMessagePanelPopup"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

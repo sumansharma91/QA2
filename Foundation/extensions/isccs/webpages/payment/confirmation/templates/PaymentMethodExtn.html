@@ -1,0 +1,74 @@
+		<div>
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Link" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'lnkEdit' , 
+		renderHidden : false , 
+		disabled : false  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Link" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'lnkHideAuths' , 
+		renderHidden : false  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Link" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'lnkShowAuths' , 
+		renderHidden : true  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="gridx/Grid" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		'class' : 'paymentTransactions' , 
+		_sc_extensibility_referenceUId : 'listAuths' , 
+		renderHidden : false  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	structure : 	[
+	 		{
+		 field : 			'extn_Response_Code'
+,
+		 _sc_extensibility_operation : 			'insert'
+,
+		 _sc_extensibility_moveOrder : 			'1'
+,
+		 _sc_extensibility_referenceUId : 			'clmAuthCollected'
+,
+		 width : 			'15%'
+,
+		 name : 			this.getSimpleBundleString('extn_Response_Code')
+,
+		 uId : 			'extn_listAuths_view_Response_Code'
+,
+		 _sc_extensibility_position : 			'before'
+	}
+,
+	 		{
+		 _sc_extensibility_operation : 			'change'
+,
+		 _sc_extensibility_referenceUId : 			'clmAuthDate'
+,
+		 width : 			'20%'
+,
+		 uId : 			'clmAuthDate'
+	}
+	]
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'txtCvv' , 
+		renderHidden : true , 
+		disabled : true  
+	 					}">
+		 	</div>  
+		</div>

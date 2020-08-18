@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.common.address.capture.AddressCapturePageExtnBundle" screenId="extn.common.address.capture.AddressCapturePageExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="extn_checkbox_defaultShipTo_CheckBox_label"
+            bundleKey="Make_Default_Ship_To"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_checkbox_defaultShipTo"/>
+    </BundleEntries>
+</ScreenBundle>

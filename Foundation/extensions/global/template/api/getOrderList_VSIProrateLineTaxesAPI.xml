@@ -1,0 +1,19 @@
+<OrderList>
+	<Order OrderType="" EntryType="" EnterpriseCode="" DocumentType="">
+		<OrderLines>
+			<OrderLine OrderLineKey="" >
+				<LineOverallTotals LineTotal="" Tax=""/>
+				<LineTaxes>
+					<LineTax ChargeCategory="" ChargeName="" ChargeNameKey="" InvoicedTax="" Reference1="" Reference2="" Reference3="" RemainingTax="" Tax="" TaxName="" TaxPercentage=""/>
+				</LineTaxes>
+			</OrderLine>
+		</OrderLines>
+		<OverallTotals GrandTax="" GrandTotal="" HdrCharges="" HdrTax="" HdrTotal="" LineSubTotal=""/>
+		<HeaderTaxes>
+			<HeaderTax  ChargeCategory="" ChargeName="" ChargeNameKey="" InvoicedTax="" Reference1="" Reference2="" Reference3="" RemainingTax="" Tax="" TaxName="" TaxPercentage="" TaxableFlag=""/>
+		</HeaderTaxes>
+		<HeaderCharges>
+			<HeaderCharge ChargeAmount="" ChargeCategory="" ChargeName="" IsDiscount=""/>
+		</HeaderCharges>
+	</Order>
+</OrderList>

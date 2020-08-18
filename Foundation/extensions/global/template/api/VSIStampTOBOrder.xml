@@ -1,0 +1,103 @@
+<Order BillToID="" CustomerEMailID=""
+                    CustomerFirstName="" CustomerLastName=""
+                    CustomerPONo="" DocumentType="" EnteredBy=""
+                    EnterpriseCode="" EntryType="" MessageType=""
+                    OrderDate="" OrderHeaderKey="" OrderNo=""
+                    OrderType="" OriginalTotalAmount="" SCAC=""
+                    ScacAndService="" SellerOrganizationCode="" Status="" DraftOrderFlag="" >
+					<OverallTotals GrandTotal="" />
+                    <Extn/>
+                    <OrderLines>
+                        <OrderLine CustomerPONo="" DeliveryMethod=""
+                            LineType="" OrderHeaderKey=""
+                            OrderLineKey="" OrderedQty="" FulfillmentType="" PrimeLineNo=""
+                            ReqDeliveryDate="" ReqShipDate="" SCAC=""
+                            ScacAndService="" ShipNode="" Status="" SubLineNo="">
+							<Extn />
+							<Shipnode ShipNode="" >
+							<ShipNodePersonInfo ZipCode="" />
+</Shipnode>							
+                            <Item ItemDesc="" ItemID="" ProductClass="" UnitOfMeasure="">
+                                <Extn ExtnTaxProductCode=""/>
+                            </Item>
+                            <ItemDetails ItemDesc="" ItemID=""
+                                ProductClass="" UnitOfMeasure="">
+                                <Extn ExtnTaxProductCode=""/>
+                            </ItemDetails>
+                            <ItemAliasList>
+                                <ItemAlias AliasName="" AliasValue=""/>
+                            </ItemAliasList>
+                            <PersonInfoShipTo AddressLine1=""
+                                AddressLine2="" AddressLine3=""
+                                AddressLine4="" AddressLine5=""
+                                AddressLine6="" AlternateEmailID=""
+                                Beeper="" City="" Company="" Country=""
+                                DayFaxNo="" DayPhone="" Department=""
+                                EMailID="" EveningFaxNo=""
+                                EveningPhone="" FirstName="" JobTitle=""
+                                LastName="" MiddleName="" MobilePhone=""
+                                OtherPhone="" PersonID="" State=""
+                                Suffix="" Title="" ZipCode=""/>
+                            <LinePriceInfo TaxableFlag="" LineTotal="" UnitPrice=""/>
+                            <LineCharges>
+                                <LineCharge ChargeCategory="" ChargeNameKey=""
+                                    ChargeName="" ChargePerLine="" IsManual="" >
+                                    <Extn/>
+                                </LineCharge>
+                            </LineCharges>
+                            <LineTaxes>
+                                <LineTax Tax="" TaxName="" TaxableFlag="">
+                                    <Extn/>
+                                </LineTax>
+                            </LineTaxes>
+                            <Notes>
+                                <Note ContactUser="" NoteText=""/>
+                                <Note ContactUser="" NoteText=""/>
+                            </Notes>
+                            <Promotions>
+                                <Promotion Action="" DenialReason=""
+                                    ExclusivityId="" ExclusivityType=""
+                                    IsExternal=""
+                                    OverrideAdjustmentValue=""
+                                    OverrideMaxAdjustment="" Priority=""
+                                    PromotionApplied=""
+                                    PromotionCategory="" PromotionId="" PromotionType="">
+                                    <Extn ExtnCouponID=""/>
+                                </Promotion>
+                            </Promotions>
+                            <LineOverallTotals/>
+                            <Instructions>
+                                <Instruction/>
+                            </Instructions>
+                        </OrderLine>
+                    </OrderLines>
+                    <Notes>
+                        <Note NoteText=""/>
+                    </Notes>
+                    <HeaderCharges>
+                        <HeaderCharge ChargeAmount="" ChargeCategory="" ChargeName=""/>
+                        <HeaderCharge ChargeAmount="" ChargeCategory="" ChargeName=""/>
+                    </HeaderCharges>
+                    <HeaderTaxes>
+                        <HeaderTax>
+                            <Extn/>
+                        </HeaderTax>
+                    </HeaderTaxes>
+                    <PersonInfoBillTo AddressLine1="North Bergen"
+                        AddressLine2="" AddressLine3="" AddressLine4=""
+                        AlternateEmailID="" Beeper="" City="" Company=""
+                        Country="" DayPhone="" Department="" EMailID=""
+                        EveningPhone="" FirstName="" JobTitle=""
+                        LastName="" MiddleName="" MobilePhone=""
+                        OtherPhone="" PersonID="" State="" Suffix="" ZipCode=""/>
+                    <Promotions>
+                        <Promotion Action="" DenialReason=""
+                            ExclusivityId="" ExclusivityType=""
+                            IsExternal="" OverrideAdjustmentValue=""
+                            OverrideMaxAdjustment="" Priority=""
+                            PromotionApplied="" PromotionCategory=""
+                            PromotionId="" PromotionType="">
+                            <Extn ExtnCouponID=""/>
+                        </Promotion>
+                    </Promotions>
+                </Order>

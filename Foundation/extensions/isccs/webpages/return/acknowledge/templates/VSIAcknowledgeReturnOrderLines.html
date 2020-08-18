@@ -1,0 +1,257 @@
+<div class="sc-platform-screen-default returnOrderlinelistscreen">
+    <!-- Licensed Materials - Property of IBM IBM Call Center for Commerce
+    (5725-P82) (C) Copyright IBM Corp. 2013 All Rights Reserved. US Government
+    Users Restricted Rights - Use, duplication or disclosure restricted by
+    GSA ADP Schedule Contract with IBM Corp. -->
+    <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		'class' : 'listScreen' , 
+		uId : 'LST_ListScreenContent' , 
+		'aria-live' : 'assertive'  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	'aria-label' : 			this.getSimpleBundleString('Region_Search_return')
+			}
+		}
+" role='region'>
+
+
+
+	<div data-dojo-type="sc/plat/dojo/layout/AdvancedTableLayout" data-dojo-props="		cols : 2 , 
+		customClass : 'returnReviewLines'  
+ ">
+
+
+        <div data-dojo-type="gridx/Grid" data-dojo-props="		spanLabel : true , 
+		selectRowTriggerOnCell : true ,
+		autoWidth : false , 
+		uId : 'OLST_listGrid' , 
+		autoHeight : true , 
+		cacheClass : 'gridx/core/model/cache/Async'  
+ 			 , modules : 	[
+	 		{
+				moduleClass : 'gridx/modules/IndirectSelect',
+			},
+	 		{
+				moduleClass : 'gridx/modules/RowHeader'
+			},
+	 		{
+				moduleClass : 'gridx/modules/select/Row',
+				multiple : false
+			},
+	 		{
+				moduleClass : 'gridx/modules/Edit'
+			},
+	 		{
+				moduleClass : 'gridx/modules/CellWidget'
+			},
+	 		{
+				moduleClass : 'gridx/modules/CellWidget'
+			},
+	 		{
+				moduleClass : 'gridx/modules/NavigableCell'
+			}
+	]
+		,scParamDataFn :
+		 function() { 
+			return { 
+			 	toolBar : 	[
+	]
+,	
+			 	structure : 	[
+	 		{
+		 field : 			'Product_ReturnItems'
+,
+		 uId : 			'tblColItem'
+,
+		 bindingData : 	{
+		 sFieldBinding : 	{
+		 path : 			'ItemDetails.PrimaryInformation.ExtendedDisplayDescription'
+,
+		 dynamicBindingFunc : 			''
+,
+		 dynamicBindingPackage : 			''
+,
+		 dynamicBindingClassName : 			''
+	}
+	}
+,
+		 aria_label : 			this.getSimpleBundleString('Label_Product')
+,
+		 width : 			'20%'
+,
+		 name : 			this.getSimpleBundleString('Label_Product')
+	}
+,
+	 		{
+		 field : 			'ReturnOrderQuantity'
+,
+		 uId : 			'tblColQuantity'
+,
+		 bindingData : 	{
+		 sFieldBinding : 	{
+		 path : 			'ReturnableQty'
+,
+		 dynamicBindingFunc : 			''
+,
+		 dynamicBindingPackage : 			''
+	}
+	}
+,
+		 aria_label : 			this.getSimpleBundleString('ReceivableQuantity')
+,
+		 width : 			'12%'
+,
+		 name : 			this.getSimpleBundleString('ReceivableQuantity')
+	}
+,
+
+	 		{
+		 field : 			'ReceivedQuantity'
+,
+		 uId : 			'tblColReceivedQuantity'
+,
+		 bindingData : 	{
+		 sFieldBinding : 	{
+		 path : 			'ReceivedQty'
+	}
+	}
+,
+		 aria_label : 			this.getSimpleBundleString('ReceivedQuantity')
+,
+		 width : 			'12%'
+,
+		 name : 			this.getSimpleBundleString('ReceivedQuantity')
+	}
+	 		
+	]
+,	
+			 	bindingData : 	{
+		 targetBinding : 	[
+	]
+,
+		 sourceBinding : 	{
+		 path : 			'OrderLines.OrderLine'
+,
+		 namespace : 			'getOrderHeaderInfo'
+	}
+	}
+,	
+			 	bodyLoadingInfo : 			this.getSimpleBundleString('Loading')
+,	
+			 	bodyEmptyInfo : 			this.getSimpleBundleString('NoSearchResults')
+			}
+		}
+"></div>
+
+
+
+
+<div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 
+		'class' : 'listScreenPreviewContainer' , 
+		uId : 'previewPanelContainer' , 
+		'aria-live' : 'assertive'  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	'aria-label' : 			this.getSimpleBundleString('Region_orderline_details')
+			}
+		}
+" role='region'>
+
+
+
+
+<div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		'class' : 'informationPanel' , 
+		uId : 'pnlNoReturnLines' , 
+		renderHidden : false  ,
+		width : 			'70%',
+		autoWidth : false
+ ">
+                    <div data-dojo-type="sc/plat/dojo/widgets/Label" data-dojo-props="		uId : 'lblNoCriteriaSelected'  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	value : 			this.getSimpleBundleString('SelectProductsToAcknowledge')
+			}
+		}
+"></div>
+                </div>
+
+				
+				<div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		uId : 'pnlReturnOrderLines'  ,
+				renderHidden : true 
+ ">
+                    <div data-dojo-type="sc/plat/dojo/widgets/ControllerWidget" data-dojo-props="
+				uId: 'previewPanel',
+				packageName: 'extn.return.acknowledge',
+				className: 'VSIAcknowledgeReturnArticleDisposition',
+				handleInit: true,
+			scParamDataFn: function() {
+				return {
+			 screenMode : 			'ReturnDetails'
+						 ,
+			 	bindingData : 	{
+		 fwdbindingData : 	{
+		 sourceMapping : 	[
+	 		{
+		 childpath : 			'OrderLine'
+,
+		 childnamespace : 			'selectedOrderLine'
+,
+		 parentpath : 			'OrderLine'
+,
+		 parentnamespace : 			'selectedOrderLine'
+	}
+,
+{
+		 childpath : 			''
+,
+		 childnamespace : 			'getReturnDispositionList_output'
+,
+		 parentpath : 			''
+,
+		 parentnamespace : 			'getReturnDispositionList_output'
+	}
+,
+	 		{
+		 childpath : 			''
+,
+		 childnamespace : 			'getReturnReasonList_output'
+,
+		 parentpath : 			''
+,
+		 parentnamespace : 			'getReturnReasonList_output'
+	}
+,
+			{
+		 childpath : 			''
+,
+		 childnamespace : 			'acknowledgeReturn_getReturnDCList_input'
+,
+		 parentpath : 			''
+,
+		 parentnamespace : 			'acknowledgeReturn_getReturnDCList_input'
+	}
+,
+	 		{
+		 childpath : 			'Order'
+,
+		 childnamespace : 			'getCompleteOrderLineList_output'
+,
+		 parentpath : 			'Order'
+,
+		 parentnamespace : 			'getCompleteOrderLineList_output' 
+	}
+	]
+	}
+	}
+				}
+			}"></div>
+                </div>
+            </div>
+			
+			</div>
+				
+
+    </div>
+</div>

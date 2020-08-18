@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="OrderPricingSummaryExtn"
+        extnPackage="extn.order.details"
+        originalScreen="isccs.order.details.OrderPricingSummary"
+        originalScreenPackage="isccs.order.details" type="diffrential">
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="onSelectAdjustment" isExtn="true" sequence="51">
+                    <Handler methodName="checkMigratedOrderFlag"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+    </ScreenExtension>
+</ExtensionMetaData>

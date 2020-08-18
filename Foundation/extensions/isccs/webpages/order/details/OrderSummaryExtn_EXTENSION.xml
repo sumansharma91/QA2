@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="OrderSummaryExtn"
+        extnPackage="extn.order.details"
+        originalScreen="isccs.order.details.OrderSummary"
+        originalScreenPackage="isccs.order.details" type="diffrential">
+        <Items>
+            <DataLabel _sc_extensibility_moveOrder="3"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="lblOrderDateDisplay"
+                label="$(_scSimpleBundle:OrderDate)" uId="extn_datalabel_OrderDateDisplay">
+                <BindingData>
+                    <SourceBinding
+                        dynamicBindingFunc="getOrderDateWithTime"
+                        namespace="getCompleteOrderDetails_output" path="Order"/>
+                </BindingData>
+            </DataLabel>
+            <Link _sc_extensibility_moveOrder="9"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lblOrderDateDisplay" uId="lnkTotalAmountDisplay"/>
+            <DataLabel _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="lblChannelDisplay"
+                label="$(_scBundle:Name)"
+                title="$(_scSimpleBundle:blank)"
+                uId="extn_datalabel_Name" value="$(_scSimpleBundle:blank)">
+                <BindingData>
+                    <SourceBinding dynamicBindingFunc="getFirstLastName"
+                        namespace="getCompleteOrderDetails_output" path="Order.CustomerLastName"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblEnterpriseCodeDisplay" renderHidden="true"/>
+            <DataLabel _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblOrderDateDisplay" renderHidden="true"/>
+            <DataLabel _sc_extensibility_moveOrder="3"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lnkTotalAmountDisplay"
+                label="$(_scBundle:OrderDate)"
+                title="$(_scBundle:OrderDate)" uId="extn_datalabel_Order_Date">
+                <BindingData>
+                    <SourceBinding
+                        namespace="getCompleteOrderDetails_output" path="Order.Createts"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_moveOrder="4"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lnkTotalAmountDisplay"
+                label="$(_scBundle:extn_Healthy_Awards_)" uId="extn_datalabel_Healthy_Awards"/>
+            <DataLabel _sc_extensibility_moveOrder="5"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="pnlStatusHolder" uId="extn_datalabel_Order_Date"/>
+            <DataLabel _sc_extensibility_moveOrder="6"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lblOrderDateDisplay" uId="extn_datalabel_Order_Date"/>
+            <DataLabel _sc_extensibility_moveOrder="7"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lblOrderDateDisplay" uId="extn_datalabel_Healthy_Awards"/>
+            <DataLabel _sc_extensibility_moveOrder="8"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lblOrderDateDisplay" uId="extn_datalabel_Name"/>
+            <DataLabel _sc_extensibility_moveOrder="10"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lblOrderDateDisplay" uId="lblChannelDisplay"/>
+            <Label _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblOrderNo" label="$(_scSimpleBundle:blank)"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="afterScreenLoad" isExtn="true" sequence="51">
+                    <Handler
+                        description="Check whether this is a migrated order by checking /Order/Extn/@ExtnIsMigratedOrder" methodName="checkMigratedOrderFlag"/>
+                </Subscriber>
+                <Subscriber eventId="adressChanged" isExtn="true" sequence="51">
+                    <Handler methodName="handleAddressChange"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Init>
+                <MashupRef extnType="MODIFY"
+                    mashupId="orderSummary_getCompleteOrderDetails" mashupRefId="getCompleteOrderDetails"/>
+            </Init>
+            <Behavior>
+                <MashupRef extnType="ADD" mashupId="extn_changeOrder" mashupRefId="extn_changeOrder"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

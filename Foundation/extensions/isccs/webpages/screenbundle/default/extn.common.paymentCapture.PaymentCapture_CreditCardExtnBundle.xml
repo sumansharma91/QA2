@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.common.paymentCapture.PaymentCapture_CreditCardExtnBundle" screenId="extn.common.paymentCapture.PaymentCapture_CreditCardExtn">
+    <BundleEntries>
+        <BundleEntry bundleEntryId="extn_cardNumber_TextField_label"
+            bundleKey="CardNumber" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_cardNumber"/>
+    </BundleEntries>
+</ScreenBundle>

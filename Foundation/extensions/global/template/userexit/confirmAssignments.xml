@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 
+Licensed Materials - Property of IBM
+IBM Sterling Selling And Fulfillment Suite
+(C) Copyright IBM Corp. 2005, 2013 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ -->
+<!--confirmAssignments Input XML-->
+<Order TransactionId="" AllocationRuleID="" AuthorizationExpirationDate="" BillToID=""
+    BuyerOrganizationCode="" CarrierAccountNo="" CarrierServiceCode=""
+    ChargeActualFreightFlag="" CustomerEMailID="" CustomerPONo=""
+    DeliveryCode="" Division="" DocumentType="" DraftOrderFlag=""
+    EnteredBy="" EnterpriseCode="" EntryType="" 
+    FreightTerms="" HoldFlag="" HoldReasonCode="" MaxOrderStatus=""
+    MaxOrderStatusDesc="" MinOrderStatus="" MinOrderStatusDesc=""
+    NotificationReference="" NotificationType=""
+    NotifyAfterShipmentFlag="" OrderDate="" OrderHeaderKey=""
+    OrderName="" OrderNo="" OrderType="" OriginalTax=""
+    OriginalTotalAmount="" OtherCharges="" PaymentStatus=""
+    PersonalizeCode="" PriceProgramKey="" PriorityCode=""
+    PriorityNumber="" Purpose="" ReceivingNode="" ReqCancelDate="" ReqDeliveryDate=""
+    ReqShipDate="" SCAC="" ScacAndService="" ScacAndServiceKey=""
+    SearchCriteria1="" SearchCriteria2="" SellerOrganizationCode=""
+    ShipCompleteFlag="" ShipToID="" Status="" TaxExemptFlag=""
+    TaxExemptionCertificate="" TaxJurisdiction="" TaxPayerId=""
+    TermsCode="" TotalAdjustmentAmount="" isHistory="">
+    <OrderLines>
+        <OrderLine AllocationDate="" CarrierAccountNo=""
+            CarrierServiceCode="" CustomerLinePONo="" CustomerPONo=""
+            DeliveryCode="" DeliveryMethod="" DepartmentCode="" 
+            FreightTerms="" HoldFlag="" HoldReasonCode=""
+            ImportLicenseExpDate="" ImportLicenseNo="" InvoicedQty=""
+            KitCode="" LineSeqNo="" LineType="" MaxLineStatus=""
+            MaxLineStatusDesc="" MinLineStatus="" MinLineStatusDesc=""
+            OpenQty=""  OrderHeaderKey="" OrderLineKey=""
+            OrderedQty="" OrigOrderLineKey="" OriginalOrderedQty=""
+            OtherCharges="" IntentionalBackorder=""
+            PackListType="" PersonalizeCode=""
+            PersonalizeFlag="" PickableFlag="" PrimeLineNo="" Purpose=""
+            ReceivingNode="" RemainingQty="" ReshipParentLineKey="" ReqCancelDate=""
+            ReqDeliveryDate="" ReqShipDate="" ReservationID=""
+            ReservationPool="" SCAC="" ScacAndService=""
+            ScacAndServiceKey="" ShipNode="" ShipToID=""
+            ShipTogetherNo="" SplitQty="" Status="" StatusQuantity=""
+            SubLineNo="" TotalBackOrderedQty="" 
+            TotalHeldQty="" TotalOpenQty="" 
+            TotalReservedQty="" isHistory="">
+            <Extn ExtnIsGWP=""/>
+            <Item CostCurrency="" CountryOfOrigin="" CustomerItem=""
+                CustomerItemDesc="" ECCNNo="" HarmonizedCode="" ISBN=""
+                ItemDesc="" ItemID="" ItemShortDesc="" ItemWeight=""
+                ItemWeightUOM="" KitCode="" ManufacturerItem=""
+                ManufacturerItemDesc="" ManufacturerName="" NMFCClass=""
+                NMFCCode="" NMFCDescription="" ProductClass=""
+                ProductLine="" ScheduleBCode="" SupplierItem=""
+                SupplierItemDesc="" TaxProductCode="" UPCCode=""
+                UnitCost="" UnitOfMeasure=""/>
+            <PersonInfoShipTo AddressLine1="" AddressLine2=""
+                AddressLine3="" AddressLine4="" AddressLine5=""
+                AddressLine6="" AlternateEmailID="" Beeper="" City=""
+                Company="" Country="" DayFaxNo="" DayPhone=""
+                Department="" EMailID="" EveningFaxNo="" EveningPhone=""
+                FirstName="" JobTitle="" LastName="" MiddleName=""
+                MobilePhone="" OtherPhone="" PersonID=""
+                PersonInfoKey="" State="" Suffix="" Title="" ZipCode=""/>
+             <Schedules>
+                <Schedule ScheduleId="" TotalAssignedQty="" TotalBackOrderedQty="" TotalOpenQty="" TotalQuantityFromUnplannedInventory="" TotalReservedQty="" ShipNode="" ProcureFromNode="" ProductAvailabilityDate="">
+                    <ShipNodes>
+                        <ShipNode AssignedQty="" ShipNode=""/>
+                    </ShipNodes>
+                </Schedule>
+             </Schedules>
+			 <LinePriceInfo LineTotal="" />
+			 <OrderLineSourcingControls>
+				<OrderLineSourcingCntrl InventoryCheckCode="" Node="" ReasonText=""/>
+			</OrderLineSourcingControls>
+        </OrderLine>
+    </OrderLines>
+    <PersonInfoShipTo AddressLine1="" AddressLine2="" AddressLine3=""
+        AddressLine4="" AddressLine5="" AddressLine6=""
+        AlternateEmailID="" Beeper="" City="" Company="" Country=""
+        DayFaxNo="" DayPhone="" Department="" EMailID="" EveningFaxNo=""
+        EveningPhone="" FirstName="" JobTitle="" LastName=""
+        MiddleName="" MobilePhone="" OtherPhone="" PersonID=""
+        PersonInfoKey="" State="" Suffix="" Title="" ZipCode=""/>
+            <OrderDates>
+                <OrderDate ActualDate="" DateTypeId=""
+                    ExpectedDate="" RequestedDate=""/>
+            </OrderDates>
+</Order>

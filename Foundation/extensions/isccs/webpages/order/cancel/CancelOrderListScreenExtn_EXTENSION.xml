@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="CancelOrderListScreenExtn"
+        extnPackage="extn.order.cancel"
+        originalScreen="isccs.order.cancel.CancelOrderListScreen"
+        originalScreenPackage="isccs.order.cancel" type="diffrential">
+        <Items>
+            <GridX _sc_extensibility_operation="change" _sc_extensibility_referenceUId="OLST_listGrid">
+                <Structure>
+                    <Layout>
+                        <View _sc_extensibility_moveOrder="1"
+                            _sc_extensibility_operation="move"
+                            _sc_extensibility_position="before"
+                            _sc_extensibility_referenceUId="tblColProductAddItems" uId="tblColUnitPrice"/>
+                        <View _sc_extensibility_moveOrder="2"
+                            _sc_extensibility_operation="move"
+                            _sc_extensibility_position="before"
+                            _sc_extensibility_referenceUId="tblColDeliveryMethod" uId="tblColUnitPrice"/>
+                        <View _sc_extensibility_operation="change"
+                            _sc_extensibility_referenceUId="tblColProductAddItems"
+                            name="$(_scSimpleBundle:extn_Item)" uId="tblColProductAddItems"/>
+                        <View _sc_extensibility_operation="change"
+                            _sc_extensibility_referenceUId="tblColHasInvoiced"
+                            hidden="true" uId="tblColHasInvoiced"/>
+                    </Layout>
+                </Structure>
+            </GridX>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

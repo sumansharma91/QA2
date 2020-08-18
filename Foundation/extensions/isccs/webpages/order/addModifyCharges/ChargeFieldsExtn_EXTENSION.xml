@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ChargeFieldsExtn"
+        extnPackage="extn.order.addModifyCharges"
+        originalScreen="isccs.order.addModifyCharges.ChargeFields"
+        originalScreenPackage="isccs.order.addModifyCharges" type="diffrential">
+        <Items>
+            <CurrencyTextBox _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txt_chargeAmount" label="$(_scBundle:Amount)"/>
+            <FilteringSelect _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="cmbApplyTo"
+                defaultValue="CPL" renderHidden="true"/>
+            <DataLabel _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txt_chargeAmount"
+                label="$(_scBundle:ApplyTo)" uId="extn_Apply_To" value="$(_scSimpleBundle:ChargePerLine)"/>
+            <TextField _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="cmbApplyTo"
+                label="$(_scBundle:extn_coupon_number)" uId="extn_coupon_number">
+                <BindingData>
+                    <SourceBinding
+                        namespace="getCompleteOrderDetails_output" path="HeaderCharge.Reference"/>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="getCompleteOrderDetails_input"
+                            path="Reference" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_moveOrder="3"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txt_chargeName"
+                label="$(_scSimpleBundle:extn_Tracking_Number)"
+                renderHidden="true" uId="extn_textfield_TrackingNumber">
+                <BindingData>
+                    <SourceBinding
+                        namespace="getCompleteOrderDetails_output" path="Order.Extn.ExtnOriginalTrackingNo"/>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="getCompleteOrderDetails_input"
+                            path="ExtnOriginalTrackingNo" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </TextField>
+        </Items>
+        <Namespaces>
+            <SourceNamespaces>
+                <Source isExtn="true"
+                    scExtensibilityArrayItemId="extn_SourceNamespaces_7" value="extn_TrackingNo_CommonCode_Output"/>
+            </SourceNamespaces>
+        </Namespaces>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="txt_chargeAmount_onChange"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="validateChargeAmount"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Init>
+                <MashupRef callSequence="1" extnType="MODIFY"
+                    mashupId="order_getChargeCategoryList"
+                    mashupRefId="getChargeCategoryList" sequence="5"/>
+                <MashupRef extnType="ADD"
+                    mashupId="extn_TrackingNo_CommonCode"
+                    mashupRefId="extn_getTrackingNo_CommonCode" sourceNamespace="extn_TrackingNo_CommonCode_Output"/>
+            </Init>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

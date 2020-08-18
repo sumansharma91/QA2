@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Order BuyerOrganizationCode="" SellerOrganizationCode="" DocumentType="" PaymentStatus="" EnterpriseCode="" OrderType="" OrderPurpose="" OrderName="" LevelOfService="" CurrentUserRole="" SourceType="" OrderNo="" OrderHeaderKey="" >
+<OrderLines>
+<OrderLine LineType=""/>
+</OrderLines>
+   <PriceInfo Currency="" EnterpriseCurrency="" ReportingConversionDate="" ReportingConversionRate="" TotalAmount=""/>
+<OrderStatuses>
+<OrderStatus Status=""/>
+</OrderStatuses>
+</Order>
+

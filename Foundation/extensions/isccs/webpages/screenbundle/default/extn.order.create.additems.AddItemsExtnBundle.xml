@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.order.create.additems.AddItemsExtnBundle" screenId="extn.order.create.additems.AddItemsExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="extn_datetextbox_PromotionCodeDateOverride_DateTextBox_label"
+            bundleKey="extn_Promotion_code_date_override"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_datetextbox_PromotionCodeDateOverride"/>
+    </BundleEntries>
+</ScreenBundle>

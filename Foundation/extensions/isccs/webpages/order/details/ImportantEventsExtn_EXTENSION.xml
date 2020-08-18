@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ImportantEventsExtn"
+        extnPackage="extn.order.details"
+        originalScreen="isccs.order.details.ImportantEvents"
+        originalScreenPackage="isccs.order.details" type="diffrential">
+        <Items>
+            <ContentPane _sc_extensibility_operation="change" _sc_extensibility_referenceUId="pnlImportantEventHolder">
+                <TableLayout cols="2"/>
+            </ContentPane>
+            <ContentPane _sc_extensibility_operation="change" _sc_extensibility_referenceUId="pnlImportantEventHolder"/>
+            <ContentPane _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="pnlRoot"
+                renderHidden="true" uId="extn_contentpane_Release_Acknowledge">
+                <TableLayout cols="2" customClass="importantEventContainer"/>
+            </ContentPane>
+            <ContentPane _sc_extensibility_operation="change" _sc_extensibility_referenceUId="pnlRoot">
+                <TableLayout cols="1"/>
+            </ContentPane>
+            <ContentPane _sc_extensibility_moveOrder="6"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="pnlImportantEventHolder" uId="extn_contentpane_Release_Acknowledge"/>
+            <ContentPane _sc_extensibility_moveOrder="7"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="lblReason" uId="extn_contentpane_Release_Acknowledge"/>
+            <DataLabel _sc_extensibility_moveOrder="3"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpane_Release_Acknowledge"
+                label="$(_scBundle:Quantity)" uId="extn_datalabel_Quantity"/>
+            <Label _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="extn_contentpane_Release_Acknowledge"
+                class="importantEventsElement"
+                uId="extn_label_Release_Acknowledge" value="$(_scSimpleBundle:extn_Release_Acknowledge)"/>
+            <Label _sc_extensibility_moveOrder="4"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_datalabel_Quantity" uId="extn_label_Date"/>
+            <Label _sc_extensibility_moveOrder="5"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_datalabel_Quantity" uId="extn_label_Date"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="afterScreenInit" isExtn="true" sequence="51">
+                    <Handler methodName="extn_init"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+    </ScreenExtension>
+</ExtensionMetaData>

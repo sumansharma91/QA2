@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Licensed Materials - Property of IBM Sterling Order Management Store (5725-D10) 
+	(C) Copyright IBM Corp. 2014 , 2015 All Rights Reserved. , 2015 All Rights Reserved. US Government Users Restricted 
+	Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract 
+	with IBM Corp. -->
+<MetaData xmlns="http://ibm.com/sterling/afc/cuf/tns"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ibm.com/sterling/afc/cuf/tns ../../../../../templates/schemas/WSCBlankScreen_Schema.xsd ">
+	<Screen IsDirtyCheckRequired="false" PopupCloseLabel="Cancel"
+		PopupConfirmLabel="Action_Apply" ShowTitleBar="false" SupportsPopup="true"
+		TemplateID="WSCBlankScreen" className="ShortageReasonPopup"
+		description="This screen is used as popup for Shortage reason selection"
+		extensible="true" package="wsc.components.shipment.common.screens"
+		title="Title_ShortageReason" uId="ShortageReasonPopup">
+		<MashupRefs>
+			<Init>
+				<MashupRef mashupId="common_getReasonCodeList"
+					mashupRefId="getShortageReasonCode" sequence="5"
+					sourceNamespace="getShortageReasonCode_output" />
+			</Init>
+			<Behavior>
+				<MashupRef mashupId="common_getReasonCodeList"
+					mashupRefId="getCancellationReasonList" sourceNamespace="CancellationReasonCodeData" />
+			</Behavior>
+		</MashupRefs>
+		<MashupHandlers>
+			<MashupHandler MashupName="getCancellationReasonList">
+				<Statements>
+					<Expression methodName="showCancellationWidget">
+						<Arguments>
+							<Argument type="Model" value="${var:modelOutput}" />
+						</Arguments>
+					</Expression>
+				</Statements>
+			</MashupHandler>
+		</MashupHandlers>
+		<Namespaces>
+			<SourceNamespaces>
+				<Source description="The options binding namespace data of Shortage Reason."
+					value="getShortageReasonCode_output" />
+				<Source
+					description="The source binding namespace  data of Cancellation Reason Code."
+					value="CancellationReasonCodeData" />
+				<Source description="This namespace holds Shipment Line details."
+					value="ShipmentLine" />
+			</SourceNamespaces>
+			<TargetNamespaces>
+				<Target description="Target Model for Shortage Reason of the screen"
+					value="getShortageReasonOutput" />
+				<Target description="Target Model for cancellation reason code"
+					value="getCancellationReasonCodeOutput" />
+			</TargetNamespaces>
+		</Namespaces>
+		<Subscribers>
+			<Local>
+				<Subscriber
+					description="This event is used to perform screen initialization tasks."
+					eventId="afterScreenInit" sequence="30">
+					<Handler methodName="initializeScreen" />
+				</Subscriber>
+			</Local>
+		</Subscribers>
+		<Properties>
+			<Property initialValue="BackroomPick" name="flowName" type="String" />
+			<Property initialValue="ShipmentLine.MarkAllShortLineWithShortage"
+				name="markAllBindingPath" type="String" />
+			<Property initialValue="ShipmentLine.ShortageReasonCode"
+				name="shortageReasonPath" type="String" />
+			<Property initialValue="ShipmentLine.CancellationReasonCode"
+				name="cancelReasonPath" type="String" />
+			<Property initialValue="ShipmentLine"
+				name="entity" type="String" />
+		</Properties>
+		<ScreenBehaviors>
+			<Method description="" name="initializeScreen" returnType=""
+				visibility="local">
+				<ArgumentDefinitions>
+					<ArgumentDefinition name="event" type="UIEvent" />
+					<ArgumentDefinition name="bEvent" type="BusinessEvent" />
+					<ArgumentDefinition name="ctrl" type="String" />
+					<ArgumentDefinition name="args" type="Bean" />
+				</ArgumentDefinitions>
+				<Statements>
+
+					<Variable name="shortageCodeModel" type="Model" value="${var:null}" />
+					<Variable name="numOfShortageCode" type="Number" value="${var:null}" />
+					<Variable name="zero" type="Number" value="0" />
+					<Expression className="ScreenUtils" methodName="getModel"
+						package="sc.plat.utils">
+						<Arguments>
+							<Argument type="Screen" value="${screen}" />
+							<Argument type="String" value="getShortageReasonCode_output" />
+						</Arguments>
+						<AssignToVariable isGlobal="false" name="shortageCodeModel" />
+					</Expression>
+					<Expression className="ModelUtils" methodName="getNumberValueFromPath"
+						package="sc.plat.utils">
+						<Arguments>
+							<Argument type="String" value="CommonCodeList.TotalNumberOfRecords" />
+							<Argument type="Model" value="${var:shortageCodeModel}" />
+						</Arguments>
+						<AssignToVariable isGlobal="false" name="numOfShortageCode" />
+					</Expression>
+					<If>
+						<Not>
+							<Expression className="UIUtils" methodName="isValueNumber"
+								package="ias.utils">
+								<Arguments>
+									<Argument type="Number" value="${var:numOfShortageCode}" />
+								</Arguments>
+							</Expression>
+						</Not>
+						<Statements>
+							<Variable declare="false" name="numOfShortageCode" type="Number"
+								value="${var:zero}" />
+						</Statements>
+					</If>
+
+					<If>
+						<Expression className="BaseUtils" methodName="equals"
+							package="sc.plat.utils">
+							<Arguments>
+								<Argument type="Number" value="${var:0}" />
+								<Argument type="Number" value="${var:numOfShortageCode}" />
+							</Arguments>
+						</Expression>
+						<Statements>
+							<Expression className="WidgetUtils" methodName="hideWidget"
+								package="sc.plat.utils">
+								<Arguments>
+									<Argument type="Screen" value="${screen}" />
+									<Argument type="String" value="InnerContainer" />
+									<Argument type="Boolean" value="${var:false}" />
+								</Arguments>
+							</Expression>
+							<Expression className="WidgetUtils" methodName="hideWidget"
+								package="sc.plat.utils">
+								<Arguments>
+									<Argument type="Screen" value="${screen}" />
+									<Argument type="String" value="Popup_btnNext" />
+									<Argument type="Boolean" value="${var:false}" />
+								</Arguments>
+							</Expression>
+							<Expression className="WidgetUtils" methodName="setLabel"
+								package="sc.plat.utils">
+								<Arguments>
+									<Argument type="Screen" value="${screen}" />
+									<Argument type="String" value="Popup_btnCancel" />
+									<Argument>
+										<Expression className="ScreenUtils" methodName="getString"
+											package="sc.plat.utils">
+											<Arguments>
+												<Argument type="Screen" value="${screen}" />
+												<Argument type="String" value="Ok" />
+											</Arguments>
+										</Expression>
+									</Argument>
+								</Arguments>
+							</Expression>
+							<Expression className="WidgetUtils" methodName="showWidget"
+								package="sc.plat.utils">
+								<Arguments>
+									<Argument type="Screen" value="${screen}" />
+									<Argument type="String" value="lblNoShortageConfigured" />
+									<Argument type="Boolean" value="${var:false}" />
+									<Argument type="String" value="${var:null}" />
+								</Arguments>
+							</Expression>
+						</Statements>
+					</If>
+					<Else>
+						<Statements>
+							<Expression methodName="hideShortageRadio">
+								<Arguments>
+									<Argument type="Number" value="${var:numOfShortageCode}" />
+								</Arguments>
+							</Expression>
+
+							<If>
+								<Expression className="BaseUtils" methodName="equals"
+									package="sc.plat.utils">
+									<Arguments>
+										<Argument type="String" value="${screenVar:flowName}" />
+										<Argument type="String" value="ContainerPack" />
+									</Arguments>
+								</Expression>
+								<Statements>
+									<Expression className="WidgetUtils" methodName="setLabel"
+										package="sc.plat.utils">
+										<Arguments>
+											<Argument type="Screen" value="${screen}" />
+											<Argument type="String" value="lblPickedQty" />
+											<Argument>
+												<Expression className="ScreenUtils" methodName="getString"
+													package="sc.plat.utils">
+													<Arguments>
+														<Argument type="Screen" value="${screen}" />
+														<Argument type="String" value="Label_Packed" />
+													</Arguments>
+												</Expression>
+											</Argument>
+										</Arguments>
+									</Expression>
+									<Expression className="WidgetUtils" methodName="setLabel"
+										package="sc.plat.utils">
+										<Arguments>
+											<Argument type="Screen" value="${screen}" />
+											<Argument type="String" value="chkMarkAllLines" />
+											<Argument>
+												<Expression className="ScreenUtils" methodName="getString"
+													package="sc.plat.utils">
+													<Arguments>
+														<Argument type="Screen" value="${screen}" />
+														<Argument type="String"
+															value="Option_MarkAllLinesWithShortageForPack" />
+													</Arguments>
+												</Expression>
+											</Argument>
+										</Arguments>
+									</Expression>
+								</Statements>
+							</If>
+
+							<If>
+								<Expression className="BaseUtils" methodName="equals"
+									package="sc.plat.utils">
+									<Arguments>
+										<Argument type="String" value="${screenVar:flowName}" />
+										<Argument type="String" value="CustomerPick" />
+									</Arguments>
+								</Expression>
+								<Statements>
+									<Expression className="WidgetUtils" methodName="setLabel"
+										package="sc.plat.utils">
+										<Arguments>
+											<Argument type="Screen" value="${screen}" />
+											<Argument type="String" value="lblPickedQty" />
+											<Argument>
+												<Expression className="ScreenUtils" methodName="getString"
+													package="sc.plat.utils">
+													<Arguments>
+														<Argument type="Screen" value="${screen}" />
+														<Argument type="String" value="Label_Pickedup" />
+													</Arguments>
+												</Expression>
+											</Argument>
+										</Arguments>
+									</Expression>
+									<Expression className="WidgetUtils" methodName="showWidget"
+										package="sc.plat.utils">
+										<Arguments>
+											<Argument type="Screen" value="${screen}" />
+											<Argument type="String" value="chkMarkAllLines" />
+											<Argument type="Boolean" value="${var:false}" />
+											<Argument type="String" value="${var:null}" />
+										</Arguments>
+									</Expression>
+								</Statements>
+							</If>
+
+
+							<Variable name="eventArgs" type="Bean" value="${var:null}" />
+							<Variable name="eventDefn" type="Bean" value="${var:null}" />
+							<Expression className="BaseUtils" methodName="getNewBeanInstance"
+								package="sc.plat.utils">
+								<Arguments />
+								<AssignToVariable isGlobal="false" name="eventDefn" />
+							</Expression>
+							<Expression className="BaseUtils" methodName="getNewBeanInstance"
+								package="sc.plat.utils">
+								<AssignToVariable isGlobal="false" name="eventArgs" />
+							</Expression>
+							<Expression className="EventUtils" methodName="fireEventInsideScreen"
+								package="sc.plat.utils">
+								<Arguments>
+									<Argument type="Screen" value="${screen}" />
+									<Argument type="String" value="radSelectShortRea_onChange" />
+									<Argument type="Bean" value="${var:eventDefn}" />
+									<Argument type="Bean" value="${var:eventArgs}" />
+								</Arguments>
+							</Expression>
+						</Statements>
+
+					</Else>
+
+
+
+				</Statements>
+			</Method>
+
+			<!-- This is used to hide the radio's when there is only one resolution 
+				as there is no selection option -->
+			<Method description="" name="hideShortageRadio" returnType=""
+				visibility="local">
+				<ArgumentDefinitions>
+					<ArgumentDefinition name="numOfShortageCode"
+						type="Number" />
+				</ArgumentDefinitions>
+				<Statements>
+
+					<If>
+						<Expression className="BaseUtils" methodName="equals"
+							package="sc.plat.utils">
+							<Arguments>
+								<Argument type="Number" value="${var:1}" />
+								<Argument type="Number" value="${var:numOfShortageCode}" />
+							</Arguments>
+						</Expression>
+						<Statements>
+							<Expression className="WidgetUtils" methodName="addClass"
+								package="sc.plat.utils">
+								<Arguments>
+									<Argument type="Screen" value="${screen}" />
+									<Argument type="String" value="radSelectShortRea" />
+									<Argument type="String" value="showRadioSetAsLabel" />
+								</Arguments>
+							</Expression>
+						</Statements>
+					</If>
+				</Statements>
+			</Method>
+
+			<Method description="" name="showCancellationWidget"
+				returnType="" visibility="local">
+				<ArgumentDefinitions>
+					<ArgumentDefinition name="cancelReasonCodeModel"
+						type="Model" />
+				</ArgumentDefinitions>
+				<Statements>
+
+					<Expression className="ScreenUtils" methodName="setModel"
+						package="sc.plat.utils">
+						<Arguments>
+							<Argument type="Screen" value="${screen}" />
+							<Argument type="String" value="CancellationReasonCodeData" />
+							<Argument type="Model" value="${var:cancelReasonCodeModel}" />
+							<Argument type="Bean" value="${var:null}" />
+						</Arguments>
+					</Expression>
+
+
+					<Expression className="WidgetUtils" methodName="showWidget"
+						package="sc.plat.utils">
+						<Arguments>
+							<Argument type="Screen" value="${screen}" />
+							<Argument type="String" value="cancellationReasonCode" />
+							<Argument type="Boolean" value="${var:false}" />
+							<Argument type="String" value="${var:null}" />
+						</Arguments>
+					</Expression>
+					<Expression className="WidgetUtils" methodName="setWidgetMandatory"
+						package="sc.plat.utils">
+						<Arguments>
+							<Argument type="Screen" value="${screen}" />
+							<Argument type="String" value="cancellationReasonCode" />
+						</Arguments>
+					</Expression>
+
+				</Statements>
+			</Method>
+
+
+
+			<Method description="handle the apply button" name="onApply"
+				returnType="Void" visibility="local">
+				<ArgumentDefinitions>
+					<ArgumentDefinition name="event" type="UIEvent" />
+					<ArgumentDefinition name="bEvent" type="BusinessEvent" />
+					<ArgumentDefinition name="ctrl" type="String" />
+					<ArgumentDefinition name="args" type="Bean" />
+				</ArgumentDefinitions>
+				<Statements>
+
+
+					<If>
+						<Expression className="BaseUtils" methodName="equals"
+							package="sc.plat.utils">
+							<Arguments>
+								<Argument type="String" value="${screenVar:flowName}" />
+								<Argument type="String" value="CustomerPick" />
+							</Arguments>
+						</Expression>
+						<Statements>
+							<Variable declare="true" name="cancelReasonModel" type="Model"
+								value="${var:null}" />
+							<Variable declare="true" name="shortageReasonModel"
+								type="Model" value="${var:null}" />
+							<Expression className="BaseUtils" methodName="getTargetModel"
+								package="sc.plat.utils">
+								<Arguments>
+									<Argument type="Screen" value="${screen}" />
+									<Argument type="String" value="getShortageReasonOutput" />
+									<Argument type="Bean" value="${var:null}" />
+								</Arguments>
+								<AssignToVariable isGlobal="false"
+									name="shortageReasonModel" />
+							</Expression>
+							<Expression className="BaseUtils" methodName="getTargetModel"
+								package="sc.plat.utils">
+								<Arguments>
+									<Argument type="Screen" value="${screen}" />
+									<Argument type="String" value="getCancellationReasonCodeOutput" />
+									<Argument type="Bean" value="${var:null}" />
+								</Arguments>
+								<AssignToVariable isGlobal="false" name="cancelReasonModel" />
+							</Expression>
+							<If>
+								<Expression className="BaseUtils" methodName="and"
+									package="sc.plat.utils">
+									<Arguments>
+										<Argument>
+											<Expression className="BaseUtils" methodName="equals"
+												package="sc.plat.utils">
+												<Arguments>
+													<Argument>
+														<Expression className="ModelUtils" methodName="getStringValueFromPath"
+															package="sc.plat.utils">
+															<Arguments>
+																<Argument type="String" value="ShortageReason" />
+																<Argument type="Model" value="${var:shortageReasonModel}" />
+															</Arguments>
+														</Expression>
+													</Argument>
+													<Argument type="String" value="Cancel" />
+												</Arguments>
+											</Expression>
+										</Argument>
+										<Argument>
+											<Expression className="BaseUtils" methodName="isVoid"
+												package="sc.plat.utils">
+												<Arguments>
+													<Argument>
+														<Expression className="ModelUtils" methodName="getStringValueFromPath"
+															package="sc.plat.utils">
+															<Arguments>
+																<Argument type="String" value="CancelReasonCode" />
+																<Argument type="Model" value="${var:cancelReasonModel}" />
+															</Arguments>
+														</Expression>
+													</Argument>
+												</Arguments>
+											</Expression>
+										</Argument>
+									</Arguments>
+								</Expression>
+								<Statements>
+									<Expression className="ScreenUtils" methodName="showErrorMessageBoxWithOk"
+										package="ias.utils">
+										<Arguments>
+											<Argument type="Screen" value="${screen}" />
+											<Argument type="String" value="Message_CancellationReasonCode" />
+										</Arguments>
+									</Expression>
+								</Statements>
+							</If>
+							<Else>
+								<Statements>
+									<!-- this method in widget utils invokes the event to pass the data 
+										from popup to parent -->
+									<Expression className="WidgetUtils" methodName="closePopup"
+										package="sc.plat.utils">
+										<Arguments>
+											<Argument type="Screen" value="${screen}" />
+											<Argument type="String" value="APPLY" />
+											<Argument type="Boolean" value="${var:false}" />
+										</Arguments>
+									</Expression>
+								</Statements>
+							</Else>
+						</Statements>
+					</If>
+					<Else>
+						<Statements>
+							<!-- this method in widget utils invokes the event to pass the data 
+								from popup to parent -->
+							<Expression className="WidgetUtils" methodName="closePopup"
+								package="sc.plat.utils">
+								<Arguments>
+									<Argument type="Screen" value="${screen}" />
+									<Argument type="String" value="APPLY" />
+									<Argument type="Boolean" value="${var:false}" />
+								</Arguments>
+							</Expression>
+						</Statements>
+					</Else>
+				</Statements>
+			</Method>
+			<Method name="getPopupOutput" returnType="Model" visibility="local">
+				<ArgumentDefinitions>
+					<ArgumentDefinition name="event" type="UIEvent" />
+					<ArgumentDefinition name="bEvent" type="BusinessEvent" />
+					<ArgumentDefinition name="ctrl" type="String" />
+					<ArgumentDefinition name="args" type="Bean" />
+				</ArgumentDefinitions>
+				<Statements>
+					<Variable name="shortageReasonTargetModel" type="Model"
+						value="${var:null}" />
+					<Variable name="shipmentLineModel" type="Model" value="${var:null}" />
+					<Variable name="shortageReasonCode" type="String" value="${var:null}" />
+					<Expression className="BaseUtils" methodName="getNewModelInstance"
+						package="sc.plat.utils">
+						<AssignToVariable isGlobal="false"
+							name="shortageReasonTargetModel" />
+					</Expression>
+					<Expression className="ScreenUtils" methodName="getModel"
+						package="sc.plat.utils">
+						<Arguments>
+							<Argument type="Screen" value="${screen}" />
+							<Argument type="String" value="ShipmentLine" />
+						</Arguments>
+						<AssignToVariable isGlobal="false" name="shipmentLineModel" />
+					</Expression>
+					<Variable declare="true" name="shortageReasonModel" type="Model"
+						value="${var:null}" />
+					<Expression className="BaseUtils" methodName="getTargetModel"
+						package="sc.plat.utils">
+						<Arguments>
+							<Argument type="Screen" value="${screen}" />
+							<Argument type="String" value="getShortageReasonOutput" />
+							<Argument type="Bean" value="${var:null}" />
+						</Arguments>
+						<AssignToVariable isGlobal="false" name="shortageReasonModel" />
+					</Expression>
+
+					<Variable name="shortedShipmentLineModel" type="Model"
+						value="${var:null}" />
+					<Expression className="BaseUtils" methodName="getNewModelInstance"
+						package="sc.plat.utils">
+						<Arguments />
+						<AssignToVariable isGlobal="false"
+							name="shortedShipmentLineModel" />
+					</Expression>
+					<Expression className="ModelUtils" methodName="createModelObjectFromKey"
+						package="sc.plat.utils">
+						<Arguments>
+							<Argument type="String" value="${screenVar:entity}" />
+							<Argument type="Model" value="${var:shortedShipmentLineModel}" />
+						</Arguments>
+						<AssignToVariable isGlobal="false"
+							name="shortedShipmentLineModel" />
+					</Expression>
+					<Expression className="ModelUtils" methodName="setStringValueAtModelPath"
+						package="sc.plat.utils">
+						<Arguments>
+							<Argument type="String" value="${screenVar:shortageReasonPath}" />
+							<Argument>
+								<Expression className="ModelUtils" methodName="getStringValueFromPath"
+									package="sc.plat.utils">
+									<Arguments>
+										<Argument type="String" value="ShortageReason" />
+										<Argument type="Model" value="${var:shortageReasonModel}" />
+									</Arguments>
+								</Expression>
+							</Argument>
+							<Argument type="Model" value="${var:shortedShipmentLineModel}" />
+						</Arguments>
+					</Expression>
+					<Expression className="ModelUtils" methodName="setStringValueAtModelPath"
+						package="sc.plat.utils">
+						<Arguments>
+							<Argument type="String" value="ShipmentLine.ShipmentLineKey" />
+							<Argument>
+								<Expression className="ModelUtils" methodName="getStringValueFromPath"
+									package="sc.plat.utils">
+									<Arguments>
+										<Argument type="String" value="ShipmentLine.ShipmentLineKey" />
+										<Argument type="Model" value="${var:shipmentLineModel}" />
+									</Arguments>
+								</Expression>
+							</Argument>
+							<Argument type="Model" value="${var:shortedShipmentLineModel}" />
+						</Arguments>
+					</Expression>
+					<Expression className="ModelUtils" methodName="setStringValueAtModelPath"
+						package="sc.plat.utils">
+						<Arguments>
+							<Argument type="String" value="${screenVar:markAllBindingPath}" />
+							<Argument>
+								<Expression className="ModelUtils" methodName="getStringValueFromPath"
+									package="sc.plat.utils">
+									<Arguments>
+										<Argument type="String" value="MarkAllShortLineWithShortage" />
+										<Argument type="Model" value="${var:shortageReasonModel}" />
+									</Arguments>
+								</Expression>
+							</Argument>
+							<Argument type="Model" value="${var:shortedShipmentLineModel}" />
+						</Arguments>
+					</Expression>
+
+					<If>
+						<Expression className="BaseUtils" methodName="equals"
+							package="sc.plat.utils">
+							<Arguments>
+								<Argument type="String" value="${screenVar:flowName}" />
+								<Argument type="String" value="CustomerPick" />
+							</Arguments>
+						</Expression>
+						<Statements>
+							<Variable declare="true" name="cancelReasonModel" type="Model"
+								value="${var:null}" />
+							<Expression className="BaseUtils" methodName="getTargetModel"
+								package="sc.plat.utils">
+								<Arguments>
+									<Argument type="Screen" value="${screen}" />
+									<Argument type="String" value="getCancellationReasonCodeOutput" />
+									<Argument type="Bean" value="${var:null}" />
+								</Arguments>
+								<AssignToVariable isGlobal="false" name="cancelReasonModel" />
+							</Expression>
+							<Expression className="ModelUtils" methodName="setStringValueAtModelPath"
+								package="sc.plat.utils">
+								<Arguments>
+									<Argument type="String" value="${screenVar:cancelReasonPath}" />
+									<Argument>
+										<Expression className="ModelUtils" methodName="getStringValueFromPath"
+											package="sc.plat.utils">
+											<Arguments>
+												<Argument type="String" value="CancelReasonCode" />
+												<Argument type="Model" value="${var:cancelReasonModel}" />
+											</Arguments>
+										</Expression>
+									</Argument>
+									<Argument type="Model" value="${var:shortedShipmentLineModel}" />
+								</Arguments>
+							</Expression>
+						</Statements>
+					</If>
+					<Return isGlobal="false" value="${var:shortedShipmentLineModel}" />
+				</Statements>
+			</Method>
+
+			<Method description="" name="shortageReasonOnChange"
+				returnType="Void" visibility="local">
+				<ArgumentDefinitions>
+					<ArgumentDefinition name="value" type="String" />
+					<ArgumentDefinition name="bEvent" type="BusinessEvent" />
+					<ArgumentDefinition name="ctrl" type="String" />
+					<ArgumentDefinition name="args" type="Bean" />
+				</ArgumentDefinitions>
+				<Statements>
+
+					<Variable name="shortageModel" type="Model" value="${var:null}" />
+					<Expression className="ScreenUtils" methodName="getTargetModel"
+						package="sc.plat.utils">
+						<Arguments>
+							<Argument type="Screen" value="${screen}" />
+							<Argument type="String" value="getShortageReasonOutput" />
+							<Argument type="Bean" value="${var:null}" />
+						</Arguments>
+						<AssignToVariable isGlobal="false" name="shortageModel" />
+					</Expression>
+
+					<If>
+						<Expression className="BaseUtils" methodName="and"
+							package="sc.plat.utils">
+							<Arguments>
+								<Argument>
+									<Expression className="BaseUtils" methodName="equals"
+										package="sc.plat.utils">
+										<Arguments>
+											<Argument>
+												<Expression className="ModelUtils" methodName="getStringValueFromPath"
+													package="sc.plat.utils">
+													<Arguments>
+														<Argument type="String" value="ShortageReason" />
+														<Argument type="Model" value="${var:shortageModel}" />
+													</Arguments>
+												</Expression>
+											</Argument>
+											<Argument type="String" value="Cancel" />
+										</Arguments>
+									</Expression>
+								</Argument>
+								<Argument>
+									<Expression className="BaseUtils" methodName="equals"
+										package="sc.plat.utils">
+										<Arguments>
+											<Argument type="String" value="${screenVar:flowName}" />
+											<Argument type="String" value="CustomerPick" />
+										</Arguments>
+									</Expression>
+								</Argument>
+							</Arguments>
+						</Expression>
+						<Statements>
+							<Variable name="cancelReasonCodeInput" type="Model"
+								value="${var:null}" />
+							<Expression className="BaseUtils" methodName="getNewModelInstance"
+								package="sc.plat.utils">
+								<Arguments />
+								<AssignToVariable isGlobal="false"
+									name="cancelReasonCodeInput" />
+							</Expression>
+							<Expression className="ModelUtils" methodName="setStringValueAtModelPath"
+								package="sc.plat.utils">
+								<Arguments >
+									<Argument type="String" value="CommonCode.CodeType" />
+									<Argument type="String" value="CUST_PICK_CANCEL_RES" />
+									<Argument type="Model" value="${var:cancelReasonCodeInput}" />
+								</Arguments>								
+							</Expression>
+							<Variable name="initialInputData" type="Model" value="${var:null}" />							
+							<Expression className="ScreenUtils" methodName="getInitialInputData"
+								package="sc.plat.utils">
+								<Arguments>
+									<Argument type="Screen" value="${screen}" />
+								</Arguments>
+								<AssignToVariable isGlobal="false" name="initialInputData" />
+							</Expression>
+							<Expression className="ModelUtils" methodName="setStringValueAtModelPath"
+								package="sc.plat.utils">
+								<Arguments >
+									<Argument type="String" value="CommonCode.CallingOrganizationCode" />
+									<Argument>
+										<Expression className="ModelUtils" methodName="getStringValueFromPath"
+											package="sc.plat.utils">
+											<Arguments>
+												<Argument type="String" value="CommonCode.CallingOrganizationCode" />
+												<Argument type="Model" value="${var:initialInputData}" />
+											</Arguments>
+										</Expression>	
+									</Argument>
+									<Argument type="Model" value="${var:cancelReasonCodeInput}" />
+								</Arguments>								
+							</Expression>
+													
+							<Expression className="UIUtils" methodName="callApi"
+								package="ias.utils">
+								<Arguments>
+									<Argument type="Screen" value="${screen}" />
+									<Argument type="Model" value="${var:cancelReasonCodeInput}" />
+									<Argument type="String" value="getCancellationReasonList" />
+									<Argument type="Bean" value="${var:null}" />
+								</Arguments>
+							</Expression>
+						</Statements>
+					</If>
+					<Else>
+						<Statements>
+							<Expression className="WidgetUtils" methodName="hideWidget"
+								package="sc.plat.utils">
+								<Arguments>
+									<Argument type="Screen" value="${screen}" />
+									<Argument type="String" value="cancellationReasonCode" />
+									<Argument type="Boolean" value="${var:false}" />
+								</Arguments>
+							</Expression>
+							<Expression className="WidgetUtils" methodName="setWidgetNonMandatory"
+								package="sc.plat.utils">
+								<Arguments>
+									<Argument type="Screen" value="${screen}" />
+									<Argument type="String" value="cancellationReasonCode" />
+								</Arguments>
+							</Expression>
+						</Statements>
+					</Else>
+
+				</Statements>
+			</Method>
+
+			<Method name="getFormattedDisplayQuantity" returnType="String"
+				visibility="local">
+				<ArgumentDefinitions>
+					<ArgumentDefinition name="dataValue" type="Any" />
+					<ArgumentDefinition name="screen" type="Screen" />
+					<ArgumentDefinition name="widget" type="String" />
+					<ArgumentDefinition name="namespace" type="String" />
+					<ArgumentDefinition name="modelObject" type="Model" />
+					<ArgumentDefinition name="options" type="Bean" />
+				</ArgumentDefinitions>
+				<Statements>
+					<Variable name="displayQty" type="String" value="${var:null}" />
+					<If>
+						<Expression className="BaseUtils" methodName="equals"
+							package="sc.plat.utils">
+							<Arguments>
+								<Argument type="String" value="${screenVar:flowName}" />
+								<Argument type="String" value="ContainerUnpack" />
+							</Arguments>
+						</Expression>
+						<Statements>
+							<Expression className="WidgetUtils" methodName="setLabel"
+								package="sc.plat.utils">
+								<Arguments>
+									<Argument type="Screen" value="${screen}" />
+									<Argument type="String" value="lblPickedQty" />
+									<Argument>
+										<Expression className="ScreenUtils" methodName="getLabelString"
+											package="sc.plat.utils">
+											<Arguments>
+												<Argument type="Screen" value="${screen}" />
+												<Argument type="String" value="Label_Packed" />
+											</Arguments>
+										</Expression>
+									</Argument>
+								</Arguments>
+							</Expression>
+						</Statements>
+					</If>
+
+					<Expression className="ShipmentUtils" methodName="getFormattedDisplayQuantity"
+						package="wsc.components.shipment.common.utils">
+						<Arguments>
+							<Argument type="String" value="${var:dataValue}" />
+							<Argument type="Screen" value="${screen}" />
+							<Argument type="String" value="${var:null}" />
+							<Argument type="String" value="${var:null}" />
+							<Argument type="Model" value="${var:modelObject}" />
+							<Argument type="Bean" value="${var:null}" />
+						</Arguments>
+						<AssignToVariable isGlobal="false" name="displayQty" />
+					</Expression>
+
+					<Return isGlobal="false" value="${var:displayQty}" />
+
+				</Statements>
+			</Method>
+
+			<Method name="getFormattedDisplayShortQuantity" returnType="String"
+				visibility="local">
+				<ArgumentDefinitions>
+					<ArgumentDefinition name="dataValue" type="Any" />
+					<ArgumentDefinition name="screen" type="Screen" />
+					<ArgumentDefinition name="widget" type="String" />
+					<ArgumentDefinition name="namespace" type="String" />
+					<ArgumentDefinition name="modelObject" type="Model" />
+					<ArgumentDefinition name="options" type="Bean" />
+				</ArgumentDefinitions>
+				<Statements>
+					<Variable name="displayQty" type="String" value="${var:null}" />
+					<Expression className="ShipmentUtils" methodName="getFormattedDisplayQuantity"
+						package="wsc.components.shipment.common.utils">
+						<Arguments>
+							<Argument type="String" value="${var:dataValue}" />
+							<Argument type="Screen" value="${screen}" />
+							<Argument type="String" value="${var:null}" />
+							<Argument type="String" value="${var:null}" />
+							<Argument type="Model" value="${var:modelObject}" />
+							<Argument type="Bean" value="${var:null}" />
+						</Arguments>
+						<AssignToVariable isGlobal="false" name="displayQty" />
+					</Expression>
+
+					<Return isGlobal="false" value="${var:displayQty}" />
+
+				</Statements>
+			</Method>
+
+
+		</ScreenBehaviors>
+		<ScreenContent>
+			<BasicPanel>
+				<Label class="zeroWidthLabelKey labelMessage" renderHidden="true"
+					uId="lblNoShortageConfigured" value="$(_scSimpleBundle:Label_NoShortageConfigured)" />
+				<ContentPane colspan="1" spanLabel="true" uId="InnerContainer" class="scrollingContent">
+					<Items>
+						<ContentPane class="topPanel" colspan="1" spanLabel="true"
+							uId="productPanel">
+							<Items>
+								<ContentPane class="itemImageSmallDivAlt inline"
+									colspan="1" spanLabel="true" uId="itemImagePanel">
+									<Items>
+										<Image uId="itemImage">
+											<BindingData>
+												<SourceBinding namespace="ShipmentLine"
+													path="ShipmentLine.OrderLine.ItemDetails.PrimaryInformation" />
+												<ImageBindings>
+													<ImageUrl dynamicBindingFunc="getItemImageLocation"
+														 path="ImageLocation" />
+													<ImageIcon 
+														dynamicBindingFunc="getItemImageId" 
+														path="ImageID" />
+													<DefaultImage class="noItemImage" src=""
+														style="" />
+												</ImageBindings>
+											</BindingData>
+											<Subscribers>
+												<Subscriber eventId="itemImage_onLoad"
+													description="This event is used to set the Aspect Ratio of Product Image"
+													listeningControlUId="itemImage" sequence="30">
+													<Handler className="ScreenUtils" methodName="resetProductAspectRatio"
+														package="ias.utils" />
+												</Subscriber>
+											</Subscribers>
+										</Image>
+									</Items>
+								</ContentPane>
+
+								<Label aria_label="$(_scSimpleBundle:arialabel_product_title)"
+									class="groupHeader" spanLabel="true" uId="itemdescriptionLabel">
+									<BindingData>
+										<SourceBinding namespace="ShipmentLine" dynamicBindingFunc="getItemDisplayDescription" 
+											path="ShipmentLine.OrderLine.ItemDetails.PrimaryInformation.ExtendedDisplayDescription" />
+									</BindingData>
+								</Label>
+							</Items>
+						</ContentPane>
+						<ContentPane class="dataPanel" colspan="1" spanLabel="true"
+							uId="productDetailsPanel">
+							<Items>
+								<DataLabel class="noColonLabels pickedQty" label="$(_scSimpleBundle:Label_Picked)"
+									uId="lblPickedQty">
+									<BindingData>
+										<SourceBinding dynamicBindingFunc="getFormattedDisplayQuantity"
+											namespace="ShipmentLine" path="ShipmentLine.DisplayQty" />
+									</BindingData>
+								</DataLabel>
+								<DataLabel class="noColonLabels shortQty" label="$(_scSimpleBundle:Label_Short)"
+									uId="lblShortQty">
+									<BindingData>
+										<SourceBinding dynamicBindingFunc="getFormattedDisplayShortQuantity"
+											namespace="ShipmentLine" path="ShipmentLine.DisplayShortQty" />
+									</BindingData>
+								</DataLabel>
+							</Items>
+						</ContentPane>
+						
+						<RadioButtonSet groupAlignment="vertical"
+							class="shortageReason zeroWidthLabelKey noColonLabels groupHeader" label="$(_scSimpleBundle:RadioButtonSet_Select_Shortage_reason)"
+							name="selectShortageReason" uId="radSelectShortRea">
+							<BindingData>
+								<TargetBindings>
+									<TargetBinding namespace="getShortageReasonOutput"
+										path="ShortageReason" />
+								</TargetBindings>
+								<OptionsBinding addEmptyOption="false"
+									descriptionField="CodeShortDescription" emptyOptionDesc=""
+									emptyOptionValue="" namespace="getShortageReasonCode_output"
+									path="CommonCodeList.CommonCode" valueField="CodeValue" />
+							</BindingData>
+							<Subscribers>
+								<Subscriber eventId="radSelectShortRea_onChange"
+									description="This event is used to hide or show Cancellation Reason Code dropdown in case of Customer Pick flow."
+									listeningControlUId="radSelectShortRea" sequence="30">
+									<Handler description="" methodName="shortageReasonOnChange" />
+								</Subscriber>
+							</Subscribers>
+						</RadioButtonSet>
+						<FilteringSelect autoComplete="true"
+							highlightMatch="false" class="longTextbox cancelReason nonEditable"
+							label="$(_scSimpleBundle:Label_CancellationReasonCode)" renderHidden="true"
+							required="false" showLabel="false" uId="cancellationReasonCode">
+							<BindingData>
+								<OptionsBinding addEmptyOption="false"
+									descriptionField="CodeShortDescription" emptyOptionDesc=""
+									emptyOptionValue="" namespace="CancellationReasonCodeData"
+									path="CommonCodeList.CommonCode" valueField="CodeValue" />
+								<TargetBindings>
+									<TargetBinding namespace="getCancellationReasonCodeOutput"
+										path="CancelReasonCode" />
+								</TargetBindings>
+							</BindingData>
+						</FilteringSelect>
+						<CheckBox renderHidden="true"
+							label="$(_scSimpleBundle:Option_MarkAllLinesWithShortage)"
+							spanLabel="false" uId="chkMarkAllLines">
+							<BindingData>
+								<CheckedValue value="Y" />
+								<UncheckedValue value="N" />
+								<TargetBindings>
+									<TargetBinding namespace="getShortageReasonOutput"
+										path="MarkAllShortLineWithShortage" />
+								</TargetBindings>
+							</BindingData>
+						</CheckBox>
+					</Items>
+				</ContentPane>
+			</BasicPanel>
+		</ScreenContent>
+	</Screen>
+</MetaData>

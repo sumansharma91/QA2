@@ -1,0 +1,1310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://www.sterlingcommerce.com/documentation/OMP/getAvailableInventory/input"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:yfc="http://www.sterlingcommerce.com/documentation/OMP/getAvailableInventory/input" xmlns:yfctype="http://www.sterlingcommerce.com/documentation/types">
+    <xsd:annotation yfc:fileName="OMP_getAvailableInventory_input.xsd" yfc:rootElement="Promise">
+        <xsd:appinfo source="yfc:structure">
+            <Promise hasAttributes="Y">
+                <ShipNodes>
+                    <ShipNode hasAttributes="Y"/>
+                </ShipNodes>
+                <ExcludedShipNodes>
+                    <ExcludedShipNode hasAttributes="Y"/>
+                </ExcludedShipNodes>
+                <ShipToAddress hasAttributes="Y"/>
+                <PromiseLines>
+                    <PromiseLine hasAttributes="Y">
+                        <ShipNodes>
+                            <ShipNode hasAttributes="Y"/>
+                        </ShipNodes>
+                        <ExcludedShipNodes>
+                            <ExcludedShipNode hasAttributes="Y"/>
+                        </ExcludedShipNodes>
+                        <ShipToAddress hasAttributes="Y"/>
+                        <Tag hasAttributes="Y"/>
+                        <ItemFilter hasAttributes="Y">
+                            <PrimaryInformation hasAttributes="Y"/>
+                            <ClassificationCodes hasAttributes="Y"/>
+                        </ItemFilter>
+                    </PromiseLine>
+                </PromiseLines>
+            </Promise>
+        </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:import
+        namespace="http://www.sterlingcommerce.com/documentation/types" schemaLocation="datatypes.xsd"/>
+    <xsd:element name="Promise" type="yfc:PromiseXSDType"/>
+    <xsd:complexType name="PromiseXSDType">
+        <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="0" name="ShipNodes">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+				Multiple shipnodes can be passed for promise header and promise lines/promise service lines.   
+				<br/>For promise header, multiple shipnodes will be used when:  
+				<br/>1. ShipNode attribute on promise line/promise service line is not provided.
+				<br/>2. Multiple shipnodes on promise line/promise service line are not provided.
+				<br/>3. ShipNode attribute on promise header is not provided.
+				<br/>
+                            <br/>For promise line/promise service line, multiple shipnodes will be used when:  
+				<br/>1. ShipNode attribute on promise line/promise service line is not provided.
+				<br/>
+                            <br/> If multiple shipnodes are passed for a DS line then the shipnode/s on the associated product line are ignored.
+			</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" name="ShipNode">
+                            <xsd:annotation yfc:tableName="YFS_SHIP_NODE">
+                                <xsd:documentation>This table stores receiving node, ship node, and distribution centers in the system for various organizations.</xsd:documentation>
+                            </xsd:annotation>
+                            <xsd:complexType>
+                                <xsd:attribute name="Node"
+                                    type="yfctype:ShipNode" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+					Shipping node from which the inventory should be found.
+					</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                </xsd:attribute>
+                            </xsd:complexType>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="ExcludedShipNodes">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+				Multiple shipnodes that should be ignored during inquiry can be passed for promise header and promise lines/promise service lines.  If not passed on the promise line, nodes from promise header will be used.  If passed under promise line, then nodes at the header will not be used.
+			</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" name="ExcludedShipNode">
+                            <xsd:complexType>
+                                <xsd:attribute name="Node"
+                                    type="yfctype:ShipNode" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+          Node that should be ignored during the inquiry based on <code>SupressSourcing</code> and <code>SupressProcurement</code> flags.
+					</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                </xsd:attribute>
+                                <xsd:attribute name="SupressSourcing" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+            Flag to indicate whether to exclude the <code>Node</code> for sourcing consideration. 
+            <br/>Default: <b>
+                                    <code>N</code>
+                                    </b>
+                                    <br/>Valid Values: <b>
+                                    <code>Y</code>
+                                    </b> or <b>
+                                    <code>N</code>
+                                    </b>
+                                    </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                    <xsd:restriction base="yfctype:Flag">
+                                    <xsd:enumeration value="Y"/>
+                                    <xsd:enumeration value="N"/>
+                                    </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:attribute>
+                            </xsd:complexType>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="ShipToAddress">
+                <xsd:annotation yfc:tableName="YFS_PERSON_INFO">
+                    <xsd:documentation>This table stores relevant personal information and addresses. Addresses are typically organization address, ship node address, customer address, and so forth. Personal information is required in cases where person to person contact needs to be established; for example, taking appointments or speaking during negotiations. The key of this table is posted in various tables to allow access to people and address information.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:attribute name="AddressLine1"
+                        type="yfctype:Address" use="optional">
+                        <xsd:annotation yfc:columnName="ADDRESS_LINE1" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The address line 1 field.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="AddressLine2"
+                        type="yfctype:Address" use="optional">
+                        <xsd:annotation yfc:columnName="ADDRESS_LINE2" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The address line 2 field.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="AddressLine3"
+                        type="yfctype:Address" use="optional">
+                        <xsd:annotation yfc:columnName="ADDRESS_LINE3" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The address line 3 field.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="AddressLine4"
+                        type="yfctype:Address" use="optional">
+                        <xsd:annotation yfc:columnName="ADDRESS_LINE4" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The address line 4 field.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="AddressLine5"
+                        type="yfctype:Address" use="optional">
+                        <xsd:annotation yfc:columnName="ADDRESS_LINE5" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The address line 5 field.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="AddressLine6"
+                        type="yfctype:Address" use="optional">
+                        <xsd:annotation yfc:columnName="ADDRESS_LINE6" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The address line 6 field.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="AlternateEmailID"
+                        type="yfctype:EMailID" use="optional">
+                        <xsd:annotation
+                            yfc:columnName="ALTERNATE_EMAILID" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The alternate email address at which the person or a predesignated employee of the organization referred to in the address can be contacted.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="Beeper" type="yfctype:PhoneNo" use="optional">
+                        <xsd:annotation yfc:columnName="BEEPER" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The beeper number at which the person or a predesignated employee of the organization referred to in the address can be called.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="City" type="yfctype:City" use="optional">
+                        <xsd:annotation yfc:columnName="CITY" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The city in the address.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="Company" type="yfctype:Company" use="optional">
+                        <xsd:annotation yfc:columnName="COMPANY" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The company this person is associated with.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="Country" type="yfctype:Country" use="optional">
+                        <xsd:annotation yfc:columnName="COUNTRY" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The country in the address.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="DayFaxNo"
+                        type="yfctype:PhoneNo" use="optional">
+                        <xsd:annotation yfc:columnName="DAY_FAX_NO" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The day time fax at which the person or a predesignated employee of the organization referred to in the address can be notified.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="DayPhone"
+                        type="yfctype:PhoneNo" use="optional">
+                        <xsd:annotation yfc:columnName="DAY_PHONE" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The day time phone at which the person or organization referred to in the address can be called.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="Department"
+                        type="yfctype:Department" use="optional">
+                        <xsd:annotation yfc:columnName="DEPARTMENT" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The primary department in charge of procurement.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="EMailID" type="yfctype:EMailID" use="optional">
+                        <xsd:annotation yfc:columnName="EMAILID" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The email address at which the person or a predesignated employee of the organization referred to in the address can be contacted.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="EveningFaxNo"
+                        type="yfctype:PhoneNo" use="optional">
+                        <xsd:annotation yfc:columnName="EVENING_FAX_NO" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The evening time fax at which the person or a predesignated employee of the organization referred to in the address can be notified.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="EveningPhone"
+                        type="yfctype:PhoneNo" use="optional">
+                        <xsd:annotation yfc:columnName="EVENING_PHONE" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The evening time phone at which the person or organization referred to in the address can be called.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="FirstName"
+                        type="yfctype:PersonName" use="optional">
+                        <xsd:annotation yfc:columnName="FIRST_NAME" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The first name of the person.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="IsCommercialAddress"
+                        type="yfctype:Flag" use="optional">
+                        <xsd:annotation
+                            yfc:columnName="IS_COMMERCIAL_ADDRESS" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>Indicates whether the address is commercial, residential or none. Values of this field can be Y -Commercial address.N - Residential address. undefined for Null.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="JobTitle"
+                        type="yfctype:Title-40" use="optional">
+                        <xsd:annotation yfc:columnName="JOB_TITLE" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The job title of the person.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="LastName"
+                        type="yfctype:PersonName" use="optional">
+                        <xsd:annotation yfc:columnName="LAST_NAME" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The last name of the person.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="MiddleName"
+                        type="yfctype:MiddleName" use="optional">
+                        <xsd:annotation yfc:columnName="MIDDLE_NAME" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The middle name of the person.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="MobilePhone"
+                        type="yfctype:PhoneNo" use="optional">
+                        <xsd:annotation yfc:columnName="MOBILE_PHONE" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The mobile phone at which the person or a predesignated employee of the organization referred to in the address can be called.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="OtherPhone"
+                        type="yfctype:PhoneNo" use="optional">
+                        <xsd:annotation yfc:columnName="OTHER_PHONE" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The alternate phone number at which the person or a predesignated employee of the organization referred to in the address can be called.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="PersonID"
+                        type="yfctype:PersonId" use="optional">
+                        <xsd:annotation yfc:columnName="PERSON_ID" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The unique identifier for a person.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="State" type="yfctype:State" use="optional">
+                        <xsd:annotation yfc:columnName="STATE" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The state in the address.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="Suffix" type="yfctype:Suffix" use="optional">
+                        <xsd:annotation yfc:columnName="SUFFIX" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The suffix for a person, such as Jr., or Sr.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="TaxGeoCode"
+                        type="yfctype:GeoCode" use="optional">
+                        <xsd:annotation yfc:columnName="TAX_GEO_CODE" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The tax geo code for this location. Intended for future use.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="Title" type="yfctype:Title-10" use="optional">
+                        <xsd:annotation yfc:columnName="TITLE" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The title for the person such as Ms., Mr., or Dr..</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="ZipCode" type="yfctype:ZipCode" use="optional">
+                        <xsd:annotation yfc:columnName="ZIP_CODE" yfc:tableName="YFS_PERSON_INFO">
+                            <xsd:documentation>The zip code in the address.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="yfc:PromiseLines"/>
+        </xsd:all>
+        <xsd:attribute name="AggregateSupplyOfNonRequestedTag" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+				The <code>AggregateSupplyOfNonRequestedTag</code> flag indicates whether the system has aggregated the supplies that are returned by the API. If the flag is set to Y, supplies are aggregated irrespective of the tag information and displayed in the output XML. If the flag is set to N, supplies are returned in the output XML with the tag information.			
+				</div>
+                </xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+                <xsd:restriction base="yfctype:Flag">
+                    <xsd:enumeration value="Y"/>
+                    <xsd:enumeration value="N"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+		<xsd:attribute type="yfctype:String" name="FilterCriteria" use="optional"/>
+        <xsd:attribute name="AllocationRuleID" type="yfctype:ID-10" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+				An enterprise can configure multiple allocation rule sets with different document types.
+				If an <code>AllocationRuleID</code> is  passed, the  allocation rule set is associated with the <code>AllocationRuleID</code> is used to select <code>Option</code>. 
+
+				<br/>Default: The allocation rule with allocation rule id 'SYSTEM' for the enterprise is used. If allocation rule with allocation rule id 'SYSTEM' is not found, Allocation rule with allocation rule id 'SYSTEM' for <code>DEFAULT</code> is used.
+
+				<Validation>
+                            <Condition>The <code>AllocationRuleID</code> passed must be valid for both the Enterprise's rule set and document type of the order.
+					</Condition>
+                            <Error
+                                Description="Invalid Allocation Rule Id." ErrorCode="YFS10309"/>
+                        </Validation>
+                    </div>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="CheckInventory" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+				Indicate if inventory should to be checked.
+				<br/>Default: <b>
+                            <code>Y</code>
+                        </b>
+                        <br/>Valid Values: <b>
+                            <code>Y</code>
+                        </b>Y or <b>
+                            <code>N</code>
+                        </b>
+                        <br/>If <b>
+                            <code>Y</code>
+                        </b>, either the <code>DistributionRuleId</code> passed or the organization's default <code>DistributionRuleId</code> is used to obtain a distribution rule for supply and demand filtering for the availability calculations.
+				<br/>If <b>
+                            <code>N</code>
+                        </b>, either the <code>DistributionRuleId</code> passed or the organization's default <code>DistributionRuleId</code>  is used to obtain a distribution rule for inventory availability. No supply or demand is read. Distribution drives inventory availability calculations.
+				</div>
+                </xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+                <xsd:restriction base="yfctype:Flag">
+                    <xsd:enumeration value="Y"/>
+                    <xsd:enumeration value="N"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute name="CustomerID" type="yfctype:Text-24" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+				Indicates the Customer ID on which behalf inquiry is being made.  Customer preferences are used in capacity computations.
+				</div>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="DemandType" type="yfctype:Text-40" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+				Specifies a <code>DemandType</code> used in the inventory availability calculations.
+				<BR/>Default: OPEN_ORDER
+				<br/>Only valid <code>SupplyType</code>s that can be consumed against the <code>DemandType</code> value are considered in the inventory availability calculations.
+				</div>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="DistanceToConsider" type="yfctype:Distance" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+				Indicates radius within which nodes can be considered for final leg sourcing.  If distance between shipping node and ship to address is greater than this distance, node will not be used for sourcing.
+				</div>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="DistanceUOMToConsider"
+            type="yfctype:String" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+				Indicates radius unit of measure.
+				</div>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="DistributionRuleId"
+            type="yfctype:DistributionRuleId" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+				An ID that identifies an distribution rule, which can be used in inventory processing.
+				<BR/>If the <code>DistributionRuleId</code> is passed, supplies and demands are read by applying the associated distribution rule filter.
+			    <BR/>If the <code>DistributionRuleId</code> is not passed, the <code>Organization</code>'s default <code>DistributionRuleId</code> is used. 
+				</div>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="EnterpriseCode" type="yfctype:OrgCode" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+				The <code>EnterpriseCode</code> on which behalf inquiry is being made.  If not passed <code>OrganizationCode</code> primary enterprise will be used.
+				</div>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="FulfillmentType" type="yfctype:ID-40" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+				Depicts the method of fulfilling the order line during scheduling. This field can be matched with the corresponding field in YFS_Sourcing_Rule_Hdr table and appropriate sourcing rule can be selected. 
+			</div>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="IgnoreMinNotificationTime" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+				Flag to ignore Minimum Notification time associated with Item and Shipnode.
+				<br/>Valid Values: <b>
+                            <code>Y</code>
+                        </b> or <b>
+                            <code>N</code>
+                        </b>
+                    </div>
+                </xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+                <xsd:restriction base="yfctype:Flag">
+                    <xsd:enumeration value="Y"/>
+                    <xsd:enumeration value="N"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute name="IgnorePromised" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>If <code>IgnorePromised</code> is passed as <b>
+                            <code>Y</code>
+                        </b>, promised demands are not considered during inventory availability calculations.
+				<BR/>Default: <code>N</code>
+                        <br/>Valid Values: <b>
+                            <code>Y</code>
+                        </b> or <b>
+                            <code>N</code>
+                        </b>
+                    </div>
+                </xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+                <xsd:restriction base="yfctype:Flag">
+                    <xsd:enumeration value="Y"/>
+                    <xsd:enumeration value="N"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute name="IgnoreUnpromised" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>If <code>IgnoreUnpromised</code> is passed as <b>
+                            <code>Y</code>
+                        </b>, unpromised demands are not considered during inventory availability calculations.
+				<BR/>Default: <code>N</code>
+                        <br/>Valid Values: <b>
+                            <code>Y</code>
+                        </b> or <b>
+                            <code>N</code>
+                        </b>
+                    </div>
+                </xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+                <xsd:restriction base="yfctype:Flag">
+                    <xsd:enumeration value="Y"/>
+                    <xsd:enumeration value="N"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute name="IsPartialSubstitutionAllowed" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+				Flag to indicates whether inventory can be partially promised against substitute and partially against original item.  On the order this flag will always be N.
+				<br/>Valid Values: <b>
+                            <code>Y</code>
+                        </b> or <b>
+                            <code>N</code>
+                        </b>
+                    </div>
+                </xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+                <xsd:restriction base="yfctype:Flag">
+                    <xsd:enumeration value="Y"/>
+                    <xsd:enumeration value="N"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute name="IsSubstitutionAllowed" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+				Flag to indicate if substitution is allowed for Items.
+				<br/>Valid Values: <b>
+                            <code>Y</code>
+                        </b> or <b>
+                            <code>N</code>
+                        </b>
+                    </div>
+                </xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+                <xsd:restriction base="yfctype:Flag">
+                    <xsd:enumeration value="Y"/>
+                    <xsd:enumeration value="N"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+        <xsd:attribute name="OrganizationCode" type="yfctype:OrgCode" use="required">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+			Inventory is being checked on behalf of the organization specified by <code>OrganizationCode</code>.
+			<Validation>
+                            <Condition>Must be an existing <code>Organization</code>.				</Condition>
+                            <Error Description="Invalid organization." ErrorCode="YFS10395"/>
+                        </Validation>
+                        <Validation>
+                            <Condition>
+                                <code>OrganizationCode</code> is not passed</Condition>
+                            <Error
+                                Description="Organization code is mandatory for this operation." ErrorCode="YFS10513"/>
+                        </Validation>
+                    </div>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="ReceivingNode" type="yfctype:ShipNode" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>If the <code>AllocationRule</code>'s  <code>UseGeography</code> flag is set to <b>
+                            <code>Y</code>
+                        </b>, the <code>ReceivingNode</code>'s location is used to calculate the priority of the <code>Option</code>.
+				<Validation>
+                            <Condition>Must be an existing <code>ReceivingNode</code>.
+					</Condition>
+                            <Error Description="" ErrorCode=""/>
+                        </Validation>
+                    </div>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="ReqEndDate" type="yfctype:TimeStamp" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+				End Date upto which to look inventory
+				</div>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="ReqStartDate" type="yfctype:TimeStamp" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+				Start Date from which to look inventory
+				</div>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="Segment" type="yfctype:Segment" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+				Inventory segment
+				</div>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="SegmentType" type="yfctype:SegmentType" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+				Inventory Segment type
+				</div>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="ShipNode" type="yfctype:ShipNode" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+					Shipping node from which the inventory should be found.   This shipnode will be used when:  
+					<br/>1. ShipNode attribute on promise line is not provided.
+					<br/>2. Multiple shipnodes on promise line are not provided.
+				</div>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="SourcingClassification"
+            type="yfctype:Text-24" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+				Used for sourcing rule determination.
+				</div>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="UseUnplannedInventory" type="yfctype:Flag" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>
+                    <div>
+				The <code>UseUnplannedInventory</code> flag indicates that system should assume that there is available unplanned inventory (inventory for which assumes to be available on current date + item's lead time) for any unavailable quantities.  If the <code>UseUnplannedInventory</code> flag is passed, it will override the <code>UseUnplannedInventory</code> attribute on the item in the catalog.  Otherwise, the <code>UseUnplannedInventory</code> attribute on the item will be used.
+				<br/>Default: <b>
+                            <code>N</code>
+                        </b>
+                        <br/>Valid Values: <b>
+                            <code>Y</code>
+                        </b> or <b>
+                            <code>N</code>
+                        </b>
+                    </div>
+                </xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    <xsd:element name="PromiseLines">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="yfc:PromiseLine"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="PromiseLine">
+        <xsd:annotation yfc:tableName="YFS_ORDER_LINE">
+            <xsd:documentation>
+                <div>
+				This table stores order line information, including item details and shipping information. Multiple lines can be created for a single order defined in the <code>YFS_ORDER_HEADER</code> table.
+				
+                            
+                            
+                    <!-- Validation>
+					<Condition>Line is a bundle parent and child lines are automatically included based on the components of the bundle in the catalog, which contains a model item.</Condition>
+					<Error ErrorCode="OMP80_0040" Description="Cannot include a bundle item with a model item as a component."/> 
+				</Validation-->
+                </div>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:all>
+                <xsd:element maxOccurs="1" minOccurs="0" name="ShipNodes">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element maxOccurs="unbounded"
+                                minOccurs="0" name="ShipNode">
+                                <xsd:annotation yfc:tableName="YFS_SHIP_NODE">
+                                    <xsd:documentation>This table stores receiving node, ship node, and distribution centers in the system for various organizations.</xsd:documentation>
+                                </xsd:annotation>
+                                <xsd:complexType>
+                                    <xsd:attribute name="Node"
+                                    type="yfctype:ShipNode" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+						Shipping node from which the inventory should be found.
+						</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element maxOccurs="1" minOccurs="0" name="ExcludedShipNodes">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <div>
+          Multiple shipnodes that should be ignored during inquiry can be passed for promise header and promise lines/promise service lines.  If not passed on the promise line, nodes from promise header will be used.  If passed under promise line, then nodes at the header will not be used.
+        </div>
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element maxOccurs="unbounded"
+                                minOccurs="0" name="ExcludedShipNode">
+                                <xsd:complexType>
+                                    <xsd:attribute name="Node"
+                                    type="yfctype:ShipNode" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+          Node that should be ignored during the inquiry based on <code>SupressSourcing</code> and <code>SupressProcurement</code> flags.
+					</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute
+                                    name="SupressSourcing" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+            Flag to indicate whether to exclude the <code>Node</code> for sourcing consideration. 
+            <br/>Default: <b>
+                                    <code>N</code>
+                                    </b>
+                                    <br/>Valid Values: <b>
+                                    <code>Y</code>
+                                    </b> or <b>
+                                    <code>N</code>
+                                    </b>
+                                    </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                    <xsd:restriction base="yfctype:Flag">
+                                    <xsd:enumeration value="Y"/>
+                                    <xsd:enumeration value="N"/>
+                                    </xsd:restriction>
+                                    </xsd:simpleType>
+                                    </xsd:attribute>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element maxOccurs="1" minOccurs="0" name="ShipToAddress">
+                    <xsd:annotation yfc:tableName="YFS_PERSON_INFO">
+                        <xsd:documentation>This table stores relevant personal information and addresses. Addresses are typically organization address, ship node address, customer address, and so forth. Personal information is required in cases where person to person contact needs to be established; for example, taking appointments or speaking during negotiations. The key of this table is posted in various tables to allow access to people and address information.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:attribute name="AddressLine1"
+                            type="yfctype:Address" use="optional">
+                            <xsd:annotation
+                                yfc:columnName="ADDRESS_LINE1" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The address line 1 field.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="AddressLine2"
+                            type="yfctype:Address" use="optional">
+                            <xsd:annotation
+                                yfc:columnName="ADDRESS_LINE2" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The address line 2 field.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="AddressLine3"
+                            type="yfctype:Address" use="optional">
+                            <xsd:annotation
+                                yfc:columnName="ADDRESS_LINE3" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The address line 3 field.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="AddressLine4"
+                            type="yfctype:Address" use="optional">
+                            <xsd:annotation
+                                yfc:columnName="ADDRESS_LINE4" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The address line 4 field.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="AddressLine5"
+                            type="yfctype:Address" use="optional">
+                            <xsd:annotation
+                                yfc:columnName="ADDRESS_LINE5" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The address line 5 field.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="AddressLine6"
+                            type="yfctype:Address" use="optional">
+                            <xsd:annotation
+                                yfc:columnName="ADDRESS_LINE6" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The address line 6 field.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="AlternateEmailID"
+                            type="yfctype:EMailID" use="optional">
+                            <xsd:annotation
+                                yfc:columnName="ALTERNATE_EMAILID" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The alternate email address at which the person or a predesignated employee of the organization referred to in the address can be contacted.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="Beeper"
+                            type="yfctype:PhoneNo" use="optional">
+                            <xsd:annotation yfc:columnName="BEEPER" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The beeper number at which the person or a predesignated employee of the organization referred to in the address can be called.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="City" type="yfctype:City" use="optional">
+                            <xsd:annotation yfc:columnName="CITY" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The city in the address.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="Company"
+                            type="yfctype:Company" use="optional">
+                            <xsd:annotation yfc:columnName="COMPANY" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The company this person is associated with.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="Country"
+                            type="yfctype:Country" use="optional">
+                            <xsd:annotation yfc:columnName="COUNTRY" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The country in the address.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="DayFaxNo"
+                            type="yfctype:PhoneNo" use="optional">
+                            <xsd:annotation yfc:columnName="DAY_FAX_NO" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The day time fax at which the person or a predesignated employee of the organization referred to in the address can be notified.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="DayPhone"
+                            type="yfctype:PhoneNo" use="optional">
+                            <xsd:annotation yfc:columnName="DAY_PHONE" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The day time phone at which the person or organization referred to in the address can be called.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="Department"
+                            type="yfctype:Department" use="optional">
+                            <xsd:annotation yfc:columnName="DEPARTMENT" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The primary department in charge of procurement.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="EMailID"
+                            type="yfctype:EMailID" use="optional">
+                            <xsd:annotation yfc:columnName="EMAILID" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The email address at which the person or a predesignated employee of the organization referred to in the address can be contacted.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="EveningFaxNo"
+                            type="yfctype:PhoneNo" use="optional">
+                            <xsd:annotation
+                                yfc:columnName="EVENING_FAX_NO" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The evening time fax at which the person or a predesignated employee of the organization referred to in the address can be notified.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="EveningPhone"
+                            type="yfctype:PhoneNo" use="optional">
+                            <xsd:annotation
+                                yfc:columnName="EVENING_PHONE" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The evening time phone at which the person or organization referred to in the address can be called.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="FirstName"
+                            type="yfctype:PersonName" use="optional">
+                            <xsd:annotation yfc:columnName="FIRST_NAME" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The first name of the person.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="IsCommercialAddress"
+                            type="yfctype:Flag" use="optional">
+                            <xsd:annotation
+                                yfc:columnName="IS_COMMERCIAL_ADDRESS" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>Indicates whether the address is commercial, residential or none. Values of this field can be Y -Commercial address.N - Residential address. undefined for Null.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="JobTitle"
+                            type="yfctype:Title-40" use="optional">
+                            <xsd:annotation yfc:columnName="JOB_TITLE" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The job title of the person.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="LastName"
+                            type="yfctype:PersonName" use="optional">
+                            <xsd:annotation yfc:columnName="LAST_NAME" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The last name of the person.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="MiddleName"
+                            type="yfctype:MiddleName" use="optional">
+                            <xsd:annotation yfc:columnName="MIDDLE_NAME" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The middle name of the person.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="MobilePhone"
+                            type="yfctype:PhoneNo" use="optional">
+                            <xsd:annotation
+                                yfc:columnName="MOBILE_PHONE" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The mobile phone at which the person or a predesignated employee of the organization referred to in the address can be called.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="OtherPhone"
+                            type="yfctype:PhoneNo" use="optional">
+                            <xsd:annotation yfc:columnName="OTHER_PHONE" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The alternate phone number at which the person or a predesignated employee of the organization referred to in the address can be called.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="PersonID"
+                            type="yfctype:PersonId" use="optional">
+                            <xsd:annotation yfc:columnName="PERSON_ID" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The unique identifier for a person.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="State" type="yfctype:State" use="optional">
+                            <xsd:annotation yfc:columnName="STATE" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The state in the address.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="Suffix"
+                            type="yfctype:Suffix" use="optional">
+                            <xsd:annotation yfc:columnName="SUFFIX" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The suffix for a person, such as Jr., or Sr.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="TaxGeoCode"
+                            type="yfctype:GeoCode" use="optional">
+                            <xsd:annotation
+                                yfc:columnName="TAX_GEO_CODE" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The tax geo code for this location. Intended for future use.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="Title"
+                            type="yfctype:Title-10" use="optional">
+                            <xsd:annotation yfc:columnName="TITLE" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The title for the person such as Ms., Mr., or Dr..</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="ZipCode"
+                            type="yfctype:ZipCode" use="optional">
+                            <xsd:annotation yfc:columnName="ZIP_CODE" yfc:tableName="YFS_PERSON_INFO">
+                                <xsd:documentation>The zip code in the address.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="yfc:Tag"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="yfc:ItemFilter"/>
+            </xsd:all>
+            <xsd:attribute name="BundleFulfillmentMode"
+                type="yfctype:Text-2" use="optional">
+                <xsd:annotation yfc:columnName="BUNDLE_FULFILLMENT_MODE" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>
+                        <div>
+					The way in which the bundle will be fulfilled. It can be Ship Independent (00), Ship Together (01), or Deliver Together (02) for Bundle Item. Default value is based on the catalog. If the item is not in the catalog, then Ship Together(01) is defaulted for Bundle Item. For the bundle fulfillment type Ship Separately, the quantity available for the bundle parent is not calculated and the bundle parent will not show any options. This is because Ship Independent the bundle components are treated as two individual lines and Kit Qty/ratio is not honored.
+					</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="DistributionRuleId"
+                type="yfctype:DistributionRuleId" use="optional">
+                <xsd:annotation yfc:columnName="DISTRIBUTION_RULE_ID" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>the identifier of the distribution group that is used to determine the ship node(s) that will ship the order line. If not proviFded, the seller organization's default distribution rule ID is used. If provided, it must be a valid ID for the Seller organization.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="FulfillmentType" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="FULFILLMENT_TYPE" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>The method of fulfilling the order line during scheduling. This field can be matched with the corresponding field in the YFS_SOURCING_RULE_HDR table and the appropriate sourcing rule can be selected.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="GroupID" type="yfctype:Text-24" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+		          Lines with the same ID will be considered as a single shipment, given that ship node and dates are the same.
+						</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ItemID" type="yfctype:ItemID" use="required">
+                <xsd:annotation yfc:columnName="ITEM_ID" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>The identifier for the item. The ITEM_ID, UOM, and PRODUCT_CLASS form the unique inventory identifier for an order line. The ITEM_ID, UOM and ORGANIZATION_CODE form the unique item identifier for the Product Management module.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+			 <xsd:attribute name="RequiredQty" type="yfctype:Quantity" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                      	
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="LineId" type="yfctype:Text-40" use="required">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+					Unique identifier for the line. It is mandatory to pass this attribute.
+					<Validation>
+                                <Condition>LineId not specified.</Condition>
+                                <Error
+                                    Description="YCP:Field Mandatory." ErrorCode="YCP0046"/>
+                            </Validation>
+                            <Validation>
+                                <Condition>Multiple PromiseLines contain the same LineId value.</Condition>
+                                <Error
+                                    Description="Duplicate LineIds passed." ErrorCode="OMP80_0056"/>
+                            </Validation>
+                        </div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="MinShipByDate" use="optional">
+                <xsd:annotation yfc:columnName="MIN_SHIP_BY_DATE" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>
+                        <div>
+		            The preferred minimum ship by date of the available supply that promise line can schedule against.  Available supply with ship by date earlier than the minimum ship by date will not be considered.
+		            <br/>Default: None
+		            </div>
+                    </xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:union>
+                        <xsd:simpleType>
+                            <xsd:restriction base="yfctype:TimeStamp"/>
+                        </xsd:simpleType>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:enumeration value=""/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:union>
+                </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="ProductClass"
+                type="yfctype:ProductClass" use="optional">
+                <xsd:annotation yfc:columnName="PRODUCT_CLASS" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>The product class. This field is used as an inventory identifier.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ReceivingNode" type="yfctype:ShipNode" use="optional">
+                <xsd:annotation yfc:columnName="RECEIVING_NODE" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>The receiving node that is associated with this order line.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ReqEndDate" type="yfctype:TimeStamp" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+					Look for inventory between the <code>ReqStartDate</code> and the <code>ReqEndDate</code>.
+					<br/>Default: Current date
+					<Validation>
+                                <Condition>Must be a valid date.
+						</Condition>
+                                <Error
+                                    Description="Invalid Date Format." ErrorCode="YFC004"/>
+                            </Validation>
+                        </div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ReqStartDate" type="yfctype:TimeStamp" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+					Look for inventory between the <code>ReqStartDate</code> and the <code>ReqEndDate</code>.
+					<br/>Default: Current date
+					<Validation>
+                                <Condition>Must be a valid date.
+						</Condition>
+                                <Error
+                                    Description="Invalid Date Format." ErrorCode="YFC004"/>
+                            </Validation>
+                        </div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="Segment" type="yfctype:Segment" use="optional">
+                <xsd:annotation yfc:columnName="SEGMENT" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>The segment of the inventory.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="SegmentType" type="yfctype:SegmentType" use="optional">
+                <xsd:annotation yfc:columnName="SEGMENT_TYPE" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>The segment type of the inventory.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ShipNode" type="yfctype:ShipNode" use="optional">
+                <xsd:annotation yfc:columnName="SHIPNODE_KEY" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>
+                        <div>
+							Shipping node from which the inventory should be found.   This shipnode will be used first if provided.
+						</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="UnitOfMeasure" type="yfctype:UOM" use="optional">
+                <xsd:annotation yfc:columnName="UOM" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>The unit of measure.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="Tag">
+        <xsd:annotation yfc:tableName="YFS_ORDER_LINE_REQ_TAG">
+            <xsd:documentation>This table stores the requested inventory attributes of an item on a order line .</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:attribute name="BatchNo" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="BATCH_NO" yfc:tableName="YFS_ORDER_LINE_REQ_TAG">
+                    <xsd:documentation>The Batch Number that has been specifed in the Order Line.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="LotAttribute1" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="LOT_ATTRIBUTE1" yfc:tableName="YFS_ORDER_LINE_REQ_TAG">
+                    <xsd:documentation>Lot Attribute 1 used to specify the details of the lot.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="LotAttribute2" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="LOT_ATTRIBUTE2" yfc:tableName="YFS_ORDER_LINE_REQ_TAG">
+                    <xsd:documentation>Lot Attribute 2 used to specify the details of the lot.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="LotAttribute3" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="LOT_ATTRIBUTE3" yfc:tableName="YFS_ORDER_LINE_REQ_TAG">
+                    <xsd:documentation>Lot Attribute 3 used to specify the details of the lot.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="LotKeyReference"
+                type="yfctype:Text-4000" use="optional">
+                <xsd:annotation yfc:columnName="LOT_KEY_REFERENCE" yfc:tableName="YFS_ORDER_LINE_REQ_TAG">
+                    <xsd:documentation>The Lot key reference that has been specifed in the Order Line.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="LotNumber" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="LOT_NUMBER" yfc:tableName="YFS_ORDER_LINE_REQ_TAG">
+                    <xsd:documentation>The Lot Number that has been specifed in the Order Line.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ManufacturingDate" use="optional">
+                <xsd:annotation yfc:columnName="LOT_MANUFACTURE_DATE" yfc:tableName="YFS_ORDER_LINE_REQ_TAG">
+                    <xsd:documentation>The Lot manufacturing date that has been specifed in the Order Line.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:union>
+                        <xsd:simpleType>
+                            <xsd:restriction base="yfctype:Date"/>
+                        </xsd:simpleType>
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:enumeration value=""/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:union>
+                </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="RevisionNo" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="REVISION_NO" yfc:tableName="YFS_ORDER_LINE_REQ_TAG">
+                    <xsd:documentation>The Revision Number that has been specifed in the Order Line.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="ItemFilter">
+        <xsd:annotation yfc:tableName="YFS_ITEM">
+            <xsd:documentation>Determines the filtering attributes when determining availability of a model item.
+				This can be used to specify the correct style, size, or color of a model item and only include
+				model children inventory whose item definition meet the required input.
+				<br/>Note: Only extended attributes of the YFS_ITEM table are supported.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:all>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="yfc:PrimaryInformation"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="yfc:ClassificationCodes"/>
+            </xsd:all>
+            <xsd:attribute name="GetUnpublishedItems" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>Indicates if unpublished items needs to be considered.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="yfctype:Flag">
+                        <xsd:enumeration value="N"/>
+                        <xsd:enumeration value="Y"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="IgnoreInvalidItems" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+					This flag indicates whether invalid items should be considered.
+					Valid values: <b>
+                                <code>Y</code>
+                            </b> or <b>
+                                <code>N</code>
+                            </b>
+					Default value: <b>
+                                <code>N</code>
+                            </b>
+                        </div>
+                    </xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                    <xsd:restriction base="yfctype:Flag">
+                        <xsd:enumeration value="N"/>
+                        <xsd:enumeration value="Y"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="PrimaryInformation">
+        <xsd:annotation yfc:tableName="YFS_ITEM">
+            <xsd:documentation>The table stores product information.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:attribute name="ColorCode" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="COLOR_CODE" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>This field describes color code for the item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ItemType" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="ITEM_TYPE" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>The generic type of an item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ManufacturerItem"
+                type="yfctype:Text-100" use="optional">
+                <xsd:annotation yfc:columnName="MANUFACTURER_ITEM" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>The identifier used by a manufacturer to identify an item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ManufacturerName"
+                type="yfctype:Text-50" use="optional">
+                <xsd:annotation yfc:columnName="MANUFACTURER_NAME" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>The manufacturer of the item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ProductLine" type="yfctype:Text-100" use="optional">
+                <xsd:annotation yfc:columnName="PRODUCT_LINE" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>The product line associated with the item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="SizeCode" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="SIZE_CODE" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>This field describes the size code of the item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="ClassificationCodes">
+        <xsd:annotation yfc:tableName="YFS_ITEM">
+            <xsd:documentation>The table stores product information.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:attribute name="CommodityCode" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="COMMODITY_CODE" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>The commodity code of an item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ECCNNo" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="ECCN_NO" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>The ECCN number of an item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="HarmonizedCode" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="HARMONIZED_CODE" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>The harmonized code of an item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="NAICSCode" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="NAICS_CODE" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>The NAICS code of an item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="NMFCCode" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="NMFC_CODE" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>The NMFC code for an item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="StorageType" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="STORAGE_TYPE" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>The storage type code of an item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="TaxProductCode" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="TAX_PRODUCT_CODE" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>The tax product code of an item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="UNSPSC" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="UNSPSC" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>The UNSPSC code of an item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="VelocityCode"
+                type="yfctype:VelocityCode" use="optional">
+                <xsd:annotation yfc:columnName="VELOCITY_CODE" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>The velocity code.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

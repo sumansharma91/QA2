@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ExistingOrderLineExtn"
+        extnPackage="extn.return.create.lines"
+        originalScreen="isccs.return.create.lines.ExistingOrderLine"
+        originalScreenPackage="isccs.return.create.lines" type="diffrential">
+        <Items>
+            <Button _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="btnExchange" renderHidden="true"/>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lnkPriceMatch" renderHidden="true"/>
+            <CheckBox _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="chkGiftRecipient" renderHidden="true"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

@@ -1,0 +1,80 @@
+<OrderLineList>
+	
+		
+		
+			<OrderLine CustomerPONo="" DeliveryMethod=""
+				OrderHeaderKey="" OrderLineKey="" LineType="" OrderedQty=""
+				ReqDeliveryDate="" ReqShipDate="" SCAC="" ScacAndService=""
+				ShipNode="" PrimeLineNo="" SubLineNo="" Status="" >
+				<Extn   />
+	<!-- For Jira OMS 596 -->
+				<Shipnode AcceptanceRequired="" ActivateFlag="" CanShipToAllNodes="" CanShipToOtherAddresses="" ContactAddressKey="" CurrentBolNumber="" DefaultDeclaredValue="" Description="" ExportLicenseExpDate="" ExportLicenseNo="" ExportTaxpayerId="" GenerateBolNumber="" IdentifiedByParentAs="" InterfaceSubType="" InterfaceType="" InventoryTracked="" Inventorytype="" IsItemBasedAllocationAllowed="" Latitude="" Localecode="" Longitude="" MaintainInventoryCost="" NodeType="" OwnerKey="" OwnerType="" PicklistType="" ReceivingNode="" RequiresChangeRequest="" ReturnCenterFlag="" ReturnsNode="" ShipNode="" ShipNodeAddressKey="" ShipNodeClass="" ShipnodeKey="" ShipnodeType="" ShippingNode="" SupplierKey="" ThreePlNode="" TimeDiff="">
+<ShipNodePersonInfo AddressLine1="" AddressLine2="" AddressLine3="" AddressLine4="" AddressLine5="" AddressLine6="" AlternateEmailID="" Beeper="" City="" Company="" Country="" DayFaxNo="" DayPhone="" Department="" EMailID="" ErrorTxt="" EveningFaxNo="" EveningPhone="" FirstName="" HttpUrl="" IsCommercialAddress="" JobTitle="" LastName="" MiddleName="" MobilePhone="" OtherPhone="" PersonID="" PersonInfoKey="" PreferredShipAddress="" State="" Suffix="" TaxGeoCode="" Title="" UseCount="" VerificationStatus="" ZipCode=""/>
+</Shipnode>
+				
+				
+				<Order BillToID="" CustomerEMailID="" CustomerFirstName=""
+		CustomerLastName="" CustomerPONo="" DocumentType="" EnteredBy=""
+		EnterpriseCode="" EntryType="" MessageType="" OrderDate=""
+		OrderHeaderKey="" OrderNo="" OrderType="" SCAC="" ScacAndService=""
+		SellerOrganizationCode="" PaymentRuleId="">
+		<Extn  />
+				
+		<PersonInfoBillTo AddressLine1="North Bergen"
+			AddressLine2="" AddressLine3="" AddressLine4="" AlternateEmailID=""
+			Beeper="" City="" Company="" Country="" DayPhone="" Department=""
+			EMailID="" EveningPhone="" FirstName="" JobTitle="" LastName=""
+			MiddleName="" MobilePhone="" OtherPhone="" PersonID="" State=""
+			Suffix="" ZipCode="" />
+		
+		<OverallTotals GrandCharges="" GrandDiscount=""
+			GrandShippingCharges="" GrandShippingDiscount="" GrandShippingTotal=""
+			GrandTax="" GrandTotal="" LineSubTotal="" />
+			
+	</Order>
+				
+				
+				
+				
+				
+				<Item ItemDesc="" ItemID="" ProductClass="" UnitOfMeasure="" />
+					
+				
+				<ItemDetails>
+				<Extn ExtnActSkuID="" ExtnBrand="" ExtnBrandTitle="" ExtnItemSize="" ExtnItemType="" ExtnItemUOM=""/>
+				</ItemDetails>
+
+				<PersonInfoShipTo AddressLine1="" AddressLine2=""
+					AddressLine3="" AddressLine4="" AddressLine5="" AddressLine6=""
+					AlternateEmailID="" Beeper="" City="" Company="" Country=""
+					DayFaxNo="" DayPhone="" Department="" EMailID="" EveningFaxNo=""
+					EveningPhone="" FirstName="" JobTitle="" LastName="" MiddleName=""
+					MobilePhone="" OtherPhone="" PersonID="" State="" Suffix="" Title=""
+					ZipCode="" />
+
+
+				<LineOverallTotals Charges="" Discount=""
+					ExtendedPrice="" LineCost="" LineTotal="" LineTotalWithoutTax=""
+					ManualDiscountPercentage="" ManualOverridePercentage=""
+					OptionPrice="" PercentProfitMargin="" PricingQty=""
+					ShippingBaseCharge="" ShippingCharges="" ShippingDiscount=""
+					ShippingTotal="" Tax="" UnitPrice="" />
+			
+			
+			<OrderStatuses>
+			<OrderStatus OrderHeaderKey="" OrderLineKey="" OrderLineScheduleKey="" OrderReleaseKey="" OrderReleaseStatusKey="" PipelineKey="" ReceivingNode="" ShipNode="" Status="" StatusDate="" StatusDescription="" StatusQty="" StatusReason="" TotalQuantity="">
+</OrderStatus>
+		</OrderStatuses>
+				<Schedules>
+		<Schedule BatchNo="" ExpectedDeliveryDate="" ExpectedShipmentDate="" 
+			LotNumber="" MergeNode="" OrderHeaderKey="" OrderLineKey="" OrderLineScheduleKey="" 
+			ProcureFromNode="" ProductAvailabilityDate="" Quantity="" ReceivingNode="" RevisionNo="" 
+			ScheduleNo="" ShipByDate="" ShipNode="" TagNumber="">
+		</Schedule>
+		</Schedules>
+		
+			</OrderLine>
+		
+
+		
+</OrderLineList>

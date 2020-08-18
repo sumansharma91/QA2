@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlatfileDelimitedSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation='delimitedreceiver.xsd'>
+   <ParserDefaults DefaultRecordDelimiter="Newline" DefaultFieldDelimiter="," DefaultPadCharacter=" " RecordIdStartPosition="1" >
+  
+   </ParserDefaults>
+
+   <Root Name="VSICommissionOrderList">
+        <Header Name="CommissionOrderHdr" RecordName="ORDRHDR" MinOccurrence="1" MaxOccurrence="1"/>
+   </Root>
+
+   <RecordDefinitions>
+      <Record RecordId="ORDER" Name="ORDRHDR" XMLName="VSICommissionOrder">
+        <Field Name="ORDRID" FieldPosition="2" XMLName="OrderNo"/>
+      </Record>
+   </RecordDefinitions>
+</FlatfileDelimitedSchema>

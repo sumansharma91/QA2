@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="CustomerDetailsExtn"
+        extnPackage="extn.customer.details"
+        originalScreen="isccs.customer.details.CustomerDetails"
+        originalScreenPackage="isccs.customer.details" type="diffrential">
+        <Items>
+            <ScreenRef _sc_extensibility_moveOrder="12"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="extn_pnlLoyaltyDetails"
+                className="CustomerLoyaltyDetails" dynamicLoading="true"
+                handleInit="true" packageName="extn.customer.loyalty" uId="extn_screenref_CustomerLoyaltyDetails"/>
+            <ContentPane _sc_extensibility_operation="change" _sc_extensibility_referenceUId="pnlPrimaryInfo">
+                <TableLayout cols="2"/>
+            </ContentPane>
+            <ContentPane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="DST_MainInfoPanel" renderHidden="false"/>
+            <ContentPane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="pnlNotes" renderHidden="false"/>
+            <ContentPane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="pnlAlerts" renderHidden="true"/>
+            <ContentPane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="pnlReturns" renderHidden="true"/>
+            <ContentPane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="pnlDemographics" renderHidden="true"/>
+            <ContentPane _sc_extensibility_moveOrder="10"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="ManageCustomerAddresses"
+                class="singlecolumntable" resourceId="ISCORD0001"
+                title="$(_scSimpleBundle:extn_Loyalty_Details)" uId="extn_pnlLoyaltyDetails"/>
+            <ContentPane _sc_extensibility_moveOrder="11"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="pnlAddresses" uId="extn_pnlLoyaltyDetails"/>
+            <ContentPane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="pnlPaymentMethods" renderHidden="true"/>
+            <ContentPane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="pnlOrdersFromCart" renderHidden="true"/>
+            <DataLabel _sc_extensibility_moveOrder="8"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lblDayPhone"
+                label="$(_scSimpleBundle:extn_VIP)" renderHidden="true" uId="extn_datalabel_VIP">
+                <BindingData>
+                    <SourceBinding
+                        namespace="getCompleteCustomerDetails_output" path="Customer.Extn.ExtnVIPFlag"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblDayPhone" label="$(_scBundle:extn_Primary_Phone)"/>
+            <DataLabel _sc_extensibility_moveOrder="6"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="lnkEmailAddress" uId="lblDayPhone"/>
+            <DataLabel _sc_extensibility_moveOrder="9"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="lblDayPhone"
+                label="$(_scSimpleBundle:extn_Loyalty_Customer)"
+                renderHidden="true" uId="extn_datalabel_LoyaltyCustomer">
+                <BindingData>
+                    <SourceBinding
+                        namespace="getCompleteCustomerDetails_output" path="Customer.Extn.ExtnLoyaltyCustomer"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lblDayPhone"
+                label="$(_scBundle:extn_Healthy_Awards_)" uId="extn_datalabel_HealthyAwards">
+                <BindingData>
+                    <SourceBinding namespace="getCustomerContact_output" path="CustomerContact.CustomerContactID"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_moveOrder="5"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lblDayPhone"
+                label="$(_scBundle:extn_Gender)" uId="extn_datalabel_Gender">
+                <BindingData>
+                    <SourceBinding namespace="getCustomerContact_output" path="CustomerContact.ExtnGender"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_moveOrder="7"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_datalabel_HealthyAwards" uId="extn_datalabel_Gender"/>
+            <DataLabel _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_datalabel_HealthyAwards"
+                label="$(_scSimpleBundle:extn_Ship_Preference)" uId="extn_datalabel_Ship_Preference">
+                <BindingData>
+                    <SourceBinding
+                        namespace="getCompleteCustomerDetails_output" path="Customer.Extn.ExtnPreferredCarrierDescription"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_moveOrder="3"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="lblDayPhone"
+                label="$(_scSimpleBundle:extn_Tax_Exempt)" uId="extn_datalabel_Tax_Exempt">
+                <BindingData>
+                    <SourceBinding
+                        namespace="getCompleteCustomerDetails_output" path="Customer.Extn.ExtnTaxExemptionCode"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblEveningPhone" renderHidden="true"/>
+            <DataLabel _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblMobilePhone" renderHidden="true"/>
+            <DataLabel _sc_extensibility_moveOrder="13"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_screenref_CustomerLoyaltyDetails"
+                label="$(_scBundle:extn_HealthyRewardPoints)" uId="extn_HealthyRewardPoints">
+                <BindingData>
+                    <SourceBinding
+                        namespace="getCompleteCustomerDetails_output" path="Customer.HealthyRewardPoints"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_moveOrder="15"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="pnlPrimaryInfo"
+                label="$(_scSimpleBundle:extn_Loyalty_Tier)" uId="extn_datalabel_LoyaltyTier">
+                <BindingData>
+                    <SourceBinding
+                        namespace="getCompleteCustomerDetails_output" path="Customer.Extn.ExtnLoyaltyTier"/>
+                </BindingData>
+            </DataLabel>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="afterScreenInit" isExtn="true" sequence="51">
+                    <Handler methodName="extn_init"/>
+                </Subscriber>
+                <Subscriber eventId="extn_pnlLoyaltyDetails_onShow"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="extn_loadLoyaltyData"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Init>
+                <MashupRef
+                    mashupId="customerDetails_getCompleteConsumerCustomerDetails"
+                    mashupRefId="getCompleteCustomerDetails" sourceNamespace="getCompleteCustomerDetails_output"/>
+            </Init>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="CreateContactExtn"
+        extnPackage="extn.customer.create"
+        originalScreen="isccs.customer.create.CreateContact"
+        originalScreenPackage="isccs.customer.create" type="diffrential">
+        <Namespaces>
+            <TargetNamespaces>
+                <Target isExtn="true"
+                    scExtensibilityArrayItemId="extn_TargetNamespaces_2" value="extn_billToAddress_input"/>
+            </TargetNamespaces>
+            <SourceNamespaces>
+                <Source isExtn="true"
+                    scExtensibilityArrayItemId="extn_SourceNamespaces_9" value="extn_getCountryList"/>
+                <Source isExtn="true"
+                    scExtensibilityArrayItemId="extn_SourceNamespaces_10" value="extn_ShipToAddress"/>
+                <Source isExtn="true"
+                    scExtensibilityArrayItemId="extn_SourceNamespaces_11" value="extn_BillToAddress"/>
+                <Source description="GenderList" isExtn="true"
+                    scExtensibilityArrayItemId="extn_SourceNamespaces_12" value="extn_getGenderList_output"/>
+                <Source isExtn="true"
+                    scExtensibilityArrayItemId="extn_SourceNamespaces_13" value="extn_getCarrierPreferenceList_output"/>
+                <Source isExtn="true"
+                    scExtensibilityArrayItemId="extn_SourceNamespaces_14" value="extn_get_OrganizationList_ouput"/>
+            </SourceNamespaces>
+        </Namespaces>
+        <Items>
+            <FilteringSelect _sc_extensibility_moveOrder="120"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="txtLastName"
+                label="$(_scSimpleBundle:extn_Gender)" uId="extn_filteringselect_Gender">
+                <BindingData>
+                    <SourceBinding namespace="getCustomerContact_output" path="CustomerContact.ExtnGender"/>
+                    <TargetBindings>
+                        <TargetBinding namespace="manageCustomer_input"
+                            path="Customer.CustomerContactList.CustomerContact.ExtnGender" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                    <OptionsBinding
+                        descriptionField="CodeLongDescription"
+                        namespace="extn_getGenderList_output"
+                        path="CommonCodeList.CommonCode" valueField="CodeLongDescription"/>
+                </BindingData>
+            </FilteringSelect>
+            <FilteringSelect _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="cmbTitle" renderHidden="true"/>
+            <FilteringSelect _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="cmbStatus" renderHidden="true"/>
+            <FilteringSelect _sc_extensibility_moveOrder="122"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="txtDayPhone"
+                label="$(_scSimpleBundle:extn_Ship_Preference)"
+                renderHidden="true" uId="extn_filteringselect_ShipPreference">
+                <BindingData>
+                    <SourceBinding namespace="getCustomerDetails_output" path="Customer.Extn.ExtnPreferredCarrier"/>
+                    <TargetBindings>
+                        <TargetBinding namespace="manageCustomer_input"
+                            path="Customer.Extn.ExtnPreferredCarrier" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                    <OptionsBinding addEmptyOption="false"
+                        descriptionField="OrganizationCode"
+                        namespace="extn_get_OrganizationList_ouput"
+                        path="OrganizationList.Organization" valueField="OrganizationName"/>
+                </BindingData>
+            </FilteringSelect>
+            <FilteringSelect _sc_extensibility_moveOrder="39"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_textfieldPostalCode"
+                label="$(_scSimpleBundle:Country_Region)"
+                readOnly="true" required="false" uId="extn_filteringselectCountryRegion">
+                <BindingData>
+                    <SourceBinding namespace="extn_ShipToAddress" path="Country"/>
+                    <TargetBindings>
+                        <TargetBinding namespace="manageCustomer_input"
+                            path="Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.Country" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                    <OptionsBinding
+                        descriptionField="CodeLongDescription"
+                        namespace="extn_getCountryList"
+                        path="CommonCodeList.CommonCode"
+                        readDescFromBundle="false" valueField="CodeLongDescription"/>
+                </BindingData>
+            </FilteringSelect>
+            <FilteringSelect _sc_extensibility_moveOrder="60"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneShipToRight" uId="extn_filteringselectCountryRegion"/>
+            <FilteringSelect _sc_extensibility_moveOrder="71"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_textfieldPostalCode" uId="extn_filteringselectCountryRegion"/>
+            <FilteringSelect _sc_extensibility_moveOrder="104"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneShipToRight" uId="extn_filteringselectCountryRegion"/>
+            <FilteringSelect _sc_extensibility_moveOrder="112"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_textfieldAddressDisplayName" uId="extn_filteringselectCountryRegion"/>
+            <FilteringSelect _sc_extensibility_moveOrder="51"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_textfieldBillToPostalCode"
+                label="$(_scSimpleBundle:Country_Region)"
+                readOnly="true" uId="extn_filteringselectBillToCountryRegion">
+                <BindingData>
+                    <SourceBinding namespace="screenInput" path="Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.Country"/>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="extn_billToAddress_input"
+                            path="Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.Country" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                    <OptionsBinding
+                        descriptionField="CodeLongDescription"
+                        namespace="extn_getCountryList"
+                        path="CommonCodeList.CommonCode"
+                        readDescFromBundle="true" valueField="CodeLongDescription"/>
+                </BindingData>
+            </FilteringSelect>
+            <FilteringSelect _sc_extensibility_moveOrder="76"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToRightSide" uId="extn_filteringselectBillToCountryRegion"/>
+            <FilteringSelect _sc_extensibility_moveOrder="81"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToLeftSide" uId="extn_filteringselectBillToCountryRegion"/>
+            <FilteringSelect _sc_extensibility_moveOrder="82"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToLeftSide" uId="extn_filteringselectBillToCountryRegion"/>
+            <FilteringSelect _sc_extensibility_moveOrder="99"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_textfieldBillToState" uId="extn_filteringselectBillToCountryRegion"/>
+            <FilteringSelect _sc_extensibility_moveOrder="115"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_textfieldBilltoAddressDisplayName" uId="extn_filteringselectBillToCountryRegion"/>
+            <DateTextBox _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtDateOfBirth" renderHidden="true"/>
+            <DateTextBox _sc_extensibility_moveOrder="6"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_radiobuttonsetPhoneOptIn" uId="txtDateOfBirth"/>
+            <DateTextBox _sc_extensibility_moveOrder="8"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_radiobuttonsetPhoneOptIn" uId="txtDateOfBirth"/>
+            <DateTextBox _sc_extensibility_moveOrder="108"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txtSpouseDOB" uId="txtDateOfBirth"/>
+            <DateTextBox _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtSpouseDOB" renderHidden="true"/>
+            <DateTextBox _sc_extensibility_moveOrder="106"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneOptIn" uId="txtSpouseDOB"/>
+            <DateTextBox _sc_extensibility_moveOrder="107"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="extn_contentpaneDates" uId="txtSpouseDOB"/>
+            <DateTextBox _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtWeddingAnniversary" renderHidden="true"/>
+            <DateTextBox _sc_extensibility_moveOrder="109"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneDates" uId="txtWeddingAnniversary"/>
+            <TitlePane _sc_extensibility_moveOrder="25"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="DST_AdditionalPanel"
+                class="primaryTitlePane" spanLabel="true"
+                title="$(_scSimpleBundle:extn_Ship_To_Address)" uId="extn_titlepaneAddressInfo"/>
+            <TitlePane _sc_extensibility_moveOrder="32"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="extn_contentpaneAdditionalPanel"
+                class="primaryTitlePane" spanLabel="true"
+                title="$(_scSimpleBundle:extn_Bill_To_Address)" uId="extn_titlepaneBillToAddress"/>
+            <ContentPane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="DST_AdditionalPanel" class="detailsPrimaryInfoPanel"/>
+            <ContentPane _sc_extensibility_moveOrder="22"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="DST_PrimaryInfoPanel" uId="DST_AdditionalPanel"/>
+            <ContentPane _sc_extensibility_moveOrder="23"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="DST_PrimaryInfoPanel" uId="DST_AdditionalPanel"/>
+            <ContentPane _sc_extensibility_moveOrder="24"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="DST_MainInfoPanel" uId="DST_AdditionalPanel"/>
+            <ContentPane _sc_extensibility_moveOrder="26"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="extn_titlepaneAddressInfo" uId="extn_contentpaneShipTo"/>
+            <ContentPane _sc_extensibility_moveOrder="56"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneShipTo"
+                class="singlecolumntable" uId="extn_contentpaneShipToLeft"/>
+            <ContentPane _sc_extensibility_moveOrder="57"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_contentpaneShipToLeft"
+                class="singlecolumntable" uId="extn_contentpaneShipToRight"/>
+            <ContentPane _sc_extensibility_moveOrder="31"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="DST_AdditionalPanel"
+                class="detailsPrimaryInfoPanel" renderHidden="false"
+                spanLabel="true" uId="extn_contentpaneAdditionalPanel"/>
+            <ContentPane _sc_extensibility_moveOrder="41"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_checkboxBillTo" uId="extn_contentpaneCheckBox"/>
+            <ContentPane _sc_extensibility_moveOrder="43"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_titlepaneBillToAddress"
+                renderHidden="true" uId="extn_contentpaneBillTo"/>
+            <ContentPane _sc_extensibility_moveOrder="77"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToRightSide"
+                class="singlecolumntable" uId="extn_contentpaneBillToLeftSide"/>
+            <ContentPane _sc_extensibility_moveOrder="72"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_textfieldBillToAddressLine1"
+                class="singlecolumntable" uId="extn_contentpaneBillToRightSide"/>
+            <ContentPane _sc_extensibility_moveOrder="83"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_textfieldBiilToAddressLine2" uId="extn_contentpaneBillToRightSide"/>
+            <ContentPane _sc_extensibility_moveOrder="105"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="pnlDemographics"
+                class="singlecolumntable" uId="extn_contentpaneDates"/>
+            <ContentPane _sc_extensibility_moveOrder="110"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_contentpaneOptIn" uId="extn_contentpaneDates"/>
+            <ContentPane _sc_extensibility_moveOrder="52"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_radiobuttonsetPhoneOptIn"
+                class="singlecolumntable" uId="extn_contentpaneOptIn"/>
+            <ContentPane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="DST_SecondaryInfoPanel" title="$(_scSimpleBundle:Address)"/>
+            <ContentPane _sc_extensibility_moveOrder="15"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="DST_MainInfoPanel" uId="DST_SecondaryInfoPanel"/>
+            <CheckBox _sc_extensibility_moveOrder="40"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="extn_titlepaneBillToAddress"
+                checked="true" disabled="false"
+                label="$(_scSimpleBundle:extn_Use_Ship_To_Address)" uId="extn_checkboxBillTo"/>
+            <CheckBox _sc_extensibility_moveOrder="42"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="extn_contentpaneCheckBox" uId="extn_checkboxBillTo"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtMiddleName" renderHidden="true"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtEmailAddress" required="true"/>
+            <TextField _sc_extensibility_moveOrder="121"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="cmbTitle" uId="txtEmailAddress"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtDepartment" renderHidden="true"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtDayPhone"
+                label="$(_scSimpleBundle:extn_Primary_Phone)" required="false"/>
+            <TextField _sc_extensibility_moveOrder="119"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txtMobilePhone" uId="txtDayPhone"/>
+            <TextField _sc_extensibility_moveOrder="123"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_filteringselect_ShipPreference"
+                label="$(_scSimpleBundle:extn_Tax_exempt_ID)" uId="extn_textfield_TaxExempt">
+                <BindingData>
+                    <SourceBinding namespace="getCustomerDetails_output" path="Customer.Extn.ExtnTaxExemptionCode"/>
+                    <TargetBindings>
+                        <TargetBinding namespace="manageCustomer_input"
+                            path="Customer.Extn.ExtnTaxExemptionCode" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtMobilePhone"
+                renderHidden="true" selectOnClick="false"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtEveningPhone" renderHidden="true"/>
+            <TextField _sc_extensibility_moveOrder="27"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="extn_contentpaneShipTo"
+                label="$(_scSimpleBundle:AddressLine1)" readOnly="true"
+                required="false" uId="extn_textfieldShipToAddressLine1">
+                <BindingData>
+                    <SourceBinding namespace="extn_ShipToAddress" path="AddressLine1"/>
+                    <TargetBindings>
+                        <TargetBinding namespace="manageCustomer_input"
+                            path="Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.AddressLine1" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_moveOrder="61"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="extn_contentpaneShipToLeft" uId="extn_textfieldShipToAddressLine1"/>
+            <TextField _sc_extensibility_moveOrder="33"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_textfieldShipToAddressLine1"
+                label="$(_scSimpleBundle:AddressLine2)" readOnly="true" uId="extn_textfieldShipToAddressLine2">
+                <BindingData>
+                    <SourceBinding namespace="extn_ShipToAddress" path="AddressLine2"/>
+                    <TargetBindings>
+                        <TargetBinding namespace="manageCustomer_input"
+                            path="Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.AddressLine2" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_moveOrder="62"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneShipToLeft" uId="extn_textfieldShipToAddressLine2"/>
+            <TextField _sc_extensibility_moveOrder="67"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_textfieldAddressDisplayName" uId="extn_textfieldShipToAddressLine2"/>
+            <TextField _sc_extensibility_moveOrder="100"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneShipToLeft" uId="extn_textfieldShipToAddressLine2"/>
+            <TextField _sc_extensibility_moveOrder="111"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_textfieldCity" uId="extn_textfieldShipToAddressLine2"/>
+            <TextField _sc_extensibility_moveOrder="34"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_textfieldShipToAddressLine2"
+                label="$(_scSimpleBundle:City)" readOnly="true"
+                required="false" uId="extn_textfieldCity">
+                <BindingData>
+                    <SourceBinding namespace="extn_ShipToAddress" path="City"/>
+                    <TargetBindings>
+                        <TargetBinding namespace="manageCustomer_input"
+                            path="Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.City" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_moveOrder="63"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneShipToLeft" uId="extn_textfieldCity"/>
+            <TextField _sc_extensibility_moveOrder="36"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_textfieldState"
+                label="$(_scSimpleBundle:ZipCodeCol)" readOnly="true"
+                required="false" uId="extn_textfieldPostalCode">
+                <BindingData>
+                    <SourceBinding namespace="extn_ShipToAddress" path="ZipCode"/>
+                    <TargetBindings>
+                        <TargetBinding namespace="manageCustomer_input"
+                            path="Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.ZipCode" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_moveOrder="66"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneShipToRight" uId="extn_textfieldPostalCode"/>
+            <TextField _sc_extensibility_moveOrder="69"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_textfieldCity" uId="extn_textfieldPostalCode"/>
+            <TextField _sc_extensibility_moveOrder="35"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_textfieldCity"
+                label="$(_scSimpleBundle:State)" readOnly="true"
+                required="false" uId="extn_textfieldState">
+                <BindingData>
+                    <SourceBinding namespace="extn_ShipToAddress" path="State"/>
+                    <TargetBindings>
+                        <TargetBinding namespace="manageCustomer_input"
+                            path="Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.State" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_moveOrder="64"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneShipToLeft" uId="extn_textfieldState"/>
+            <TextField _sc_extensibility_moveOrder="68"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_textfieldShipToAddressLine2" uId="extn_textfieldState"/>
+            <TextField _sc_extensibility_moveOrder="102"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneShipToRight" uId="extn_textfieldState"/>
+            <TextField _sc_extensibility_moveOrder="113"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_filteringselectCountryRegion" uId="extn_textfieldState"/>
+            <TextField _sc_extensibility_moveOrder="37"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_textfieldPostalCode"
+                label="$(_scSimpleBundle:extn_Address_Display_Name)"
+                readOnly="true" renderHidden="true" uId="extn_textfieldAddressDisplayName">
+                <BindingData>
+                    <SourceBinding namespace="extn_ShipToAddress" path="AddressID"/>
+                    <TargetBindings>
+                        <TargetBinding namespace="manageCustomer_input"
+                            path="Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.AddressID" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_moveOrder="58"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="extn_contentpaneShipToRight" uId="extn_textfieldAddressDisplayName"/>
+            <TextField _sc_extensibility_moveOrder="101"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneShipToRight" uId="extn_textfieldAddressDisplayName"/>
+            <TextField _sc_extensibility_moveOrder="103"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_radiobuttonsetAddressType" uId="extn_textfieldAddressDisplayName"/>
+            <TextField _sc_extensibility_moveOrder="44"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="extn_contentpaneBillTo"
+                label="$(_scSimpleBundle:AddressLine1)" readOnly="true" uId="extn_textfieldBillToAddressLine1">
+                <BindingData>
+                    <SourceBinding namespace="extn_BillToAddress" path="AddressLine1"/>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="extn_billToAddress_input"
+                            path="Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.AddressLine1" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_moveOrder="73"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToRightSide" uId="extn_textfieldBillToAddressLine1"/>
+            <TextField _sc_extensibility_moveOrder="78"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToLeftSide" uId="extn_textfieldBillToAddressLine1"/>
+            <TextField _sc_extensibility_moveOrder="45"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneBillTo"
+                label="$(_scSimpleBundle:AddressLine2)" readOnly="true" uId="extn_textfieldBiilToAddressLine2">
+                <BindingData>
+                    <SourceBinding namespace="extn_BillToAddress" path="AddressLine2"/>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="extn_billToAddress_input"
+                            path="Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.AddressLine2" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_moveOrder="84"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToRightSide" uId="extn_textfieldBiilToAddressLine2"/>
+            <TextField _sc_extensibility_moveOrder="89"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_textfieldBiiToCity" uId="extn_textfieldBiilToAddressLine2"/>
+            <TextField _sc_extensibility_moveOrder="96"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_textfieldBiiToCity" uId="extn_textfieldBiilToAddressLine2"/>
+            <TextField _sc_extensibility_moveOrder="114"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_textfieldBiiToCity" uId="extn_textfieldBiilToAddressLine2"/>
+            <TextField _sc_extensibility_moveOrder="46"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneBillTo"
+                label="$(_scSimpleBundle:City)" readOnly="true" uId="extn_textfieldBiiToCity">
+                <BindingData>
+                    <SourceBinding namespace="extn_BillToAddress" path="City"/>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="extn_billToAddress_input"
+                            path="Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.City" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_moveOrder="74"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToRightSide" uId="extn_textfieldBiiToCity"/>
+            <TextField _sc_extensibility_moveOrder="79"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToLeftSide" uId="extn_textfieldBiiToCity"/>
+            <TextField _sc_extensibility_moveOrder="90"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToLeftSide" uId="extn_textfieldBiiToCity"/>
+            <TextField _sc_extensibility_moveOrder="97"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_filteringselectBillToCountryRegion" uId="extn_textfieldBiiToCity"/>
+            <TextField _sc_extensibility_moveOrder="48"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneBillTo"
+                label="$(_scSimpleBundle:ZipCodeCol)" readOnly="true" uId="extn_textfieldBillToPostalCode">
+                <BindingData>
+                    <SourceBinding namespace="extn_BillToAddress" path="ZipCode"/>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="extn_billToAddress_input"
+                            path="Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.ZipCode" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_moveOrder="75"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToRightSide" uId="extn_textfieldBillToPostalCode"/>
+            <TextField _sc_extensibility_moveOrder="80"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToLeftSide" uId="extn_textfieldBillToPostalCode"/>
+            <TextField _sc_extensibility_moveOrder="91"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToLeftSide" uId="extn_textfieldBillToPostalCode"/>
+            <TextField _sc_extensibility_moveOrder="98"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_filteringselectBillToCountryRegion" uId="extn_textfieldBillToPostalCode"/>
+            <TextField _sc_extensibility_moveOrder="47"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneBillTo"
+                label="$(_scSimpleBundle:State)" readOnly="true" uId="extn_textfieldBillToState">
+                <BindingData>
+                    <SourceBinding namespace="extn_BillToAddress" path="State"/>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="extn_billToAddress_input"
+                            path="Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.State" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_moveOrder="85"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToRightSide" uId="extn_textfieldBillToState"/>
+            <TextField _sc_extensibility_moveOrder="92"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToRightSide" uId="extn_textfieldBillToState"/>
+            <TextField _sc_extensibility_moveOrder="93"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_textfieldBillToPostalCode" uId="extn_textfieldBillToState"/>
+            <TextField _sc_extensibility_moveOrder="116"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToRightSide" uId="extn_textfieldBillToState"/>
+            <TextField _sc_extensibility_moveOrder="117"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_textfieldBilltoAddressDisplayName" uId="extn_textfieldBillToState"/>
+            <TextField _sc_extensibility_moveOrder="118"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_filteringselectBillToCountryRegion" uId="extn_textfieldBillToState"/>
+            <TextField _sc_extensibility_moveOrder="49"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_textfieldBillToPostalCode"
+                label="$(_scSimpleBundle:extn_Address_Display_Name)"
+                readOnly="true" renderHidden="true" uId="extn_textfieldBilltoAddressDisplayName">
+                <BindingData>
+                    <SourceBinding namespace="extn_BillToAddress" path="AddressID"/>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="extn_billToAddress_input"
+                            path="Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.AddressID" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_moveOrder="87"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToRightSide" uId="extn_textfieldBilltoAddressDisplayName"/>
+            <TextField _sc_extensibility_moveOrder="94"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_radiobuttonsetBillToAddressType" uId="extn_textfieldBilltoAddressDisplayName"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="38"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_textfieldAddressDisplayName"
+                disabled="false" groupAlignment="horizontal"
+                label="$(_scSimpleBundle:extn_Address_Type)"
+                renderHidden="true" uId="extn_radiobuttonsetAddressType">
+                <BindingData>
+                    <RadioBinding>
+                        <Option
+                            label="$(_scSimpleBundle:extn_Residential)"
+                            scExtensibilityArrayItemId="extn_RadioBinding_0"
+                            selected="true" value="N"/>
+                        <Option
+                            label="$(_scSimpleBundle:extn_Commercial)"
+                            scExtensibilityArrayItemId="extn_RadioBinding_1" value="Y"/>
+                    </RadioBinding>
+                    <TargetBindings>
+                        <TargetBinding namespace="manageCustomer_input"
+                            path="Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.IsCommercialAddress" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </RadioButtonSet>
+            <RadioButtonSet _sc_extensibility_moveOrder="59"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_contentpaneShipToRight" uId="extn_radiobuttonsetAddressType"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="65"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneShipToRight" uId="extn_radiobuttonsetAddressType"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="70"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_textfieldAddressDisplayName" uId="extn_radiobuttonsetAddressType"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="138"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneShipTo" uId="extn_radiobuttonsetAddressType"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="139"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_contentpaneShipToLeft" uId="extn_radiobuttonsetAddressType"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="140"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_contentpaneAdditionalPanel" uId="extn_radiobuttonsetAddressType"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="141"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_contentpaneShipToRight" uId="extn_radiobuttonsetAddressType"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="50"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_textfieldBilltoAddressDisplayName"
+                disabled="false" groupAlignment="horizontal"
+                label="$(_scSimpleBundle:extn_Address_Type)"
+                renderHidden="true" uId="extn_radiobuttonsetBillToAddressType">
+                <BindingData>
+                    <RadioBinding>
+                        <Option
+                            label="$(_scSimpleBundle:extn_Commercial)"
+                            scExtensibilityArrayItemId="extn_RadioBinding_0" value="Y"/>
+                        <Option
+                            label="$(_scSimpleBundle:extn_Residential)"
+                            scExtensibilityArrayItemId="extn_RadioBinding_1"
+                            selected="true" value="N"/>
+                    </RadioBinding>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="extn_billToAddress_input"
+                            path="Customer.CustomerContactList.CustomerContact.CustomerAdditionalAddressList.CustomerAdditionalAddress.PersonInfo.IsCommercialAddress" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </RadioButtonSet>
+            <RadioButtonSet _sc_extensibility_moveOrder="86"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToRightSide" uId="extn_radiobuttonsetBillToAddressType"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="137"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneBillTo" uId="extn_radiobuttonsetBillToAddressType"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="142"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_textfieldBilltoAddressDisplayName" uId="extn_radiobuttonsetBillToAddressType"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="pnlDemographics"
+                groupAlignment="horizontal"
+                label="$(_scSimpleBundle:extn_Phone_Opt_In)" uId="extn_radiobuttonsetPhoneOptIn">
+                <BindingData>
+                    <RadioBinding>
+                        <Option label="$(_scSimpleBundle:textYes)"
+                            scExtensibilityArrayItemId="extn_RadioBinding_0"
+                            selected="true" value="Y"/>
+                        <Option label="$(_scSimpleBundle:textNo)"
+                            scExtensibilityArrayItemId="extn_RadioBinding_1" value="N"/>
+                    </RadioBinding>
+                    <SourceBinding namespace="getCustomerDetails_output" path="Customer.PhoneOptIn"/>
+                    <TargetBindings>
+                        <TargetBinding namespace="manageCustomer_input"
+                            path="Customer.PhoneOptIn" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </RadioButtonSet>
+            <RadioButtonSet _sc_extensibility_moveOrder="5"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="txtWeddingAnniversary" uId="extn_radiobuttonsetPhoneOptIn"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="53"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="extn_contentpaneOptIn" uId="extn_radiobuttonsetPhoneOptIn"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="4"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_radiobuttonsetEmailOptIn"
+                groupAlignment="horizontal"
+                label="$(_scSimpleBundle:extn_Postal_Opt_In)" uId="extn_radiobuttonsetPostalOptIn">
+                <BindingData>
+                    <RadioBinding>
+                        <Option label="$(_scSimpleBundle:textYes)"
+                            scExtensibilityArrayItemId="extn_RadioBinding_0"
+                            selected="true" value="Y"/>
+                        <Option label="$(_scSimpleBundle:textNo)"
+                            scExtensibilityArrayItemId="extn_RadioBinding_1" value="N"/>
+                    </RadioBinding>
+                    <SourceBinding namespace="getCustomerDetails_output" path="Customer.PostalOptIn"/>
+                    <TargetBindings>
+                        <TargetBinding namespace="manageCustomer_input"
+                            path="Customer.PostalOptIn" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </RadioButtonSet>
+            <RadioButtonSet _sc_extensibility_moveOrder="7"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txtDateOfBirth" uId="extn_radiobuttonsetPostalOptIn"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="54"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneOptIn" uId="extn_radiobuttonsetPostalOptIn"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="3"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_radiobuttonsetPhoneOptIn"
+                groupAlignment="horizontal"
+                label="$(_scSimpleBundle:extn_E_mail_Opt_In)" uId="extn_radiobuttonsetEmailOptIn">
+                <BindingData>
+                    <RadioBinding>
+                        <Option label="$(_scSimpleBundle:textYes)"
+                            scExtensibilityArrayItemId="extn_RadioBinding_0"
+                            selected="true" value="Y"/>
+                        <Option label="$(_scSimpleBundle:textNo)"
+                            scExtensibilityArrayItemId="extn_RadioBinding_1" value="N"/>
+                    </RadioBinding>
+                    <SourceBinding namespace="getCustomerDetails_output" path="Customer.EmailOptIn"/>
+                    <TargetBindings>
+                        <TargetBinding namespace="manageCustomer_input"
+                            path="Customer.EmailOptIn" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </RadioButtonSet>
+            <RadioButtonSet _sc_extensibility_moveOrder="9"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_radiobuttonsetPostalOptIn" uId="extn_radiobuttonsetEmailOptIn"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="55"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneOptIn" uId="extn_radiobuttonsetEmailOptIn"/>
+            <Link _sc_extensibility_moveOrder="126"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_AddAddress"
+                label="$(_scSimpleBundle:blank)" uId="extn_EditAddress" value="$(_scSimpleBundle:extn_Edit_Address)"/>
+            <Link _sc_extensibility_moveOrder="124"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_contentpaneShipTo"
+                uId="extn_AddAddress" value="$(_scSimpleBundle:AddressEntry)"/>
+            <Link _sc_extensibility_moveOrder="125"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_contentpaneShipToLeft" uId="extn_AddAddress"/>
+            <Link _sc_extensibility_moveOrder="129"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToLeftSide"
+                uId="extn_AddAddressLink" value="$(_scSimpleBundle:AddressEntry)"/>
+            <Link _sc_extensibility_moveOrder="130"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_textfieldBillToAddressLine1" uId="extn_AddAddressLink"/>
+            <Link _sc_extensibility_moveOrder="133"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneBillTo" uId="extn_AddAddressLink"/>
+            <Link _sc_extensibility_moveOrder="135"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToLeftSide" uId="extn_AddAddressLink"/>
+            <Link _sc_extensibility_moveOrder="131"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_contentpaneBillToLeftSide"
+                uId="extn_EditAddressLink" value="$(_scSimpleBundle:extn_Edit_Address)"/>
+            <Link _sc_extensibility_moveOrder="132"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_textfieldBillToAddressLine1" uId="extn_EditAddressLink"/>
+            <Link _sc_extensibility_moveOrder="134"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="extn_contentpaneBillTo" uId="extn_EditAddressLink"/>
+            <Link _sc_extensibility_moveOrder="136"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_AddAddressLink" uId="extn_EditAddressLink"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="afterScreenInit" isExtn="true" sequence="51">
+                    <Handler methodName="extn_init"/>
+                </Subscriber>
+                <Subscriber eventId="extn_checkboxBillTo_onChange"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="showBillToAddress"/>
+                </Subscriber>
+                <Subscriber eventId="txtMobilePhone_onBlur"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="validateMobilePhone"/>
+                </Subscriber>
+                <Subscriber eventId="txtDayPhone_onBlur" isExtn="true" sequence="51">
+                    <Handler methodName="validateDayPhone"/>
+                </Subscriber>
+                <Subscriber eventId="txtEveningPhone_onBlur"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="validateEveningPhone"/>
+                </Subscriber>
+                <Subscriber description="openEditAddress"
+                    eventId="extn_AddAddress_onClick" isExtn="true" sequence="51">
+                    <Handler methodName="openEditAddress"/>
+                </Subscriber>
+                <Subscriber description="openEditAddress"
+                    eventId="extn_EditAddress_onClick" isExtn="true" sequence="51">
+                    <Handler methodName="openEditAddress"/>
+                </Subscriber>
+                <Subscriber description="openEditAddress"
+                    eventId="extn_AddAddressLink_onClick" isExtn="true" sequence="51">
+                    <Handler methodName="openEditAddress"/>
+                </Subscriber>
+                <Subscriber description="openEditAddress"
+                    eventId="extn_EditAddressLink_onClick" isExtn="true" sequence="51">
+                    <Handler methodName="openEditAddress"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Init>
+                <MashupRef extnType="ADD"
+                    mashupId="common_getCountryList"
+                    mashupRefId="extn_getCountryListRefID" sourceNamespace="extn_getCountryList"/>
+                <MashupRef extnType="ADD" mashupId="extn_getGenderList"
+                    mashupRefId="extn_getGenderListRefID" sourceNamespace="extn_getGenderList_output"/>
+                <MashupRef extnType="ADD" mashupId="getCarrierList"
+                    mashupRefId="extn_getCarrierList" sourceNamespace="extn_get_OrganizationList_ouput"/>
+            </Init>
+            <Behavior>
+                <MashupRef mashupId="manageContact_getCustomerDetails" mashupRefId="getCustomerDetails"/>
+                <MashupRef extnType="ADD"
+                    mashupId="modifyCustomer_manageCustomer" mashupRefId="extn_modifyCustomer_RefID"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mashups>
+    <mashup
+        description="Get list of exceptions details for an exception type"
+        endpoint="EP_CONFIG" id="AlertDetails_getExceptionList"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.wsc.alerts.mashups.GetExceptionListForStore"/>
+        <API Name="getExceptionList">
+            <Input>
+                <Inbox
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    ExceptionType="" MaximumRecords="" Status="CLOSED" StatusQryType="NE">
+                    <OrderBy>
+                        <Attribute Name="Priority"/>
+                    </OrderBy>
+                    <ComplexQuery>
+                        <Or>
+                            <Exp Name="AssignedToUserKey" Value="xml:CurrentUser:/User/@UserKey"/>
+                            <Exp Name="OwnerKey" Value="xml:CurrentUser:/User/@OrganizationKey"/>
+                        </Or>
+                    </ComplexQuery>
+                </Inbox>
+            </Input>
+            <Template>
+                <InboxList>
+                    <Inbox Description="" ExceptionType=""
+                        GeneratedOn="" InboxKey="" OrderHeaderKey=""
+                        OrderNo="" Priority="" ShipmentKey=""
+                        ShipmentNo="" Status="">
+						<InboxReferencesList>
+							<InboxReferences InboxReferenceKey="" Name="" ReferenceType="" Value=""/>
+						</InboxReferencesList>
+					</Inbox>
+                </InboxList>
+            </Template>
+        </API>
+        <APINamespace inputNS="getExceptionListForUser_input" outputNS="getExceptionListForUser_output"/>
+    </mashup>
+</mashups>

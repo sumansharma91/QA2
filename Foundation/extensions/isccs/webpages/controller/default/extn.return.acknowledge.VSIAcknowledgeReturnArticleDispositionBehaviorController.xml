@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Licensed Materials - Property of IBM
+IBM Call Center for Commerce (5725-P82)
+(C) Copyright IBM Corp. 2013 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.return.acknowledge.VSIAcknowledgeReturnArticleDispositionBehaviorController"
+    requestMethodSupported="POST" screenId="extn.return.acknowledge.VSIAcknowledgeReturnArticleDisposition">
+    
+	<MashupRefs>
+        <MashupRef callSequence="20" mashupId="acknowledgeReturn_getReturnReasonCodes"
+            mashupRefId="getInnerReturnReasonList" permissionId=""/>
+        <MashupRef callSequence="30"
+            mashupId="acknowledgeReturn_getReturnDispositionList"
+            mashupRefId="getReturnDispositionList" permissionId=""/>
+		<MashupRef callSequence="20"
+            mashupId="acknowledgeReturn_receivereturnorder"
+            mashupRefId="returns_receiveOrder_service" permissionId=""/>	
+		<MashupRef callSequence="30"
+            mashupId="acknowledgeReturn_createAndreceivereturnorder"
+            mashupRefId="returns_createAndreceive_service" permissionId=""/>	
+		<MashupRef callSequence="40"
+            mashupId="acknowledgeReturn_checkAndreceivereturnorder"
+            mashupRefId="returns_checkAndreceive_service" permissionId=""/>				
+    </MashupRefs>
+	
+</Controller>

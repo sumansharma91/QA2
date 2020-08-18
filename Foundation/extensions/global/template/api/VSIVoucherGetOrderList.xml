@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OrderList>
+<Order CustomerPONo="" DocumentType="" EnteredBy="" EnterpriseCode="" EntryType="" MaxOrderStatus="" MinOrderStatus="" OrderDate="" OrderHeaderKey="" OrderNo="" OrderType="" PaymentStatus="" ReceivingNode="" ReqDeliveryDate="" ReqShipDate="" Status="" >
+    <OrderLines NumberOfOrderLines="">
+        <OrderLine CustomerLinePONo="" CustomerPONo="" LineType="" MaxLineStatus="" MinLineStatus="" OrderHeaderKey="" OrderLineKey=""
+            OrderedQty="" PrimeLineNo="" ReceivingNode="" ReqDeliveryDate="" ReqShipDate="" ShipNode="" ShipToID="" Status="" SubLineNo="" >
+            <Item ItemID="" UnitCost="" UnitOfMeasure=""/>
+            <LinePriceInfo DiscountPercentage="" LineTotal=""
+                ListPrice="" RetailPrice="" TaxableFlag="" UnitPrice=""/>
+            </OrderLine>
+    </OrderLines>
+    <PaymentMethods>
+	<PaymentMethod PaymentKey="" PaymentType="" ChargeSequence="" CustomerAccountNo="" CustomerPONo="" CreditCardType="" CreditCardName="" CreditCardNo="" CreditCardExpDate="" DisplayCreditCardNo="" PaymentReference1="" PaymentReference2="" PaymentReference3="" CheckNo="" CheckReference="" MaxChargeLimit="" TotalAuthorized="" TotalCharged="" RequestedAuthAmount="" RequestedChargeAmount="" AwaitingAuthInterfaceAmount="" AwaitingChargeInterfaceAmount="" TotalRefundedAmount="" IncompletePaymentType="" SuspendAnyMoreCharges="" UnlimitedCharges=""/>
+	</PaymentMethods>
+</Order>
+</OrderList>

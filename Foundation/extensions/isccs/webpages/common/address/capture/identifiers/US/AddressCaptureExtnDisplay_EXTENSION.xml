@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenDisplayExtension extnClassName="AddressCaptureExtn"
+        identifierId="US"
+        originalScreen="isccs.common.address.capture.AddressCapture" originalScreenPackage="isccs.common.address.capture">
+        <Items>
+            <ContentPane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="pnlTitleHolder" renderHidden="true"/>
+            <FilteringSelect _sc_extensibility_moveOrder="4"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="txtAddressLine1"
+                fieldWidth="500" uId="extn_addressLine1"/>
+            <TextField _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="pnlTitleHolder" uId="txtDayPhone"/>
+            <TextField _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="pnlTitleHolder" uId="txtEmailAddress"/>
+        </Items>
+    </ScreenDisplayExtension>
+</ExtensionMetaData>

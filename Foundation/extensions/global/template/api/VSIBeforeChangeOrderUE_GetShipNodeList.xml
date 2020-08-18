@@ -1,0 +1,12 @@
+<ShipNodeList>
+	<ShipNode NodeType="" ShipNode="" ShipNodeAddressKey="" ShipnodeKey="">
+		<ShipNodePersonInfo AddressID="" AddressLine1="" AddressLine2="" AddressLine3="" 
+		AddressLine4="" AddressLine5="" AddressLine6="" AlternateEmailID="" Beeper="" 
+		City="" Company="" Country="" DayFaxNo="" DayPhone="" Department="" EMailID="" 
+		ErrorTxt="" EveningFaxNo="" EveningPhone="" FirstName="" HttpUrl="" 
+		IsCommercialAddress="" JobTitle="" LastName="" Latitude="" Longitude="" 
+		MiddleName="" MobilePhone="" OtherPhone="" PersonID="" PersonInfoKey="" 
+		PreferredShipAddress="" State="" Suffix="" TaxGeoCode="" Title="" UseCount="" 
+		VerificationStatus="" ZipCode=""/>
+	</ShipNode>
+</ShipNodeList>

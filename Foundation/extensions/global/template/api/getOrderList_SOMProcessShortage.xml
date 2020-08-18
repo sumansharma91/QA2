@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OrderList EmailType="CCM" MessageType="CANCEL">
+    <Order BillToID="9991405702" CarrierAccountNo=""
+        CarrierServiceCode="" CustomerEMailID="kaishu336@gmail.com"
+        CustomerPONo="" DocumentType="0001" EnteredBy="6101"
+        EnterpriseCode="VSI.com" EntryType="Call Center"
+        MaxOrderStatus="1500" MessageType="CANCEL" MinOrderStatus="1500"
+        OrderDate="2020-07-17T03:10:38-04:00"
+        OrderHeaderKey="202007170310381391512995" OrderNo="C201059109"
+        OrderType="WEB" OriginalTax="0.00" OriginalTotalAmount="42.35"
+        PaymentRuleId="VSI_DEFAULT" PaymentStatus="AUTHORIZED"
+        SCAC="UPSN" ScacAndService="" SellerOrganizationCode="VSI.com"
+        ShipToID="9991405702" Status="No Action" TaxExemptFlag="N"
+        TaxExemptionCertificate="" TaxJurisdiction="" TaxPayerId=""
+        TotalAdjustmentAmount="0.00" Uncommit="Y">
+        <PriceInfo Currency="USD" CustomerCredit="42.35"
+            EnterpriseCurrency="USD" NewOrderTotal="0.0"
+            PreviousOrderTotal="42.35"
+            ReportingConversionDate="2020-07-17T03:10:38-04:00"
+            ReportingConversionRate="1.00" TotalAmount="42.35"/>
+        <Promotions/>
+        <Extn/>
+        <OrderLines>
+            <OrderLine CustomerLinePONo=""
+                CustomerPONo="09801200788243779100"
+                LineType="PICK_IN_STORE" MaxLineStatus="1500"
+                MinLineStatus="1500"
+                Modifyts="2020-07-17T03:12:13-04:00"
+                OrderHeaderKey="202007170310381391512995"
+                OrderLineKey="202007170311001391513030" OrderedQty="3"
+                OriginalOrderedQty="3" OtherCharges="-5.00"
+                PrimeLineNo="1" Publish="Y" SCAC="" ScacAndService=""
+                ShipNode="9801" ShipToID="9991405702" Status="No Action"
+                StatusQuantity="3" SubLineNo="1" ConditionVariable1="" >
+                <Extn ExtnSDKLine="N"/>
+                <Item ItemDesc="KELP WITH FOLIC ACID" ItemID="1033343"
+                    ItemShortDesc="KELP WITH FOLIC ACID"
+                    TaxProductCode="" UPCCode="" UnitCost="0.00" UnitOfMeasure="EACH"/>
+                <LinePriceInfo DiscountPercentage="0.00"
+                    LineTotal="19.87" ListPrice="8.29"
+                    RetailPrice="0.00" TaxableFlag="N" UnitPrice="8.29"/>
+                <PersonInfoShipTo AddressLine1="2101 91st Street"
+                    AddressLine2="" AddressLine3="" AddressLine4=""
+                    AddressLine5="" AddressLine6="" AlternateEmailID=""
+                    Beeper="" City="North Bergen" Company="VSI"
+                    Country="US" DayFaxNo="(800) 852-7153"
+                    DayPhone="(201) 868-5959" Department=""
+                    EMailID="store09801@vitaminshoppe.com"
+                    EveningFaxNo="" EveningPhone="" FirstName="Store"
+                    JobTitle="" LastName="9801" MiddleName=""
+                    MobilePhone="" OtherPhone="" PersonID=""
+                    PersonInfoKey="20170829133607331107474" State="NJ"
+                    Suffix="" Title="" ZipCode="07047"/>
+                <Instructions NumberOfInstructions="1">
+                    <Instruction
+                        InstructionText="IsVAT=False;TaxAuthNum=1,TaxGroupID=0012,,,,,"
+                        InstructionType="Comments" InstructionURL=""/>
+                </Instructions>
+                <References/>
+                <Promotions/>
+                <ItemDetails CanUseAsServiceTool="N"
+                    Createprogid="ManageItemServer"
+                    Createts="2014-03-25T14:18:53-04:00"
+                    Createuserid="ManageItemServer"
+                    DisplayItemId="1033343" GlobalItemID=""
+                    InheritAttributesFromClassification="Y"
+                    IsShippingCntr="N" ItemGroupCode="PROD"
+                    ItemID="1033343" ItemKey="2014032514185316219738"
+                    Lockid="20" MaxModifyTS="2020-02-07T08:20:58-05:00"
+                    Modifyprogid="SterlingHttpTester"
+                    Modifyts="2020-02-07T08:20:58-05:00"
+                    Modifyuserid="admin" OrganizationCode="VSI-Cat" UnitOfMeasure="EACH">
+                    <Extn ExtnActSkuID="SO-1146"
+                        ExtnBrandTitle="Solaray" ExtnItemSize="100.00"
+                        ExtnItemType="VEGCAP" ExtnItemUOM="EA"/>
+                </ItemDetails>
+                <LineOverallTotals Charges="0.00" Discount="5.00"
+                    ExtendedPrice="24.87" LineTotal="19.87"
+                    OptionPrice="0.00" PricingQty="3.00" Tax="0.00" UnitPrice="8.29"/>
+                <LineInvoicedTotals AdditionalLinePriceTotal="0.00"
+                    Charges="0.00" Discount="0.00" ExtendedPrice="0.00"
+                    LineTotal="0.00" OptionPrice="0.00"
+                    PricingQty="0.00" Tax="0.00" UnitPrice="0.00"/>
+                <LineRemainingTotals AdditionalLinePriceTotal="0.00"
+                    Charges="0.00" Discount="5.00" ExtendedPrice="24.87"
+                    LineTotal="19.87" OptionPrice="0.00"
+                    PricingQty="3.00" Tax="0.00" UnitPrice="8.29"/>
+                <LineCharges>
+                    <LineCharge ChargeAmount="5.00"
+                        ChargeCategory="Discount"
+                        ChargeName="PROMO-1155-5d Off Solaray"
+                        ChargeNameKey="" ChargePerLine="0.02"
+                        ChargePerUnit="1.66" InvoicedChargeAmount="0.00"
+                        InvoicedChargePerLine="0.00"
+                        InvoicedChargePerUnit="0.00" IsBillable="Y"
+                        IsDiscount="Y" Reference=""
+                        RemainingChargeAmount="5.00"
+                        RemainingChargePerLine="0.02" RemainingChargePerUnit="1.66">
+                        <Extn CodeStr="" CouponNumber=""
+                            ExtnChargeId="1155" ExtnDiscGrp=""
+                            ExtnDiscType="" ExtnIsCompPrice=""
+                            ExtnQty="3" ExtnType="SMPL" Idx="1"
+                            IsPromo="N" IsRealDisc="N" IsTranLevel="N"
+                            Num="1" Percent="" Price="5.00"
+                            PromoDesc="Item Discount" PromoIndicator=""
+                            PromoName="Item Discount" PromoNum="1155"
+                            ReasonCode="" ReasonDesc="" ReasonType=""
+                            ReducedAmt="" Tag="17878"/>
+                    </LineCharge>
+                </LineCharges>
+                <LineTaxes>
+                    <LineTax ChargeCategory="" ChargeName=""
+                        ChargeNameKey="" InvoicedTax="0.00"
+                        Reference1="Y" Reference2="" Reference3=""
+                        RemainingTax="0.00" Tax="0.00"
+                        TaxName="Sales Tax" TaxPercentage="0.00">
+                        <Extn ExtnCounty="null" ExtnIsTaxCalculated="Y"
+                            ExtnRemTaxPerLine="0.00"
+                            ExtnTaxAreaID="310176528"
+                            ExtnTaxPerUnit=".00"
+                            ExtnVertexEngine="vertex-O" GroupId="0012"
+                            IsManual="N" IsOverrideZone="N"
+                            IsTranLevel="N" Reference_1=""
+                            Reference_2="" Reference_3="" RuleId="807"
+                            TaxType="NonTaxable" ZoneId="391"/>
+                    </LineTax>
+                    <TaxSummary>
+                        <TaxSummaryDetail InvoicedTax="0.00"
+                            OverallTax="0.00" RemainingTax="0.00" TaxName="Sales Tax"/>
+                    </TaxSummary>
+                </LineTaxes>
+                <OrderStatuses>
+                    <OrderStatus Status="1500"
+                        StatusDescription="No Action" StatusQty="3"/>
+                </OrderStatuses>
+            </OrderLine>
+            <OrderLine CustomerLinePONo=""
+                CustomerPONo="09801200788243779100"
+                LineType="PICK_IN_STORE" MaxLineStatus="1500"
+                MinLineStatus="1500"
+                Modifyts="2020-07-17T03:12:13-04:00"
+                OrderHeaderKey="202007170310381391512995"
+                OrderLineKey="202007170311001391513031" OrderedQty="3"
+                OriginalOrderedQty="3" OtherCharges="-4.49"
+                PrimeLineNo="2" Publish="Y" SCAC="" ScacAndService=""
+                ShipNode="9801" ShipToID="9991405702" Status="No Action"
+                StatusQuantity="3" SubLineNo="1">
+                <Extn ExtnSDKLine="N"/>
+                <Item ItemDesc="CRANBERRY ACTION" ItemID="1046067"
+                    ItemShortDesc="CRANBERRY ACTION" TaxProductCode=""
+                    UPCCode="" UnitCost="0.00" UnitOfMeasure="EACH"/>
+                <LinePriceInfo DiscountPercentage="0.00"
+                    LineTotal="22.48" ListPrice="8.99"
+                    RetailPrice="0.00" TaxableFlag="N" UnitPrice="8.99"/>
+                <PersonInfoShipTo AddressLine1="2101 91st Street"
+                    AddressLine2="" AddressLine3="" AddressLine4=""
+                    AddressLine5="" AddressLine6="" AlternateEmailID=""
+                    Beeper="" City="North Bergen" Company="VSI"
+                    Country="US" DayFaxNo="(800) 852-7153"
+                    DayPhone="(201) 868-5959" Department=""
+                    EMailID="store09801@vitaminshoppe.com"
+                    EveningFaxNo="" EveningPhone="" FirstName="Store"
+                    JobTitle="" LastName="9801" MiddleName=""
+                    MobilePhone="" OtherPhone="" PersonID=""
+                    PersonInfoKey="20170829133607331107474" State="NJ"
+                    Suffix="" Title="" ZipCode="07047"/>
+                <Instructions NumberOfInstructions="1">
+                    <Instruction
+                        InstructionText="IsVAT=False;TaxAuthNum=1,TaxGroupID=0012,,,,,"
+                        InstructionType="Comments" InstructionURL=""/>
+                </Instructions>
+                <References/>
+                <Promotions/>
+                <ItemDetails CanUseAsServiceTool="N"
+                    Createprogid="ManageItemServer"
+                    Createts="2014-03-24T17:50:20-04:00"
+                    Createuserid="ManageItemServer"
+                    DisplayItemId="1046067" GlobalItemID=""
+                    InheritAttributesFromClassification="Y"
+                    IsShippingCntr="N" ItemGroupCode="PROD"
+                    ItemID="1046067" ItemKey="2014032417502016016876"
+                    Lockid="24" MaxModifyTS="2020-02-07T08:21:02-05:00"
+                    Modifyprogid="SterlingHttpTester"
+                    Modifyts="2020-02-07T08:21:02-05:00"
+                    Modifyuserid="admin" OrganizationCode="VSI-Cat" UnitOfMeasure="EACH">
+                    <Extn ExtnActSkuID="VS-1362"
+                        ExtnBrandTitle="the Vitamin Shoppe"
+                        ExtnItemSize="100.00" ExtnItemType="SG" ExtnItemUOM="EA"/>
+                </ItemDetails>
+                <LineOverallTotals Charges="0.00" Discount="4.49"
+                    ExtendedPrice="26.97" LineTotal="22.48"
+                    OptionPrice="0.00" PricingQty="3.00" Tax="0.00" UnitPrice="8.99"/>
+                <LineInvoicedTotals AdditionalLinePriceTotal="0.00"
+                    Charges="0.00" Discount="0.00" ExtendedPrice="0.00"
+                    LineTotal="0.00" OptionPrice="0.00"
+                    PricingQty="0.00" Tax="0.00" UnitPrice="0.00"/>
+                <LineRemainingTotals AdditionalLinePriceTotal="0.00"
+                    Charges="0.00" Discount="4.49" ExtendedPrice="26.97"
+                    LineTotal="22.48" OptionPrice="0.00"
+                    PricingQty="3.00" Tax="0.00" UnitPrice="8.99"/>
+                <LineCharges>
+                    <LineCharge ChargeAmount="4.49"
+                        ChargeCategory="Discount"
+                        ChargeName="PROMO-485-VSB BTBOGO50"
+                        ChargeNameKey="" ChargePerLine="0.02"
+                        ChargePerUnit="1.49" InvoicedChargeAmount="0.00"
+                        InvoicedChargePerLine="0.00"
+                        InvoicedChargePerUnit="0.00" IsBillable="Y"
+                        IsDiscount="Y" Reference=""
+                        RemainingChargeAmount="4.49"
+                        RemainingChargePerLine="0.02" RemainingChargePerUnit="1.49">
+                        <Extn CodeStr="" CouponNumber=""
+                            ExtnChargeId="485" ExtnDiscGrp=""
+                            ExtnDiscType="MXMH" ExtnIsCompPrice=""
+                            ExtnQty="3" ExtnType="MXMH" Idx="1"
+                            IsPromo="N" IsRealDisc="N" IsTranLevel="N"
+                            Num="1" Percent="" Price="4.49"
+                            PromoDesc="Item Discount" PromoIndicator=""
+                            PromoName="Item Discount" PromoNum="485"
+                            ReasonCode="" ReasonDesc="" ReasonType=""
+                            ReducedAmt="" Tag="17879"/>
+                    </LineCharge>
+                </LineCharges>
+                <LineTaxes>
+                    <LineTax ChargeCategory="" ChargeName=""
+                        ChargeNameKey="" InvoicedTax="0.00"
+                        Reference1="Y" Reference2="" Reference3=""
+                        RemainingTax="0.00" Tax="0.00"
+                        TaxName="Sales Tax" TaxPercentage="0.00">
+                        <Extn ExtnCounty="null" ExtnIsTaxCalculated="Y"
+                            ExtnRemTaxPerLine="0.00"
+                            ExtnTaxAreaID="310176528"
+                            ExtnTaxPerUnit=".00"
+                            ExtnVertexEngine="vertex-O" GroupId="0012"
+                            IsManual="N" IsOverrideZone="N"
+                            IsTranLevel="N" Reference_1=""
+                            Reference_2="" Reference_3="" RuleId="807"
+                            TaxType="NonTaxable" ZoneId="391"/>
+                    </LineTax>
+                    <TaxSummary>
+                        <TaxSummaryDetail InvoicedTax="0.00"
+                            OverallTax="0.00" RemainingTax="0.00" TaxName="Sales Tax"/>
+                    </TaxSummary>
+                </LineTaxes>
+                <OrderStatuses>
+                    <OrderStatus Status="1500"
+                        StatusDescription="No Action" StatusQty="3"/>
+                </OrderStatuses>
+            </OrderLine>
+        </OrderLines>
+        <Instructions NumberOfInstructions="0"/>
+        <PersonInfoShipTo AddressLine1="2101 91st Street"
+            AddressLine2="" AddressLine3="" AddressLine4=""
+            AddressLine5="" AddressLine6="" AlternateEmailID=""
+            Beeper="" City="North Bergen" Company="VSI" Country="US"
+            DayFaxNo="(800) 852-7153" DayPhone="(201) 868-5959"
+            Department="" EMailID="store09801@vitaminshoppe.com"
+            EveningFaxNo="" EveningPhone="" FirstName="Store"
+            JobTitle="" LastName="9801" MiddleName="" MobilePhone=""
+            OtherPhone="" PersonID=""
+            PersonInfoKey="20170829133607331107474" State="NJ" Suffix=""
+            Title="" ZipCode="07047"/>
+        <PersonInfoBillTo AddressLine1="300 Harmon Meadow Blvd"
+            AddressLine2="" AddressLine3="" AddressLine4=""
+            AddressLine5="" AddressLine6="" AlternateEmailID=""
+            Beeper="" City="Secaucus" Company="" Country="US"
+            DayFaxNo="" DayPhone="" Department=""
+            EMailID="kaishu336@gmail.com" EveningFaxNo=""
+            EveningPhone="" FirstName="Aishwarya" JobTitle=""
+            LastName="K" MiddleName="" MobilePhone="" OtherPhone=""
+            PersonID="" PersonInfoKey="201912090713281181030971"
+            State="NJ" Suffix="" Title="" ZipCode="07094"/>
+        <PaymentMethods>
+            <PaymentMethod AwaitingAuthInterfaceAmount="0.00"
+                AwaitingChargeInterfaceAmount="0.00"
+                ChargeSequence="99900" CheckNo="" CheckReference=""
+                CreditCardExpDate="12/2022" CreditCardName=""
+                CreditCardNo="XXXXXXXXXXXX4111"
+                CreditCardType="mastercard" CustomerPONo=""
+                DisplayCreditCardNo="4111" IncompletePaymentType=""
+                MaxChargeLimit="42.35"
+                PaymentKey="202007170303115391513073"
+                PaymentReference1="" PaymentReference2=""
+                PaymentReference3="20000000000000000000000017190013"
+                PaymentType="CREDIT_CARD" RequestedAuthAmount="0.00"
+                RequestedChargeAmount="0.00" SuspendAnyMoreCharges="N"
+                TotalAuthorized="42.35" TotalCharged="0.00"
+                TotalRefundedAmount="0.00" UnlimitedCharges="N"/>
+        </PaymentMethods>
+        <HeaderCharges/>
+        <HeaderTaxes/>
+    </Order>
+</OrderList>

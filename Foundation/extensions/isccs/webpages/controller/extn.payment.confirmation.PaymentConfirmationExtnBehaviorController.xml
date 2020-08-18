@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.payment.confirmation.PaymentConfirmationExtnBehaviorController"
+    requestMethodSupported="POST" screenId="extn.payment.confirmation.PaymentConfirmationExtn">
+    <MashupRefs>
+        <MashupRef extnType="MODIFY"
+            mashupId="paymentConfirmation_getCompleteOrderDetails"
+            mashupRefId="getCompleteOrderDetails" permissionId=""/>
+        <MashupRef extnType="MODIFY"
+            mashupId="extn_paymentConfirmation_capturePayment"
+            mashupRefId="capturePayment" permissionId=""/>
+        <MashupRef extnType="MODIFY"
+            mashupId="modifyCustomer_manageCustomer"
+            mashupRefId="manageCustomer" permissionId=""/>
+        <MashupRef extnType="ADD" mashupId="extn_getProperty"
+            mashupRefId="extn_getProperty_referenceid" permissionId=""/>
+		<MashupRef extnType="ADD" mashupId="extn_paymentconfirmgetOrderList"
+            mashupRefId="extn_payconfirmgetOrderList" permissionId=""/>
+        
+        <MashupRef extnType="ADD" mashupId="extn_applyCoupon"
+            mashupRefId="extn_applyCoupon_referenceid" permissionId=""/>
+        <MashupRef extnType="ADD" mashupId="extn_changeOrder"
+            mashupRefId="extn_changeOrder_referenceid" permissionId=""/>
+        <MashupRef extnType="ADD"
+            mashupId="extn_changeOrderLineToAdvanceReturns"
+            mashupRefId="extn_changeOrderLine" permissionId=""/>
+        <MashupRef extnType="ADD"
+            mashupId="extn_ReturnOrderLines_SuspendAndAddeGiftCard"
+            mashupRefId="extn_ChangePaymentMethod_IssueeGiftCard" permissionId=""/>
+        <MashupRef extnType="ADD" mashupId="extn_getCouponDetails"
+            mashupRefId="extn_getCouponDetails_payment" permissionId=""/>
+    </MashupRefs>
+</Controller>

@@ -1,0 +1,107 @@
+		<div>
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+		 				data-ibmsc-uid="extn_addressLine1"
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '3' , 
+		autoComplete : true , 
+		_sc_extensibility_referenceUId : 'txtDayPhone' , 
+		hasDownArrow : true , 
+		uId : 'extn_addressLine1' , 
+		renderHidden : true , 
+		_sc_extensibility_position : 'before'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getSimpleBundleString('AddressLine1')
+,	
+			 	bindingData : 	{
+		 optionsBinding : 	{
+		 valueField : 			'AddressLine1'
+,
+		 path : 			'GetAddress.AddressList.Address'
+,
+		 descriptionField : 			'AddressLine1'
+,
+		 namespace : 			'extn_QASRefineResponse'
+	}
+	}
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/FilteringSelect" 
+		 				data-ibmsc-uid="cmbState"
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'cmbState' , 
+		renderHidden : true  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/CheckBox" 
+		 				data-ibmsc-uid="extn_screenbase_checkbox"
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '1' , 
+		_sc_extensibility_referenceUId : 'lnkManualAddress' , 
+		uId : 'extn_screenbase_checkbox' , 
+		renderHidden : true , 
+		_sc_extensibility_position : 'after'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getSimpleBundleString('Make_Default_Ship_To')
+,	
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 path : 			'PersonInfo.IsDefaultShipTo'
+,
+		 namespace : 			'Address'
+	}
+,
+		 targetBinding : 	[
+	 		{
+		 path : 			'PersonInfo.IsDefaultShipTo'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+,
+		 namespace : 			'PersonInfo_input'
+	}
+	]
+	}
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+		 				data-ibmsc-uid="txtAddressLine1"
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'txtAddressLine1'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+		 				data-ibmsc-uid="txtEveningPhone"
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'txtEveningPhone' , 
+		renderHidden : true  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+		 				data-ibmsc-uid="txtAddressID"
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'txtAddressID' , 
+		renderHidden : true  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/TextBox" 
+		 				data-ibmsc-uid="txtState"
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'txtState' , 
+		renderHidden : false  
+	 					}">
+		 	</div>  
+		</div>

@@ -1,0 +1,18 @@
+<Shipments>
+	<Shipment >
+		<ShipmentLines>
+			<ShipmentLine />
+		</ShipmentLines>
+		<Containers>
+			<Container>
+				<ContainerDetails>
+					<ContainerDetail>
+						<ShipmentLine >
+							<Extn />
+						</ShipmentLine>
+					</ContainerDetail>
+				</ContainerDetails>
+			</Container>
+		</Containers>
+	</Shipment>
+</Shipments>

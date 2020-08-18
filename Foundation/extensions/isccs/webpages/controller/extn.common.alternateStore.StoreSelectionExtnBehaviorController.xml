@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.common.alternateStore.StoreSelectionExtnBehaviorController"
+    requestMethodSupported="POST" screenId="extn.common.alternateStore.StoreSelectionExtn">
+    <MashupRefs>
+		<MashupRef extnType="ADD"
+            mashupId="extn_getFulfillmentOptionForLines"
+            mashupRefId="extn_getFulfillmentOptionForLines" permissionId=""/>
+    </MashupRefs>
+</Controller>

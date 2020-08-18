@@ -1,0 +1,10 @@
+<Shipments TotalNumberOfRecords= "" >
+<Shipment StatusDate="" Status="" ShipmentNo="" ShipmentKey="">
+<Extn ExtnPickPackFlag="" ExtnCustomerReceiptFlag="" ExtnPackShipFlag="" />
+<ShipmentLines>
+<ShipmentLine ShipmentLineKey="" ShipmentKey="">
+<OrderLine LineType ="" DeliveryMethod="" />
+</ShipmentLine>
+</ShipmentLines>
+</Shipment>
+</Shipments>

@@ -1,0 +1,8 @@
+<OrderList>
+	<Order OrderNo="" OrderHeaderKey="" EnteredBy="" OrderType="" >
+		<Extn ExtnDTCOrder="" ExtnStoreNo="" ExtnSubscriptionOrder="" ExtnOriginalADPOrder=""  ExtnReOrder=""/>	
+		<OrderLines>
+			<OrderLine DeliveryMethod="" />
+		</OrderLines>
+	</Order>
+</OrderList>

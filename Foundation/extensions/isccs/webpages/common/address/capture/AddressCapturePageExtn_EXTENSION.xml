@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="AddressCapturePageExtn"
+        extnPackage="extn.common.address.capture"
+        originalScreen="isccs.common.address.capture.AddressCapturePage"
+        originalScreenPackage="isccs.common.address.capture" type="diffrential">
+        <Items>
+            <CheckBox _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="pnlAddressCaptureHolder"
+                label="$(_scSimpleBundle:Make_Default_Ship_To)"
+                renderHidden="true" uId="extn_checkbox_defaultShipTo">
+                <BindingData>
+                    <CheckedValue value="Y"/>
+                    <TargetBindings>
+                        <TargetBinding namespace="extn_DefaultShipTo"
+                            path="IsDefaultShipTo" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                    <UncheckedValue value="N"/>
+                </BindingData>
+            </CheckBox>
+        </Items>
+        <Namespaces>
+            <TargetNamespaces>
+                <Target isExtn="true"
+                    scExtensibilityArrayItemId="extn_TargetNamespaces_3" value="extn_DefaultShipTo"/>
+            </TargetNamespaces>
+        </Namespaces>
+        <MashupRefs>
+            <Behavior>
+                <MashupRef extnType="MODIFY"
+                    mashupId="selectOrEditAddress_getCompleteOrderDetails" mashupRefId="getPersonInfoList"/>
+                <MashupRef extnType="ADD"
+                    mashupId="customerIdentification_getCompleteCustomerDetails" mashupRefId="extn_getShipTo"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

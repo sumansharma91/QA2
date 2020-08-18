@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenDisplayExtension extnClassName="AddressDisplayExtn"
+        identifierId="CA"
+        originalScreen="isccs.common.address.display.AddressDisplay" originalScreenPackage="isccs.common.address.display">
+        <Items>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lnkEditAddress" renderHidden="true"/>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lnkEmail" renderHidden="true"/>
+            <Label _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblAddressLine1" renderHidden="false"/>
+            <Label _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblAddressLine2" renderHidden="false"/>
+        </Items>
+    </ScreenDisplayExtension>
+</ExtensionMetaData>

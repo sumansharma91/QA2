@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ShipTrackShippingExtn"
+        extnPackage="extn.shipment.shipmentTracking.lineStatePanels"
+        originalScreen="isccs.shipment.shipmentTracking.lineStatePanels.ShipTrackShipping"
+        originalScreenPackage="isccs.shipment.shipmentTracking.lineStatePanels" type="diffrential">
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="afterScreenInit" isExtn="true" sequence="51">
+                    <Handler
+                        description="Checks whether this order is migrated. If yes, disables actionable links" methodName="checkMigratedOrderFlag"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+    </ScreenExtension>
+</ExtensionMetaData>

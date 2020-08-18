@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="CarrierServicePopupExtn"
+        extnPackage="extn.order.fulfillmentSummary"
+        originalScreen="isccs.order.fulfillmentSummary.CarrierServicePopup"
+        originalScreenPackage="isccs.order.fulfillmentSummary" type="diffrential">
+        <Items>
+            <ContentPane _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="InnerContainer" uId="extn_contentpane_Multiple"/>
+            <ContentPane _sc_extensibility_moveOrder="3"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="multipleLineSplit" uId="extn_contentpane_Multiple"/>
+            <Label _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="carrierService"
+                uId="extn_label_MultipleLine" value="$(_scSimpleBundle:extn_Dates_shown_below_are_estimated_dates_)"/>
+            <Label _sc_extensibility_moveOrder="4"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="extn_contentpane_Multiple" uId="extn_label_MultipleLine"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

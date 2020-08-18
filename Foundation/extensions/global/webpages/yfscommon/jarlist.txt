@@ -1,0 +1,16 @@
+JGo.jar
+xercesImpl.jar
+xml-apis.jar
+xalan.jar
+serializer.jar
+yantraicons.jar
+pvxTree.jar
+ycpmapui.jar
+ycpmaplicense.jar
+jviews-framework-all.jar
+jviews-diagrammer-all.jar
+jviews-maps-all.jar
+ycb.jar
+icu4j-49_1.jar
+icu4j-charset-49_1.jar
+icu4j-localespi-49_1.jar

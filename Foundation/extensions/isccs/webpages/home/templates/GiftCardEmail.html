@@ -1,0 +1,74 @@
+<div class="sc-platform-screen-default paymentcapture_other">
+
+    <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 'class' : 'isccsScreen singlecolumntable' , uId : 'ContentPane3'   ">
+		
+        <div data-dojo-type="idx/form/TextBox" data-dojo-props="		spanLabel : true , uId : 'txtFirstName', required : true ,scParamDataFn :
+			 function() { 
+				return { 
+					label :	this.getBundleString('extn_First_Name'),	
+					bindingData : 	{ sourceBinding : 	{ path : 'Order.FirstName', 	namespace : 'giftCard_input'},
+					targetBinding : 	[{	              path : 'Order.FirstName', 				namespace : 'giftCard_input'}] }
+				}
+			}">
+		</div>
+		<div data-dojo-type="idx/form/TextBox" data-dojo-props="		spanLabel : true , 		uId : 'txtLastName'  ,required : true  
+			,scParamDataFn :  function() { 
+				return { label : this.getBundleString('extn_Last_Name'),	
+						 bindingData : 	{ sourceBinding : 	{  path : 	'Order.LastName', 	namespace : 	'giftCard_input' },
+										  targetBinding : 	[{ path : 	'Order.LastName',	namespace :		'giftCard_input'	}]}
+				}
+			}">
+		</div>
+		<div data-dojo-type="idx/form/TextBox" data-dojo-props=" selectOnClick : true , required : true ,
+		regExp : '^[a-zA-Z\\d\\+\\-\\:_\\=\\u007F-\\uFFFF]{1}(.?[\\+\\-\\:_\\=\\w\\u007F-\\uFFFF])+@(?:[\\w-\\d\\u007F-\\uFFFF]+\\.)+[\\w\\u007F-\\uFFFF]+$' ,		spanLabel : true , 	uId : 'txtEmail' ,scParamDataFn :
+			 function() { 
+				return { label : 	this.getBundleString('Email'),	
+						 bindingData : 	{ sourceBinding : 	{ path : 'Order.EmailID', 	namespace : 			'giftCard_input'},
+						 targetBinding : 	[{ 				  path : 'Order.EmailID',	namespace : 			'giftCard_input' }]}
+				}
+			}">
+		</div>
+
+
+		<div data-dojo-type="idx/form/TextBox" data-dojo-props="	selectOnClick : true , regExp : '^[0-9]+$' , 		spanLabel : true , 	uId : 'txtGiftCardNo',required : true  ,scParamDataFn :
+			 function() { 
+				return { label : 	this.getBundleString('extn_Gift_Card_No'),	
+						 bindingData : 	{ sourceBinding : 	{ 	path : 'Order.GiftCardNumber', 		namespace : 			'giftCard_input'},
+						 targetBinding : 	[{ 					path : 'Order.GiftCardNumber',		namespace : 			'giftCard_input' }]}
+				}
+			}">
+		</div>
+		<div data-dojo-type="idx/form/TextBox" data-dojo-props="	selectOnClick : true , regExp : '^[0-9]+$' ,	spanLabel : true , 	uId : 'txtPIN',required : true ,scParamDataFn :
+			 function() { 
+				return { label : 	this.getBundleString('extn_PIN'),	
+						 bindingData : 	{ sourceBinding : 	{ 	path : 'Order.Pin',		namespace : 			'giftCard_input'},
+						 targetBinding : 	[{ 					path : 'Order.Pin',		namespace : 			'giftCard_input' }]}
+				}
+			}">
+		</div>
+		<div data-dojo-type="idx/form/TextBox" data-dojo-props="	selectOnClick : true  ,		spanLabel : true , 	uId : 'txtAmount' ,required : true ,scParamDataFn :
+			 function() { 
+				return { label : 	this.getBundleString('Amount'),	
+						 bindingData : 	{ sourceBinding : 	{ 	path : 'Order.Amount', 	namespace : 			'giftCard_input'},
+						 targetBinding : 	[{ 					path : 'Order.Amount',	namespace : 			'giftCard_input' }]}
+				}
+			}">
+		</div>
+		
+		<div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 'class' : 'popupNavigation messageDialogFooter' , 	uId : 'ContentPane4'   ">
+			<div data-dojo-type="dijit/form/Button" data-dojo-props="		spanLabel : true , 	showLabel : true , 	uId : 'Popup_btnConfirm' ,scParamDataFn :
+				function() { 
+					return { label : 			this.getSimpleBundleString('extn_Confirm')
+					}
+				}">
+			</div>
+			<div data-dojo-type="dijit/form/Button" data-dojo-props="		spanLabel : true , 'class' : 'idxSecondaryButton' , showLabel : true , uId : 'Popup_btnClose'  ,scParamDataFn :
+				 function() { 
+					return { label : 			this.getSimpleBundleString('Close')
+					}
+				}">
+			</div>
+		</div>
+    </div>
+
+</div>

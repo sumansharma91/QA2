@@ -1,0 +1,16 @@
+<OrderList>
+	<Order>
+		<OrderLines>
+			<OrderLine>
+				<Item>
+					<Extn />
+				</Item>
+				<PersonInfoShipTo />
+				<LinePriceInfo />
+			</OrderLine>
+		</OrderLines>
+		<PersonInfoBillTo />
+		<PriceInfo />
+		<PaymentMethods />
+	</Order>
+</OrderList>

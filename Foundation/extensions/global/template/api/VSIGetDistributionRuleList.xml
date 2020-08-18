@@ -1,0 +1,8 @@
+ <DistributionRuleList>
+ <DistributionRule OwnerKey="" >
+ <ItemShipNodes>
+  <ItemShipNode Priority="" ShipnodeKey=""  /> 
+  <ItemShipNode Priority="" ShipnodeKey="" /> 
+  </ItemShipNodes>
+  </DistributionRule>
+  </DistributionRuleList>

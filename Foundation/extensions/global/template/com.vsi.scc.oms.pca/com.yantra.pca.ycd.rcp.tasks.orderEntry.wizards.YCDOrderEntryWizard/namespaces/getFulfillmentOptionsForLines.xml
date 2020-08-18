@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Call Center and Store
+(C) Copyright IBM Corp. 2006, 2011 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<Promise OrganizationCode="">
+    <EvaluateOptions>
+        <EvaluateOption DeliveryMethod="" Node="" OptionNo="">
+            <ShipToAddress PersonInfoKey="" Country="" ZipCode=""/>
+        </EvaluateOption>
+    </EvaluateOptions>
+    <PromiseLines>
+        <PromiseLine ItemID="" RequiredQty="" BundleFulfillmentMode="" IsBundleParent="">
+            <Options>
+                <Option DeliveryDate="" HasAnyUnavailableQty="" IsUnavailable="" OptionNo="" ProductAvailableDate="">
+                    <Assignments>
+                        <Assignment ProductAvailDate="" Quantity="" ShipDate="" ShipNode="">
+                            <SubstituteItems/>
+                            <Procurements/>
+                        </Assignment>
+                    </Assignments>
+                </Option>
+            </Options>
+            <OrderLine OrderLineKey="" PrimeLineNo="" SubLineNo=""/>
+        </PromiseLine>
+    </PromiseLines>
+    <OptionNodes>
+        <Node NodeType="">
+            <ShipNodePersonInfo PersonInfoKey=""/>
+        </Node>
+    </OptionNodes>
+</Promise>

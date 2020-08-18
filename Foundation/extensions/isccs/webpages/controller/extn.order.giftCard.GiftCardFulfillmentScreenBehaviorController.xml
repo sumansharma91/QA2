@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.order.giftCard.GiftCardFulfillmentScreenBehaviorController"
+    requestMethodSupported="POST" screenId="extn.order.giftCard.GiftCardFulfillmentScreen">
+	<MashupRefs>
+        <MashupRef extnType="ADD" 
+            mashupId="giftCardFulfillment_getOrderReleaseList"
+            mashupRefId="giftCardFulfillment_getOrderReleaseList_RefId" permissionId=""/>
+		<MashupRef extnType="ADD" 
+            mashupId="giftCardFulfillment_getShipmentLineList"
+            mashupRefId="giftCardFulfillment_getShipmentLineList_RefId" permissionId=""/>
+		<MashupRef extnType="ADD" 
+            mashupId="giftCardFulfillment_getShipmentContainerList"
+            mashupRefId="giftCardFulfillment_getShipmentContainerList_RefId" permissionId=""/>
+		<MashupRef extnType="ADD" 
+            mashupId="extn_activateGiftCard"
+            mashupRefId="extn_activateGiftCard_RefId" permissionId=""/>
+		<MashupRef extnType="ADD" 
+            mashupId="extn_containerizeGiftCard"
+            mashupRefId="extn_containerizeGiftCard_RefId" permissionId=""/>
+    </MashupRefs>
+</Controller>

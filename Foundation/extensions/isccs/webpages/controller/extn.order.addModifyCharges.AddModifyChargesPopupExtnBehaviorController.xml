@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.order.addModifyCharges.AddModifyChargesPopupExtnBehaviorController"
+    requestMethodSupported="POST" screenId="extn.order.addModifyCharges.AddModifyChargesPopupExtn">
+    <MashupRefs>
+        <MashupRef extnType="MODIFY"
+            mashupId="addModifyCharges_getCompleteOrderDetails"
+            mashupRefId="getCompleteOrderDetails" permissionId=""/>
+        <MashupRef extnType="MODIFY"
+            mashupId="lineCharges_getCompleteOrderLineDetails" 
+            mashupRefId="getCompleteOrderLineDetails" permissionId=""/>    
+        <MashupRef extnType="ADD" mashupId="extn_prorateLineCharges"
+            mashupRefId="extn_prorateLineCharges" permissionId=""/>
+        <MashupRef extnType="ADD"
+            mashupId="extn_VSICreateAppeasementApprovalAlert"
+            mashupRefId="extn_VSICreateAppeasementApprovalAlert" permissionId=""/>
+    </MashupRefs>
+</Controller>

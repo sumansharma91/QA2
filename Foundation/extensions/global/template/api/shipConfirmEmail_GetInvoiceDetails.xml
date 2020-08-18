@@ -1,0 +1,202 @@
+<InvoiceDetail>
+	<InvoiceHeader ActualFreightCharge="" AmountCollected="Required"
+		ChargedActualFreight="" CollectedExternally="" CollectedThroughAR=""
+		DateInvoiced="" DerivedFromOrderHeaderKey="" DocumentType=""
+		EnterpriseCode="" HeaderCharges="" HeaderDiscount="" HeaderTax=""
+		InvoiceCreationReason="" InvoiceNo="" InvoiceType="" LineSubTotal=""
+		MasterInvoiceNo="" OrderInvoiceKey="" OrderNo="" Reference1=""
+		TotalAmount="" TotalCharges="" TotalDiscount="" TotalHeaderCharges=""
+		TotalTax="" isHistory="">
+		<Order BillToID="" Commit="" CustomerEMailID=""
+			CustomerFirstName="" CustomerLastName="" CustomerPONo=""
+			DocumentType="" EnteredBy="" EnterpriseCode="" EntryType=""
+			MessageType="" OrderDate="" OrderHeaderKey="" OrderNo="" OrderType=""
+			PaymentRuleId="" SCAC="" ScacAndService="" SellerOrganizationCode=""
+			Status="">
+			<Extn ExtnDTCOrder="" ExtnPointsEarned="" />
+			<OverallTotals GrandCharges="" GrandDiscount=""
+				GrandShippingCharges="" GrandShippingDiscount="" GrandShippingTotal=""
+				GrandTax="" GrandTotal="" HdrCharges="" HdrDiscount="" HdrTax=""
+				HdrTotal="" LineSubTotal="" />
+			<PriceInfo Currency="" />
+			<Promotions>
+				<Promotion Description="" Action="" DenialReason=""
+					ExclusivityId="" ExclusivityType="" IsExternal=""
+					OverrideAdjustmentValue="" OverrideMaxAdjustment="" Priority=""
+					PromotionApplied="" PromotionCategory="" PromotionId=""
+					PromotionType="">
+					<Extn ExtnCouponID="" />
+				</Promotion>
+			</Promotions>
+			<PersonInfoBillTo AddressID="" AddressLine1=""
+				AddressLine2="" AddressLine3="" AddressLine4="" AddressLine5=""
+				AddressLine6="" AlternateEmailID="" Beeper="" City="" Company=""
+				Country="" DayFaxNo="" DayPhone="" Department="" EMailID=""
+				EveningFaxNo="" EveningPhone="" FirstName="" IsCommercialAddress=""
+				JobTitle="" LastName="" MiddleName="" MobilePhone="" OtherPhone=""
+				PersonID="" PersonInfoKey="" State="" Suffix="" TaxGeoCode="" Title=""
+				ZipCode="" />
+			<HeaderCharges>
+				<HeaderCharge ChargeAmount="" ChargeCategory=""
+					ChargeName="" ChargeNameKey="" IsBillable="" IsDiscount=""
+					IsShippingCharge="" OriginalChargeAmount="" Reference="">
+					<ChargeNameDetails Description="" />
+					<ChargeCategoryDetails ChargeCategoryKey=""
+						ConsiderForProfitMargin="" Description="" IsBillable=""
+						IsDiscount="" IsRefundable="" />
+				</HeaderCharge>
+			</HeaderCharges>
+		</Order>
+		<Shipment DeliveryMethod="" CarrierServiceCode="" TrackingNo=""
+			TrackingURL="" ScacAndServiceKey="" SCAC="">
+			<ShipNode Description="" ShipnodeKey="">
+				<ShipNodePersonInfo AddressID="" AddressLine1=""
+					AddressLine2="" AddressLine3="" AddressLine4="" AddressLine5=""
+					AddressLine6="" AlternateEmailID="" Beeper="" City="" Company=""
+					Country="" DayFaxNo="" DayPhone="" Department="" EMailID=""
+					EveningFaxNo="" EveningPhone="" FirstName="" HttpUrl=""
+					IsCommercialAddress="" JobTitle="" LastName="" MiddleName=""
+					MobilePhone="" OtherPhone="" PersonID="" State="" Suffix=""
+					TaxGeoCode="" Title="" ZipCode="" />
+			</ShipNode>
+		</Shipment>
+		<LineDetails TotalLines="">
+			<LineDetail AdditionalLinePriceKey="" Charges=""
+				ExtendedPrice="" ItemID="" LineTotal="" OptionPrice=""
+				OrderInvoiceDetailKey="" OrderLineKey="" PricingQty="" PrimeLineNo=""
+				ProductClass="" Quantity="" ShippedQty="" SubLineNo="" Tax=""
+				UnitOfMeasure="" UnitPrice="">
+				<OrderLine CustomerPONo="" DeliveryMethod="" LineType=""
+					Modifyts="" OrderHeaderKey="" OrderLineKey="" OrderedQty=""
+					PrimeLineNo="" SCAC="" ScacAndService="" ShipNode="" Status=""
+					SubLineNo="">
+					<Extn ExtnIsGWP=""/>
+					<Item ItemDesc="" ItemID="" ProductClass="" UnitOfMeasure="" />
+					<Shipnode Description="">
+						<ShipNodePersonInfo AddressLine1=""
+							AddressLine2="" AddressLine3="" City="" Company="" Country=""
+							DayFaxNo="" DayPhone="" Department="" EMailID="" State=""
+							ZipCode="" />
+					</Shipnode>
+					<Promotions>
+						<Promotion Description="" Action="" DenialReason=""
+							ExclusivityId="" ExclusivityType="" IsExternal=""
+							OverrideAdjustmentValue="" OverrideMaxAdjustment="" Priority=""
+							PromotionApplied="" PromotionCategory="" PromotionId=""
+							PromotionType="">
+							<Extn ExtnCouponID="" />
+						</Promotion>
+					</Promotions>
+					<PersonInfoShipTo AddressLine1="" AddressLine2=""
+						AddressLine3="" AddressLine4="" AddressLine5="" AddressLine6=""
+						AlternateEmailID="" Beeper="" City="" Company="" Country=""
+						DayFaxNo="" DayPhone="" Department="" EMailID="" EveningFaxNo=""
+						EveningPhone="" FirstName="" JobTitle="" LastName="" MiddleName=""
+						MobilePhone="" OtherPhone="" PersonID="" State="" Suffix="" Title=""
+						ZipCode="" />
+					<ItemDetails CanUseAsServiceTool="" Createprogid=""
+						Createts="" Createuserid="" DisplayItemId="" GlobalItemID=""
+						InheritAttributesFromClassification="" IsShippingCntr=""
+						ItemGroupCode="" ItemID="" ItemKey="" Lockid="" MaxModifyTS=""
+						Modifyprogid="" Modifyts="" Modifyuserid="" OrganizationCode=""
+						UnitOfMeasure="">
+						<Extn ExtnActSkuID="" ExtnBrandTitle="" ExtnItemSize=""
+							ExtnItemType="" ExtnItemUOM="" />
+					</ItemDetails>
+					<LineOverallTotals Charges="" Discount=""
+						ExtendedPrice="" LineCost="" LineTotal="" LineTotalWithoutTax=""
+						ManualDiscountPercentage="" ManualOverridePercentage=""
+						OptionPrice="" PercentProfitMargin="" PricingQty=""
+						ShippingBaseCharge="" ShippingCharges="" ShippingDiscount=""
+						ShippingTotal="" Tax="" UnitPrice="" />
+					<LineCharges>
+						<LineCharge AmountFromAddnlLinePrices="" ChargeAmount=""
+							ChargeCategory="" ChargeName="" ChargeNameKey="" ChargePerLine=""
+							ChargePerUnit="" InvoicedChargeAmount="" InvoicedChargePerLine=""
+							InvoicedChargePerUnit="" IsBillable="" IsDiscount="" IsManual=""
+							IsShippingCharge="" Reference="" RemainingChargeAmount=""
+							RemainingChargePerLine="" RemainingChargePerUnit="">
+							<Extn CodeStr="" CouponNumber="" ExtnChargeId=""
+								ExtnDiscGrp="" ExtnDiscType="" ExtnIsCompPrice="" ExtnQty=""
+								ExtnType="" Idx="" IsPromo="" IsRealDisc="" IsTranLevel="" Num=""
+								Percent="" Price="" PromoIndicator="" ReasonCode="" ReasonDesc=""
+								ReasonType="" ReducedAmt="" Tag="" />
+						</LineCharge>
+					</LineCharges>
+					<LineTaxes>
+						<LineTax ChargeCategory="" ChargeName="" ChargeNameKey=""
+							InvoicedTax="" Reference_1="" Reference_2="" Reference_3=""
+							RemainingTax="" Tax="" TaxName="" TaxPercentage="">
+							<Extn ExtnCounty="" ExtnIsTaxCalculated=""
+								ExtnRemTaxPerLine="" ExtnTaxAreaID="" ExtnTaxPerUnit="" GroupId=""
+								IsManual="" IsOverrideZone="" IsTranLevel="" Reference_1=""
+								Reference_2="" Reference_3="" RuleId="" TaxType="" ZoneId="" />
+						</LineTax>
+					</LineTaxes>
+					<OrderStatuses>
+						<OrderStatus OrderReleaseKey="" />
+					</OrderStatuses>
+				</OrderLine>
+				<LineCharges>
+					<LineCharge ChargeAmount="" ChargeCategory=""
+						ChargeName="" ChargeNameKey="" ChargePerLine="" ChargePerUnit=""
+						IsBillable="" IsDiscount="" IsShippingCharge=""
+						OriginalChargePerLine="" OriginalChargePerUnit="" Reference="">
+						<ChargeNameDetails Description="" />
+						<ChargeCategoryDetails ChargeCategoryKey=""
+							ConsiderForProfitMargin="" Description="" IsBillable=""
+							IsDiscount="" IsRefundable="" />
+					</LineCharge>
+				</LineCharges>
+				<LineTaxes>
+					<LineTax ChargeCategory="" ChargeName="" ChargeNameKey=""
+						Reference1="" Reference2="" Reference3="" Tax="" TaxName=""
+						TaxPercentage="" />
+					<TaxSummary>
+						<TaxSummaryDetail Tax="Required" TaxName="" />
+					</TaxSummary>
+				</LineTaxes>
+			</LineDetail>
+		</LineDetails>
+		<TotalSummary>
+			<ChargeSummary>
+				<ChargeSummaryDetail ChargeAmount=""
+					ChargeCategory="" ChargeName="" ChargeNameKey="" IsBillable=""
+					IsDiscount="" Reference="" />
+			</ChargeSummary>
+			<TaxSummary>
+				<TaxSummaryDetail Tax="Required" TaxName="" />
+			</TaxSummary>
+		</TotalSummary>
+		<HeaderCharges>
+			<HeaderCharge ChargeAmount="" ChargeCategory=""
+				ChargeName="" ChargeNameKey="" IsBillable="" IsDiscount=""
+				IsShippingCharge="" OriginalChargeAmount="" Reference="">
+				<ChargeNameDetails Description="" />
+				<ChargeCategoryDetails ChargeCategoryKey=""
+					ConsiderForProfitMargin="" Description="" IsBillable="" IsDiscount=""
+					IsRefundable="" />
+			</HeaderCharge>
+		</HeaderCharges>
+		<HeaderTaxes>
+			<HeaderTax ChargeCategory="" ChargeName="" ChargeNameKey=""
+				Reference1="" Reference2="" Reference3="" Tax="" TaxName=""
+				TaxPercentage="" />
+			<TaxSummary>
+				<TaxSummaryDetail Tax="Required" TaxName="" />
+			</TaxSummary>
+		</HeaderTaxes>
+		<CollectionDetails TotalLines="">
+			<CollectionDetail AmountCollected="Required"
+				AuthorizationID="" ChargeType="" OrderHeaderKey="" OrderInvoiceKey=""
+				PaymentKey="" RequestAmount="" SettledAmount="">
+				<PaymentMethod CreditCardExpDate="" CreditCardName=""
+					CreditCardNo="" CreditCardType="" CustomerAccountNo=""
+					DisplayCreditCardNo="" DisplaySvcNo="" FirstName="" LastName="" MaxChargeLimit=""
+					MiddleName="" PaymentType="" UnlimitedCharges="" PaymentReference1=""
+					PaymentReference2="" PaymentReference8="" PaymentReference9=""
+					TotalCharged="" TotalAuthorized="" />
+			</CollectionDetail>
+		</CollectionDetails>
+	</InvoiceHeader>
+</InvoiceDetail>

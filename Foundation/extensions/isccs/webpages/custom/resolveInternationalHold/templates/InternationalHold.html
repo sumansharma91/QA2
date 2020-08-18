@@ -1,0 +1,101 @@
+<div class="sc-platform-screen-default" role="region" aria-label="Available Details">
+    <!-- Licensed Materials - Property of IBM IBM Call Center for Commerce
+    (5725-P82) (C) Copyright IBM Corp. 2013 All Rights Reserved. US Government
+    Users Restricted Rights - Use, duplication or disclosure restricted by
+    GSA ADP Schedule Contract with IBM Corp. -->
+    <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 
+		uId : 'systemMessagePanelPopup' , 
+		renderHidden : true">
+	</div>
+     <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="	  'class' : 'storeDisplay storeDisplaynoresults',
+		uId : 'pnlOrderLineAvailability' ,
+		scParamDataFn : function() { 
+			return { 
+			 	'aria-label' : this.getSimpleBundleString('extn_International_Hold')
+			}
+		}" role='region'>
+		<div data-dojo-type="gridx/Grid" data-dojo-props="		spanLabel : true , 
+			autoWidth : false , 
+			'class' : 'storeSelectionGrid storeDisplaynoresults' ,
+			uId : 'listOfOrderLines' , 
+			autoHeight : false , 
+			cacheClass : 'gridx/core/model/cache/Async', 
+			modules : 	[{
+				moduleClass : 'gridx/modules/ColumnWidth',
+				autoResize : true
+			},
+	 		{
+				moduleClass : 'gridx/modules/HLayout'
+			}],
+			scParamDataFn: function() { 
+				return { 
+					toolBar : [	],	
+					structure : [
+						{
+							field : 'Item',
+							uId : 'clmItemId',
+							bindingData : 	{
+								sFieldBinding : 	{
+									path : 'ItemDetails.PrimaryInformation.ExtendedDisplayDescription'
+								}
+							},
+							width : '80%',
+							name : this.getSimpleBundleString('ItemID')
+						},
+						
+						{
+							field : 'Quantity',
+							uId : 'clmQuantity',
+							bindingData : 	{
+								sFieldBinding : {
+									path :'OrderedQty',
+								}
+							},
+							width : '20%',
+							name : this.getSimpleBundleString('Quantity')
+						},
+						
+					],	
+					bindingData : {
+						targetBinding : [	],
+						sourceBinding : {
+							path : 'OrderLines.OrderLine',
+							namespace : 'getOrderList_output'
+						}
+					},					
+					bodyLoadingInfo : this.getSimpleBundleString('Loading'),	
+					bodyEmptyInfo : this.getSimpleBundleString('NoSearchResults')
+				}
+			}
+		">
+		</div>
+	</div>
+
+
+	    <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		'class' : 'popupNavigation messageDialogFooter' , 
+		uId : 'Popup_navigationPanel'  
+ ">
+ 	<div data-dojo-type="dijit/form/Button" 
+		 data-dojo-props=" spanLabel : true ,  
+		'class' : 'buttonCouponLookup' , 
+		showLabel : true , 
+		uId : 'Popup_btnYes',
+		scParamDataFn : function() { 
+			return { 
+				label :this.getSimpleBundleString('Cancel Products')
+			}
+	}">
+	</div>
+		<div data-dojo-type="dijit/form/Button" 
+		 data-dojo-props=" spanLabel : true ,  
+		'class' : 'buttonCouponLookup' , 
+		showLabel : true , 
+		uId : 'Popup_btnNo',
+		scParamDataFn : function() { 
+			return { 
+				label :this.getSimpleBundleString('Go back')
+			}
+	}">
+	</div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="AddModifyChargesPopupExtn"
+        extnPackage="extn.order.addModifyCharges"
+        originalScreen="isccs.order.addModifyCharges.AddModifyChargesPopup"
+        originalScreenPackage="isccs.order.addModifyCharges" type="diffrential">
+        <Namespaces>
+            <SourceNamespaces>
+                <Source
+                    description="This will hold the validation amount"
+                    isExtn="true"
+                    scExtensibilityArrayItemId="extn_SourceNamespaces_6" value="extn_Alpine_Validation_output"/>
+            </SourceNamespaces>
+        </Namespaces>
+        <MashupRefs>
+            <Init>
+                <MashupRef extnType="ADD"
+                    mashupId="extn_Alpine_Validation"
+                    mashupRefId="extn_AlpineValidation" sourceNamespace="extn_Alpine_Validation_output"/>
+            </Init>
+            <Behavior>
+                <MashupRef extnType="MODIFY"
+                    mashupId="addModifyCharges_getCompleteOrderDetails" mashupRefId="getCompleteOrderDetails"/>
+                <MashupRef extnType="MODIFY"
+                    mashupId="lineCharges_getCompleteOrderLineDetails" mashupRefId="getCompleteOrderLineDetails"/>
+                <MashupRef extnType="ADD"
+                    mashupId="extn_prorateLineCharges" mashupRefId="extn_prorateLineCharges"/>
+                <MashupRef extnType="ADD"
+                    mashupId="extn_VSICreateAppeasementApprovalAlert" mashupRefId="extn_VSICreateAppeasementApprovalAlert"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

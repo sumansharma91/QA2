@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ItemBrowsingPreviewExtn"
+        extnPackage="extn.item.browsing"
+        originalScreen="isccs.item.browsing.ItemBrowsingPreview"
+        originalScreenPackage="isccs.item.browsing" type="diffrential">
+        <Items>
+            <Image _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="imgDelAllowed" renderHidden="false"/>
+            <Image _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="imgDelNotAllowed" renderHidden="false"/>
+            <Label _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblDelAllowed" renderHidden="false"/>
+            <Label _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lblDelNotAllowed" renderHidden="false"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

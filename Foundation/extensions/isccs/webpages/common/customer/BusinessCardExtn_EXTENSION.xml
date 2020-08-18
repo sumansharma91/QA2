@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="BusinessCardExtn"
+        extnPackage="extn.common.customer"
+        originalScreen="isccs.common.customer.BusinessCard"
+        originalScreenPackage="isccs.common.customer" type="diffrential">
+        <Items>
+            <Link _sc_extensibility_operation="change" _sc_extensibility_referenceUId="lnkCustomerName"/>
+        </Items>
+        <MashupRefs>
+            <Behavior>
+                <MashupRef extnType="ADD"
+                    mashupId="customerIdentification_getCompleteCustomerDetails" mashupRefId="extn_getCompleteCustomerDetails"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

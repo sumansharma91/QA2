@@ -1,0 +1,10 @@
+<OrderLineList>
+<OrderLine OrderLineKey="" PrimeLineNo="" SubLineNo="" OrderedQty="" OriginalOrderedQty="">
+<LineCharges>
+<LineCharge/>
+</LineCharges>
+<LineTaxes>
+<LineTax/>
+</LineTaxes>
+</OrderLine>
+</OrderLineList>

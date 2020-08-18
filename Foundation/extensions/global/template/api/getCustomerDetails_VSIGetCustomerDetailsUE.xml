@@ -1,0 +1,12 @@
+<Customer CustomerID="" CustomerKey="" CustomerType="" HealthyRewardPoints="" OrganizationCode="" Status="">
+	<CustomerContactList>
+		<CustomerContact CustomerContactID="" DayPhone="" EmailID="" FirstName="" LastName="" UserID="">
+			<CustomerAdditionalAddressList>
+				<CustomerAdditionalAddress CustomerAdditionalAddressID="" IsDefaultBillTo="" IsDefaultShipTo="">
+					<PersonInfo AddressLine1="" AddressLine2="" AddressLine3="" City="" Company="" Country="" DayPhone="" EMailID="" FirstName="" JobTitle="" LastName="" MiddleName="" MobilePhone="" State="" ZipCode=""/>
+				</CustomerAdditionalAddress>
+		</CustomerAdditionalAddressList>
+	</CustomerContact>
+	</CustomerContactList>
+	<CustomerAdditionalAddressList/>
+</Customer>

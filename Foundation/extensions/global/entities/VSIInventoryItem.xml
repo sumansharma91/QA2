@@ -1,0 +1,62 @@
+
+<DBSchema>
+<Entities>
+	<Entity Name="" XMLName="VSIInventoryItem" ApiNeeded="Y"
+			AuditRequired="N" Description="Inventory Item" TableType="TRANSACTION" 
+			Prefix="VSI" TableName="VSI_INVENTORY_ITEM">
+	
+			<!-- Table columns -->
+			<Attributes>
+				<Attribute ColumnName="INVENTORY_KEY" DataType="Key"
+					DefaultValue="' '" XMLName="InventoryKey" Type="VARCHAR2" Nullable="false"
+					Description="" />
+							
+				<Attribute ColumnName="INVENTORY_ITEM_KEY" DataType="Key"
+					DefaultValue="' '" Type="VARCHAR2" Nullable="false" Description=""
+					XMLName="InventoryItemKey" />
+					
+				<Attribute ColumnName="ACTUAL_QUANTITY"
+					DataType="Text-20" DefaultValue="' '" Description=""
+					XMLName="ActualQuantity" Type="VARCHAR2" Nullable="false" />
+					
+					<Attribute ColumnName="CHANGED_QUANTITY"
+					DataType="Text-20" DefaultValue="' '" Description=""
+					XMLName="ChangedQuantity" Type="VARCHAR2" Nullable="false" />
+
+				<Attribute ColumnName="EXPECTED_QUANTITY"
+					DataType="Text-20" Nullable="false" Description=""
+					XMLName="ExpectedQuantity" Type="VARCHAR2" />
+
+				<Attribute ColumnName="SHIP_NODE"
+					DataType="Text-20" Nullable="false" Description=""
+					XMLName="ShipNode" Type="VARCHAR2" />
+
+				<Attribute ColumnName="CREATETS" DataType="TimeStamp"
+					DefaultValue="sysdate" Description="Create TimeStamp" />
+				<Attribute ColumnName="MODIFYTS" DataType="TimeStamp"
+					DefaultValue="sysdate" Description="Modify TimeStamp" />
+				<Attribute ColumnName="CREATEUSERID" DataType="UserId"
+					DefaultValue="&apos; &apos;" Description="Creating User ID" />
+				<Attribute ColumnName="MODIFYUSERID" DataType="UserId"
+					DefaultValue="&apos; &apos;" Description="Modifying User ID" />
+				<Attribute ColumnName="CREATEPROGID" DataType="ProgramID"
+					DefaultValue="&apos; &apos;" Description="Creating Program ID" />
+				<Attribute ColumnName="MODIFYPROGID" DataType="ProgramID"
+					DefaultValue="&apos; &apos;" Description="Modifying Program ID" />
+				<Attribute ColumnName="LOCKID" DataType="Lockid"
+					DefaultValue="0" Description="Lock ID" />
+	
+			</Attributes>
+
+			<!-- PrimaryKey is a mandatory attribute in entity definition. This element can have ONLY ONE attribute element -->
+			<PrimaryKey Name="InventoryKey">
+				<Attribute ColumnName="INVENTORY_KEY" />
+			</PrimaryKey>
+
+			<Parent ParentTableName="YFS_INVENTORY_ITEM">
+				<Attribute ColumnName="INVENTORY_ITEM_KEY"
+					ParentColumnName="INVENTORY_ITEM_KEY" />
+			</Parent>
+		</Entity>
+		</Entities>
+</DBSchema>

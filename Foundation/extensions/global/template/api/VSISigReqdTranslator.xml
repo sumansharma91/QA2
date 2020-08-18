@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FlatfileDelimitedSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation='delimitedreceiver.xsd'>
+   <ParserDefaults DefaultRecordDelimiter="Newline" DefaultFieldDelimiter="," DefaultPadCharacter="#" RecordIdStartPosition="1">
+   </ParserDefaults>
+
+
+   <Root Name="VSIItemListHierarchy">			
+      <Header Name="HEADER" RecordName="HEADER" MinOccurence="1" MaxOccurence="1" />
+
+      <Terminal Name="ITEMLIST" RecordName="ITEMLIST" MinOccurence="1" MaxOccurence="10000000" />
+   </Root>
+
+   <RecordDefinitions>
+   
+      <Record RecordId="HEADER" Name="HEADER" XMLName="Header">
+			<Field Name="HeaderValue" FieldPosition="2" XMLName="Value" />
+      </Record>
+	  
+	  <Record RecordId="ITEMLIST" Name="ITEMLIST" XMLName="ItemList">
+		   <Field Name="State" FieldPosition="2" XMLName="State" />	 
+		   <Field Name="SKU" FieldPosition="3" XMLName="Sku" />
+		   <Field Name="JDANO" FieldPosition="4" XMLName="ItemID" />
+		   <Field Name="DESC" FieldPosition="5" XMLName="ItemDesc" />
+		   <Field Name="Age" FieldPosition="6" XMLName="Age" />
+	  </Record>
+		
+   </RecordDefinitions>
+
+</FlatfileDelimitedSchema>
+

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="CustomerSearchExtn"
+        extnPackage="extn.customer.search"
+        originalScreen="isccs.customer.search.CustomerSearch"
+        originalScreenPackage="isccs.customer.search" type="diffrential">
+        <Items>
+            <FilteringSelect _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="cb_customerEnterprise"
+                label="$(_scSimpleBundle:Organization)" renderHidden="true"/>
+            <TitlePane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="SST_SearchResult" title="$(_scSimpleBundle:extn_Customer_Search_Results)"/>
+            <RadioButtonSet _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="radCustomerType" renderHidden="true"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="18"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="cb_customerEnterprise" uId="radCustomerType"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="19"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="pnlCommonContainer" uId="radCustomerType"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="20"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="pnlCommonContainer" uId="radCustomerType"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="21"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="cb_customerEnterprise" uId="radCustomerType"/>
+            <RadioButtonSet _sc_extensibility_moveOrder="22"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="cb_customerEnterprise" uId="radCustomerType"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txt_userIdStartsWithAdvanced"
+                label="$(_scSimpleBundle:CustomerId)" renderHidden="true"/>
+            <TextField _sc_extensibility_moveOrder="6"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txtCustomerID2" uId="txt_userIdStartsWithAdvanced"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtCustomerID2" renderHidden="false"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txt_customerEmailAdvanced" label="$(_scBundle:extn_E_mail_ID)"/>
+            <TextField _sc_extensibility_moveOrder="9"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="extn_textfield_HealthyAwardsAdvanced" uId="txt_customerEmailAdvanced"/>
+            <TextField _sc_extensibility_moveOrder="11"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txt_customerFirstNameAdvanced" uId="txt_customerEmailAdvanced"/>
+            <TextField _sc_extensibility_moveOrder="23"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="txtCustomerID2" uId="txt_customerEmailAdvanced"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txt_customerPhoneNumberAdvanced" label="$(_scBundle:extn_Primary_Phone)"/>
+            <TextField _sc_extensibility_moveOrder="12"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txt_customerFirstNameAdvanced" uId="txt_customerPhoneNumberAdvanced"/>
+            <TextField _sc_extensibility_moveOrder="24"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="txt_customerEmailAdvanced" uId="txt_customerPhoneNumberAdvanced"/>
+            <TextField _sc_extensibility_moveOrder="5"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txt_customerPhoneNumberAdvanced"
+                label="$(_scSimpleBundle:extn_Healthy_Awards_)" uId="extn_textfield_HealthyAwardsAdvanced">
+                <BindingData>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="getConsumerCustomerList_input"
+                            path="Customer.CustomerID" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                    <SourceBinding namespace="screenInput" path="Customer.CustomerID"/>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_moveOrder="13"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txt_customerFirstNameAdvanced" uId="extn_textfield_HealthyAwardsAdvanced"/>
+            <TextField _sc_extensibility_moveOrder="25"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="txt_customerPhoneNumberAdvanced" uId="extn_textfield_HealthyAwardsAdvanced"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txt_customerLastNameAdvanced" label="$(_scBundle:extn_Last_Name)"/>
+            <TextField _sc_extensibility_moveOrder="4"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txt_userIdStartsWithAdvanced" uId="txt_customerLastNameAdvanced"/>
+            <TextField _sc_extensibility_moveOrder="14"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txt_customerFirstNameAdvanced" uId="txt_customerLastNameAdvanced"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txt_customerFirstNameAdvanced" label="$(_scBundle:extn_First_Name)"/>
+            <TextField _sc_extensibility_moveOrder="8"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txtOrganizationName2" uId="txt_customerFirstNameAdvanced"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txt_customerPostalCodeAdvanced" label="$(_scBundle:ZipCodeCol)"/>
+            <TextField _sc_extensibility_moveOrder="15"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txtOrganizationName2" uId="txt_customerPostalCodeAdvanced"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="afterScreenInit" isExtn="true" sequence="51">
+                    <Handler methodName="hideValue"/>
+                </Subscriber>
+                <Subscriber
+                    eventId="extn_textfield_HealthyAwardsAdvanced_onKeyUp"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="SST_invokeApiOnEnter"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+    </ScreenExtension>
+</ExtensionMetaData>

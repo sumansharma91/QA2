@@ -1,0 +1,1079 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mashups>
+    <mashup id="customerSearch_getCustomerList">
+        <API Name="getCompleteCustomerList">
+            <Input/>
+            <Template>
+                <CustomerList>
+                    <Customer>
+                        <CustomerContactList>
+                            <CustomerContact Company="" UserID="">
+                                <CustomerAdditionalAddressList>
+                                    <CustomerAdditionalAddress>
+                                    <PersonInfo/>
+                                    </CustomerAdditionalAddress>
+                                </CustomerAdditionalAddressList>
+                                <DefaultBillToAddress>
+                                    <PersonInfo/>
+                                </DefaultBillToAddress>
+                            </CustomerContact>
+                        </CustomerContactList>
+                    </Customer>
+                </CustomerList>
+            </Template>
+        </API>
+    </mashup>
+    <mashup id="customerAppeasement_getCompleteOrderLineList">
+        <API Name="getCompleteOrderLineList">
+            <Input/>
+            <Template>
+                <OrderLineList>
+                    <OrderLine MaxLineStatus=""/>
+                    <Order CustomerEMailID=""/>
+                </OrderLineList>
+            </Template>
+        </API>
+    </mashup>
+    <mashup id="storeSelection_getSurroundingNodeList">
+        <API Name="getSurroundingNodeList">
+            <Input>
+                <GetSurroundingNodeList
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    DistanceToConsider="" DistanceToConsiderUOM=""
+                    FulfillmentType="CUTOVERSTORES" MaximumRecords=""
+                    NodeType="" OrganizationCode="xml:scControllerInput:/OrderLine/Order/@EnterpriseCode">
+                    <ShipToAddress City="" Country="" State="" ZipCode=""/>
+                </GetSurroundingNodeList>
+            </Input>
+            <Template>
+                <GetSurroundingNodeList DistanceToConsider=""
+                    DistanceToConsiderUOM="" FulfillmentType=""
+                    NodeType="" OrganizationCode="">
+                    <NodeList>
+                        <Node ActivateFlag="" Description=""
+                            DistanceFromShipToAddress="" DistanceUOM="" ShipNode="">
+                            <ShipNodePersonInfo AddressID=""
+                                AddressLine1="" AddressLine2=""
+                                AddressLine3="" AddressLine4=""
+                                AddressLine5="" AddressLine6=""
+                                AlternateEmailID="" Beeper="" City=""
+                                Company="" Country="" DayFaxNo=""
+                                DayPhone="" Department="" EMailID=""
+                                ErrorTxt="" EveningFaxNo=""
+                                EveningPhone="" FirstName="" HttpUrl=""
+                                IsCommercialAddress="" JobTitle=""
+                                LastName="" Latitude="" Longitude=""
+                                MiddleName="" MobilePhone=""
+                                OtherPhone="" PersonID=""
+                                PersonInfoKey="" PreferredShipAddress=""
+                                State="" Suffix="" TaxGeoCode=""
+                                Title="" UseCount=""
+                                VerificationStatus="" ZipCode=""/>
+                            <Organization PrimaryUrl=""/>
+                        </Node>
+                    </NodeList>
+                </GetSurroundingNodeList>
+            </Template>
+        </API>
+    </mashup>
+    <mashup id="additems_modifyFulfillmentOptions">
+        <API Name="modifyFulfillmentOptions">
+            <Input>
+                <Order>
+                    <OrderLines>
+                        <OrderLine IsProcurementAllowed="" LineType="" ProcureFromNode=""/>
+                    </OrderLines>
+                </Order>
+            </Input>
+            <Template/>
+        </API>
+    </mashup>
+    <mashup id="fulfillmentSummary_modifyFulfillmentOptions">
+        <API Name="modifyFulfillmentOptions">
+            <Input>
+                <Order>
+                    <OrderLines>
+                        <OrderLine ItemID="" FulfillmentType="" IsProcurementAllowed="" LineType="" ProcureFromNode=""/>
+                    </OrderLines>
+                </Order>
+            </Input>
+            <Template/>
+        </API>
+    </mashup>
+    <mashup id="additems_modifyFulfillmentOptions">
+        <API Name="modifyFulfillmentOptions">
+            <Input>
+                <Order EnteredBy="">
+                    <OrderLines>
+                        <OrderLine Action="" CancelRelatedLines=""
+                            DeliveryMethod="" FulfillmentType=""
+                            HasNotes="" IsProcurementAllowed=""
+                            KitCode="" LineType="" OrderDate=""
+                            OrderLineKey="" OrderedQty=""
+                            ProcureFromNode="" ShipNode=""
+                            TransactionalLineId="" ValidateItem="">
+                            <OrderOverride QuantityLimitOverridden=""/>
+                            <LinePriceInfo DisplayUnitPrice=""
+                                IsPriceLocked="" ListPrice="" UnitPrice=""/>
+                            <Notes NumberOfNotes="">
+                                <Note ContactReference="" ContactTime=""
+                                    ContactType="" ContactUser=""
+                                    CustomerSatIndicator="" NoteText=""
+                                    NotesKey="" Priority=""
+                                    ReasonCode="" VisibleToAll="">
+                                    <User Username=""/>
+                                </Note>
+                            </Notes>
+                            <OrderLineTranQuantity OrderedQty=""/>
+                            <Item ItemID="" ProductClass="" UnitOfMeasure=""/>
+                            <PersonInfoShipTo AddressID=""
+                                AddressLine1="" AddressLine2=""
+                                AddressLine3="" AddressLine4=""
+                                AddressLine5="" AddressLine6=""
+                                AlternateEmailID="" Beeper="" City=""
+                                Company="" Country="" DayFaxNo=""
+                                DayPhone="" Department="" EMailID=""
+                                EveningFaxNo="" EveningPhone=""
+                                FirstName="" IsCommercialAddress=""
+                                JobTitle="" LastName="" MiddleName=""
+                                MobilePhone="" OtherPhone="" PersonID=""
+                                State="" Suffix="" TaxGeoCode=""
+                                Title="" ZipCode=""/>
+                        </OrderLine>
+                    </OrderLines>
+                    <Extn ExtnPricingDate=""/>
+                </Order>
+            </Input>
+            <Template>
+                <Order>
+                    <Extn ExtnPricingDate=""/>
+                    <PriceInfo/>
+                    <OverallTotals/>
+                    <OrderLines/>
+                </Order>
+            </Template>
+        </API>
+    </mashup>
+    <mashup
+        description="This mashup massages the output of modifyFulfillmentOptions api by calling ValidationItemForOrdering api and if there are any orderline which have validation errors then sets attribute OrderValidationErrorPresent to true which is read in additems ui to show validation errors."
+        endpoint="EP_ORDER" id="additems_modifyFulfillmentOptions_Ovp"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.isccs.order.mashups.SCCSAddItemsUpdateOrderMashup"/>
+        <API Name="modifyFulfillmentOptions">
+            <Input>
+                <Order EnteredBy="">
+                    <OrderLines>
+                        <OrderLine Action="" CancelRelatedLines=""
+                            DeliveryMethod="" HasNotes=""
+                            IsProcurementAllowed="" KitCode=""
+                            LineType="" OrderDate="" OrderLineKey=""
+                            OrderedQty="" ProcureFromNode="" ShipNode=""
+                            FulfillmentType="" TransactionalLineId="" ValidateItem="N">
+                            <OrderOverride QuantityLimitOverridden=""/>
+                            <LinePriceInfo DisplayUnitPrice=""
+                                IsPriceLocked="" ListPrice="" UnitPrice=""/>
+                            <Notes NumberOfNotes="">
+                                <Note ContactReference="" ContactTime=""
+                                    ContactType="" ContactUser=""
+                                    CustomerSatIndicator="" NoteText=""
+                                    NotesKey="" Priority=""
+                                    ReasonCode="" VisibleToAll="">
+                                    <User Username=""/>
+                                </Note>
+                            </Notes>
+                            <OrderLineTranQuantity OrderedQty=""/>
+                            <Item ItemID="" ProductClass="" UnitOfMeasure=""/>
+                            <PersonInfoShipTo AddressID=""
+                                AddressLine1="" AddressLine2=""
+                                AddressLine3="" AddressLine4=""
+                                AddressLine5="" AddressLine6=""
+                                AlternateEmailID="" Beeper="" City=""
+                                Company="" Country="" DayFaxNo=""
+                                DayPhone="" Department="" EMailID=""
+                                EveningFaxNo="" EveningPhone=""
+                                FirstName="" IsCommercialAddress=""
+                                JobTitle="" LastName="" MiddleName=""
+                                MobilePhone="" OtherPhone="" PersonID=""
+                                State="" Suffix="" TaxGeoCode=""
+                                Title="" ZipCode=""/>
+                        </OrderLine>
+                    </OrderLines>
+                </Order>
+            </Input>
+            <Template/>
+        </API>
+    </mashup>
+    <!--OMS-1166 : Start -->
+    <mashup id="invoiceDetails_getOrderInvoiceDetails">
+        <API Name="getCompleteOrderInvoiceDetails">
+            <Input/>
+            <Template>
+                <InvoiceDetail>
+                    <InvoiceHeader InvoiceType="" Reference1="">
+                        <CollectionDetails>
+                            <CollectionDetail>
+                                <PaymentMethod SvcNo="" PaymentReference2="" PaymentType="" />
+                            </CollectionDetail>
+                        </CollectionDetails>
+                        <Shipment>
+                            <ShipNode>
+                                <ShipNodePersonInfo/>
+                            </ShipNode>
+                        </Shipment>
+                        <Order OrderDate="" OrderNo="">
+                            <PriceInfo/>
+                        </Order>
+                    </InvoiceHeader>
+                </InvoiceDetail>
+            </Template>
+        </API>
+    </mashup>
+	<!--OMS-1166 : End -->
+    <mashup id="paymentInquiry-getPaymentInquiryDetails">
+        <API Name="getPaymentInquiryDetails">
+            <Input/>
+            <Template>
+                <Order>
+                    <PriceInfo/>
+                    <OverallTotals/>
+                    <ChargeDetails>
+                        <ChargeTransactionDetail>
+                            <PaymentMethod CreditCardNo=""/>
+                        </ChargeTransactionDetail>
+                    </ChargeDetails>
+                </Order>
+            </Template>
+        </API>
+    </mashup>
+    <mashup id="paymentConfirmation_capturePayment">
+        <API Name="capturePayment">
+            <Input>
+                <CapturePayment
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    DocumentType="" EnterpriseCode="" OrderHeaderKey=""
+                    OrderNo="" ProceedOnZeroAmountFailure="">
+                    <PaymentMethods>
+                        <PaymentMethod BillToKey="" ChargeSequence=""
+                            CheckNo="" CheckReference="" Code=""
+                            CreditCardExpDate="" CreditCardName=""
+                            CreditCardNo="" CreditCardType=""
+                            CustomerAccountNo="" CustomerPONo=""
+                            DisplayCreditCardNo=""
+                            DisplayCustomerAccountNo=""
+                            DisplayPaymentReference1=""
+                            DisplayPrimaryAccountNo="" DisplaySvcNo=""
+                            FirstName="" IsCorrection="" IsCustomer=""
+                            LastName="" MaxChargeLimit="" MiddleName=""
+                            Operation="" PaymentKey=""
+                            PaymentReference1="" PaymentReference2=""
+                            PaymentReference3="" PaymentType=""
+                            PrimaryAccountNo="" RequestedAmount=""
+                            ResetSuspensionStatus="" SvcNo="">
+                            <PersonInfoBillTo AddressID=""
+                                AddressLine1="" AddressLine2=""
+                                AddressLine3="" AddressLine4=""
+                                AddressLine5="" AddressLine6=""
+                                AlternateEmailID="" Beeper="" City=""
+                                Company="" Country="" DayFaxNo=""
+                                DayPhone="" Department="" EMailID=""
+                                EveningFaxNo="" EveningPhone=""
+                                FirstName="" IsAddressVerified=""
+                                IsCommercialAddress="" JobTitle=""
+                                LastName="" Latitude="" Longitude=""
+                                MiddleName="" MobilePhone=""
+                                OtherPhone="" PersonID=""
+                                PersonInfoKey="" State="" Suffix=""
+                                TaxGeoCode="" Title="" ZipCode=""/>
+                        </PaymentMethod>
+                    </PaymentMethods>
+                </CapturePayment>
+            </Input>
+            <Template>
+                <Order>
+                    <HeaderTaxes>
+                        <HeaderTax ChargeCategory="" ChargeName=""
+                            ChargeNameKey="" InvoicedTax=""
+                            Reference1="" Reference2="" Reference3=""
+                            RemainingTax="" Tax="" TaxName=""
+                            TaxPercentage="" TaxableFlag=""/>
+                    </HeaderTaxes>
+                </Order>
+            </Template>
+        </API>
+    </mashup>
+    <mashup id="additems_getCompleteItemList">
+        <API Name="getCompleteItemList">
+            <Input>
+                <Item BarCode="" CallingOrganizationCode="VSI-Cat" OrganizationCode="VSI-Cat">
+					<ComplexQuery >
+						<And>
+							<Or>
+								<Exp Name="" Value=""/>
+							</Or>
+						</And>
+					</ComplexQuery>
+                    <CustomerInformation/>
+                    <BarCode>
+                        <ContextualInfo/>
+                    </BarCode>
+                </Item>
+            </Input>
+            <Template>
+                <ItemList>
+                    <Item HasVisibleAssociations="" IsItemSuperseded=""
+                        ItemGroupCode="" ItemID="" ItemKey=""
+                        OrganizationCode="" UnitOfMeasure="">
+                        <Availability FirstFutureAvailableDate=""
+                            FutureAvailableDate=""
+                            FutureAvailableQuantity=""
+                            OnhandAvailableDate="" OnhandAvailableQuantity="">
+                            <AvailabilityInformation>
+                                <AvailableInventory AvailableQuantity=""
+                                    EffectiveUntilDate="" IsOnhand="" MaxShipDate=""/>
+                            </AvailabilityInformation>
+                        </Availability>
+                        <Components>
+                            <Component ComponentDescription=""
+                                ComponentItemGroupCode=""
+                                ComponentItemID=""
+                                ComponentOrganizationCode=""
+                                ComponentUnitOfMeasure="" KitQuantity=""/>
+                        </Components>
+                        <ComputedPrice BundleTotal="" ListPrice="" UnitPrice="">
+                            <QuantityRangePriceList>
+                                <QuantityRangePrice BreakQtyHigh="" UnitPrice=""/>
+                            </QuantityRangePriceList>
+                        </ComputedPrice>
+                        <ClassificationCodes Model=""/>
+                        <PrimaryInformation AssumeInfiniteInventory=""
+                            BundleFulfillmentMethod=""
+                            BundleFulfillmentMode=""
+                            BundlePricingStrategy=""
+                            DefaultProductClass=""
+                            ExtendedDisplayDescription="" ImageID=""
+                            ImageLabel="" ImageLocation=""
+                            IsDeliveryAllowed=""
+                            IsDeliveryAllowedOverridden=""
+                            IsModelItem="" IsPickupAllowed=""
+                            IsPickupAllowedOverridden=""
+                            IsShippingAllowed=""
+                            IsShippingAllowedOverridden=""
+                            IsStandaloneService=""
+                            IsSubOnOrderAllowed="" IsValid="" KitCode="" MinOrderQuantity=""/>
+                        <ItemServiceAssocList TotalNumberOfRecords="">
+                            <ItemServiceAssoc ProductQuantity=""
+                                ServiceItemDesc=""
+                                ServiceItemGroupCode="" ServiceItemId=""
+                                ServiceQuantity="" ServiceUOM="">
+                                <ServiceItem HasVisibleAssociations=""
+                                    IsItemSuperseded="" ItemGroupCode=""
+                                    ItemID="" ItemKey=""
+                                    OrganizationCode="" UnitOfMeasure="">
+                                    <ComputedPrice BundleTotal=""
+                                    ListPrice="" UnitPrice="">
+                                    <QuantityRangePriceList>
+                                    <QuantityRangePrice
+                                    BreakQtyHigh="" UnitPrice=""/>
+                                    </QuantityRangePriceList>
+                                    </ComputedPrice>
+                                    <PrimaryInformation
+                                    AssumeInfiniteInventory=""
+                                    ExtendedDisplayDescription=""
+                                    ImageID="" ImageLabel="" ImageLocation=""/>
+                                </ServiceItem>
+                            </ItemServiceAssoc>
+                        </ItemServiceAssocList>
+                        <Extn ExtnIsRestrcitedItem="" ItemID="">
+                            <VSIShipRestrictedItemList>
+                                <VSIShipRestrictedItem Country=""
+                                    State="" ZipCode=""/>
+                            </VSIShipRestrictedItemList>
+                        </Extn>
+                    </Item>
+                </ItemList>
+            </Template>
+        </API>
+    </mashup>
+    <mashup id="orderSummary_getCompleteOrderDetails">
+        <API Name="getCompleteOrderDetails">
+            <Input/>
+            <Template>
+                <Order OrderName="">
+                    <PriceInfo/>
+                    <OverallTotals/>
+                    <Extn ExtnIsMigrated=""/>
+                    <OrderLines>
+                        <OrderLine DeliveryMethod=""/>
+                    </OrderLines>
+                </Order>
+            </Template>
+        </API>
+    </mashup>
+    <mashup id="returnSummary_getCompleteOrderDetails">
+        <API Name="getCompleteOrderDetails">
+            <Input/>
+            <Template>
+                <Order>
+                    <PriceInfo/>
+                    <OverallTotals/>
+                    <Extn ExtnIsMigrated=""/>
+                </Order>
+            </Template>
+        </API>
+    </mashup>
+    <mashup id="lineSummary_getCompleteOrderLineDetails">
+        <API Name="getCompleteOrderLineDetails">
+            <Input/>
+            <Template>
+                <OrderLine>
+                    <OrderLineTranQuantity/>
+                    <Item/>
+                    <LinePriceInfo/>
+                    <Order>
+                        <PriceInfo/>
+                    </Order>
+                    <ItemDetails>
+                        <PrimaryInformation/>
+                    </ItemDetails>
+                    <BundleParentLine/>
+                    <ComputedPrice/>
+                    <OrderStatuses>
+                        <OrderStatus OrderHeaderKey="" OrderLineKey=""
+                            OrderLineScheduleKey="" OrderReleaseKey=""
+                            OrderReleaseStatusKey="" PipelineKey=""
+                            ReceivingNode="" ShipNode="" Status=""
+                            StatusDate="" StatusDescription=""
+                            StatusQty="" StatusReason="" TotalQuantity="">
+                            <Details ExpectedDeliveryDate=""
+                                ExpectedShipmentDate=""
+                                OverrideItemID=""
+                                OverrideProductClass=""
+                                OverrideUnitOfMeasure=""
+                                ReceivingNode="" ShipByDate=""
+                                ShipNode="" TagNumber="">
+                                <KitDetails>
+                                    <KitDetail OrderKitLineKey=""
+                                    Quantity="" ShipByDate="" TagNumber="">
+                                    <KitDetailTranQuantity
+                                    Quantity="" TransactionalUOM=""/>
+                                    </KitDetail>
+                                </KitDetails>
+                            </Details>
+                            <OrderStatusTranQuantity StatusQty=""
+                                TotalQuantity="" TransactionalUOM=""/>
+                            <ShipNode Description=""
+                                IdentifiedByParentAs="" OwnerKey=""/>
+                        </OrderStatus>
+                    </OrderStatuses>
+					<!--  OMS-1449 : START-->
+					<LineCharges>
+						<LineCharge>
+							<Extn CouponNumber=""   PromoNum="" />
+						</LineCharge>
+					</LineCharges>
+					<!--  OMS-1449 : END-->
+                    <Extn ExtnIsMigrated=""  ExtnTotalDiscount="" ExtnTotalTax="" ExtnLineTotal=""/>
+                </OrderLine>
+            </Template>
+        </API>
+    </mashup>
+    <mashup id="paymentConfirmation_manageCustomer">
+        <API Name="manageCustomer">
+            <Input>
+                <Customer>
+                    <CustomerPaymentMethodList>
+                        <CustomerPaymentMethod
+                            DisplayCustomerAccountNo="" IsDefaultMethod=""/>
+                        <CustomerPaymentMethod CreditCardExpDate=""
+                            CreditCardName="" CreditCardNo=""
+                            CreditCardType="" CustomerAccountNo=""
+                            CustomerPaymentMethodKey=""
+                            DisplayCreditCardNo=""
+                            DisplayCustomerAccountNo=""
+                            DisplayPaymentReference1="" FirstName=""
+                            LastName="" MiddleName=""
+                            PaymentReference1="" PaymentReference2=""
+                            PaymentReference3="" PaymentType="">
+                            <PersonInfoBillTo AddressID=""
+                                AddressLine1="" AddressLine2=""
+                                AddressLine3="" AddressLine4=""
+                                AddressLine5="" AddressLine6=""
+                                AlternateEmailID="" Beeper="" City=""
+                                Company="" Country="" CountryDesc=""
+                                Createprogid="" Createts=""
+                                Createuserid="" DayFaxNo="" DayPhone=""
+                                Department="" EMailID=""
+                                EnterpriseCode="" EveningFaxNo=""
+                                EveningPhone="" FirstName=""
+                                IsAddressVerified=""
+                                IsCommercialAddress="" JobTitle=""
+                                LastName="" Lockid="" MiddleName=""
+                                MobilePhone="" Modifyprogid=""
+                                Modifyts="" Modifyuserid=""
+                                OtherPhone="" PersonID=""
+                                PersonInfoKey="" ShortZipCode=""
+                                State="" Suffix="" TaxGeoCode=""
+                                Title="" TitleDesc="" UseCount=""
+                                ZipCode="" isHistory=""/>
+                        </CustomerPaymentMethod>
+                    </CustomerPaymentMethodList>
+                </Customer>
+            </Input>
+            <Template>
+                <Order/>
+            </Template>
+        </API>
+    </mashup>
+    <mashup id="returnLineSummary_getCompleteOrderLineDetails">
+        <API Name="getCompleteOrderLineDetails">
+            <Input/>
+            <Template>
+                <OrderLine>
+					<Extn ExtnIsMigrated=""/>
+                </OrderLine>
+            </Template>
+        </API>
+    </mashup>
+	<mashup id="ReturnSummaryLines_getCompleteOrderLineList">
+        <API Name="getCompleteOrderLineList">
+            <Input/>
+            <Template>
+                <OrderLineList>
+                    <OrderLine>
+                        <Extn ExtnIsMigrated=""/>
+                    </OrderLine>
+                </OrderLineList>
+            </Template>
+        </API>
+    </mashup>
+    <mashup id="returnSummary_getCompleteOrderDetails">
+        <API Name="getCompleteOrderDetails">
+            <Input/>
+            <Template>
+                <Order OrderName="">
+                    <PriceInfo/>
+                    <OverallTotals/>
+                    <Extn ExtnIsMigrated=""/>
+                </Order>
+            </Template>
+        </API>
+    </mashup>
+    <mashup id="home_getCustomerList">
+        <API Name="getCompleteCustomerList">
+            <Input>
+                <Customer OrganizationCode="VSI.com">
+                    <BuyerOrganization/>
+                    <CustomerContactList>
+                        <CustomerContact UserID=""/>
+                        <CustomerContact DayPhone="" EmailID="" EmailIDQryType="">
+                            <User DisplayUserID="" DisplayUserIDQryType=""/>
+                        </CustomerContact>
+                        <CustomerContact DayPhone="" EmailID="" EmailIDQryType="">
+                            <User DisplayUserID="" DisplayUserIDQryType=""/>
+                        </CustomerContact>
+                    </CustomerContactList>
+                </Customer>
+            </Input>
+            <Template/>
+        </API>
+    </mashup>
+    <mashup id="customerSearch_modifyFulfillmentOptions">
+        <API Name="modifyFulfillmentOptions">
+            <Input>
+                <Order SCAC=""/>
+            </Input>
+            <Template/>
+        </API>
+    </mashup>
+    <mashup id="customerSearch_getOrganizationList">
+        <API Name="getOrganizationList">
+            <Input>
+                <Organization OrganizationCode="VSI.com"/>
+            </Input>
+            <Template/>
+        </API>
+    </mashup>
+    <!-- SUH-18 : Modified for displaying item images : BEGIN -->
+    <mashup id="fulfillmentSummary_behavior_getFulfillmentSummaryDetails">
+        <API Name="getFulfillmentSummaryDetails">
+            <Input/>
+            <Template>
+                <Order>
+                    <ShippingGroups>
+                        <ShippingGroup>
+                            <OrderLines>
+                                <OrderLine>
+                                    <ItemDetails ItemID=""/>
+                                </OrderLine>
+                            </OrderLines>
+                        </ShippingGroup>
+                    </ShippingGroups>
+                    <PickupGroups>
+                        <PickupGroup>
+                            <OrderLines>
+                                <OrderLine>
+                                    <ItemDetails ItemID=""/>
+                                </OrderLine>
+                            </OrderLines>
+                        </PickupGroup>
+                    </PickupGroups>
+                    <UnavailableLines>
+                        <ShippingLines>
+                            <OrderLine>
+                                <ItemDetails ItemID=""/>
+                            </OrderLine>
+                        </ShippingLines>
+                        <PickupLines>
+                            <OrderLine>
+                                <ItemDetails ItemID=""/>
+                            </OrderLine>
+                        </PickupLines>
+                        <PickupLinesWithNoShipnode>
+                            <PickupGroup>
+                                <OrderLines>
+                                    <OrderLine>
+                                    <ItemDetails ItemID=""/>
+                                    </OrderLine>
+                                </OrderLines>
+                            </PickupGroup>
+                        </PickupLinesWithNoShipnode>
+                    </UnavailableLines>
+                </Order>
+            </Template>
+        </API>
+    </mashup>
+    <!-- SUH-18 : Modified for displaying item images : END -->
+    <mashup id="additems_getCompleteOrderDetails">
+        <API Name="getCompleteOrderDetails">
+            <Input>
+                <Order>
+                    <PriceInfo/>
+                    <PersonInfoBillTo/>
+                </Order>
+            </Input>
+            <Template>
+                <Order>
+                    <OrderLines>
+                        <OrderLine DeliveryMethod=""/>
+                        <OrderLine OrderLineKey="" Status=""/>
+                    </OrderLines>
+                    <OverallTotals/>
+                    <PriceInfo/>
+                    <Extn ExtnPricingDate=""/>
+                </Order>
+            </Template>
+        </API>
+    </mashup>
+    <mashup id="customerNoteCapture_saveNote">
+        <API Name="manageCustomer">
+            <Input>
+                <Customer CustomerKey="" HasCustomerRemark="" NotesRecordState=""/>
+            </Input>
+            <Template>
+                <Customer/>
+            </Template>
+        </API>
+    </mashup>
+    <mashup id="reshipProduct_reshipOrderLines">
+        <API Name="reshipOrderLines">
+            <Input>
+                <Order>
+                    <OrderLines>
+                        <OrderLine>
+                            <Extn ExtnOriginalTrackingNo=""/>
+                        </OrderLine>
+                    </OrderLines>
+                </Order>
+            </Input>
+            <Template>
+                <Order>
+                    <OrderLines>
+                        <OrderLine PrimeLineNo="" SubLineNo=""/>
+                        <OrderLine DeliveryMethod="" GiftFlag=""
+                            GiftWrap="" OrderLineKey=" "/>
+                        <OrderLineInvAttRequest>
+                            <Extn/>
+                        </OrderLineInvAttRequest>
+                        <ParentOrderLineRelationships>
+                            <OrderLineRelationship>
+                                <ParentLine/>
+                            </OrderLineRelationship>
+                        </ParentOrderLineRelationships>
+                        <PersonInfoMarkFor/>
+                        <PersonInfoShipTo/>
+                    </OrderLines>
+                    <PersonInfoShipTo/>
+                </Order>
+            </Template>
+        </API>
+    </mashup>
+    <mashup id="reshipProduct_validateReship">
+        <API Name="validateReship">
+            <Input>
+                <Order>
+                    <OrderLines>
+                        <OrderLine>
+                            <Extn ExtnOriginalTrackingNo=""/>
+                        </OrderLine>
+                    </OrderLines>
+                </Order>
+            </Input>
+            <Template/>
+        </API>
+    </mashup>
+ 	<!-- OMS-935 Start -->
+    <mashup id="addModifyCharges_getCompleteOrderDetails">
+        <API Name="getCompleteOrderDetails">
+            <Input>
+                <Order>
+                    <Extn ExtnOriginalTrackingNo=""/>
+                </Order>
+            </Input>
+            <Template>
+                <Order HasDerivedChild="" >
+                    <PriceInfo/>
+                    <OverallTotals HdrCharges="" HdrTax=""/>
+                    <Modifications>
+                        <Modification/>
+                        <Modification/>
+                        <Modification/>
+                    </Modifications>
+					<ReturnOrders>
+						<ReturnOrder OrderNo="" OrderHeaderKey="" >
+							<OverallTotals  GrandTotal="" GrandTax="" SubtotalWithoutTaxes="" />
+						</ReturnOrder>
+					</ReturnOrders>
+                </Order>
+            </Template>
+        </API>
+    </mashup>
+	<!-- OMS-935 End -->
+    <mashup id="customerIdentification_getCompleteCustomerList">
+        <API Name="getCompleteCustomerList">
+            <Input>
+                <Customer OrganizationCode="">
+                    <CustomerContactList>
+                        <CustomerContact UserID=""/>
+                        <CustomerContact CustomerContactID=""
+                            DayPhone="" EmailID="" EmailIDQryType=""
+                            FirstName="" LastName="">
+                            <User DisplayUserID="" DisplayUserIDQryType=""/>
+                            <CustomerAdditionalAddressList>
+                                <CustomerAdditionalAddress>
+                                    <PersonInfo ZipCode=""/>
+                                </CustomerAdditionalAddress>
+                            </CustomerAdditionalAddressList>
+                        </CustomerContact>
+                    </CustomerContactList>
+                    <BuyerOrganization/>
+                </Customer>
+            </Input>
+            <Template>
+                <CustomerList>
+                    <Customer>
+                        <ParentCustomer CustomerID="" CustomerKey="" OrganizationCode="">
+                            <BuyerOrganization AccountWithHub=""
+                                AuthorityType="" BillingAddressKey=""
+                                CatalogOrganizationCode=""
+                                ContactAddressKey=""
+                                CorporateAddressKey=""
+                                CreatorOrganizationKey="" DunsNumber=""
+                                InventoryOrganizationCode=""
+                                InventoryPublished="" IsBuyer=""
+                                IsHubOrganization="" IsLegalEntity=""
+                                IsNode="" IsSourcingKept=""
+                                IssuingAuthority="" ItemXrefRule=""
+                                LocaleCode="" OrganizationCode=""
+                                OrganizationKey="" OrganizationName=""
+                                ParentOrganizationCode=""
+                                PaymentProcessingReqd=""
+                                PrimaryEnterpriseKey=""
+                                PrimarySicCode="" PrimaryUrl=""
+                                TaxExemptFlag=""
+                                TaxExemptionCertificate=""
+                                TaxJurisdiction="" TaxpayerId=""
+                                XrefAliasType="" XrefOrganizationCode=""/>
+                        </ParentCustomer>
+                    </Customer>
+                    <Customer BuyerOrganizationCode="" CustomerID=""
+                        CustomerKey="" CustomerType=""
+                        OrganizationCode="" Status=""/>
+                </CustomerList>
+            </Template>
+        </API>
+    </mashup>
+    <mashup id="customerIdentification_getCustomerList">
+        <API Name="getCompleteCustomerList">
+            <Input>
+                <Customer OrganizationCode=""/>
+            </Input>
+            <Template>
+                <CustomerList>
+                    <Customer>
+                        <CustomerContactList>
+                            <CustomerContact>
+                                <DefaultBillToAddress>
+                                    <PersonInfo/>
+                                </DefaultBillToAddress>
+                                <DefaultShipToAddress>
+                                	<PersonInfo/>
+                                </DefaultShipToAddress>
+                                <CustomerAdditionalAddressList>
+                                    <CustomerAdditionalAddress>
+                                    <PersonInfo/>
+                                    </CustomerAdditionalAddress>
+                                </CustomerAdditionalAddressList>
+                            </CustomerContact>
+                        </CustomerContactList>
+                    </Customer>
+                </CustomerList>
+            </Template>
+        </API>
+    </mashup>
+    <mashup id="OrderSummaryLines_getCompleteOrderLineList">
+        <API Name="getCompleteOrderLineList">
+            <Input/>
+            <Template>
+                <OrderLineList>
+                    <OrderLine CustomerPONo="" ShipNode="">
+                        <Extn ExtnIsMigrated=""/>
+                    </OrderLine>
+                    <OrderLine DeliveryMethod="" ExpectedEndDate=""
+                        ExpectedStartDate="" GiftFlag="" GiftWrap=""
+                        GroupSequenceNumber="" HasNotes=""
+                        HasReturnLines="" HoldFlag="" IsBundleParent=""
+                        IsDeliveryAllowed="" IsOpenBox=""
+                        IsPickupAllowed="" IsPriceMatched=""
+                        IsShippingAllowed="" ItemGroupCode=""
+                        LineType="" MarkForKey="" MaxLineStatusDesc=""
+                        MaxOrderStatusDesc="" MultipleStatusesExist=""
+                        OrderHeaderKey="" OrderLineKey="" OrderedQty=""
+                        OverallStatus="" PrimeLineNo=""
+                        PromisedApptEndDate="" PromisedApptStartDate=""
+                        ReshippedQty="" ShippedQuantity="" Status="" Timezone="">
+                        <ItemDetails>
+                            <PrimaryInformation BundleFulfillmentMode=""
+                                ExtendedDisplayDescription="" ImageID="" ImageLocation=""/>
+                        </ItemDetails>
+                        <BundleParentLine OrderLineKey=""/>
+                        <Item UnitOfMeasure=""/>
+                        <OrderLineTranQuantity OrderedQty="" TransactionalUOM=""/>
+                        <TrackingInfoList>
+                            <TrackingInfo TrackingNo="" TrackingUrl=""/>
+                        </TrackingInfoList>
+                        <ParentOrderLineRelationships>
+                            <OrderLineRelationship ParentOrderLineKey=""/>
+                        </ParentOrderLineRelationships>
+                        <LinePriceInfo IsLinePriceForInformationOnly="" IsPriceLocked=""/>
+                        <LineOverallTotals DisplayUnitPrice=""/>
+                        <StopDeliveryRequestDetails TotalNumberOfRecords=""/>
+                    </OrderLine>
+                    <Order CustomerPONo="">
+                        <PriceInfo/>
+                    </Order>
+                </OrderLineList>
+            </Template>
+        </API>
+    </mashup>
+    <mashup id="fulfillmentSummary_getFulfillmentSummaryDetails">
+        <API Name="getFulfillmentSummaryDetails">
+            <Input/>
+            <Template>
+                <Order BillToID="">
+                    <UnavailableLines>
+                        <PickupLinesWithNoShipnode>
+                            <PickupGroup>
+                                <OrderLines>
+                                    <OrderLine>
+                                    <ItemDetails ItemID=""/>
+                                    </OrderLine>
+                                    <OrderLine AvailableQty=""
+                                    MarkForKey=""
+                                    MashupTemplateRef="CommonOrderLineForFS"
+                                    ReqShipDate="" RequiredQty="" ShipNode="">
+                                    <ChildOrderLineRelationships MashupTemplateRef="ChildOrderLineRelationships"/>
+                                    <PersonInfoMarkFor DayPhone=""
+                                    FirstName="" LastName="" MobilePhone=""/>
+                                    </OrderLine>
+                                </OrderLines>
+                            </PickupGroup>
+                        </PickupLinesWithNoShipnode>
+                        <ShippingLines>
+                            <OrderLine
+                                MashupTemplateRef="CommonOrderLineForFS"
+                                NoOfInteractions="" OrderLineKey="" UnavailableQty="">
+                                <ChildOrderLineRelationships MashupTemplateRef="ChildOrderLineRelationships"/>
+								<ItemDetails ItemID=""/>
+                                <PersonInfoShipTo MashupTemplateRef="PersonInfoShipTo"/>
+                            </OrderLine>
+                        </ShippingLines>
+                        <PickupLines>
+                            <OrderLine MarkForKey=""
+                                MashupTemplateRef="CommonOrderLineForFS"
+                                ReqShipDate="" ShipNode="" UnavailableQty="">
+								<ItemDetails ItemID=""/>
+                                <ChildOrderLineRelationships MashupTemplateRef="ChildOrderLineRelationships"/>
+                                <Shipnode Description="" ShipNode=""
+                                    ShipNodeAddressKey="" ShippingNode="">
+                                    <ShipNodePersonInfo MashupTemplateRef="ShipNodePersonInfo"/>
+                                </Shipnode>
+                            </OrderLine>
+                        </PickupLines>
+                    </UnavailableLines>
+                    <PickupGroups>
+                        <PickupGroup>
+                            <OrderLines>
+                                <OrderLine>
+                                    <ItemDetails ItemID=""/>
+                                </OrderLine>
+                            </OrderLines>
+                        </PickupGroup>
+                        <PickupGroup>
+                            <OrderLines>
+                                <OrderLine AvailableQty="" MarkForKey=""
+                                    MashupTemplateRef="CommonOrderLineForFS"
+                                    ReqShipDate="" RequiredQty="">
+                                    <ChildOrderLineRelationships MashupTemplateRef="ChildOrderLineRelationships"/>
+                                    <PersonInfoMarkFor DayPhone=""
+                                    FirstName="" LastName="" MobilePhone=""/>
+                                </OrderLine>
+                            </OrderLines>
+                            <Shipnode Description="" ShipNode="">
+                                <ShipNodePersonInfo MashupTemplateRef="ShipNodePersonInfo"/>
+                            </Shipnode>
+                        </PickupGroup>
+                    </PickupGroups>
+                    <ShippingGroups>
+                        <ShippingGroup CarrierServiceCode=""
+                            CarrierServiceDesc=""
+                            ExpectedDeliveryEndDate=""
+                            ExpectedDeliveryStartDate="" Node="" ShipToKey="">
+                            <OrderLines>
+                                <OrderLine AvailableQty=""
+                                    CarrierServiceCode=""
+                                    MashupTemplateRef="CommonOrderLineForFS"
+                                    NoOfInteractions="" Node="" ShipToKey="">
+									<ItemDetails ItemID=""/>
+                                    <ChildOrderLineRelationships MashupTemplateRef="ChildOrderLineRelationships"/>
+                                    <PersonInfoShipTo MashupTemplateRef="PersonInfoShipTo"/>
+									<OrderStatuses>
+                                    <OrderStatus OrderHeaderKey=""
+                                    OrderLineKey=""
+                                    OrderLineScheduleKey=""
+                                    OrderReleaseKey=""
+                                    OrderReleaseStatusKey=""
+                                    PipelineKey=""
+                                    ReceivingNode="" ShipNode=""
+                                    Status="" StatusDate=""
+                                    StatusDescription=""
+                                    StatusQty="" StatusReason="" TotalQuantity="">
+                                    <Details
+                                    ExpectedDeliveryDate=""
+                                    ExpectedShipmentDate=""
+                                    OverrideItemID=""
+                                    OverrideProductClass=""
+                                    OverrideUnitOfMeasure=""
+                                    ReceivingNode=""
+                                    ShipByDate=""
+                                    ShipNode="" TagNumber="">
+                                    <KitDetails>
+                                    <KitDetail
+                                    OrderKitLineKey=""
+                                    Quantity=""
+                                    ShipByDate="" TagNumber="">
+                                    <KitDetailTranQuantity
+                                    Quantity="" TransactionalUOM=""/>
+                                    </KitDetail>
+                                    </KitDetails>
+                                    </Details>
+                                    <OrderStatusTranQuantity
+                                    StatusQty=""
+                                    TotalQuantity="" TransactionalUOM=""/>
+                                    <ShipNode Description=""
+                                    IdentifiedByParentAs="" OwnerKey=""/>
+                                    </OrderStatus>
+                                    </OrderStatuses>
+                                </OrderLine>
+                            </OrderLines>
+                            <PersonInfoShipTo MashupTemplateRef="PersonInfoShipTo"/>
+                        </ShippingGroup>
+                    </ShippingGroups>
+                    <PriceInfo/>
+                </Order>
+            </Template>
+        </API>
+    </mashup>
+    <mashup id="fulfillmentSummary_getFulfillmentOptionsForLines">
+        <API Name="getFulfillmentOptionsForLines">
+            <Input>
+                <Promise>
+                    <EvaluateOptions>
+                        <EvaluateOption>
+                            <ShipToAddress Selected=""/>
+                        </EvaluateOption>
+                    </EvaluateOptions>
+                </Promise>
+            </Input>
+            <Template/>
+        </API>
+    </mashup>
+	<mashup id="ShipmentTracking_getCompleteOrderLineList">
+        <API Name="getCompleteOrderLineList">
+            <Input/>
+            <Template>
+                <OrderLineList>
+                    <OrderLine LineType="" ExpectedStartDate="" ExpectedEndDate=""/>
+                </OrderLineList>
+            </Template>
+        </API>
+    </mashup>
+    <mashup id="lineTrack_getCompleteOrderLineDetails_Output">
+        <API Name="getCompleteOrderLineDetails">
+            <Input>
+                <OrderLineDetail ChainedFromOrderLineKey="">
+                    <Order OrderNo=""/>
+                </OrderLineDetail>
+            </Input>
+            <Template>
+                <OrderLine EarliestDeliveryDate="" EarliestShipDate="" LineType="">
+                    <Order OrderName=""/>
+                    <Item/>
+                    <LineTracking>
+                        <LineBreakups>
+                            <LineBreakup Quantity="" Status="">
+                                <OrderStatus Status="" StatusDate=""
+                                    StatusDescription="" StatusQty="">
+                                    <Details ExpectedShipmentDate=""/>
+                                    <ShipNode Description=""/>
+                                </OrderStatus>
+                                <ReshipOrderLine OrderLineKey=""/>
+                                <PersonInfoShipTo MashupTemplateRef="PersonInfoShipTo"/>
+                                <ShipNode Description="">
+                                    <ShipNodePersonInfo/>
+                                </ShipNode>
+                                <ShipmentLine DocumentType=""
+                                    OrderHeaderKey="" OrderNo=""
+                                    ShipmentKey="" ShipmentLineKey="">
+                                    <Shipment ActualShipmentDate=""
+                                    	CarrierServiceCode=""
+                                    	EnterpriseCode=""
+                                    	ExpectedDeliveryDate=""
+                                    	ExpectedShipmentDate=""
+                                    	ShipmentNo="" Status=""
+                                    	TrackingNo="" URL=""/>
+                                </ShipmentLine>
+                                <ContainerDetail ContainerDetailsKey="">
+                                    <Container ContainerNo=""
+                                    ShipmentContainerKey=""
+                                    TrackingNo="" URL=""/>
+                                </ContainerDetail>
+                            </LineBreakup>
+                        </LineBreakups>
+                    </LineTracking>
+                    <OrderLineTranQuantity/>
+                    <PriceInfo/>
+                </OrderLine>
+            </Template>
+        </API>
+    </mashup>
+</mashups>

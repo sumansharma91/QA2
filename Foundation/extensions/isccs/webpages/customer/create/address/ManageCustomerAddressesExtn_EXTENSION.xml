@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ManageCustomerAddressesExtn"
+        extnPackage="extn.customer.create.address"
+        originalScreen="isccs.customer.create.address.ManageCustomerAddresses"
+        originalScreenPackage="isccs.customer.create.address" type="diffrential">
+        <Items>
+            <ContentPane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="pnlCreateAddress" renderHidden="false"/>
+            <Button _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="btnCreateAddress"
+                disabled="false" renderHidden="false"/>
+        </Items>
+        <MashupRefs>
+            <Behavior>
+                <MashupRef extnType="MODIFY"
+                    mashupId="manageCustomerAddresses_getCustomerDetails" mashupRefId="getCustomerDetails"/>
+                <MashupRef extnType="MODIFY"
+                    mashupId="modifyCustomer_manageCustomer" mashupRefId="manageCustomer"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

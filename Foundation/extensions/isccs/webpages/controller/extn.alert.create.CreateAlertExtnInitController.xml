@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.alert.create.CreateAlertExtnInitController"
+    requestMethodSupported="POST" screenId="extn.alert.create.CreateAlertExtn">
+    <Group isAggregator="Y"/>
+    <MashupRefs>
+        <MashupRef extnType="ADD"
+            mashupId="getCommonCodeList_exceptionType"
+            mashupRefId="extn_ExceptionTypeList" permissionId=""/>
+    </MashupRefs>
+</Controller>

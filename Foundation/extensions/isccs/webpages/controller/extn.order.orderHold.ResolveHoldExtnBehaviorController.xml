@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.order.orderHold.ResolveHoldExtnBehaviorController"
+    requestMethodSupported="POST" screenId="extn.order.orderHold.ResolveHoldExtn">
+    <MashupRefs>
+        <MashupRef extnType="ADD" mashupId="extn_getOrderList"
+            mashupRefId="extn_getOrderList_RefID" permissionId=""/>
+    </MashupRefs>
+</Controller>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle screenBundleId="extn.order.details.OrderTotalExtnBundle" screenId="extn.order.details.OrderTotalExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="extn_MerchandiseTotal_DataLabel_label"
+            bundleKey="extn_Merchandise_Total" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="extn_MerchandiseTotal"/>
+        <BundleEntry bundleEntryId="extn_lblDiscounts_DataLabel_label"
+            bundleKey="extn_lblDiscounts" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="extn_lblDiscounts"/>
+        <BundleEntry
+            bundleEntryId="extn_datalabel_Shipping_Taxes_DataLabel_label"
+            bundleKey="extn_Shipping_Taxes"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_datalabel_Shipping_Taxes"/>
+    </BundleEntries>
+</ScreenBundle>

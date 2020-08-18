@@ -1,0 +1,133 @@
+<Order EnterpriseCode="" OrderHeaderKey="" OrderType="">
+    <PriceInfo Currency="" TotalAmount=""/>
+    <OrderLines>
+        <OrderLine AvailableQtyForCancelAndStopDelivery=""
+            DeliveryMethod="" FulfillmentType="" GiftFlag="" GiftWrap=""
+            HasLocalShipment="" InvoicedQty="" IsBundleParent=""
+            ItemGroupCode="" MaxLineStatus="" ModificationAllowed=""
+            ModificationQty="" NoShipmentModificationQty="" OpenQty=""
+            OrderLineKey="" OrderedQty="" PostReleaseModificationQty=""
+            PrimeLineNo="" RemainingQty="" Status="" StatusQuantity="" LineType="" >
+            <OrderLineInvAttRequest>
+                <Extn/>
+            </OrderLineInvAttRequest>
+            <Item ItemDesc="" ItemID="" ItemShortDesc="" ItemWeight=""
+                UnitCost="" UnitOfMeasure=""/>
+            <LinePriceInfo ActualPricingQty="" DisplayLineTotal=""
+                DisplayUnitPrice="" IsLinePriceForInformationOnly=""
+                LineTotal="" OrderedPricingQty="" TaxableFlag="" UnitPrice=""/>
+            <LineOverallTotals Charges="" Discount=""
+                DisplayExtendedPrice="" ExtendedPrice="" LineTotal=""
+                OptionPrice="" PricingQty="" Tax="" UnitPrice=""/>
+            <LineCharges>
+                <LineCharge ChargeAmount="" ChargeCategory=""
+                    ChargeName="" ChargeNameKey="" ChargePerLine="" ChargePerUnit=""/>
+            </LineCharges>
+            <LineTaxes>
+                <LineTax ChargeCategory="" ChargeName=""
+                    ChargeNameKey="" Tax="" TaxName="" TaxPercentage=""/>
+            </LineTaxes>
+            <OrderLineTranQuantity
+                AvailableQtyForCancelAndStopDelivery=""
+                ModificationQty="" NoShipmentModificationQty=""
+                OrderedQty="" TransactionalUOM=""/>
+            <ShipmentLines>
+                <ShipmentLine Quantity="" ShipmentLineKey="">
+                    <Shipment ShipmentKey="" Status=""/>
+                </ShipmentLine>
+            </ShipmentLines>
+            <BundleParentLine OrderLineKey=""/>
+            <ItemDetails ItemID="">
+                <PrimaryInformation DefaultProductClass=""
+                    Description="" ExtendedDescription="" ImageID=""
+                    ImageLabel="" ImageLocation=""
+                    IsStandaloneService="" OrderingQuantityStrategy="" ShortDescription=""/>
+                <ItemServiceAssocList>
+                    <ItemServiceAssoc ProductQuantity=""
+                        ServiceItemGroupCode="" ServiceItemId=""
+                        ServiceQuantity="" ServiceUOM=""/>
+                </ItemServiceAssocList>
+                <ItemAttributeGroupTypeList>
+                    <ItemAttributeGroupType ClassificationPurposeCode=""
+                        Description="" IsAdditionalAttributeAllowed=""
+                        IsSingleGroup="" ItemAttributeGroupType="" ItemAttributeGroupTypeKey="">
+                        <ItemAttributeGroupList>
+                            <ItemAttributeGroup CategoryKey=""
+                                IsInherited=""
+                                ItemAttributeGroupDescription=""
+                                ItemAttributeGroupID=""
+                                ItemAttributeGroupKey="" SequenceNo="">
+                                <ItemAttributeList>
+                                    <ItemAttribute IsKeyAttribute=""
+                                    ItemAttributeDescription=""
+                                    ItemAttributeGroupKey=""
+                                    ItemAttributeKey=""
+                                    ItemAttributeName=""
+                                    SequenceNo="" Value=""/>
+                                </ItemAttributeList>
+                            </ItemAttributeGroup>
+                        </ItemAttributeGroupList>
+                    </ItemAttributeGroupType>
+                </ItemAttributeGroupTypeList>
+            </ItemDetails>
+            <PersonInfoShipTo AddressLine1="" AddressLine2=""
+                AddressLine3="" AddressLine4="" AddressLine5=""
+                AddressLine6="" AlternateEmailID="" Beeper="" City=""
+                Company="" Country="" DayFaxNo="" DayPhone=""
+                Department="" EMailID="" EveningFaxNo="" EveningPhone=""
+                FirstName="" IsCommercialAddress="" JobTitle=""
+                LastName="" MiddleName="" MobilePhone="" OtherPhone=""
+                PersonID="" PersonInfoKey="" State="" Suffix=""
+                TaxGeoCode="" Title="" ZipCode=""/>
+            <PersonInfoMarkFor DayPhone="" FirstName="" LastName=""/>
+            <ParentOrderLineRelationships>
+                <OrderLineRelationship OrderLineRelationshipKey=""
+                    ParentOrderLineKey="" RelationshipType="">
+                    <ParentLine OrderLineKey=""/>
+                </OrderLineRelationship>
+            </ParentOrderLineRelationships>
+			<OrderHoldTypes>
+				<OrderHoldType HoldType="" LastHoldTypeDate="" Modifyuserid="" OrderAuditKey="" OrderHeaderKey="" OrderLineKey="" ReasonText="" ResolverUserId="" Status="" StatusDescription="" TransactionId="" TransactionName="">
+				</OrderHoldType>
+			</OrderHoldTypes>
+            <ChildOrderLineRelationships>
+                <OrderLineRelationship ChildOrderLineKey=""
+                    OrderLineRelationshipKey="" ParentOrderLineKey="" RelationshipType="">
+                    <ParentLine OrderLineKey=""/>
+                    <ChildLine OrderLineKey=""/>
+                </OrderLineRelationship>
+            </ChildOrderLineRelationships>
+            <StopDeliveryRequestDetails TotalNumberOfRecords="">
+                <StopDeliveryRequestDetail Comments="" RequestedQty=""
+                    StopDeliveryRequestDetailKey="" SuccessfulQty=""/>
+            </StopDeliveryRequestDetails>
+        </OrderLine>
+    </OrderLines>
+    <OverallTotals GrandCharges="" GrandDiscount="" GrandTax=""
+        GrandTotal="" HdrCharges="" HdrDiscount="" HdrTax="" HdrTotal="" LineSubTotal=""/>
+    <HeaderCharges>
+        <HeaderCharge ChargeAmount="" ChargeCategory="" ChargeName="" ChargeNameKey=""/>
+    </HeaderCharges>
+    <HeaderTaxes>
+        <HeaderTax ChargeCategory="" ChargeName="" ChargeNameKey=""
+            Tax="" TaxName="" TaxPercentage=""/>
+    </HeaderTaxes>
+    <PersonInfoShipTo DayPhone="" FirstName="" LastName="" MiddleName=""/>
+    <ExchangeOrders>
+        <ExchangeOrder BillToID="" BuyerOrganizationCode=""
+            BuyerUserId="" CustomerContactID="" CustomerFirstName=""
+            CustomerLastName="" DocumentType="" EnterpriseCode=""
+            OrderHeaderKey="" OrderNo="" SellerOrganizationCode="" isHistory="">
+            <PriceInfo Currency=""/>
+        </ExchangeOrder>
+    </ExchangeOrders>
+    <StopDeliveryRequests TotalNumberOfRecords="">
+        <StopDeliveryRequest Comments="" RequestDate=""
+            StopDeliveryRequestHeaderKey="" StopDeliveryRequestID="">
+            <StopDeliveryRequestDetails TotalNumberOfRecords="">
+                <StopDeliveryRequestDetail Comments="" Createts=""
+                    RequestedQty="" StopDeliveryRequestDetailKey="" SuccessfulQty=""/>
+            </StopDeliveryRequestDetails>
+        </StopDeliveryRequest>
+    </StopDeliveryRequests>
+</Order>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<OrderList>
+  <Order TotalAmount="" CustomerEMailID="" CustomerFirstName="" CustomerLastName="" CustomerPONo="" DocumentType="" EnteredBy="" EnterpriseCode="" EntryType="" MessageType="" OrderDate="" OrderHeaderKey="" OrderNo="" OrderType="" SCAC="" ScacAndService="" SellerOrganizationCode="">
+    <Extn/>
+    <OrderLines>
+      <OrderLine CustomerPONo="" DeliveryMethod="" LineType="" OrderHeaderKey="" OrderLineKey="" OrderedQty="" PrimeLineNo="" ReqDeliveryDate="" ReqShipDate="" SCAC="" ScacAndService="" ShipNode="" SubLineNo="">
+        <Extn/>
+        <Item ItemDesc="" ItemID="" ProductClass="" UnitOfMeasure=""/>
+        <PersonInfoShipTo AddressLine1="" AddressLine2="" AddressLine3="" AddressLine4="" AddressLine5="" AddressLine6="" AlternateEmailID="" Beeper="" City="" Company="" Country="" DayFaxNo="" DayPhone="" Department="" EMailID="" EveningFaxNo="" EveningPhone="" FirstName="" JobTitle="" LastName="" MiddleName="" MobilePhone="" OtherPhone="" PersonID="" State="" Suffix="" Title="" ZipCode=""/>
+        <ItemDetails>
+          <Extn ExtnActSkuID="" ExtnBrandTitle="" ExtnItemSize="" ExtnItemType="" ExtnItemUOM=""/>
+        </ItemDetails>
+      </OrderLine>
+    </OrderLines>
+    <HeaderCharges>
+      <HeaderCharge ChargeAmount="" ChargeCategory="" ChargeName=""/>
+    </HeaderCharges>
+    <PaymentMethods>
+      <PaymentMethod CreditCardExpDate="" CreditCardName="" CreditCardNo="" CreditCardType="" CustomerAccountNo="" DisplayCreditCardNo="" FirstName="" LastName="" MaxChargeLimit="" MiddleName="" PaymentReference1="" PaymentReference2="" PaymentReference8="" PaymentReference9="" PaymentType="" UnlimitedCharges=""/>
+    </PaymentMethods>
+    <PersonInfoBillTo AddressLine1="North Bergen" AddressLine2="" AddressLine3="" AddressLine4="" AlternateEmailID="" Beeper="" City="" Company="" Country="" DayPhone="" Department="" EMailID="" EveningPhone="" FirstName="" JobTitle="" LastName="" MiddleName="" MobilePhone="" OtherPhone="" PersonID="" State="" Suffix="" ZipCode=""/>
+    <OverallTotals GrandTotal=""/>
+    <Promotions>
+      <Promotion Description=""/>
+    </Promotions>
+  </Order>
+</OrderList>

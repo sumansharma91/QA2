@@ -1,0 +1,48 @@
+<Order PaymentStatus="" ShipToKey="" OriginalTotalAmount="" TotalAmount="" Action="" BillToID="" CustomerEMailID="" CustomerFirstName="" CustomerLastName="" CustomerPONo="" CustCustPONo="" DocumentType="" EnteredBy="" EnterpriseCode="" EntryType="" OrderDate="" OrderHeaderKey="" OrderNo="" OrderType="" SCAC="" ScacAndService="" SellerOrganizationCode="" SourcingClassification=""  AllocationRuleID="">
+<Extn ExtnTotalPrice="" />
+    <PriceInfo TotalAmount=""/>
+ <OrderLines>
+  <OrderLine CustomerPONo="" DeliveryMethod="" OrderHeaderKey="" OrderLineKey="" LineType="" OrderedQty="" ReqDeliveryDate="" ReqShipDate="" SCAC="" ScacAndService="" PrimeLineNo="" ShipNode="" SubLineNo="" ProcureFromNode="" FulfillmentType="">
+    <Item ItemDesc="" ItemID="" ProductClass="" UnitOfMeasure="" UPCCode=""/>
+    <PersonInfoShipTo AddressLine1="" AddressLine2="" AddressLine3="" AddressLine4="" AddressLine5="" AddressLine6="" AlternateEmailID="" Beeper="" City="" Company="" Country="" DayFaxNo="" DayPhone="" Department="" EMailID="" EveningFaxNo="" EveningPhone="" FirstName="" JobTitle="" LastName="" MiddleName="" MobilePhone="" OtherPhone="" PersonID="" State="" Suffix="" Title="" ZipCode=""/>
+    <LinePriceInfo LineTotal="" UnitPrice="" TaxableFlag=""/>
+    <LineCharges>
+     <LineCharge ChargeCategory="" ChargeName="" ChargePerLine=""/>
+    </LineCharges>
+    <LineTaxes>
+     <LineTax Tax="" TaxName="" TaxableFlag="">
+		<Extn/>
+	 </LineTax>
+    </LineTaxes>
+    <Notes>
+     <Note ContactUser="" NoteText=""/>
+     <Note ContactUser="" NoteText=""/>
+    </Notes>
+	<Promotions>
+  <Promotion Action="" DenialReason="" ExclusivityId="" ExclusivityType="" IsExternal="" OverrideAdjustmentValue="" OverrideMaxAdjustment="" Priority="" PromotionApplied="" PromotionCategory="" PromotionId="" PromotionType="" /> 
+  </Promotions>
+  <OrderDates/>
+  <ComputedPrice  Discount="" LineTotal=""  Tax="" />
+  </OrderLine>
+ </OrderLines>
+  <Notes>
+   <Note NoteText=""/>
+  </Notes>
+  <HeaderCharges>
+   <HeaderCharge ChargeCategory="" ChargeName="" ChargeAmount=""/>
+  </HeaderCharges>
+  <HeaderTaxes>
+   <HeaderTax Tax="" TaxName=""/>
+  </HeaderTaxes>
+  <PaymentMethods>
+   <PaymentMethod CreditCardExpDate="" CreditCardName="" CreditCardNo="" CreditCardType="" CustomerAccountNo="" DisplayCreditCardNo="" FirstName="" LastName="" MaxChargeLimit="" MiddleName="" PaymentType="" UnlimitedCharges="" ProcessedAmount="" PaymentReference1="">
+   <PaymentDetails AuthCode="" AuthorizationExpirationDate="" AuthorizationID="" ChargeType="" ProcessedAmount=""/>
+   </PaymentMethod>
+  </PaymentMethods>
+ <PersonInfoBillTo AddressLine1="" AddressLine2="" AddressLine3="" AddressLine4="" AlternateEmailID="" Beeper="" City="" Company="" Country="" DayPhone="" Department="" EMailID="" EveningPhone="" FirstName="" JobTitle="" LastName="" MiddleName="" MobilePhone="" OtherPhone="" PersonID="" State="" Suffix="" ZipCode=""/>
+ <PersonInfoShipTo AddressLine1="" AddressLine2="" AddressLine3="" AddressLine4="" AlternateEmailID="" Beeper="" City="" Company="" Country="" DayPhone="" Department="" EMailID="" EveningPhone="" FirstName="" JobTitle="" LastName="" MiddleName="" MobilePhone="" OtherPhone="" PersonID="" State="" Suffix="" ZipCode=""/>
+ <Promotions>
+  <Promotion Action="" DenialReason="" ExclusivityId="" ExclusivityType="" IsExternal="" OverrideAdjustmentValue="" OverrideMaxAdjustment="" Priority="" PromotionApplied="" PromotionCategory="" PromotionId="" PromotionType="" /> 
+  </Promotions>
+  <OverallTotals/>
+</Order>

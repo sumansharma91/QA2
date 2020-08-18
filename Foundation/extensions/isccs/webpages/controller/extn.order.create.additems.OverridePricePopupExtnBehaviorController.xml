@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.order.create.additems.OverridePricePopupExtnBehaviorController"
+    requestMethodSupported="POST" screenId="extn.order.create.additems.OverridePricePopupExtn">
+    <MashupRefs>
+        <MashupRef extnType="ADD" mashupId="extn_Alpine_Validation"
+            mashupRefId="extn_AlpineValidation" permissionId=""/>
+    </MashupRefs>
+</Controller>

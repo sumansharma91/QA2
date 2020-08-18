@@ -1,0 +1,17 @@
+<OrderList>
+	<Order OrderType="" EntryType="" EnterpriseCode="" DocumentType="">
+		<Extn />
+		<OrderLines>
+			<OrderLine OrderLineKey="" OrderedQty="">
+				<LineOverallTotals LineTotal="" />
+				<LineCharges>
+					<LineCharge ChargeAmount="" ChargeCategory="" ChargeName="" ChargeNameKey="" ChargePerLine="" ChargePerUnit="" IsNewCharge="" IsDiscount=""/>
+				</LineCharges>
+			</OrderLine>
+		</OrderLines>
+		<OverallTotals />
+		<HeaderCharges>
+			<HeaderCharge />
+		</HeaderCharges>
+	</Order>
+</OrderList>

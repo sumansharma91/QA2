@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="PaymentCapture_StoredValueExtn"
+        extnPackage="extn.common.paymentCapture"
+        originalScreen="isccs.common.paymentCapture.PaymentCapture_StoredValue"
+        originalScreenPackage="isccs.common.paymentCapture" type="diffrential">
+        <Items>
+            <CurrencyTextBox _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtMaxChargeLimit"
+                label="$(_scBundle:extn_Max_Charge_Limit)" renderHidden="false"/>
+            <DataLabel _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txtPaymentReference3"
+                label="$(_scBundle:extn_Gift_Card_Balance)"
+                uId="extn_datalabelGiftCardBalance" value="$(_scSimpleBundle:blank)"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtDisplaySvcNo" renderHidden="true"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtPaymentReference1"
+                label="$(_scBundle:extn_SVC_Card_No_)" required="true"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtPaymentReference2"
+                label="$(_scSimpleBundle:extn_PIN)" required="true" scuiDataType="Text-4"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtSvcNo" renderHidden="true"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtPaymentReference3" renderHidden="false"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="txtPaymentReference2_onBlur"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="getGiftCardValue"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Behavior>
+                <MashupRef extnType="ADD" mashupId="extn_giftCard" mashupRefId="extn_VSICheckGCBalance_RefID"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

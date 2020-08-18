@@ -1,0 +1,9 @@
+<OrderList>
+	<Order OrderHeaderKey="">
+		<OrderLines>
+			<OrderLine OrderLineKey="" ShipNode="" MaxLineStatus="" MinLineStatus="">
+			<LinePriceInfo LineTotal=""/>
+			</OrderLine>
+		</OrderLines>
+	</Order>
+</OrderList>

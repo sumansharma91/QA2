@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.invoice.InvoiceDetailsExtnInitController"
+    requestMethodSupported="POST" screenId="extn.invoice.InvoiceDetailsExtn">
+    <Group isAggregator="Y"/>
+    <MashupRefs>
+        <MashupRef callSequence="1" extnType=""
+            mashupId="invoiceDetails_getOrderInvoiceDetails"
+            mashupRefId="getOrderInvoiceDetails" permissionId=""/>
+        <MashupRef callSequence="1" extnType="ADD"
+            mashupId="invoiceDetails_getOrderInvoiceDetails"
+            mashupRefId="getOrderInvoiceDetails" permissionId=""/>
+    </MashupRefs>
+</Controller>

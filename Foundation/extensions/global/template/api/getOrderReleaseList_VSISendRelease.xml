@@ -1,0 +1,73 @@
+<OrderReleaseList LastOrderReleaseKey="" LastRecordSet=""
+	ReadFromHistory="" TotalOrderReleaseList="">
+	<OrderRelease DocumentType="" BillToID="" OrderHeaderKey=""
+		OrderReleaseKey="" CustomerPoNo="" OrderDate="" ReleaseNo="" ShipNode=""
+		STSShipNode="" Createts="" ReqShipDate="" ReqDeliveryDate=""
+		CarrierServiceCode="" SCAC="" SCACAndService="" SignatureType="" ReceivingNode="" Status="">
+		<Extn ExtnJDATransferNumber="" />
+		<PersonInfoShipTo AddressID="" FirstName="" LastName=""
+			AddressLine1="" AddressLine2="" AddressLine3="" AddressLine4=""
+			AddressLine5="" AddressLine6="" City="" State="" Country="" ZipCode=""
+			DayPhone="" EMailID="">
+			<Extn ExtnIsPOBox="" ExtnMarkForStoreNo=""/>
+		</PersonInfoShipTo>
+		<PersonInfoMarkFor AddressID="" FirstName="" LastName=""
+			AddressLine1="" AddressLine2="" AddressLine3="" AddressLine4=""
+			AddressLine5="" AddressLine6="" City="" State="" Country="" ZipCode=""
+			DayPhone="" EMailID="">
+			<Extn ExtnIsPOBox="" ExtnMarkForStoreNo=""/>
+		</PersonInfoMarkFor>
+		<Order OrderNo="" OrderDate="" EnteredBy="" Createts=""
+			OrderType="" CustomerPONo="" SourcingClassification="" DocumentType="" EnterpriseCode="" EntryType="">
+			<Extn ExtnMCLOderShipmentID="" ExtnMCLChannel="" ExtnVendorID="" ExtnDepartmentID=""/>
+			<PersonInfoBillTo FirstName="" LastName=""
+				AddressLine1="" AddressLine2="" AddressLine3="" AddressLine4=""
+				AddressLine5="" AddressLine6="" City="" State="" Country="" ZipCode=""
+				DayPhone="" EMailID="" />
+			<PriceInfo TotalAmount="" UnitPrice=""/>
+			<PaymentMethods>
+				<PaymentMethod/>
+			</PaymentMethods>
+			<OrderHoldTypes>
+					<OrderHoldType HoldType="" OrderHeaderKey="" OrderLineKey="" Status="" />
+		    </OrderHoldTypes>
+			<OverallTotals/>
+		</Order>
+
+		<OrderLines>
+			<OrderLine CustomerPONo="" LineType="" PrimeLineNo=""
+				OrderedQty="" SubLineNo="" ChainedFromOrderLineKey="" ChainedFromOrderHeaderKey="" ProcureFromNode="" ShipNode="" StatusQuantity="" OpenQty="" ReqCancelDate="" OrderLineKey="">
+				<Extn ExtnSignatureType="" ExtnSDKLine="" ExtnReqShipDate="" ExtnReqDeliveryDate="" ExtnShipNotBeforeDate="" ExtnShipNotAfterDate="" 
+				ExtnDeliverNotBeforeDate="" ExtnDeliverNotAfterDate="" ExtnMarkForStoreNo=""/>
+				<Item ItemID="" />
+				<LinePriceInfo UnitPrice="" />
+				<ItemDetails CanUseAsServiceTool="" Createprogid=""
+					Createts="" Createuserid=""
+					DisplayItemId="" GlobalItemID=""
+					InheritAttributesFromClassification="" IsShippingCntr=""
+					ItemGroupCode="" ItemID="" ItemKey=""
+					Lockid="" MaxModifyTS="" Modifyprogid=""
+					Modifyts="" Modifyuserid=""
+					OrganizationCode="" UnitOfMeasure="">
+					<AdditionalAttributeList>
+                            <AdditionalAttribute
+                                AdditionalAttributeKey=""
+                                AttributeDomainID="" AttributeGroupID=""
+                                DoubleValue="" IntegerValue=""
+                                IsInherited="" Name="" Value=""/>
+                    </AdditionalAttributeList>
+					<Extn ExtnActSkuID="" ExtnBrandTitle=""
+						ExtnIsDiscontinuedItem="" ExtnIsProp65Item=""
+						ExtnIsRecalledItem="" ExtnIsRefrigeratedItem=""
+						ExtnIsRestrcitedItem="" ExtnIsSignReqdItem="" ExtnItemSize=""
+						ExtnItemType="" ExtnItemUOM="" ExtnShipAlone=""
+						ExtnTaxProductCode="" ExtnCaseQuantity=""/>
+				</ItemDetails>
+				<OrderStatuses>
+					<OrderStatus Status="" StatusQty=""/>
+				</OrderStatuses>
+				<LineOverallTotals/>
+			</OrderLine>
+		</OrderLines>
+	</OrderRelease>
+</OrderReleaseList>

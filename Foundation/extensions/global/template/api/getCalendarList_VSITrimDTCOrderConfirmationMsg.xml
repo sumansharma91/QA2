@@ -1,0 +1,20 @@
+<Calendars>
+	<Calendar CalendarDescription="" CalendarId="" OrganizationCode="">
+		<EffectivePeriods>
+			<EffectivePeriod EffectiveFromDate="" EffectiveToDate="" >
+				<Shifts>
+					<Shift FridayValid="" MondayValid="" SaturdayValid="" ShiftEndTime="" ShiftName="" ShiftStartTime="" ShiftType="" SundayValid="" ThursdayValid="" TuesdayValid="" WednesdayValid=""/>
+				</Shifts>
+			</EffectivePeriod>
+		</EffectivePeriods>
+		<CalendarDayExceptions>
+			<CalendarDayException Date="" ExceptionType="">
+				<ExceptionShifts>
+					<ExceptionShift >
+						<Shift ShiftEndTime="" ShiftName="" ShiftStartTime="" ShiftType=""/>
+					</ExceptionShift>
+				</ExceptionShifts>
+			</CalendarDayException>
+		</CalendarDayExceptions>
+	</Calendar>
+</Calendars>

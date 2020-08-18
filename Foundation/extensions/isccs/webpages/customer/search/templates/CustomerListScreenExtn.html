@@ -1,0 +1,206 @@
+		<div>
+		 	<div data-dojo-type="gridx/Grid" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'listGrid'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	structure : 	[
+	 		{
+		 _sc_extensibility_operation : 			'change'
+,
+		 _sc_extensibility_referenceUId : 			'tabColCustomerID'
+,
+		 name : 			this.getSimpleBundleString('CustomerId')
+,
+		 uId : 			'tabColCustomerID'
+	}
+,
+	 		{
+		 _sc_extensibility_operation : 			'change'
+,
+		 _sc_extensibility_referenceUId : 			'tabColCustomerName'
+,
+		 hidden : 			false
+,
+		 uId : 			'tabColCustomerName'
+	}
+,
+	 		{
+		 _sc_extensibility_operation : 			'change'
+,
+		 _sc_extensibility_referenceUId : 			'tabColContactEmail'
+,
+		 hidden : 			false
+,
+		 uId : 			'tabColContactEmail'
+	}
+,
+	 		{
+		 _sc_extensibility_operation : 			'change'
+,
+		 _sc_extensibility_referenceUId : 			'tabColContactPhone'
+,
+		 hidden : 			false
+,
+		 uId : 			'tabColContactPhone'
+	}
+,
+	 		{
+		 _sc_extensibility_operation : 			'move'
+,
+		 _sc_extensibility_moveOrder : 			'3'
+,
+		 _sc_extensibility_referenceUId : 			'tabColCustomerName'
+,
+		 uId : 			'tabColContactAddress'
+,
+		 _sc_extensibility_position : 			'before'
+	}
+,
+	 		{
+		 field : 			'extn_testHealthyAwards'
+,
+		 _sc_extensibility_operation : 			'insert'
+,
+		 bindingData : 	{
+		 sFieldBinding : 	{
+		 path : 			'CustomerContactList.CustomerContact'
+,
+		 dynamicBindingFunc : 			'getHealthyAwards'
+	}
+	}
+,
+		 _sc_extensibility_moveOrder : 			'4'
+,
+		 _sc_extensibility_referenceUId : 			'extn_listGrid_view_tabColOrganization'
+,
+		 width : 			'15%'
+,
+		 name : 			this.getSimpleBundleString('extn_Healthy_Awards_')
+,
+		 uId : 			'extn_listGrid_view_testHealthyAwards'
+,
+		 _sc_extensibility_position : 			'after'
+	}
+,
+	 		{
+		 _sc_extensibility_operation : 			'move'
+,
+		 _sc_extensibility_moveOrder : 			'5'
+,
+		 _sc_extensibility_referenceUId : 			'extn_listGrid_view_tabColOrganization'
+,
+		 uId : 			'tabColCustomerName'
+,
+		 _sc_extensibility_position : 			'before'
+	}
+,
+	 		{
+		 _sc_extensibility_operation : 			'move'
+,
+		 _sc_extensibility_moveOrder : 			'6'
+,
+		 _sc_extensibility_referenceUId : 			'extn_listGrid_view_tabColOrganization'
+,
+		 uId : 			'tabColContactAddress'
+,
+		 _sc_extensibility_position : 			'before'
+	}
+,
+	 		{
+		 _sc_extensibility_operation : 			'move'
+,
+		 _sc_extensibility_moveOrder : 			'7'
+,
+		 _sc_extensibility_referenceUId : 			'extn_listGrid_view_tabColOrganization'
+,
+		 uId : 			'tabColContactEmail'
+,
+		 _sc_extensibility_position : 			'before'
+	}
+,
+	 		{
+		 _sc_extensibility_operation : 			'move'
+,
+		 _sc_extensibility_moveOrder : 			'8'
+,
+		 _sc_extensibility_referenceUId : 			'extn_listGrid_view_tabColOrganization'
+,
+		 uId : 			'tabColContactPhone'
+,
+		 _sc_extensibility_position : 			'before'
+	}
+,
+	 		{
+		 field : 			'extn_Healthy_Awards'
+,
+		 _sc_extensibility_operation : 			'insert'
+,
+		 bindingData : 	{
+		 sFieldBinding : 	{
+		 path : 			'CustomerID'
+,
+		 dynamicBindingFunc : 			'getHTMLForCustomerID'
+,
+		 dynamicBindingPackage : 			'isccs.utils'
+,
+		 dynamicBindingClassName : 			'CustomerUtils'
+	}
+	}
+,
+		 _sc_extensibility_moveOrder : 			'9'
+,
+		 _sc_extensibility_referenceUId : 			'tabColContactPhone'
+,
+		 width : 			'15%'
+,
+		 name : 			this.getSimpleBundleString('extn_Healthy_Awards_')
+,
+		 uId : 			'extn_listGrid_view_tabHealthyAwards'
+,
+		 _sc_extensibility_position : 			'after'
+	}
+,
+	 		{
+		 _sc_extensibility_operation : 			'move'
+,
+		 _sc_extensibility_moveOrder : 			'10'
+,
+		 _sc_extensibility_referenceUId : 			'tabColContactAddress'
+,
+		 uId : 			'tabColCustomerName'
+,
+		 _sc_extensibility_position : 			'before'
+	}
+,
+	 		{
+		 _sc_extensibility_operation : 			'move'
+,
+		 _sc_extensibility_moveOrder : 			'11'
+,
+		 _sc_extensibility_referenceUId : 			'tabColContactAddress'
+,
+		 uId : 			'tabColContactPhone'
+,
+		 _sc_extensibility_position : 			'before'
+	}
+,
+	 		{
+		 _sc_extensibility_operation : 			'move'
+,
+		 _sc_extensibility_moveOrder : 			'12'
+,
+		 _sc_extensibility_referenceUId : 			'tabColCustomerID'
+,
+		 uId : 			'extn_listGrid_view_tabHealthyAwards'
+,
+		 _sc_extensibility_position : 			'before'
+	}
+	]
+			}
+		}
+	 					}">
+		 	</div>  
+		</div>

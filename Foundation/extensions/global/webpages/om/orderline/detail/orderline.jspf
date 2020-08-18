@@ -1,0 +1,64 @@
+<%!
+void rearrangeBundleComponents(YFCElement OrderDoc){
+YFCElement OrderLinesElem = (YFCElement)OrderDoc.getChildElement("OrderLines");
+
+for (Iterator i = OrderLinesElem.getChildren(); i.hasNext();) {
+	YFCElement child = (YFCElement)i.next();
+	YFCElement BundleParent = (YFCElement)child.getChildElement("BundleParentLine",true);
+	if(!YFCCommon.equals("BUNDLE",child.getAttribute("KitCode")) && YFCCommon.isVoid(BundleParent.getAttribute("OrderLineKey"))){
+		OrderLinesElem.removeChild(child);
+		}
+	}
+YFCElement cloneOrderLinesElem = (YFCElement)OrderLinesElem.cloneNode(true);
+for (Iterator i = OrderLinesElem.getChildren(); i.hasNext();) {
+	YFCElement child = (YFCElement)i.next();
+	OrderLinesElem.removeChild(child);
+}
+String bundleParentKey = resolveValue("xml:/OrderLineDetail/@OrderLineKey");
+
+for (Iterator i = cloneOrderLinesElem.getChildren(); i.hasNext();) {
+	YFCElement child = (YFCElement)i.next();
+	String spaceString = "";
+	YFCElement BundleParent = (YFCElement)child.getChildElement("BundleParentLine",true);
+		if(child.getAttribute("OrderLineKey").equals(bundleParentKey)){
+		//OrderLinesElem.appendChild(child);
+		appendComponents(child,cloneOrderLinesElem,OrderLinesElem,spaceString);
+		}	
+	}
+	
+}
+
+void appendComponents(YFCElement ComponentElement,YFCElement BundleComponents,YFCElement outpulModelDoc,String spaceString){
+		ArrayList childComponents = new ArrayList();
+		for ( Iterator it1=BundleComponents.getChildren();it1.hasNext(); )
+			{
+			YFCElement bundleComponentElement = (YFCElement)it1.next();
+			YFCElement BundleParent = (YFCElement)bundleComponentElement.getChildElement("BundleParentLine",true);
+	
+			String ParentComponentKey = BundleParent.getAttribute("OrderLineKey");
+			String ComponentKey = ComponentElement.getAttribute("OrderLineKey");
+			if(YFCCommon.equals(ParentComponentKey,ComponentKey))
+				{
+				childComponents.add(bundleComponentElement);
+				}
+			}
+						
+		Iterator newit = childComponents.iterator();
+		int childComponentCounter = 0;
+		while(newit.hasNext()){
+			childComponentCounter++;
+			YFCElement childComponent = (YFCElement)newit.next();
+			YFCElement ItemElement = (YFCElement)childComponent.getChildElement("Item",true);
+	
+			String childComponentDesc = ItemElement.getAttribute("ItemID");
+			String newChildComponentDesc = spaceString + "&nbsp;&nbsp;&nbsp;" + childComponentDesc;
+			String AppendedSpace = spaceString + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" ;
+			childComponent.setAttribute("AppendedSpace",AppendedSpace.substring(30,AppendedSpace.length()));
+			String trimmedString = newChildComponentDesc.substring(18,newChildComponentDesc.length());
+			childComponent.setAttribute("AppendedBundleComponentID",trimmedString);
+			outpulModelDoc.appendChild(childComponent);	
+			String substr = newChildComponentDesc.substring(0,(newChildComponentDesc.length()-childComponentDesc.length()));
+			appendComponents(childComponent,BundleComponents,outpulModelDoc,substr);
+			}
+	} 
+%>

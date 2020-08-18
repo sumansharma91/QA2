@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="HomeEditorRTExtn"
+        extnPackage="extn.editors"
+        originalScreen="isccs.editors.HomeEditorRT"
+        originalScreenPackage="isccs.editors" type="diffrential">
+        <Items>
+            <TitlePane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="pnlRT_UserGroup" renderHidden="true"/>
+            <TitlePane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="pnlRT_PriceMatchGroup" renderHidden="true"/>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lnk_RT_OrderSearch" disabled="false"/>
+            <Link _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="lnk_RT_createOrder"
+                resourceId="VSIISSUEEGC"
+                uId="extn_linkSendGiftCardEmail" value="$(_scSimpleBundle:extn_Send_Gift_Card_Email)"/>
+            <Link _sc_extensibility_moveOrder="4"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="pnlRT_OrderGroup"
+                class="relatedTaskLink" renderHidden="false"
+                resourceId="VOUCHERLOOKUP" uId="extn_linkVocuherLookup" value="$(_scSimpleBundle:extn_Voucher_Lookup)"/>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lnk_RT_CreateBusiness" renderHidden="false"/>
+            <Link _sc_extensibility_moveOrder="3"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="extn_Return_Acknowledgement_onClick" uId="createReturn"/>
+            <Link _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="pnlRT_UserGroup"
+                resourceId="VSIRETACK001"
+                uId="extn_Return_Acknowledgement_onClick" value="$(_scSimpleBundle:extn_Return_Acknowledgement)"/>
+            <Link _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="createReturn" uId="extn_Return_Acknowledgement_onClick"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="afterScreenInit" isExtn="true" sequence="51">
+                    <Handler methodName="extn_init"/>
+                </Subscriber>
+                <Subscriber eventId="extn_linkSendGiftCardEmail_onClick"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="giftCardEmailScreen"/>
+                </Subscriber>
+                <Subscriber
+                    eventId="extn_Return_Acknowledgement_onClick_onClick"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="extn_Return_Acknowledgement_onClickHandler"/>
+                </Subscriber>
+                <Subscriber eventId="extn_linkVocuherLookup_onClick"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="voucherLookupScreen"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+    </ScreenExtension>
+</ExtensionMetaData>

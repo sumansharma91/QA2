@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.order.fulfillmentSummary.CarrierServicePopupExtnBundle" screenId="extn.order.fulfillmentSummary.CarrierServicePopupExtn">
+    <BundleEntries>
+        <BundleEntry bundleEntryId="extn_label_MultipleLine_Label_value"
+            bundleKey="extn_Dates_shown_below_are_estimated_dates_"
+            bundleValueFn="_scSimpleBundle" property="value"
+            type="WIDGET" uId="extn_label_MultipleLine"/>
+    </BundleEntries>
+</ScreenBundle>

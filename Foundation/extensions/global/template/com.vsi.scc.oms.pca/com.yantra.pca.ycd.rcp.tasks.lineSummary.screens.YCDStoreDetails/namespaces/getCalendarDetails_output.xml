@@ -1,0 +1,24 @@
+<Calendar AllowShiftOverride="" CalendarDescription=""
+    CalendarId="Required" CalendarKey="" OrganizationCode="">
+    <InheritFromCalendar CalendarId="" InheritCalendarKey="" OrganizationCode=""/>
+    <EffectivePeriods>
+        <EffectivePeriod EffectiveFromDate="" EffectiveToDate="" ShiftEffectivePeriodKey="">
+            <Shifts>
+                <Shift FridayValid="" MondayValid="" SaturdayValid=""
+                    ShiftEndTime="" ShiftKey="" ShiftName=""
+                    ShiftStartTime="" ShiftType="" SundayValid=""
+                    ThursdayValid="" TuesdayValid="" WednesdayValid=""/>
+            </Shifts>
+        </EffectivePeriod>
+    </EffectivePeriods>
+    <CalendarDayExceptions>
+        <CalendarDayException CalendarDayExceptionKey="" Date="" ExceptionType="">
+            <ExceptionShifts>
+                <ExceptionShift ExceptionShiftKey="" ShiftKey="">
+                    <Shift ShiftEndTime="" ShiftKey="" ShiftName=""
+                        ShiftStartTime="" ShiftType=""/>
+                </ExceptionShift>
+            </ExceptionShifts>
+        </CalendarDayException>
+    </CalendarDayExceptions>
+</Calendar>

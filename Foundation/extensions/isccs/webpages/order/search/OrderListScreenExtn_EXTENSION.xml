@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="OrderListScreenExtn"
+        extnPackage="extn.order.search"
+        originalScreen="isccs.order.search.OrderListScreen"
+        originalScreenPackage="isccs.order.search" type="diffrential">
+        <Items>
+            <GridX _sc_extensibility_operation="change" _sc_extensibility_referenceUId="listGrid">
+                <Structure>
+                    <Layout>
+                        <View _sc_extensibility_operation="change"
+                            _sc_extensibility_referenceUId="tblColZipCode"
+                            hidden="true" uId="tblColZipCode"/>
+                        <View _sc_extensibility_operation="change"
+                            _sc_extensibility_referenceUId="tblColAddress"
+                            hidden="true" uId="tblColAddress"/>
+                        <View _sc_extensibility_moveOrder="1"
+                            _sc_extensibility_operation="insert"
+                            _sc_extensibility_position="before"
+                            _sc_extensibility_referenceUId="tblColZipCode"
+                            field="extn_Order_Type"
+                            name="$(_scSimpleBundle:extn_Order_Channel)"
+                            uId="extn_listGrid_view_Order_Channel" width="15%">
+                            <BindingData>
+                                <SourceBinding path="OrderType"/>
+                            </BindingData>
+                        </View>
+                        <View _sc_extensibility_moveOrder="2"
+                            _sc_extensibility_operation="insert"
+                            _sc_extensibility_position="before"
+                            _sc_extensibility_referenceUId="tblColZipCode"
+                            field="extn_Delivery_Method"
+                            name="$(_scSimpleBundle:extn_Fulfillment_Method)"
+                            uId="extn_listGrid_view_Fulfillment_Method" width="15%">
+                            <BindingData>
+                                <SourceBinding
+                                    dynamicBindingFunc="getFulfillmentMethod" path="OrderList.Order.OrderLines.OrderLine.DeliveryMethod"/>
+                            </BindingData>
+                        </View>
+                    </Layout>
+                </Structure>
+            </GridX>
+        </Items>
+        <MashupRefs>
+            <Behavior>
+                <MashupRef extnType="MODIFY"
+                    mashupId="orderList_getOrderList" mashupRefId="getOrderList"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

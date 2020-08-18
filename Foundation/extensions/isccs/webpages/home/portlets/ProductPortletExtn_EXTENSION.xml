@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ProductPortletExtn"
+        extnPackage="extn.home.portlets"
+        originalScreen="isccs.home.portlets.ProductPortlet"
+        originalScreenPackage="isccs.home.portlets" type="diffrential">
+        <Items>
+            <FilteringSelect _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="cmbEnterprise" renderHidden="false"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber description="Shows the enterprise dropdown"
+                    eventId="afterScreenInit" isExtn="true" sequence="56">
+                    <Handler methodName="extn_initScreen"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+    </ScreenExtension>
+</ExtensionMetaData>

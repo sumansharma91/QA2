@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed Materials - Property of IBM
+  IBM Call Center for Commerce (5725-P82)
+  (C) Copyright IBM Corp. 2013 , 2015 All Rights Reserved.
+  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<MetaData version="1.0" xmlns="http://ibm.com/sterling/afc/cuf/tns">
+    <Screen className="GiftCardFulfillmentWizard" extensible="true"
+        package="extn.order.wizards.giftCard"
+        superClass="sc.plat.dojo.widgets.Wizard"
+        title="GiftCardFulfillment" uId="GiftCardFulfillmentWizard">
+        <Items>
+            <ContentPane aria_label_key="aria_wizardContent"
+                class="isccsScreen" colspan="1" layoutAlign="top"
+                role="region" spanLabel="true" uId="WizardScreenPanel">
+                <Items>
+                    <ContentPane
+                        aria_label="$(_scSimpleBundle:Region_wizard_navigation)"
+                        class="wizardNavigationPanelTop wizardNavigationPanel "
+                        renderHidden="true" role="region" uId="navigationPanel2">
+                        <Items>
+                            <Button
+                                class="idxButtonIcon idxSecondaryButton navClose"
+                                iconClass=" idxCloseIcon"
+                                label="$(_scSimpleBundle:Close)" uId="closeBttn2">
+                                <Hotkey
+                                    category="$(_scSimpleBundle:General)"
+                                    description="$(_scSimpleBundle:Close)"
+                                    helpContextId="" id="closebtn"
+                                    invocationContext="Editor" key="ESCAPE"/>
+                            </Button>
+                            <Button
+                                class="idxButtonIcon floatRight navNote"
+                                label="$(_scSimpleBundle:Add_View_Note)" uId="addNoteBtn2"/>
+                        </Items>
+                    </ContentPane>
+                    <ContentPane uId="AdditionalButtonsPanel">
+                        <Items/>
+                    </ContentPane>
+                    <ContentPane class="wizardMainContainer"
+                        dojoAttachPoint="stackContainerNode" uId="mainContent"/>
+                    <ContentPane
+                        aria_label="$(_scSimpleBundle:Region_wizard_navigation)"
+                        class="wizardNavigationPanel wizardNavigationPanelBottom"
+                        renderHidden="true" role="region" uId="navigationPanel">
+                        <Items>
+                            <Button
+                                class="idxButtonIcon idxSecondaryButton navClose"
+                                iconClass=" idxCloseIcon"
+                                label="$(_scSimpleBundle:Close)" uId="closeBttn">
+                                <Hotkey
+                                    category="$(_scSimpleBundle:General)"
+                                    description="$(_scSimpleBundle:Close)"
+                                    helpContextId="" id="closebtn"
+                                    invocationContext="Editor" key="ESCAPE"/>
+                            </Button>
+                            <Button
+                                class="idxButtonIcon floatRight navNote"
+                                label="$(_scSimpleBundle:Add_View_Note)" uId="addNoteBtn"/>
+                        </Items>
+                    </ContentPane>
+                </Items>
+            </ContentPane>
+        </Items>
+        <Properties>
+            <Property initialValue="false" name="isSinglePageWizard" type="Boolean"/>
+            <Property initialValue="false" name="closeTab" type="Boolean"/>
+            <Property initialValue="true" name="showRelatedTaskInWizard" type="boolean"/>
+            <Property initialValue="true" name="showBackButton" type="boolean"/>
+            <Property initialValue="true" name="showRelatedTaskInWizard" type="boolean"/>
+            <Property initialValue="true" name="isDirtyCheckRequired" type="Boolean"/>
+        </Properties>
+        <Subscribers>
+            <Global>
+                <Subscriber description=""
+                    eventId="mobileBackButtonClicked" sequence="25">
+                    <Handler description="" methodName="handlePrevious"/>
+                </Subscriber>
+            </Global>
+            <Local>
+                <Subscriber description="" eventId="addNoteBtn2_onClick" sequence="25">
+                    <Handler description="" methodName="onAddNotes"/>
+                </Subscriber>
+                <Subscriber description="" eventId="addNoteBtn_onClick" sequence="25">
+                    <Handler description="" methodName="onAddNotes"/>
+                </Subscriber>
+                <Subscriber description="" eventId="showNextPage" sequence="25">
+                    <Handler description="" methodName="showNextPage"/>
+                </Subscriber>
+                <Subscriber description="" eventId="internalbeforenext" sequence="25">
+                    <Handler description="" methodName="handleBeforeNext"/>
+                </Subscriber> --&gt;
+                <Subscriber
+                    eventId="confirmBttn_onClick" sequence="25">
+                    <Handler description="" methodName="handleConfirm"/>
+                </Subscriber>
+                <Subscriber eventId="closeBttn2_onClick" sequence="25">
+                    <Handler description="" methodName="handleClose"/>
+                </Subscriber>
+                <Subscriber eventId="closeBttn_onClick" sequence="25">
+                    <Handler description="" methodName="handleClose"/>
+                </Subscriber>
+                <Subscriber eventId="afterconfirm" sequence="25">
+                    <Handler description="" methodName="afterWizardConfirm"/>
+                </Subscriber>
+                <Subscriber description="" eventId="screenchanged" sequence="25">
+                    <Handler description="" methodName="handleScreenChanged"/>
+                </Subscriber>
+                <Subscriber description="" eventId="onSaveSuccess" sequence="25">
+                    <Handler description="" methodName="onSaveSuccess"/>
+                </Subscriber>
+                <Subscriber description="" eventId="setScreenTitle" sequence="25">
+                    <Handler description="" methodName="setScreenTitle"/>
+                </Subscriber>
+                <!-- Added a listener for success of save on click of confirm of the wizard -->
+                <Subscriber description=""
+                    eventId="saveSuccessOnConfirm" sequence="25">
+                    <Handler description="" methodName="afterSaveSuccessOnConfirm"/>
+                </Subscriber>
+                <Subscriber description="" eventId="handleTabClose" sequence="25">
+                    <Handler description="" methodName="handleTabClose"/>
+                </Subscriber>
+                <Subscriber description="" eventId="start" sequence="25">
+                    <Handler description="" methodName="handleRelatedTasks"/>
+                </Subscriber>
+                <Subscriber description="" eventId="start" sequence="26">
+                    <Handler description="" methodName="onStartWizard"/>
+                </Subscriber>
+                <Subscriber description="" eventId="previous" sequence="25">
+                    <Handler description="" methodName="afterPrevious"/>
+                </Subscriber>
+                <Subscriber description="" eventId="cancelnext" sequence="25">
+                    <Handler description="" methodName="aftercancelnext"/>
+                </Subscriber>
+                <Subscriber description="" eventId="hidePreviousButtons" sequence="25">
+                    <Handler description="" methodName="handleHidePrevious"/>
+                </Subscriber>
+                <Subscriber description="" eventId="showPreviousButtons" sequence="25">
+                    <Handler description="" methodName="handleShowPrevious"/>
+                </Subscriber>
+                <Subscriber description="" eventId="showNotesButton" sequence="25">
+                    <Handler description="" methodName="showNotesButton"/>
+                </Subscriber>
+                <Subscriber description="" eventId="enableNextButton" sequence="25">
+                    <Handler description="" methodName="enableNextButton"/>
+                </Subscriber>
+                <Subscriber description="" eventId="disableNextButton" sequence="25">
+                    <Handler description="" methodName="disableNextButton"/>
+                </Subscriber>
+                <Subscriber description="" eventId="setWizardModel" sequence="25">
+                    <Handler className="WizardUtils"
+                        description="to do set model"
+                        methodName="setWizardModel" package="isccs.utils"/>
+                </Subscriber>
+                <Subscriber
+                    description="Subscriber for save current page event for wizard"
+                    eventId="saveCurrentPage" sequence="25">
+                    <Handler methodName="save"/>
+                </Subscriber>
+                <Subscriber
+                    description="Subscriber for after screen is initialized"
+                    eventId="afterScreenInit" sequence="50">
+                    <Handler methodName="setInitialized"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <Events>
+            <Event name="onSaveSuccess"/>
+            <Event name="showNextPage"/>
+            <Event name="saveSuccessOnConfirm"/>
+            <Event description="updates the screen title" name="setScreenTitle"/>
+            <Event description="" name="handleTabClose"/>
+            <Event description="" name="showNotesButton"/>
+            <Event name="hidePreviousButtons"/>
+            <Event name="showPreviousButtons"/>
+            <Event name="enableNextButton"/>
+            <Event name="disableNextButton"/>
+            <Event
+                description="this is an event to be used by wizard page to set model on the wizard" name="setWizardModel"/>
+            <Event description="Saves the current page" name="saveCurrentPage"/>
+            <Event description="Reloads the screen" name="reloadScreen"/>
+        </Events>
+    </Screen>
+</MetaData>

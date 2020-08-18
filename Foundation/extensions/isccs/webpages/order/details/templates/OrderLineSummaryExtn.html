@@ -1,0 +1,438 @@
+		<div>
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_Original_Line_Total' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '2' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'ContentPane110'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'getCompleteOrderLineDetails_output'
+,
+		 path : 			'OrderLine.Extn.ExtnLineTotal'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Original_Line_Total')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_Original_Line_Tax' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '3' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_Original_Line_Total'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'getCompleteOrderLineDetails_output'
+,
+		 path : 			'OrderLine.Extn.ExtnTotalTax'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Original_Line_Tax')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_Original_Line_Discount' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '4' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'extn_Original_Line_Tax'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'getCompleteOrderLineDetails_output'
+,
+		 path : 			'OrderLine.Extn.ExtnTotalDiscount'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Original_Line_Discount')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="gridx/Grid" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_gridx_OrderLineStatus' , 
+		autoHeight : true , 
+		_sc_extensibility_moveOrder : '5' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_position : 'last' , 
+		autoWidth : false , 
+		cacheClass : 'gridx/core/model/cache/Async' , 
+		_sc_extensibility_referenceUId : 'pnlFulfillment'  
+ 			 , modules : 	[
+	 		{
+		 moduleClass : 			'gridx/modules/ColumnResizer'
+,
+		 minWidth : 			0
+	}
+,
+	 		{
+		 moduleClass : 			'gridx/modules/ColumnWidth'
+,
+		 autoResize : 			true
+	}
+,
+	 		{
+		 moduleClass : 			'gridx/modules/HLayout'
+	}
+,
+	 		{
+		 moduleClass : 			'gridx/modules/select/Row'
+,
+		 triggerOnCell : 			true
+	}
+	]
+		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	__scModuleInfo : 	{
+		 Modules : 	{
+		 Module : 	[
+	 		{
+		 name : 			'columnResizer'
+,
+		 Properties : 	{
+		 Property : 	[
+	 		{
+		 name : 			'minWidth'
+,
+		 scExtensibilityArrayItemId : 			'extn_ModuleProperty_1'
+,
+		 type : 			'Number'
+,
+		 initialValue : 			'0'
+	}
+	]
+	}
+,
+		 isExtn : 			true
+	}
+,
+	 		{
+		 name : 			'columnWidth'
+,
+		 Properties : 	{
+		 Property : 	[
+	 		{
+		 name : 			'autoResize'
+,
+		 scExtensibilityArrayItemId : 			'extn_ModuleProperty_1'
+,
+		 type : 			'Boolean'
+,
+		 initialValue : 			'true'
+	}
+	]
+	}
+,
+		 isExtn : 			true
+	}
+,
+	 		{
+		 name : 			'selectRow'
+,
+		 Properties : 	{
+		 Property : 	[
+	 		{
+		 name : 			'triggerOnCell'
+,
+		 scExtensibilityArrayItemId : 			'extn_ModuleProperty_1'
+,
+		 type : 			'Boolean'
+,
+		 initialValue : 			'true'
+	}
+	]
+	}
+,
+		 isExtn : 			true
+	}
+	]
+	}
+	}
+,	
+			 	toolBar : 	[
+	]
+,	
+			 	structure : 	[
+	 		{
+		 uId : 			'extn_gridx_OrderLineStatus_view_Quantity'
+,
+		 _sc_extensibility_operation : 			'insert'
+,
+		 _sc_extensibility_moveOrder : 			'7'
+,
+		 field : 			'extn_StatusQuantity'
+,
+		 _sc_extensibility_position : 			'last'
+,
+		 bindingData : 	{
+		 sFieldBinding : 	{
+		 path : 			'StatusQty'
+	}
+	}
+,
+		 name : 			this.getSimpleBundleString('extn_Status_Quantity')
+,
+		 width : 			'30%'
+,
+		 _sc_extensibility_referenceUId : 			'extn_gridx_OrderLineStatus'
+	}
+,
+	 		{
+		 uId : 			'extn_gridx_OrderLineStatus_view_Status_Name'
+,
+		 _sc_extensibility_operation : 			'insert'
+,
+		 _sc_extensibility_moveOrder : 			'10'
+,
+		 field : 			'extn_Status_Name'
+,
+		 scuiDataType : 			'NText-255'
+,
+		 _sc_extensibility_position : 			'last'
+,
+		 bindingData : 	{
+		 sFieldBinding : 	{
+		 path : 			'StatusDescription'
+	}
+	}
+,
+		 name : 			this.getSimpleBundleString('extn_Status')
+,
+		 width : 			'35%'
+,
+		 _sc_extensibility_referenceUId : 			'extn_gridx_OrderLineStatus'
+	}
+,
+	 		{
+		 uId : 			'extn_gridx_OrderLineStatus_view_Status_Name'
+,
+		 _sc_extensibility_operation : 			'move'
+,
+		 _sc_extensibility_moveOrder : 			'11'
+,
+		 _sc_extensibility_referenceUId : 			'extn_gridx_OrderLineStatus_view_Quantity'
+,
+		 _sc_extensibility_position : 			'before'
+	}
+,
+	 		{
+		 uId : 			'extn_gridx_OrderLineStatus_view_StatusDate'
+,
+		 _sc_extensibility_operation : 			'insert'
+,
+		 _sc_extensibility_moveOrder : 			'12'
+,
+		 field : 			'extn_Status_Date'
+,
+		 scuiDataType : 			'TimeStamp'
+,
+		 _sc_extensibility_position : 			'last'
+,
+		 bindingData : 	{
+		 sFieldBinding : 	{
+		 path : 			'StatusDate'
+	}
+	}
+,
+		 name : 			this.getSimpleBundleString('extn_Status_Date')
+,
+		 width : 			'35%'
+,
+		 _sc_extensibility_referenceUId : 			'extn_gridx_OrderLineStatus'
+	}
+	]
+,	
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'getCompleteOrderLineDetails_output'
+,
+		 path : 			'OrderLine.OrderStatuses.OrderStatus'
+	}
+	}
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="gridx/Grid" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_gridx_Promo_Coupon_Details' , 
+		autoHeight : true ,							
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '13' , 
+		_sc_extensibility_position : 'last' , 
+		_sc_extensibility_referenceUId : 'ContentPane10' , 
+		cacheClass : 'gridx/core/model/cache/Async'  
+ 			 , modules : 	[
+	 		{
+		 moduleClass : 			'gridx/modules/ColumnResizer'
+,
+		 minWidth : 			0
+	}
+,
+	 		{
+		 moduleClass : 			'gridx/modules/ColumnWidth'
+,
+		 autoResize : 			true
+	}
+,
+	 		{
+		 moduleClass : 			'gridx/modules/HLayout'
+	}
+,
+	 		{
+		 moduleClass : 			'gridx/modules/select/Row'
+,
+		 triggerOnCell : 			true
+	}
+	]
+		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	__scModuleInfo : 	{
+		 Modules : 	{
+		 Module : 	[
+	 		{
+		 name : 			'columnResizer'
+,
+		 Properties : 	{
+		 Property : 	[
+	 		{
+		 name : 			'minWidth'
+,
+		 scExtensibilityArrayItemId : 			'extn_ModuleProperty_1'
+,
+		 type : 			'Number'
+,
+		 initialValue : 			'0'
+	}
+	]
+	}
+,
+		 isExtn : 			true
+	}
+,
+	 		{
+		 name : 			'columnWidth'
+,
+		 Properties : 	{
+		 Property : 	[
+	 		{
+		 name : 			'autoResize'
+,
+		 scExtensibilityArrayItemId : 			'extn_ModuleProperty_1'
+,
+		 type : 			'Boolean'
+,
+		 initialValue : 			'true'
+	}
+	]
+	}
+,
+		 isExtn : 			true
+	}
+,
+	 		{
+		 name : 			'selectRow'
+,
+		 Properties : 	{
+		 Property : 	[
+	 		{
+		 name : 			'triggerOnCell'
+,
+		 scExtensibilityArrayItemId : 			'extn_ModuleProperty_1'
+,
+		 type : 			'Boolean'
+,
+		 initialValue : 			'true'
+	}
+	]
+	}
+,
+		 isExtn : 			true
+	}
+	]
+	}
+	}
+,	
+			 	toolBar : 	[
+	]
+,	
+			 	structure : 	[
+	 		{
+		 uId : 			'extn_gridx_Promo_Details_view'
+,
+		 _sc_extensibility_operation : 			'insert'
+,
+		 _sc_extensibility_moveOrder : 			'15'
+,
+		 field : 			'extn_Promotion'
+,
+		 _sc_extensibility_position : 			'last'
+,
+		 bindingData : 	{
+		 sFieldBinding : 	{
+		 path : 			'Extn.PromoNum'
+	}
+	}
+,
+		 name : 			this.getSimpleBundleString('extn_Promotion')
+,
+		 _sc_extensibility_referenceUId : 			'extn_gridx_Promo_Coupon_Details'
+	}
+,
+	 		{
+		 uId : 			'extn_gridx_Coupon_Details_view'
+,
+		 _sc_extensibility_operation : 			'insert'
+,
+		 _sc_extensibility_moveOrder : 			'16'
+,
+		 field : 			'extn_Coupon'
+,
+		 _sc_extensibility_position : 			'last'
+,
+		 bindingData : 	{
+		 sFieldBinding : 	{
+		 path : 			'Extn.CouponNumber'
+	}
+	}
+,
+		 name : 			this.getSimpleBundleString('extn_Coupon')
+,
+		 _sc_extensibility_referenceUId : 			'extn_gridx_Promo_Coupon_Details'
+	}
+	]
+,	
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 namespace : 			'getCompleteOrderLineDetails_output'
+,
+		 path : 			'OrderLine.LineCharges.LineCharge'
+	}
+	}
+			}
+		}
+	 					}">
+		 	</div>  
+		</div>

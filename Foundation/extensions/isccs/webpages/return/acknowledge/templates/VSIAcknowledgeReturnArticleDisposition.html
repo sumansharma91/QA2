@@ -1,0 +1,225 @@
+<div class="sc-platform-screen-default returnOrderlineDispoScreen">
+    <!-- Licensed Materials - Property of IBM IBM Call Center for Commerce
+    (5725-P82) (C) Copyright IBM Corp. 2013 All Rights Reserved. US Government
+    Users Restricted Rights - Use, duplication or disclosure restricted by
+    GSA ADP Schedule Contract with IBM Corp. -->
+    <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		'class' : 'isccsScreen singlecolumntable' , 
+		uId : 'addItemPanelMainContainer'  
+ ">
+		<div data-dojo-type="sc/plat/dojo/layout/AdvancedTableLayout" data-dojo-props="		cols : 1 , 
+		customClass : 'tableLayout-cols-1'  
+ ">
+        
+        <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		'class' : 'exceptionPanel panelSpacer' , 
+		uId : 'pnlNoReturnableQuantity' , 
+		renderHidden : true  
+ ">
+            <div data-dojo-type="sc/plat/dojo/widgets/Label" data-dojo-props="		uId : 'lblNoReturnableQuantity'  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+				value : 			this.getSimpleBundleString('Label_ThereIsNoQuantityAvailableForReturn')
+,
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 path : 			'OrderLine.OriginalOrderedQty'
+,
+		 dynamicBindingFunc : 			'getReturnQuantityMessage'
+,
+		 namespace : 			'selectedOrderLine'
+	}
+	}
+			}
+		}
+"></div>
+        </div>
+		
+		
+        <div data-dojo-type="sc/plat/dojo/widgets/Label" data-dojo-props="		'class' : 'primaryInformation' , 
+		uId : 'itemDesc'  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 path : 			'OrderLine.ItemDetails.PrimaryInformation.ExtendedDisplayDescription'
+,
+		 namespace : 			'selectedOrderLine'
+	}
+	}
+			}
+		}
+"></div>
+       
+	   
+        <div data-dojo-type="idx/form/TextBox" data-dojo-props="		uId : 'txtOrderLineKey' , 
+		renderHidden : true  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 path : 			'Receipt.ReceiptLines.ReceiptLine.OrderLineKey'
+,
+		 namespace : 			'returnLine'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 path : 			'OrderLine.OrderLineKey'
+,
+		 namespace : 			'selectedOrderLine'
+	}
+	}
+,	
+			 	label : 			this.getBundleString('Label_OrderLine')
+			}
+		}
+"></div>
+        
+		
+		
+        
+	
+        <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 
+		uId : 'itemQuantity'  
+ ">
+            <div data-dojo-type="idx/form/NumberTextBox" data-dojo-props="		'class' : 'quantityTextBox' , 
+		selectOnClick : true , 
+		uId : 'quantity' 
+		, required : true  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 path : 			'Receipt.ReceiptLines.ReceiptLine.Quantity'
+,
+		 namespace : 			'returnLine'
+	}
+	 		
+	]
+,
+		 sourceBinding : 	{
+		 path : 			''
+,
+		 namespace : 			''
+	}
+	}
+,	
+			 	label : 			this.getBundleString('AcknowledgedQuantity')
+			}
+		}
+">
+
+</div>
+            
+			
+
+
+        </div>
+		
+		
+		
+        <div data-dojo-type="idx/form/FilteringSelect" data-dojo-props="		uId : 'cmbDispReason' , 
+		required : true  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 path : 			'Receipt.ReceiptLines.ReceiptLine.DispositionCode'
+,
+		 namespace : 			'returnLine'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 path : 			'ReturnDispositionList.ReturnDisposition'
+,
+		 namespace : 			'getReturnDispositionList_output'
+	}
+,
+		 optionsBinding : 	{
+		 descriptionField : 			'Description'
+,
+		 valueField : 			'DispositionCode'
+,
+		 path : 			'ReturnDispositionList.ReturnDisposition'
+,
+		 namespace : 			'getReturnDispositionList_output'
+	}
+	}
+,	
+			 	label : 			this.getBundleString('ArticleDisposition')
+			}
+		}
+"></div>
+		
+		
+		
+		
+		<div data-dojo-type="idx/form/FilteringSelect" data-dojo-props="		uId : 'cmbReturnReason' , 
+		required : true  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getBundleString('ReturnReason')
+,	
+			 	bindingData : 	{
+		 optionsBinding : 	{
+		 valueField : 			'CodeValue'
+,
+		 path : 			'CommonCodeList.CommonCode'
+,
+		 descriptionField : 			'CodeShortDescription'
+,
+		 namespace : 			'getReturnReasonList_output'
+	}
+,
+		 targetBinding : 	[
+		 {
+		 path : 			'Receipt.ReceiptLines.ReceiptLine.ReasonCode'
+,
+		 namespace : 			'returnLine'
+	}
+	 		
+	]
+,
+		 sourceBinding : 	{
+		 path : 			'CommonCodeList.CommonCode'
+,
+		 namespace : 			'getReturnReasonList_output'
+	}
+	}
+			}
+		}
+"></div>
+
+		
+		
+		<div data-dojo-type="dijit/form/Button" data-dojo-props="		spanLabel : true , 
+		colspan : 1 , 
+		showLabel : true , 
+		uId : 'btnAddToReturn'  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getSimpleBundleString('Receive')
+			}
+		}
+"></div>
+		
+		
+		
+		
+		</div>
+        
+		
+        
+    </div>
+	
+	</div>

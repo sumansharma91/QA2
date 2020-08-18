@@ -1,0 +1,167 @@
+<div class="sc-platform-screen-default orderlinesummary">
+    <!-- Licensed Materials - Property of IBM IBM Call Center for Commerce
+    (5725-P82) (C) Copyright IBM Corp. 2013 All Rights Reserved. US Government
+    Users Restricted Rights - Use, duplication or disclosure restricted by
+    GSA ADP Schedule Contract with IBM Corp. -->
+    <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 
+		'class' : 'isccsScreen' , 
+		colspan : 1 , 
+		uId : 'DST_DetailScreenPanel' , 
+		layoutAlign : 'top'  
+ ">
+       <!--<div data-dojo-type="idx/layout/ContentPane" data-dojo-props="	spanLabel: true,	 uId : 'systemMessagePanelPopup' ,
+	        renderHidden: false   ">
+		</div> -->
+		
+	    <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		'class' : 'detailsPrimaryInfoPanel' , 
+		aria_label_key : 'aria_primaryinformation' ,  uId : 'DST_PrimaryInfoPanel'  " role='region'>
+ 
+			<div data-dojo-type="sc/plat/dojo/widgets/Label" data-dojo-props="		'class' : 'primaryInformationCouponLookup' , 
+					shouldEncodeValue : false , 
+					uId : 'portletName'  
+					,scParamDataFn :
+					 function() { 
+						return { 
+							value : 			this.getSimpleBundleString('extn_CouponDetails')
+			,	
+							bindingData : 	{
+					 sourceBinding : 	{
+					 path : 			'Portlet.Title'
+			,
+					 namespace : 			'portletTitle'
+				}
+				}
+						}
+					}
+			" role='heading'>
+			</div>
+			 
+            <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		uId : 'PrimaryInfoTitle'  ">
+                <div data-dojo-type="sc/plat/dojo/layout/AdvancedTableLayout" data-dojo-props="		showLabels : false ,  cols : 2 , customClass : 'tableLayout-cols-2'  ">
+                </div>
+                    <div data-dojo-type="sc/plat/dojo/widgets/Label" data-dojo-props="		spanLabel : true , 'class' : 'primaryInformation' , 
+							uId : 'lblDisplayDescription'  ,scParamDataFn :
+							function() { 
+									return { 
+											
+										title : 			this.getSimpleBundleString('extn_CouponDetails'),	
+										bindingData : 	{
+											
+														}
+											}
+										}
+				"></div>				
+            </div>
+            <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		uId : 'PrimaryInfoPanelMain'   ">
+                <div data-dojo-type="sc/plat/dojo/layout/AdvancedTableLayout" data-dojo-props="		showLabels : false ,    cols : 2 ,    customClass : 'tableLayout-cols-2'  ">
+                  <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true ,     uId : 'PrimaryInfoPanelRight'  ">
+                        <div data-dojo-type="sc/plat/dojo/layout/AdvancedTableLayout" data-dojo-props="		cols : 2 ,   customClass : 'tableLayout-cols-2'  ">
+                            <div data-dojo-type="sc/plat/dojo/widgets/DataLabel" data-dojo-props="		spanLabel : true , 
+										uId : 'lblPromotion'  ,scParamDataFn :
+											function() { 
+													return { 
+														label : 			this.getBundleString('extn_Promotion'),	
+														bindingData : 	{
+															sourceBinding : 	{
+																	path : 			'Coupon.PromoId',
+																	
+																	namespace : 			'couponDetails'
+																				}
+																		}
+															}
+														}
+							"></div>
+
+                            <div data-dojo-type="sc/plat/dojo/widgets/DataLabel" data-dojo-props="		spanLabel : true , 
+										uId : 'lblPromotionDescription'    ,scParamDataFn :
+										function() { 
+												return { 
+													label : 			this.getBundleString('extn_PromotionDescription'),
+													bindingData : 	{
+														sourceBinding : 	{
+																path : 			'Coupon.PromoDesc',
+				
+																namespace : 			'couponDetails'
+																			}
+																	}
+														}
+													}
+							"></div>
+                            <div data-dojo-type="sc/plat/dojo/widgets/DataLabel" data-dojo-props="		spanLabel : true , 
+										uId : 'lblValid'       ,scParamDataFn :
+										function() { 
+												return { 
+													label : 			this.getBundleString('extn_Valid'),	
+													bindingData : 	{
+														sourceBinding : 	{
+																path : 			'Coupon.Valid',
+																namespace : 			'couponDetails'
+																			}
+																	}
+														}
+													}
+							"></div>
+                            <div data-dojo-type="sc/plat/dojo/widgets/DataLabel" data-dojo-props="		spanLabel : true , 
+										uId : 'lblReason'     ,scParamDataFn :
+										function() { 
+												return { 
+													label : 			this.getBundleString('extn_Reason'),	
+													bindingData : 	{
+														sourceBinding : 	{
+																path : 			'Coupon.Reason',
+																namespace : 			'couponDetails'
+																			}
+																	}
+														}
+													}
+							"></div>
+                            <div data-dojo-type="sc/plat/dojo/widgets/DataLabel" data-dojo-props="		spanLabel : true , 
+										uId : 'lblStartDate'   ,scParamDataFn :
+										function() { 
+												return { 
+													label : 			this.getBundleString('extn_StartDate'),	
+													bindingData : 	{
+														sourceBinding : 	{
+																path : 			'Coupon.StartDate',
+																namespace : 			'couponDetails'
+																			}
+																	}
+														}
+													}
+							"></div>
+                            <div data-dojo-type="sc/plat/dojo/widgets/DataLabel" data-dojo-props="		spanLabel : true , 
+										uId : 'lblEndDate'   ,scParamDataFn :
+										function() { 
+												return { 
+													label : 			this.getBundleString('extn_EndDate'),	
+													bindingData : 	{
+														sourceBinding : 	{
+																path : 			'Coupon.EndDate',
+																namespace : 			'couponDetails'
+																			}
+																	}
+														}
+													}
+							"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+	</div>
+
+			<div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 'class' : 'popupNavigation messageDialogFooter' , 	uId : 'ContentPane4'   ">
+			
+				<div data-dojo-type="dijit/form/Button" data-dojo-props="		spanLabel : true , 'class' : 'buttonCloseCouponLookup' , showLabel : true , uId : 		'Popup_btnClose'  ,scParamDataFn :
+										function() { 
+												return { label : 			this.getSimpleBundleString('Close')
+													}
+												}">
+				</div>
+			</div> 
+	
+	
+</div>

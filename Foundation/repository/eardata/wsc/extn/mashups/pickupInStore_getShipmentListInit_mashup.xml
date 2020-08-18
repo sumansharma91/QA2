@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mashups>
+    <mashup description="Get list of shipments" endpoint="EP_CONFIG"
+        id="pickupInStore_getShipmentListInit" mashuptype="XAPI"
+        skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.wsc.shipment.backroompick.mashups.WSCBackroomPickFetchPaginatedShipmentListMashup"/>
+        <API Name="getShipmentList">
+            <Input>
+                <Shipment DeliveryMethod="PICK"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    MaximumRecords="" ShipNode="xml:CurrentStore:/Store/@ShipNode">
+                    <ComplexQuery>
+                        <Or>
+                            <Exp Name="Status" QryType="FLIKE" Value="1100.70.06.10"/>
+                        </Or>
+                    </ComplexQuery>
+                    <OrderBy>
+                        <Attribute Name="ExpectedShipmentDate"/>
+                    </OrderBy>
+                </Shipment>
+            </Input>
+            <Template>
+                <Shipments>
+                    <Shipment AssignedToUserId="" DeliveryMethod=""
+                        DisplayOrderNo="" ExpectedShipmentDate=""
+                        HoldLocation="" OrderNo="" ShipNode=""
+                        ShipmentKey="" ShipmentNo="" TotalNumOfSKUS="" CustomerPoNo="">
+                        <Status Description="" Status=""/>
+                        <BillToAddress AddressLine1="" AddressLine2=""
+                            City="" Country="" DayFaxNo="" DayPhone=""
+                            EMailID="" EveningFaxNo="" EveningPhone=""
+                            FirstName="" IsCommercialAddress=""
+                            LastName="" MiddleName="" MobilePhone=""
+                            PersonInfoKey="" PreferredShipAddress=""
+                            State="" ZipCode=""/>
+                        <ShipmentLines TotalNumberOfRecords="">
+                            <ShipmentLine OriginalQuantity=""/>
+                        </ShipmentLines>
+                    </Shipment>
+                </Shipments>
+            </Template>
+        </API>
+        <APINamespace inputNS="getShipmentList_input" outputNS="getShipmentList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="WSCSYS00001"/>
+            <AlternateResourceId altResourceId="WSC000006"/>
+        </AlternateResourceIds>
+    </mashup>
+</mashups>

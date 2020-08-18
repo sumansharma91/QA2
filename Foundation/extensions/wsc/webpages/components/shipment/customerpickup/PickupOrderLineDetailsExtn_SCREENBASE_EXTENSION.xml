@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="PickupOrderLineDetailsExtn"
+        extnPackage="extn.components.shipment.customerpickup"
+        originalScreen="wsc.components.shipment.customerpickup.PickupOrderLineDetails"
+        originalScreenPackage="wsc.components.shipment.customerpickup" type="diffrential">
+        <Items>
+            <DataLabel _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="updateQtyButton"
+                class="quantitySpinnerLabelAlign"
+                label="$(_scSimpleBundle:extn_UPC_Code)" uId="extn_customerpickup_upc">
+                <BindingData>
+                    <SourceBinding dynamicBindingFunc="AliasValue2"
+                        namespace="ShipmentLine" path="ShipmentLine.OrderLine.ItemDetails.ItemAliasList.ItemAlias.AliasValue2"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="originalQuantityLabelDetails"
+                class="blockComponent autoLabelZeroWidth"
+                label="$(_scSimpleBundle:extn_UPC_Code)" uId="extn_custpickup_upc">
+                <BindingData>
+                    <SourceBinding dynamicBindingFunc="AliasValue2"
+                        namespace="ShipmentLine" path="ShipmentLine.OrderLine.ItemDetails.ItemAliasList.ItemAlias.AliasValue2"/>
+                </BindingData>
+            </DataLabel>
+            <DataLabel _sc_extensibility_moveOrder="3"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="shortageResolutionLink"
+                class="blockComponent autoLabelZeroWidth"
+                label="$(_scSimpleBundle:extn_UPC_Code)" uId="extn_finishpickup_upc">
+                <BindingData>
+                    <SourceBinding dynamicBindingFunc="AliasValue2"
+                        namespace="ShipmentLine" path="ShipmentLine.OrderLine.ItemDetails.ItemAliasList.ItemAlias.AliasValue2"/>
+                </BindingData>
+            </DataLabel>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

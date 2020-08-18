@@ -1,0 +1,84 @@
+		<div>
+		 	<div data-dojo-type="gridx/Grid" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'listGrid'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	structure : 	[
+	 		{
+		 _sc_extensibility_operation : 			'change'
+,
+		 uId : 			'tblColZipCode'
+,
+		 _sc_extensibility_referenceUId : 			'tblColZipCode'
+,
+		 hidden : 			true
+	}
+,
+	 		{
+		 _sc_extensibility_operation : 			'change'
+,
+		 uId : 			'tblColAddress'
+,
+		 _sc_extensibility_referenceUId : 			'tblColAddress'
+,
+		 hidden : 			true
+	}
+,
+	 		{
+		 field : 			'extn_Order_Type'
+,
+		 _sc_extensibility_operation : 			'insert'
+,
+		 bindingData : 	{
+		 sFieldBinding : 	{
+		 path : 			'OrderType'
+	}
+	}
+,
+		 _sc_extensibility_moveOrder : 			'1'
+,
+		 _sc_extensibility_referenceUId : 			'tblColZipCode'
+,
+		 width : 			'15%'
+,
+		 name : 			this.getSimpleBundleString('extn_Order_Channel')
+,
+		 uId : 			'extn_listGrid_view_Order_Channel'
+,
+		 _sc_extensibility_position : 			'before'
+	}
+,
+	 		{
+		 field : 			'extn_Delivery_Method'
+,
+		 _sc_extensibility_operation : 			'insert'
+,
+		 bindingData : 	{
+		 sFieldBinding : 	{
+		 dynamicBindingFunc : 			'getFulfillmentMethod'
+,
+		 path : 			'OrderList.Order.OrderLines.OrderLine.DeliveryMethod'
+	}
+	}
+,
+		 _sc_extensibility_moveOrder : 			'2'
+,
+		 _sc_extensibility_referenceUId : 			'tblColZipCode'
+,
+		 width : 			'15%'
+,
+		 name : 			this.getSimpleBundleString('extn_Fulfillment_Method')
+,
+		 uId : 			'extn_listGrid_view_Fulfillment_Method'
+,
+		 _sc_extensibility_position : 			'before'
+	}
+	]
+			}
+		}
+	 					}">
+		 	</div>  
+		</div>

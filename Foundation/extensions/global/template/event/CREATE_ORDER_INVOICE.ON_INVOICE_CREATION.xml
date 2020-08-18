@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Licensed Materials - Property of IBM IBM Sterling Selling And Fulfillment 
+	Suite (C) Copyright IBM Corp. 2005, 2013 All Rights Reserved. US Government 
+	Users Restricted Rights - Use, duplication or disclosure restricted by GSA 
+	ADP Schedule Contract with IBM Corp. -->
+<!--CREATE_ORDER_INVOICE.ON_INVOICE_CREATION XML -->
+<OrderInvoice AmountCollected="" ChargeTransactionKey=""
+	Currency="" DateInvoiced="" DerivedFromOrderHeaderKey="" InvoiceNo=""
+	InvoiceType="" LineSubTotal="" OrderHeaderKey="" OrderInvoiceKey=""
+	OrderNo="" Status="" TotalAmount="" TotalTax="" />

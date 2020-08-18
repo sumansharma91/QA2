@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle screenBundleId="extn.order.search.OrderSearchExtnBundle" screenId="extn.order.search.OrderSearchExtn">
+    <BundleEntries>
+        <BundleEntry bundleEntryId="cmbHoldType_FilteringSelect_label"
+            bundleKey="extn_Hold_Types" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="cmbHoldType"/>
+        <BundleEntry bundleEntryId="txt_orderDateFrom_DateTextBox_label"
+            bundleKey="extn_Order_Date_From" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txt_orderDateFrom"/>
+        <BundleEntry bundleEntryId="txt_orderDateTo_DateTextBox_label"
+            bundleKey="extn_Order_Date_To" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txt_orderDateTo"/>
+        <BundleEntry bundleEntryId="txt_orderNo2_TextField_label"
+            bundleKey="extn_Order_" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txt_orderNo2"/>
+        <BundleEntry bundleEntryId="txt_custPoNo_TextField_label"
+            bundleKey="extn_Customer_PO_" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txt_custPoNo"/>
+        <BundleEntry
+            bundleEntryId="extn_textfield_PaymentTechOrder_TextField_label"
+            bundleKey="extn_PaymentTech_Order_"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_textfield_PaymentTechOrder"/>
+        <BundleEntry
+            bundleEntryId="extn_textfield_TrackingNo_TextField_label"
+            bundleKey="extn_Tracking_Number"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_textfield_TrackingNo"/>
+        <BundleEntry bundleEntryId="txt_custEmailId_TextField_label"
+            bundleKey="extn_Customer_Email" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txt_custEmailId"/>
+        <BundleEntry bundleEntryId="txt_custPhone_TextField_label"
+            bundleKey="extn_Customer_Phone_" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txt_custPhone"/>
+        <BundleEntry bundleEntryId="txt_fName_TextField_label"
+            bundleKey="extn_First_Name" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txt_fName"/>
+        <BundleEntry bundleEntryId="txt_lName_TextField_label"
+            bundleKey="extn_Last_Name" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txt_lName"/>
+        <BundleEntry bundleEntryId="txt_postalCode_TextField_label"
+            bundleKey="ZipCodeCol" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txt_postalCode"/>
+        <BundleEntry bundleEntryId="extn_textfieldHAN_TextField_label"
+            bundleKey="extn_Healthy_Awards_"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_textfieldHAN"/>
+        <BundleEntry
+            bundleEntryId="extn_textfield_Marketplace_TextField_label"
+            bundleKey="extn_Marketplace_Order_Number"
+            bundleValueFn="_scBundle" property="label" type="WIDGET" uId="extn_textfield_Marketplace"/>
+    </BundleEntries>
+</ScreenBundle>

@@ -1,0 +1,67 @@
+<OrderList>
+	<Order BillToID="" CustomerEMailID="" CustomerFirstName=""
+		CustomerLastName="" CustomerPONo="" DocumentType="" EnteredBy=""
+		EnterpriseCode="" EntryType="" MessageType="" OrderDate=""
+		OrderHeaderKey="" OrderNo="" OrderType="" SCAC="" ScacAndService=""
+		SellerOrganizationCode="">
+		<Extn ExtnPointsEarned="" />
+		<OrderLines>
+			<OrderLine CustomerPONo="" DeliveryMethod=""
+				OrderHeaderKey="" OrderLineKey="" LineType="" OrderedQty=""
+				ReqDeliveryDate="" ReqShipDate="" SCAC="" ScacAndService=""
+				ShipNode="" PrimeLineNo="" SubLineNo="">
+				<Item ItemDesc="" ItemID="" ProductClass="" UnitOfMeasure="" />
+
+
+				<ItemDetails>
+					<Extn ExtnActSkuID="" ExtnBrand="" ExtnBrandTitle="" ExtnItemSize="" ExtnItemType="" ExtnItemUOM=""/>
+				</ItemDetails>
+
+				<PersonInfoShipTo AddressLine1="" AddressLine2=""
+					AddressLine3="" AddressLine4="" AddressLine5="" AddressLine6=""
+					AlternateEmailID="" Beeper="" City="" Company="" Country=""
+					DayFaxNo="" DayPhone="" Department="" EMailID="" EveningFaxNo=""
+					EveningPhone="" FirstName="" JobTitle="" LastName="" MiddleName=""
+					MobilePhone="" OtherPhone="" PersonID="" State="" Suffix="" Title=""
+					ZipCode="" />
+
+
+				<LineOverallTotals Charges="" Discount=""
+					ExtendedPrice="" LineCost="" LineTotal="" LineTotalWithoutTax=""
+					ManualDiscountPercentage="" ManualOverridePercentage=""
+					OptionPrice="" PercentProfitMargin="" PricingQty=""
+					ShippingBaseCharge="" ShippingCharges="" ShippingDiscount=""
+					ShippingTotal="" Tax="" UnitPrice="" />
+
+			</OrderLine>
+		</OrderLines>
+
+		<PaymentMethods>
+			<PaymentMethod CreditCardExpDate="" CreditCardName=""
+				CreditCardNo="" CreditCardType="" CustomerAccountNo=""
+				DisplayCreditCardNo="" FirstName="" LastName="" MaxChargeLimit=""
+				MiddleName="" PaymentType="" UnlimitedCharges="" PaymentReference1=""
+				PaymentReference2="" PaymentReference8="" PaymentReference9=""
+				TotalCharged="">
+			</PaymentMethod>
+		</PaymentMethods>
+		<PersonInfoBillTo AddressLine1="North Bergen"
+			AddressLine2="" AddressLine3="" AddressLine4="" AlternateEmailID=""
+			Beeper="" City="" Company="" Country="" DayPhone="" Department=""
+			EMailID="" EveningPhone="" FirstName="" JobTitle="" LastName=""
+			MiddleName="" MobilePhone="" OtherPhone="" PersonID="" State=""
+			Suffix="" ZipCode="" />
+		<Promotions>
+			<Promotion Description="" Action="" DenialReason=""
+				ExclusivityId="" ExclusivityType="" IsExternal=""
+				OverrideAdjustmentValue="" OverrideMaxAdjustment="" Priority=""
+				PromotionApplied="" PromotionCategory="" PromotionId=""
+				PromotionType="">
+				<Extn ExtnCouponID="" />
+			</Promotion>
+		</Promotions>
+		<OverallTotals GrandCharges="" GrandDiscount=""
+			GrandShippingCharges="" GrandShippingDiscount="" GrandShippingTotal=""
+			GrandTax="" GrandTotal="" LineSubTotal="" />
+	</Order>
+</OrderList>

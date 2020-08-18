@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle screenBundleId="extn.editors.HomeEditorRTExtnBundle" screenId="extn.editors.HomeEditorRTExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="extn_linkSendGiftCardEmail_Link_value"
+            bundleKey="extn_Send_Gift_Card_Email"
+            bundleValueFn="_scSimpleBundle" property="value"
+            type="WIDGET" uId="extn_linkSendGiftCardEmail"/>
+        <BundleEntry bundleEntryId="extn_linkVocuherLookup_Link_value"
+            bundleKey="extn_Voucher_Lookup"
+            bundleValueFn="_scSimpleBundle" property="value"
+            type="WIDGET" uId="extn_linkVocuherLookup"/>
+        <BundleEntry
+            bundleEntryId="extn_Return_Acknowledgement_onClick_Link_value"
+            bundleKey="extn_Return_Acknowledgement"
+            bundleValueFn="_scSimpleBundle" property="value"
+            type="WIDGET" uId="extn_Return_Acknowledgement_onClick"/>
+    </BundleEntries>
+</ScreenBundle>

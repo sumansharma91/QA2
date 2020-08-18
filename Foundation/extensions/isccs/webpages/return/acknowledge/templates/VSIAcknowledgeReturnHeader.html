@@ -1,0 +1,286 @@
+<div class="sc-platform-screen-default vsiacknowledgereturnheader" role="region" aria-label="Add_Lines_To_Return">
+    <!-- Licensed Materials - Property of IBM IBM Call Center for Commerce
+    (5725-P82) (C) Copyright IBM Corp. 2013 All Rights Reserved. US Government
+    Users Restricted Rights - Use, duplication or disclosure restricted by
+    GSA ADP Schedule Contract with IBM Corp. -->
+	
+	
+	
+	
+	<!-- Adding the below fields as part of Vitamin Shop Project -->
+	
+		<div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 
+		'class' : 'isccsScreen' , 
+		uId : 'SST_ScreenHolder'  
+ ">
+        <div data-dojo-type="idx/layout/TitlePane" data-dojo-props="		'class' : 'primaryTitlePane accentPanel' , 
+		toggleable : false , 
+		uId : 'SST_SearchCriteria' , 
+		layoutAlign : 'top'  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	'aria-label' : 			this.getSimpleBundleString('TITLE_ReturnSearch')
+,	
+			 	title : 			this.getSimpleBundleString('AckReturnSearchCriteria')
+			}
+		}
+" role='region'>
+			</div>
+            <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		'class' : 'searchField' , 
+		uId : 'SST_AdvancedSearchCriteria' , 
+		layoutAlign : 'top'  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	title : 			this.getSimpleBundleString('ReturnSearchCriteria')
+			}
+		}
+">
+                <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 
+		colspan : 1 , 
+		uId : 'basicContentPane' , 
+		layoutAlign : 'top'  
+ ">
+                    <div data-dojo-type="sc/plat/dojo/layout/AdvancedTableLayout" data-dojo-props="		cols : 2 , 
+		customClass : 'tableLayout-cols-2'  
+ ">
+                        <div data-dojo-type="idx/layout/TitlePane" data-dojo-props="		toggleable : false , 
+		uId : 'pnlOrderFields'  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	title : 			this.getSimpleBundleString('AckReturnSearch')
+			}
+		}
+">
+                            <div data-dojo-type="sc/plat/dojo/layout/AdvancedTableLayout" data-dojo-props="		cols : 1 , 
+		customClass : 'tableLayout-cols-1'  
+ ">
+                                <div data-dojo-type="idx/form/TextBox" data-dojo-props="		selectOnClick : true , required : true  ,
+		uId : 'txt_orderReturnNo2'  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getBundleString('Label_ReturnNo_OriginalOrderNo')
+,	
+			 	bindingData : 	{
+		 sourceBinding : 	{
+		 path : 			'Order.OrderNo'
+,
+		 namespace : 			'screenInput'
+	}
+,
+		 targetBinding : 	[
+	 		{
+		 path : 			'Order.OrderNo'
+,
+		 namespace : 			'getAdvancedOrderList_input'
+	}
+	]
+	}
+			}
+		}
+"></div>
+				
+ <div data-dojo-type="sc/plat/dojo/widgets/DataLabel" data-dojo-props="		uId : 'txtWarehouseDC'  
+         ,scParamDataFn :
+         function() { 
+         return { 
+         bindingData : 	{
+        
+         }
+         ,	
+         label : 			this.getBundleString('Receiving_Node')
+         }
+         }
+         "></div>
+
+
+ </div>
+ 
+ 
+ 
+ 
+ <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 
+		'class' : 'actionBar' , 
+		uId : 'SST_SearchButtonBar'  
+ ">
+                
+                <div data-dojo-type="dijit/form/Button" data-dojo-props="		spanLabel : true , 
+		'class' : 'idxSpecialButton idxButtonIcon' , 
+		colspan : 1 , 
+		showLabel : true , 
+		uId : 'SST_SearchButton'  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getSimpleBundleString('Action_Search')
+			}
+		}
+"></div>
+            </div>
+			
+			
+			
+			
+			
+			<div data-dojo-type="idx/layout/TitlePane" data-dojo-props="		'class' : 'primaryTitlePane searchResultPanel' , 
+		toggleable : false , 
+		uId : 'SST_SearchResult' , 
+		layoutAlign : 'top'  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	title : 			this.getSimpleBundleString('search_results')
+			}
+		}
+">
+            <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 
+		uId : 'pnlListContainer'  
+ ">
+                <div data-dojo-type="sc/plat/dojo/widgets/ControllerWidget" data-dojo-props="
+					uId: 'returnOrderlinelistscreen',
+					packageName: 'extn.return.acknowledge',
+					className: 'VSIAcknowledgeReturnOrderLines',
+					handleInit: true,
+				scParamDataFn: function() {
+					return {
+			 	bindingData : 	{
+		 fwdbindingData : 	{
+		 targetMapping : 	[
+	]
+,
+		 sourceMapping : 	[
+		 {
+		 childpath : 			''
+,
+		 childnamespace : 			'getReturnDispositionList_output'
+,
+		 parentpath : 			''
+,
+		 parentnamespace : 			'getReturnDispositionList_output'
+	}
+,
+	 		{
+		 childpath : 			''
+,
+		 childnamespace : 			'getReturnReasonList_output'
+,
+		 parentpath : 			''
+,
+		 parentnamespace : 			'getReturnReasonList_output'
+	}
+,
+	{
+		 childpath : 			''
+,
+		 childnamespace : 			'acknowledgeReturn_getReturnDCList_input'
+,
+		 parentpath : 			''
+,
+		 parentnamespace : 			'acknowledgeReturn_getReturnDCList_input'
+	}
+	]
+	}
+	}
+					}
+				}"></div>
+				
+				
+			<!--	Added for showing filter box in parent screen
+			
+				<div data-dojo-type="idx/form/FilteringSelect" data-dojo-props="		uId : 'cmbReturnReason' , 
+		required : true  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getBundleString('ReturnReason')
+,	
+			 	bindingData : 	{
+		 optionsBinding : 	{
+		 valueField : 			'CodeValue'
+,
+		 path : 			'CommonCodeList.CommonCode'
+,
+		 descriptionField : 			'CodeShortDescription'
+,
+		 namespace : 			'getReturnReasonList_output'
+	}
+,
+		 targetBinding : 	[
+	 		
+	]
+,
+		 sourceBinding : 	{
+		 path : 			'CommonCodeList.CommonCode'
+,
+		 namespace : 			'getReturnReasonList_output'
+	}
+	}
+			}
+		}
+"></div>
+				-->
+				
+				<!--	Added for showing filter box in parent screen
+				
+				<div data-dojo-type="idx/form/FilteringSelect" data-dojo-props="		uId : 'cmbDispReason' , 
+		required : true  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getBundleString('ArticleDisposition')
+,	
+			 	bindingData : 	{
+		 optionsBinding : 	{
+		 valueField : 			'DispositionCode'
+,
+		 path : 			'ReturnDispositionList.ReturnDisposition'
+,
+		 descriptionField : 			'Description'
+,
+		 namespace : 			'getReturnDispositionList_output'
+	}
+,
+		 targetBinding : 	[
+	 		
+	]
+,
+		 sourceBinding : 	{
+		 path : 			'ReturnDispositionList.ReturnDisposition'
+,
+		 namespace : 			'getReturnDispositionList_output'
+	}
+	}
+			}
+		}
+"></div>
+				-->
+				
+				
+				
+            </div>
+        </div>
+			
+			
+			
+ 
+ 
+                        </div>
+					</div>
+				</div>
+			</div>
+</div>			
+
+
+
+
+
+
+
+
+	
+	
+	
+</div>

@@ -1,0 +1,109 @@
+		<div>
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : false , 
+		_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'weightDetails'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="dijit/form/Button" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : false , 
+		_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'saveButton'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Label" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								renderHidden : true , 
+		_sc_extensibility_operation : 'change' , 
+		spanLabel : false , 
+		_sc_extensibility_referenceUId : 'lbl_containerWeightUOM'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getSimpleBundleString('extn_Sequence')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/Label" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'lbl_containerWeightUOM' , 
+		_sc_extensibility_operation : 'remove' , 
+		_sc_extensibility_moveOrder : '4' , 
+		_sc_extensibility_position : 'first' , 
+		_sc_extensibility_referenceUId : '_extensibilityHiddenWidgetsHolder'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/RadioButtonSet" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_parcel' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '1' , 
+		'class' : 'groupHeader hashNumberAlign autoLabelZeroWidth blockComponent comappsWrapWord' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'lbl_NoOfProducts'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 namespace : 			'changeShipment_input'
+,
+		 path : 			'Shipment.Containers.Container.Extn.ExtnParcelType'
+,
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 namespace : 			'container_Src'
+,
+		 path : 			'Container.Extn.ExtnParcelType'
+	}
+,
+		 radioBinding : 	{
+		 options : 	[
+	 		{
+		 label : 			this.getSimpleBundleString('extn_Envelope')
+,
+		 scExtensibilityArrayItemId : 			'extn_RadioBinding_0'
+,
+		 value : 			'Envelope'
+	}
+,
+	 		{
+		 label : 			this.getSimpleBundleString('extn_Carton')
+,
+		 scExtensibilityArrayItemId : 			'extn_RadioBinding_1'
+,
+		 value : 			'Carton'
+	}
+	]
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Container_Options')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="sc/plat/dojo/widgets/DataLabel" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_seq' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '3' , 
+		'class' : 'idxLabel weightUnit zeroWidthLabelKey' , 
+		_sc_extensibility_position : 'before' , 
+		_sc_extensibility_referenceUId : 'saveButton'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getSimpleBundleString('extn_Sequence_No')
+			}
+		}
+	 					}">
+		 	</div>  
+		</div>

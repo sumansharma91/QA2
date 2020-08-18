@@ -1,0 +1,75 @@
+<div class="sc-platform-screen-default returnsportlet">
+    <!-- Licensed Materials - Property of IBM IBM Call Center for Commerce
+    (5725-P82) (C) Copyright IBM Corp. 2013 All Rights Reserved. US Government
+    Users Restricted Rights - Use, duplication or disclosure restricted by
+    GSA ADP Schedule Contract with IBM Corp. -->
+    <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 
+		resourceId : 'ISCRET0001' , 
+		'class' : 'isccsScreen portlet' , 
+		colspan : 1 , 
+		uId : 'portletPanel' , 
+		layoutAlign : 'top'  
+ 		,scParamDataFn :
+		 function() { 
+			return { 
+			 	'aria-label' : 			this.getSimpleBundleString('extn_Coupon')
+			}
+		}
+" role='region'>
+        <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 
+		'class' : 'contentSeparator portletHeader' , 
+		uId : 'portletHeaderPanel'  
+ ">
+            <div data-dojo-type="sc/plat/dojo/widgets/Label" data-dojo-props="		'class' : 'primaryInformation' , shouldEncodeValue : false , 
+						uId : 'portletName'  	,scParamDataFn :
+						function() { 
+							return { 
+								value : 			this.getSimpleBundleString('extn_Coupon'),	
+								bindingData : 	{
+									sourceBinding : 	{ path : 			'Portlet.Title',
+															namespace : 			'portletTitle'}
+							}
+				}
+			}" role='heading'>
+			</div>
+            <div data-dojo-type="sc/plat/dojo/widgets/Image" data-dojo-props="		imageSrc : '/isccs/resources/css/icons/images/productPortlet.png' , 
+					'class' : 'portletImage' , 	appendToContextRoot : true , uId : 'portletImage' ">			
+			</div>
+            
+        </div>
+        <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 
+						'class' : 'PortletContent singlecolumntable' , 	uId : 'cCouponButtonPanel'   ">
+						
+            <div data-dojo-type="idx/form/TextBox" data-dojo-props="	
+					uId : 'txtCouponNo'  ,scParamDataFn :
+						function() { 
+									return { 
+											label : 			this.getBundleString('extn_Label_Coupon'),	
+											bindingData : 	{
+														sourceBinding : 	{
+																	path : 			'Coupon.CouponID',    namespace : 			'screenInput'
+																			},
+														targetBinding : 	[
+																				{
+																	path : 			'Coupon.CouponID',    namespace : 			'getCoupon'
+																				}
+																			]
+															}
+											}
+									}
+">			</div>
+
+
+            <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		'class' : 'portletSearchBar' , 		uId : 'pnlSearchBar'   ">
+                <div data-dojo-type="dijit/form/Button" data-dojo-props="		spanLabel : true , 		resourceId : 'ISCRET0001' , showLabel : true , 
+						uId : 'bFindCoupon'     ,scParamDataFn :
+							function() { 
+										return { 
+											label : 			this.getSimpleBundleString('FindCoupon')
+											}
+										}
+">				</div>
+            </div>
+        </div>
+    </div>
+</div>

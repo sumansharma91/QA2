@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle screenBundleId="extn.mobile.home.MobileHomeExtnBundle" screenId="extn.mobile.home.MobileHomeExtn">
+    <BundleEntries>
+        <BundleEntry bundleEntryId="lblPickup_Label_value"
+            bundleKey="extn_Orders_for_Pickup"
+            bundleValueFn="_scSimpleBundle" property="value"
+            type="WIDGET" uId="lblPickup"/>
+        <BundleEntry bundleEntryId="lblShip_Label_value"
+            bundleKey="extn_Orders_for_Shipping"
+            bundleValueFn="_scSimpleBundle" property="value"
+            type="WIDGET" uId="lblShip"/>
+    </BundleEntries>
+</ScreenBundle>

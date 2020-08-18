@@ -1,0 +1,4 @@
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.common.tnsPaymentCapture.TNSPaymentCapture_CreditCardInitController"
+    requestMethodSupported="POST" screenId="extn.common.tnsPaymentCapture.TNSPaymentCapture_CreditCard"/>

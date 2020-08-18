@@ -1,0 +1,36 @@
+ <OrderList>
+    <Order Createts="" MaxOrderStatus="" MinOrderStatus=""
+        OrderHeaderKey="" OrderNo="">
+        <OrderLines>
+            <OrderLine CustomerPONo="W201510020018004869100"
+                    LineType="PICK_IN_STORE"
+                    OrderLineKey="20151002095753159995451"
+                    PrimeLineNo="1" ReturnReason="" SubLineNo="1"  StatusQuantity="" ShipNode="" >
+                <OrderStatuses>
+                    <OrderStatus Status="" StatusQty=""/>
+                </OrderStatuses>
+				<Extn ExtnLastPickDate="2015-10-12T23:59:59"
+                        ExtnLineTotal="20.00"
+                        ExtnPickDate="2015-10-02T09:00:16" ExtnPublished="N"/>
+                    <Item ItemID="1762245" ProductClass="GOOD"
+                        UPCCode="" UnitOfMeasure="EACH">
+                        <LanguageDescriptionList/>
+                    </Item>
+                    <LinePriceInfo DiscountPercentage="0.00"
+                        DiscountReference="" DiscountType=""
+                        ListPrice="0.00" RetailPrice="0.00"
+                        TaxableFlag="N" UnitPrice="20.00"/>
+                    <References/>
+                    <Promotions/>
+                    <ItemDetails ItemID="1762245">
+                        <ItemAliasList>
+                            <ItemAlias AliasName="UPC" AliasValue="33674156865"/>
+                        </ItemAliasList>
+                    </ItemDetails>
+            </OrderLine>
+        </OrderLines>
+        <PaymentMethods>
+            <PaymentMethod/>
+        </PaymentMethods>
+    </Order>
+</OrderList>

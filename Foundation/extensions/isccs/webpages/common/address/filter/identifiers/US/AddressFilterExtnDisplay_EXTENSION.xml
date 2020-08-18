@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenDisplayExtension extnClassName="AddressFilterExtn"
+        identifierId="US"
+        originalScreen="isccs.common.address.filter.AddressFilter" originalScreenPackage="isccs.common.address.filter">
+        <Items>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txtZipCode" maxLength="5"/>
+        </Items>
+    </ScreenDisplayExtension>
+</ExtensionMetaData>

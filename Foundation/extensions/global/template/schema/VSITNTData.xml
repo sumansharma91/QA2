@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 
+Licensed Materials - Property of IBM
+IBM Sterling Selling And Fulfillment Suite
+(C) Copyright IBM Corp. 2005, 2013 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ -->
+<FlatfileDelimitedSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+	<ParserDefaults DefaultRecordDelimiter="Newline" DefaultFieldDelimiter="," DefaultPadCharacter="#" RecordIdStartPosition="1">
+		<FileHeader FileHeaderId="RECORD,ShipFromZipCode,ShipToZipCode,Carrier,CarrierServiceCode,TimeInTransit" FileHeaderStartPos="1" FileHeaderLength="70"/>
+		<FileTrailer FileTrailerId="END" FileTrailerStartPos="1" FileTrailerLength="3"/>
+    </ParserDefaults>
+
+	<Root Name="TimeInTransitList">
+   		<Header Name="TimeInTransit" RecordName="RECORD" MinOccurence="1" MaxOccurence="1"/>
+	</Root>
+
+	<RecordDefinitions>
+		<Record RecordId="RECORD" Name="RECORD" XMLName="TimeInTransit" >
+		    <Field Name="ShipFromZipCode" FieldPosition="2" XMLName="ShipFromZipCode"/>
+			<Field Name="ShipToZipCode" FieldPosition="3" XMLName="ShipToZipCode"/>
+		    <Field Name="Carrier" FieldPosition="4" XMLName="Carrier"/>
+			<Field Name="CarrierServiceCode" FieldPosition="5" XMLName="CarrierServiceCode"/>
+		    <Field Name="TimeInTransit" FieldPosition="6" XMLName="TimeInTransit"/>
+		</Record>
+	</RecordDefinitions>
+</FlatfileDelimitedSchema>

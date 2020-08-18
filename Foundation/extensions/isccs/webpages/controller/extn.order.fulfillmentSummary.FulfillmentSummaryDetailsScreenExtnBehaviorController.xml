@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.order.fulfillmentSummary.FulfillmentSummaryDetailsScreenExtnBehaviorController"
+    requestMethodSupported="POST" screenId="extn.order.fulfillmentSummary.FulfillmentSummaryDetailsScreenExtn">
+    <MashupRefs>
+        <MashupRef extnType="ADD"
+            mashupId="extn_getOrderFulfillmentDetails"
+            mashupRefId="extn_getOrderFulfillmentDetails_referenceid" permissionId=""/>
+        <MashupRef extnType="ADD" mashupId="extn_vsiPromiseDate"
+            mashupRefId="extn_vsiPromiseDate_referenceid" permissionId=""/>
+        <MashupRef extnType="ADD" mashupId="extn_changeOrder"
+            mashupRefId="extn_changeOrder_referenceid" permissionId=""/>
+        <MashupRef extnType="ADD" mashupId="extn_applyBOGO"
+            mashupRefId="extn_applyBOGO_referenceid" permissionId=""/>
+    </MashupRefs>
+</Controller>

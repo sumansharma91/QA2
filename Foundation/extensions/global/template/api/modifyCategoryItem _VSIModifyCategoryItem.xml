@@ -1,0 +1,7 @@
+<ModifyCategoryItems CallingOrganizationCode="">
+	<Category CategoryPath="/VSI-CatMasterCatalog/ALL_PRODS" OrganizationCode="VSI-Cat">
+		<CategoryItemList>
+			<CategoryItem Action="Create" ItemID="<ItemID>" OrganizationCode="VSI-Cat" UnitOfMeasure="<UnitOfMeasure>"/>
+		</CategoryItemList>
+	</Category>
+</ModifyCategoryItems>

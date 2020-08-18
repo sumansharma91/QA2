@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.customer.create.CreateContactExtnBundle" screenId="extn.customer.create.CreateContactExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="DST_SecondaryInfoPanel_ContentPane_title"
+            bundleKey="Address" bundleValueFn="_scSimpleBundle"
+            property="title" type="WIDGET" uId="DST_SecondaryInfoPanel"/>
+        <BundleEntry bundleEntryId="extn_EditAddress_Link_label"
+            bundleKey="blank" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_EditAddress"/>
+        <BundleEntry bundleEntryId="extn_EditAddress_Link_value"
+            bundleKey="extn_Edit_Address"
+            bundleValueFn="_scSimpleBundle" property="value"
+            type="WIDGET" uId="extn_EditAddress"/>
+        <BundleEntry bundleEntryId="extn_AddAddress_Link_value"
+            bundleKey="AddressEntry" bundleValueFn="_scSimpleBundle"
+            property="value" type="WIDGET" uId="extn_AddAddress"/>
+        <BundleEntry bundleEntryId="extn_AddAddressLink_Link_value"
+            bundleKey="AddressEntry" bundleValueFn="_scSimpleBundle"
+            property="value" type="WIDGET" uId="extn_AddAddressLink"/>
+        <BundleEntry bundleEntryId="extn_EditAddressLink_Link_value"
+            bundleKey="extn_Edit_Address"
+            bundleValueFn="_scSimpleBundle" property="value"
+            type="WIDGET" uId="extn_EditAddressLink"/>
+        <BundleEntry
+            bundleEntryId="extn_filteringselect_Gender_FilteringSelect_label"
+            bundleKey="extn_Gender" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_filteringselect_Gender"/>
+        <BundleEntry
+            bundleEntryId="extn_filteringselect_ShipPreference_FilteringSelect_label"
+            bundleKey="extn_Ship_Preference"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_filteringselect_ShipPreference"/>
+        <BundleEntry
+            bundleEntryId="extn_filteringselectCountryRegion_FilteringSelect_label"
+            bundleKey="Country_Region" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_filteringselectCountryRegion"/>
+        <BundleEntry
+            bundleEntryId="extn_filteringselectBillToCountryRegion_FilteringSelect_label"
+            bundleKey="Country_Region" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_filteringselectBillToCountryRegion"/>
+        <BundleEntry
+            bundleEntryId="extn_titlepaneAddressInfo_TitlePane_title"
+            bundleKey="extn_Ship_To_Address"
+            bundleValueFn="_scSimpleBundle" property="title"
+            type="WIDGET" uId="extn_titlepaneAddressInfo"/>
+        <BundleEntry
+            bundleEntryId="extn_titlepaneBillToAddress_TitlePane_title"
+            bundleKey="extn_Bill_To_Address"
+            bundleValueFn="_scSimpleBundle" property="title"
+            type="WIDGET" uId="extn_titlepaneBillToAddress"/>
+        <BundleEntry bundleEntryId="extn_checkboxBillTo_CheckBox_label"
+            bundleKey="extn_Use_Ship_To_Address"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_checkboxBillTo"/>
+        <BundleEntry
+            bundleEntryId="extn_radiobuttonsetAddressType_RadioButtonSet_label"
+            bundleKey="extn_Address_Type"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_radiobuttonsetAddressType"/>
+        <BundleEntry
+            bundleEntryId="extn_radiobuttonsetAddressType_RadioButtonSet_BindingData_RadioBinding_N_Option_label"
+            bundleKey="extn_Residential" bundleValueFn="_scSimpleBundle"
+            childPath="RadioButtonSet_BindingData_RadioBinding_N_Option"
+            property="label" type="WIDGET" uId="extn_radiobuttonsetAddressType"/>
+        <BundleEntry
+            bundleEntryId="extn_radiobuttonsetAddressType_RadioButtonSet_BindingData_RadioBinding_Y_Option_label"
+            bundleKey="extn_Commercial" bundleValueFn="_scSimpleBundle"
+            childPath="RadioButtonSet_BindingData_RadioBinding_Y_Option"
+            property="label" type="WIDGET" uId="extn_radiobuttonsetAddressType"/>
+        <BundleEntry
+            bundleEntryId="extn_radiobuttonsetBillToAddressType_RadioButtonSet_label"
+            bundleKey="extn_Address_Type"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_radiobuttonsetBillToAddressType"/>
+        <BundleEntry
+            bundleEntryId="extn_radiobuttonsetBillToAddressType_RadioButtonSet_BindingData_RadioBinding_Y_Option_label"
+            bundleKey="extn_Commercial" bundleValueFn="_scSimpleBundle"
+            childPath="RadioButtonSet_BindingData_RadioBinding_Y_Option"
+            property="label" type="WIDGET" uId="extn_radiobuttonsetBillToAddressType"/>
+        <BundleEntry
+            bundleEntryId="extn_radiobuttonsetBillToAddressType_RadioButtonSet_BindingData_RadioBinding_N_Option_label"
+            bundleKey="extn_Residential" bundleValueFn="_scSimpleBundle"
+            childPath="RadioButtonSet_BindingData_RadioBinding_N_Option"
+            property="label" type="WIDGET" uId="extn_radiobuttonsetBillToAddressType"/>
+        <BundleEntry
+            bundleEntryId="extn_radiobuttonsetPhoneOptIn_RadioButtonSet_label"
+            bundleKey="extn_Phone_Opt_In"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_radiobuttonsetPhoneOptIn"/>
+        <BundleEntry
+            bundleEntryId="extn_radiobuttonsetPhoneOptIn_RadioButtonSet_BindingData_RadioBinding_Y_Option_label"
+            bundleKey="textYes" bundleValueFn="_scSimpleBundle"
+            childPath="RadioButtonSet_BindingData_RadioBinding_Y_Option"
+            property="label" type="WIDGET" uId="extn_radiobuttonsetPhoneOptIn"/>
+        <BundleEntry
+            bundleEntryId="extn_radiobuttonsetPhoneOptIn_RadioButtonSet_BindingData_RadioBinding_N_Option_label"
+            bundleKey="textNo" bundleValueFn="_scSimpleBundle"
+            childPath="RadioButtonSet_BindingData_RadioBinding_N_Option"
+            property="label" type="WIDGET" uId="extn_radiobuttonsetPhoneOptIn"/>
+        <BundleEntry
+            bundleEntryId="extn_radiobuttonsetPostalOptIn_RadioButtonSet_label"
+            bundleKey="extn_Postal_Opt_In"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_radiobuttonsetPostalOptIn"/>
+        <BundleEntry
+            bundleEntryId="extn_radiobuttonsetPostalOptIn_RadioButtonSet_BindingData_RadioBinding_Y_Option_label"
+            bundleKey="textYes" bundleValueFn="_scSimpleBundle"
+            childPath="RadioButtonSet_BindingData_RadioBinding_Y_Option"
+            property="label" type="WIDGET" uId="extn_radiobuttonsetPostalOptIn"/>
+        <BundleEntry
+            bundleEntryId="extn_radiobuttonsetPostalOptIn_RadioButtonSet_BindingData_RadioBinding_N_Option_label"
+            bundleKey="textNo" bundleValueFn="_scSimpleBundle"
+            childPath="RadioButtonSet_BindingData_RadioBinding_N_Option"
+            property="label" type="WIDGET" uId="extn_radiobuttonsetPostalOptIn"/>
+        <BundleEntry
+            bundleEntryId="extn_radiobuttonsetEmailOptIn_RadioButtonSet_label"
+            bundleKey="extn_E_mail_Opt_In"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_radiobuttonsetEmailOptIn"/>
+        <BundleEntry
+            bundleEntryId="extn_radiobuttonsetEmailOptIn_RadioButtonSet_BindingData_RadioBinding_Y_Option_label"
+            bundleKey="textYes" bundleValueFn="_scSimpleBundle"
+            childPath="RadioButtonSet_BindingData_RadioBinding_Y_Option"
+            property="label" type="WIDGET" uId="extn_radiobuttonsetEmailOptIn"/>
+        <BundleEntry
+            bundleEntryId="extn_radiobuttonsetEmailOptIn_RadioButtonSet_BindingData_RadioBinding_N_Option_label"
+            bundleKey="textNo" bundleValueFn="_scSimpleBundle"
+            childPath="RadioButtonSet_BindingData_RadioBinding_N_Option"
+            property="label" type="WIDGET" uId="extn_radiobuttonsetEmailOptIn"/>
+        <BundleEntry bundleEntryId="txtDayPhone_TextField_label"
+            bundleKey="extn_Primary_Phone"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="txtDayPhone"/>
+        <BundleEntry
+            bundleEntryId="extn_textfield_TaxExempt_TextField_label"
+            bundleKey="extn_Tax_exempt_ID"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_textfield_TaxExempt"/>
+        <BundleEntry
+            bundleEntryId="extn_textfieldShipToAddressLine1_TextField_label"
+            bundleKey="AddressLine1" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_textfieldShipToAddressLine1"/>
+        <BundleEntry
+            bundleEntryId="extn_textfieldShipToAddressLine2_TextField_label"
+            bundleKey="AddressLine2" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_textfieldShipToAddressLine2"/>
+        <BundleEntry bundleEntryId="extn_textfieldCity_TextField_label"
+            bundleKey="City" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_textfieldCity"/>
+        <BundleEntry
+            bundleEntryId="extn_textfieldPostalCode_TextField_label"
+            bundleKey="ZipCodeCol" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_textfieldPostalCode"/>
+        <BundleEntry bundleEntryId="extn_textfieldState_TextField_label"
+            bundleKey="State" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_textfieldState"/>
+        <BundleEntry
+            bundleEntryId="extn_textfieldAddressDisplayName_TextField_label"
+            bundleKey="extn_Address_Display_Name"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_textfieldAddressDisplayName"/>
+        <BundleEntry
+            bundleEntryId="extn_textfieldBillToAddressLine1_TextField_label"
+            bundleKey="AddressLine1" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_textfieldBillToAddressLine1"/>
+        <BundleEntry
+            bundleEntryId="extn_textfieldBiilToAddressLine2_TextField_label"
+            bundleKey="AddressLine2" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_textfieldBiilToAddressLine2"/>
+        <BundleEntry
+            bundleEntryId="extn_textfieldBiiToCity_TextField_label"
+            bundleKey="City" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_textfieldBiiToCity"/>
+        <BundleEntry
+            bundleEntryId="extn_textfieldBillToPostalCode_TextField_label"
+            bundleKey="ZipCodeCol" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_textfieldBillToPostalCode"/>
+        <BundleEntry
+            bundleEntryId="extn_textfieldBillToState_TextField_label"
+            bundleKey="State" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_textfieldBillToState"/>
+        <BundleEntry
+            bundleEntryId="extn_textfieldBilltoAddressDisplayName_TextField_label"
+            bundleKey="extn_Address_Display_Name"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_textfieldBilltoAddressDisplayName"/>
+    </BundleEntries>
+</ScreenBundle>

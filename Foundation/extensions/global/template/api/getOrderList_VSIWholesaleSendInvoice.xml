@@ -1,0 +1,8 @@
+<OrderList>
+	<Order OrderNo="" OrderHeaderKey="" MinOrderStatus="" >
+		<OrderLines>
+			<OrderLine  OrderLineKey="" OrderedQty="" MaxLineStatus="" MinLineStatus="" Status="">		
+			</OrderLine>
+		</OrderLines>
+	</Order>
+</OrderList>

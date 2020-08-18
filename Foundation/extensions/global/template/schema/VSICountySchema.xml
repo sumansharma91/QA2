@@ -1,0 +1,26 @@
+<FlatfileDelimitedSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+	<ParserDefaults DefaultRecordDelimiter="Newline" DefaultFieldDelimiter="," DefaultPadCharacter="#" RecordIdStartPosition="1">
+		<FileHeader FileHeaderId="RECORD,City,ST,ZIP,AC,County,TZ,DST,Country,Type,Pref,FIPS" FileHeaderStartPos="1" FileHeaderLength="6"/>
+		<FileTrailer FileTrailerId="END" FileTrailerStartPos="1" FileTrailerLength="3"/>
+    </ParserDefaults>
+
+	<Root Name="Cities">
+   		<Header Name="City" RecordName="RECORD" MinOccurence="1" MaxOccurence="1"/>
+	</Root>
+
+	<RecordDefinitions>
+		<Record RecordId="RECORD" Name="RECORD" XMLName="City" >
+		    <Field Name="City" FieldPosition="2" XMLName="City"/>
+			<Field Name="ST" FieldPosition="3" XMLName="State"/>
+			<Field Name="ZIP" FieldPosition="4" XMLName="ZipCode"/>
+			<Field Name="AC" FieldPosition="5" XMLName="AC"/>
+			<Field Name="County" FieldPosition="6" XMLName="County"/>
+			<Field Name="TZ" FieldPosition="7" XMLName="TimeZone"/>
+			<Field Name="DST" FieldPosition="8" XMLName="DayLightSavingTime"/>
+			<Field Name="Country" FieldPosition="9" XMLName="Country"/>
+			<Field Name="Type" FieldPosition="10" XMLName="Type"/>
+			<Field Name="Pref" FieldPosition="11" XMLName="Pref"/>
+			<Field Name="FIPS" FieldPosition="12" XMLName="FIPS"/>
+		</Record>
+	</RecordDefinitions>
+</FlatfileDelimitedSchema>

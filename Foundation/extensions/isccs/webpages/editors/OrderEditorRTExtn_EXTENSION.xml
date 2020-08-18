@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="OrderEditorRTExtn"
+        extnPackage="extn.editors"
+        originalScreen="isccs.editors.OrderEditorRT"
+        originalScreenPackage="isccs.editors" type="diffrential">
+        <Items>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="managePayment"
+                disabled="false" value="$(_scSimpleBundle:extn_View_Change_Payment_Method)"/>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="giftOptions" renderHidden="true"/>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="cancelOrder"
+                label="$(_scSimpleBundle:blank)" value="$(_scSimpleBundle:TITLE_cancelorder)"/>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="ChangeProductVariation" renderHidden="true"/>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="copyOrder" renderHidden="true"/>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="rescheduleAppointment" renderHidden="true"/>
+            <Link _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="fulfillmentTasks"
+                uId="extn_giftCardFulfillment" value="$(_scSimpleBundle:extn_Fulfill_Gift_Cards)"/>
+            <TitlePane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="priceMatch" renderHidden="true"/>
+				 <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="changeFulfillmentOptions" disabled="true"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber description="fulfillGiftCard_onClick"
+                    eventId="extn_giftCardFulfillment_onClick"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="fulfillGiftCard_onClick"/>
+                </Subscriber>
+				<Subscriber eventId="afterScreenInit" isExtn="true" sequence="51">
+                    <Handler methodName="restrictAddLinesForShippedOrder"/>
+                </Subscriber
+            </Local>
+        </Subscribers>
+    </ScreenExtension>
+</ExtensionMetaData>
+	

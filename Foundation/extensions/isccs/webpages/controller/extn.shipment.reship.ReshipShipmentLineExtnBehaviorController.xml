@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.shipment.reship.ReshipShipmentLineExtnBehaviorController"
+    requestMethodSupported="POST" screenId="extn.shipment.reship.ReshipShipmentLineExtn">
+    <MashupRefs>
+        <MashupRef extnType="MODIFY"
+            mashupId="reshipProduct_reshipOrderLines"
+            mashupRefId="reshipOrderLines" permissionId=""/>
+        <MashupRef extnType="ADD" mashupId="extn_changeOrderLineCarrier"
+            mashupRefId="extn_changeCarrieronReshipOrderLines" permissionId=""/>
+        <MashupRef extnType="ADD"
+            mashupId="extn_reshipShipmentLine_getCarrierServiceOptionsForOrdering"
+            mashupRefId="extn_getCarrierServiceOptionsForOrdering" permissionId=""/>
+    </MashupRefs>
+</Controller>

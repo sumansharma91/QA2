@@ -1,0 +1,4 @@
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.customer.loyalty.CustomerLoyaltyDetailsInitController"
+    requestMethodSupported="POST" screenId="extn.customer.loyalty.CustomerLoyaltyDetails"/>

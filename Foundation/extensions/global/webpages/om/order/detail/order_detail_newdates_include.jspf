@@ -1,0 +1,78 @@
+<%/*******************************************************************************
+Licensed Materials - Property of IBM
+IBM Sterling Selling And Fulfillment Suite
+(C) Copyright IBM Corp. 2005, 2013 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ ********************************************************************************/%>
+<%@ page import="java.lang.*" %>
+<%@ page import="java.lang.Object.*" %>
+<%@ page import="com.yantra.yfc.dom.*" %>
+<%
+
+	filterMilestonesForSepcifiedLevel(request.getParameter("Level"));
+	String sExistingDateTypeId = "";
+	YFCElement oOrderDates = null;
+	YFCElement oOrderDate = null;
+	HashMap oMap = new HashMap();
+	YFCElement root = (YFCElement)request.getAttribute(request.getParameter("ReqNameSpace"));
+	
+	if(root != null)
+	{	
+		oOrderDates = root.getChildElement("OrderDates");
+        if(oOrderDates!= null) 
+		{
+			for (Iterator i = oOrderDates.getChildren(); i.hasNext() ;) 
+			{
+                oOrderDate = (YFCElement)i.next();
+				sExistingDateTypeId = oOrderDate.getAttribute("DateTypeId");
+				if(!isVoid(sExistingDateTypeId))
+				{
+					oMap.put(sExistingDateTypeId+"Req",oOrderDate.getDateTimeAttribute("RequestedDate"));
+					oMap.put(sExistingDateTypeId+"Exp",oOrderDate.getDateTimeAttribute("ExpectedDate"));
+					oMap.put(sExistingDateTypeId+"Act",oOrderDate.getDateTimeAttribute("ActualDate"));
+				}
+			}
+		}
+	}
+%>
+
+<%!
+	void filterMilestonesForSepcifiedLevel(String sLevel)
+	{
+		boolean bFound = false;
+		String IsMilestone = "";
+		YFCElement oStatusMilestone = null;
+		YFCElement oDateType = null;
+		YFCElement oStatusMilestoneList = null;
+		YFCElement root = (YFCElement)request.getAttribute("DateTypeList");
+		if(root!= null)
+		{
+			for (Iterator i = root.getChildren(); i.hasNext() ;) 
+			{
+				oDateType = (YFCElement)i.next();
+				bFound = false;
+				IsMilestone = oDateType.getAttribute("IsMilestone");
+				if(equals(IsMilestone,"Y"))
+				{
+					oStatusMilestoneList = oDateType.getChildElement("Statuses");
+					if(oStatusMilestoneList!= null) 
+					{
+						for (Iterator j = oStatusMilestoneList.getChildren(); j.hasNext() && !bFound;) 
+						{
+							oStatusMilestone = (YFCElement)j.next();
+						
+							if(equals(sLevel,oStatusMilestone.getAttribute("MilestoneLevel")))
+								bFound = true;
+						} //End of Status Milestone FOR Loop
+
+						if(!bFound)
+							root.removeChild(oDateType);
+					} //End IF of StatusMilestoneList
+					else
+						root.removeChild(oDateType);
+				} // End IF for IsMilestone
+			} //End Of DateType FOR Loop
+		} //End IF for root
+	}
+%>
+

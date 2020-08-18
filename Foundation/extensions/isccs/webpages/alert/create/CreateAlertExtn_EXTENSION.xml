@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="CreateAlertExtn"
+        extnPackage="extn.alert.create"
+        originalScreen="isccs.alert.create.CreateAlert"
+        originalScreenPackage="isccs.alert.create" type="diffrential">
+        <Items>
+            <FilteringSelect _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="cmbEnterprise" renderHidden="true"/>
+            <FilteringSelect _sc_extensibility_moveOrder="3"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="pnlAlertInformation"
+                label="$(_scSimpleBundle:ExceptionType)" required="true" uId="extn_alertType">
+                <BindingData>
+                    <SourceBinding namespace="screenInput" path="Inbox.ExceptionType"/>
+                    <TargetBindings>
+                        <TargetBinding namespace="createAlert_Input"
+                            path="Inbox.ExceptionType" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                    <OptionsBinding
+                        descriptionField="CodeShortDescription"
+                        namespace="extn_exceptionType"
+                        path="CommonCodeList.CommonCode" valueField="CodeValue"/>
+                </BindingData>
+            </FilteringSelect>
+            <FilteringSelect _sc_extensibility_moveOrder="4"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="cmbAlertType" uId="extn_alertType"/>
+            <FilteringSelect _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="cmbAlertType"
+                disabled="true" renderHidden="true" required="false"/>
+            <FilteringSelect _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="cmbQueue"
+                renderHidden="true" required="false"/>
+            <TextField _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="pnlAlertInformation"
+                disabled="false" label="$(_scSimpleBundle:QueueName)"
+                readOnly="true" required="true" scuiDataType="QueueName" uId="extn_Queue_txt">
+                <BindingData>
+                    <SourceBinding namespace="screenInput" path="Inbox.QueueName"/>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="after"
+                _sc_extensibility_referenceUId="txtPriority" uId="extn_Queue_txt"/>
+        </Items>
+        <Namespaces>
+            <SourceNamespaces>
+                <Source
+                    description="To get the exception type from common code"
+                    isExtn="true"
+                    scExtensibilityArrayItemId="extn_SourceNamespaces_4" value="extn_exceptionType"/>
+            </SourceNamespaces>
+        </Namespaces>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="afterScreenInit" isExtn="true" sequence="51">
+                    <Handler methodName="extn_init"/>
+                </Subscriber>
+                <Subscriber eventId="extn_alertType_onChange"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="handleExceptionTypeSelected"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Init>
+                <MashupRef extnType="ADD"
+                    mashupId="getCommonCodeList_exceptionType"
+                    mashupRefId="extn_ExceptionTypeList" sourceNamespace="extn_exceptionType"/>
+            </Init>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

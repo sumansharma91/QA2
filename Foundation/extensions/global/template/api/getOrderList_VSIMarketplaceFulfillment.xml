@@ -1,0 +1,10 @@
+<OrderList>
+<Order OrderNo="" CustomerPONo="">
+	<Extn ExtnMCLOderShipmentID="" ExtnMCLChannel="" />
+	<OrderLines>
+		<OrderLine OrderLineKey="">
+			<Extn ExtnChannelItemID=""/>
+		</OrderLine>
+	</OrderLines>
+</Order>
+</OrderList>

@@ -1,0 +1,416 @@
+<div class="sc-platform-screen-default" role="region" aria-label="extn_Gift_Card_Fulfillment">
+    <!-- Licensed Materials - Property of IBM IBM Call Center for Commerce
+    (5725-P82) (C) Copyright IBM Corp. 2013 All Rights Reserved. US Government
+    Users Restricted Rights - Use, duplication or disclosure restricted by
+    GSA ADP Schedule Contract with IBM Corp. -->
+	<div data-dojo-type="idx/layout/ContentPane" data-dojo-props="
+			spanLabel : true , 
+			'class' : 'isccsScreen' , 
+			uId : 'pnlGiftCardFulfillment' , 
+			layoutAlign : 'top' ,
+			scParamDataFn :function() { 
+				return { 
+					value : 			this.getSimpleBundleString('extn_Gift_Card_Fulfillment')
+				}
+			}
+	 "/>
+	<div data-dojo-type="idx/layout/TitlePane" data-dojo-props="		spanLabel : true , 
+			'class' : 'primaryTitlePane activatePanel' , 
+			colspan : 1 , 
+			toggleable : false , 
+			uId : 'activatePanel',
+			scParamDataFn :function() { 
+				return { 
+					title : 			this.getSimpleBundleString('extn_Activate_Gift_Cards')
+				}
+			}
+	">
+		<div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 
+			'class' : 'buttonGrid' , 
+			uId : 'gridActivate'  
+		">
+            <div data-dojo-type="idx/form/TextBox" data-dojo-props=" 
+				uId : 'txtGiftCardNo',
+				scParamDataFn :function() { 
+				return { 
+					label : 			this.getBundleString('extn_Gift_Card_No'),	
+					
+					bindingData : 	{
+						 sourceBinding : 	{
+							
+						 },
+						 targetBinding : 	[{
+							 path : 			'OrderLine.GiftCardNo',
+							 namespace : 			'giftCardInfo'
+						 }]
+					}
+				}
+			}
+			"></div>
+			<div data-dojo-type="dijit/form/Button" data-dojo-props="		'class' : 'idxSpecialButton idxButtonIcon' , 
+				uId : 'activateBttn' , 
+				scParamDataFn :function() { 
+					return { 
+						label : 			this.getSimpleBundleString('extn_Activate')
+					}
+				}
+			"></div>
+		</div>
+		
+		<div data-dojo-type="gridx/Grid" data-dojo-props=" 
+			spanLabel : true ,
+			'class' : 'giftCardFulfillmentGrid' ,
+			selectRowTriggerOnCell : true ,
+			autoWidth : false ,
+			uId : 'GCF_listGrid' ,
+			autoHeight : false ,
+			cacheClass : 'gridx/core/model/cache/Async',
+			modules : 	[{
+				moduleClass : 'gridx/modules/IndirectSelect',
+			},
+	 		{
+				moduleClass : 'gridx/modules/RowHeader'
+			},
+	 		{
+				moduleClass : 'gridx/modules/select/Row',
+				multiple : false
+			},
+	 		{
+				moduleClass : 'gridx/modules/Edit'
+			},
+	 		{
+				moduleClass : 'gridx/modules/CellWidget'
+			},
+	 		{
+				moduleClass : 'gridx/modules/CellWidget'
+			},
+	 		{
+				moduleClass : 'gridx/modules/NavigableCell'
+			},],
+			scParamDataFn :function() {
+				return { 
+					toolBar : 	[ ],
+					structure : 	[{
+						field : 			'Product_AddItems',
+						uId : 			'aTblColProductAddItems',
+						
+						width : 			'10%',
+						name : 			this.getSimpleBundleString('Label_Item'),
+						bindingData : 	{
+							sFieldBinding : 	{
+								path : 'Item.ItemID'
+							}
+						}
+					},
+					{
+						field : 			'Item_Description',
+						uId : 			'aTblColItemDesc',
+						
+						width : 			'20%',
+						name : 			this.getSimpleBundleString('extn_Description'),
+						bindingData : 	{
+							sFieldBinding : 	{
+								path : 'Item.ItemDesc'
+							}
+						}
+					},
+					{
+						field : 			'UnitPrice',
+						uId : 			'tblColUnitPrice',
+						
+						width : 			'10%',
+						name : 			this.getSimpleBundleString('UnitPrice'),
+						bindingData : 	{
+							sFieldBinding : 	{
+								 path : 			'LinePriceInfo.UnitPrice',
+							}
+						}
+					},
+					{
+						field : 			'aQTY',
+						uId : 			'aQTY',
+						width : 			'10%',
+						name : 			this.getSimpleBundleString('extn_Qty_To_Activate'),
+						bindingData : 	{
+							sFieldBinding : 	{
+								path : 'QtyToActivate',
+							},
+						}
+					}],
+				bindingData : {
+					targetBinding : [	],
+					sourceBinding : {
+						path : 'OrderLines.OrderLine',
+						namespace : 'giftCardActivationList'
+					}
+				},
+				bodyLoadingInfo : 			this.getSimpleBundleString('Loading'),	
+				bodyEmptyInfo : 		this.getSimpleBundleString('NoSearchResults')
+			}
+		}
+		"></div>
+    </div>
+	<div data-dojo-type="idx/layout/TitlePane" data-dojo-props="		spanLabel : true , 
+			'class' : 'primaryTitlePane activatedPanel' , 
+			colspan : 1 , 
+			toggleable : false , 
+			uId : 'activatedPanel',
+			scParamDataFn :function() { 
+				return { 
+					title : 			this.getSimpleBundleString('extn_Activated_Gift_Cards')
+				}
+			}
+	">
+		<div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 
+			'class' : 'buttonGrid' , 
+			uId : 'gridTracking'  
+		">
+            <div data-dojo-type="idx/form/TextBox" data-dojo-props="
+				uId : 'txtTrackingNo',
+				scParamDataFn :function() { 
+				return { 
+					label : 			this.getBundleString('extn_Enter_Tracking_No'),	
+					bindingData : 	{
+						 sourceBinding : 	{
+							
+						 },
+						 targetBinding : 	[{
+							path : 			'OrderLine.TrackNo',
+							namespace : 			'trackingInfo'
+						 }]
+					}
+				}
+			}
+			"></div>
+			<div data-dojo-type="dijit/form/Button" data-dojo-props="		'class' : 'idxSpecialButton idxButtonIcon' , 
+				uId : 'applyBttn' , 
+				scParamDataFn :function() { 
+					return { 
+						label : 			this.getSimpleBundleString('extn_Apply')
+					}
+				}
+			"></div>
+			<div data-dojo-type="dijit/form/Button" data-dojo-props="		'class' : 'idxSpecialButton idxButtonIcon' , 
+				uId : 'shipWithoutTrackingBttn' , 
+				scParamDataFn :function() { 
+					return { 
+						label : 			this.getSimpleBundleString('extn_Ship_Without_Tracking')
+					}
+				}
+			"></div>
+		</div>
+		<div data-dojo-type="gridx/Grid" data-dojo-props=" 
+			spanLabel : true , 
+			'class' : 'giftCardFulfillmentGrid' , 
+			selectRowTriggerOnCell : true , 
+			autoWidth : false , 
+			uId : 'activatedGC_listGrid' , 
+			autoHeight : false , 
+			cacheClass : 'gridx/core/model/cache/Async',
+			modules : 	[{
+				moduleClass : 			'gridx/modules/IndirectSelect',
+				single : 			false
+			},
+	 		{
+				moduleClass : 			'gridx/modules/RowHeader'
+			},
+	 		{
+				moduleClass : 			'gridx/modules/select/Row'
+			},
+	 		{
+				moduleClass : 			'gridx/modules/Edit'
+			},
+	 		{
+				moduleClass : 			'gridx/modules/CellWidget'
+			},
+	 		{
+				moduleClass : 			'gridx/modules/CellWidget'
+			},
+	 		{
+				moduleClass : 			'gridx/modules/NavigableCell'
+			},
+	 		{
+				moduleClass : 			'gridx/modules/extendedSelect/Row'
+			}],
+			scParamDataFn :function() {
+				return { 
+					toolBar : 	[],
+					structure : 	[{
+						field : 			'Product_AddItems',
+						uId : 			'tTblColProductAddItems',
+						bindingData : 	{
+							sFieldBinding : 	{
+								path : 			'ItemID',
+							},
+						},
+						width : 			'10%',
+						name : 			this.getSimpleBundleString('Label_Product')
+					},
+					{
+						field : 			'Item_Description',
+						uId : 			'tTblColItemDesc',
+						
+						width : 			'25%',
+						name : 			this.getSimpleBundleString('extn_Description'),
+						bindingData : 	{
+							sFieldBinding : 	{
+								path : 'ItemDesc'
+							}
+						}
+					},
+					{
+						field : 			'tQTY',
+						uId : 			'tQTY',
+						bindingData : 	{
+							sFieldBinding : 	{
+								path : 			'Quantity',
+							},
+						},
+						width : 			'10%',
+						name : 			this.getSimpleBundleString('Quantity_FS')
+					},
+					{
+						field : 			'tGiftCardNo',
+						uId : 			'tGiftCardNo',
+						bindingData : 	{
+							sFieldBinding : 	{
+								path : 			'Extn.ExtnGiftCardNo',
+							},
+						},
+						width : 			'15%',
+						name : 			this.getSimpleBundleString('extn_Gift_Card_No')
+					}],
+				
+				bindingData : {
+					targetBinding : [	],
+					sourceBinding : {
+						path : 'ShipmentLines.ShipmentLine',
+						namespace : 'includedInShipmentLineList'
+					}
+				},
+				bodyLoadingInfo : 			this.getSimpleBundleString('Loading'),	
+				bodyEmptyInfo : 			this.getSimpleBundleString('NoSearchResults')
+			}
+		}
+		"></div>
+    </div>
+	<div data-dojo-type="idx/layout/TitlePane" data-dojo-props="		spanLabel : true , 
+			'class' : 'primaryTitlePane shippedPanel' , 
+			colspan : 1 , 
+			toggleable : false , 
+			uId : 'shippedPanel',
+			scParamDataFn :function() { 
+				return { 
+					title : 			this.getSimpleBundleString('extn_Shipped_Gift_Cards')
+				}
+			}
+	">
+		<div data-dojo-type="gridx/Grid" data-dojo-props="
+			spanLabel : true , 
+			'class' : 'giftCardFulfillmentGrid' , 
+			selectRowTriggerOnCell : true , 
+			autoWidth : false , 
+			uId : 'shipStatus_listGrid' , 
+			autoHeight : false , 
+			cacheClass : 'gridx/core/model/cache/Async',
+			modules : 	[{
+				moduleClass : 			'gridx/modules/RowHeader'
+			},
+	 		{
+				moduleClass : 			'gridx/modules/Edit'
+			},
+	 		{
+				moduleClass : 			'gridx/modules/CellWidget'
+			},
+	 		{
+				moduleClass : 			'gridx/modules/CellWidget'
+			},
+	 		{
+				moduleClass : 			'gridx/modules/NavigableCell'
+			}],
+			scParamDataFn :function() {
+				return { 
+					toolBar : 	[],
+					structure : 	[{
+						field : 			'Product_AddItems',
+						uId : 			'sTblColProductAddItems',
+						bindingData : {
+							sFieldBinding : {
+								path : 'ItemID'
+							},
+						},
+						width : 			'10%',
+						name : 			this.getSimpleBundleString('Label_Product')
+					},
+					{
+						field : 			'Item_Description',
+						uId : 			'sTblColItemDesc',
+						
+						width : 			'25%',
+						name : 			this.getSimpleBundleString('extn_Description'),
+						bindingData : 	{
+							sFieldBinding : 	{
+								path : 'ItemDesc'
+							}
+						}
+					},
+					{
+						field : 			'sQTY',
+						uId : 			'sQTY',
+						bindingData : {
+							sFieldBinding : {
+								path : 'Quantity'
+							},
+						},
+						width : 			'10%',
+						name : 			this.getSimpleBundleString('Quantity_FS')
+					},
+					{
+						field : 			'sGiftCardNo',
+						uId : 			'sGiftCardNo',
+						bindingData : {
+							sFieldBinding : {
+								path : 'Extn.ExtnGiftCardNo'
+							},
+						},
+						width : 			'15%',
+						name : 			this.getSimpleBundleString('extn_Gift_Card_No')
+					},
+					{
+						field : 			'trackingNo',
+						uId : 			'trackingNo',
+						bindingData : {
+							sFieldBinding : {
+								path : 'TrackingNo',
+							},
+						},
+						width : 			'15%',
+						name : 			this.getSimpleBundleString('extn_Tracking_No')
+					},
+					{
+						field : 			'status',
+						uId : 			'status',
+						bindingData : {
+							sFieldBinding : {
+								path : 'Status'
+							},
+						},
+						width : 			'10%',
+						name : 			this.getSimpleBundleString('Label_Status')
+					}],
+					
+				bindingData : {
+					targetBinding : [	],
+					sourceBinding : {
+						path : 'ShipmentLines.ShipmentLine',
+						namespace : 'containerizedLineList'
+					}
+				},
+				
+				bodyLoadingInfo : 			this.getSimpleBundleString('Loading'),	
+				bodyEmptyInfo : 			this.getSimpleBundleString('NoSearchResults')
+			}
+		}
+		"></div>
+    </div>
+ </div>

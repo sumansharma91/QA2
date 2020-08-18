@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.home.portlets.CustomerPortletExtnBundle" screenId="extn.home.portlets.CustomerPortletExtn">
+    <BundleEntries>
+        <BundleEntry bundleEntryId="txtContactEmail_TextField_label"
+            bundleKey="extn_Contact_Email" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txtContactEmail"/>
+        <BundleEntry
+            bundleEntryId="extn_textfield_HealthyAwards_TextField_label"
+            bundleKey="extn_Healthy_Awards_"
+            bundleValueFn="_scSimpleBundle" property="label"
+            type="WIDGET" uId="extn_textfield_HealthyAwards"/>
+        <BundleEntry bundleEntryId="txtPhoneNo_Customer_TextField_label"
+            bundleKey="extn_Primary_Phone" bundleValueFn="_scBundle"
+            property="label" type="WIDGET" uId="txtPhoneNo_Customer"/>
+    </BundleEntries>
+</ScreenBundle>

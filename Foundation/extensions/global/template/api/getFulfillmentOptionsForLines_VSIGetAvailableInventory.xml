@@ -1,0 +1,17 @@
+<Promise CheckInventory=""  OrganizationCode="">
+    <PromiseLines>
+        <PromiseLine ItemID="" LineId="1" ProductClass="GOOD" UnitOfMeasure="EACH">
+            <Options>
+                <Option DeliveryDate="" HasAnyUnavailableQty="" IsUnavailable="" OptionNo="" ProductAvailDate="" ProductAvailableDate="">
+                    <Assignments TotalNumberOfRecords="">
+                        <Assignment DeliveryDate="" ProductAvailDate="" Quantity=""  ShipDate="" ShipNode="" >
+							<Supplies>
+								<Supply AvailableQuantity="" ConsumedQuantity="" />
+							</Supplies>
+						</Assignment>
+                    </Assignments>
+                </Option>
+            </Options>
+        </PromiseLine>
+    </PromiseLines>
+</Promise>

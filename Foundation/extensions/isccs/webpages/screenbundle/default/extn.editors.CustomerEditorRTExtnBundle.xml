@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle screenBundleId="extn.editors.CustomerEditorRTExtnBundle" screenId="extn.editors.CustomerEditorRTExtn">
+    <BundleEntries>
+        <BundleEntry bundleEntryId="extn_linkManageConsumer_Link_label"
+            bundleKey="blank" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="extn_linkManageConsumer"/>
+        <BundleEntry bundleEntryId="extn_linkManageConsumer_Link_value"
+            bundleKey="Action_TITLE_ManageConsumer"
+            bundleValueFn="_scSimpleBundle" property="value"
+            type="WIDGET" uId="extn_linkManageConsumer"/>
+    </BundleEntries>
+</ScreenBundle>

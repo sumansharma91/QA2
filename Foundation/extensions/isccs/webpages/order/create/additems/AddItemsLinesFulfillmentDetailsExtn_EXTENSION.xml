@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="AddItemsLinesFulfillmentDetailsExtn"
+        extnPackage="extn.order.create.additems"
+        originalScreen="isccs.order.create.additems.AddItemsLinesFulfillmentDetails"
+        originalScreenPackage="isccs.order.create.additems" type="diffrential">
+        <Items>
+            <ContentPane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="pnlMainContainer" renderHidden="false"/>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lnkViewStores" value="$(_scSimpleBundle:ViewStore)"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

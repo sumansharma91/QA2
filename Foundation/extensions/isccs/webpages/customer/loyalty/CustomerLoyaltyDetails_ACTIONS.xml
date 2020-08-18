@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaData version="1.0" xmlns="http://ibm.com/sterling/afc/cuf/tns">
+	<Actions>
+		<Method name="LST_executeApi" returnType="" visibility="local">
+            <ArgumentDefinitions>
+                <ArgumentDefinition name="event" type="UIEvent"/>
+                <ArgumentDefinition name="bEvent" type="BusinessEvent"/>
+                <ArgumentDefinition name="ctrl" type="String"/>
+                <ArgumentDefinition name="args" type="Bean"/>
+            </ArgumentDefinitions>
+            <Statements>
+                <!--the screen variable is obtained -->
+                <Variable name="scr" type="Screen" value="${var:null}"/>
+                <Variable name="inputData" type="Model" value="${var:null}"/>
+                <!-- <Variable name="targetModel" type="Bean" value="${var:null}" /> -->
+                <Expression className="EventUtils"
+                    methodName="getScreenFromEventArguments" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="Bean" value="${var:args}"/>
+                    </Arguments>
+                    <AssignToVariable isGlobal="false" name="scr"/>
+                </Expression>
+                <Expression className="BaseUtils"
+                    methodName="getAttributeValue" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="String" value="inputData"/>
+                        <Argument type="Boolean" value="${var:false}"/>
+                        <Argument type="Bean" value="${var:args}"/>
+                    </Arguments>
+                    <AssignToVariable isGlobal="false" name="inputData"/>
+                </Expression>
+                <Expression className="EventUtils"
+                    methodName="fireEventInsideScreen" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="Screen" value="${screen}"/>
+                        <Argument type="String" value="addExtraHandlers"/>
+                        <Argument type="Bean" value="${var:null}"/>
+                        <Argument type="Bean" value="${var:args}"/>
+                    </Arguments>
+                </Expression>
+                <Expression className="ScreenUtils"
+                    methodName="setModel" package="sc.plat.utils">
+                    <Arguments>
+                        <Argument type="Screen" value="${screen}"/>
+                        <Argument type="String" value="LST_listAPIInput"/>
+                        <Argument type="Model" value="${var:inputData}"/>
+                        <Argument type="Bean" value="${var:null}"/>
+                    </Arguments>
+                </Expression>
+                <Variable name="gridID" type="String" value="listGrid"/>
+                <Variable name="hasGridPagination" type="Boolean" value="${var:false}"/>
+                <Expression className="UIUtils"
+                    methodName="hasPaginationBinding" package="isccs.utils">
+                    <Arguments>
+                        <Argument type="Screen" value="${var:scr}"/>
+                        <Argument type="String" value="${var:gridID}"/>
+                    </Arguments>
+                    <AssignToVariable isGlobal="false" name="hasGridPagination"/>
+                </Expression>
+                <If>
+                    <Not>
+                        <Expression className="BaseUtils"
+                            methodName="equals" package="sc.plat.utils">
+                            <Arguments>
+                                <Argument type="Boolean" value="${var:true}"/>
+                                <Argument type="Boolean" value="${var:hasGridPagination}"/>
+                            </Arguments>
+                        </Expression>
+                    </Not>
+                    <Statements>
+                        <Expression className="UIUtils"
+                            methodName="callApi" package="isccs.utils">
+                            <Arguments>
+                                <Argument type="Screen" value="${var:scr}"/>
+                                <Argument type="Model" value="${var:inputData}"/>
+                                <Argument type="String" value=extn_getRewardsList_RefID/>
+                                <Argument type="Bean" value="${var:null}"/>
+                            </Arguments>
+                        </Expression>
+                    </Statements>
+                </If>
+                <Else>
+                    <Statements>
+                        <Variable declare="true" name="options"
+                            type="Bean" value="${var:null}"/>
+                        <Expression transformed_valueToAssign="{}">
+                            <Arguments/>
+                            <AssignToVariable isGlobal="false" name="options"/>
+                        </Expression>
+                        <Expression className="BaseUtils"
+                            methodName="setAttributeValue" package="sc.plat.utils">
+                            <Arguments>
+                                <Argument type="String" value="screen"/>
+                                <Argument type="Screen" value="${screen}"/>
+                                <Argument type="Bean" value="${var:options}"/>
+                            </Arguments>
+                        </Expression>
+                        <Expression className="BaseUtils"
+                            methodName="setAttributeValue" package="sc.plat.utils">
+                            <Arguments>
+                                <Argument type="String" value="mashupRefId"/>
+                                <Argument type="String" value="extn_getRewardsList_RefID"/>
+                                <Argument type="Bean" value="${var:options}"/>
+                            </Arguments>
+                        </Expression>
+                        <Expression className="UIUtils"
+                            methodName="startPagination" package="isccs.utils">
+                            <Arguments>
+                                <Argument type="Screen" value="${screen}"/>
+                                <Argument type="String" value="${var:gridID}"/>
+                                <Argument type="Model" value="${var:inputData}"/>
+                                <Argument type="Bean" value="${var:options}"/>
+                            </Arguments>
+                        </Expression>
+                    </Statements>
+                </Else>
+            </Statements>
+        </Method>
+		<Method name="handlePaginationActionConfirmation" returnType=""
+			visibility="local">
+			<ArgumentDefinitions>
+				<ArgumentDefinition name="res" type="String" />
+				<ArgumentDefinition name="args" type="Bean" />
+			</ArgumentDefinitions>
+			<Statements>
+				<Variable name="paginationContext" type="Bean" value="${var:null}" />
+				<Variable name="pageToShow" type="Number" value="${var:null}" />
+				<Variable name="pageSize" type="Number" value="${var:null}" />
+				<If>
+					<Expression className="BaseUtils" methodName="equals"
+						package="sc.plat.utils">
+						<Arguments>
+							<Argument type="String" value="${var:res}" />
+							<Argument type="String" value="Ok" />
+						</Arguments>
+					</Expression>
+					<Statements>
+						<Expression className="BaseUtils" methodName="getAttributeValue"
+							package="sc.plat.utils">
+							<Arguments>
+								<Argument type="String" value="pageToShow" />
+								<Argument type="Boolean" value="${var:false}" />
+								<Argument type="Bean" value="${var:args}" />
+							</Arguments>
+							<AssignToVariable isGlobal="false" name="pageToShow" />
+						</Expression>
+						<Expression className="BaseUtils" methodName="getAttributeValue"
+							package="sc.plat.utils">
+							<Arguments>
+								<Argument type="String" value="pageSize" />
+								<Argument type="Boolean" value="${var:false}" />
+								<Argument type="Bean" value="${var:args}" />
+							</Arguments>
+							<AssignToVariable isGlobal="false" name="pageSize" />
+						</Expression>
+						<Expression transformed_valueToAssign="{}">
+							<Arguments />
+							<AssignToVariable isGlobal="false" name="paginationContext" />
+						</Expression>
+						<Expression className="BaseUtils" methodName="setAttributeValue"
+							package="sc.plat.utils">
+							<Arguments>
+								<Argument type="String" value="pageToShow" />
+								<Argument type="Number" value="${var:pageToShow}" />
+								<Argument type="Bean" value="${var:paginationContext}" />
+							</Arguments>
+						</Expression>
+						<Expression className="BaseUtils" methodName="setAttributeValue"
+							package="sc.plat.utils">
+							<Arguments>
+								<Argument type="String" value="pageSize" />
+								<Argument type="Number" value="${var:pageSize}" />
+								<Argument type="Bean" value="${var:paginationContext}" />
+							</Arguments>
+						</Expression>
+						<Variable name="eventArg" type="Bean" value="${var:null}" />
+						<Expression transformed_valueToAssign="{}">
+							<Arguments />
+							<AssignToVariable isGlobal="false" name="eventArg" />
+						</Expression>
+						<Expression className="BaseUtils" methodName="setAttributeValue"
+							package="sc.plat.utils">
+							<Arguments>
+								<Argument type="String" value="appPaginatedContext" />
+								<Argument type="Bean" value="${var:paginationContext}" />
+								<Argument type="Bean" value="${var:eventArg}" />
+							</Arguments>
+						</Expression>
+						<Expression className="BaseUtils" methodName="setAttributeValue"
+							package="sc.plat.utils">
+							<Arguments>
+								<Argument type="String" value="Action" />
+								<Argument type="String" value="SAVE_ORDER" />
+								<Argument type="Bean" value="${var:eventArg}" />
+							</Arguments>
+						</Expression>
+						<Expression className="EventUtils" methodName="fireEventInsideScreen"
+							package="sc.plat.utils">
+							<Arguments>
+								<Argument type="Screen" value="${screen}" />
+								<Argument type="String" value="saveCurrentPage" />
+								<Argument type="Bean" value="${var:null}" />
+								<Argument type="Bean" value="${var:eventArg}" />
+							</Arguments>
+						</Expression>
+					</Statements>
+				</If>
+			</Statements>
+		</Method>
+		<Method name="onPagingload" returnType="" visibility="local">
+			<ArgumentDefinitions>
+				<ArgumentDefinition name="event" type="UIEvent" />
+				<ArgumentDefinition name="bEvent" type="BusinessEvent" />
+				<ArgumentDefinition name="ctrl" type="String" />
+				<ArgumentDefinition name="args" type="Bean" />
+			</ArgumentDefinitions>
+			<Statements>
+				<Variable name="modelOutput" type="Model" value="${var:null}" />
+				<Expression className="BaseUtils" methodName="getValueFromPath"
+					package="sc.plat.utils">
+					<Arguments>
+						<Argument type="String" value="result.Page.Output" />
+						<Argument type="Bean" value="${var:args}" />
+					</Arguments>
+					<AssignToVariable isGlobal="false" name="modelOutput" />
+				</Expression>
+				<Expression className="ScreenUtils" methodName="setModel"
+					package="sc.plat.utils">
+					<Arguments>
+						<Argument type="Screen" value="${screen}" />
+						<Argument type="String" value="getRewardList_output" />
+						<Argument type="Model" value="${var:modelOutput}" />
+						<Argument type="Bean" value="${var:null}" />
+					</Arguments>
+				</Expression>
+				<If>
+					<Expression className="BaseUtils" methodName="isBooleanTrue"
+						package="sc.plat.utils" transformed_argumentList="true">
+						<Arguments transformed_argumentList="true">
+							<Argument>
+								<Expression className="UIUtils" methodName="isFunction"
+									package="isccs.utils">
+									<Arguments>
+										<Argument type="Screen" value="${screen}" />
+										<Argument type="String" value="LST_handleSingleRecord" />
+									</Arguments>
+								</Expression>
+							</Argument>
+						</Arguments>
+					</Expression>
+					<Statements>
+						<Expression methodName="LST_handleSingleRecord">
+							<Arguments />
+						</Expression>
+					</Statements>
+				</If>
+				<If>
+					<Not>
+						<Expression className="BaseUtils" methodName="isEmptyArray"
+							package="sc.plat.utils">
+							<Arguments>
+								<Argument>
+									<Expression className="ModelUtils" methodName="getModelListFromPath"
+										package="sc.plat.utils">
+										<Arguments>
+											<Argument type="String" value="Customer.RewardsList.Reward" />
+											<Argument type="Model" value="${var:modelOutput}" />
+										</Arguments>
+									</Expression>
+								</Argument>
+							</Arguments>
+						</Expression>
+					</Not>
+					<Statements>
+						<Expression className="SearchUtils" methodName="updateParentScreen"
+							package="isccs.utils">
+							<Arguments>
+								<Argument type="Screen" value="${screen}" />
+								<Argument type="String" value="collapseSearchResults" />
+								<Argument type="Model" value="${var:modelOutput}" />
+							</Arguments>
+						</Expression>
+					</Statements>
+				</If>
+				<If>
+					<Expression className="BaseUtils" methodName="isBooleanTrue"
+						package="sc.plat.utils" transformed_argumentList="true">
+						<Arguments transformed_argumentList="true">
+							<Argument>
+								<Expression className="UIUtils" methodName="isFunction"
+									package="isccs.utils">
+									<Arguments>
+										<Argument type="Screen" value="${screen}" />
+										<Argument type="String" value="handleScreenSpecificAction" />
+									</Arguments>
+								</Expression>
+							</Argument>
+						</Arguments>
+					</Expression>
+					<Statements>
+						<Expression methodName="handleScreenSpecificAction">
+							<Arguments>
+								<Argument type="String" value="${var:null}" />
+								<Argument type="Model" value="${var:modelOutput}" />
+								<Argument type="Model" value="${var:null}" />
+								<Argument type="Bean" value="${var:null}" />
+							</Arguments>
+						</Expression>
+					</Statements>
+				</If>
+			</Statements>
+		</Method>
+		<Method name="afterPagingload" returnType="" visibility="local">
+			<ArgumentDefinitions>
+				<ArgumentDefinition name="event" type="UIEvent" />
+				<ArgumentDefinition name="bEvent" type="BusinessEvent" />
+				<ArgumentDefinition name="ctrl" type="String" />
+				<ArgumentDefinition name="args" type="Bean" />
+			</ArgumentDefinitions>
+			<Statements>
+				<Variable name="modelOutput" type="Model" value="${var:null}" />
+				<Expression className="BaseUtils" methodName="getValueFromPath"
+					package="sc.plat.utils">
+					<Arguments>
+						<Argument type="String" value="result.Page.Output" />
+						<Argument type="Bean" value="${var:args}" />
+					</Arguments>
+					<AssignToVariable isGlobal="false" name="modelOutput" />
+				</Expression>
+				<If>
+					<Not>
+						<Expression className="BaseUtils" methodName="isEmptyArray"
+							package="sc.plat.utils">
+							<Arguments>
+								<Argument>
+									<Expression className="ModelUtils" methodName="getModelListFromPath"
+										package="sc.plat.utils">
+										<Arguments>
+											<Argument type="String" value="Customer.RewardsList.Reward" />
+											<Argument type="Model" value="${var:modelOutput}" />
+										</Arguments>
+									</Expression>
+								</Argument>
+							</Arguments>
+						</Expression>
+					</Not>
+					<Statements>
+						<Expression className="GridxUtils" methodName="selectRowUsingUId"
+							package="sc.plat.utils">
+							<Arguments>
+								<Argument type="Screen" value="${screen}" />
+								<Argument type="String" value="listGrid" />
+								<Argument type="Number" value="0" />
+							</Arguments>
+						</Expression>
+					</Statements>
+				</If>
+			</Statements>
+		</Method>
+	</Actions>
+</MetaData>

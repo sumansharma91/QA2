@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="CustomerIdentificationExtn"
+        extnPackage="extn.order.create.customer"
+        originalScreen="isccs.order.create.customer.CustomerIdentification"
+        originalScreenPackage="isccs.order.create.customer" type="diffrential">
+        <Items>
+            <Link _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="lnkCreateConsumer" value="$(_scSimpleBundle:extn_Create_New_Customer)"/>
+            <TextField _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="move"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txt_customerFirstNameAdvanced" uId="txt_customerLastNameAdvanced"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txt_customerEmailAdvanced" label="$(_scBundle:extn_E_mail_ID)"/>
+            <TextField _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="txt_userIdStartsWithAdvanced"
+                label="$(_scSimpleBundle:extn_Healthy_Awards_)" uId="extn_textfieldHealthAwardNoCustomerIdentification">
+                <BindingData>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="getConsumerCustomerList_input"
+                            path="Customer.CustomerID" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                    <SourceBinding namespace="screenInput" path="Customer.CustomerID"/>
+                </BindingData>
+            </TextField>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txt_userIdStartsWithAdvanced"
+                label="$(_scBundle:UserIdStartsWith)" renderHidden="true"/>
+            <TextField _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="txt_customerPhoneNumberAdvanced" label="$(_scBundle:extn_Primary_Phone)"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="afterScreenLoad" isExtn="true" sequence="51">
+                    <Handler methodName="extnInit"/>
+                </Subscriber>
+                <Subscriber description="handleTaxExemptUpdate"
+                    eventId="extn_taxExamptUpdated" isExtn="true" sequence="51">
+                    <Handler methodName="handleTaxExemptUpdate"/>
+                </Subscriber>
+                <Subscriber description="handleShipPreferenceUpdate"
+                    eventId="extn_shipPreferenceUpdated" isExtn="true" sequence="51">
+                    <Handler methodName="handleShipPreferenceUpdate"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+        <MashupRefs>
+            <Behavior>
+                <MashupRef extnType="MODIFY"
+                    mashupId="customerSearch_modifyFulfillmentOptions" mashupRefId="modifyFulfillmentOptions"/>
+                <MashupRef extnType="MODIFY"
+                    mashupId="customerIdentification_manageCustomer" mashupRefId="manageCustomer"/>
+                <MashupRef extnType="MODIFY"
+                    mashupId="customerIdentification_getCompleteCustomerList" mashupRefId="getCompleteCustomerList"/>
+            </Behavior>
+        </MashupRefs>
+    </ScreenExtension>
+</ExtensionMetaData>

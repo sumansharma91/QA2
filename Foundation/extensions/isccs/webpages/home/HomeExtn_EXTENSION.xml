@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="HomeExtn" extnPackage="extn.home"
+        originalScreen="isccs.home.Home"
+        originalScreenPackage="isccs.home" type="diffrential">
+        <Items>
+            <ContentPane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="returnsPortletContainer" renderHidden="false"/>
+            <ContentPane _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="last"
+                _sc_extensibility_referenceUId="portalColRight" uId="extn_contentpane_Coupon_Portlet"/>
+            <ScreenRef _sc_extensibility_moveOrder="2"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="first"
+                _sc_extensibility_referenceUId="extn_contentpane_Coupon_Portlet"
+                className="CouponPortlet"
+                packageName="extn.home.portlets" uId="extn_screenref_Coupon_Portlet"/>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

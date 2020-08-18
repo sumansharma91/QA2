@@ -1,0 +1,8 @@
+<Order >
+<Extn ExtnStoreID="" ExtnCustomerFirstName="" ExtnCustomerLastName="" />
+ <OrderLines>
+        <OrderLine LineType="" ReqDeliveryDate="" ReqShipDate="">
+
+        </OrderLine>
+    </OrderLines>
+</Order>

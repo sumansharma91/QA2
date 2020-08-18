@@ -1,0 +1,115 @@
+<div class="sc-platform-screen-default" role="region" aria-label="Available Details">
+    <!-- Licensed Materials - Property of IBM IBM Call Center for Commerce
+    (5725-P82) (C) Copyright IBM Corp. 2013 All Rights Reserved. US Government
+    Users Restricted Rights - Use, duplication or disclosure restricted by
+    GSA ADP Schedule Contract with IBM Corp. -->
+    <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="		spanLabel : true , 
+		uId : 'systemMessagePanelPopup' , 
+		renderHidden : true">
+	</div>
+     <div data-dojo-type="idx/layout/ContentPane" data-dojo-props="	  'class' : 'storeDisplay storeDisplaynoresults',
+		uId : 'pnlItemAvailability' ,
+		scParamDataFn : function() { 
+			return { 
+			 	'aria-label' : this.getSimpleBundleString('extn_Item_Availability_Details')
+			}
+		}" role='region'>
+		<div data-dojo-type="gridx/Grid" data-dojo-props="		spanLabel : true , 
+			autoWidth : false , 
+			'class' : 'storeSelectionGrid storeDisplaynoresults' ,
+			uId : 'listItemAvailability' , 
+			autoHeight : false , 
+			cacheClass : 'gridx/core/model/cache/Async', 
+			modules : 	[{
+				moduleClass : 'gridx/modules/ColumnWidth',
+				autoResize : true
+			},
+	 		{
+				moduleClass : 'gridx/modules/HLayout'
+			}],
+			scParamDataFn: function() { 
+				return { 
+					toolBar : [	],	
+					structure : [
+						{
+							field : 'ItemId',
+							uId : 'clmItemId',
+							bindingData : 	{
+								sFieldBinding : 	{
+									path : 'ItemID'
+								}
+							},
+							width : '20%',
+							name : this.getSimpleBundleString('ItemID')
+						},
+						{
+							field : 'OnStoreAvailableQty',
+							uId : 'clmOnStoreAvailableQty',
+							bindingData : 	{
+								sFieldBinding : {
+									path :'OnStoreAvailableQty'
+								}
+							},
+							width : '20%',
+							name : this.getSimpleBundleString('On Hand Quantity')
+						},
+						{
+							field : 'OnStoreAvailability',
+							uId : 'clmOnStoreAvailability',
+							bindingData : 	{
+								sFieldBinding : {
+									path :'OnStoreAvaialbleDate'
+								}
+							},
+							width : '20%',
+							name : this.getSimpleBundleString('In Store Availability')
+						},
+						{
+							field : 'FutureQuantity',
+							uId : 'clmFutureQuantity',
+							bindingData : 	{
+								sFieldBinding : {
+									path :'FutureQuantity'
+								}
+							},
+							width : '20%',
+							name : this.getSimpleBundleString('Future Quantity')
+						},
+						{
+							field : 'FutureAvailability',
+							uId : 'clmFutureAvailability',
+							bindingData : 	{
+								sFieldBinding : {
+									path :'FutureAvaialbleDate'
+								}
+							},
+							 width : '20%',
+							 name : this.getSimpleBundleString('Future Availability')
+						}
+					],	
+					bindingData : {
+						targetBinding : [	],
+						sourceBinding : {
+							path : 'Node.Items.Item',
+							namespace : 'getItemAvailability_output'
+						}
+					},					
+					bodyLoadingInfo : this.getSimpleBundleString('Loading'),	
+					bodyEmptyInfo : this.getSimpleBundleString('NoSearchResults')
+				}
+			}
+		">
+		</div>
+	</div>
+	<div data-dojo-type="dijit/form/Button" 
+		 data-dojo-props=" spanLabel : true ,  
+		'class' : 'idxSecondaryButton' , 
+		showLabel : true , 
+		uId : 'Popup_btnCancel',
+		scParamDataFn : function() { 
+			return { 
+				label :this.getSimpleBundleString('Close')
+			}
+	}">
+	</div>
+</div>

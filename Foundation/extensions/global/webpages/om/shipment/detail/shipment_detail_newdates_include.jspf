@@ -1,0 +1,35 @@
+<%/*******************************************************************************
+Licensed Materials - Property of IBM
+IBM Sterling Selling And Fulfillment Suite
+(C) Copyright IBM Corp. 2005, 2013 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ ********************************************************************************/%>
+<%@ page import="java.lang.*" %>
+<%@ page import="java.lang.Object.*" %>
+<%@ page import="com.yantra.yfc.dom.*" %>
+<%
+	String sExistingDateTypeId = "";
+	YFCElement oAdditionalDates = null;
+	YFCElement oAdditionalDate = null;
+	HashMap oMap = new HashMap();
+	YFCElement oShipment = (YFCElement)request.getAttribute("Shipment");
+	if(oShipment != null)
+	{	
+		oAdditionalDates = oShipment.getChildElement("AdditionalDates");
+        if(oAdditionalDates!= null)
+		{
+			for (Iterator i = oAdditionalDates.getChildren(); i.hasNext() ;) 
+			{
+                oAdditionalDate = (YFCElement)i.next();
+				sExistingDateTypeId = oAdditionalDate.getAttribute("DateTypeId");
+				if(!isVoid(sExistingDateTypeId))
+				{
+					oMap.put(sExistingDateTypeId+"Req",oAdditionalDate.getDateTimeAttribute("RequestedDate"));
+					oMap.put(sExistingDateTypeId+"Exp",oAdditionalDate.getDateTimeAttribute("ExpectedDate"));
+					oMap.put(sExistingDateTypeId+"Act",oAdditionalDate.getDateTimeAttribute("ActualDate"));
+				}
+			}
+		}
+	}
+%>
+

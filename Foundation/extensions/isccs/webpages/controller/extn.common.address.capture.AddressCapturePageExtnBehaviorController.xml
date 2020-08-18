@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Controller
+    className="com.sterlingcommerce.ui.web.platform.controller.SCUIXAPIMashupController"
+    controllerId="extn.common.address.capture.AddressCapturePageExtnBehaviorController"
+    requestMethodSupported="POST" screenId="extn.common.address.capture.AddressCapturePageExtn">
+    <MashupRefs>
+        <MashupRef extnType="MODIFY"
+            mashupId="selectOrEditAddress_getCompleteOrderDetails"
+            mashupRefId="getPersonInfoList" permissionId=""/>
+        <MashupRef extnType="ADD"
+            mashupId="customerIdentification_getCompleteCustomerDetails"
+            mashupRefId="extn_getShipTo" permissionId=""/>
+    </MashupRefs>
+</Controller>

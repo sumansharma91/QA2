@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="ShipmentLineDetailsExtn"
+        extnPackage="extn.components.shipment.common.screens"
+        originalScreen="wsc.components.shipment.common.screens.ShipmentLineDetails"
+        originalScreenPackage="wsc.components.shipment.common.screens" type="diffrential">
+        <Items>
+            <DataLabel _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="remainingQty"
+                class="location autoLabelZeroWidth"
+                label="$(_scSimpleBundle:extn_UPC_Code)" uId="extn_upc">
+                <BindingData>
+                    <SourceBinding dynamicBindingFunc="AliasValue"
+                        namespace="ShipmentLine" path="ShipmentLine.OrderLine.ItemDetails.ItemAliasList.ItemAlias.AliasValue"/>
+                </BindingData>
+            </DataLabel>
+        </Items>
+    </ScreenExtension>
+</ExtensionMetaData>

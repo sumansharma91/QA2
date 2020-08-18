@@ -1,0 +1,151 @@
+		<div>
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '1' , 
+		_sc_extensibility_referenceUId : 'pnlCodeApply' , 
+		uId : 'extn_contentpane_PromotionCodeDateOverride' , 
+		_sc_extensibility_position : 'last'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/layout/ContentPane" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '2' , 
+		_sc_extensibility_referenceUId : 'btnApply' , 
+		uId : 'extn_contentpane_PromotionCodeDateOverride' , 
+		_sc_extensibility_position : 'before'  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="dijit/form/Button" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'btnCreateExchange' , 
+		disabled : false  
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="dijit/form/Button" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'insert' , 
+		'class' : 'isccsScreen idxButtonIcon' , 
+		_sc_extensibility_moveOrder : '2' , 
+		_sc_extensibility_referenceUId : 'btnCreateExchange' , 
+		uId : 'extn_issueRefundToEGiftCard' , 
+		_sc_extensibility_position : 'after'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getSimpleBundleString('extn_Issue_Refund_To_E_Gift_Card')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="dijit/form/Button" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'change' , 
+		_sc_extensibility_referenceUId : 'btnAddPaymentMethod' , 
+		renderHidden : false  
+	 					}">
+		 	</div>  
+				<div data-dojo-type="dijit/form/Button" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								uId : 'extn_find_coupon_payment' , 
+		_sc_extensibility_operation : 'insert' , 
+		_sc_extensibility_moveOrder : '4' , 
+		'class' : 'rightAlign' , 
+		_sc_extensibility_position : 'after' , 
+		_sc_extensibility_referenceUId : 'txtCouponPromoCode'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	label : 			this.getSimpleBundleString('extn_Find_Coupon_payment')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/DateTextBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'insert' , 
+		resourceId : 'VSIPROMOOVRDE' , 
+		_sc_extensibility_moveOrder : '3' , 
+		_sc_extensibility_referenceUId : 'extn_contentpane_PromotionCodeDateOverride' , 
+		uId : 'extn_datetextbox_PromotionCodeDateOverride' , 
+		_sc_extensibility_position : 'first'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+,
+		 path : 			'Order.Extn.ExtnPricingDate'
+,
+		 namespace : 			'changeOrder_Input'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 path : 			'Order.Extn.ExtnPricingDate'
+,
+		 namespace : 			'paymentConfirmation_getCompleteOrderDetails_Output'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Promotion_code_date_override')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/CheckBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'insert' , 
+		resourceId : 'VSIADVRET001' , 
+		_sc_extensibility_moveOrder : '1' , 
+		_sc_extensibility_referenceUId : 'lblRemainingCharge' , 
+		uId : 'extn_Advance_returns' , 
+		_sc_extensibility_position : 'before'  
+ 		,scExtensionDataFn :
+		 function() { 
+			return { 
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+,
+		 path : 			'Order.AdvanceReturns'
+,
+		 namespace : 			'extn_changeOrderLineToAdvanceReturns_input'
+	}
+	]
+,
+		 checkedValue : 	{
+		 value : 			'Y'
+	}
+,
+		 sourceBinding : 	{
+		 path : 			'Order.AdvanceReturns'
+,
+		 namespace : 			'extn_ScreenInput'
+	}
+,
+		 uncheckedValue : 	{
+		 value : 			'N'
+	}
+	}
+,	
+			 	label : 			this.getSimpleBundleString('extn_Advance_returns')
+			}
+		}
+	 					}">
+		 	</div>  
+		 	<div data-dojo-type="idx/form/CheckBox" 
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'move' , 
+		_sc_extensibility_moveOrder : '3' , 
+		_sc_extensibility_referenceUId : 'pnlRoot' , 
+		uId : 'extn_Advance_returns' , 
+		_sc_extensibility_position : 'before'  
+	 					}">
+		 	</div>  
+		</div>

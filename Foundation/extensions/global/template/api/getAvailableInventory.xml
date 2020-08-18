@@ -1,0 +1,13 @@
+<Promise OrganizationCode="" DistanceUOMToConsider="" DistanceToConsider="" CheckInventory="">
+	<PromiseLines>
+		<PromiseLine UnitOfMeasure="" ProductClass=""  LineId="" ItemID="">
+			<Availability>
+				<AvailableInventory AvailableFromUnplannedInventory="" StartDate="" EndDate="" AvailableQuantity="" AvailableOnhandQuantity="" AvailableFutureQuantity="">
+					<ShipNodeAvailableInventory>
+						<Inventory AvailableFromUnplannedInventory="" Node="" AvailableQuantity="" AvailableOnhandQuantity="" AvailableFutureQuantity=""/>
+					</ShipNodeAvailableInventory>
+				</AvailableInventory>
+			</Availability>
+		</PromiseLine>
+	</PromiseLines>
+</Promise>

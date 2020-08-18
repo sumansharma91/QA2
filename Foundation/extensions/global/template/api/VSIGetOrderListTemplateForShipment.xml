@@ -1,0 +1,12 @@
+<OrderList>
+<Order OrderNo="" OrderHeaderKey="">
+<OrderLines>
+<OrderLine MinLineStatus="" MaxLineStatus="" PrimeLineNo="" SubLineNo="" OrderLineKey="" LineType="" CustomerPONo="" OrderedQty="">
+<Item ItemID=""/>
+<OrderStatuses>
+<OrderStatus TotalQuantity="" StatusQty="" StatusDate="" Status="" OrderReleaseKey=""/>
+</OrderStatuses>
+</OrderLine>
+</OrderLines>
+</Order>
+</OrderList>

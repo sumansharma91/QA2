@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="FSPickupLinesWithNoShipnodeExtn"
+        extnPackage="extn.order.fulfillmentSummary"
+        originalScreen="isccs.order.fulfillmentSummary.FSPickupLinesWithNoShipnode"
+        originalScreenPackage="isccs.order.fulfillmentSummary" type="diffrential">
+        <Items>
+            <Button _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="changeToDelivery" renderHidden="true"/>
+            <TitlePane _sc_extensibility_operation="change"
+                _sc_extensibility_referenceUId="orderlinestitlepane" renderHidden="false"/>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber description="selectAllRows"
+                    eventId="OLST_listGrid_afterPagingload"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="selectAllRows"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+    </ScreenExtension>
+</ExtensionMetaData>

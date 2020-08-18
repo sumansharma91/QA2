@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite
+(C) Copyright IBM Corp. 2001, 2013 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<!-- This XML will be filled in by the user at deployment time of the
+Sterling application. The desired services are to be added as named webservices.
+ The ServiceName attribute is the name of the
+service that the user has configured within the Sterling Service Builder.
+The ExposedName attribute is the name that will be used in the wsdl.
+This is the name that a webservice caller will use to programmatically
+the webservice
+The User can optionally expose only certain apis by specifing the api names
+under the Apis Node.  If the user wants to expose all the apis the 
+ExposeAllAPIs attribute should be set to "Y"
+
+NOTE:  For WebSphere, there is a strict requirement that all exposed
+webservices must start with a lower case letter. 
+
+-->
+<WebServices>
+	<Beans>
+		<Bean BeanName="TheBeans" BeanPackage="com.sterlingcommerce.jaxws.the.webservices" >
+			<Apis ExposeAllAPIs="N" >
+				<Api Name="login" ExposedName="theLogin" />
+				<Api Name="getLocaleList" ExposedName="theGetLocaleList" />
+			</Apis>
+		</Bean>
+		<Bean BeanName="OtherBeans" BeanPackage="com.sterlingcommerce.jaxws.other.webservices" >
+			<Services >
+				<Service Name="getAvailableInventory" ExposedName="getAvailableInventory" />
+				<Service Name="VSIProductLocator" ExposedName="VSIProductLocator" />
+				<Service Name="VSIESWorkOrderList" ExposedName="VSIESWorkOrderList" />
+				<Service Name="VSIESOrderDetail" ExposedName="VSIESOrderDetail" />
+				<Service Name="VSICheckInventoryCall" ExposedName="VSICheckInventoryCall" />
+				<Service Name="VSIWebOrderDetails" ExposedName="VSIWebOrderDetails" />
+			</Services>
+		</Bean>
+	</Beans>
+</WebServices>

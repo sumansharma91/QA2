@@ -1,0 +1,4 @@
+<OrderLineList TotalLineList="">
+    <OrderLine  CustomerPONo="" FulfillmentType=""  LineType="" MaxLineStatus="" MaxLineStatusDesc="" MinLineStatus="" MinLineStatusDesc="" OrderHeaderKey="" OrderLineKey="" OrderedQty="" PrimeLineNo="" SubLineNo="" >        
+    </OrderLine>
+</OrderLineList>
