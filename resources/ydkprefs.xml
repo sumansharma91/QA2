@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+    <configsynch>
+        <Settings ReportsDir="C:\VSI-Proj\PRODCDTREPORT">
+            <AuditDeployment ValidateLockid="N" ValidateOldValues="Y" ValidateRecordExistsBeforeDelete="Y"/>
+        </Settings>
+        <SourceDatabases>
+            <Database Name="MC3"
+                className="oracle.jdbc.driver.OracleDriver"
+                dbType="oracle" folder=""
+                jdbcURL="jdbc:oracle:thin:@10.3.53.74:1581:omstest"
+                schema="STERLINNGMC2" user="STERLINNGMC2"/>
+             <Database Name="MC1"
+                className="oracle.jdbc.driver.OracleDriver"
+                dbType="oracle" folder=""
+                jdbcURL="jdbc:oracle:thin:@10.3.53.74:1581:omstest"
+                schema="STERLINNGMC1" user="STERLINNGMC1"/>
+
+            <Database Name="Master"
+                className="oracle.jdbc.driver.OracleDriver"
+                dbType="oracle" folder=""
+                jdbcURL="jdbc:oracle:thin:@10.3.53.149:1521:orcl"
+                schema="STERLING" user="sterling"/>
+            <Database Name="QA2"
+                className="oracle.jdbc.driver.OracleDriver"
+                dbType="oracle" folder=""
+                jdbcURL="jdbc:oracle:thin:@10.3.53.74:1581:omstest"
+                schema="STERLING95" user="sterling95"/>
+			<Database Name="QA"
+                className="oracle.jdbc.driver.OracleDriver"
+                dbType="oracle" folder=""
+                jdbcURL="jdbc:oracle:thin:@10.3.53.74:1581:omstest"
+                schema="STERLING95" user="sterling95"/>	
+				<Database Name="MCBackup" className="" dbType="xml"
+                folder="/opt/sterling/backup/CDT/CDTXml" jdbcURL=""
+                schema="" user=""/>
+        </SourceDatabases>
+        <TargetDatabases>
+            <Database Name="QA"
+                className="oracle.jdbc.driver.OracleDriver"
+                dbType="oracle" folder=""
+                jdbcURL="jdbc:oracle:thin:@10.3.53.74:1581:omstest"
+                schema="STERLING95" user="sterling95"/>
+            <Database Name="QA2XML" className="" dbType="xml"
+                folder="/opt/sterling/QA2/cdt" jdbcURL="" schema="" user=""/>
+            <Database Name="XML" className="" dbType="xml"
+                folder="/opt/sterling/build/cdt" jdbcURL="" schema="" user=""/>
+            <Database Name="MC3XML" className="" dbType="xml"
+                folder="/opt/sterling/build/cdt/MC3XML" jdbcURL=""
+                schema="" user=""/>
+            <Database Name="PRDXML" className="" dbType="xml"
+                folder="/opt/sterling/build/PRDXML" jdbcURL="" schema="" user=""/>
+            <Database Name="QABackup" className="" dbType="xml"
+                folder="/opt/sterling/backup/CDT/folder_today"
+                jdbcURL="" schema="" user=""/>
+			<Database Name="MCBackup" className="" dbType="xml"
+                folder="/opt/sterling/backup/CDT/CDTXml" jdbcURL=""
+                schema="" user=""/>	
+        </TargetDatabases>
+        <SourceTargetPrefs>
+            <SourceTargetPrefs>
+			<SourceTargetPair SourceDatabase="MC3" TargetDatabase="MCBackup">
+                    <Transformations/>
+                     <Ignore>
+                      <Table Name="YFS_ORG_RELATIONSHIP" />
+			  <Table Name="YFS_CATEGORY_ITEM" />
+			<!--  <Table Name="YFS_CATEGORY" /> -->
+                       <Table Name="YFS_RES_POOL"/>
+                       <Table Name="YFS_RES_POOL_ATTR"/>
+					   <Table Name="YFS_ADDITIONAL_ATTRIBUTE"/>
+                        <Table Name="YFS_RES_POOL_DOW_CAPCTY"/>
+                        <Table Name="YFS_RES_POOL_STD_CAPCTY_PERD"/>
+                        <Table Name="VSI_WH_CUST_CREDIT_DETAILS"/>
+                        <Table Name="YFS_USER"/>
+                       <!-- <Table Name="YFS_RESOURCE_PERMISSION"/>-->
+                        <Table Name="YFS_DEPARTMENT"/>
+                        <Table Name="YFS_MENU"/>
+                        <Table Name="YFS_APPLICATION_MENU"/>
+                        <!--<Table Name="YFS_DISTRIBUTION_RULE"/> -->
+                       <!-- <Table Name="YFS_REGION_LEVEL"/>-->
+			<Table Name="YFS_CUSTOMER"/>
+						<Table Name="YFS_REGION"/>
+			<Table Name="YFS_ITEM_ALIAS"/>
+                        <Table Name="YFS_ITEM"/>
+                        <Table Name="YFS_ITEM_INSTRUCTION"/>
+                        <Table Name="YFS_ITEM_UOM"/>
+			<Table Name="YFS_CALENDAR_DAY_EXCP"/>
+                        <Table Name="YFS_CALENDAR_EXCP_SHIFT"/>
+                        <Table Name="YFS_CALENDAR_SHIFT"/>
+                        <Table Name="YFS_CALENDAR"/>
+			<Table Name="YFS_REGION_DETAIL"/>
+			<Table Name="YFS_NODE_TRANSFER_SCHEDULE"/>
+			<Table Name="YFS_PERSON_INFO"/>
+			<Table Name="YFS_ZIP_CODE_LOCATION"/>
+               </Ignore>
+               <AppendOnly>
+               <Table Name="YFS_PIPELINE"/>
+                        <Table Name="YFS_ORGANIZATION"/>
+			<Table Name="YFS_ORG_ENTERPRISE"/>
+                        <Table Name="YFS_ORG_THEME"/>
+                        <Table Name="YFS_ENTERPRISE"/>
+                        <Table Name="YFS_SHIP_NODE"/>
+			<!--<Table Name="YFS_DISTRIBUTION_RULE"/> -->
+			<Table Name="YFS_ITEM_SHIP_NODE"/>
+               </AppendOnly>
+                </SourceTargetPair>
+			<SourceTargetPair SourceDatabase="MCBackup" TargetDatabase="QA">
+                    <Transformations/>
+                     <Ignore>
+                      <Table Name="YFS_ORG_RELATIONSHIP" />
+			  <Table Name="YFS_CATEGORY_ITEM" />
+			<!--  <Table Name="YFS_CATEGORY" /> -->
+                       <Table Name="YFS_RES_POOL"/>
+                       <Table Name="YFS_RES_POOL_ATTR"/>
+					   <Table Name="YFS_ADDITIONAL_ATTRIBUTE"/>
+                        <Table Name="YFS_RES_POOL_DOW_CAPCTY"/>
+                        <Table Name="YFS_RES_POOL_STD_CAPCTY_PERD"/>
+                        <Table Name="VSI_WH_CUST_CREDIT_DETAILS"/>
+                        <Table Name="YFS_USER"/>
+                       <!-- <Table Name="YFS_RESOURCE_PERMISSION"/>-->
+                        <Table Name="YFS_DEPARTMENT"/>
+                        <Table Name="YFS_MENU"/>
+                        <Table Name="YFS_APPLICATION_MENU"/>
+                        <!--<Table Name="YFS_DISTRIBUTION_RULE"/> -->
+                       <!-- <Table Name="YFS_REGION_LEVEL"/>-->
+			<Table Name="YFS_CUSTOMER"/>
+						<Table Name="YFS_REGION"/>
+			<Table Name="YFS_ITEM_ALIAS"/>
+                        <Table Name="YFS_ITEM"/>
+                        <Table Name="YFS_ITEM_INSTRUCTION"/>
+                        <Table Name="YFS_ITEM_UOM"/>
+			<Table Name="YFS_CALENDAR_DAY_EXCP"/>
+                        <Table Name="YFS_CALENDAR_EXCP_SHIFT"/>
+                        <Table Name="YFS_CALENDAR_SHIFT"/>
+                        <Table Name="YFS_CALENDAR"/>
+			<Table Name="YFS_REGION_DETAIL"/>
+			<Table Name="YFS_NODE_TRANSFER_SCHEDULE"/>
+			<Table Name="YFS_PERSON_INFO"/>
+			<Table Name="YFS_ZIP_CODE_LOCATION"/>
+               </Ignore>
+               <AppendOnly>
+               <Table Name="YFS_PIPELINE"/>
+                        <Table Name="YFS_ORGANIZATION"/>
+			<Table Name="YFS_ORG_ENTERPRISE"/>
+                        <Table Name="YFS_ORG_THEME"/>
+                        <Table Name="YFS_ENTERPRISE"/>
+                        <Table Name="YFS_SHIP_NODE"/>
+			<!--<Table Name="YFS_DISTRIBUTION_RULE"/> -->
+			<Table Name="YFS_ITEM_SHIP_NODE"/>
+               </AppendOnly>
+                </SourceTargetPair>
+                <SourceTargetPair SourceDatabase="Master" TargetDatabase="QA">
+                    <Transformations/>
+                    <Ignore>
+                        <Table Name="YFS_ORG_RELATIONSHIP"/>
+                        <Table Name="YFS_ZIP_CODE_LOCATION"/>
+                        <Table Name="YFS_CUSTOMER"/>
+                        <Table Name="YFS_COMMON_CODE"/>
+                        <Table Name="YFS_CHARGE_NAME"/>
+                        <Table Name="YFS_CALENDAR_DAY_EXCP"/>
+                        <Table Name="YFS_CHARGE_CATEGORY"/>
+                        <Table Name="YFS_CALENDAR_EXCP_SHIFT"/>
+                        <Table Name="YFS_CALENDAR_SHIFT"/>
+                        <Table Name="YFS_CALENDAR"/>
+                        <Table Name="YFS_CALENDAR_SHIFT_EFF_PERD"/>
+                        <Table Name="YFS_ITEM_ALIAS"/>
+                        <Table Name="YFS_ITEM"/>
+                        <Table Name="YFS_ITEM_INSTRUCTION"/>
+                        <Table Name="YFS_ITEM_UOM"/>
+                        <Table Name="YFS_PERSON_INFO"/>
+                        <Table Name="YFS_USER"/>
+                        <Table Name="YFS_USER_GROUP"/>
+                        <Table Name="YFS_USER_GROUP_LIST"/>
+                        <Table Name="YFS_ORG_ENTERPRISE"/>
+                        <Table Name="YFS_ORG_THEME"/>
+                        <Table Name="YFS_ENTERPRISE"/>
+                        <Table Name="YFS_SHIP_NODE"/>
+                        <Table Name="YFS_DEPARTMENT"/>
+                        <Table Name="YFS_MENU"/>
+                        <Table Name="YFS_APPLICATION_MENU"/>
+                        <!--<Table Name="YFS_DISTRIBUTION_RULE" /> -->
+                        <Table Name="YFS_MONITOR_RULE"/>
+                        <Table Name="YFS_MONITOR_ALERT"/>
+                        <Table Name="YFS_MONITOR_TYPE"/>
+                        <Table Name="YFS_MONITOR_RULE"/>
+                        <Table Name="YFS_MONITOR_ALERT"/>
+                        <Table Name="YFS_MONITOR_TYPE"/>
+                        <Table Name="VSI_WH_CUST_CREDIT_DETAILS"/>
+                        <Table Name="YFS_CATEGORY_ITEM"/>
+                        <Table Name="YFS_ADDITIONAL_ATTRIBUTE"/>
+                    </Ignore>
+                    <AppendOnly>
+                        <Table Name="YFS_PIPELINE"/>
+                        <Table Name="YFS_ORGANIZATION"/>
+                    </AppendOnly>
+                </SourceTargetPair>
+                <SourceTargetPair SourceDatabase="QA" TargetDatabase="QABackup">
+                    <Transformations/>
+                    <Ignore>
+                        <Table Name="YFS_ORG_RELATIONSHIP"/>
+                        <Table Name="YFS_USER"/>
+                        <!-- <Table Name="YFS_RESOURCE_PERMISSION"/>-->
+                        <Table Name="YFS_CATEGORY_ITEM"/>
+                        <Table Name="YFS_CATEGORY"/>
+                        <Table Name="YFS_DEPARTMENT"/>
+                        <Table Name="YFS_MENU"/>
+                        <Table Name="YFS_APPLICATION_MENU"/>
+                        <!--<Table Name="YFS_DISTRIBUTION_RULE"/> -->
+                        <!-- <Table Name="YFS_REGION_LEVEL"/>-->
+                        <Table Name="YFS_CUSTOMER"/>
+                        <Table Name="YFS_ITEM_ALIAS"/>
+                        <Table Name="YFS_ITEM"/>
+                        <Table Name="YFS_ITEM_INSTRUCTION"/>
+                        <Table Name="YFS_ITEM_UOM"/>
+                        <Table Name="YFS_CALENDAR_DAY_EXCP"/>
+                        <Table Name="YFS_CALENDAR_EXCP_SHIFT"/>
+                        <Table Name="YFS_CALENDAR_SHIFT"/>
+                        <Table Name="YFS_CALENDAR"/>
+                        <Table Name="YFS_REGION_DETAIL"/>
+                        <Table Name="YFS_NODE_TRANSFER_SCHEDULE"/>
+                        <Table Name="VSI_WH_CUST_CREDIT_DETAILS"/>
+                        <Table Name="YFS_CATEGORY_ITEM"/>
+                        <Table Name="YFS_ADDITIONAL_ATTRIBUTE"/>
+							 <!--PMR Team's input-->
+						   <Table Name="YFS_USER_GROUP_LIST"/>
+   <Table Name="YFS_CONSUMER"/>
+   <Table Name="YFS_CUSTOMER_CONTACT"/>
+   <Table Name="YFS_CUSTOMER_ADDNL_ADDRESS"/>
+   <Table Name="YFS_CUSTOMER_PAYMENT_METHOD"/>
+   <Table Name="YFS_PERSON_INFO"/>
+   <Table Name="YFS_CUSTOMER_SCH_PREFERENCE"/>
+   <Table Name="YFS_CUSTOMER_SLOT_PREFERENCE"/>
+   <Table Name="YFS_ANSWER_MASTER"/>
+   <Table Name="YFS_CUSTOMER_CURRENCY"/>
+   <Table Name="YFS_CUSTOMER_ANALYTICS"/>
+   <Table Name="YFS_CUSTOMER_ASSIGNMENT"/>
+   <Table Name="YFS_RES_POOL"/>
+   <Table Name="YFS_RES_POOL_CAPCTY_CONSMPTN"/>
+   <Table Name="YFS_RES_POOL_CAPCTY_OVERRIDE"/>
+   <Table Name="YFS_RES_POOL_CONSMPTN_DTLS"/>
+   <Table Name="YFS_RES_POOL_DOW_CAPCTY"/>
+   <Table Name="YFS_RES_POOL_ITEM"/>
+   <Table Name="YFS_RES_POOL_REGION"/>
+   <Table Name="YFS_RES_POOL_SECONDARY_UOM"/>
+   <Table Name="YFS_RES_POOL_SERVICE_SKILL"/>
+   <Table Name="YFS_RES_POOL_STD_CAPCTY_PERD"/>
+   <Table Name="YFS_ZIP_CODE_LOCATION" />
+   <Table Name="YFS_RES_POOL_ATTR" />
+   <!--PMR TEAMS Input-->
+                    </Ignore>
+                    <AppendOnly>
+                        <Table Name="YFS_PIPELINE"/>
+                        <Table Name="YFS_ORGANIZATION"/>
+                        <Table Name="YFS_ORG_ENTERPRISE"/>
+                        <Table Name="YFS_ORG_THEME"/>
+                        <Table Name="YFS_ENTERPRISE"/>
+                        <Table Name="YFS_SHIP_NODE"/>
+                        <!--<Table Name="YFS_DISTRIBUTION_RULE"/> -->
+                        <Table Name="YFS_ITEM_SHIP_NODE"/>
+                    </AppendOnly>
+                </SourceTargetPair>
+                <SourceTargetPair SourceDatabase="MC3" TargetDatabase="QA">
+           <Transformations />
+               <Ignore>
+                      <Table Name="YFS_ORG_RELATIONSHIP" />
+			  <Table Name="YFS_CATEGORY_ITEM" />
+			<!--  <Table Name="YFS_CATEGORY" /> -->
+                       <Table Name="YFS_RES_POOL"/>
+                       <Table Name="YFS_RES_POOL_ATTR"/>
+					   <Table Name="YFS_ADDITIONAL_ATTRIBUTE"/>
+                        <Table Name="YFS_RES_POOL_DOW_CAPCTY"/>
+                        <Table Name="YFS_RES_POOL_STD_CAPCTY_PERD"/>
+                        <Table Name="VSI_WH_CUST_CREDIT_DETAILS"/>
+                        <Table Name="YFS_USER"/>
+                       <!-- <Table Name="YFS_RESOURCE_PERMISSION"/>-->
+                        <Table Name="YFS_DEPARTMENT"/>
+                        <Table Name="YFS_MENU"/>
+                        <Table Name="YFS_APPLICATION_MENU"/>
+                        <!--<Table Name="YFS_DISTRIBUTION_RULE"/> -->
+                       <!-- <Table Name="YFS_REGION_LEVEL"/>-->
+			<Table Name="YFS_CUSTOMER"/>
+						<Table Name="YFS_REGION"/>
+			<Table Name="YFS_ITEM_ALIAS"/>
+                        <Table Name="YFS_ITEM"/>
+                        <Table Name="YFS_ITEM_INSTRUCTION"/>
+                        <Table Name="YFS_ITEM_UOM"/>
+			<Table Name="YFS_CALENDAR_DAY_EXCP"/>
+                        <Table Name="YFS_CALENDAR_EXCP_SHIFT"/>
+                        <Table Name="YFS_CALENDAR_SHIFT"/>
+                        <Table Name="YFS_CALENDAR"/>
+			<Table Name="YFS_REGION_DETAIL"/>
+			<Table Name="YFS_NODE_TRANSFER_SCHEDULE"/>
+			<Table Name="YFS_PERSON_INFO"/>
+			<Table Name="YFS_ZIP_CODE_LOCATION"/>
+			<Table Name="YFS_QUEUE"/>
+			<Table Name="YFS_QUEUE_SUBSCRIPTION"/>	
+               </Ignore>
+               <AppendOnly>
+               <Table Name="YFS_PIPELINE"/>
+                        <Table Name="YFS_ORGANIZATION"/>
+			<Table Name="YFS_ORG_ENTERPRISE"/>
+                        <Table Name="YFS_ORG_THEME"/>
+                        <Table Name="YFS_ENTERPRISE"/>
+                        <Table Name="YFS_SHIP_NODE"/>
+			<!--<Table Name="YFS_DISTRIBUTION_RULE"/> -->
+			<Table Name="YFS_ITEM_SHIP_NODE"/>
+               </AppendOnly>
+                </SourceTargetPair>
+<SourceTargetPair SourceDatabase="MC1" TargetDatabase="QA">
+           <Transformations />
+               <Ignore>
+                      <Table Name="YFS_ORG_RELATIONSHIP" />
+			  <Table Name="YFS_CATEGORY_ITEM" />
+			<!--  <Table Name="YFS_CATEGORY" /> -->
+                       <Table Name="YFS_RES_POOL"/>
+                       <Table Name="YFS_RES_POOL_ATTR"/>
+					   <Table Name="YFS_ADDITIONAL_ATTRIBUTE"/>
+                        <Table Name="YFS_RES_POOL_DOW_CAPCTY"/>
+                        <Table Name="YFS_RES_POOL_STD_CAPCTY_PERD"/>
+                        <Table Name="VSI_WH_CUST_CREDIT_DETAILS"/>
+                        <Table Name="YFS_USER"/>
+                       <!-- <Table Name="YFS_RESOURCE_PERMISSION"/>-->
+                        <Table Name="YFS_DEPARTMENT"/>
+                        <Table Name="YFS_MENU"/>
+                        <Table Name="YFS_APPLICATION_MENU"/>
+                        <!--<Table Name="YFS_DISTRIBUTION_RULE"/> -->
+                       <!-- <Table Name="YFS_REGION_LEVEL"/>-->
+			<Table Name="YFS_CUSTOMER"/>
+						<Table Name="YFS_REGION"/>
+			<Table Name="YFS_ITEM_ALIAS"/>
+                        <Table Name="YFS_ITEM"/>
+                        <Table Name="YFS_ITEM_INSTRUCTION"/>
+                        <Table Name="YFS_ITEM_UOM"/>
+			<Table Name="YFS_CALENDAR_DAY_EXCP"/>
+                        <Table Name="YFS_CALENDAR_EXCP_SHIFT"/>
+                        <Table Name="YFS_CALENDAR_SHIFT"/>
+                        <Table Name="YFS_CALENDAR"/>
+			<Table Name="YFS_REGION_DETAIL"/>
+			<Table Name="YFS_NODE_TRANSFER_SCHEDULE"/>
+			<Table Name="YFS_PERSON_INFO"/>
+			<Table Name="YFS_ZIP_CODE_LOCATION"/>
+               </Ignore>
+               <AppendOnly>
+               <Table Name="YFS_PIPELINE"/>
+                        <Table Name="YFS_ORGANIZATION"/>
+			<Table Name="YFS_ORG_ENTERPRISE"/>
+                        <Table Name="YFS_ORG_THEME"/>
+                        <Table Name="YFS_ENTERPRISE"/>
+                        <Table Name="YFS_SHIP_NODE"/>
+			<!--<Table Name="YFS_DISTRIBUTION_RULE"/> -->
+			<Table Name="YFS_ITEM_SHIP_NODE"/>
+               </AppendOnly>
+                </SourceTargetPair>
+
+                <SourceTargetPair SourceDatabase="QA2" TargetDatabase="QA2XML">
+                    <Transformations/>
+                    <Ignore>
+                        <Table Name="YFS_ORG_RELATIONSHIP"/>
+                        <Table Name="YFS_USER"/>
+                        <!-- <Table Name="YFS_RESOURCE_PERMISSION"/>-->
+                        <Table Name="YFS_DEPARTMENT"/>
+                        <Table Name="YFS_MENU"/>
+                        <Table Name="YFS_APPLICATION_MENU"/>
+                        <!--<Table Name="YFS_DISTRIBUTION_RULE"/> -->
+                        <!-- <Table Name="YFS_REGION_LEVEL"/>-->
+                        <Table Name="YFS_CUSTOMER"/>
+                        <Table Name="YFS_ITEM_ALIAS"/>
+                        <Table Name="YFS_ITEM"/>
+                        <Table Name="YFS_ITEM_INSTRUCTION"/>
+                        <Table Name="YFS_ITEM_UOM"/>
+                        <Table Name="YFS_CALENDAR_DAY_EXCP"/>
+                        <Table Name="YFS_CALENDAR_EXCP_SHIFT"/>
+                        <Table Name="YFS_CALENDAR_SHIFT"/>
+                        <Table Name="YFS_CALENDAR"/>
+                        <Table Name="YFS_REGION_DETAIL"/>
+                        <Table Name="YFS_NODE_TRANSFER_SCHEDULE"/>
+                        <Table Name="VSI_WH_CUST_CREDIT_DETAILS"/>
+                        <Table Name="YFS_CATEGORY_ITEM"/>
+                        <Table Name="YFS_ADDITIONAL_ATTRIBUTE"/>
+                    </Ignore>
+                    <AppendOnly>
+                        <Table Name="YFS_PIPELINE"/>
+                        <Table Name="YFS_ORGANIZATION"/>
+                        <Table Name="YFS_ORG_ENTERPRISE"/>
+                        <Table Name="YFS_ORG_THEME"/>
+                        <Table Name="YFS_ENTERPRISE"/>
+                        <Table Name="YFS_SHIP_NODE"/>
+                        <!--<Table Name="YFS_DISTRIBUTION_RULE"/> -->
+                        <Table Name="YFS_ITEM_SHIP_NODE"/>
+                    </AppendOnly>
+                </SourceTargetPair>
+                <SourceTargetPair SourceDatabase="MC3" TargetDatabase="MC3XML">
+                    <Transformations/>
+                    <Ignore>
+                        <Table Name="YFS_ZIP_CODE_LOCATION"/>
+                    </Ignore>
+                    <AppendOnly>
+                        <Table Name="YFS_PIPELINE"/>
+                    </AppendOnly>
+                </SourceTargetPair>
+            </SourceTargetPrefs>
+        </SourceTargetPrefs>
+    </configsynch>
+</preferences>
